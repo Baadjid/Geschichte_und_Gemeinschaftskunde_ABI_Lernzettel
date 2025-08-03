@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutschland, Europa und die Welt nach 1945 - Geschichte Abitur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        .main-content {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .chapter-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chapter-title {
+            color: #2c3e50;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .section-title {
+            color: #34495e;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            padding-left: 15px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .subsection-title {
+            color: #2980b9;
+            font-size: 1.2em;
+            font-weight: 500;
+            margin: 20px 0 10px 0;
+        }
+
+        .content-text {
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .timeline {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #3498db;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .important-concept {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+        }
+
+        .method-box {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #9b59b6;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .key-points li:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Deutschland, Europa und die Welt nach 1945</h1>
+            <div class="nav-links">
+                <a href="index.html">← Zurück zum Hauptmenü</a>
+                <a href="Methoden.html">Methoden</a>
+                <a href="Begriffslexikon.html">Begriffslexikon</a>
+                <a href="Operatoren.html">Operatoren</a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Kapitel 10: Der Kalte Krieg und seine Folgen -->
+            <div class="chapter-section">
+                <h2 class="chapter-title">10. Der Kalte Krieg und seine Folgen</h2>
+                
+                <div class="highlight-box">
+                    <strong>Überblick:</strong> Nach dem Ende des Zweiten Weltkriegs entwickelte sich zwischen den ehemaligen Alliierten USA und UdSSR ein ideologischer und machtpolitischer Konflikt, der die Weltpolitik für fast ein halbes Jahrhundert prägte.
+                </div>
+
+                <h3 class="section-title">10.1 Der Kalte Krieg – ein Krieg der Ideologien?</h3>
+                
+                <div class="content-text">
+                    Der Kalte Krieg begann beinahe unmittelbar nach dem Ende des Zweiten Weltkrieges. Beteiligt waren einerseits die Westalliierten und ihre Verbündeten, die kapitalistisch und demokratisch orientiert waren. Ihnen gegenüber standen die UdSSR und ihre Satellitenstaaten, die kommunistisch und diktatorisch geprägt waren. Vom „Kalten" Krieg sprechen wir deswegen, weil sich beide Seiten nicht mit Waffen bekämpften, sondern es sich um einen Krieg der Systeme, Ideologien und Weltanschauungen handelte. Nichtsdestotrotz bestand ständig die Gefahr, dass es zum Ausbruch eines „heißen" Krieges mit Waffeneinsatz kommt.
+                </div>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Westlicher Block (USA)</th>
+                        <th>Östlicher Block (UdSSR)</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Ideologie:</strong> Kapitalismus, Demokratie<br>
+                            <strong>Wirtschaft:</strong> Marktwirtschaft<br>
+                            <strong>Politik:</strong> Pluralismus, Gewaltenteilung<br>
+                            <strong>Bündnis:</strong> NATO (1949)
+                        </td>
+                        <td>
+                            <strong>Ideologie:</strong> Kommunismus, Sozialismus<br>
+                            <strong>Wirtschaft:</strong> Planwirtschaft<br>
+                            <strong>Politik:</strong> Einparteiensystem<br>
+                            <strong>Bündnis:</strong> Warschauer Pakt (1955)
+                        </td>
+                    </tr>
+                </table>
+
+                <h3 class="section-title">10.2 Potsdamer Abkommen – ein Dokument der Teilung</h3>
+                
+                <div class="content-text">
+                    Zunächst waren die späteren Gegner jedoch Verbündete gegen Deutschland. Schon während der letzten Jahre des Zweiten Weltkrieges trafen sich die „Großen Drei" – die USA unter Roosevelt, die UdSSR unter Stalin und Großbritannien unter Churchill – zu verschiedenen Konferenzen. Auf diesen wurde über die Zukunft Deutschlands und Europas entschieden.
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1943</div>
+                        <strong>Konferenz von Teheran:</strong> Weitgehende Einigkeit zwischen den Siegermächten
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Februar 1945</div>
+                        <strong>Konferenz von Jalta:</strong> Erste Differenzen, Aufteilung Deutschlands in Besatzungszonen
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">17. Juli - 2. August 1945</div>
+                        <strong>Potsdamer Konferenz:</strong> Endgültige Festlegung der Deutschlandpolitik
+                    </div>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Die "5 Ds" des Potsdamer Abkommens:</strong>
+                    <ul>
+                        <li><strong>Demokratisierung:</strong> Aufbau demokratischer Strukturen</li>
+                        <li><strong>Demilitarisierung:</strong> Vollständige Abrüstung</li>
+                        <li><strong>Demontage:</strong> Abbau der Rüstungsindustrie</li>
+                        <li><strong>Dezentralisierung:</strong> Föderale Strukturen</li>
+                        <li><strong>Denazifizierung:</strong> Beseitigung des Nationalsozialismus</li>
+                    </ul>
+                </div>
+
+                <div class="content-text">
+                    Deutschland wurde in vier Besatzungszonen aufgeteilt, von denen jeweils eine von den USA, Großbritannien, Frankreich und der UdSSR besetzt wurde. Auch Berlin wurde in vier Zonen aufgeteilt. Der Alliierte Kontrollrat übernahm die Regierung.
+                </div>
+
+                <h3 class="section-title">10.3 Entnazifizierung – ein Sieg der Gerechtigkeit?</h3>
+                
+                <div class="content-text">
+                    Die Entnazifizierung war einer der wichtigen Beschlüsse der Alliierten Siegermächte, um sicherzugehen, dass die Ideologie des Nationalsozialismus keinen Bestand hatte. In der Umsetzung gab es jedoch nach Besatzungszone Unterschiede:
+                </div>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Besatzungszone</th>
+                        <th>Verfahren</th>
+                        <th>Besonderheiten</th>
+                    </tr>
+                    <tr>
+                        <td>Westzonen</td>
+                        <td>Fragebogenaktion, Spruchkammerverfahren, Nürnberger Prozesse (1945/46)</td>
+                        <td>Kategorisierung in 5 Stufen (Hauptschuldige bis Entlastete), viele ehemalige Verantwortliche wurden mit Strafen unterschiedlicher Höhe versehen</td>
+                    </tr>
+                    <tr>
+                        <td>Sowjetische Zone</td>
+                        <td>Politische Säuberung durch SMAD</td>
+                        <td>Enthobung aller Nationalsozialisten aus höheren Ämtern, Verurteilung zahlreicher NSDAP-Mitglieder und anderer NS-Organisationen</td>
+                    </tr>
+                </table>
+
+                <div class="content-text">
+                    In den Westzonen wurden zahlreiche Kriegsverbrecher im Rahmen der Nürnberger Prozesse (1945/46) verurteilt. In der Sowjetzone wurde die Entnazifizierung durch die Sowjetische Militäradministration in Deutschland (SMAD) vollzogen.
+                </div>
+
+                <h3 class="section-title">10.4 Die wirtschaftliche Entwicklung der Besatzungszonen</h3>
+                
+                <div class="content-text">
+                    Aufgrund des Einflusses der Westalliierten und der UdSSR auf ihre Besatzungszonen entwickelten sich diese nach 1945 sehr unterschiedlich. In den drei Westzonen wurde die Soziale Marktwirtschaft, in der sowjetischen Besatzungszone die Planwirtschaft etabliert.
+                </div>
+
+                <div class="key-points">
+                    <h4>Entwicklung in den Westzonen:</h4>
+                    <ul>
+                        <li>Soziale Marktwirtschaft unter Ludwig Erhard</li>
+                        <li>Währungsreform 1948 (Deutsche Mark)</li>
+                        <li><strong>Marshall-Plan (1948):</strong> US-Wirtschaftshilfe half den Westzonen wirtschaftlich auf die Beine</li>
+                        <li>Montanunion (1951) - erste europäische Integration</li>
+                    </ul>
+                </div>
+
+                <div class="key-points">
+                    <h4>Entwicklung in der Sowjetischen Zone:</h4>
+                    <ul>
+                        <li>Planwirtschaft nach sowjetischem Vorbild</li>
+                        <li>Enteignung und Verstaatlichung</li>
+                        <li>Bodenreform und Kollektivierung</li>
+                        <li><strong>RGW (1949):</strong> Rat für gegenseitige Wirtschaftshilfe als Gegenentwurf zum Marshall-Plan</li>
+                        <li>Gründung der Staatspartei SED (1946)</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Berlin-Blockade (1948/49):</strong><br>
+                    Als die Westalliierten die Währungsreform auch in den westlichen Sektoren Berlins durchführten, reagierte die UdSSR mit der Berlin-Blockade. Sämtliche Landwege nach Westberlin wurden blockiert, sodass eine Versorgung nur per Flugzeug durch die Luftbrücke möglich war.
+                </div>
+
+                <h3 class="section-title">10.5 Doppelte Staatsgründung von BRD und DDR</h3>
+                
+                <div class="content-text">
+                    Ebenso unterschiedlich wie die wirtschaftliche verlief die politische Entwicklung in den einzelnen Zonen. Die drei Westzonen vertieften ihre Gemeinsamkeiten immer mehr:
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1947</div>
+                        <strong>Bizone:</strong> Zusammenschluss der amerikanischen und britischen Zone
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1948</div>
+                        <strong>Trizone:</strong> Beitritt Frankreichs - drei westliche Besatzungszonen politisch und wirtschaftlich quasi vereinigt
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1946</div>
+                        <strong>SED-Gründung:</strong> Zwangsvereinigung von SPD und KPD in der Sowjetzone unter SMAD-Verwaltung
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">23. Mai 1949</div>
+                        <strong>Gründung der BRD:</strong> Inkrafttreten des Grundgesetzes (Parlamentarischer Rat)
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">7. Oktober 1949</div>
+                        <strong>Gründung der DDR:</strong> Deutsche Demokratische Republik (Volkskongress)
+                    </div>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Unterschiedliche Staatskonzeptionen:</strong><br>
+                    <strong>BRD:</strong> Parlamentarische Demokratie, föderale Struktur, Gewaltenteilung, Grundrechte<br>
+                    <strong>DDR:</strong> "Demokratischer Zentralismus", sozialistischer Staat, Führungsrolle der SED - diese Konzentration der Macht auf eine einzige Partei zeigte bereits die diktatorischen Züge des Systems auf
+                </div>
+
+                <h3 class="section-title">10.6 Die Entwicklung der beiden deutschen Staaten</h3>
+                
+                <div class="content-text">
+                    Auch nach der doppelten Staatsgründung verlief die Entwicklung in der BRD und der DDR äußerst gegensätzlich.
+                </div>
+
+                <h4 class="subsection-title">Bundesrepublik Deutschland:</h4>
+                <div class="content-text">
+                    <ul>
+                        <li><strong>Wirtschaftswunder:</strong> Wirtschaftlich entwickelte sich die BRD nach und nach zu einem modernen Industriestaat, der immer größere Teile der Bevölkerung zu einem gewissen Wohlstand brachte</li>
+                        <li><strong>Westintegration:</strong> NATO-Beitritt (1955), EWG-Gründungsmitglied (1957)</li>
+                        <li><strong>Adenauer-Ära:</strong> "Politik der Stärke", Hallstein-Doktrin</li>
+                        <li><strong>Demokratische Strukturen:</strong> Der 1. Deutsche Bundestag kam durch eine demokratische Wahl gemäß der Wahlgrundsätze zustande</li>
+                        <li><strong>68er-Bewegung:</strong> Gesellschaftlicher Wandel und Generationenkonflikt</li>
+                    </ul>
+                </div>
+
+                <h4 class="subsection-title">Deutsche Demokratische Republik:</h4>
+                <div class="content-text">
+                    <ul>
+                        <li><strong>Sozialistischer Staat:</strong> Die DDR war ein sozialistischer Staat, wo der Lebensstandard für die Bevölkerung niedriger war</li>
+                        <li><strong>Diktatorische Strukturen:</strong> Die Bevölkerung der DDR sollte bei der Wahl zur 1. Volkskammer eine Einheitsliste der „Nationalen Front" bestätigen</li>
+                        <li><strong>17. Juni 1953:</strong> Volksaufstand in Ostberlin und der DDR</li>
+                        <li><strong>Ostintegration:</strong> Warschauer Pakt (1955), RGW</li>
+                        <li><strong>Staatssicherheit:</strong> Gründung des Ministeriums für Staatssicherheit (Stasi) 1950, das inländische Gegner und Andersdenkende systematisch unterdrückte und die antidemokratischen Elemente verstärkte</li>
+                        <li><strong>Fluchtbewegung:</strong> Bis 1961 ca. 2,7 Millionen Übersiedler in den Westen</li>
+                    </ul>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Blockbildung durch Integration:</strong><br>
+                    <strong>BRD - Westintegration:</strong> Europarat (1950), EGKS-Gründungsstaat (1952), Deutschlandvertrag (1952), WEU (1954), NATO-Beitritt (1955), Wiederbewaffnung mit Bundeswehr<br>
+                    <strong>DDR - Ostintegration:</strong> RGW-Mitglied (1950), Warschauer Pakt-Gründungsmitglied (1955)
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Alleinvertretungsanspruch:</strong><br>
+                    Beide deutsche Staaten vertraten anfangs einen Alleinvertretungsanspruch und weigerten sich, den jeweils anderen Staat anzuerkennen. Während die DDR diesen Anspruch schnell aufgab, hielt die BRD, vor allem untermauert durch die Hallstein-Doktrin, daran fest. Vonseiten der UdSSR gab es durch die Stalin-Note (1952) sogar den Versuch, Deutschland zu Bedingungen der Sowjetunion wieder zu vereinen. Doch im Laufe der 1950er-Jahre rückte eine Wiedervereinigung in immer weitere Ferne und die Deutsche Frage blieb unbeantwortet.
+                </div>
+
+                <h3 class="section-title">10.7 Leben in Ost und West</h3>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>Aspekt</th>
+                        <th>BRD</th>
+                        <th>DDR</th>
+                    </tr>
+                    <tr>
+                        <td>Lebensstandard</td>
+                        <td>Steigender Wohlstand, Konsumgesellschaft</td>
+                        <td>Grundversorgung, aber Mangel an Konsumgütern</td>
+                    </tr>
+                    <tr>
+                        <td>Bildung</td>
+                        <td>Föderales System, Bildungsautonomie der Länder</td>
+                        <td>Einheitliches System, polytechnische Bildung</td>
+                    </tr>
+                    <tr>
+                        <td>Medien</td>
+                        <td>Pressefreiheit, plurale Medienlandschaft</td>
+                        <td>Staatliche Kontrolle, Zensur</td>
+                    </tr>
+                    <tr>
+                        <td>Reisefreiheit</td>
+                        <td>Freizügigkeit</td>
+                        <td>Eingeschränkt, besonders in den Westen</td>
+                    </tr>
+                </table>
+
+                <h3 class="section-title">10.8 Aufstände in den Ostblockstaaten</h3>
+                
+                <div class="content-text">
+                    Die DDR gehörte wie die meisten anderen Staaten Osteuropas zu den Satellitenstaaten der Sowjetunion. In all diesen Staaten breitete sich nach dem Tod von Stalin 1953 die Hoffnung aus, dass sein Nachfolger als russischer Staatschef mehr Freiheiten zugestehen würde und sich so die politischen und wirtschaftlichen Verhältnisse bessern könnten. Als sich jedoch abzeichnete, dass sich auch unter den neuen russischen Regierungschefs nur wenig ändern würde, kam es in vielen Ostblockstaaten zu Volksaufständen.
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">17. Juni 1953</div>
+                        <strong>DDR:</strong> Volksaufstand gegen Normerhöhungen - dieses Datum blieb bis zur Wiedervereinigung sogar offizieller Nationalfeiertag in der BRD
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1956</div>
+                        <strong>Ungarn:</strong> Volksaufstand gegen sowjetische Herrschaft - besonders viele Todesopfer
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1968</div>
+                        <strong>Prager Frühling:</strong> Politische und wirtschaftliche Reformen in der Tschechoslowakei, durch Demonstrationen der Bevölkerung bekräftigt
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1980/81</div>
+                        <strong>Polen:</strong> Solidarność-Bewegung unter Lech Wałęsa
+                    </div>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Gemeinsame Merkmale der Aufstände:</strong>
+                    Alle Aufstände hatten gemeinsam, dass sie weitgehend friedlich geführt, aber gewaltsam durch das sowjetische Militär niedergeschlagen wurden.
+                </div>
+
+                <h3 class="section-title">10.9 Der Mauerbau – Zementierung der Teilung</h3>
+                
+                <div class="content-text">
+                    In der DDR hatte die Unzufriedenheit der Bevölkerung zur Folge, dass immer mehr Bürgerinnen und Bürger das Land verließen, sehr viele davon von Ost- nach Westberlin. Die Fluchtursachen lagen meist in den politischen und wirtschaftlichen Verhältnissen begründet.
+                </div>
+
+                <div class="key-points">
+                    <h4>Fluchtursachen:</h4>
+                    <ul>
+                        <li><strong>Bessere Lebensverhältnisse:</strong> Wunsch nach höherem Lebensstandard im Westen</li>
+                        <li><strong>Kollektivierung:</strong> Viele große landwirtschaftliche Betriebe waren kollektiviert worden, Landwirte mussten ihren Besitz an den Staat abtreten</li>
+                        <li><strong>Politischer Druck:</strong> Zwang zur politischen Organisation und systematischer Druck auf Andersdenkende</li>
+                        <li><strong>Passgesetz:</strong> Nicht wenige blieben in der BRD, weil sie durch einen Grenzübertritt gegen das Passgesetz verstießen</li>
+                        <li><strong>Wirtschaftliche Schwächung:</strong> Die zunehmende Abwanderung schwächte die Wirtschaft der DDR</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>13. August 1961 - Mauerbau:</strong><br>
+                    Das DDR-Regime errichtete Grenzanlagen mit Sperrzonen und Selbstschussanlagen, um sich gegen den Westen abzuschotten. Der Versuch, die Grenze unerlaubt zu überwinden, war strafbar.<br>
+                    <strong>Folgen:</strong> Endgültige Teilung Deutschlands, internationale Spannungen, Familien wurden getrennt
+                </div>
+
+                <h3 class="section-title">10.10 Internationale Ordnungssysteme zur Zeit des Kalten Krieges</h3>
+                
+                <div class="content-text">
+                    Die UNO bemühte sich schon sehr früh darum, die harten Frontlinien zwischen den Westalliierten und der Sowjetunion inklusive der jeweiligen Verbündeten aufzuweichen und einen Dialog herzustellen, was aber nicht immer gelang. Schließlich wird in der Charta der Vereinten Nationen bis heute der Weltfrieden als erstes Ziel genannt.
+                </div>
+
+                <div class="important-concept">
+                    <strong>Probleme der UNO im Kalten Krieg:</strong><br>
+                    Im UN-Sicherheitsrat wurden die Chancen und Grenzen dieser Organisation besonders deutlich, da die USA und die UdSSR durch die Wahrnehmung ihres Veto-Rechts viele Entscheidungen blockierten. Die begrenzte Macht der UNO wurde besonders während des Koreakrieges (1950-1953) deutlich.
+                </div>
+
+                <div class="key-points">
+                    <h4>Blockbildung durch Bündnissysteme:</h4>
+                    <ul>
+                        <li><strong>NATO:</strong> USA und Verbündete in Europa sowie Kanada</li>
+                        <li><strong>Warschauer Pakt:</strong> UdSSR und Satellitenstaaten in Osteuropa</li>
+                        <li><strong>Blockfreie Staaten:</strong> Jugoslawien, Zypern und andere schafften es, neutral zu bleiben</li>
+                    </ul>
+                </div>
+
+                <div class="content-text">
+                    Die weltweiten Kräfteverhältnisse wurden durch die Verteidigungsbündnisse NATO und Warschauer Pakt geprägt. Die Verteidigungsbündnisse trugen dadurch sehr zur Blockbildung bei.
+                </div>
+
+                <h3 class="section-title">10.11 Der Beginn der Europäischen Einigung</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1951</div>
+                        <strong>Montanunion (EGKS):</strong> Europäische Gemeinschaft für Kohle und Stahl
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1957</div>
+                        <strong>Römische Verträge:</strong> Gründung von EWG und EURATOM
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1963</div>
+                        <strong>Élysée-Vertrag:</strong> Deutsch-französische Freundschaft
+                    </div>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Ziele der europäischen Integration:</strong>
+                    <ul>
+                        <li>Friedenssicherung durch wirtschaftliche Verflechtung</li>
+                        <li>Stärkung gegenüber den Supermächten</li>
+                        <li>Wohlstandssteigerung durch gemeinsamen Markt</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">10.12 Blockkonfrontation</h3>
+                
+                <div class="content-text">
+                    Wichtige Krisen des Kalten Krieges:
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1948/49</div>
+                        <strong>Berlin-Blockade:</strong> Sowjetische Blockade West-Berlins, Luftbrücke der Alliierten
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1950-1953</div>
+                        <strong>Korea-Krieg:</strong> Stellvertreterkrieg zwischen Ost und West
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1962</div>
+                        <strong>Kuba-Krise:</strong> Höhepunkt der Blockkonfrontation, Gefahr eines Atomkriegs
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1964-1975</div>
+                        <strong>Vietnam-Krieg:</strong> USA vs. kommunistisches Nordvietnam
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kapitel 11: Wege aus der Blockkonfrontation -->
+            <div class="chapter-section">
+                <h2 class="chapter-title">11. Wege aus der Blockkonfrontation</h2>
+                
+                <div class="highlight-box">
+                    <strong>Überblick:</strong> Ab den 1960er Jahren entwickelten sich verschiedene Ansätze zur Entspannung zwischen Ost und West, die schließlich zum Ende des Kalten Krieges führten.
+                </div>
+
+                <h3 class="section-title">11.1 Atomare Abrüstung – schmilzt das Eis?</h3>
+                
+                <div class="content-text">
+                    Die Erkenntnis der gegenseitigen nuklearen Vernichtungsfähigkeit führte zu ersten Abrüstungsverhandlungen:
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1963</div>
+                        <strong>Atomteststopp-Abkommen:</strong> Verbot oberirdischer Kernwaffentests
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1968</div>
+                        <strong>Atomwaffensperrvertrag:</strong> Verhinderung der Weiterverbreitung von Kernwaffen
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1972</div>
+                        <strong>SALT I:</strong> Begrenzung strategischer Rüstung zwischen USA und UdSSR
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1987</div>
+                        <strong>INF-Vertrag:</strong> Verbot landgestützter Mittelstreckenraketen
+                    </div>
+                </div>
+
+                <h3 class="section-title">11.2 Neue Ostpolitik – neue Verständigung?</h3>
+                
+                <div class="important-concept">
+                    <strong>Willy Brandts Ostpolitik (ab 1969):</strong>
+                    <ul>
+                        <li><strong>Grundsatz:</strong> "Wandel durch Annäherung"</li>
+                        <li><strong>Ziel:</strong> Verbesserung der Beziehungen zu Osteuropa</li>
+                        <li><strong>Methode:</strong> Anerkennung der Realitäten, kleine Schritte</li>
+                    </ul>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1970</div>
+                        <strong>Moskauer Vertrag:</strong> Gewaltverzicht zwischen BRD und UdSSR
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1970</div>
+                        <strong>Warschauer Vertrag:</strong> Anerkennung der Oder-Neiße-Linie
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1971</div>
+                        <strong>Viermächte-Abkommen:</strong> Regelung des Berlin-Status
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1972</div>
+                        <strong>Grundlagenvertrag:</strong> Normalisierung der deutsch-deutschen Beziehungen
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1973</div>
+                        <strong>Prager Vertrag:</strong> Aussöhnung mit der Tschechoslowakei
+                    </div>
+                </div>
+
+                <h3 class="section-title">11.3 Neue Konfrontation der Supermächte</h3>
+                
+                <div class="content-text">
+                    Ende der 1970er Jahre: Rückkehr zu verschärften Spannungen:
+                </div>
+
+                <div class="key-points">
+                    <ul>
+                        <li><strong>NATO-Doppelbeschluss (1979):</strong> Stationierung von Pershing II-Raketen</li>
+                        <li><strong>Sowjetische Invasion in Afghanistan (1979):</strong> Internationale Isolierung der UdSSR</li>
+                        <li><strong>Solidarność-Bewegung in Polen:</strong> Herausforderung des kommunistischen Systems</li>
+                        <li><strong>Reagan-Doktrin:</strong> Aggressive Anti-Kommunismus-Politik der USA</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">11.4 "Wind of Change" – ein Imperium löst sich auf</h3>
+                
+                <div class="highlight-box">
+                    <strong>Michail Gorbatschow (ab 1985):</strong><br>
+                    <strong>Glasnost:</strong> Offenheit, Transparenz<br>
+                    <strong>Perestroika:</strong> Umgestaltung, Reformen<br>
+                    <strong>Folgen:</strong> Demokratisierung und schließlich Zusammenbruch der UdSSR
+                </div>
+
+                <h3 class="section-title">11.5 Vom Zerfall der DDR bis zur Wiedervereinigung</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Frühjahr 1989</div>
+                        <strong>Öffnung des "Eisernen Vorhangs":</strong> Ungarn öffnet Grenze zu Österreich
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sommer 1989</div>
+                        <strong>Massenflucht:</strong> DDR-Bürger fliehen über Ungarn und Botschaften
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Oktober 1989</div>
+                        <strong>Montagsdemonstrationen:</strong> Friedliche Proteste in Leipzig und anderen Städten
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">9. November 1989</div>
+                        <strong>Mauerfall:</strong> Öffnung der innerdeutschen Grenze
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">3. Oktober 1990</div>
+                        <strong>Deutsche Einheit:</strong> Beitritt der DDR zur Bundesrepublik
+                    </div>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Internationale Aspekte der Wiedervereinigung:</strong>
+                    <ul>
+                        <li><strong>2+4-Verträge:</strong> Regelung der außenpolitischen Aspekte</li>
+                        <li><strong>NATO-Mitgliedschaft:</strong> Gesamtdeutschland bleibt in der NATO</li>
+                        <li><strong>Abzug sowjetischer Truppen:</strong> Bis 1994 aus Ostdeutschland</li>
+                        <li><strong>Finanzielle Leistungen:</strong> Deutsche Hilfen für die UdSSR</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">11.6 Osteuropa in der Transformation</h3>
+                
+                <div class="content-text">
+                    Der Zusammenbruch des kommunistischen Systems führte zu grundlegenden Veränderungen in ganz Osteuropa:
+                </div>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Land</th>
+                        <th>Wendejahr</th>
+                        <th>Besonderheiten</th>
+                    </tr>
+                    <tr>
+                        <td>Polen</td>
+                        <td>1989</td>
+                        <td>Runder Tisch, friedlicher Übergang, Solidarność</td>
+                    </tr>
+                    <tr>
+                        <td>Ungarn</td>
+                        <td>1989</td>
+                        <td>Grenzöffnung zu Österreich, sanfte Revolution</td>
+                    </tr>
+                    <tr>
+                        <td>Tschechoslowakei</td>
+                        <td>1989</td>
+                        <td>"Samtene Revolution", Václav Havel</td>
+                    </tr>
+                    <tr>
+                        <td>Rumänien</td>
+                        <td>1989</td>
+                        <td>Gewaltsamer Sturz Ceaușescus</td>
+                    </tr>
+                    <tr>
+                        <td>Jugoslawien</td>
+                        <td>1991-2001</td>
+                        <td>Zerfall in Bürgerkriegen</td>
+                    </tr>
+                </table>
+
+                <h3 class="section-title">11.7 Internationale Ordnungssysteme nach dem Ende des Kalten Krieges</h3>
+                
+                <div class="key-points">
+                    <h4>Neue Herausforderungen:</h4>
+                    <ul>
+                        <li>Ende der bipolaren Weltordnung</li>
+                        <li>USA als einzige Supermacht</li>
+                        <li>Neue Konflikte: Nationalismus, Terrorismus</li>
+                        <li>Globalisierung und ihre Folgen</li>
+                    </ul>
+                </div>
+
+                <div class="method-box">
+                    <h4>Methode: Eine Karte analysieren</h4>
+                    <p><strong>Schritte der Kartenanalyse:</strong></p>
+                    <ol>
+                        <li><strong>Formale Analyse:</strong> Titel, Legende, Maßstab, Quelle</li>
+                        <li><strong>Beschreibung:</strong> Was zeigt die Karte? Welche Informationen sind dargestellt?</li>
+                        <li><strong>Inhaltliche Analyse:</strong> Zusammenhänge erkennen, Muster interpretieren</li>
+                        <li><strong>Historischer Kontext:</strong> Karte in zeitlichen Zusammenhang einordnen</li>
+                        <li><strong>Beurteilung:</strong> Aussagekraft und Grenzen der Darstellung bewerten</li>
+                    </ol>
+                </div>
+
+                <h3 class="section-title">11.8 Die EU nach Ende des Kalten Krieges – ein Erfolgsmodell?</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1992</div>
+                        <strong>Vertrag von Maastricht:</strong> Gründung der Europäischen Union
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1995</div>
+                        <strong>Erste Norderweiterung:</strong> Österreich, Finnland, Schweden
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1999</div>
+                        <strong>Euro-Einführung:</strong> Gemeinsame Währung (zunächst Buchgeld)
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2004/2007</div>
+                        <strong>Osterweiterung:</strong> Aufnahme ehemaliger Ostblockstaaten
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2009</div>
+                        <strong>Vertrag von Lissabon:</strong> Reform der EU-Institutionen
+                    </div>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Grundpfeiler der EU nach Maastricht:</strong>
+                    <ul>
+                        <li><strong>1. Säule:</strong> Europäische Gemeinschaften (supranational)</li>
+                        <li><strong>2. Säule:</strong> Gemeinsame Außen- und Sicherheitspolitik (intergouvernemental)</li>
+                        <li><strong>3. Säule:</strong> Zusammenarbeit in Justiz und Inneres (intergouvernemental)</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">11.9 Multipolare Ordnung – wer beherrscht die Welt?</h3>
+                
+                <div class="content-text">
+                    Nach dem Ende der bipolaren Ordnung entwickelte sich eine komplexere Weltordnung:
+                </div>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Akteur</th>
+                        <th>Stärken</th>
+                        <th>Rolle in der Weltordnung</th>
+                    </tr>
+                    <tr>
+                        <td>USA</td>
+                        <td>Militärische Überlegenheit, Technologie, Dollar als Leitwährung</td>
+                        <td>Hegemon, aber relativer Machtverlust</td>
+                    </tr>
+                    <tr>
+                        <td>China</td>
+                        <td>Wirtschaftsmacht, große Bevölkerung, staatliche Lenkung</td>
+                        <td>Aufsteigende Supermacht</td>
+                    </tr>
+                    <tr>
+                        <td>Russland</td>
+                        <td>Rohstoffe, Atomwaffen, regionale Macht</td>
+                        <td>Revisionistische Macht</td>
+                    </tr>
+                    <tr>
+                        <td>EU</td>
+                        <td>Wirtschaftsmacht, soft power, Normsetzung</td>
+                        <td>Zivilmacht mit begrenzter militärischer Rolle</td>
+                    </tr>
+                </table>
+
+                <div class="key-points">
+                    <h4>Neue globale Herausforderungen:</h4>
+                    <ul>
+                        <li><strong>Terrorismus:</strong> 9/11 und seine Folgen</li>
+                        <li><strong>Proliferation:</strong> Verbreitung von Massenvernichtungswaffen</li>
+                        <li><strong>Klimawandel:</strong> Globale Umweltprobleme</li>
+                        <li><strong>Migration:</strong> Flucht- und Wanderungsbewegungen</li>
+                        <li><strong>Cyber-Sicherheit:</strong> Neue Formen der Kriegsführung</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kapitel 12: Globale Bedrohungen und Herausforderungen -->
+            <div class="chapter-section">
+                <h2 class="chapter-title">12. Globale Bedrohungen und Herausforderungen für die internationalen Ordnungssysteme</h2>
+                
+                <div class="highlight-box">
+                    <strong>Überblick:</strong> Das 21. Jahrhundert ist geprägt von neuen, grenzüberschreitenden Herausforderungen, die internationale Kooperation erfordern.
+                </div>
+
+                <h3 class="section-title">12.1 Bedrohungen und Sicherheitspolitik in einer globalisierten Welt</h3>
+                
+                <div class="content-text">
+                    Sicherheit hat sich seit dem Ende des Kalten Krieges grundlegend gewandelt:
+                </div>
+
+                <div class="important-concept">
+                    <strong>Traditionelle vs. Neue Sicherheitsbedrohungen:</strong><br><br>
+                    <strong>Traditionell:</strong> Zwischenstaatliche Kriege, territoriale Konflikte<br>
+                    <strong>Neu:</strong> Terrorismus, Cyber-Angriffe, Klimawandel, Pandemien, organisierte Kriminalität
+                </div>
+
+                <div class="key-points">
+                    <h4>Internationale Sicherheitsorganisationen:</h4>
+                    <ul>
+                        <li><strong>UN-Sicherheitsrat:</strong> Kollektive Sicherheit, aber oft blockiert</li>
+                        <li><strong>NATO:</strong> Anpassung von Territorialverteidigung zu "Out-of-Area"-Einsätzen</li>
+                        <li><strong>OSZE:</strong> Konfliktprävention und Demokratieförderung</li>
+                        <li><strong>G7/G20:</strong> Koordinierung der Wirtschafts- und Sicherheitspolitik</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">12.2 Politikfeld Klimawandel</h3>
+                
+                <div class="content-text">
+                    Der Klimawandel ist zu einer der wichtigsten globalen Herausforderungen des 21. Jahrhunderts geworden:
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1992</div>
+                        <strong>Rio-Konferenz:</strong> UN-Klimarahmenkonvention
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1997</div>
+                        <strong>Kyoto-Protokoll:</strong> Erste verbindliche Emissionsziele
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2015</div>
+                        <strong>Pariser Abkommen:</strong> Begrenzung der Erderwärmung auf 1,5°C
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <strong>European Green Deal:</strong> EU-Klimaneutralität bis 2050
+                    </div>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Herausforderungen der Klimapolitik:</strong>
+                    <ul>
+                        <li><strong>Globales Handlungsproblem:</strong> Alle müssen mitmachen</li>
+                        <li><strong>Generationenkonflikt:</strong> Kosten heute, Nutzen in der Zukunft</li>
+                        <li><strong>Entwicklungsländer:</strong> Recht auf wirtschaftliche Entwicklung</li>
+                        <li><strong>Technologie:</strong> Transformation der Energiesysteme nötig</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">12.3 Fallstudie Nigeria</h3>
+                
+                <div class="content-text">
+                    Nigeria als Beispiel für die Herausforderungen afrikanischer Staaten im 21. Jahrhundert:
+                </div>
+
+                <div class="key-points">
+                    <h4>Herausforderungen Nigerias:</h4>
+                    <ul>
+                        <li><strong>Demographie:</strong> Bevölkerungswachstum von 200 Mio. auf geschätzte 400 Mio. bis 2050</li>
+                        <li><strong>Wirtschaft:</strong> Abhängigkeit vom Öl, hohe Arbeitslosigkeit</li>
+                        <li><strong>Politik:</strong> Korruption, schwache Institutionen</li>
+                        <li><strong>Sicherheit:</strong> Boko Haram im Norden, Piraten im Süden</li>
+                        <li><strong>Umwelt:</strong> Ölverschmutzung im Niger-Delta, Klimawandel</li>
+                        <li><strong>Religion:</strong> Spannungen zwischen Christen und Muslimen</li>
+                    </ul>
+                </div>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Problem</th>
+                        <th>Ursachen</th>
+                        <th>Lösungsansätze</th>
+                    </tr>
+                    <tr>
+                        <td>Terrorismus (Boko Haram)</td>
+                        <td>Armut, fehlende Bildung, religiöse Radikalisierung</td>
+                        <td>Bildungsinvestitionen, Entwicklungshilfe, militärische Bekämpfung</td>
+                    </tr>
+                    <tr>
+                        <td>Umweltzerstörung</td>
+                        <td>Ölförderung, illegale Raffinerien, Klimawandel</td>
+                        <td>Umweltstandards, erneuerbare Energien, internationale Unterstützung</td>
+                    </tr>
+                    <tr>
+                        <td>Wirtschaftliche Probleme</td>
+                        <td>Rohstoffabhängigkeit, Korruption, schwache Infrastruktur</td>
+                        <td>Diversifizierung, Good Governance, Infrastrukturinvestitionen</td>
+                    </tr>
+                </table>
+
+                <h3 class="section-title">12.4 Klimawandel – was kann Kunst?</h3>
+                
+                <div class="content-text">
+                    Kunst als Medium zur Bewusstseinsbildung für den Klimawandel:
+                </div>
+
+                <div class="key-points">
+                    <h4>Funktionen von Klimakunst:</h4>
+                    <ul>
+                        <li><strong>Sensibilisierung:</strong> Emotionale Zugänge zu abstrakten Problemen</li>
+                        <li><strong>Visualisierung:</strong> Unsichtbare Prozesse sichtbar machen</li>
+                        <li><strong>Motivation:</strong> Zum Handeln motivieren</li>
+                        <li><strong>Kritik:</strong> Gesellschaftliche Strukturen hinterfragen</li>
+                    </ul>
+                </div>
+
+                <div class="method-box">
+                    <h4>Methode: Mündliches Präsentieren</h4>
+                    <p><strong>Vorbereitung einer Präsentation:</strong></p>
+                    <ol>
+                        <li><strong>Thema eingrenzen:</strong> Klare Fragestellung entwickeln</li>
+                        <li><strong>Recherche:</strong> Verlässliche Quellen nutzen</li>
+                        <li><strong>Gliederung:</strong> Einleitung - Hauptteil - Schluss</li>
+                        <li><strong>Visualisierung:</strong> Angemessene Hilfsmittel wählen</li>
+                        <li><strong>Üben:</strong> Freies Sprechen, Zeitmanagement</li>
+                        <li><strong>Nachbereitung:</strong> Feedback einholen und reflektieren</li>
+                    </ol>
+                </div>
+
+                <div class="key-points">
+                    <h4>Zentrale Erkenntnisse:</h4>
+                    <ul>
+                        <li>Globale Probleme erfordern internationale Kooperation</li>
+                        <li>Neue Akteure (NGOs, Unternehmen) gewinnen an Bedeutung</li>
+                        <li>Technologie bietet Chancen und Risiken</li>
+                        <li>Demokratische Legitimation bei globaler Governance schwierig</li>
+                        <li>Präventive Diplomatie wichtiger als reaktive Krisenbewältigung</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Zusammenfassung -->
+            <div class="chapter-section">
+                <h2 class="chapter-title">Zusammenfassung: Deutschland, Europa und die Welt nach 1945</h2>
+                
+                <div class="highlight-box">
+                    <h4>Wichtigste Entwicklungslinien:</h4>
+                    <ul>
+                        <li><strong>1945-1989:</strong> Bipolare Weltordnung, deutsche Teilung, europäische Integration</li>
+                        <li><strong>1989-2001:</strong> Ende des Kalten Krieges, deutsche Einheit, US-Hegemonie</li>
+                        <li><strong>Ab 2001:</strong> Multipolare Welt, neue Bedrohungen, globale Herausforderungen</li>
+                    </ul>
+                </div>
+
+                <div class="important-concept">
+                    <strong>Kontinuitäten und Brüche:</strong><br>
+                    <strong>Kontinuitäten:</strong> Streben nach Sicherheit, wirtschaftlicher Prosperität, demokratischen Werten<br>
+                    <strong>Brüche:</strong> Ende der Blockkonfrontation, Globalisierung, neue Technologien, Klimawandel
+                </div>
+
+                <div class="key-points">
+                    <h4>Abiturrelevante Schwerpunkte:</h4>
+                    <ul>
+                        <li>Ursachen und Verlauf des Kalten Krieges</li>
+                        <li>Deutsche Teilung und Wiedervereinigung</li>
+                        <li>Europäische Integration von Montanunion bis EU</li>
+                        <li>Transformation Osteuropas nach 1989</li>
+                        <li>Neue Weltordnung nach dem Kalten Krieg</li>
+                        <li>Globale Herausforderungen des 21. Jahrhunderts</li>
+                    </ul>
+                </div>
+
+                <div class="timeline">
+                    <h4>Zentrale Daten im Überblick:</h4>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1945</div>
+                        Potsdamer Konferenz, Beginn der Nachkriegsordnung
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1949</div>
+                        Gründung von BRD und DDR, NATO
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1961</div>
+                        Mauerbau in Berlin
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1989</div>
+                        Fall der Berliner Mauer
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1990</div>
+                        Deutsche Wiedervereinigung
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1992</div>
+                        Vertrag von Maastricht, Gründung der EU
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2001</div>
+                        11. September, Beginn des "Kriegs gegen den Terror"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Zurück zur Übersicht</a>
+    </div>
+</body>
+</html>

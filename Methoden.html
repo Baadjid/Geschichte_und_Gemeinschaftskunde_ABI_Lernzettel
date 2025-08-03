@@ -1,0 +1,673 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methoden - Geschichte Abitur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .nav-back {
+            display: inline-block;
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .method-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border-left-color: #e74c3c;
+        }
+
+        .method-title {
+            color: #2c3e50;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .method-description {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .steps-title {
+            color: #2c3e50;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .steps-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .steps-list li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .steps-list li:before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #3498db;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .steps-list {
+            counter-reset: step-counter;
+        }
+
+        .key-aspects {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .key-aspects h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .key-aspects ul {
+            list-style: none;
+        }
+
+        .key-aspects li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .key-aspects li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .example-box h4 {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .example-box p {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Zurück zum Inhaltsverzeichnis</a>
+        
+        <header>
+            <h1>Methoden</h1>
+            <p class="subtitle">Analysemethoden für das Geschichte-Abitur</p>
+        </header>
+
+        <div class="methods-grid">
+            <!-- Textquellen und Darstellungen analysieren -->
+            <div class="method-card">
+                <h2 class="method-title">Textquellen und Darstellungen analysieren</h2>
+                <p class="method-description">
+                    Die Analyse von Textquellen ist eine Grundfertigkeit im Geschichtsunterricht. Dabei werden historische Dokumente, Reden, Briefe oder wissenschaftliche Darstellungen systematisch untersucht.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Analysieren Sie die Rede von Greta Thunberg</strong></li>
+                    <li><strong>Analysieren Sie nach diesem Beispiel die Rede von Uwe Schneidewind (M3, S. 15)</strong></li>
+                </ol>
+                
+                <h3 class="steps-title">5-Schritt-Lesemethode:</h3>
+                <ol class="steps-list">
+                    <li><strong>Text überfliegen:</strong> Ersten Überblick gewinnen</li>
+                    <li><strong>Fragen stellen:</strong> W-Fragen formulieren (Wer? Was? Wann? Wo? Warum?)</li>
+                    <li><strong>Text gründlich lesen:</strong> Unbekannte Wörter nachschlagen, Kernaussagen markieren</li>
+                    <li><strong>Wichtigste aufschreiben:</strong> Notizen zu den wichtigsten Punkten</li>
+                    <li><strong>Text mithilfe der Notizen wiedergeben:</strong> Zusammenfassung erstellen</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Analyse-Kategorien:</h4>
+                    <ul>
+                        <li><strong>Formale Analyse:</strong> Textart, Verfasser, Entstehungszeit, Adressat</li>
+                        <li><strong>Inhaltliche Analyse:</strong> Kernaussagen, Argumente, rhetorische Mittel</li>
+                        <li><strong>Historischer Kontext:</strong> Zeitgeschichtliche Einordnung</li>
+                        <li><strong>Beurteilung:</strong> Quellenwert und Aussagekraft bewerten</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: Greta Thunberg Rede (2018)</h4>
+                    <p>Analyse der UN-Klimakonferenz-Rede: "Wie könnt ihr es wagen..." - Rhetorik, Emotionen und politische Wirkung untersuchen.</p>
+                </div>
+            </div>
+
+            <!-- Schaubilder analysieren -->
+            <div class="method-card">
+                <h2 class="method-title">Schaubilder analysieren</h2>
+                <p class="method-description">
+                    Statistische Daten werden oft als Diagramme dargestellt. Eine systematische Analyse hilft, die Aussagen und mögliche Manipulationen zu erkennen.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Schaubildanalyse in Partnerarbeit.</strong> Decken Sie die rechte Spalte der Tabelle ab und formulieren Sie mündlich einen Basissatz für M1.</li>
+                    <li><strong>Analysieren Sie nach diesem Beispiel</strong> die Schaubilder M1 oder M2 in Kapitel 2.4 (S. 36/37)</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematische Analyse:</h3>
+                <ol class="steps-list">
+                    <li><strong>Formale Analyse:</strong> Diagrammtyp, Titel, Achsen, Zeitraum, Quelle bestimmen</li>
+                    <li><strong>Beschreibung:</strong> Datenauswertung, auffällige Entwicklungen benennen</li>
+                    <li><strong>Inhaltliche Analyse:</strong> Trends erkennen, Höhe- und Tiefpunkte analysieren</li>
+                    <li><strong>Historischer Kontext:</strong> Ereignisse und Entwicklungen zuordnen</li>
+                    <li><strong>Beurteilung:</strong> Aussagekraft und mögliche Verzerrungen bewerten</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Häufige Diagrammtypen:</h4>
+                    <ul>
+                        <li><strong>Balken-/Säulendiagramm:</strong> Vergleich von Größenverhältnissen</li>
+                        <li><strong>Kreisdiagramm:</strong> Anteil am Ganzen darstellen</li>
+                        <li><strong>Kurvendiagramm:</strong> Entwicklung über Zeit zeigen</li>
+                        <li><strong>Kombinierte Diagramme:</strong> Mehrere Aspekte gleichzeitig</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: Asyl in Deutschland (1990-2017)</h4>
+                    <p>Analyse der Asylanträge: Deutliche Spitzen 1992 (Jugoslawienkrieg) und 2015/16 (Flüchtlingskrise) - historische Ereignisse erklären Datenverläufe.</p>
+                </div>
+            </div>
+
+            <!-- Lieder analysieren -->
+            <div class="method-card">
+                <h2 class="method-title">Lieder analysieren</h2>
+                <p class="method-description">
+                    Lieder sind wichtige historische Quellen, die Stimmungen, politische Einstellungen und gesellschaftliche Verhältnisse ihrer Zeit widerspiegeln.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Liedanalyse mit M1</strong> anhand der angegebenen Lösungshinweise. Interpretieren Sie, welche Kritik am Paulskirchenparlament geübt wird.</li>
+                    <li><strong>Analysieren Sie "Die Deutschen" (M3, S. 75)</strong> mithilfe der Arbeitsschritte.</li>
+                    <li><strong>Vergleichen Sie beide Lieder</strong> hinsichtlich der Motivation, die die Verfasser vermutlich hatten.</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematische Liedanalyse:</h3>
+                <ol class="steps-list">
+                    <li><strong>Formale Analyse:</strong> Verfasser, Entstehungszeit, Gattung, Publikationsort</li>
+                    <li><strong>Textanalyse:</strong> Strophenaufbau, Reimschema, sprachliche Mittel untersuchen</li>
+                    <li><strong>Inhaltliche Analyse:</strong> Aussage, Botschaft, Zielgruppe ermitteln</li>
+                    <li><strong>Melodie:</strong> Eingängigkeit, Wirkung der musikalischen Gestaltung</li>
+                    <li><strong>Historischer Kontext:</strong> Zeitbezug und gesellschaftliche Funktion</li>
+                    <li><strong>Beurteilung:</strong> Wirkung und Rezeption in der damaligen Zeit</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Besondere Merkmale politischer Lieder:</h4>
+                    <ul>
+                        <li>Eingängige Melodien für leichte Verbreitung</li>
+                        <li>Klare politische Botschaften</li>
+                        <li>Emotionale Ansprache der Zuhörer</li>
+                        <li>Verwendung von Metaphern und Symbolen</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: "Das Reden nimmt kein End" (Georg Herwegh, 1848)</h4>
+                    <p>Herwegh kritisiert die Tatenlosigkeit der Frankfurter Nationalversammlung: "Zu Frankfurt an dem Main / Da liegt der Weisen Stein" - ironische Kritik an endlosen Debatten ohne Taten.</p>
+                </div>
+            </div>
+
+            <!-- Gemälde analysieren -->
+            <div class="method-card">
+                <h2 class="method-title">Gemälde analysieren</h2>
+                <p class="method-description">
+                    Historische Gemälde sind visuelle Quellen, die oft politische Botschaften transportieren oder Ereignisse idealisiert darstellen.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Analyse eines Bildes</strong> anhand der angegebenen Lösungshinweise zu M1.</li>
+                    <li><strong>Auf dem Gemälde (M1) sind keine Parlamentarier, keine Zivilisten zu sehen.</strong> Beurteilen Sie das Gemälde unter diesem Aspekt.</li>
+                    <li><strong>Analysieren Sie mithilfe der Arbeitsschritte</strong> ein weiteres Bild Ihrer Wahl.</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematische Bildanalyse:</h3>
+                <ol class="steps-list">
+                    <li><strong>Formale Analyse:</strong> Künstler, Entstehungszeit, Auftraggeber, Bildgattung</li>
+                    <li><strong>Beschreibung:</strong> Bildaufbau, Personen, Gegenstände, Komposition detailliert erfassen</li>
+                    <li><strong>Inhaltliche Analyse:</strong> Symbolik interpretieren, Botschaft herausarbeiten</li>
+                    <li><strong>Historischer Kontext:</strong> Zeitgeschichtliche Einordnung und Entstehungsumstände</li>
+                    <li><strong>Beurteilung:</strong> Realitätstreue, Quellenwert und Aussagekraft bewerten</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Wichtige Analyse-Kategorien:</h4>
+                    <ul>
+                        <li><strong>Komposition:</strong> Bildaufbau, Perspektive, Zentrum-Peripherie</li>
+                        <li><strong>Farbgebung:</strong> Symbolische Bedeutung von Farben</li>
+                        <li><strong>Personen:</strong> Darstellung, Gestik, Mimik, Kleidung</li>
+                        <li><strong>Symbole:</strong> Allegorische Elemente und ihre Bedeutung</li>
+                        <li><strong>Licht:</strong> Lichtführung und dramatische Effekte</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: Kaiserproklamation in Versailles (Anton von Werner, 1885)</h4>
+                    <p>Das Gemälde zeigt Bismarck im Zentrum statt Kaiser Wilhelm I. - politische Aussage über die wahren Machtverhältnisse im neuen Deutschen Reich.</p>
+                </div>
+            </div>
+
+            <!-- Internetrecherche -->
+            <div class="method-card">
+                <h2 class="method-title">Internetrecherche</h2>
+                <p class="method-description">
+                    Gezielte Internetrecherche ermöglicht schnellen Zugang zu aktuellen Informationen und wissenschaftlichen Quellen, erfordert aber kritische Bewertung.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Das Beispiel M1 zeigt die Ergebnisse einer Internetrecherche.</strong> Wie sind die Recherchierenden zu ihrem Ergebnis gelangt? Überlegen Sie, a) nach welchen Stichworten gesucht wurde, b) welche Webseiten sich für die Suche nach historischen Fotografien besonders eignen und c) woher die Informationen aus dem Text stammen könnten.</li>
+                    <li><strong>Führen Sie nach dem Thema "Wohnen in Baden-Württemberg zur Zeit der Industrialisierung und heute" durch.</strong> Wählen Sie eine Stadt oder Region in Baden-Württemberg aus. Nutzen Sie bei Ihrer Recherche die unten stehenden Hinweise für die Internetrecherche M1.</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematische Recherche-Strategie:</h3>
+                <ol class="steps-list">
+                    <li><strong>Suchbegriffe definieren:</strong> Präzise Schlüsselwörter und Synonyme sammeln</li>
+                    <li><strong>Suchmaschinen gezielt nutzen:</strong> Verschiedene Portale und Operatoren verwenden</li>
+                    <li><strong>Quellen kritisch bewerten:</strong> Seriosität, Aktualität und Objektivität prüfen</li>
+                    <li><strong>Informationen systematisch sammeln:</strong> Strukturiert dokumentieren und vergleichen</li>
+                    <li><strong>Quellenangaben erstellen:</strong> Vollständige und korrekte Nachweise führen</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Empfohlene Recherche-Portale:</h4>
+                    <ul>
+                        <li><strong>Wissenschaftliche Quellen:</strong> Archive, Universitätsbibliotheken, Forschungsinstitute</li>
+                        <li><strong>Bildungsportale:</strong> Bundeszentrale für politische Bildung (bpb.de), Landeszentralen</li>
+                        <li><strong>Historische Archive:</strong> Stadtarchive, Landesarchive, Bundesarchiv</li>
+                        <li><strong>Nachrichtenportale:</strong> Renommierte Zeitungen und Magazine</li>
+                        <li><strong>Offizielle Websites:</strong> Regierungs- und EU-Portale</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: Stuttgart Hauptbahnhof - Gestern und Heute</h4>
+                    <p>Recherche zur Stadtentwicklung: Historische Fotografien von 1913 vs. moderne Aufnahmen 2016 - Wandel der Architektur und Infrastruktur dokumentieren.</p>
+                </div>
+            </div>
+
+            <!-- Karikaturen analysieren -->
+            <div class="method-card">
+                <h2 class="method-title">Karikaturen analysieren</h2>
+                <p class="method-description">
+                    Karikaturen sind politische Kommentare in Bildform, die durch Übertreibung und Symbolik gesellschaftliche Kritik üben und komplexe Sachverhalte vereinfacht darstellen.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Karikaturanalyse in Partnerarbeit.</strong> Decken Sie die rechte Spalte der Tabelle ab und formulieren Sie mündlich einen Basissatz für M1. Ihr Sitznachbar kontrolliert mithilfe der Lösung in der rechten Spalte.</li>
+                    <li><strong>Analysieren Sie M2 schriftlich</strong> mithilfe der Arbeitsschritte (linke Spalte der Tabelle).</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematische Karikaturanalyse:</h3>
+                <ol class="steps-list">
+                    <li><strong>Formale Analyse:</strong> Karikaturist, Entstehungszeit, Veröffentlichungsort und -medium</li>
+                    <li><strong>Beschreibung:</strong> Personen, Gegenstände, Handlungen objektiv erfassen</li>
+                    <li><strong>Deutung:</strong> Übertreibungen, Symbole und versteckte Botschaften interpretieren</li>
+                    <li><strong>Historischer Kontext:</strong> Zeitbezug, aktuelle Ereignisse und Anlass klären</li>
+                    <li><strong>Beurteilung:</strong> Wirkung, Aussagekraft und gesellschaftliche Relevanz bewerten</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Typische Stilmittel in Karikaturen:</h4>
+                    <ul>
+                        <li><strong>Übertreibung:</strong> Vergrößerung charakteristischer Merkmale</li>
+                        <li><strong>Personifizierung:</strong> Abstrakta als Personen dargestellt</li>
+                        <li><strong>Symbole:</strong> Bekannte Zeichen und Metaphern</li>
+                        <li><strong>Ironie und Satire:</strong> Kritik durch Spott und Verfremdung</li>
+                        <li><strong>Typisierung:</strong> Stereotype und Klischees</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiele aus dem Projektwissen:</h4>
+                    <p><strong>M1:</strong> Greta Thunberg Karikatur (2019) - Darstellung der Klimaaktivistin mit verschiedenen Parteifarben, Kritik an politischer Vereinnahmung.<br>
+                    <strong>M2:</strong> Wahlkampf-Karikatur - "Soziale Gerechtigkeit" vs. einfache Lösungen, Populismus-Kritik durch übertriebene Darstellung.</p>
+                </div>
+            </div>
+
+            <!-- Fallanalyse -->
+            <div class="method-card">
+                <h2 class="method-title">Fallanalyse</h2>
+                <p class="method-description">
+                    Mit einer Fallanalyse werden aktuelle politische Ereignisse systematisch untersucht, um Entscheidungsprozesse und deren Zusammenspiel von staatlichen und nicht-staatlichen Akteuren zu verstehen.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Fallanalyse eines politischen Falls</strong> mit dem Modell des Politik-Zyklus. Erklären Sie dabei auch den Zusammenhang von M1 und M2 mit dem Fallbeispiel.</li>
+                    <li><strong>Analysieren Sie nach diesem Beispiel</strong> einen weiteren Fall zur EU-Gesetzgebung.</li>
+                </ol>
+                
+                <h3 class="steps-title">Politik-Zyklus (5 Phasen):</h3>
+                <ol class="steps-list">
+                    <li><strong>Phase 1 - Problem:</strong> Welches gesellschaftliche Problem liegt vor? Wer definiert es als Problem?</li>
+                    <li><strong>Phase 2 - Auseinandersetzung:</strong> Welche Akteure diskutieren welche Lösungsansätze? Welche Interessen werden verfolgt?</li>
+                    <li><strong>Phase 3 - Entscheidung:</strong> Zu welchen Ergebnissen führt die Auseinandersetzung? Welche Akteure können sich durchsetzen?</li>
+                    <li><strong>Phase 4 - Umsetzung:</strong> Wie wird die Entscheidung implementiert? Welche Probleme entstehen?</li>
+                    <li><strong>Phase 5 - Bewertung:</strong> Ist das Problem gelöst? Welche Reaktionen gibt es? Entstehen neue Probleme?</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Wichtige Analysekategorien:</h4>
+                    <ul>
+                        <li><strong>Akteure:</strong> Regierung, Parlament, Interessengruppen, Medien, EU-Institutionen</li>
+                        <li><strong>Interessen:</strong> Ökonomische, ökologische, soziale Ziele</li>
+                        <li><strong>Instrumente:</strong> Gesetze, Verordnungen, finanzielle Anreize</li>
+                        <li><strong>Ebenen:</strong> Lokal, national, europäisch, international</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: Reform des Urheberrechts (2018-2019)</h4>
+                    <p><strong>Problem:</strong> Konflikt zwischen Urheberrecht und Meinungsfreiheit im Internet<br>
+                    <strong>Akteure:</strong> EU-Parlament, Axel Voss (CDU), Uploadfilter-Kritiker, Internetnutzer<br>
+                    <strong>Entscheidung:</strong> Annahme der Reform trotz Protesten (Artikel 13/17)</p>
+                </div>
+            </div>
+
+            <!-- Darstellungen analysieren – historisch-politisches Urteilen -->
+            <div class="method-card">
+                <h2 class="method-title">Historisch-politisches Urteilen</h2>
+                <p class="method-description">
+                    Beim historisch-politischen Urteilen werden Ereignisse sowohl aus der Sicht der Zeitgenossen als auch aus heutiger Perspektive bewertet, um zu fundierten Bewertungen zu gelangen.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Analyse anhand der angegebenen Lösungshinweise zu M1.</strong></li>
+                    <li><strong>Analysieren Sie das Urteil von Ursula Büttner (M4, S. 189)</strong> mithilfe der Arbeitsschritte.</li>
+                    <li><strong>Verfassen Sie die Positionen der beiden Urteile</strong> und verfassen Sie ein abschließendes eigenes Sachurteil.</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematisches Urteilen:</h3>
+                <ol class="steps-list">
+                    <li><strong>Sachurteil formulieren:</strong> Objektive Darstellung der historischen Faktenlage</li>
+                    <li><strong>Zeitgenössische Perspektive:</strong> Bewertung aus Sicht der damals Handelnden</li>
+                    <li><strong>Heutige Perspektive:</strong> Beurteilung mit heutigem Wissen und Wertmaßstäben</li>
+                    <li><strong>Multiperspektivität:</strong> Verschiedene Standpunkte und Interessenlagen berücksichtigen</li>
+                    <li><strong>Begründetes Werturteil:</strong> Eigene Position auf Basis der Analyse entwickeln</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Kriterien für historische Urteile:</h4>
+                    <ul>
+                        <li><strong>Faktentreue:</strong> Belegbare Aussagen, keine Spekulationen</li>
+                        <li><strong>Kontextualisierung:</strong> Historische Bedingungen und Alternativen beachten</li>
+                        <li><strong>Transparenz:</strong> Eigene Wertmaßstäbe offenlegen</li>
+                        <li><strong>Differenzierung:</strong> Nicht pauschal urteilen, Grautöne erkennen</li>
+                        <li><strong>Methodenbewusstsein:</strong> Grenzen der historischen Erkenntnis beachten</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: Krisenjahr 1923 - Urteile der Geschichtswissenschaft</h4>
+                    <p><strong>Herbert-These:</strong> Weimarer Republik war von Anfang an zum Scheitern verurteilt<br>
+                    <strong>Gegenposition:</strong> Demokratie hatte durchaus Chancen, scheiterte an konkreten Fehlentscheidungen<br>
+                    <strong>Eigene Bewertung:</strong> Abwägung der Argumente und begründete Stellungnahme</p>
+                </div>
+            </div>
+
+            <!-- Videoanalyse Zeitzeugeninterview -->
+            <div class="method-card">
+                <h2 class="method-title">Videoanalyse Zeitzeugeninterview</h2>
+                <p class="method-description">
+                    Zeitzeugeninterviews bieten persönliche Einblicke in historische Ereignisse und sind von besonderer Bedeutung für die Erinnerungskultur, müssen aber quellenkritisch analysiert werden.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Videoanalyse eines Zeitzeugeninterviews.</strong> Schauen Sie sich dazu zunächst das Video von Frau Marie Jeníková (M3) an, die dazugehörigen Lösungshinweise sowie die Musterlösung zu PP.</li>
+                    <li><strong>Analysieren Sie ein weiteres Zeitzeugeninterview.</strong> Nutzen Sie dazu folgenden Link (https://www.lernen-aus-der-geschichte.de/Lernen-und-Lehren-International/content/12567) und entscheiden Sie sich für eine der zwölf aufgezeichneten Zeitzeugenerzählungen.</li>
+                    <li><strong>Diskutieren Sie, welche Bedeutung</strong> videografierte Zeitzeugeninterviews für die Gegenwart haben.</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematische Analyse:</h3>
+                <ol class="steps-list">
+                    <li><strong>Formale Analyse:</strong> Zeitzeuge, Interviewer, Entstehungskontext, Aufnahmedatum</li>
+                    <li><strong>Inhaltliche Analyse:</strong> Erfahrungen, Erinnerungen, persönliche Bewertungen</li>
+                    <li><strong>Nonverbale Kommunikation:</strong> Gestik, Mimik, Emotionen beobachten</li>
+                    <li><strong>Quellenkritik:</strong> Subjektivität und mögliche Erinnerungsverzerrungen beachten</li>
+                    <li><strong>Historischer Kontext:</strong> Abgleich mit anderen Quellen und historischen Fakten</li>
+                    <li><strong>Bedeutung für heute:</strong> Wert für Geschichtsforschung und Erinnerungskultur</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Besonderheiten von Zeitzeugenaussagen:</h4>
+                    <ul>
+                        <li><strong>Subjektivität:</strong> Persönliche Wahrnehmung und Interpretation</li>
+                        <li><strong>Zeitlicher Abstand:</strong> Erinnerungsverzerrungen durch lange Zeitspannen</li>
+                        <li><strong>Emotionale Dimension:</strong> Gefühle und Traumata beeinflussen Erinnerung</li>
+                        <li><strong>Alltagsgeschichte:</strong> Einblicke in persönliche Lebenswelten</li>
+                        <li><strong>Authentizität:</strong> Unmittelbare Betroffenheit der Zeitzeugen</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiel: Marie Jeníková - Zwangsarbeit im NS-Regime</h4>
+                    <p><strong>Kontext:</strong> Tschechische Zwangsarbeiterin in Deutschland 1942-1945<br>
+                    <strong>Besonderheit:</strong> Persönliche Schilderung von Hunger, Kälte und unmenschlichen Arbeitsbedingungen<br>
+                    <strong>Quellenwert:</strong> Ergänzt offizielle Dokumente um die Erfahrungsebene der Betroffenen</p>
+                </div>
+            </div>
+
+            <!-- Fotos analysieren -->
+            <div class="method-card">
+                <h2 class="method-title">Fotos analysieren</h2>
+                <p class="method-description">
+                    Historische Fotografien scheinen objektiv, sind aber oft bewusst inszeniert und können manipuliert sein. Sie spielen eine wichtige Rolle als historische Quellen und für die Nachwelt.
+                </p>
+                
+                <h3 class="steps-title">Arbeitsschritte:</h3>
+                <ol class="steps-list">
+                    <li><strong>Üben Sie die Methode "Fotoanalyse"</strong> anhand der Lösungshinweise zu M1 sowie der Musterlösung zu PP.</li>
+                    <li><strong>Analysieren Sie das Foto in M2</strong> mithilfe der Arbeitsschritte (linke Spalte) und interpretieren Sie es im Hinblick auf seine Wirkung auf die Öffentlichkeit in den USA.</li>
+                    <li><strong>Diskutieren Sie die Bedeutung der Fotografie</strong> für die Berichterstattung über den Vietnamkrieg.</li>
+                </ol>
+                
+                <h3 class="steps-title">Systematische Fotoanalyse:</h3>
+                <ol class="steps-list">
+                    <li><strong>Formale Analyse:</strong> Fotograf, Aufnahmezeit, Veröffentlichungsort, technische Daten</li>
+                    <li><strong>Beschreibung:</strong> Bildinhalt detailliert erfassen - Personen, Gegenstände, Handlungen</li>
+                    <li><strong>Komposition:</strong> Bildaufbau, Perspektive, Licht, Schärfe-Unschärfe-Verhältnisse</li>
+                    <li><strong>Historischer Kontext:</strong> Zeitgeschichtliche Einordnung und Entstehungsumstände</li>
+                    <li><strong>Intention und Wirkung:</strong> Absicht des Fotografen, Wirkung auf Betrachter</li>
+                    <li><strong>Quellenkritik:</strong> Inszenierung, Manipulation, Aussagekraft bewerten</li>
+                </ol>
+                
+                <div class="key-aspects">
+                    <h4>Besondere Aspekte der Fotografie:</h4>
+                    <ul>
+                        <li><strong>Scheinbare Objektivität:</strong> Fotos wirken "authentisch", sind aber immer subjektiv</li>
+                        <li><strong>Ausschnitt:</strong> Zeigen nur einen begrenzten Bildausschnitt der Realität</li>
+                        <li><strong>Timing:</strong> Eingefrorener Moment kann irreführend sein</li>
+                        <li><strong>Inszenierung:</strong> Viele historische Fotos sind gestellt oder nachgestellt</li>
+                        <li><strong>Propaganda:</strong> Gezielte Meinungsbeeinflussung durch Bildauswahl</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Beispiele aus dem Projektwissen:</h4>
+                    <p><strong>M1:</strong> Südvietnamesischer Offizier erschießt Vietcong-Gefangenen (1968) - Schockwirkung auf amerikanische Öffentlichkeit<br>
+                    <strong>M2:</strong> Napalm-Angriff auf vietnamesisches Dorf (1972) - Das berühmte Foto der brennenden Kinder wurde zum Symbol für die Grausamkeit des Vietnamkriegs</p>
+                </div>
+            </div>
+
+            <!-- Mündliches Präsentieren -->
+            <div class="method-card">
+                <h2 class="method-title">Mündliches Präsentieren</h2>
+                <p class="method-description">
+                    Eine gelungene Präsentation basiert auf strukturiertem Inhalt, ansprechender Visualisierung und souveräner Vortragstechnik.
+                </p>
+                <h3 class="steps-title">Präsentations-Struktur:</h3>
+                <ol class="steps-list">
+                    <li><strong>Einleitung:</strong> Begrüßung, Thema vorstellen, Gliederung</li>
+                    <li><strong>Hauptteil:</strong> Strukturierte Darstellung der Inhalte</li>
+                    <li><strong>Schluss:</strong> Zusammenfassung, Fazit, Diskussion</li>
+                    <li><strong>Visualisierung:</strong> Folien, Karten, Diagramme einsetzen</li>
+                    <li><strong>Interaktion:</strong> Fragen beantworten, Diskussion moderieren</li>
+                </ol>
+                <div class="key-aspects">
+                    <h4>Tipps für erfolgreiche Präsentationen:</h4>
+                    <ul>
+                        <li>Freier Vortrag statt Ablesen</li>
+                        <li>Blickkontakt zum Publikum halten</li>
+                        <li>Deutliche Aussprache und angemessenes Tempo</li>
+                        <li>Körpersprache bewusst einsetzen</li>
+                        <li>Technik vorab testen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Methoden für das Geschichte-Abitur - Systematische Quellenanalyse und Präsentationstechniken</p>
+        </footer>
+    </div>
+</body>
+</html>
