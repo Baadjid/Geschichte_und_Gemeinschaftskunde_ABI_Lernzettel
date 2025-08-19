@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wege in die moderne Gesellschaft - Geschichte Abitur</title>
     <style>
@@ -257,6 +257,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            visibility: hidden;
         }
 
         .scroll-to-top:hover {
@@ -265,14 +267,111 @@
             background: linear-gradient(135deg, #2980b9, #3498db);
         }
 
-        .scroll-to-top:active {
-            transform: translateY(0);
-        }
-
         .scroll-to-top::before {
             content: "↑";
             font-weight: bold;
             font-size: 24px;
+        }
+
+        /* Tooltip Styles */
+        .tooltip {
+            position: relative;
+            cursor: help;
+            color: #3498db;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .tooltip:hover {
+            color: #2980b9;
+        }
+
+        .tooltip::after {
+            content: "ℹ";
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 0.8em;
+            color: #3498db;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            line-height: 16px;
+            font-weight: bold;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            opacity: 0;
+            width: 450px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: left;
+            border-radius: 12px;
+            padding: 20px;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -225px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            line-height: 1.5;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(10px);
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: #2c3e50 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tooltip .tooltiptext h5 {
+            color: #3498db;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tooltip .tooltiptext p {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .tooltip .tooltiptext ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .tooltip .tooltiptext li {
+            margin-bottom: 5px;
+        }
+
+        .tooltip .tooltiptext strong {
+            color: #f39c12;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tooltip .tooltiptext {
+                width: 400px;
+                margin-left: -200px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -295,14 +394,67 @@
                 height: 45px;
                 font-size: 18px;
             }
+
+            .tooltip .tooltiptext {
+                width: 90vw;
+                left: 50%;
+                margin-left: -45vw;
+                font-size: 0.85em;
+                padding: 15px;
+                max-height: 70vh;
+                overflow-y: auto;
+                bottom: auto;
+                top: 120%;
+            }
+
+            .tooltip .tooltiptext::after {
+                top: -8px;
+                bottom: auto;
+                border-color: transparent transparent #2c3e50 transparent;
+            }
+
+            .nav-links a {
+                display: block;
+                margin: 5px 0;
+                text-align: center;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tooltip .tooltiptext {
+                width: 95vw;
+                margin-left: -47.5vw;
+                font-size: 0.8em;
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .content-section {
+                padding: 15px;
+            }
+        }
+
+        /* Touch-optimierte Tooltips */
+        .tooltip.tooltip-active .tooltiptext {
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
     </style>
 </head>
 <body>
     <div class="container">
-	    <div class="nav-links">
-                <a href="index.html">← Zurück zum Hauptmenü</a>
-            </div>
+        <div class="nav-links">
+            <a href="#index">← Zurück zum Hauptmenü</a>
+        </div>
+        
         <header>
             <h1>Wege in die moderne Gesellschaft</h1>
             <p class="subtitle">Transformation Europas vom 18. bis 21. Jahrhundert</p>
@@ -390,19 +542,19 @@
                 <div class="card">
                     <h4>Chancen</h4>
                     <ul>
-                        <li>Kulturelle Vielfalt</li>
-                        <li>Fachkräftezuwanderung</li>
-                        <li>Demografischer Wandel abgemildert</li>
-                        <li>Internationale Verflechtung</li>
+                        <li><span class="tooltip">Kulturelle Vielfalt<span class="tooltiptext"><h5>Kulturelle Vielfalt</h5><p>Deutschland ist durch Einwanderung vielfältiger geworden (z.B. in Gastronomie, Kunst, Musik, Alltagsleben). Dies bereichert die Gesellschaft, macht sie weltoffener und fördert Innovation durch unterschiedliche Perspektiven.</p></span></span></li>
+                        <li><span class="tooltip">Fachkräftezuwanderung<span class="tooltiptext"><h5>Fachkräftezuwanderung</h5><p>Dies ist eine direkte Antwort auf den akuten <strong>Fachkräftemangel</strong> in vielen Branchen (von IT und Ingenieurswesen bis zur Pflege). Einwanderung sichert die wirtschaftliche Leistungsfähigkeit und hält Unternehmen am Standort Deutschland.</p></span></span></li>
+                        <li><span class="tooltip">Demografischer Wandel abgemildert<span class="tooltiptext"><h5>Demografischer Wandel abgemildert</h5><p>Deutschland hat eine alternde Gesellschaft und eine niedrige Geburtenrate. Ohne Einwanderung würde die Bevölkerung schrumpfen und die Zahl der Beitragszahler für Renten- und Sozialsysteme stark sinken. Jüngere Einwanderer stabilisieren diese Systeme.</p></span></span></li>
+                        <li><span class="tooltip">Internationale Verflechtung<span class="tooltiptext"><h5>Internationale Verflechtung</h5><p>Einwanderer schaffen wirtschaftliche, wissenschaftliche und kulturelle Brücken in ihre Herkunftsländer. Dies erleichtert Handel, internationale Kooperationen und stärkt Deutschlands Position in einer globalisierten Welt.</p></span></span></li>
                     </ul>
                 </div>
                 <div class="card">
                     <h4>Herausforderungen</h4>
                     <ul>
-                        <li>Integration in Arbeitsmarkt</li>
-                        <li>Spracherwerb</li>
-                        <li>Bildungschancen</li>
-                        <li>Gesellschaftlicher Zusammenhalt</li>
+                        <li><span class="tooltip">Integration in Arbeitsmarkt<span class="tooltiptext"><h5>Integration in Arbeitsmarkt</h5><p>Es ist eine große Aufgabe, die Qualifikationen von Zuwanderern schnell anzuerkennen, sie in den Arbeitsmarkt zu vermitteln und sicherzustellen, dass sie Jobs bekommen, die ihren Fähigkeiten entsprechen (Stichwort: "Brain Waste", wenn Akademiker Taxi fahren).</p></span></span></li>
+                        <li><span class="tooltip">Spracherwerb<span class="tooltiptext"><h5>Spracherwerb</h5><p>Deutschkenntnisse sind der Schlüssel für jede Form der Integration (Arbeit, Sozialkontakte, Alltagsbewältigung). Der Staat muss ausreichend und zugängliche Sprachkurse anbieten, was eine logistische und finanzielle Herausforderung ist.</p></span></span></li>
+                        <li><span class="tooltip">Bildungschancen<span class="tooltiptext"><h5>Bildungschancen</h5><p>Hier geht es vor allem um die Kinder von Einwanderern. Das deutsche Bildungssystem steht in der Kritik, da der Bildungserfolg noch zu stark von der sozialen Herkunft abhängt. Die Chancengleichheit für Kinder mit Migrationshintergrund zu verbessern, ist eine zentrale Zukunftsaufgabe.</p></span></span></li>
+                        <li><span class="tooltip">Gesellschaftlicher Zusammenhalt<span class="tooltiptext"><h5>Gesellschaftlicher Zusammenhalt</h5><p>Eine diverse Gesellschaft birgt das Potenzial für Spannungen (z.B. durch kulturelle Missverständnisse, Konkurrenzgefühle oder Fremdenfeindlichkeit). Die größte Herausforderung ist es, ein gemeinsames "Wir-Gefühl" zu schaffen, in dem sich alle Menschen – ob mit oder ohne Migrationshintergrund – als Teil der Gesellschaft fühlen und anerkennen.</p></span></span></li>
                     </ul>
                 </div>
             </div>
@@ -467,7 +619,7 @@
                 </ul>
             </div>
 
-            <h4>Die Paulskirchen-Verfassung 1849</h4>
+            <h4><span class="tooltip">Die Paulskirchen-Verfassung 1849<span class="tooltiptext"><h5>Die Paulskirche Frankfurt am Main</h5><p>Die <strong>Paulskirche in Frankfurt am Main</strong> ist eines der wichtigsten nationalen Symbole für Demokratie und deutsche Einheit. Ihre historische Bedeutung erlangte sie während der <strong>Revolution von 1848/49</strong>.</p><p><strong>Ort:</strong> Sie war das Gebäude, in dem 1848/49 das erste frei gewählte deutsche Parlament, die <strong>Nationalversammlung</strong>, tagte.</p><p><strong>Ziel:</strong> Dieses Parlament hatte das Ziel, eine verfassungsmäßige und demokratische Einigung aller deutschen Einzelstaaten zu erreichen und eine moderne Verfassung auszuarbeiten.</p><p><strong>Ergebnis:</strong> In der Paulskirche wurde die <strong>Paulskirchenverfassung</strong> verabschiedet – die erste demokratische Verfassung für ganz Deutschland.</p><p><strong>Symbolik:</strong> Heute steht die Paulskirche symbolisch für das <strong>Ringen um Demokratie und Freiheitsrechte</strong> und die <strong>Sehnsucht nach nationaler Einheit</strong>.</p></span></span></h4>
             <p>Die Frankfurter Nationalversammlung erarbeitete die erste demokratische Verfassung für Deutschland, die jedoch nicht verwirklicht wurde:</p>
             <ul>
                 <li>Grundrechtskatalog</li>
@@ -481,20 +633,20 @@
             
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">1776</div>
-                    <p>Virginia Bill of Rights (USA)</p>
+                    <div class="timeline-date"><span class="tooltip">1776<span class="tooltiptext"><h5>Virginia Bill of Rights (USA)</h5><p><strong>Was ist das?</strong> Eine Erklärung der grundlegenden Rechte der Bürger des Staates Virginia, verfasst von George Mason. Sie war bahnbrechend für die Neue Welt.</p><p><strong>Historischer Kontext:</strong> Kurz vor der Unabhängigkeitserklärung der USA. Die amerikanischen Kolonien wehrten sich gegen die Herrschaft des britischen Königs.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li>Volkssouveränität: Die Macht der Regierung leitet sich vom Volk ab</li><li>Angeborene Rechte: Menschen haben unveräußerliche Rechte (Leben, Freiheit, Eigentum)</li><li>Gewaltenteilung und Pressefreiheit</li></ul><p><strong>Bedeutung:</strong> Direktes Vorbild für die spätere US-amerikanische Bill of Rights</p></span></span></div>
+                    <p><span class="tooltip">Virginia Bill of Rights (USA)<span class="tooltiptext"><h5>Virginia Bill of Rights (USA)</h5><p><strong>Was ist das?</strong> Eine Erklärung der grundlegenden Rechte der Bürger des Staates Virginia, verfasst von George Mason. Sie war bahnbrechend für die Neue Welt.</p><p><strong>Historischer Kontext:</strong> Kurz vor der Unabhängigkeitserklärung der USA. Die amerikanischen Kolonien wehrten sich gegen die Herrschaft des britischen Königs.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li>Volkssouveränität: Die Macht der Regierung leitet sich vom Volk ab</li><li>Angeborene Rechte: Menschen haben unveräußerliche Rechte (Leben, Freiheit, Eigentum)</li><li>Gewaltenteilung und Pressefreiheit</li></ul><p><strong>Bedeutung:</strong> Direktes Vorbild für die spätere US-amerikanische Bill of Rights</p></span></span></p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">1789</div>
-                    <p>Déclaration des droits de l'homme (Frankreich)</p>
+                    <div class="timeline-date"><span class="tooltip">1789<span class="tooltiptext"><h5>Déclaration des droits de l'homme et du citoyen (Frankreich)</h5><p><strong>Was ist das?</strong> Die "Erklärung der Menschen- und Bürgerrechte", verabschiedet von der französischen Nationalversammlung.</p><p><strong>Historischer Kontext:</strong> Mitten in der Französischen Revolution, als der Ständestaat abgeschafft und eine neue Ordnung geschaffen wurde.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li><strong>Universalität:</strong> "Die Menschen werden frei und gleich an Rechten geboren und bleiben es." - Gültigkeit für alle Menschen</li><li><strong>Nation als Souverän:</strong> Die Quelle aller Souveränität liegt in der Nation</li><li>Freiheit, Eigentum, Sicherheit und Widerstand gegen Unterdrückung</li><li>Rechtsstaatlichkeit und Unschuldsvermutung</li></ul><p><strong>Bedeutung:</strong> Universeller und radikaler als die Virginia Bill of Rights. Grundlage der Französischen Revolution und exportiertes Modell für Menschenrechte in Europa.</p></span></span></div>
+                    <p><span class="tooltip">Déclaration des droits de l'homme (Frankreich)<span class="tooltiptext"><h5>Déclaration des droits de l'homme et du citoyen (Frankreich)</h5><p><strong>Was ist das?</strong> Die "Erklärung der Menschen- und Bürgerrechte", verabschiedet von der französischen Nationalversammlung.</p><p><strong>Historischer Kontext:</strong> Mitten in der Französischen Revolution, als der Ständestaat abgeschafft und eine neue Ordnung geschaffen wurde.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li><strong>Universalität:</strong> "Die Menschen werden frei und gleich an Rechten geboren und bleiben es." - Gültigkeit für alle Menschen</li><li><strong>Nation als Souverän:</strong> Die Quelle aller Souveränität liegt in der Nation</li><li>Freiheit, Eigentum, Sicherheit und Widerstand gegen Unterdrückung</li><li>Rechtsstaatlichkeit und Unschuldsvermutung</li></ul><p><strong>Bedeutung:</strong> Universeller und radikaler als die Virginia Bill of Rights. Grundlage der Französischen Revolution und exportiertes Modell für Menschenrechte in Europa.</p></span></span></p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">1948</div>
-                    <p>Allgemeine Erklärung der Menschenrechte (UN)</p>
+                    <div class="timeline-date"><span class="tooltip">1948<span class="tooltiptext"><h5>Allgemeine Erklärung der Menschenrechte (United Nations)</h5><p><strong>Was ist das?</strong> Eine von der Vollversammlung der Vereinten Nationen verabschiedete Resolution. Sie ist kein völkerrechtlich verbindlicher Vertrag, sondern eine moralische und politische Verpflichtungserklärung.</p><p><strong>Historischer Kontext:</strong> Die Gräueltaten des Zweiten Weltkriegs und des Holocaust. Die internationale Gemeinschaft war sich einig, dass es einen globalen Standard für die Rechte und die Würde des Menschen geben muss.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li><strong>Universalität und Globalität:</strong> Sie gilt für alle Menschen auf der Welt, unabhängig von Rasse, Geschlecht, Religion oder Nationalität</li><li><strong>Umfassender Katalog:</strong> Bürgerliche und politische Rechte sowie wirtschaftliche, soziale und kulturelle Rechte</li></ul><p><strong>Bedeutung:</strong> Wichtigster moderner Referenztext für Menschenrechte und Grundlage für das internationale Menschenrechtsrecht.</p></span></span></div>
+                    <p><span class="tooltip">Allgemeine Erklärung der Menschenrechte (UN)<span class="tooltiptext"><h5>Allgemeine Erklärung der Menschenrechte (United Nations)</h5><p><strong>Was ist das?</strong> Eine von der Vollversammlung der Vereinten Nationen verabschiedete Resolution. Sie ist kein völkerrechtlich verbindlicher Vertrag, sondern eine moralische und politische Verpflichtungserklärung.</p><p><strong>Historischer Kontext:</strong> Die Gräueltaten des Zweiten Weltkriegs und des Holocaust. Die internationale Gemeinschaft war sich einig, dass es einen globalen Standard für die Rechte und die Würde des Menschen geben muss.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li><strong>Universalität und Globalität:</strong> Sie gilt für alle Menschen auf der Welt, unabhängig von Rasse, Geschlecht, Religion oder Nationalität</li><li><strong>Umfassender Katalog:</strong> Bürgerliche und politische Rechte sowie wirtschaftliche, soziale und kulturelle Rechte</li></ul><p><strong>Bedeutung:</strong> Wichtigster moderner Referenztext für Menschenrechte und Grundlage für das internationale Menschenrechtsrecht.</p></span></span></p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">1950</div>
-                    <p>Europäische Menschenrechtskonvention</p>
+                    <div class="timeline-date"><span class="tooltip">1950<span class="tooltiptext"><h5>Europäische Menschenrechtskonvention (EMRK)</h5><p><strong>Was ist das?</strong> Ein völkerrechtlich verbindlicher Vertrag des Europarats (nicht der EU!). Sie ist rechtlich einklagbar.</p><p><strong>Historischer Kontext:</strong> Auch eine Reaktion auf den Zweiten Weltkrieg, aber mit einem spezifisch europäischen Fokus. Ziel war es, die Menschenrechte in Europa zu schützen und eine weitere Abkehr von der Demokratie zu verhindern.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li><strong>Konkretisierung:</strong> Sie nimmt die Prinzipien der Allgemeinen Erklärung auf und macht sie rechtlich verbindlich</li><li><strong>Einklagbarkeit:</strong> Einrichtung des Europäischen Gerichtshofs für Menschenrechte (EGMR) in Straßburg</li></ul><p><strong>Bedeutung:</strong> Sie schafft einen einzigartigen effektiven internationalen Rechtsschutz für den Einzelnen gegen seinen eigenen Staat. Fortschrittlichstes System zum Schutz der Menschenrechte weltweit.</p></span></span></div>
+                    <p><span class="tooltip">Europäische Menschenrechtskonvention<span class="tooltiptext"><h5>Europäische Menschenrechtskonvention (EMRK)</h5><p><strong>Was ist das?</strong> Ein völkerrechtlich verbindlicher Vertrag des Europarats (nicht der EU!). Sie ist rechtlich einklagbar.</p><p><strong>Historischer Kontext:</strong> Auch eine Reaktion auf den Zweiten Weltkrieg, aber mit einem spezifisch europäischen Fokus. Ziel war es, die Menschenrechte in Europa zu schützen und eine weitere Abkehr von der Demokratie zu verhindern.</p><p><strong>Wichtigste Ideen:</strong></p><ul><li><strong>Konkretisierung:</strong> Sie nimmt die Prinzipien der Allgemeinen Erklärung auf und macht sie rechtlich verbindlich</li><li><strong>Einklagbarkeit:</strong> Einrichtung des Europäischen Gerichtshofs für Menschenrechte (EGMR) in Straßburg</li></ul><p><strong>Bedeutung:</strong> Sie schafft einen einzigartigen effektiven internationalen Rechtsschutz für den Einzelnen gegen seinen eigenen Staat. Fortschrittlichstes System zum Schutz der Menschenrechte weltweit.</p></span></span></p>
                 </div>
             </div>
 
@@ -668,21 +820,21 @@
 
             <h4>Chancen der Digitalisierung</h4>
             <ul>
-                <li>Erhöhte Produktivität</li>
-                <li>Neue Geschäftsmodelle</li>
-                <li>Personalisierte Produkte</li>
-                <li>Umweltfreundlichere Produktion</li>
-                <li>Flexible Arbeitsmodelle</li>
+                <li><span class="tooltip">Erhöhte Produktivität<span class="tooltiptext"><h5>Erhöhte Produktivität</h5><p><strong>Was bedeutet das?</strong> Mit den gleichen oder geringeren Ressourcen (Arbeitszeit, Material) können mehr oder bessere Güter und Dienstleistungen produziert werden.</p><p><strong>Wie funktioniert das?</strong> Durch Automatisierung repetitiver Aufgaben, optimierte Prozesse (z.B. durch ERP-Systeme), prädiktive Wartung (Maschinen melden sich, bevor sie kaputtgehen), und bessere Kommunikationstools. Eine Maschine oder Software erledigt Arbeiten schneller, fehlerfreier und rund um die Uhr.</p></span></span></li>
+                <li><span class="tooltip">Neue Geschäftsmodelle<span class="tooltiptext"><h5>Neue Geschäftsmodelle</h5><p><strong>Was bedeutet das?</strong> Gänzlich neue Wege, Wert zu schaffen und Geld zu verdienen, die ohne digitale Technologien undenkbar wären.</p><p><strong>Beispiele:</strong></p><ul><li><strong>Plattform-Ökonomie:</strong> Airbnb (besitzt keine Hotels), Uber (besitzt keine Taxis), Amazon Marketplace (verkauft fremde Produkte)</li><li><strong>Subscription-Modelle:</strong> Statt Software einmalig zu kaufen, mietet man sie monatlich (Office 365, Spotify, Netflix)</li><li><strong>Sharing Economy:</strong> Teilen von Ressourcen wie Autos (Carsharing) oder Werkzeug über Apps</li></ul></span></span></li>
+                <li><span class="tooltip">Personalisierte Produkte<span class="tooltiptext"><h5>Personalisierte Produkte</h5><p><strong>Was bedeutet das?</strong> Massenware war gestern. Heute können Produkte und Dienstleistungen auf die individuellen Wünsche, Bedürfnisse und Vorlieben eines jeden Kunden zugeschnitten werden.</p><p><strong>Beispiele:</strong></p><ul><li><strong>E-Commerce:</strong> Amazon und Netflix geben personalisierte Empfehlungen basierend auf Ihrem bisherigen Verhalten</li><li><strong>Gesundheit:</strong> "Wearables" wie Smartwatches tracken individuelle Gesundheitsdaten</li><li><strong>Produktion:</strong> Nike ID lässt Kunden ihre eigenen Turnschuhe designen (Mass Customization)</li></ul></span></span></li>
+                <li><span class="tooltip">Umweltfreundlichere Produktion<span class="tooltiptext"><h5>Umweltfreundlichere Produktion</h5><p><strong>Was bedeutet das?</strong> Digitalisierung kann helfen, Ressourcen zu sparen und die Umweltbelastung zu reduzieren ("Green IT").</p><p><strong>Wie funktioniert das?</strong></p><ul><li><strong>Smart Grids:</strong> Intelligente Stromnetze, die Verbrauch und Erzeugung optimal aufeinander abstimmen</li><li><strong>Präzisionslandwirtschaft:</strong> GPS-gesteuerte Traktoren und sensorgesteuerte Düngung</li><li><strong>Predictive Maintenance:</strong> Verhindert Maschinenausfälle und ineffizienten Energieverbrauch</li><li><strong>Virtuelle Prototypen:</strong> Produkte werden am Computer designed und getestet</li></ul></span></span></li>
+                <li><span class="tooltip">Flexible Arbeitsmodelle<span class="tooltiptext"><h5>Flexible Arbeitsmodelle</h5><p><strong>Was bedeutet das?</strong> Die Bindung an einen festen Arbeitsplatz zu festen Zeiten löst sich auf.</p><p><strong>Formen:</strong></p><ul><li><strong>Homeoffice/Remote Work:</strong> Arbeiten von zu Hause oder von anywhere</li><li><strong>Co-Working-Spaces:</strong> Gemeinschaftsbüros für verschiedene Unternehmen</li><li><strong>Vertrauensarbeitszeit:</strong> Arbeit wird nach Ergebnissen bewertet</li></ul><p><strong>Vorteile:</strong> Bessere Work-Life-Balance, Zugang zu globalen Talentpools, weniger Pendelverkehr.</p></span></span></li>
             </ul>
 
             <h4>Risiken und Herausforderungen</h4>
             <ul>
-                <li>Arbeitsplätze durch Automatisierung bedroht</li>
-                <li>Digitale Spaltung der Gesellschaft</li>
-                <li>Datenschutz und Privatsphäre</li>
-                <li>Cybersicherheit</li>
-                <li>Neue Qualifikationsanforderungen</li>
-                <li>Ethische Fragen bei KI-Entscheidungen</li>
+                <li><span class="tooltip">Arbeitsplätze durch Automatisierung bedroht<span class="tooltiptext"><h5>Arbeitsplätze durch Automatisierung bedroht</h5><p><strong>Was bedeutet das?</strong> Routinetätigkeiten, ob körperlich (z.B. am Fließband) oder kognitiv (z.B. einfache Büroarbeiten, Datenanalyse), können von Robotern und Software (KI, RPA) übernommen werden.</p><p><strong>Herausforderung:</strong> Es kommt zu einem strukturellen Wandel des Arbeitsmarktes. Bestehende Jobs fallen weg, neue entstehen. Die große Frage ist, ob die Geschwindigkeit der Neuschaffung von Jobs mit dem Wegfall Schritt hält und ob die betroffenen Arbeitnehmer die nötigen Qualifikationen für die neuen Jobs haben.</p></span></span></li>
+                <li><span class="tooltip">Digitale Spaltung der Gesellschaft<span class="tooltiptext"><h5>Digitale Spaltung der Gesellschaft (Digital Divide)</h5><p><strong>Was bedeutet das?</strong> Die Gesellschaft spaltet sich in "those who can" und "those who can't".</p><p><strong>Zwei Ebenen:</strong></p><ul><li><strong>Zugang:</strong> Wer hat Zugang zu schnellem Internet und modernen Geräten? Oft ein Stadt-Land-Gefälle oder ein Problem für einkommensschwache Haushalte</li><li><strong>Kompetenz:</strong> Wer hat die Fähigkeiten, digitale Tools sinnvoll und kritisch zu nutzen? Ältere Generationen oder formal weniger Gebildete drohen abgehängt zu werden</li></ul></span></span></li>
+                <li><span class="tooltip">Datenschutz und Privatsphäre<span class="tooltiptext"><h5>Datenschutz und Privatsphäre</h5><p><strong>Was bedeutet das?</strong> Jede unserer digitalen Handlungen erzeugt Daten. Diese Daten sind extrem wertvoll für Unternehmen (Werbezwecke) und können missbraucht werden (Überwachung, Manipulation).</p><p><strong>Herausforderung:</strong> Die Kontrolle über die eigenen Daten zu behalten. Wer sammelt was? Wofür wird es genutzt? Werden sie verkauft? Gesetze wie die DSGVO versuchen, hier Grenzen zu setzen, aber die Technologie entwickelt sich schneller als die Regulierung.</p></span></span></li>
+                <li><span class="tooltip">Cybersicherheit<span class="tooltiptext"><h5>Cybersicherheit</h5><p><strong>Was bedeutet das?</strong> Je abhängiger unsere Gesellschaft von digitalen Systemen wird (von der Stromversorgung über Krankenhäuser bis zum Bankwesen), desto verlockender und verheerender werden Angriffe darauf.</p><p><strong>Bedrohungen:</strong> Ransomware (Erpressungssoftware), Diebstahl sensibler Daten, Lahmlegung kritischer Infrastrukturen. Der Schutz dieser Systeme wird zur nationalen Sicherheitsaufgabe.</p></span></span></li>
+                <li><span class="tooltip">Neue Qualifikationsanforderungen<span class="tooltiptext"><h5>Neue Qualifikationsanforderungen</h5><p><strong>Was bedeutet das?</strong> Der Bedarf an manuellen oder rein ausführenden Tätigkeiten sinkt. Gefragt sind zunehmend digitale Kompetenzen sowie nicht-automatisierbare "menschliche" Fähigkeiten.</p><p><strong>Beispiele:</strong> Kritisches Denken, Kreativität, komplexe Problemlösung, emotionale Intelligenz und soziale Kompetenz. Das Bildungssystem (Schulen, Berufsausbildung, Universitäten) muss sich dieser Herausforderung stellen.</p></span></span></li>
+                <li><span class="tooltip">Ethische Fragen bei KI-Entscheidungen<span class="tooltiptext"><h5>Ethische Fragen bei KI-Entscheidungen</h5><p><strong>Was bedeutet das?</strong> Wenn Algorithmen und Künstliche Intelligenz Entscheidungen treffen, die Menschen betreffen, stellen sich grundlegende ethische Fragen.</p><p><strong>Beispiele:</strong></p><ul><li><strong>Bias/Diskriminierung:</strong> Wenn eine KI mit historischen Daten trainiert wird, lernt sie bestehende Diskriminierung</li><li><strong>Verantwortung:</strong> Wer ist schuld, wenn ein autonom fahrendes Auto einen Unfall baut?</li><li><strong>Transparenz:</strong> Wie trifft eine KI eine Entscheidung? Oft sind deren Entscheidungswege eine "Black Box"</li></ul></span></span></li>
             </ul>
 
             <div class="method-box">
@@ -730,6 +882,44 @@
                     <li>Perspektivität und Subjektivität</li>
                     <li>Grenzen der Aussagekraft</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- Weiterführende Themen -->
+        <div class="content-section">
+            <h2>Weiterführende Themen und Vertiefungen</h2>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Vertiefungsthemen (Inhaltliche Schwerpunkte)</h4>
+                    <ul>
+                        <li><span class="tooltip">Frauenemanzipation im 19./20. Jahrhundert<span class="tooltiptext"><h5>Frauenemanzipation im 19./20. Jahrhundert</h5><p><strong>Worum geht es?</strong> Der lange Kampf von Frauen um rechtliche, politische, wirtschaftliche und gesellschaftliche Gleichberechtigung.</p><p><strong>Aspekte:</strong> Erste Frauenbewegung (Kampf um Bildung, Berufstätigkeit, Recht auf Eigentum), Suffragetten (Kampf um das Wahlrecht), Rolle der Frauen in den Weltkriegen (als Arbeitskräfte), zweite Frauenbewegung ab den 1960ern ("Das Private ist politisch", sexuelle Selbstbestimmung), bis hin zur #MeToo-Debatte.</p><p><strong>Warum wichtig?</strong> Zeigt, wie sich Gesellschaften und Rollenbilder fundamental verändern können. Macht deutlich, dass Rechte, die heute selbstverständlich erscheinen, hart erkämpft werden mussten.</p></span></span></li>
+                        <li><span class="tooltip">Arbeiterbewegung und Sozialismus<span class="tooltiptext"><h5>Arbeiterbewegung und Sozialismus</h5><p><strong>Worum geht es?</strong> Die Antwort der arbeitenden Bevölkerung auf die sozialen Verwerfungen der Industrialisierung (Kinderarbeit, Elendsviertel, 14-Stunden-Tage).</p><p><strong>Aspekte:</strong> Entstehung von Gewerkschaften (Kampf für bessere Löhne und Arbeitsbedingungen), Gründung von Arbeiterparteien (SPD), verschiedene Strömungen (Marxismus, Reformismus), Konflikt mit dem Obrigkeitsstaat, Spaltung in Sozialdemokratie und Kommunismus.</p><p><strong>Warum wichtig?</strong> Prägten die politische Landschaft Europas maßgeblich. Soziale Errungenschaften wie der Acht-Stunden-Tag, Mitbestimmung, Krankenversicherung und Rentensysteme sind direkt auf diese Bewegung zurückzuführen.</p></span></span></li>
+                        <li><span class="tooltip">Kolonialismus und Imperialismus<span class="tooltiptext"><h5>Kolonialismus und Imperialismus</h5><p><strong>Worum geht es?</strong> Die gewaltsame Eroberung und Ausbeutung großer Teile Afrikas, Asiens und Ozeaniens durch europäische Mächte im 19. Jahrhundert.</p><p><strong>Aspekte:</strong> Wirtschaftliche Ausbeutung von Ressourcen, Rassismus und "Zivilisierungsmission" als Rechtfertigung, gewaltsame Unterdrückung von Widerstand (z.B. Völkermord an den Herero und Nama), willkürliche Grenzziehungen, die bis heute Konflikte verursachen.</p><p><strong>Warum wichtig?</strong> Erklärt globale Machtverhältnisse und viele aktuelle Konflikte. Ist die Wurzel von Rassismus und globaler Ungleichheit. Die Debatte über Raubkunst und Entschädigungszahlungen ist hochaktuell.</p></span></span></li>
+                        <li><span class="tooltip">Wissenschaftlich-technischer Fortschritt<span class="tooltiptext"><h5>Wissenschaftlich-technischer Fortschritt</h5><p><strong>Worum geht es?</strong> Die ungeheure Beschleunigung von Entdeckungen und Erfindungen, die die Welt radikal veränderten.</p><p><strong>Aspekte:</strong> Industrialisierung (Dampfmaschine, Eisenbahn), Medizin (Röntgen, Penizillin, Hygiene), Physik (Relativitätstheorie, Atomspaltung), Kommunikation (Telegraf, Telefon, Radio).</p><p><strong>Warum wichtig?</strong> Diese Entwicklungen schufen die moderne Welt – im Guten (längeres Leben, Wohlstand) wie im Schlechten (Industriekriege, Atomwaffen). Zeigt den ambivalenten Charakter des Fortschritts.</p></span></span></li>
+                        <li><span class="tooltip">Kultureller Wandel und Moderne<span class="tooltiptext"><h5>Kultureller Wandel und Moderne</h5><p><strong>Worum geht es?</strong> Wie sich Kunst, Literatur, Architektur, Musik und Alltagsleben als Reaktion auf die moderne, industrialisierte Welt veränderten.</p><p><strong>Aspekte:</strong> Aufbruchstimmung der "Klassischen Moderne" (Expressionismus, Bauhaus, Neue Sachlichkeit) vs. Verunsicherung und Krisenbewusstsein. Entstehung der Massenkultur (Kino, Popmusik). Verlust traditioneller Werte und Suche nach neuen Identitäten.</p><p><strong>Warum wichtig?</strong> Kultur ist der Seismograph gesellschaftlicher Stimmungen. Sie zeigt die Ängste, Hoffnungen und Brüche einer Zeit oft deutlicher als politische Dokumente.</p></span></span></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Methodische Schwerpunkte (Wie wir Geschichte erforschen)</h4>
+                    <ul>
+                        <li><span class="tooltip">Bildquellenanalyse (Gemälde, Fotografien, Plakate)<span class="tooltiptext"><h5>Bildquellenanalyse</h5><p><strong>Ziel:</strong> Nicht nur was dargestellt ist, sondern wie und warum es dargestellt wird, zu entschlüsseln. Bilder lügen oft – bewusst als Propaganda oder unbewusst durch die Perspektive des Schöpfers.</p><p><strong>Fragen:</strong> Welche Botschaft soll vermittelt werden? Wer ist der Adressat? Was wird weggelassen? Welche Symbole werden genutzt?</p></span></span></li>
+                        <li><span class="tooltip">Statistiken und Schaubilder auswerten<span class="tooltiptext"><h5>Statistiken und Schaubilder auswerten</h5><p><strong>Ziel:</strong> Aus nackten Zahlen soziale und wirtschaftliche Entwicklungen ablesen zu können.</p><p><strong>Beispiele:</strong> Bevölkerungswachstum in Städten (Urbanisierung), Steigen der Industrieproduktion, Analyse von Wahlergebnissen über Zeit, Handelsbilanzen.</p><p><strong>Wichtig:</strong> Immer die Quelle und Entstehungsumstände der Statistik hinterfragen ("Lügen mit Statistiken").</p></span></span></li>
+                        <li><span class="tooltip">Zeitzeugeninterviews führen (Oral History)<span class="tooltiptext"><h5>Zeitzeugeninterviews führen (Oral History)</h5><p><strong>Ziel:</strong> Die subjektive, emotionale und alltägliche Dimension der Geschichte einfangen, die in offiziellen Dokumenten oft fehlt.</p><p><strong>Herausforderung:</strong> Erinnerung ist fehlerhaft und verändert sich. Interviews müssen kritisch mit anderen Quellen abgeglichen werden, sind aber unschätzbar für die Mentalitätsgeschichte.</p></span></span></li>
+                        <li><span class="tooltip">Projektarbeit und Präsentation<span class="tooltiptext"><h5>Projektarbeit und Präsentation</h5><p><strong>Ziel:</strong> Selbstständiges, forschendes Lernen. Ein Thema eigenständig erarbeiten, Quellen suchen, eine Fragestellung entwickeln und die Ergebnisse ansprechend aufbereiten (z.B. als Ausstellung, Website, Vortrag).</p><p><strong>Kompetenz:</strong> Fördert tieferes Verständnis und transferierbare Skills wie Teamarbeit und Präsentationsfähigkeit.</p></span></span></li>
+                        <li><span class="tooltip">Digitale Geschichtsforschung<span class="tooltiptext"><h5>Digitale Geschichtsforschung</h5><p><strong>Ziel:</strong> Nutzung digitaler Werkzeuge und Ressourcen.</p><p><strong>Beispiele:</strong> Arbeit mit digitalisierten Archiven und Quellensammlungen, Nutzung von Datenbanken, Erstellung digitaler Karten (GIS) zur Visualisierung historischer Entwicklungen, kritischer Umgang mit Geschichte in sozialen Medien.</p></span></span></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Aktuelle Bezüge (Warum das alles heute relevant ist)</h4>
+                    <ul>
+                        <li><span class="tooltip">Globalisierung und ihre Folgen<span class="tooltiptext"><h5>Globalisierung und ihre Folgen</h5><p><strong>Der Bezug:</strong> Der Imperialismus des 19. Jahrhunderts war die erste Phase der Globalisierung. Die heutige globale Arbeitsteilung, Migrationsströme und Machtverhältnisse sind ohne dieses historische Erbe nicht zu verstehen.</p></span></span></li>
+                        <li><span class="tooltip">Klimawandel und Nachhaltigkeit<span class="tooltiptext"><h5>Klimawandel und Nachhaltigkeit</h5><p><strong>Der Bezug:</strong> Die Industrialisierung im 19. Jahrhundert ist der Startpunkt des menschengemachten massiven CO2-Ausstoßes. Die Geschichte des fossilen Zeitalters zu verstehen, ist zentral für die Bewältigung der Klimakrise.</p></span></span></li>
+                        <li><span class="tooltip">Künstliche Intelligenz und Ethik<span class="tooltiptext"><h5>Künstliche Intelligenz und Ethik</h5><p><strong>Der Bezug:</strong> Die Debatte um die Ambivalenz des technischen Fortschritts (Segen oder Fluch?) wurde bereits im 19. Jh. geführt (Maschinenstürmer). Heute stellen sich dieselben ethischen Fragen, nur mit neuer Technologie (KI als neue "Dampfmaschine").</p></span></span></li>
+                        <li><span class="tooltip">Demokratie im digitalen Zeitalter<span class="tooltiptext"><h5>Demokratie im digitalen Zeitalter</h5><p><strong>Der Bezug:</strong> Die Herausforderungen für die Demokratie durch Desinformation, Echokammern und Social Media erinnern an die Anfänge der Massenpresse und den Missbrauch von Propaganda im frühen 20. Jahrhundert. Geschichte bietet Warnungen und Lernchancen.</p></span></span></li>
+                        <li><span class="tooltip">Internationale Zusammenarbeit (EU, UN)<span class="tooltiptext"><h5>Internationale Zusammenarbeit (EU, UN)</h5><p><strong>Der Bezug:</strong> Diese Institutionen sind die direkte Antwort auf die Schrecken der beiden Weltkriege und des Nationalismus. Sie zu verstehen und zu schätzen, erfordert die Kenntnis der Katastrophen, die zu ihrer Gründung führten.</p></span></span></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -824,44 +1014,6 @@
             </div>
         </div>
 
-        <!-- Weiterführende Themen -->
-        <div class="content-section">
-            <h2>Weiterführende Themen und Vertiefungen</h2>
-            
-            <div class="grid-container">
-                <div class="card">
-                    <h4>Vertiefungsthemen</h4>
-                    <ul>
-                        <li>Frauenemanzipation im 19./20. Jahrhundert</li>
-                        <li>Arbeiterbewegung und Sozialismus</li>
-                        <li>Kolonialismus und Imperialismus</li>
-                        <li>Wissenschaftlich-technischer Fortschritt</li>
-                        <li>Kultureller Wandel und Moderne</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Methodische Schwerpunkte</h4>
-                    <ul>
-                        <li>Bildquellenanalyse (Gemälde, Fotografien)</li>
-                        <li>Statistiken und Schaubilder auswerten</li>
-                        <li>Zeitzeugeninterviews führen</li>
-                        <li>Projektarbeit und Präsentation</li>
-                        <li>Digitale Geschichtsforschung</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Aktuelle Bezüge</h4>
-                    <ul>
-                        <li>Globalisierung und ihre Folgen</li>
-                        <li>Klimawandel und Nachhaltigkeit</li>
-                        <li>Künstliche Intelligenz und Ethik</li>
-                        <li>Demokratie im digitalen Zeitalter</li>
-                        <li>Internationale Zusammenarbeit</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
         <!-- Prüfungsvorbereitung -->
         <div class="content-section">
             <div class="info-box">
@@ -895,7 +1047,7 @@
             </div>
         </div>
 
-        <a href="index.html" class="back-link">← Zurück zum Hauptmenü</a>
+        <a href="#index" class="back-link">← Zurück zum Hauptmenü</a>
         
         <!-- Scroll to Top Button -->
         <button class="scroll-to-top" onclick="scrollToTop()" title="Nach oben"></button>
@@ -910,17 +1062,43 @@
             });
         }
 
-        // Optional: Button nur anzeigen wenn gescrollt wurde
+        // Button nur anzeigen wenn gescrollt wurde
         window.addEventListener('scroll', function() {
             const scrollButton = document.querySelector('.scroll-to-top');
             if (window.pageYOffset > 300) {
                 scrollButton.style.opacity = '1';
                 scrollButton.style.visibility = 'visible';
             } else {
-                scrollButton.style.opacity = '0.7';
-                scrollButton.style.visibility = 'visible';
+                scrollButton.style.opacity = '0';
+                scrollButton.style.visibility = 'hidden';
             }
         });
+
+        // Touch-optimierte Tooltips für mobile Geräte
+        if ('ontouchstart' in window) {
+            const tooltips = document.querySelectorAll('.tooltip');
+            tooltips.forEach(tooltip => {
+                tooltip.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    // Schließe alle anderen Tooltips
+                    tooltips.forEach(t => {
+                        if (t !== this) {
+                            t.classList.remove('tooltip-active');
+                        }
+                    });
+                    // Toggle aktuellen Tooltip
+                    this.classList.toggle('tooltip-active');
+                });
+            });
+
+            // Schließe Tooltips beim Tippen außerhalb
+            document.addEventListener('touchstart', function(e) {
+                if (!e.target.closest('.tooltip')) {
+                    tooltips.forEach(t => t.classList.remove('tooltip-active'));
+                }
+            });
+        }
     </script>
+
 </body>
 </html>
