@@ -23,6 +23,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
 
         header {
@@ -178,8 +179,9 @@
             margin: 20px 0;
             background: white;
             border-radius: 10px;
-            overflow: hidden;
+            overflow: visible;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .comparison-table th,
@@ -187,6 +189,7 @@
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            position: relative;
         }
 
         .comparison-table th {
@@ -217,9 +220,85 @@
             box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
         }
 
+        /* Tooltip Styles */
+        .tooltip-term {
+            position: relative;
+            color: #2980b9;
+            font-weight: 600;
+            cursor: help;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-underline-offset: 2px;
+        }
+
+        .tooltip-term:hover {
+            color: #3498db;
+        }
+
+        .tooltip-content {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            z-index: 1000;
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: normal;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            transform: translateY(10px);
+            max-width: 350px;
+            width: max-content;
+            min-width: 250px;
+        }
+
+        .tooltip-content::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(44, 62, 80, 0.95);
+        }
+
+        .tooltip-term:hover .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Default positioning for regular tooltips */
+        .tooltip-term .tooltip-content {
+            top: 100%;
+            left: 0;
+        }
+
+        /* Special positioning for table tooltips to ensure they overflow properly */
+        .comparison-table .tooltip-term .tooltip-content,
+        table .tooltip-term .tooltip-content {
+            position: absolute !important;
+            z-index: 10000 !important;
+        }
+
+        /* Override for table cells to allow overflow */
+        .comparison-table td,
+        .comparison-table th,
+        table td,
+        table th {
+            overflow: visible !important;
+        }
+
+        /* Mobile optimizations */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
+                overflow-x: hidden;
             }
             
             h1 {
@@ -231,10 +310,78 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .tooltip-content {
+                position: fixed;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 90vw;
+                max-height: 70vh;
+                overflow-y: auto;
+                z-index: 10000;
+            }
+
+            .tooltip-content::before {
+                display: none;
+            }
+
+            /* Mobile tooltip trigger */
+            .tooltip-term {
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+
+        /* Touch-friendly tooltips for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .tooltip-term:active .tooltip-content {
+                visibility: visible;
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+
+            .tooltip-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 9999;
+                display: none;
+            }
+
+            .tooltip-overlay.active {
+                display: block;
+            }
+        }
+
+        /* Scrollable tooltip content */
+        .tooltip-scrollable {
+            max-height: 300px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #3498db rgba(255, 255, 255, 0.1);
+        }
+
+        .tooltip-scrollable::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .tooltip-scrollable::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .tooltip-scrollable::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
+    <div class="tooltip-overlay" id="tooltipOverlay"></div>
+    
     <div class="container">
         <header>
             <h1>Deutschland, Europa und die Welt nach 1945</h1>
@@ -258,7 +405,7 @@
                 <h3 class="section-title">10.1 Der Kalte Krieg – ein Krieg der Ideologien?</h3>
                 
                 <div class="content-text">
-                    Der Kalte Krieg begann beinahe unmittelbar nach dem Ende des Zweiten Weltkrieges. Beteiligt waren einerseits die Westalliierten und ihre Verbündeten, die kapitalistisch und demokratisch orientiert waren. Ihnen gegenüber standen die UdSSR und ihre Satellitenstaaten, die kommunistisch und diktatorisch geprägt waren. Vom „Kalten" Krieg sprechen wir deswegen, weil sich beide Seiten nicht mit Waffen bekämpften, sondern es sich um einen Krieg der Systeme, Ideologien und Weltanschauungen handelte. Nichtsdestotrotz bestand ständig die Gefahr, dass es zum Ausbruch eines „heißen" Krieges mit Waffeneinsatz kommt.
+                    Der <span class="tooltip-term">Kalte Krieg<span class="tooltip-content tooltip-scrollable">Ein Konflikt zwischen den USA und der UdSSR (1947-1991), der sich durch ideologische Gegensätze, Wettrüsten und Stellvertreterkriege auszeichnete. "Kalt" bedeutete, dass beide Supermächte nie direkt gegeneinander kämpften, aber ständig in Konkurrenz standen.</span></span> begann beinahe unmittelbar nach dem Ende des Zweiten Weltkrieges. Beteiligt waren einerseits die <span class="tooltip-term">Westalliierten<span class="tooltip-content">USA, Großbritannien und später auch Frankreich - die demokratischen Siegermächte des Zweiten Weltkriegs</span></span> und ihre Verbündeten, die kapitalistisch und demokratisch orientiert waren. Ihnen gegenüber standen die UdSSR und ihre <span class="tooltip-term">Satellitenstaaten<span class="tooltip-content">Osteuropäische Länder, die nach 1945 unter sowjetischem Einfluss standen und kommunistische Regierungen erhielten (Polen, Ungarn, Tschechoslowakei, DDR, etc.)</span></span>, die kommunistisch und diktatorisch geprägt waren. Vom „Kalten" Krieg sprechen wir deswegen, weil sich beide Seiten nicht mit Waffen bekämpften, sondern es sich um einen Krieg der Systeme, Ideologien und Weltanschauungen handelte. Nichtsdestotrotz bestand ständig die Gefahr, dass es zum Ausbruch eines „heißen" Krieges mit Waffeneinsatz kommt.
                 </div>
 
                 <table class="comparison-table">
@@ -268,16 +415,16 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Ideologie:</strong> Kapitalismus, Demokratie<br>
-                            <strong>Wirtschaft:</strong> Marktwirtschaft<br>
-                            <strong>Politik:</strong> Pluralismus, Gewaltenteilung<br>
-                            <strong>Bündnis:</strong> NATO (1949)
+                            <strong>Ideologie:</strong> <span class="tooltip-term">Kapitalismus<span class="tooltip-content">Wirtschaftssystem basierend auf Privateigentum, freiem Markt und Gewinnstreben</span></span>, Demokratie<br>
+                            <strong>Wirtschaft:</strong> <span class="tooltip-term">Marktwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem Angebot und Nachfrage den Preis bestimmen und private Unternehmen konkurrieren</span></span><br>
+                            <strong>Politik:</strong> Pluralismus, <span class="tooltip-term">Gewaltenteilung<span class="tooltip-content">Aufteilung der Staatsgewalt in Legislative (Gesetzgebung), Exekutive (Ausführung) und Judikative (Rechtsprechung)</span></span><br>
+                            <strong>Bündnis:</strong> <span class="tooltip-term">NATO<span class="tooltip-content">North Atlantic Treaty Organization - 1949 gegründetes Verteidigungsbündnis westlicher Staaten unter Führung der USA</span></span> (1949)
                         </td>
                         <td>
-                            <strong>Ideologie:</strong> Kommunismus, Sozialismus<br>
-                            <strong>Wirtschaft:</strong> Planwirtschaft<br>
-                            <strong>Politik:</strong> Einparteiensystem<br>
-                            <strong>Bündnis:</strong> Warschauer Pakt (1955)
+                            <strong>Ideologie:</strong> <span class="tooltip-term">Kommunismus<span class="tooltip-content">Gesellschaftsordnung ohne Privateigentum an Produktionsmitteln, Gleichberechtigung aller Menschen und Abschaffung der Klassenunterschiede</span></span>, Sozialismus<br>
+                            <strong>Wirtschaft:</strong> <span class="tooltip-term">Planwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem der Staat alle wirtschaftlichen Entscheidungen zentral plant und steuert</span></span><br>
+                            <strong>Politik:</strong> <span class="tooltip-term">Einparteiensystem<span class="tooltip-content">Politisches System, in dem nur eine Partei legal existiert und alle Macht ausübt</span></span><br>
+                            <strong>Bündnis:</strong> <span class="tooltip-term">Warschauer Pakt<span class="tooltip-content">1955 gegründetes Militärbündnis der Ostblockstaaten unter sowjetischer Führung als Gegengewicht zur NATO</span></span> (1955)
                         </td>
                     </tr>
                 </table>
@@ -285,7 +432,7 @@
                 <h3 class="section-title">10.2 Potsdamer Abkommen – ein Dokument der Teilung</h3>
                 
                 <div class="content-text">
-                    Zunächst waren die späteren Gegner jedoch Verbündete gegen Deutschland. Schon während der letzten Jahre des Zweiten Weltkrieges trafen sich die „Großen Drei" – die USA unter Roosevelt, die UdSSR unter Stalin und Großbritannien unter Churchill – zu verschiedenen Konferenzen. Auf diesen wurde über die Zukunft Deutschlands und Europas entschieden.
+                    Zunächst waren die späteren Gegner jedoch Verbündete gegen Deutschland. Schon während der letzten Jahre des Zweiten Weltkrieges trafen sich die <span class="tooltip-term">"Großen Drei"<span class="tooltip-content">Die Regierungschefs der drei Hauptsiegermächte: Roosevelt (USA), Stalin (UdSSR) und Churchill (Großbritannien)</span></span> – die USA unter Roosevelt, die UdSSR unter Stalin und Großbritannien unter Churchill – zu verschiedenen Konferenzen. Auf diesen wurde über die Zukunft Deutschlands und Europas entschieden.
                 </div>
 
                 <div class="timeline">
@@ -295,33 +442,33 @@
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Februar 1945</div>
-                        <strong>Konferenz von Jalta:</strong> Erste Differenzen, Aufteilung Deutschlands in Besatzungszonen
+                        <strong><span class="tooltip-term">Konferenz von Jalta<span class="tooltip-content">Konferenz zwischen Roosevelt, Churchill und Stalin zur Nachkriegsordnung. Erste Spannungen zwischen den Alliierten werden sichtbar.</span></span>:</strong> Erste Differenzen, Aufteilung Deutschlands in Besatzungszonen
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">17. Juli - 2. August 1945</div>
-                        <strong>Potsdamer Konferenz:</strong> Endgültige Festlegung der Deutschlandpolitik
+                        <strong><span class="tooltip-term">Potsdamer Konferenz<span class="tooltip-content">Letzte Konferenz der "Großen Drei" (nun Truman, Attlee, Stalin). Endgültige Festlegung der Deutschlandpolitik und erste Anzeichen des Kalten Krieges.</span></span>:</strong> Endgültige Festlegung der Deutschlandpolitik
                     </div>
                 </div>
 
                 <div class="important-concept">
-                    <strong>Die "5 Ds" des Potsdamer Abkommens:</strong>
+                    <strong>Die <span class="tooltip-term">"5 Ds"<span class="tooltip-content">Die fünf Grundprinzipien der alliierten Deutschlandpolitik nach 1945, die Deutschland grundlegend umgestalten sollten</span></span> des Potsdamer Abkommens:</strong>
                     <ul>
-                        <li><strong>Demokratisierung:</strong> Aufbau demokratischer Strukturen</li>
-                        <li><strong>Demilitarisierung:</strong> Vollständige Abrüstung</li>
-                        <li><strong>Demontage:</strong> Abbau der Rüstungsindustrie</li>
-                        <li><strong>Dezentralisierung:</strong> Föderale Strukturen</li>
-                        <li><strong>Denazifizierung:</strong> Beseitigung des Nationalsozialismus</li>
+                        <li><strong><span class="tooltip-term">Demokratisierung<span class="tooltip-content">Aufbau demokratischer Institutionen, Parteien und Wahlen nach westlichem Vorbild</span></span>:</strong> Aufbau demokratischer Strukturen</li>
+                        <li><strong><span class="tooltip-term">Demilitarisierung<span class="tooltip-content">Vollständige Abrüstung und Auflösung der deutschen Wehrmacht</span></span>:</strong> Vollständige Abrüstung</li>
+                        <li><strong><span class="tooltip-term">Demontage<span class="tooltip-content">Abbau von Industrieanlagen, besonders der Rüstungsindustrie, teilweise als Reparationen</span></span>:</strong> Abbau der Rüstungsindustrie</li>
+                        <li><strong><span class="tooltip-term">Dezentralisierung<span class="tooltip-content">Aufbau föderaler Strukturen statt eines zentralisierten Staates</span></span>:</strong> Föderale Strukturen</li>
+                        <li><strong><span class="tooltip-term">Denazifizierung<span class="tooltip-content">Beseitigung des Nationalsozialismus aus Politik, Verwaltung, Justiz und Gesellschaft</span></span>:</strong> Beseitigung des Nationalsozialismus</li>
                     </ul>
                 </div>
 
                 <div class="content-text">
-                    Deutschland wurde in vier Besatzungszonen aufgeteilt, von denen jeweils eine von den USA, Großbritannien, Frankreich und der UdSSR besetzt wurde. Auch Berlin wurde in vier Zonen aufgeteilt. Der Alliierte Kontrollrat übernahm die Regierung.
+                    Deutschland wurde in vier <span class="tooltip-term">Besatzungszonen<span class="tooltip-content">Verwaltungsgebiete, die jeweils von einer Siegermacht (USA, Großbritannien, Frankreich, UdSSR) kontrolliert wurden</span></span> aufgeteilt, von denen jeweils eine von den USA, Großbritannien, Frankreich und der UdSSR besetzt wurde. Auch Berlin wurde in vier Zonen aufgeteilt. Der <span class="tooltip-term">Alliierte Kontrollrat<span class="tooltip-content">Oberstes Regierungsorgan für Deutschland, bestehend aus den vier Oberbefehlshabern der Besatzungsmächte</span></span> übernahm die Regierung.
                 </div>
 
                 <h3 class="section-title">10.3 Entnazifizierung – ein Sieg der Gerechtigkeit?</h3>
                 
                 <div class="content-text">
-                    Die Entnazifizierung war einer der wichtigen Beschlüsse der Alliierten Siegermächte, um sicherzugehen, dass die Ideologie des Nationalsozialismus keinen Bestand hatte. In der Umsetzung gab es jedoch nach Besatzungszone Unterschiede:
+                    Die <span class="tooltip-term">Entnazifizierung<span class="tooltip-content">Systematische Säuberung von Nationalsozialisten aus öffentlichen Ämtern und die juristische Aufarbeitung von NS-Verbrechen</span></span> war einer der wichtigen Beschlüsse der Alliierten Siegermächte, um sicherzugehen, dass die Ideologie des Nationalsozialismus keinen Bestand hatte. In der Umsetzung gab es jedoch nach Besatzungszone Unterschiede:
                 </div>
 
                 <table class="comparison-table">
@@ -332,12 +479,12 @@
                     </tr>
                     <tr>
                         <td>Westzonen</td>
-                        <td>Fragebogenaktion, Spruchkammerverfahren, Nürnberger Prozesse (1945/46)</td>
+                        <td><span class="tooltip-term">Fragebogenaktion<span class="tooltip-content">Alle Deutschen mussten einen detaillierten Fragebogen über ihre NS-Vergangenheit ausfüllen</span></span>, <span class="tooltip-term">Spruchkammerverfahren<span class="tooltip-content">Deutsche Zivilgerichte zur Beurteilung der NS-Belastung einzelner Personen</span></span>, <span class="tooltip-term">Nürnberger Prozesse<span class="tooltip-content">Internationale Kriegsverbrecherprozesse gegen die Hauptkriegsverbrecher (1945/46)</span></span> (1945/46)</td>
                         <td>Kategorisierung in 5 Stufen (Hauptschuldige bis Entlastete), viele ehemalige Verantwortliche wurden mit Strafen unterschiedlicher Höhe versehen</td>
                     </tr>
                     <tr>
                         <td>Sowjetische Zone</td>
-                        <td>Politische Säuberung durch SMAD</td>
+                        <td>Politische Säuberung durch <span class="tooltip-term">SMAD<span class="tooltip-content">Sowjetische Militäradministration in Deutschland - Besatzungsbehörde der UdSSR</span></span></td>
                         <td>Enthobung aller Nationalsozialisten aus höheren Ämtern, Verurteilung zahlreicher NSDAP-Mitglieder und anderer NS-Organisationen</td>
                     </tr>
                 </table>
@@ -349,16 +496,16 @@
                 <h3 class="section-title">10.4 Die wirtschaftliche Entwicklung der Besatzungszonen</h3>
                 
                 <div class="content-text">
-                    Aufgrund des Einflusses der Westalliierten und der UdSSR auf ihre Besatzungszonen entwickelten sich diese nach 1945 sehr unterschiedlich. In den drei Westzonen wurde die Soziale Marktwirtschaft, in der sowjetischen Besatzungszone die Planwirtschaft etabliert.
+                    Aufgrund des Einflusses der Westalliierten und der UdSSR auf ihre Besatzungszonen entwickelten sich diese nach 1945 sehr unterschiedlich. In den drei Westzonen wurde die <span class="tooltip-term">Soziale Marktwirtschaft<span class="tooltip-content">Wirtschaftsordnung, die freie Marktwirtschaft mit sozialer Absicherung verbindet, entwickelt von Ludwig Erhard</span></span>, in der sowjetischen Besatzungszone die Planwirtschaft etabliert.
                 </div>
 
                 <div class="key-points">
                     <h4>Entwicklung in den Westzonen:</h4>
                     <ul>
-                        <li>Soziale Marktwirtschaft unter Ludwig Erhard</li>
-                        <li>Währungsreform 1948 (Deutsche Mark)</li>
-                        <li><strong>Marshall-Plan (1948):</strong> US-Wirtschaftshilfe half den Westzonen wirtschaftlich auf die Beine</li>
-                        <li>Montanunion (1951) - erste europäische Integration</li>
+                        <li>Soziale Marktwirtschaft unter <span class="tooltip-term">Ludwig Erhard<span class="tooltip-content">Wirtschaftsminister der BRD (1949-1963), "Vater des Wirtschaftswunders" und der Sozialen Marktwirtschaft</span></span></li>
+                        <li><span class="tooltip-term">Währungsreform 1948<span class="tooltip-content">Einführung der Deutschen Mark (DM) in den Westzonen, ersetzte die wertlose Reichsmark und leitete das Wirtschaftswunder ein</span></span> (Deutsche Mark)</li>
+                        <li><strong><span class="tooltip-term">Marshall-Plan<span class="tooltip-content">US-Wirtschaftshilfeprogramm (1948-1952) für Europa nach dem Zweiten Weltkrieg, benannt nach US-Außenminister George Marshall</span></span> (1948):</strong> US-Wirtschaftshilfe half den Westzonen wirtschaftlich auf die Beine</li>
+                        <li><span class="tooltip-term">Montanunion<span class="tooltip-content">Europäische Gemeinschaft für Kohle und Stahl (1951) - erste supranationale europäische Organisation</span></span> (1951) - erste europäische Integration</li>
                     </ul>
                 </div>
 
@@ -366,16 +513,16 @@
                     <h4>Entwicklung in der Sowjetischen Zone:</h4>
                     <ul>
                         <li>Planwirtschaft nach sowjetischem Vorbild</li>
-                        <li>Enteignung und Verstaatlichung</li>
-                        <li>Bodenreform und Kollektivierung</li>
-                        <li><strong>RGW (1949):</strong> Rat für gegenseitige Wirtschaftshilfe als Gegenentwurf zum Marshall-Plan</li>
-                        <li>Gründung der Staatspartei SED (1946)</li>
+                        <li><span class="tooltip-term">Enteignung und Verstaatlichung<span class="tooltip-content">Private Unternehmen und Großgrundbesitz wurden enteignet und in Staatseigentum überführt</span></span></li>
+                        <li><span class="tooltip-term">Bodenreform und Kollektivierung<span class="tooltip-content">Umverteilung des Großgrundbesitzes an Kleinbauern und spätere Zwangskollektivierung in LPGs (Landwirtschaftliche Produktionsgenossenschaften)</span></span></li>
+                        <li><strong><span class="tooltip-term">RGW<span class="tooltip-content">Rat für gegenseitige Wirtschaftshilfe (1949) - Wirtschaftsbündnis der Ostblockstaaten als Antwort auf den Marshall-Plan</span></span> (1949):</strong> Rat für gegenseitige Wirtschaftshilfe als Gegenentwurf zum Marshall-Plan</li>
+                        <li>Gründung der Staatspartei <span class="tooltip-term">SED<span class="tooltip-content">Sozialistische Einheitspartei Deutschlands (1946) - entstanden durch Zwangsvereinigung von SPD und KPD in der Sowjetzone</span></span> (1946)</li>
                     </ul>
                 </div>
 
                 <div class="highlight-box">
-                    <strong>Berlin-Blockade (1948/49):</strong><br>
-                    Als die Westalliierten die Währungsreform auch in den westlichen Sektoren Berlins durchführten, reagierte die UdSSR mit der Berlin-Blockade. Sämtliche Landwege nach Westberlin wurden blockiert, sodass eine Versorgung nur per Flugzeug durch die Luftbrücke möglich war.
+                    <strong><span class="tooltip-term">Berlin-Blockade<span class="tooltip-content">Sowjetische Blockade aller Land- und Wasserwege nach West-Berlin (24.6.1948 - 12.5.1949) als Reaktion auf die Währungsreform</span></span> (1948/49):</strong><br>
+                    Als die Westalliierten die Währungsreform auch in den westlichen Sektoren Berlins durchführten, reagierte die UdSSR mit der Berlin-Blockade. Sämtliche Landwege nach Westberlin wurden blockiert, sodass eine Versorgung nur per Flugzeug durch die <span class="tooltip-term">Luftbrücke<span class="tooltip-content">Versorgung West-Berlins durch westliche Flugzeuge während der Blockade - etwa 277.000 Flüge transportierten 2,3 Millionen Tonnen Güter</span></span> möglich war.
                 </div>
 
                 <h3 class="section-title">10.5 Doppelte Staatsgründung von BRD und DDR</h3>
@@ -387,30 +534,30 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">1947</div>
-                        <strong>Bizone:</strong> Zusammenschluss der amerikanischen und britischen Zone
+                        <strong><span class="tooltip-term">Bizone<span class="tooltip-content">Wirtschaftlicher Zusammenschluss der amerikanischen und britischen Besatzungszone</span></span>:</strong> Zusammenschluss der amerikanischen und britischen Zone
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1948</div>
-                        <strong>Trizone:</strong> Beitritt Frankreichs - drei westliche Besatzungszonen politisch und wirtschaftlich quasi vereinigt
+                        <strong><span class="tooltip-term">Trizone<span class="tooltip-content">Einbeziehung der französischen Zone - alle drei westlichen Besatzungszonen nun wirtschaftlich vereinigt</span></span>:</strong> Beitritt Frankreichs - drei westliche Besatzungszonen politisch und wirtschaftlich quasi vereinigt
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1946</div>
-                        <strong>SED-Gründung:</strong> Zwangsvereinigung von SPD und KPD in der Sowjetzone unter SMAD-Verwaltung
+                        <strong>SED-Gründung:</strong> <span class="tooltip-term">Zwangsvereinigung<span class="tooltip-content">Erzwungene Fusion von SPD und KPD in der Sowjetzone unter Druck der SMAD, viele SPD-Mitglieder wurden verfolgt</span></span> von SPD und KPD in der Sowjetzone unter SMAD-Verwaltung
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">23. Mai 1949</div>
-                        <strong>Gründung der BRD:</strong> Inkrafttreten des Grundgesetzes (Parlamentarischer Rat)
+                        <strong>Gründung der BRD:</strong> Inkrafttreten des <span class="tooltip-term">Grundgesetzes<span class="tooltip-content">Verfassung der BRD, erarbeitet vom Parlamentarischen Rat. Bewusst "Grundgesetz" genannt, da man eine Wiedervereinigung erwartete</span></span> (Parlamentarischer Rat)
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">7. Oktober 1949</div>
-                        <strong>Gründung der DDR:</strong> Deutsche Demokratische Republik (Volkskongress)
+                        <strong>Gründung der DDR:</strong> Deutsche Demokratische Republik (<span class="tooltip-term">Volkskongress<span class="tooltip-content">Pseudo-demokratisches Gremium in der Sowjetzone, das die DDR-Verfassung verabschiedete</span></span>)
                     </div>
                 </div>
 
                 <div class="important-concept">
                     <strong>Unterschiedliche Staatskonzeptionen:</strong><br>
-                    <strong>BRD:</strong> Parlamentarische Demokratie, föderale Struktur, Gewaltenteilung, Grundrechte<br>
-                    <strong>DDR:</strong> "Demokratischer Zentralismus", sozialistischer Staat, Führungsrolle der SED - diese Konzentration der Macht auf eine einzige Partei zeigte bereits die diktatorischen Züge des Systems auf
+                    <strong>BRD:</strong> <span class="tooltip-term">Parlamentarische Demokratie<span class="tooltip-content">Regierungssystem, in dem die Regierung vom Parlament gewählt wird und diesem verantwortlich ist</span></span>, föderale Struktur, Gewaltenteilung, Grundrechte<br>
+                    <strong>DDR:</strong> <span class="tooltip-term">"Demokratischer Zentralismus"<span class="tooltip-content">Prinzip der kommunistischen Parteien: scheinbar demokratische Diskussion, aber zentrale Entscheidung durch die Parteiführung</span></span>, sozialistischer Staat, Führungsrolle der SED - diese Konzentration der Macht auf eine einzige Partei zeigte bereits die diktatorischen Züge des Systems auf
                 </div>
 
                 <h3 class="section-title">10.6 Die Entwicklung der beiden deutschen Staaten</h3>
@@ -422,11 +569,11 @@
                 <h4 class="subsection-title">Bundesrepublik Deutschland:</h4>
                 <div class="content-text">
                     <ul>
-                        <li><strong>Wirtschaftswunder:</strong> Wirtschaftlich entwickelte sich die BRD nach und nach zu einem modernen Industriestaat, der immer größere Teile der Bevölkerung zu einem gewissen Wohlstand brachte</li>
-                        <li><strong>Westintegration:</strong> NATO-Beitritt (1955), EWG-Gründungsmitglied (1957)</li>
-                        <li><strong>Adenauer-Ära:</strong> "Politik der Stärke", Hallstein-Doktrin</li>
+                        <li><strong><span class="tooltip-term">Wirtschaftswunder<span class="tooltip-content">Schneller wirtschaftlicher Aufschwung der BRD in den 1950er/60er Jahren mit hohen Wachstumsraten und Vollbeschäftigung</span></span>:</strong> Wirtschaftlich entwickelte sich die BRD nach und nach zu einem modernen Industriestaat, der immer größere Teile der Bevölkerung zu einem gewissen Wohlstand brachte</li>
+                        <li><strong><span class="tooltip-term">Westintegration<span class="tooltip-content">Politik der BRD, sich politisch, militärisch und wirtschaftlich in westliche Strukturen zu integrieren</span></span>:</strong> NATO-Beitritt (1955), <span class="tooltip-term">EWG<span class="tooltip-content">Europäische Wirtschaftsgemeinschaft (1957) - Vorläufer der EU</span></span>-Gründungsmitglied (1957)</li>
+                        <li><strong><span class="tooltip-term">Adenauer-Ära<span class="tooltip-content">Regierungszeit von Konrad Adenauer (1949-1963), geprägt von Westbindung und "Politik der Stärke"</span></span>:</strong> "Politik der Stärke", <span class="tooltip-term">Hallstein-Doktrin<span class="tooltip-content">BRD erkannte keine Staaten an, die die DDR anerkannten (außer UdSSR). Alleinvertretungsanspruch für ganz Deutschland</span></span></li>
                         <li><strong>Demokratische Strukturen:</strong> Der 1. Deutsche Bundestag kam durch eine demokratische Wahl gemäß der Wahlgrundsätze zustande</li>
-                        <li><strong>68er-Bewegung:</strong> Gesellschaftlicher Wandel und Generationenkonflikt</li>
+                        <li><strong><span class="tooltip-term">68er-Bewegung<span class="tooltip-content">Studentenproteste und gesellschaftlicher Aufbruch Ende der 1960er Jahre gegen autoritäre Strukturen</span></span>:</strong> Gesellschaftlicher Wandel und Generationenkonflikt</li>
                     </ul>
                 </div>
 
@@ -434,23 +581,23 @@
                 <div class="content-text">
                     <ul>
                         <li><strong>Sozialistischer Staat:</strong> Die DDR war ein sozialistischer Staat, wo der Lebensstandard für die Bevölkerung niedriger war</li>
-                        <li><strong>Diktatorische Strukturen:</strong> Die Bevölkerung der DDR sollte bei der Wahl zur 1. Volkskammer eine Einheitsliste der „Nationalen Front" bestätigen</li>
-                        <li><strong>17. Juni 1953:</strong> Volksaufstand in Ostberlin und der DDR</li>
+                        <li><strong>Diktatorische Strukturen:</strong> Die Bevölkerung der DDR sollte bei der Wahl zur 1. Volkskammer eine <span class="tooltip-term">Einheitsliste<span class="tooltip-content">Wahlzettel mit nur einer vorgegebenen Kandidatenliste ohne Auswahlmöglichkeit</span></span> der „Nationalen Front" bestätigen</li>
+                        <li><strong><span class="tooltip-term">17. Juni 1953<span class="tooltip-content">Volksaufstand in der DDR gegen Normerhöhungen, niedergeschlagen mit sowjetischen Panzern. Bis 1990 Nationalfeiertag der BRD</span></span>:</strong> Volksaufstand in Ostberlin und der DDR</li>
                         <li><strong>Ostintegration:</strong> Warschauer Pakt (1955), RGW</li>
-                        <li><strong>Staatssicherheit:</strong> Gründung des Ministeriums für Staatssicherheit (Stasi) 1950, das inländische Gegner und Andersdenkende systematisch unterdrückte und die antidemokratischen Elemente verstärkte</li>
-                        <li><strong>Fluchtbewegung:</strong> Bis 1961 ca. 2,7 Millionen Übersiedler in den Westen</li>
+                        <li><strong>Staatssicherheit:</strong> Gründung des <span class="tooltip-term">Ministeriums für Staatssicherheit<span class="tooltip-content">Geheimer Polizeiapparat der DDR (gegr. 1950), überwachte und unterdrückte die eigene Bevölkerung mit einem Netz von Spitzeln</span></span> (Stasi) 1950, das inländische Gegner und Andersdenkende systematisch unterdrückte und die antidemokratischen Elemente verstärkte</li>
+                        <li><strong>Fluchtbewegung:</strong> Bis 1961 ca. 2,7 Millionen <span class="tooltip-term">Übersiedler<span class="tooltip-content">DDR-Bürger, die in den Westen flohen, meist über Berlin. Offizielle DDR-Bezeichnung zur Vermeidung des Wortes "Flucht"</span></span> in den Westen</li>
                     </ul>
                 </div>
 
                 <div class="important-concept">
                     <strong>Blockbildung durch Integration:</strong><br>
-                    <strong>BRD - Westintegration:</strong> Europarat (1950), EGKS-Gründungsstaat (1952), Deutschlandvertrag (1952), WEU (1954), NATO-Beitritt (1955), Wiederbewaffnung mit Bundeswehr<br>
+                    <strong>BRD - Westintegration:</strong> <span class="tooltip-term">Europarat<span class="tooltip-content">1949 gegründete europäische Organisation zur Förderung von Demokratie und Menschenrechten</span></span> (1950), <span class="tooltip-term">EGKS<span class="tooltip-content">Europäische Gemeinschaft für Kohle und Stahl - erste supranationale europäische Organisation</span></span>-Gründungsstaat (1952), <span class="tooltip-term">Deutschlandvertrag<span class="tooltip-content">Vertrag von 1952, der der BRD weitgehende Souveränität gewährte</span></span> (1952), <span class="tooltip-term">WEU<span class="tooltip-content">Westeuropäische Union - Verteidigungsbündnis westeuropäischer Staaten</span></span> (1954), NATO-Beitritt (1955), Wiederbewaffnung mit Bundeswehr<br>
                     <strong>DDR - Ostintegration:</strong> RGW-Mitglied (1950), Warschauer Pakt-Gründungsmitglied (1955)
                 </div>
 
                 <div class="highlight-box">
-                    <strong>Alleinvertretungsanspruch:</strong><br>
-                    Beide deutsche Staaten vertraten anfangs einen Alleinvertretungsanspruch und weigerten sich, den jeweils anderen Staat anzuerkennen. Während die DDR diesen Anspruch schnell aufgab, hielt die BRD, vor allem untermauert durch die Hallstein-Doktrin, daran fest. Vonseiten der UdSSR gab es durch die Stalin-Note (1952) sogar den Versuch, Deutschland zu Bedingungen der Sowjetunion wieder zu vereinen. Doch im Laufe der 1950er-Jahre rückte eine Wiedervereinigung in immer weitere Ferne und die Deutsche Frage blieb unbeantwortet.
+                    <strong><span class="tooltip-term">Alleinvertretungsanspruch<span class="tooltip-content">Beide deutsche Staaten beanspruchten anfangs, der einzig legitime deutsche Staat zu sein und ganz Deutschland zu vertreten</span></span>:</strong><br>
+                    Beide deutsche Staaten vertraten anfangs einen Alleinvertretungsanspruch und weigerten sich, den jeweils anderen Staat anzuerkennen. Während die DDR diesen Anspruch schnell aufgab, hielt die BRD, vor allem untermauert durch die Hallstein-Doktrin, daran fest. Vonseiten der UdSSR gab es durch die <span class="tooltip-term">Stalin-Note<span class="tooltip-content">Sowjetisches Angebot von 1952 für ein wiedervereinigtes, neutrales Deutschland - von Adenauer abgelehnt</span></span> (1952) sogar den Versuch, Deutschland zu Bedingungen der Sowjetunion wieder zu vereinen. Doch im Laufe der 1950er-Jahre rückte eine Wiedervereinigung in immer weitere Ferne und die Deutsche Frage blieb unbeantwortet.
                 </div>
 
                 <h3 class="section-title">10.7 Leben in Ost und West</h3>
@@ -463,18 +610,18 @@
                     </tr>
                     <tr>
                         <td>Lebensstandard</td>
-                        <td>Steigender Wohlstand, Konsumgesellschaft</td>
+                        <td>Steigender Wohlstand, <span class="tooltip-term">Konsumgesellschaft<span class="tooltip-content">Gesellschaft, die durch Konsum und materiellen Wohlstand geprägt ist</span></span></td>
                         <td>Grundversorgung, aber Mangel an Konsumgütern</td>
                     </tr>
                     <tr>
                         <td>Bildung</td>
                         <td>Föderales System, Bildungsautonomie der Länder</td>
-                        <td>Einheitliches System, polytechnische Bildung</td>
+                        <td>Einheitliches System, <span class="tooltip-term">polytechnische Bildung<span class="tooltip-content">Bildungssystem, das theoretisches Lernen mit praktischer Arbeit verbindet</span></span></td>
                     </tr>
                     <tr>
                         <td>Medien</td>
                         <td>Pressefreiheit, plurale Medienlandschaft</td>
-                        <td>Staatliche Kontrolle, Zensur</td>
+                        <td>Staatliche Kontrolle, <span class="tooltip-term">Zensur<span class="tooltip-content">Staatliche Kontrolle und Unterdrückung unerwünschter Meinungen in Medien</span></span></td>
                     </tr>
                     <tr>
                         <td>Reisefreiheit</td>
@@ -486,25 +633,25 @@
                 <h3 class="section-title">10.8 Aufstände in den Ostblockstaaten</h3>
                 
                 <div class="content-text">
-                    Die DDR gehörte wie die meisten anderen Staaten Osteuropas zu den Satellitenstaaten der Sowjetunion. In all diesen Staaten breitete sich nach dem Tod von Stalin 1953 die Hoffnung aus, dass sein Nachfolger als russischer Staatschef mehr Freiheiten zugestehen würde und sich so die politischen und wirtschaftlichen Verhältnisse bessern könnten. Als sich jedoch abzeichnete, dass sich auch unter den neuen russischen Regierungschefs nur wenig ändern würde, kam es in vielen Ostblockstaaten zu Volksaufständen.
+                    Die DDR gehörte wie die meisten anderen Staaten Osteuropas zu den Satellitenstaaten der Sowjetunion. In all diesen Staaten breitete sich nach dem Tod von <span class="tooltip-term">Stalin 1953<span class="tooltip-content">Josef Stalin, sowjetischer Diktator, starb am 5. März 1953. Sein Tod leitete eine Phase der "Entstalinisierung" ein</span></span> die Hoffnung aus, dass sein Nachfolger als russischer Staatschef mehr Freiheiten zugestehen würde und sich so die politischen und wirtschaftlichen Verhältnisse bessern könnten. Als sich jedoch abzeichnete, dass sich auch unter den neuen russischen Regierungschefs nur wenig ändern würde, kam es in vielen Ostblockstaaten zu Volksaufständen.
                 </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">17. Juni 1953</div>
-                        <strong>DDR:</strong> Volksaufstand gegen Normerhöhungen - dieses Datum blieb bis zur Wiedervereinigung sogar offizieller Nationalfeiertag in der BRD
+                        <strong>DDR:</strong> Volksaufstand gegen <span class="tooltip-term">Normerhöhungen<span class="tooltip-content">Erhöhung der Arbeitsleistung bei gleichem Lohn - Auslöser der Proteste</span></span> - dieses Datum blieb bis zur Wiedervereinigung sogar offizieller Nationalfeiertag in der BRD
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1956</div>
-                        <strong>Ungarn:</strong> Volksaufstand gegen sowjetische Herrschaft - besonders viele Todesopfer
+                        <strong><span class="tooltip-term">Ungarn<span class="tooltip-content">Ungarischer Volksaufstand gegen sowjetische Herrschaft, brutal niedergeschlagen von sowjetischen Truppen</span></span>:</strong> Volksaufstand gegen sowjetische Herrschaft - besonders viele Todesopfer
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1968</div>
-                        <strong>Prager Frühling:</strong> Politische und wirtschaftliche Reformen in der Tschechoslowakei, durch Demonstrationen der Bevölkerung bekräftigt
+                        <strong><span class="tooltip-term">Prager Frühling<span class="tooltip-content">Reformbewegung in der Tschechoslowakei unter Alexander Dubček, beendet durch Invasion von Warschauer Pakt-Truppen</span></span>:</strong> Politische und wirtschaftliche Reformen in der Tschechoslowakei, durch Demonstrationen der Bevölkerung bekräftigt
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1980/81</div>
-                        <strong>Polen:</strong> Solidarność-Bewegung unter Lech Wałęsa
+                        <strong>Polen:</strong> <span class="tooltip-term">Solidarność-Bewegung<span class="tooltip-content">Erste freie Gewerkschaft im Ostblock unter Lech Wałęsa, führte schließlich zum Ende des Kommunismus in Polen</span></span> unter Lech Wałęsa
                     </div>
                 </div>
 
@@ -523,28 +670,28 @@
                     <h4>Fluchtursachen:</h4>
                     <ul>
                         <li><strong>Bessere Lebensverhältnisse:</strong> Wunsch nach höherem Lebensstandard im Westen</li>
-                        <li><strong>Kollektivierung:</strong> Viele große landwirtschaftliche Betriebe waren kollektiviert worden, Landwirte mussten ihren Besitz an den Staat abtreten</li>
+                        <li><strong><span class="tooltip-term">Kollektivierung<span class="tooltip-content">Zwangsweise Zusammenlegung privater Bauernhöfe zu staatlich kontrollierten Landwirtschaftlichen Produktionsgenossenschaften (LPGs)</span></span>:</strong> Viele große landwirtschaftliche Betriebe waren kollektiviert worden, Landwirte mussten ihren Besitz an den Staat abtreten</li>
                         <li><strong>Politischer Druck:</strong> Zwang zur politischen Organisation und systematischer Druck auf Andersdenkende</li>
-                        <li><strong>Passgesetz:</strong> Nicht wenige blieben in der BRD, weil sie durch einen Grenzübertritt gegen das Passgesetz verstießen</li>
+                        <li><strong><span class="tooltip-term">Passgesetz<span class="tooltip-content">DDR-Gesetz, das Bürgern verbot, ohne Genehmigung das Land zu verlassen</span></span>:</strong> Nicht wenige blieben in der BRD, weil sie durch einen Grenzübertritt gegen das Passgesetz verstießen</li>
                         <li><strong>Wirtschaftliche Schwächung:</strong> Die zunehmende Abwanderung schwächte die Wirtschaft der DDR</li>
                     </ul>
                 </div>
 
                 <div class="highlight-box">
-                    <strong>13. August 1961 - Mauerbau:</strong><br>
-                    Das DDR-Regime errichtete Grenzanlagen mit Sperrzonen und Selbstschussanlagen, um sich gegen den Westen abzuschotten. Der Versuch, die Grenze unerlaubt zu überwinden, war strafbar.<br>
+                    <strong><span class="tooltip-term">13. August 1961 - Mauerbau<span class="tooltip-content">Errichtung der Berliner Mauer und Befestigung der innerdeutschen Grenze durch die DDR, um Fluchtbewegung zu stoppen</span></span>:</strong><br>
+                    Das DDR-Regime errichtete Grenzanlagen mit <span class="tooltip-term">Sperrzonen<span class="tooltip-content">Militärisch gesicherte Bereiche entlang der Grenze mit Stacheldraht, Minen und Wachtürmen</span></span> und <span class="tooltip-term">Selbstschussanlagen<span class="tooltip-content">Automatische Schusswaffen, die bei Berührung des Grenzzauns aktiviert wurden</span></span>, um sich gegen den Westen abzuschotten. Der Versuch, die Grenze unerlaubt zu überwinden, war strafbar.<br>
                     <strong>Folgen:</strong> Endgültige Teilung Deutschlands, internationale Spannungen, Familien wurden getrennt
                 </div>
 
                 <h3 class="section-title">10.10 Internationale Ordnungssysteme zur Zeit des Kalten Krieges</h3>
                 
                 <div class="content-text">
-                    Die UNO bemühte sich schon sehr früh darum, die harten Frontlinien zwischen den Westalliierten und der Sowjetunion inklusive der jeweiligen Verbündeten aufzuweichen und einen Dialog herzustellen, was aber nicht immer gelang. Schließlich wird in der Charta der Vereinten Nationen bis heute der Weltfrieden als erstes Ziel genannt.
+                    Die <span class="tooltip-term">UNO<span class="tooltip-content">United Nations Organization - 1945 gegründete internationale Organisation zur Wahrung des Weltfriedens</span></span> bemühte sich schon sehr früh darum, die harten Frontlinien zwischen den Westalliierten und der Sowjetunion inklusive der jeweiligen Verbündeten aufzuweichen und einen Dialog herzustellen, was aber nicht immer gelang. Schließlich wird in der Charta der Vereinten Nationen bis heute der Weltfrieden als erstes Ziel genannt.
                 </div>
 
                 <div class="important-concept">
                     <strong>Probleme der UNO im Kalten Krieg:</strong><br>
-                    Im UN-Sicherheitsrat wurden die Chancen und Grenzen dieser Organisation besonders deutlich, da die USA und die UdSSR durch die Wahrnehmung ihres Veto-Rechts viele Entscheidungen blockierten. Die begrenzte Macht der UNO wurde besonders während des Koreakrieges (1950-1953) deutlich.
+                    Im <span class="tooltip-term">UN-Sicherheitsrat<span class="tooltip-content">Oberstes Entscheidungsgremium der UNO mit 5 ständigen Mitgliedern (USA, UdSSR/Russland, China, Frankreich, Großbritannien) mit Vetorecht</span></span> wurden die Chancen und Grenzen dieser Organisation besonders deutlich, da die USA und die UdSSR durch die Wahrnehmung ihres <span class="tooltip-term">Veto-Rechts<span class="tooltip-content">Recht der ständigen Sicherheitsratsmitglieder, Beschlüsse zu blockieren</span></span> viele Entscheidungen blockierten. Die begrenzte Macht der UNO wurde besonders während des <span class="tooltip-term">Koreakrieges<span class="tooltip-content">Krieg zwischen Nord- und Südkorea (1950-1953), erster großer Stellvertreterkrieg des Kalten Krieges</span></span> (1950-1953) deutlich.
                 </div>
 
                 <div class="key-points">
@@ -552,7 +699,7 @@
                     <ul>
                         <li><strong>NATO:</strong> USA und Verbündete in Europa sowie Kanada</li>
                         <li><strong>Warschauer Pakt:</strong> UdSSR und Satellitenstaaten in Osteuropa</li>
-                        <li><strong>Blockfreie Staaten:</strong> Jugoslawien, Zypern und andere schafften es, neutral zu bleiben</li>
+                        <li><strong><span class="tooltip-term">Blockfreie Staaten<span class="tooltip-content">Länder, die sich keinem der beiden Blöcke anschlossen, z.B. Jugoslawien unter Tito</span></span>:</strong> Jugoslawien, Zypern und andere schafften es, neutral zu bleiben</li>
                     </ul>
                 </div>
 
@@ -569,18 +716,18 @@
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1957</div>
-                        <strong>Römische Verträge:</strong> Gründung von EWG und EURATOM
+                        <strong><span class="tooltip-term">Römische Verträge<span class="tooltip-content">Gründungsverträge von EWG und EURATOM, unterzeichnet von Deutschland, Frankreich, Italien und den Benelux-Staaten</span></span>:</strong> Gründung von EWG und <span class="tooltip-term">EURATOM<span class="tooltip-content">Europäische Atomgemeinschaft zur friedlichen Nutzung der Kernenergie</span></span>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1963</div>
-                        <strong>Élysée-Vertrag:</strong> Deutsch-französische Freundschaft
+                        <strong><span class="tooltip-term">Élysée-Vertrag<span class="tooltip-content">Freundschaftsvertrag zwischen Deutschland und Frankreich, besiegelte die Aussöhnung der "Erbfeinde"</span></span>:</strong> Deutsch-französische Freundschaft
                     </div>
                 </div>
 
                 <div class="important-concept">
                     <strong>Ziele der europäischen Integration:</strong>
                     <ul>
-                        <li>Friedenssicherung durch wirtschaftliche Verflechtung</li>
+                        <li><span class="tooltip-term">Friedenssicherung<span class="tooltip-content">Krieg zwischen den Mitgliedern sollte durch wirtschaftliche Verflechtung unmöglich werden</span></span> durch wirtschaftliche Verflechtung</li>
                         <li>Stärkung gegenüber den Supermächten</li>
                         <li>Wohlstandssteigerung durch gemeinsamen Markt</li>
                     </ul>
@@ -599,15 +746,15 @@
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1950-1953</div>
-                        <strong>Korea-Krieg:</strong> Stellvertreterkrieg zwischen Ost und West
+                        <strong>Korea-Krieg:</strong> <span class="tooltip-term">Stellvertreterkrieg<span class="tooltip-content">Konflikte, in denen die Supermächte indirekt gegeneinander kämpften, ohne sich direkt zu bekämpfen</span></span> zwischen Ost und West
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1962</div>
-                        <strong>Kuba-Krise:</strong> Höhepunkt der Blockkonfrontation, Gefahr eines Atomkriegs
+                        <strong><span class="tooltip-term">Kuba-Krise<span class="tooltip-content">Konfrontation zwischen USA und UdSSR wegen sowjetischer Raketen auf Kuba - die Welt stand am Rand eines Atomkriegs</span></span>:</strong> Höhepunkt der Blockkonfrontation, Gefahr eines Atomkriegs
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1964-1975</div>
-                        <strong>Vietnam-Krieg:</strong> USA vs. kommunistisches Nordvietnam
+                        <strong><span class="tooltip-term">Vietnam-Krieg<span class="tooltip-content">Krieg der USA in Vietnam zur Eindämmung des Kommunismus - endete mit dem Sieg Nordvietnams</span></span>:</strong> USA vs. kommunistisches Nordvietnam
                     </div>
                 </div>
             </div>
@@ -617,7 +764,7 @@
                 <h2 class="chapter-title">11. Wege aus der Blockkonfrontation</h2>
                 
                 <div class="highlight-box">
-                    <strong>Überblick:</strong> Ab den 1960er Jahren entwickelten sich verschiedene Ansätze zur Entspannung zwischen Ost und West, die schließlich zum Ende des Kalten Krieges führten.
+                    <strong>Überblick:</strong> Ab den 1960er Jahren entwickelten sich verschiedene Ansätze zur <span class="tooltip-term">Entspannung<span class="tooltip-content">Politik der Spannungsverringerung zwischen Ost und West durch Dialog und Kooperation</span></span> zwischen Ost und West, die schließlich zum Ende des Kalten Krieges führten.
                 </div>
 
                 <h3 class="section-title">11.1 Atomare Abrüstung – schmilzt das Eis?</h3>
@@ -629,28 +776,28 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">1963</div>
-                        <strong>Atomteststopp-Abkommen:</strong> Verbot oberirdischer Kernwaffentests
+                        <strong><span class="tooltip-term">Atomteststopp-Abkommen<span class="tooltip-content">Verbot von Kernwaffentests in der Atmosphäre, im Weltraum und unter Wasser</span></span>:</strong> Verbot oberirdischer Kernwaffentests
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1968</div>
-                        <strong>Atomwaffensperrvertrag:</strong> Verhinderung der Weiterverbreitung von Kernwaffen
+                        <strong><span class="tooltip-term">Atomwaffensperrvertrag<span class="tooltip-content">Internationale Vereinbarung zur Verhinderung der Weiterverbreitung von Kernwaffen</span></span>:</strong> Verhinderung der Weiterverbreitung von Kernwaffen
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1972</div>
-                        <strong>SALT I:</strong> Begrenzung strategischer Rüstung zwischen USA und UdSSR
+                        <strong><span class="tooltip-term">SALT I<span class="tooltip-content">Strategic Arms Limitation Talks - erstes Rüstungsbegrenzungsabkommen zwischen USA und UdSSR</span></span>:</strong> Begrenzung strategischer Rüstung zwischen USA und UdSSR
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1987</div>
-                        <strong>INF-Vertrag:</strong> Verbot landgestützter Mittelstreckenraketen
+                        <strong><span class="tooltip-term">INF-Vertrag<span class="tooltip-content">Intermediate Range Nuclear Forces Treaty - Abkommen zur Vernichtung aller landgestützten Mittelstreckenraketen</span></span>:</strong> Verbot landgestützter Mittelstreckenraketen
                     </div>
                 </div>
 
                 <h3 class="section-title">11.2 Neue Ostpolitik – neue Verständigung?</h3>
                 
                 <div class="important-concept">
-                    <strong>Willy Brandts Ostpolitik (ab 1969):</strong>
+                    <strong><span class="tooltip-term">Willy Brandts Ostpolitik<span class="tooltip-content">Politik der SPD/FDP-Regierung ab 1969 zur Verbesserung der Beziehungen zu den Ostblockstaaten</span></span> (ab 1969):</strong>
                     <ul>
-                        <li><strong>Grundsatz:</strong> "Wandel durch Annäherung"</li>
+                        <li><strong>Grundsatz:</strong> <span class="tooltip-term">"Wandel durch Annäherung"<span class="tooltip-content">Konzept von Egon Bahr: Durch Dialog und Kooperation sollten die kommunistischen Systeme allmählich liberalisiert werden</span></span></li>
                         <li><strong>Ziel:</strong> Verbesserung der Beziehungen zu Osteuropa</li>
                         <li><strong>Methode:</strong> Anerkennung der Realitäten, kleine Schritte</li>
                     </ul>
@@ -659,23 +806,23 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">1970</div>
-                        <strong>Moskauer Vertrag:</strong> Gewaltverzicht zwischen BRD und UdSSR
+                        <strong><span class="tooltip-term">Moskauer Vertrag<span class="tooltip-content">Gewaltverzichtsabkommen zwischen BRD und UdSSR - Grundlage der neuen Ostpolitik</span></span>:</strong> Gewaltverzicht zwischen BRD und UdSSR
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1970</div>
-                        <strong>Warschauer Vertrag:</strong> Anerkennung der Oder-Neiße-Linie
+                        <strong><span class="tooltip-term">Warschauer Vertrag<span class="tooltip-content">Vertrag zwischen BRD und Polen mit Anerkennung der Oder-Neiße-Linie als polnische Westgrenze. Willy Brandts Kniefall vor dem Warschauer Ghetto-Denkmal wurde zum Symbol der Versöhnung</span></span>:</strong> Anerkennung der Oder-Neiße-Linie
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1971</div>
-                        <strong>Viermächte-Abkommen:</strong> Regelung des Berlin-Status
+                        <strong><span class="tooltip-term">Viermächte-Abkommen<span class="tooltip-content">Abkommen zwischen USA, UdSSR, Großbritannien und Frankreich über den Status von Berlin</span></span>:</strong> Regelung des Berlin-Status
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1972</div>
-                        <strong>Grundlagenvertrag:</strong> Normalisierung der deutsch-deutschen Beziehungen
+                        <strong><span class="tooltip-term">Grundlagenvertrag<span class="tooltip-content">Vertrag zwischen BRD und DDR zur Normalisierung der Beziehungen, ohne dass sich beide Staaten völkerrechtlich anerkannten</span></span>:</strong> Normalisierung der deutsch-deutschen Beziehungen
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1973</div>
-                        <strong>Prager Vertrag:</strong> Aussöhnung mit der Tschechoslowakei
+                        <strong><span class="tooltip-term">Prager Vertrag<span class="tooltip-content">Vertrag zwischen BRD und Tschechoslowakei, erklärte das Münchner Abkommen von 1938 für "nichtig"</span></span>:</strong> Aussöhnung mit der Tschechoslowakei
                     </div>
                 </div>
 
@@ -687,19 +834,19 @@
 
                 <div class="key-points">
                     <ul>
-                        <li><strong>NATO-Doppelbeschluss (1979):</strong> Stationierung von Pershing II-Raketen</li>
-                        <li><strong>Sowjetische Invasion in Afghanistan (1979):</strong> Internationale Isolierung der UdSSR</li>
+                        <li><strong><span class="tooltip-term">NATO-Doppelbeschluss<span class="tooltip-content">NATO-Beschluss von 1979: Stationierung von Pershing II-Raketen in Europa, falls keine Abrüstungsverhandlungen mit der UdSSR erfolgreich sind</span></span> (1979):</strong> Stationierung von Pershing II-Raketen</li>
+                        <li><strong><span class="tooltip-term">Sowjetische Invasion in Afghanistan<span class="tooltip-content">Sowjetischer Einmarsch in Afghanistan (1979-1989), führte zu internationaler Isolierung der UdSSR und zum "sowjetischen Vietnam"</span></span> (1979):</strong> Internationale Isolierung der UdSSR</li>
                         <li><strong>Solidarność-Bewegung in Polen:</strong> Herausforderung des kommunistischen Systems</li>
-                        <li><strong>Reagan-Doktrin:</strong> Aggressive Anti-Kommunismus-Politik der USA</li>
+                        <li><strong><span class="tooltip-term">Reagan-Doktrin<span class="tooltip-content">Aggressive Außenpolitik von US-Präsident Ronald Reagan zur Eindämmung des sowjetischen Einflusses weltweit</span></span>:</strong> Aggressive Anti-Kommunismus-Politik der USA</li>
                     </ul>
                 </div>
 
                 <h3 class="section-title">11.4 "Wind of Change" – ein Imperium löst sich auf</h3>
                 
                 <div class="highlight-box">
-                    <strong>Michail Gorbatschow (ab 1985):</strong><br>
-                    <strong>Glasnost:</strong> Offenheit, Transparenz<br>
-                    <strong>Perestroika:</strong> Umgestaltung, Reformen<br>
+                    <strong><span class="tooltip-term">Michail Gorbatschow<span class="tooltip-content">Sowjetischer Reformer und letzter Staatschef der UdSSR (1985-1991), Friedensnobelpreisträger</span></span> (ab 1985):</strong><br>
+                    <strong><span class="tooltip-term">Glasnost<span class="tooltip-content">"Offenheit" - Politik der Transparenz und Meinungsfreiheit in der UdSSR</span></span>:</strong> Offenheit, Transparenz<br>
+                    <strong><span class="tooltip-term">Perestroika<span class="tooltip-content">"Umgestaltung" - Wirtschafts- und Gesellschaftsreformen in der UdSSR</span></span>:</strong> Umgestaltung, Reformen<br>
                     <strong>Folgen:</strong> Demokratisierung und schließlich Zusammenbruch der UdSSR
                 </div>
 
@@ -708,30 +855,30 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">Frühjahr 1989</div>
-                        <strong>Öffnung des "Eisernen Vorhangs":</strong> Ungarn öffnet Grenze zu Österreich
+                        <strong>Öffnung des <span class="tooltip-term">"Eisernen Vorhangs"<span class="tooltip-content">Begriff für die stark bewachte Grenze zwischen Ost- und Westeuropa während des Kalten Krieges</span></span>:</strong> Ungarn öffnet Grenze zu Österreich
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Sommer 1989</div>
-                        <strong>Massenflucht:</strong> DDR-Bürger fliehen über Ungarn und Botschaften
+                        <strong>Massenflucht:</strong> DDR-Bürger fliehen über Ungarn und <span class="tooltip-term">Botschaften<span class="tooltip-content">Besonders die deutschen Botschaften in Prag, Warschau und Budapest wurden von DDR-Bürgern besetzt</span></span>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Oktober 1989</div>
-                        <strong>Montagsdemonstrationen:</strong> Friedliche Proteste in Leipzig und anderen Städten
+                        <strong><span class="tooltip-term">Montagsdemonstrationen<span class="tooltip-content">Friedliche Proteste in Leipzig und anderen DDR-Städten, ausgehend von Friedensgebeten in der Nikolaikirche</span></span>:</strong> Friedliche Proteste in Leipzig und anderen Städten
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">9. November 1989</div>
-                        <strong>Mauerfall:</strong> Öffnung der innerdeutschen Grenze
+                        <strong><span class="tooltip-term">Mauerfall<span class="tooltip-content">Öffnung der Berliner Mauer nach einem missverständlichen Pressezitat von Günter Schabowski</span></span>:</strong> Öffnung der innerdeutschen Grenze
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">3. Oktober 1990</div>
-                        <strong>Deutsche Einheit:</strong> Beitritt der DDR zur Bundesrepublik
+                        <strong><span class="tooltip-term">Deutsche Einheit<span class="tooltip-content">Beitritt der DDR zur Bundesrepublik nach Artikel 23 des Grundgesetzes, seitdem deutscher Nationalfeiertag</span></span>:</strong> Beitritt der DDR zur Bundesrepublik
                     </div>
                 </div>
 
                 <div class="important-concept">
                     <strong>Internationale Aspekte der Wiedervereinigung:</strong>
                     <ul>
-                        <li><strong>2+4-Verträge:</strong> Regelung der außenpolitischen Aspekte</li>
+                        <li><strong><span class="tooltip-term">2+4-Verträge<span class="tooltip-content">Verhandlungen zwischen den beiden deutschen Staaten und den vier Siegermächten über die außenpolitischen Aspekte der Einheit</span></span>:</strong> Regelung der außenpolitischen Aspekte</li>
                         <li><strong>NATO-Mitgliedschaft:</strong> Gesamtdeutschland bleibt in der NATO</li>
                         <li><strong>Abzug sowjetischer Truppen:</strong> Bis 1994 aus Ostdeutschland</li>
                         <li><strong>Finanzielle Leistungen:</strong> Deutsche Hilfen für die UdSSR</li>
@@ -753,27 +900,27 @@
                     <tr>
                         <td>Polen</td>
                         <td>1989</td>
-                        <td>Runder Tisch, friedlicher Übergang, Solidarność</td>
+                        <td><span class="tooltip-term">Runder Tisch<span class="tooltip-content">Verhandlungen zwischen Regierung und Opposition über den friedlichen Übergang zur Demokratie</span></span>, friedlicher Übergang, Solidarność</td>
                     </tr>
                     <tr>
                         <td>Ungarn</td>
                         <td>1989</td>
-                        <td>Grenzöffnung zu Österreich, sanfte Revolution</td>
+                        <td>Grenzöffnung zu Österreich, <span class="tooltip-term">sanfte Revolution<span class="tooltip-content">Friedlicher Übergang ohne Gewalt und Blutvergießen</span></span></td>
                     </tr>
                     <tr>
                         <td>Tschechoslowakei</td>
                         <td>1989</td>
-                        <td>"Samtene Revolution", Václav Havel</td>
+                        <td><span class="tooltip-term">"Samtene Revolution"<span class="tooltip-content">Friedlicher Sturz des kommunistischen Regimes in der Tschechoslowakei, benannt nach dem gewaltlosen Charakter</span></span>, <span class="tooltip-term">Václav Havel<span class="tooltip-content">Tschechischer Dramatiker, Dissident und erster Präsident der post-kommunistischen Tschechoslowakei</span></span></td>
                     </tr>
                     <tr>
                         <td>Rumänien</td>
                         <td>1989</td>
-                        <td>Gewaltsamer Sturz Ceaușescus</td>
+                        <td>Gewaltsamer Sturz <span class="tooltip-term">Ceaușescus<span class="tooltip-content">Nicolae Ceaușescu, rumänischer Diktator, wurde 1989 gestürzt und hingerichtet</span></span></td>
                     </tr>
                     <tr>
                         <td>Jugoslawien</td>
                         <td>1991-2001</td>
-                        <td>Zerfall in Bürgerkriegen</td>
+                        <td><span class="tooltip-term">Zerfall in Bürgerkriegen<span class="tooltip-content">Gewaltsame Auflösung Jugoslawiens in mehrere Nachfolgestaaten mit ethnischen Säuberungen und Völkermord</span></span></td>
                     </tr>
                 </table>
 
@@ -782,10 +929,10 @@
                 <div class="key-points">
                     <h4>Neue Herausforderungen:</h4>
                     <ul>
-                        <li>Ende der bipolaren Weltordnung</li>
-                        <li>USA als einzige Supermacht</li>
-                        <li>Neue Konflikte: Nationalismus, Terrorismus</li>
-                        <li>Globalisierung und ihre Folgen</li>
+                        <li>Ende der <span class="tooltip-term">bipolaren Weltordnung<span class="tooltip-content">Weltordnung mit zwei dominierenden Supermächten (USA und UdSSR)</span></span></li>
+                        <li>USA als einzige <span class="tooltip-term">Supermacht<span class="tooltip-content">Staat mit globaler militärischer, wirtschaftlicher und kultureller Dominanz</span></span></li>
+                        <li>Neue Konflikte: <span class="tooltip-term">Nationalismus<span class="tooltip-content">Übersteigertes Nationalbewusstsein, oft mit Ausgrenzung anderer Völker verbunden</span></span>, <span class="tooltip-term">Terrorismus<span class="tooltip-content">Gewaltanwendung gegen Zivilisten zu politischen Zwecken</span></span></li>
+                        <li><span class="tooltip-term">Globalisierung<span class="tooltip-content">Weltweite Vernetzung in Wirtschaft, Politik, Kultur und Kommunikation</span></span> und ihre Folgen</li>
                     </ul>
                 </div>
 
@@ -806,32 +953,32 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">1992</div>
-                        <strong>Vertrag von Maastricht:</strong> Gründung der Europäischen Union
+                        <strong><span class="tooltip-term">Vertrag von Maastricht<span class="tooltip-content">Gründungsvertrag der Europäischen Union, führte Unionsbürgerschaft und gemeinsame Währung ein</span></span>:</strong> Gründung der Europäischen Union
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1995</div>
-                        <strong>Erste Norderweiterung:</strong> Österreich, Finnland, Schweden
+                        <strong>Erste Norderweiterung:</strong> <span class="tooltip-term">Österreich, Finnland, Schweden<span class="tooltip-content">Nach dem Ende des Kalten Krieges konnten neutrale Staaten der EU beitreten</span></span>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1999</div>
-                        <strong>Euro-Einführung:</strong> Gemeinsame Währung (zunächst Buchgeld)
+                        <strong><span class="tooltip-term">Euro-Einführung<span class="tooltip-content">Gemeinsame europäische Währung, zunächst als Buchgeld, ab 2002 als Bargeld</span></span>:</strong> Gemeinsame Währung (zunächst Buchgeld)
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2004/2007</div>
-                        <strong>Osterweiterung:</strong> Aufnahme ehemaliger Ostblockstaaten
+                        <strong><span class="tooltip-term">Osterweiterung<span class="tooltip-content">Aufnahme ehemaliger Ostblockstaaten in die EU: Polen, Ungarn, Tschechien, Slowakei, Slowenien, Estland, Lettland, Litauen, Malta, Zypern (2004), Bulgarien, Rumänien (2007)</span></span>:</strong> Aufnahme ehemaliger Ostblockstaaten
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2009</div>
-                        <strong>Vertrag von Lissabon:</strong> Reform der EU-Institutionen
+                        <strong><span class="tooltip-term">Vertrag von Lissabon<span class="tooltip-content">EU-Reformvertrag, stärkte die Rolle des Europäischen Parlaments und schuf den Posten des EU-Ratspräsidenten</span></span>:</strong> Reform der EU-Institutionen
                     </div>
                 </div>
 
                 <div class="important-concept">
                     <strong>Grundpfeiler der EU nach Maastricht:</strong>
                     <ul>
-                        <li><strong>1. Säule:</strong> Europäische Gemeinschaften (supranational)</li>
-                        <li><strong>2. Säule:</strong> Gemeinsame Außen- und Sicherheitspolitik (intergouvernemental)</li>
-                        <li><strong>3. Säule:</strong> Zusammenarbeit in Justiz und Inneres (intergouvernemental)</li>
+                        <li><strong>1. Säule:</strong> <span class="tooltip-term">Europäische Gemeinschaften<span class="tooltip-content">Supranationale Bereiche wie Binnenmarkt, Währungsunion (Gemeinschaftsmethode)</span></span> (supranational)</li>
+                        <li><strong>2. Säule:</strong> <span class="tooltip-term">Gemeinsame Außen- und Sicherheitspolitik<span class="tooltip-content">Koordinierung der Außenpolitik der Mitgliedstaaten, erfordert Einstimmigkeit</span></span> (intergouvernemental)</li>
+                        <li><strong>3. Säule:</strong> <span class="tooltip-term">Zusammenarbeit in Justiz und Inneres<span class="tooltip-content">Kooperation in Bereichen wie Einwanderung, Asyl und Kriminalitätsbekämpfung</span></span> (intergouvernemental)</li>
                     </ul>
                 </div>
 
@@ -850,7 +997,7 @@
                     <tr>
                         <td>USA</td>
                         <td>Militärische Überlegenheit, Technologie, Dollar als Leitwährung</td>
-                        <td>Hegemon, aber relativer Machtverlust</td>
+                        <td><span class="tooltip-term">Hegemon<span class="tooltip-content">Führungsmacht, die das internationale System dominiert</span></span>, aber relativer Machtverlust</td>
                     </tr>
                     <tr>
                         <td>China</td>
@@ -860,20 +1007,20 @@
                     <tr>
                         <td>Russland</td>
                         <td>Rohstoffe, Atomwaffen, regionale Macht</td>
-                        <td>Revisionistische Macht</td>
+                        <td><span class="tooltip-term">Revisionistische Macht<span class="tooltip-content">Staat, der die bestehende internationale Ordnung ändern will</span></span></td>
                     </tr>
                     <tr>
                         <td>EU</td>
-                        <td>Wirtschaftsmacht, soft power, Normsetzung</td>
-                        <td>Zivilmacht mit begrenzter militärischer Rolle</td>
+                        <td>Wirtschaftsmacht, <span class="tooltip-term">soft power<span class="tooltip-content">Einfluss durch Attraktivität und Überzeugung statt durch Zwang</span></span>, Normsetzung</td>
+                        <td><span class="tooltip-term">Zivilmacht<span class="tooltip-content">Akteur, der vor allem durch wirtschaftliche und diplomatische Mittel Einfluss ausübt</span></span> mit begrenzter militärischer Rolle</td>
                     </tr>
                 </table>
 
                 <div class="key-points">
                     <h4>Neue globale Herausforderungen:</h4>
                     <ul>
-                        <li><strong>Terrorismus:</strong> 9/11 und seine Folgen</li>
-                        <li><strong>Proliferation:</strong> Verbreitung von Massenvernichtungswaffen</li>
+                        <li><strong>Terrorismus:</strong> <span class="tooltip-term">9/11<span class="tooltip-content">Terroranschläge vom 11. September 2001 in den USA, veränderten die internationale Sicherheitspolitik grundlegend</span></span> und seine Folgen</li>
+                        <li><strong><span class="tooltip-term">Proliferation<span class="tooltip-content">Weiterverbreitung von Massenvernichtungswaffen an staatliche und nicht-staatliche Akteure</span></span>:</strong> Verbreitung von Massenvernichtungswaffen</li>
                         <li><strong>Klimawandel:</strong> Globale Umweltprobleme</li>
                         <li><strong>Migration:</strong> Flucht- und Wanderungsbewegungen</li>
                         <li><strong>Cyber-Sicherheit:</strong> Neue Formen der Kriegsführung</li>
@@ -897,49 +1044,49 @@
 
                 <div class="important-concept">
                     <strong>Traditionelle vs. Neue Sicherheitsbedrohungen:</strong><br><br>
-                    <strong>Traditionell:</strong> Zwischenstaatliche Kriege, territoriale Konflikte<br>
-                    <strong>Neu:</strong> Terrorismus, Cyber-Angriffe, Klimawandel, Pandemien, organisierte Kriminalität
+                    <strong>Traditionell:</strong> <span class="tooltip-term">Zwischenstaatliche Kriege<span class="tooltip-content">Kriege zwischen souveränen Staaten mit regulären Armeen</span></span>, territoriale Konflikte<br>
+                    <strong>Neu:</strong> Terrorismus, <span class="tooltip-term">Cyber-Angriffe<span class="tooltip-content">Angriffe auf Computersysteme und digitale Infrastruktur</span></span>, Klimawandel, <span class="tooltip-term">Pandemien<span class="tooltip-content">Weltweite Ausbreitung von Infektionskrankheiten</span></span>, <span class="tooltip-term">organisierte Kriminalität<span class="tooltip-content">Grenzüberschreitende kriminelle Netzwerke (Drogen-, Menschen-, Waffenhandel)</span></span>
                 </div>
 
                 <div class="key-points">
                     <h4>Internationale Sicherheitsorganisationen:</h4>
                     <ul>
-                        <li><strong>UN-Sicherheitsrat:</strong> Kollektive Sicherheit, aber oft blockiert</li>
-                        <li><strong>NATO:</strong> Anpassung von Territorialverteidigung zu "Out-of-Area"-Einsätzen</li>
-                        <li><strong>OSZE:</strong> Konfliktprävention und Demokratieförderung</li>
-                        <li><strong>G7/G20:</strong> Koordinierung der Wirtschafts- und Sicherheitspolitik</li>
+                        <li><strong>UN-Sicherheitsrat:</strong> <span class="tooltip-term">Kollektive Sicherheit<span class="tooltip-content">Konzept, dass alle Staaten gemeinsam für Frieden und Sicherheit verantwortlich sind</span></span>, aber oft blockiert</li>
+                        <li><strong>NATO:</strong> Anpassung von Territorialverteidigung zu <span class="tooltip-term">"Out-of-Area"-Einsätzen<span class="tooltip-content">NATO-Operationen außerhalb des ursprünglichen Bündnisgebiets</span></span></li>
+                        <li><strong><span class="tooltip-term">OSZE<span class="tooltip-content">Organisation für Sicherheit und Zusammenarbeit in Europa - Forum für Dialog zwischen Ost und West</span></span>:</strong> Konfliktprävention und Demokratieförderung</li>
+                        <li><strong><span class="tooltip-term">G7/G20<span class="tooltip-content">Gruppe der sieben/zwanzig wichtigsten Industrienationen für wirtschaftliche Koordinierung</span></span>:</strong> Koordinierung der Wirtschafts- und Sicherheitspolitik</li>
                     </ul>
                 </div>
 
                 <h3 class="section-title">12.2 Politikfeld Klimawandel</h3>
                 
                 <div class="content-text">
-                    Der Klimawandel ist zu einer der wichtigsten globalen Herausforderungen des 21. Jahrhunderts geworden:
+                    Der <span class="tooltip-term">Klimawandel<span class="tooltip-content">Langfristige Veränderung der globalen Durchschnittstemperaturen und Wettermuster, hauptsächlich verursacht durch menschliche Aktivitäten</span></span> ist zu einer der wichtigsten globalen Herausforderungen des 21. Jahrhunderts geworden:
                 </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">1992</div>
-                        <strong>Rio-Konferenz:</strong> UN-Klimarahmenkonvention
+                        <strong><span class="tooltip-term">Rio-Konferenz<span class="tooltip-content">UN-Konferenz für Umwelt und Entwicklung in Rio de Janeiro, verabschiedete die Klimarahmenkonvention</span></span>:</strong> UN-Klimarahmenkonvention
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1997</div>
-                        <strong>Kyoto-Protokoll:</strong> Erste verbindliche Emissionsziele
+                        <strong><span class="tooltip-term">Kyoto-Protokoll<span class="tooltip-content">Erstes internationales Abkommen mit verbindlichen Zielen zur Reduzierung von Treibhausgasemissionen</span></span>:</strong> Erste verbindliche Emissionsziele
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2015</div>
-                        <strong>Pariser Abkommen:</strong> Begrenzung der Erderwärmung auf 1,5°C
+                        <strong><span class="tooltip-term">Pariser Abkommen<span class="tooltip-content">Internationales Klimaabkommen mit dem Ziel, die Erderwärmung auf deutlich unter 2°C, möglichst 1,5°C zu begrenzen</span></span>:</strong> Begrenzung der Erderwärmung auf 1,5°C
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2019</div>
-                        <strong>European Green Deal:</strong> EU-Klimaneutralität bis 2050
+                        <strong><span class="tooltip-term">European Green Deal<span class="tooltip-content">EU-Strategie zur Erreichung der Klimaneutralität bis 2050 durch grüne Transformation der Wirtschaft</span></span>:</strong> EU-Klimaneutralität bis 2050
                     </div>
                 </div>
 
                 <div class="important-concept">
                     <strong>Herausforderungen der Klimapolitik:</strong>
                     <ul>
-                        <li><strong>Globales Handlungsproblem:</strong> Alle müssen mitmachen</li>
+                        <li><strong><span class="tooltip-term">Globales Handlungsproblem<span class="tooltip-content">Problem, das nur durch koordiniertes Handeln aller Staaten gelöst werden kann</span></span>:</strong> Alle müssen mitmachen</li>
                         <li><strong>Generationenkonflikt:</strong> Kosten heute, Nutzen in der Zukunft</li>
                         <li><strong>Entwicklungsländer:</strong> Recht auf wirtschaftliche Entwicklung</li>
                         <li><strong>Technologie:</strong> Transformation der Energiesysteme nötig</li>
@@ -949,7 +1096,7 @@
                 <h3 class="section-title">12.3 Fallstudie Nigeria</h3>
                 
                 <div class="content-text">
-                    Nigeria als Beispiel für die Herausforderungen afrikanischer Staaten im 21. Jahrhundert:
+                    <span class="tooltip-term">Nigeria<span class="tooltip-content">Bevölkerungsreichstes Land Afrikas mit über 200 Millionen Einwohnern, größte Volkswirtschaft Afrikas, aber auch große Herausforderungen</span></span> als Beispiel für die Herausforderungen afrikanischer Staaten im 21. Jahrhundert:
                 </div>
 
                 <div class="key-points">
@@ -957,9 +1104,9 @@
                     <ul>
                         <li><strong>Demographie:</strong> Bevölkerungswachstum von 200 Mio. auf geschätzte 400 Mio. bis 2050</li>
                         <li><strong>Wirtschaft:</strong> Abhängigkeit vom Öl, hohe Arbeitslosigkeit</li>
-                        <li><strong>Politik:</strong> Korruption, schwache Institutionen</li>
-                        <li><strong>Sicherheit:</strong> Boko Haram im Norden, Piraten im Süden</li>
-                        <li><strong>Umwelt:</strong> Ölverschmutzung im Niger-Delta, Klimawandel</li>
+                        <li><strong>Politik:</strong> <span class="tooltip-term">Korruption<span class="tooltip-content">Missbrauch öffentlicher Macht für private Zwecke, schwächt staatliche Institutionen</span></span>, schwache Institutionen</li>
+                        <li><strong>Sicherheit:</strong> <span class="tooltip-term">Boko Haram<span class="tooltip-content">Islamistische Terrororganisation in Nordnigeria, entführte 2014 über 270 Schülerinnen</span></span> im Norden, Piraten im Süden</li>
+                        <li><strong>Umwelt:</strong> Ölverschmutzung im <span class="tooltip-term">Niger-Delta<span class="tooltip-content">Ölfördergebiet in Südnigeria, stark von Umweltverschmutzung betroffen</span></span>, Klimawandel</li>
                         <li><strong>Religion:</strong> Spannungen zwischen Christen und Muslimen</li>
                     </ul>
                 </div>
@@ -982,8 +1129,8 @@
                     </tr>
                     <tr>
                         <td>Wirtschaftliche Probleme</td>
-                        <td>Rohstoffabhängigkeit, Korruption, schwache Infrastruktur</td>
-                        <td>Diversifizierung, Good Governance, Infrastrukturinvestitionen</td>
+                        <td><span class="tooltip-term">Rohstoffabhängigkeit<span class="tooltip-content">Einseitige Abhängigkeit der Wirtschaft von Rohstoffexporten, macht anfällig für Preisschwankungen</span></span>, Korruption, schwache Infrastruktur</td>
+                        <td><span class="tooltip-term">Diversifizierung<span class="tooltip-content">Ausweitung der Wirtschaft auf verschiedene Bereiche, um Abhängigkeiten zu reduzieren</span></span>, <span class="tooltip-term">Good Governance<span class="tooltip-content">Gute Regierungsführung mit transparenten, rechenschaftspflichtigen Institutionen</span></span>, Infrastrukturinvestitionen</td>
                     </tr>
                 </table>
 
@@ -994,7 +1141,7 @@
                 </div>
 
                 <div class="key-points">
-                    <h4>Funktionen von Klimakunst:</h4>
+                    <h4>Funktionen von <span class="tooltip-term">Klimakunst<span class="tooltip-content">Künstlerische Werke, die sich mit dem Klimawandel und Umweltproblemen auseinandersetzen</span></span>:</h4>
                     <ul>
                         <li><strong>Sensibilisierung:</strong> Emotionale Zugänge zu abstrakten Problemen</li>
                         <li><strong>Visualisierung:</strong> Unsichtbare Prozesse sichtbar machen</li>
@@ -1020,10 +1167,10 @@
                     <h4>Zentrale Erkenntnisse:</h4>
                     <ul>
                         <li>Globale Probleme erfordern internationale Kooperation</li>
-                        <li>Neue Akteure (NGOs, Unternehmen) gewinnen an Bedeutung</li>
+                        <li>Neue Akteure (<span class="tooltip-term">NGOs<span class="tooltip-content">Non-Governmental Organizations - Nichtregierungsorganisationen wie Greenpeace oder Amnesty International</span></span>, Unternehmen) gewinnen an Bedeutung</li>
                         <li>Technologie bietet Chancen und Risiken</li>
-                        <li>Demokratische Legitimation bei globaler Governance schwierig</li>
-                        <li>Präventive Diplomatie wichtiger als reaktive Krisenbewältigung</li>
+                        <li>Demokratische Legitimation bei <span class="tooltip-term">globaler Governance<span class="tooltip-content">Steuerung globaler Probleme durch internationale Organisationen und Abkommen</span></span> schwierig</li>
+                        <li><span class="tooltip-term">Präventive Diplomatie<span class="tooltip-content">Vorbeugende diplomatische Maßnahmen zur Verhinderung von Konflikten</span></span> wichtiger als reaktive Krisenbewältigung</li>
                     </ul>
                 </div>
             </div>
@@ -1035,9 +1182,9 @@
                 <div class="highlight-box">
                     <h4>Wichtigste Entwicklungslinien:</h4>
                     <ul>
-                        <li><strong>1945-1989:</strong> Bipolare Weltordnung, deutsche Teilung, europäische Integration</li>
-                        <li><strong>1989-2001:</strong> Ende des Kalten Krieges, deutsche Einheit, US-Hegemonie</li>
-                        <li><strong>Ab 2001:</strong> Multipolare Welt, neue Bedrohungen, globale Herausforderungen</li>
+                        <li><strong>1945-1989:</strong> <span class="tooltip-term">Bipolare Weltordnung<span class="tooltip-content">Internationale Ordnung mit zwei dominierenden Supermächten (USA und UdSSR)</span></span>, deutsche Teilung, europäische Integration</li>
+                        <li><strong>1989-2001:</strong> Ende des Kalten Krieges, deutsche Einheit, <span class="tooltip-term">US-Hegemonie<span class="tooltip-content">Dominanz der USA als einzige verbliebene Supermacht nach dem Zusammenbruch der UdSSR</span></span></li>
+                        <li><strong>Ab 2001:</strong> <span class="tooltip-term">Multipolare Welt<span class="tooltip-content">Weltordnung mit mehreren Machtzentren (USA, China, EU, Russland, etc.)</span></span>, neue Bedrohungen, globale Herausforderungen</li>
                     </ul>
                 </div>
 
@@ -1053,7 +1200,7 @@
                         <li>Ursachen und Verlauf des Kalten Krieges</li>
                         <li>Deutsche Teilung und Wiedervereinigung</li>
                         <li>Europäische Integration von Montanunion bis EU</li>
-                        <li>Transformation Osteuropas nach 1989</li>
+                        <li><span class="tooltip-term">Transformation Osteuropas<span class="tooltip-content">Übergang der osteuropäischen Staaten von kommunistischen Diktaturen zu demokratischen Marktwirtschaften</span></span> nach 1989</li>
                         <li>Neue Weltordnung nach dem Kalten Krieg</li>
                         <li>Globale Herausforderungen des 21. Jahrhunderts</li>
                     </ul>
@@ -1063,7 +1210,7 @@
                     <h4>Zentrale Daten im Überblick:</h4>
                     <div class="timeline-item">
                         <div class="timeline-date">1945</div>
-                        Potsdamer Konferenz, Beginn der Nachkriegsordnung
+                        <span class="tooltip-term">Potsdamer Konferenz<span class="tooltip-content">Letzte Konferenz der Alliierten, legte die Grundlagen für die Nachkriegsordnung in Deutschland fest</span></span>, Beginn der Nachkriegsordnung
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1949</div>
@@ -1087,7 +1234,7 @@
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2001</div>
-                        11. September, Beginn des "Kriegs gegen den Terror"
+                        <span class="tooltip-term">11. September<span class="tooltip-content">Terroranschläge auf World Trade Center und Pentagon, markierten Beginn des "Kriegs gegen den Terror"</span></span>, Beginn des "Kriegs gegen den Terror"
                     </div>
                 </div>
             </div>
@@ -1095,5 +1242,187 @@
 
         <a href="index.html" class="back-link">← Zurück zur Übersicht</a>
     </div>
+
+    <script>
+        // JavaScript für responsive Tooltip-Positionierung
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipTerms = document.querySelectorAll('.tooltip-term');
+            const overlay = document.getElementById('tooltipOverlay');
+            let activeTooltip = null;
+
+            // Check if device supports hover
+            const supportsHover = window.matchMedia('(hover: hover)').matches;
+
+            if (!supportsHover) {
+                // Mobile/touch device behavior
+                tooltipTerms.forEach(term => {
+                    term.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const tooltip = this.querySelector('.tooltip-content');
+                        
+                        // Close currently active tooltip
+                        if (activeTooltip && activeTooltip !== tooltip) {
+                            activeTooltip.style.visibility = 'hidden';
+                            activeTooltip.style.opacity = '0';
+                            overlay.classList.remove('active');
+                        }
+
+                        // Toggle current tooltip
+                        if (activeTooltip === tooltip) {
+                            tooltip.style.visibility = 'hidden';
+                            tooltip.style.opacity = '0';
+                            overlay.classList.remove('active');
+                            activeTooltip = null;
+                        } else {
+                            tooltip.style.visibility = 'visible';
+                            tooltip.style.opacity = '1';
+                            overlay.classList.add('active');
+                            activeTooltip = tooltip;
+                        }
+                    });
+                });
+
+                // Close tooltip when clicking overlay
+                overlay.addEventListener('click', function() {
+                    if (activeTooltip) {
+                        activeTooltip.style.visibility = 'hidden';
+                        activeTooltip.style.opacity = '0';
+                        this.classList.remove('active');
+                        activeTooltip = null;
+                    }
+                });
+
+                // Close tooltip when clicking elsewhere
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.tooltip-term') && activeTooltip) {
+                        activeTooltip.style.visibility = 'hidden';
+                        activeTooltip.style.opacity = '0';
+                        overlay.classList.remove('active');
+                        activeTooltip = null;
+                    }
+                });
+            } else {
+                // Desktop hover behavior
+                tooltipTerms.forEach(term => {
+                    const tooltip = term.querySelector('.tooltip-content');
+                    
+                    term.addEventListener('mouseenter', function() {
+                        // Check if tooltip is in a table
+                        const isInTable = this.closest('table') || this.closest('.comparison-table');
+                        
+                        if (isInTable) {
+                            positionTableTooltip(this, tooltip);
+                        } else {
+                            positionRegularTooltip(this, tooltip);
+                        }
+                    });
+                    
+                    term.addEventListener('mouseleave', function() {
+                        // Reset position styles on mouse leave
+                        tooltip.style.position = '';
+                        tooltip.style.left = '';
+                        tooltip.style.top = '';
+                        tooltip.style.right = '';
+                        tooltip.style.transform = '';
+                    });
+                });
+            }
+
+            function positionTableTooltip(term, tooltip) {
+                const termRect = term.getBoundingClientRect();
+                const containerRect = document.querySelector('.container').getBoundingClientRect();
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                
+                // Use absolute positioning for table tooltips
+                tooltip.style.position = 'absolute';
+                tooltip.style.top = '-50px'; // Position above the term
+                tooltip.style.left = '0px';
+                tooltip.style.right = 'auto';
+                tooltip.style.transform = 'none';
+                
+                // After positioning, check for overflow and adjust
+                setTimeout(() => {
+                    const tooltipRect = tooltip.getBoundingClientRect();
+                    
+                    // Check horizontal overflow
+                    if (tooltipRect.right > viewportWidth - 20) {
+                        // Position to the left
+                        tooltip.style.left = 'auto';
+                        tooltip.style.right = '0px';
+                    }
+                    
+                    if (tooltipRect.left < 20) {
+                        // Position to the right
+                        tooltip.style.left = '0px';
+                        tooltip.style.right = 'auto';
+                    }
+                    
+                    // Check vertical overflow
+                    if (tooltipRect.top < 20) {
+                        // Position below the term
+                        tooltip.style.top = '100%';
+                    }
+                }, 10);
+            }
+
+            function positionRegularTooltip(term, tooltip) {
+                const termRect = term.getBoundingClientRect();
+                const containerRect = document.querySelector('.container').getBoundingClientRect();
+                const viewportWidth = window.innerWidth;
+                
+                // Reset position
+                tooltip.style.position = 'absolute';
+                tooltip.style.left = '0';
+                tooltip.style.right = 'auto';
+                tooltip.style.top = '100%';
+                tooltip.style.transform = 'translateY(0)';
+                
+                // Check for viewport overflow after a short delay
+                setTimeout(() => {
+                    const tooltipRect = tooltip.getBoundingClientRect();
+                    
+                    // Check if tooltip would overflow right edge
+                    if (tooltipRect.right > viewportWidth - 20) {
+                        tooltip.style.left = 'auto';
+                        tooltip.style.right = '0';
+                    }
+                    
+                    // Check if tooltip would overflow left edge of container
+                    if (tooltipRect.left < containerRect.left + 20) {
+                        tooltip.style.left = '0';
+                        tooltip.style.right = 'auto';
+                    }
+                }, 10);
+            }
+
+            // Prevent tooltip content from being selectable during drag
+            tooltipTerms.forEach(term => {
+                const tooltip = term.querySelector('.tooltip-content');
+                if (tooltip) {
+                    tooltip.addEventListener('selectstart', function(e) {
+                        e.stopPropagation();
+                    });
+                }
+            });
+        });
+
+        // Keyboard accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const overlay = document.getElementById('tooltipOverlay');
+                const visibleTooltips = document.querySelectorAll('.tooltip-content[style*="visible"]');
+                
+                visibleTooltips.forEach(tooltip => {
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                });
+                
+                overlay.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

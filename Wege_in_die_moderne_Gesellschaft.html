@@ -23,6 +23,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
 
         header {
@@ -275,6 +276,94 @@
             font-size: 24px;
         }
 
+        /* Tooltip Styles */
+        .tooltip-term {
+            position: relative;
+            color: #2c3e50;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px dotted #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .tooltip-term:hover {
+            color: #34495e;
+            border-bottom-color: #34495e;
+            background: rgba(44, 62, 80, 0.05);
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 300px;
+            width: max-content;
+            min-width: 250px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: normal;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(44, 62, 80, 0.95);
+        }
+
+        .tooltip.bottom::before {
+            top: auto;
+            bottom: -8px;
+            border-bottom: none;
+            border-top: 8px solid rgba(44, 62, 80, 0.95);
+        }
+
+        .tooltip.left::before {
+            left: auto;
+            right: 20px;
+        }
+
+        .tooltip-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tooltip-title {
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .tooltip-description {
+            color: #ecf0f1;
+            margin-bottom: 0;
+        }
+
+        /* Mobile optimized tooltips */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
@@ -295,14 +384,50 @@
                 height: 45px;
                 font-size: 18px;
             }
+
+            .tooltip {
+                max-width: calc(100vw - 40px);
+                min-width: calc(100vw - 60px);
+                font-size: 13px;
+                padding: 12px;
+                position: fixed;
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) translateY(10px);
+            }
+
+            .tooltip.show {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .tooltip::before {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+
+            .tooltip.left::before {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Touch-friendly tooltips for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .tooltip-term {
+                padding: 2px 4px;
+                border-radius: 3px;
+                background: rgba(44, 62, 80, 0.1);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-	    <div class="nav-links">
-                <a href="index.html">← Zurück zum Hauptmenü</a>
-            </div>
+        <div class="nav-links">
+            <a href="index.html">← Zurück zum Hauptmenü</a>
+        </div>
         <header>
             <h1>Wege in die moderne Gesellschaft</h1>
             <p class="subtitle">Transformation Europas vom 18. bis 21. Jahrhundert</p>
@@ -317,12 +442,12 @@
         <!-- Einführung -->
         <div class="content-section">
             <h2>1. Einführung in das forschende Lernen</h2>
-            <p>Die moderne Gesellschaft, wie wir sie heute kennen, ist das Ergebnis jahrhundertelanger Entwicklungen und Transformationsprozesse. Von der Aufklärung über die Industrialisierung bis hin zur Digitalisierung haben verschiedene Kräfte die Gesellschaft geprägt und verändert.</p>
+            <p>Die moderne Gesellschaft, wie wir sie heute kennen, ist das Ergebnis jahrhundertelanger Entwicklungen und Transformationsprozesse. Von der <span class="tooltip-term" data-tooltip="aufklaerung">Aufklärung</span> über die <span class="tooltip-term" data-tooltip="industrialisierung">Industrialisierung</span> bis hin zur Digitalisierung haben verschiedene Kräfte die Gesellschaft geprägt und verändert.</p>
             
             <h3>1.1 Zukunft prognostizieren mit der Szenario-Methode</h3>
             <div class="method-box">
                 <h3>Methode: Szenario-Analyse</h3>
-                <p>Die Szenario-Methode hilft dabei, mögliche Zukunftsentwicklungen zu durchdenken. Sie basiert auf der Annahme, dass die Zukunft nicht vorhersagbar, aber denkbar ist.</p>
+                <p>Die <span class="tooltip-term" data-tooltip="szenario-methode">Szenario-Methode</span> hilft dabei, mögliche Zukunftsentwicklungen zu durchdenken. Sie basiert auf der Annahme, dass die Zukunft nicht vorhersagbar, aber denkbar ist.</p>
                 <ul>
                     <li><strong>Trend-Szenario:</strong> Fortschreibung aktueller Entwicklungen</li>
                     <li><strong>Positiv-Szenario:</strong> Optimistische Entwicklung</li>
@@ -334,15 +459,15 @@
             <div class="info-box">
                 <h3>Quellenarten in der Geschichtswissenschaft</h3>
                 <ul>
-                    <li><strong>Primärquellen:</strong> Zeitgenössische Dokumente, Briefe, Tagebücher</li>
-                    <li><strong>Sekundärquellen:</strong> Wissenschaftliche Darstellungen</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="primaerquellen">Primärquellen</span>:</strong> Zeitgenössische Dokumente, Briefe, Tagebücher</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="sekundaerquellen">Sekundärquellen</span>:</strong> Wissenschaftliche Darstellungen</li>
                     <li><strong>Bildquellen:</strong> Gemälde, Fotografien, Karikaturen</li>
                     <li><strong>Sachquellen:</strong> Gegenstände, Bauwerke, Münzen</li>
                 </ul>
             </div>
 
             <h3>1.3 Politik beurteilen und politisch handeln</h3>
-            <p>Die Fähigkeit zur politischen Urteilsbildung ist essentiell für das Leben in einer Demokratie. Dabei müssen verschiedene Perspektiven berücksichtigt und Argumente kritisch hinterfragt werden.</p>
+            <p>Die Fähigkeit zur politischen <span class="tooltip-term" data-tooltip="urteilsbildung">Urteilsbildung</span> ist essentiell für das Leben in einer Demokratie. Dabei müssen verschiedene Perspektiven berücksichtigt und Argumente kritisch hinterfragt werden.</p>
         </div>
 
         <!-- Migration -->
@@ -350,7 +475,7 @@
             <h2>2. Migration in Geschichte und Gegenwart</h2>
             
             <h3>2.1 Herkunft – sind wir (fast) alle Migranten?</h3>
-            <p>Migration ist ein menschliches Grundphänomen. Seit der Entstehung der Menschheit bewegen sich Menschen aus verschiedenen Gründen von einem Ort zum anderen. Deutschland als heutiges Einwanderungsland hat eine lange Geschichte der Migration.</p>
+            <p>Migration ist ein menschliches Grundphänomen. Seit der Entstehung der Menschheit bewegen sich Menschen aus verschiedenen Gründen von einem Ort zum anderen. Deutschland als heutiges <span class="tooltip-term" data-tooltip="einwanderungsland">Einwanderungsland</span> hat eine lange Geschichte der Migration.</p>
             
             <div class="highlight-box">
                 <h4>Definition Migration</h4>
@@ -358,7 +483,7 @@
                 <ul>
                     <li><strong>Freiwillige Migration:</strong> Aus wirtschaftlichen oder sozialen Gründen</li>
                     <li><strong>Unfreiwillige Migration:</strong> Flucht vor Krieg, Verfolgung oder Naturkatastrophen</li>
-                    <li><strong>Binnenmigration:</strong> Innerhalb eines Staates</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="binnenmigration">Binnenmigration</span>:</strong> Innerhalb eines Staates</li>
                     <li><strong>Internationale Migration:</strong> Über Staatsgrenzen hinweg</li>
                 </ul>
             </div>
@@ -367,24 +492,24 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">Mittelalter</div>
-                    <p>Völkerwanderung, Kreuzzüge, Ostsiedlung</p>
+                    <p><span class="tooltip-term" data-tooltip="voelkerwanderung">Völkerwanderung</span>, Kreuzzüge, <span class="tooltip-term" data-tooltip="ostsiedlung">Ostsiedlung</span></p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">16.-18. Jahrhundert</div>
-                    <p>Hugenotten-Einwanderung nach Preußen, Salzburger Exulanten</p>
+                    <p><span class="tooltip-term" data-tooltip="hugenotten">Hugenotten-Einwanderung</span> nach Preußen, Salzburger Exulanten</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">19. Jahrhundert</div>
-                    <p>Auswanderung nach Amerika ("Amerika-Fieber"), Arbeitsmigration im Deutschen Reich</p>
+                    <p>Auswanderung nach Amerika ("<span class="tooltip-term" data-tooltip="amerika-fieber">Amerika-Fieber</span>"), Arbeitsmigration im Deutschen Reich</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">20. Jahrhundert</div>
-                    <p>Gastarbeiter-Anwerbung, Flucht und Vertreibung nach 1945, EU-Freizügigkeit</p>
+                    <p><span class="tooltip-term" data-tooltip="gastarbeiter">Gastarbeiter-Anwerbung</span>, Flucht und Vertreibung nach 1945, EU-Freizügigkeit</p>
                 </div>
             </div>
 
             <h3>2.3 Zusammenleben in Deutschland heute</h3>
-            <p>Deutschland ist heute ein Einwanderungsland. Etwa 26% der Bevölkerung haben einen Migrationshintergrund. Dies bringt Chancen und Herausforderungen mit sich:</p>
+            <p>Deutschland ist heute ein Einwanderungsland. Etwa 26% der Bevölkerung haben einen <span class="tooltip-term" data-tooltip="migrationshintergrund">Migrationshintergrund</span>. Dies bringt Chancen und Herausforderungen mit sich:</p>
             
             <div class="grid-container">
                 <div class="card">
@@ -425,16 +550,16 @@
             <h2>3. Das Streben nach Freiheit und Menschenrechten im 18. und 19. Jahrhundert</h2>
             
             <h3>3.1 Die Französische Revolution – der Kampf um politische Partizipation</h3>
-            <p>Die Französische Revolution (1789-1799) markiert einen Wendepunkt in der europäischen Geschichte. Sie leitete den Übergang von der ständischen zur bürgerlichen Gesellschaft ein.</p>
+            <p>Die <span class="tooltip-term" data-tooltip="franzoesische-revolution">Französische Revolution</span> (1789-1799) markiert einen Wendepunkt in der europäischen Geschichte. Sie leitete den Übergang von der <span class="tooltip-term" data-tooltip="staendegesellschaft">ständischen</span> zur bürgerlichen Gesellschaft ein.</p>
             
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">1789</div>
-                    <p><strong>Beginn der Revolution:</strong> Einberufung der Generalstände, Sturm auf die Bastille, Erklärung der Menschen- und Bürgerrechte</p>
+                    <p><strong>Beginn der Revolution:</strong> Einberufung der <span class="tooltip-term" data-tooltip="generalstaende">Generalstände</span>, Sturm auf die Bastille, <span class="tooltip-term" data-tooltip="menschenrechtserklaerung">Erklärung der Menschen- und Bürgerrechte</span></p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1792-1794</div>
-                    <p><strong>Radikale Phase:</strong> Republik, Schreckensherrschaft unter Robespierre</p>
+                    <p><strong>Radikale Phase:</strong> Republik, <span class="tooltip-term" data-tooltip="schreckensherrschaft">Schreckensherrschaft</span> unter Robespierre</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1799</div>
@@ -450,25 +575,25 @@
             <ul>
                 <li>Abschaffung der Ständegesellschaft</li>
                 <li>Gleichheit vor dem Gesetz</li>
-                <li>Gewaltenteilung</li>
+                <li><span class="tooltip-term" data-tooltip="gewaltenteilung">Gewaltenteilung</span></li>
                 <li>Religionsfreiheit</li>
                 <li>Pressefreiheit</li>
             </ul>
 
             <h3>3.2 Die Revolution von 1848/49 – der Weg zum liberalen Nationalstaat?</h3>
-            <p>Die Revolution von 1848/49 war der Versuch, in Deutschland eine liberale Verfassung und nationale Einheit zu erreichen. Obwohl sie scheiterte, legte sie wichtige Grundlagen für die spätere Reichsgründung.</p>
+            <p>Die <span class="tooltip-term" data-tooltip="revolution-1848">Revolution von 1848/49</span> war der Versuch, in Deutschland eine liberale Verfassung und nationale Einheit zu erreichen. Obwohl sie scheiterte, legte sie wichtige Grundlagen für die spätere Reichsgründung.</p>
             
             <div class="highlight-box">
                 <h4>Ziele der 1848er Revolution</h4>
                 <ul>
-                    <li><strong>Liberalismus:</strong> Verfassung, Grundrechte, Gewaltenteilung</li>
-                    <li><strong>Nationalismus:</strong> Deutsche Einheit</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="liberalismus">Liberalismus</span>:</strong> Verfassung, Grundrechte, Gewaltenteilung</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="nationalismus">Nationalismus</span>:</strong> Deutsche Einheit</li>
                     <li><strong>Demokratie:</strong> Volkssouveränität, allgemeines Wahlrecht</li>
                 </ul>
             </div>
 
             <h4>Die Paulskirchen-Verfassung 1849</h4>
-            <p>Die Frankfurter Nationalversammlung erarbeitete die erste demokratische Verfassung für Deutschland, die jedoch nicht verwirklicht wurde:</p>
+            <p>Die <span class="tooltip-term" data-tooltip="paulskirche">Frankfurter Nationalversammlung</span> erarbeitete die erste demokratische Verfassung für Deutschland, die jedoch nicht verwirklicht wurde:</p>
             <ul>
                 <li>Grundrechtskatalog</li>
                 <li>Konstitutionelle Monarchie</li>
@@ -477,24 +602,24 @@
             </ul>
 
             <h3>3.3 Entwicklung der Menschenrechte – Stärkung des Individuums in der modernen Gesellschaft</h3>
-            <p>Die Idee der Menschenrechte entwickelte sich aus der Aufklärung und wurde durch verschiedene Revolutionen und politische Bewegungen vorangetrieben.</p>
+            <p>Die Idee der <span class="tooltip-term" data-tooltip="menschenrechte">Menschenrechte</span> entwickelte sich aus der Aufklärung und wurde durch verschiedene Revolutionen und politische Bewegungen vorangetrieben.</p>
             
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">1776</div>
-                    <p>Virginia Bill of Rights (USA)</p>
+                    <p><span class="tooltip-term" data-tooltip="virginia-bill">Virginia Bill of Rights</span> (USA)</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1789</div>
-                    <p>Déclaration des droits de l'homme (Frankreich)</p>
+                    <p><span class="tooltip-term" data-tooltip="declaration-droits">Déclaration des droits de l'homme</span> (Frankreich)</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1948</div>
-                    <p>Allgemeine Erklärung der Menschenrechte (UN)</p>
+                    <p><span class="tooltip-term" data-tooltip="un-menschenrechte">Allgemeine Erklärung der Menschenrechte</span> (UN)</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1950</div>
-                    <p>Europäische Menschenrechtskonvention</p>
+                    <p><span class="tooltip-term" data-tooltip="emrk">Europäische Menschenrechtskonvention</span></p>
                 </div>
             </div>
 
@@ -507,7 +632,7 @@
             <h2>4. Ambivalente Aspekte der Moderne im Kaiserreich</h2>
             
             <h3>4.1 Gründung des Kaiserreichs – Grund zum Feiern oder Anlass späteren Unheils?</h3>
-            <p>Die Reichsgründung 1871 brachte die ersehnte deutsche Einheit, jedoch unter preußischer Vorherrschaft und durch "Blut und Eisen" erreicht.</p>
+            <p>Die <span class="tooltip-term" data-tooltip="reichsgruendung">Reichsgründung 1871</span> brachte die ersehnte deutsche Einheit, jedoch unter preußischer Vorherrschaft und durch "<span class="tooltip-term" data-tooltip="blut-und-eisen">Blut und Eisen</span>" erreicht.</p>
             
             <div class="grid-container">
                 <div class="card">
@@ -522,7 +647,7 @@
                 <div class="card">
                     <h4>Problematische Aspekte</h4>
                     <ul>
-                        <li>Kleindeutsche Lösung ohne Österreich</li>
+                        <li><span class="tooltip-term" data-tooltip="kleindeutsche-loesung">Kleindeutsche Lösung</span> ohne Österreich</li>
                         <li>Militaristische Gründung</li>
                         <li>Obrigkeitsstaatliche Strukturen</li>
                         <li>Ausschluss demokratischer Kräfte</li>
@@ -531,20 +656,20 @@
             </div>
 
             <h3>4.2 Die Verfassung des Kaiserreichs – ein Sieg der Demokratie?</h3>
-            <p>Die Reichsverfassung von 1871 war ein Kompromiss zwischen monarchischen und parlamentarischen Elementen:</p>
+            <p>Die <span class="tooltip-term" data-tooltip="reichsverfassung">Reichsverfassung von 1871</span> war ein Kompromiss zwischen monarchischen und parlamentarischen Elementen:</p>
             
             <div class="info-box">
                 <h3>Verfassungsstruktur des Kaiserreichs</h3>
                 <ul>
                     <li><strong>Kaiser:</strong> Oberste Exekutive, Oberbefehl über das Heer</li>
                     <li><strong>Reichskanzler:</strong> Einziger verantwortlicher Minister</li>
-                    <li><strong>Bundesrat:</strong> Vertretung der Bundesstaaten</li>
-                    <li><strong>Reichstag:</strong> Parlament mit begrenzten Rechten</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="bundesrat">Bundesrat</span>:</strong> Vertretung der Bundesstaaten</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="reichstag">Reichstag</span>:</strong> Parlament mit begrenzten Rechten</li>
                 </ul>
             </div>
 
             <h4>Demokratische Elemente vs. Obrigkeitsstaat</h4>
-            <p>Obwohl das allgemeine, gleiche und geheime Wahlrecht eingeführt wurde, blieb das Reich ein konstitutioneller Obrigkeitsstaat mit starken monarchischen Elementen.</p>
+            <p>Obwohl das allgemeine, gleiche und geheime Wahlrecht eingeführt wurde, blieb das Reich ein konstitutioneller <span class="tooltip-term" data-tooltip="obrigkeitsstaat">Obrigkeitsstaat</span> mit starken monarchischen Elementen.</p>
 
             <h3>4.3 Leben im Obrigkeitsstaat</h3>
             <p>Das gesellschaftliche Leben im Kaiserreich war geprägt von Hierarchien, Disziplin und Untertanengeist, aber auch von technischem Fortschritt und kultureller Blüte.</p>
@@ -553,7 +678,7 @@
                 <h4>Gesellschaftliche Schichten im Kaiserreich</h4>
                 <ul>
                     <li><strong>Adel:</strong> Weiterhin privilegiert, besonders in Militär und Diplomatie</li>
-                    <li><strong>Bürgertum:</strong> Wirtschaftlich stark, politisch begrenzt einflussreich</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="buergertum">Bürgertum</span>:</strong> Wirtschaftlich stark, politisch begrenzt einflussreich</li>
                     <li><strong>Arbeiterschaft:</strong> Wachsende Gruppe, organisiert in SPD und Gewerkschaften</li>
                     <li><strong>Bauern:</strong> Noch etwa 35% der Bevölkerung um 1900</li>
                 </ul>
@@ -563,10 +688,10 @@
             <p>Trotz obrigkeitsstaatlicher Strukturen fanden wichtige Modernisierungsprozesse statt:</p>
             <ul>
                 <li>Ausbau der Verwaltung</li>
-                <li>Rechtsvereinheitlichung (BGB 1900)</li>
+                <li>Rechtsvereinheitlichung (<span class="tooltip-term" data-tooltip="bgb">BGB 1900</span>)</li>
                 <li>Entstehung moderner Parteien</li>
                 <li>Entwicklung der Massenpresse</li>
-                <li>Sozialgesetzgebung unter Bismarck</li>
+                <li><span class="tooltip-term" data-tooltip="sozialgesetzgebung">Sozialgesetzgebung</span> unter Bismarck</li>
             </ul>
         </div>
 
@@ -575,7 +700,7 @@
             <h2>5. Industrialisierung und die Entwicklung des modernen Sozialstaates</h2>
             
             <h3>5.1 Industrie 1.0 – wie alles anfing</h3>
-            <p>Die Industrielle Revolution begann in England und erfasste Deutschland ab der Mitte des 19. Jahrhunderts. Sie veränderte Wirtschaft, Gesellschaft und Lebensweise grundlegend.</p>
+            <p>Die <span class="tooltip-term" data-tooltip="industrielle-revolution">Industrielle Revolution</span> begann in England und erfasste Deutschland ab der Mitte des 19. Jahrhunderts. Sie veränderte Wirtschaft, Gesellschaft und Lebensweise grundlegend.</p>
             
             <div class="timeline">
                 <div class="timeline-item">
@@ -584,7 +709,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1840-1870</div>
-                    <p><strong>Frühindustrialisierung in Deutschland:</strong> Eisenbahnbau, Montanindustrie</p>
+                    <p><strong>Frühindustrialisierung in Deutschland:</strong> Eisenbahnbau, <span class="tooltip-term" data-tooltip="montanindustrie">Montanindustrie</span></p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1870-1914</div>
@@ -597,7 +722,7 @@
                 <li>Mechanisierung der Produktion</li>
                 <li>Arbeitsteilung und Spezialisierung</li>
                 <li>Entstehung von Fabriken</li>
-                <li>Urbanisierung</li>
+                <li><span class="tooltip-term" data-tooltip="urbanisierung">Urbanisierung</span></li>
                 <li>Neue Verkehrsmittel (Eisenbahn, Dampfschiff)</li>
             </ul>
 
@@ -611,10 +736,10 @@
                     <li><strong>1884:</strong> Unfallversicherung</li>
                     <li><strong>1889:</strong> Alters- und Invaliditätsversicherung</li>
                 </ul>
-                <p>Ziele: Bekämpfung der Sozialdemokratie, Bindung der Arbeiter an den Staat</p>
+                <p>Ziele: Bekämpfung der <span class="tooltip-term" data-tooltip="sozialdemokratie">Sozialdemokratie</span>, Bindung der Arbeiter an den Staat</p>
             </div>
 
-            <h4>Soziale Frage im 19. Jahrhundert</h4>
+            <h4><span class="tooltip-term" data-tooltip="soziale-frage">Soziale Frage</span> im 19. Jahrhundert</h4>
             <p>Die rapide Industrialisierung brachte neue soziale Probleme mit sich:</p>
             <ul>
                 <li>Schlechte Arbeitsbedingungen</li>
@@ -637,7 +762,7 @@
                 <div class="card">
                     <h4>Gesellschaftliche Bewegungen</h4>
                     <ul>
-                        <li>Gewerkschaften</li>
+                        <li><span class="tooltip-term" data-tooltip="gewerkschaften">Gewerkschaften</span></li>
                         <li>Sozialdemokratie</li>
                         <li>Christliche Soziallehre</li>
                     </ul>
@@ -653,14 +778,14 @@
             </div>
 
             <h3>5.3 Industrie 4.0 – Chancen und Risiken der Digitalisierung</h3>
-            <p>Die vierte industrielle Revolution ist geprägt von Digitalisierung, Vernetzung und künstlicher Intelligenz. Sie bringt neue Chancen und Herausforderungen mit sich.</p>
+            <p>Die vierte industrielle Revolution ist geprägt von Digitalisierung, Vernetzung und <span class="tooltip-term" data-tooltip="kuenstliche-intelligenz">künstlicher Intelligenz</span>. Sie bringt neue Chancen und Herausforderungen mit sich.</p>
             
             <div class="highlight-box">
                 <h4>Merkmale von Industrie 4.0</h4>
                 <ul>
-                    <li>Internet der Dinge (IoT)</li>
+                    <li><span class="tooltip-term" data-tooltip="iot">Internet der Dinge (IoT)</span></li>
                     <li>Künstliche Intelligenz</li>
-                    <li>Big Data und Datenanalyse</li>
+                    <li><span class="tooltip-term" data-tooltip="big-data">Big Data</span> und Datenanalyse</li>
                     <li>Cyber-physische Systeme</li>
                     <li>Automatisierung und Robotik</li>
                 </ul>
@@ -678,7 +803,7 @@
             <h4>Risiken und Herausforderungen</h4>
             <ul>
                 <li>Arbeitsplätze durch Automatisierung bedroht</li>
-                <li>Digitale Spaltung der Gesellschaft</li>
+                <li><span class="tooltip-term" data-tooltip="digitale-spaltung">Digitale Spaltung</span> der Gesellschaft</li>
                 <li>Datenschutz und Privatsphäre</li>
                 <li>Cybersicherheit</li>
                 <li>Neue Qualifikationsanforderungen</li>
@@ -689,7 +814,7 @@
                 <h3>Methode: Internetrecherche</h3>
                 <p>Für die Erforschung aktueller Entwicklungen ist die Internetrecherche ein wichtiges Werkzeug:</p>
                 <ul>
-                    <li><strong>Quellenbeurteilung:</strong> Seriosität und Aktualität prüfen</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="quellenbeurteilung">Quellenbeurteilung</span>:</strong> Seriosität und Aktualität prüfen</li>
                     <li><strong>Mehrperspektivität:</strong> Verschiedene Standpunkte einbeziehen</li>
                     <li><strong>Fact-Checking:</strong> Informationen durch mehrere Quellen bestätigen</li>
                     <li><strong>Primärquellen bevorzugen:</strong> Originalstudien, offizielle Statistiken</li>
@@ -832,9 +957,9 @@
                 <div class="card">
                     <h4>Vertiefungsthemen</h4>
                     <ul>
-                        <li>Frauenemanzipation im 19./20. Jahrhundert</li>
+                        <li><span class="tooltip-term" data-tooltip="frauenemanzipation">Frauenemanzipation</span> im 19./20. Jahrhundert</li>
                         <li>Arbeiterbewegung und Sozialismus</li>
-                        <li>Kolonialismus und Imperialismus</li>
+                        <li><span class="tooltip-term" data-tooltip="kolonialismus">Kolonialismus</span> und Imperialismus</li>
                         <li>Wissenschaftlich-technischer Fortschritt</li>
                         <li>Kultureller Wandel und Moderne</li>
                     </ul>
@@ -902,6 +1027,404 @@
     </div>
 
     <script>
+        // Tooltip-Definitionen
+        const tooltipData = {
+            'aufklaerung': {
+                title: 'Aufklärung',
+                description: 'Geistige Bewegung des 17./18. Jahrhunderts, die den Vernunftgebrauch und die Kritik an überlieferten Autoritäten betonte. Zentrale Denker: Kant, Voltaire, Rousseau.'
+            },
+            'industrialisierung': {
+                title: 'Industrialisierung',
+                description: 'Übergang von der Agrar- zur Industriegesellschaft ab etwa 1760. Charakterisiert durch Mechanisierung, Fabrikproduktion und gesellschaftlichen Wandel.'
+            },
+            'szenario-methode': {
+                title: 'Szenario-Methode',
+                description: 'Analytisches Verfahren zur Erkundung möglicher Zukunftsentwicklungen durch das Durchspielen verschiedener "Was-wäre-wenn"-Situationen.'
+            },
+            'primaerquellen': {
+                title: 'Primärquellen',
+                description: 'Zeitgenössische Dokumente aus der Zeit, die erforscht wird. Beispiele: Briefe, Tagebücher, Urkunden, Zeitungsartikel der jeweiligen Epoche.'
+            },
+            'sekundaerquellen': {
+                title: 'Sekundärquellen',
+                description: 'Später entstandene wissenschaftliche Arbeiten über vergangene Ereignisse. Beispiele: Geschichtsbücher, Forschungsartikel, Dokumentationen.'
+            },
+            'urteilsbildung': {
+                title: 'Historische Urteilsbildung',
+                description: 'Prozess der kritischen Bewertung historischer Ereignisse unter Berücksichtigung verschiedener Perspektiven und des zeitgenössischen Kontexts.'
+            },
+            'einwanderungsland': {
+                title: 'Einwanderungsland',
+                description: 'Land, das dauerhaft mehr Zu- als Abwanderung verzeichnet. Deutschland gilt seit den 1960er Jahren als faktisches Einwanderungsland.'
+            },
+            'binnenmigration': {
+                title: 'Binnenmigration',
+                description: 'Wanderungsbewegungen innerhalb eines Staatsgebiets, z.B. vom Land in die Stadt oder zwischen verschiedenen Regionen.'
+            },
+            'voelkerwanderung': {
+                title: 'Völkerwanderung',
+                description: 'Wanderungsbewegungen germanischer und anderer Stämme im 4.-6. Jahrhundert, die zum Ende des Weströmischen Reiches beitrugen.'
+            },
+            'ostsiedlung': {
+                title: 'Deutsche Ostsiedlung',
+                description: 'Mittelalterliche Besiedlung osteuropäischer Gebiete durch deutsche Kolonisten vom 12.-14. Jahrhundert.'
+            },
+            'hugenotten': {
+                title: 'Hugenotten',
+                description: 'Französische Protestanten, die nach der Aufhebung des Edikts von Nantes (1685) vor religiöser Verfolgung flohen. Viele fanden Aufnahme in Preußen.'
+            },
+            'amerika-fieber': {
+                title: 'Amerika-Fieber',
+                description: 'Massenauswanderung aus Deutschland nach Nordamerika im 19. Jahrhundert. Zwischen 1815-1914 wanderten etwa 5,5 Millionen Deutsche aus.'
+            },
+            'gastarbeiter': {
+                title: 'Gastarbeiter',
+                description: 'Ausländische Arbeitskräfte, die ab den 1950er Jahren zur Deckung des Arbeitskräftemangels nach Deutschland geholt wurden. Zunächst als temporäre Arbeitsmigration geplant.'
+            },
+            'migrationshintergrund': {
+                title: 'Migrationshintergrund',
+                description: 'Statistischer Begriff für Personen, die selbst oder deren Vorfahren nach 1949 nach Deutschland eingewandert sind.'
+            },
+            'franzoesische-revolution': {
+                title: 'Französische Revolution (1789-1799)',
+                description: 'Epochaler Umbruch, der das Ende der Feudalgesellschaft in Europa einleitete und moderne demokratische Prinzipien etablierte.'
+            },
+            'staendegesellschaft': {
+                title: 'Ständegesellschaft',
+                description: 'Vormoderne Gesellschaftsordnung mit rechtlich fixierten Ständen: Adel, Klerus und Dritter Stand (Bürgertum/Bauern). Charakterisiert durch ungleiche Rechte und Pflichten.'
+            },
+            'generalstaende': {
+                title: 'Generalstände',
+                description: 'Ständeversammlung in Frankreich mit Vertretern des Adels, Klerus und Dritten Standes. 1789 erstmals seit 1614 wieder einberufen.'
+            },
+            'menschenrechtserklaerung': {
+                title: 'Erklärung der Menschen- und Bürgerrechte',
+                description: 'Grundlegendes Dokument der Französischen Revolution von 1789, das unveräußerliche Menschenrechte wie Freiheit, Gleichheit und Eigentum proklamierte.'
+            },
+            'schreckensherrschaft': {
+                title: 'Schreckensherrschaft (1793-1794)',
+                description: 'Radikale Phase der Französischen Revolution unter Führung Robespierres, geprägt von politischem Terror und etwa 17.000 Hinrichtungen.'
+            },
+            'gewaltenteilung': {
+                title: 'Gewaltenteilung',
+                description: 'Aufteilung der Staatsgewalt in Legislative (Gesetzgebung), Exekutive (Regierung) und Judikative (Rechtsprechung) zur Machtkontrolle.'
+            },
+            'revolution-1848': {
+                title: 'Revolution von 1848/49',
+                description: 'Demokratische und nationale Bewegung in Deutschland und Europa. Scheiterte, legte aber Grundlagen für spätere Verfassungsentwicklung.'
+            },
+            'liberalismus': {
+                title: 'Liberalismus',
+                description: 'Politische Ideologie, die individuelle Freiheitsrechte, Rechtsstaatlichkeit, Gewaltenteilung und Marktwirtschaft betont.'
+            },
+            'nationalismus': {
+                title: 'Nationalismus',
+                description: 'Ideologie, die die Nation als zentrale politische Einheit sieht und nationale Einheit, Unabhängigkeit und Identität anstrebt.'
+            },
+            'paulskirche': {
+                title: 'Paulskirchenparlament',
+                description: 'Frankfurter Nationalversammlung 1848/49 in der Paulskirche, die erste gesamtdeutsche Verfassung erarbeitete, die jedoch nicht verwirklicht wurde.'
+            },
+            'menschenrechte': {
+                title: 'Menschenrechte',
+                description: 'Unveräußerliche Rechte, die jedem Menschen aufgrund seines Menschseins zustehen, unabhängig von Herkunft, Religion oder Status.'
+            },
+            'reichsgruendung': {
+                title: 'Deutsche Reichsgründung 1871',
+                description: 'Gründung des Deutschen Kaiserreichs im Spiegelsaal von Versailles nach dem Sieg über Frankreich. Erste deutsche Nationalstaatsbildung.'
+            },
+            'blut-und-eisen': {
+                title: 'Blut und Eisen',
+                description: 'Bismarcks berühmter Ausspruch von 1862, der seine Politik der Gewalt und militärischen Stärke zur Lösung politischer Probleme charakterisierte.'
+            },
+            'kleindeutsche-loesung': {
+                title: 'Kleindeutsche Lösung',
+                description: 'Deutsche Einigung ohne Österreich unter preußischer Führung, wie sie 1871 verwirklicht wurde. Gegensatz zur großdeutschen Lösung mit Österreich.'
+            },
+            'reichsverfassung': {
+                title: 'Reichsverfassung 1871',
+                description: 'Verfassung des Deutschen Kaiserreichs, die einen föderalen Bundesstaat mit starker Exekutive und begrenzten parlamentarischen Rechten etablierte.'
+            },
+            'bundesrat': {
+                title: 'Bundesrat (Kaiserreich)',
+                description: 'Vertretung der Bundesstaaten im Kaiserreich mit starken Rechten, besonders Preußens, das durch seine Stimmenanzahl ein Vetorecht besaß.'
+            },
+            'reichstag': {
+                title: 'Reichstag (Kaiserreich)',
+                description: 'Parlament des Kaiserreichs, gewählt durch allgemeines, gleiches und geheimes Männerwahlrecht. Hatte jedoch nur begrenzte Rechte gegenüber Kaiser und Kanzler.'
+            },
+            'obrigkeitsstaat': {
+                title: 'Obrigkeitsstaat',
+                description: 'Staatsform mit starker Exekutive und begrenzten parlamentarischen Rechten. Untertanen haben Pflichten gegenüber der Obrigkeit, aber wenige politische Mitbestimmungsrechte.'
+            },
+            'buergertum': {
+                title: 'Bürgertum (19. Jahrhundert)',
+                description: 'Soziale Schicht zwischen Adel und Arbeiterschaft, geprägt von Bildung, Besitz und bürgerlichen Werten wie Fleiß, Sparsamkeit und Rechtschaffenheit.'
+            },
+            'bgb': {
+                title: 'Bürgerliches Gesetzbuch (BGB)',
+                description: 'Seit 1900 geltendes deutsches Zivilrecht, das erstmals einheitliche Regelungen für Verträge, Eigentum und Familienrecht in ganz Deutschland schuf.'
+            },
+            'sozialgesetzgebung': {
+                title: 'Bismarcksche Sozialgesetzgebung',
+                description: 'Weltweit erste staatliche Sozialversicherung (1883-1889): Kranken-, Unfall- und Rentenversicherung. Ziel war die Eindämmung der Sozialdemokratie.'
+            },
+            'industrielle-revolution': {
+                title: 'Industrielle Revolution',
+                description: 'Tiefgreifende Veränderung von Wirtschaft und Gesellschaft durch Mechanisierung, Fabrikproduktion und neue Verkehrsmittel ab etwa 1760.'
+            },
+            'montanindustrie': {
+                title: 'Montanindustrie',
+                description: 'Bergbau und Schwerindustrie, besonders Kohle- und Stahlproduktion. Kernbereich der deutschen Industrialisierung im 19. Jahrhundert.'
+            },
+            'urbanisierung': {
+                title: 'Urbanisierung',
+                description: 'Verstädterung durch Landflucht und Industrialisierung. Städte wuchsen rasant, aber oft unter schlechten Lebensbedingungen für die Arbeiter.'
+            },
+            'sozialdemokratie': {
+                title: 'Sozialdemokratie',
+                description: 'Politische Bewegung zur Verbesserung der Lage der Arbeiterklasse. In Deutschland vertreten durch die SPD, gegründet 1875.'
+            },
+            'soziale-frage': {
+                title: 'Soziale Frage',
+                description: 'Bezeichnung für die sozialen Probleme der Industrialisierung: Armut, schlechte Arbeitsbedingungen, Wohnungsnot und fehlende soziale Absicherung.'
+            },
+            'gewerkschaften': {
+                title: 'Gewerkschaften',
+                description: 'Zusammenschlüsse von Arbeitern zur Durchsetzung besserer Arbeits- und Lohnbedingungen. Entstanden im 19. Jahrhundert als Reaktion auf die Industrialisierung.'
+            },
+            'kuenstliche-intelligenz': {
+                title: 'Künstliche Intelligenz (KI)',
+                description: 'Technologie, die menschliche Intelligenz in Maschinen nachahmt. Umfasst maschinelles Lernen, Spracherkennung und autonome Entscheidungsfindung.'
+            },
+            'iot': {
+                title: 'Internet der Dinge (IoT)',
+                description: 'Vernetzung von Geräten und Maschinen über das Internet, die selbständig Daten austauschen und Prozesse steuern können.'
+            },
+            'big-data': {
+                title: 'Big Data',
+                description: 'Analyse und Verarbeitung sehr großer Datenmengen zur Erkennung von Mustern, Trends und Zusammenhängen mit Hilfe spezieller Software.'
+            },
+            'digitale-spaltung': {
+                title: 'Digitale Spaltung',
+                description: 'Ungleichheit beim Zugang zu digitalen Technologien zwischen verschiedenen Bevölkerungsgruppen, Regionen oder Ländern.'
+            },
+            'quellenbeurteilung': {
+                title: 'Quellenbeurteilung',
+                description: 'Kritische Bewertung von Informationsquellen hinsichtlich Glaubwürdigkeit, Aktualität, Objektivität und Vollständigkeit.'
+            },
+            'frauenemanzipation': {
+                title: 'Frauenemanzipation',
+                description: 'Bewegung zur rechtlichen, politischen und sozialen Gleichstellung der Frauen. Wichtige Meilensteine: Wahlrecht, Bildungszugang, Berufstätigkeit.'
+            },
+            'kolonialismus': {
+                title: 'Kolonialismus',
+                description: 'Herrschaft europäischer Mächte über außereuropäische Gebiete vom 16.-20. Jahrhundert. Ziele: wirtschaftliche Ausbeutung und politische Kontrolle.'
+            },
+            'virginia-bill': {
+                title: 'Virginia Bill of Rights (1776)',
+                description: 'Erste schriftliche Verfassungsurkunde, die Grundrechte garantierte. Vorbild für die amerikanische Verfassung und spätere Menschenrechtserklärungen.'
+            },
+            'declaration-droits': {
+                title: 'Déclaration des droits de l\'homme et du citoyen (1789)',
+                description: 'Grundlagendokument der Französischen Revolution, das unveräußerliche Menschen- und Bürgerrechte wie Freiheit, Gleichheit und Eigentum proklamierte.'
+            },
+            'un-menschenrechte': {
+                title: 'Allgemeine Erklärung der Menschenrechte (1948)',
+                description: 'Von den Vereinten Nationen verabschiedete Erklärung universeller Menschenrechte als Reaktion auf die Gräuel des Zweiten Weltkriegs. Gilt als Grundlage des modernen Völkerrechts.'
+            },
+            'emrk': {
+                title: 'Europäische Menschenrechtskonvention (1950)',
+                description: 'Völkerrechtlicher Vertrag zum Schutz der Menschenrechte in Europa. Schuf den Europäischen Gerichtshof für Menschenrechte in Straßburg.'
+            }
+        };
+
+        // Tooltip-Funktionalität
+        let currentTooltip = null;
+        let tooltipTimeout = null;
+
+        function createTooltip(element, data) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            
+            const content = document.createElement('div');
+            content.className = 'tooltip-content';
+            
+            const title = document.createElement('div');
+            title.className = 'tooltip-title';
+            title.textContent = data.title;
+            
+            const description = document.createElement('div');
+            description.className = 'tooltip-description';
+            description.textContent = data.description;
+            
+            content.appendChild(title);
+            content.appendChild(description);
+            tooltip.appendChild(content);
+            
+            return tooltip;
+        }
+
+        function positionTooltip(tooltip, element) {
+            const rect = element.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const containerRect = document.querySelector('.container').getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            // Basis-Position: unter dem Element
+            let top = rect.bottom + window.scrollY + 10;
+            let left = rect.left + window.scrollX;
+            
+            // Mobile Optimierung
+            if (window.innerWidth <= 768) {
+                // Auf Mobile: zentriert unter dem Element
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = (rect.bottom + 10) + 'px';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translateX(-50%)';
+                
+                // Wenn zu nah am unteren Rand, über dem Element positionieren
+                if (rect.bottom + tooltipRect.height + 20 > viewportHeight) {
+                    tooltip.style.top = (rect.top - tooltipRect.height - 10) + 'px';
+                    tooltip.classList.add('bottom');
+                }
+                return;
+            }
+            
+            // Desktop-Positionierung
+            tooltip.style.position = 'absolute';
+            
+            // Horizontale Positionierung prüfen
+            if (left + tooltipRect.width > containerRect.right) {
+                // Rechts vom Container -> links vom Element positionieren
+                left = rect.right + window.scrollX - tooltipRect.width;
+                tooltip.classList.add('left');
+            }
+            
+            // Weitere Anpassung wenn immer noch außerhalb
+            if (left < containerRect.left) {
+                left = containerRect.left + window.scrollX + 10;
+            }
+            
+            // Vertikale Positionierung prüfen
+            if (top + tooltipRect.height > window.scrollY + viewportHeight - 20) {
+                // Über dem Element positionieren
+                top = rect.top + window.scrollY - tooltipRect.height - 10;
+                tooltip.classList.add('bottom');
+            }
+            
+            tooltip.style.top = top + 'px';
+            tooltip.style.left = left + 'px';
+        }
+
+        function showTooltip(element) {
+            if (currentTooltip) {
+                hideTooltip();
+            }
+            
+            const tooltipKey = element.getAttribute('data-tooltip');
+            const data = tooltipData[tooltipKey];
+            
+            if (!data) return;
+            
+            currentTooltip = createTooltip(element, data);
+            document.body.appendChild(currentTooltip);
+            
+            // Position berechnen
+            positionTooltip(currentTooltip, element);
+            
+            // Tooltip anzeigen
+            setTimeout(() => {
+                if (currentTooltip) {
+                    currentTooltip.classList.add('show');
+                }
+            }, 10);
+        }
+
+        function hideTooltip() {
+            if (currentTooltip) {
+                currentTooltip.classList.remove('show');
+                setTimeout(() => {
+                    if (currentTooltip && currentTooltip.parentNode) {
+                        currentTooltip.parentNode.removeChild(currentTooltip);
+                    }
+                    currentTooltip = null;
+                }, 300);
+            }
+        }
+
+        // Event-Listener für Tooltips
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipTerms = document.querySelectorAll('.tooltip-term');
+            
+            tooltipTerms.forEach(term => {
+                // Desktop: Hover-Events
+                term.addEventListener('mouseenter', function() {
+                    if (tooltipTimeout) {
+                        clearTimeout(tooltipTimeout);
+                    }
+                    tooltipTimeout = setTimeout(() => {
+                        showTooltip(this);
+                    }, 100);
+                });
+                
+                term.addEventListener('mouseleave', function() {
+                    if (tooltipTimeout) {
+                        clearTimeout(tooltipTimeout);
+                    }
+                    tooltipTimeout = setTimeout(hideTooltip, 200);
+                });
+                
+                // Mobile: Touch-Events
+                term.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    if (currentTooltip) {
+                        hideTooltip();
+                    } else {
+                        showTooltip(this);
+                    }
+                }, { passive: false });
+            });
+            
+            // Tooltip schließen bei Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (currentTooltip && !e.target.closest('.tooltip') && !e.target.closest('.tooltip-term')) {
+                    hideTooltip();
+                }
+            });
+            
+            // Tooltip bei Scroll verstecken
+            document.addEventListener('scroll', function() {
+                if (currentTooltip && window.innerWidth > 768) {
+                    hideTooltip();
+                }
+            });
+            
+            // Tooltip bei Resize neu positionieren
+            window.addEventListener('resize', function() {
+                if (currentTooltip) {
+                    hideTooltip();
+                }
+            });
+        });
+
+        // Hover-Events für Tooltips
+        document.addEventListener('mouseenter', function(e) {
+            if (currentTooltip && e.target.closest('.tooltip')) {
+                // Verhindern, dass Tooltip verschwindet wenn man darüber hovert
+                if (tooltipTimeout) {
+                    clearTimeout(tooltipTimeout);
+                }
+            }
+        }, true);
+
+        document.addEventListener('mouseleave', function(e) {
+            if (currentTooltip && e.target.closest('.tooltip')) {
+                tooltipTimeout = setTimeout(hideTooltip, 200);
+            }
+        }, true);
+
         // Scroll to Top Funktion
         function scrollToTop() {
             window.scrollTo({
