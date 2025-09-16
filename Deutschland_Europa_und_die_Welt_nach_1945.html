@@ -173,15 +173,25 @@
             font-weight: bold;
         }
 
+        /* Table Styles */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Wichtig: Tooltips nicht abschneiden */
+            overflow-y: visible;
+        }
+
         .comparison-table {
             width: 100%;
+            min-width: 600px; /* Ensures minimum width for desktop readability */
             border-collapse: collapse;
-            margin: 20px 0;
             background: white;
             border-radius: 10px;
-            overflow: visible;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
+            overflow: visible; /* Tooltips nicht abschneiden */
+            position: relative; /* Für absolute Positionierung der Tooltips */
         }
 
         .comparison-table th,
@@ -189,6 +199,10 @@
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            word-wrap: break-word;
+            hyphens: auto;
+            /* Wichtig: Tooltips aus Zellen herausragen lassen */
+            overflow: visible;
             position: relative;
         }
 
@@ -196,10 +210,34 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 2;
         }
 
         .comparison-table tr:nth-child(even) {
             background-color: #f8f9fa;
+        }
+
+        /* Spezielle Tooltip-Behandlung in Tabellen */
+        .comparison-table .tooltip-term {
+            position: relative;
+        }
+
+        .comparison-table .tooltip-content {
+            /* In Tabellen: Fixed positioning für bessere Sichtbarkeit */
+            position: fixed !important;
+            z-index: 10001 !important;
+        }
+
+        .comparison-table .tooltip-content.show {
+            /* Standard-Position für Tabellen-Tooltips überschreiben */
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            transform: none !important;
         }
 
         .back-link {
@@ -220,7 +258,6 @@
             box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
         }
 
-        /* Tooltip Styles */
         .tooltip-term {
             position: relative;
             color: #2980b9;
@@ -251,109 +288,81 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            transform: translateY(10px);
-            max-width: 350px;
-            width: max-content;
+            pointer-events: none;
+            max-width: 300px;
             min-width: 250px;
+            width: max-content;
+            /* Standard Position: oberhalb des Elements */
+            bottom: 100%;
+            left: 50%;
+            transform: translate(-50%, -10px);
         }
 
-        .tooltip-content::before {
+        .tooltip-content::after {
             content: "";
             position: absolute;
-            top: -8px;
-            left: 20px;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid rgba(44, 62, 80, 0.95);
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(44, 62, 80, 0.95) transparent transparent transparent;
         }
 
-        .tooltip-term:hover .tooltip-content {
+        /* Spezielle Behandlung für Tabellen-Tooltips */
+        .comparison-table .tooltip-term {
+            position: static; /* Wichtig für Tabellen-Zellen */
+        }
+
+        .comparison-table .tooltip-content {
+            /* Für Tabellen: Fixed positioning für bessere Sichtbarkeit */
+            position: fixed !important;
+            z-index: 10001 !important;
+            transform: none !important;
+            bottom: auto !important;
+            left: auto !important;
+        }
+
+        /* Klasse für sichtbare Tooltips */
+        .tooltip-content.show {
             visibility: visible;
             opacity: 1;
-            transform: translateY(0);
+            pointer-events: auto;
+            transform: translate(-50%, -5px);
         }
 
-        /* Default positioning for regular tooltips */
-        .tooltip-term .tooltip-content {
-            top: 100%;
-            left: 0;
-        }
-
-        /* Special positioning for table tooltips to ensure they overflow properly */
-        .comparison-table .tooltip-term .tooltip-content,
-        table .tooltip-term .tooltip-content {
-            position: absolute !important;
+        /* Mobile Tooltip Styling */
+        .tooltip-content.mobile {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            bottom: auto !important;
+            transform: translate(-50%, -50%) !important;
+            max-width: 90vw !important;
+            min-width: 280px !important;
+            max-height: 70vh !important;
+            overflow-y: auto !important;
             z-index: 10000 !important;
         }
 
-        /* Override for table cells to allow overflow */
-        .comparison-table td,
-        .comparison-table th,
-        table td,
-        table th {
-            overflow: visible !important;
+        .tooltip-content.mobile::after {
+            display: none !important;
         }
 
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-                overflow-x: hidden;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .nav-links {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .tooltip-content {
-                position: fixed;
-                top: 50% !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                max-width: 90vw;
-                max-height: 70vh;
-                overflow-y: auto;
-                z-index: 10000;
-            }
-
-            .tooltip-content::before {
-                display: none;
-            }
-
-            /* Mobile tooltip trigger */
-            .tooltip-term {
-                -webkit-tap-highlight-color: transparent;
-            }
+        /* Overlay für Mobile */
+        .tooltip-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: none;
         }
 
-        /* Touch-friendly tooltips for mobile */
-        @media (hover: none) and (pointer: coarse) {
-            .tooltip-term:active .tooltip-content {
-                visibility: visible;
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-
-            .tooltip-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.3);
-                z-index: 9999;
-                display: none;
-            }
-
-            .tooltip-overlay.active {
-                display: block;
-            }
+        .tooltip-overlay.active {
+            display: block;
         }
 
         /* Scrollable tooltip content */
@@ -376,6 +385,136 @@
         .tooltip-scrollable::-webkit-scrollbar-thumb {
             background: #3498db;
             border-radius: 3px;
+        }
+
+
+        /* Mobile Card Layout für Tables */
+        .mobile-card-container {
+            display: none;
+        }
+
+        .mobile-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-card-header {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .mobile-card-row {
+            margin-bottom: 12px;
+        }
+
+        .mobile-card-label {
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 4px;
+        }
+
+        .mobile-card-value {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                overflow-x: hidden;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+
+            .chapter-title {
+                font-size: 1.5em;
+            }
+
+            .section-title {
+                font-size: 1.2em;
+            }
+            
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .nav-links a {
+                margin: 5px 0;
+                padding: 8px 16px;
+                background: rgba(52, 152, 219, 0.1);
+                border-radius: 8px;
+                display: inline-block;
+            }
+
+            /* Hide table wrapper and show mobile cards on small screens */
+            .table-wrapper {
+                display: none;
+            }
+
+            .mobile-card-container {
+                display: block;
+            }
+
+            .tooltip-term {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .highlight-box, .timeline, .important-concept, .method-box, .key-points {
+                margin: 15px 0;
+                padding: 15px;
+            }
+
+            .timeline-item {
+                padding-left: 15px;
+                margin-bottom: 12px;
+            }
+        }
+
+        /* Medium screens */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .comparison-table {
+                min-width: 500px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        
+
+        /* Improved readability for mobile */
+        @media (max-width: 768px) {
+            .content-text {
+                text-align: left;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .important-concept ul,
+            .key-points ul {
+                padding-left: 0;
+            }
+
+            .important-concept li,
+            .key-points li {
+                padding-left: 20px;
+                margin-bottom: 8px;
+            }
         }
     </style>
 </head>
@@ -405,34 +544,80 @@
                 <h3 class="section-title">10.1 Der Kalte Krieg – ein Krieg der Ideologien?</h3>
                 
                 <div class="content-text">
-                    Der <span class="tooltip-term">Kalte Krieg<span class="tooltip-content tooltip-scrollable">Ein Konflikt zwischen den USA und der UdSSR (1947-1991), der sich durch ideologische Gegensätze, Wettrüsten und Stellvertreterkriege auszeichnete. "Kalt" bedeutete, dass beide Supermächte nie direkt gegeneinander kämpften, aber ständig in Konkurrenz standen.</span></span> begann beinahe unmittelbar nach dem Ende des Zweiten Weltkrieges. Beteiligt waren einerseits die <span class="tooltip-term">Westalliierten<span class="tooltip-content">USA, Großbritannien und später auch Frankreich - die demokratischen Siegermächte des Zweiten Weltkriegs</span></span> und ihre Verbündeten, die kapitalistisch und demokratisch orientiert waren. Ihnen gegenüber standen die UdSSR und ihre <span class="tooltip-term">Satellitenstaaten<span class="tooltip-content">Osteuropäische Länder, die nach 1945 unter sowjetischem Einfluss standen und kommunistische Regierungen erhielten (Polen, Ungarn, Tschechoslowakei, DDR, etc.)</span></span>, die kommunistisch und diktatorisch geprägt waren. Vom „Kalten" Krieg sprechen wir deswegen, weil sich beide Seiten nicht mit Waffen bekämpften, sondern es sich um einen Krieg der Systeme, Ideologien und Weltanschauungen handelte. Nichtsdestotrotz bestand ständig die Gefahr, dass es zum Ausbruch eines „heißen" Krieges mit Waffeneinsatz kommt.
+                    Der <span class="tooltip-term">Kalte Krieg<span class="tooltip-content tooltip-scrollable">Ein Konflikt zwischen den USA und der UdSSR (1947-1991), der sich durch ideologische Gegensätze, Wettrüsten und Stellvertreterkriege auszeichnete. "Kalt" bedeutete, dass beide Supermächte nie direkt gegeneinander kämpften, aber ständig in Konkurrenz standen.</span></span> begann beinahe unmittelbar nach dem Ende des Zweiten Weltkrieges. Beteiligt waren einerseits die <span class="tooltip-term">Westalliierten<span class="tooltip-content">USA, Großbritannien und später auch Frankreich - die demokratischen Siegermächte des Zweiten Weltkriegs</span></span> und ihre Verbündeten, die kapitalistisch und demokratisch orientiert waren. Ihnen gegenüber standen die UdSSR und ihre <span class="tooltip-term">Satellitenstaaten<span class="tooltip-content">Osteuropäische Länder, die nach 1945 unter sowjetischem Einfluss standen und kommunistische Regierungen erhielten (Polen, Ungarn, Tschechoslowakei, DDR, etc.)</span></span>, die kommunistisch und diktatorisch geprägt waren.
                 </div>
 
-                <table class="comparison-table">
-                    <tr>
-                        <th>Westlicher Block (USA)</th>
-                        <th>Östlicher Block (UdSSR)</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Ideologie:</strong> <span class="tooltip-term">Kapitalismus<span class="tooltip-content">Wirtschaftssystem basierend auf Privateigentum, freiem Markt und Gewinnstreben</span></span>, Demokratie<br>
-                            <strong>Wirtschaft:</strong> <span class="tooltip-term">Marktwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem Angebot und Nachfrage den Preis bestimmen und private Unternehmen konkurrieren</span></span><br>
-                            <strong>Politik:</strong> Pluralismus, <span class="tooltip-term">Gewaltenteilung<span class="tooltip-content">Aufteilung der Staatsgewalt in Legislative (Gesetzgebung), Exekutive (Ausführung) und Judikative (Rechtsprechung)</span></span><br>
-                            <strong>Bündnis:</strong> <span class="tooltip-term">NATO<span class="tooltip-content">North Atlantic Treaty Organization - 1949 gegründetes Verteidigungsbündnis westlicher Staaten unter Führung der USA</span></span> (1949)
-                        </td>
-                        <td>
-                            <strong>Ideologie:</strong> <span class="tooltip-term">Kommunismus<span class="tooltip-content">Gesellschaftsordnung ohne Privateigentum an Produktionsmitteln, Gleichberechtigung aller Menschen und Abschaffung der Klassenunterschiede</span></span>, Sozialismus<br>
-                            <strong>Wirtschaft:</strong> <span class="tooltip-term">Planwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem der Staat alle wirtschaftlichen Entscheidungen zentral plant und steuert</span></span><br>
-                            <strong>Politik:</strong> <span class="tooltip-term">Einparteiensystem<span class="tooltip-content">Politisches System, in dem nur eine Partei legal existiert und alle Macht ausübt</span></span><br>
-                            <strong>Bündnis:</strong> <span class="tooltip-term">Warschauer Pakt<span class="tooltip-content">1955 gegründetes Militärbündnis der Ostblockstaaten unter sowjetischer Führung als Gegengewicht zur NATO</span></span> (1955)
-                        </td>
-                    </tr>
-                </table>
+                <!-- Desktop Table -->
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Westlicher Block (USA)</th>
+                            <th>Östlicher Block (UdSSR)</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Ideologie:</strong> <span class="tooltip-term">Kapitalismus<span class="tooltip-content">Wirtschaftssystem basierend auf Privateigentum, freiem Markt und Gewinnstreben</span></span>, Demokratie<br>
+                                <strong>Wirtschaft:</strong> <span class="tooltip-term">Marktwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem Angebot und Nachfrage den Preis bestimmen und private Unternehmen konkurrieren</span></span><br>
+                                <strong>Politik:</strong> Pluralismus, <span class="tooltip-term">Gewaltenteilung<span class="tooltip-content">Aufteilung der Staatsgewalt in Legislative (Gesetzgebung), Exekutive (Ausführung) und Judikative (Rechtsprechung)</span></span><br>
+                                <strong>Bündnis:</strong> <span class="tooltip-term">NATO<span class="tooltip-content">North Atlantic Treaty Organization - 1949 gegründetes Verteidigungsbündnis westlicher Staaten unter Führung der USA</span></span> (1949)
+                            </td>
+                            <td>
+                                <strong>Ideologie:</strong> <span class="tooltip-term">Kommunismus<span class="tooltip-content">Gesellschaftsordnung ohne Privateigentum an Produktionsmitteln, Gleichberechtigung aller Menschen und Abschaffung der Klassenunterschiede</span></span>, Sozialismus<br>
+                                <strong>Wirtschaft:</strong> <span class="tooltip-term">Planwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem der Staat alle wirtschaftlichen Entscheidungen zentral plant und steuert</span></span><br>
+                                <strong>Politik:</strong> <span class="tooltip-term">Einparteiensystem<span class="tooltip-content">Politisches System, in dem nur eine Partei legal existiert und alle Macht ausübt</span></span><br>
+                                <strong>Bündnis:</strong> <span class="tooltip-term">Warschauer Pakt<span class="tooltip-content">1955 gegründetes Militärbündnis der Ostblockstaaten unter sowjetischer Führung als Gegengewicht zur NATO</span></span> (1955)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Mobile Card Layout -->
+                <div class="mobile-card-container">
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Westlicher Block (USA)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Ideologie:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Kapitalismus<span class="tooltip-content">Wirtschaftssystem basierend auf Privateigentum, freiem Markt und Gewinnstreben</span></span>, Demokratie</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Wirtschaft:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Marktwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem Angebot und Nachfrage den Preis bestimmen und private Unternehmen konkurrieren</span></span></div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Politik:</div>
+                            <div class="mobile-card-value">Pluralismus, <span class="tooltip-term">Gewaltenteilung<span class="tooltip-content">Aufteilung der Staatsgewalt in Legislative (Gesetzgebung), Exekutive (Ausführung) und Judikative (Rechtsprechung)</span></span></div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Bündnis:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">NATO<span class="tooltip-content">North Atlantic Treaty Organization - 1949 gegründetes Verteidigungsbündnis westlicher Staaten unter Führung der USA</span></span> (1949)</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Östlicher Block (UdSSR)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Ideologie:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Kommunismus<span class="tooltip-content">Gesellschaftsordnung ohne Privateigentum an Produktionsmitteln, Gleichberechtigung aller Menschen und Abschaffung der Klassenunterschiede</span></span>, Sozialismus</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Wirtschaft:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Planwirtschaft<span class="tooltip-content">Wirtschaftssystem, in dem der Staat alle wirtschaftlichen Entscheidungen zentral plant und steuert</span></span></div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Politik:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Einparteiensystem<span class="tooltip-content">Politisches System, in dem nur eine Partei legal existiert und alle Macht ausübt</span></span></div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Bündnis:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Warschauer Pakt<span class="tooltip-content">1955 gegründetes Militärbündnis der Ostblockstaaten unter sowjetischer Führung als Gegengewicht zur NATO</span></span> (1955)</div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3 class="section-title">10.2 Potsdamer Abkommen – ein Dokument der Teilung</h3>
                 
                 <div class="content-text">
-                    Zunächst waren die späteren Gegner jedoch Verbündete gegen Deutschland. Schon während der letzten Jahre des Zweiten Weltkrieges trafen sich die <span class="tooltip-term">"Großen Drei"<span class="tooltip-content">Die Regierungschefs der drei Hauptsiegermächte: Roosevelt (USA), Stalin (UdSSR) und Churchill (Großbritannien)</span></span> – die USA unter Roosevelt, die UdSSR unter Stalin und Großbritannien unter Churchill – zu verschiedenen Konferenzen. Auf diesen wurde über die Zukunft Deutschlands und Europas entschieden.
+                    Zunächst waren die späteren Gegner jedoch Verbündete gegen Deutschland. Schon während der letzten Jahre des Zweiten Weltkrieges trafen sich die <span class="tooltip-term">"Großen Drei"<span class="tooltip-content">Die Regierungschefs der drei Hauptsiegermächte: Roosevelt (USA), Stalin (UdSSR) und Churchill (Großbritannien)</span></span> – die USA unter Roosevelt, die UdSSR unter Stalin und Großbritannien unter Churchill – zu verschiedenen Konferenzen.
                 </div>
 
                 <div class="timeline">
@@ -461,36 +646,58 @@
                     </ul>
                 </div>
 
-                <div class="content-text">
-                    Deutschland wurde in vier <span class="tooltip-term">Besatzungszonen<span class="tooltip-content">Verwaltungsgebiete, die jeweils von einer Siegermacht (USA, Großbritannien, Frankreich, UdSSR) kontrolliert wurden</span></span> aufgeteilt, von denen jeweils eine von den USA, Großbritannien, Frankreich und der UdSSR besetzt wurde. Auch Berlin wurde in vier Zonen aufgeteilt. Der <span class="tooltip-term">Alliierte Kontrollrat<span class="tooltip-content">Oberstes Regierungsorgan für Deutschland, bestehend aus den vier Oberbefehlshabern der Besatzungsmächte</span></span> übernahm die Regierung.
-                </div>
-
                 <h3 class="section-title">10.3 Entnazifizierung – ein Sieg der Gerechtigkeit?</h3>
                 
                 <div class="content-text">
-                    Die <span class="tooltip-term">Entnazifizierung<span class="tooltip-content">Systematische Säuberung von Nationalsozialisten aus öffentlichen Ämtern und die juristische Aufarbeitung von NS-Verbrechen</span></span> war einer der wichtigen Beschlüsse der Alliierten Siegermächte, um sicherzugehen, dass die Ideologie des Nationalsozialismus keinen Bestand hatte. In der Umsetzung gab es jedoch nach Besatzungszone Unterschiede:
+                    Die <span class="tooltip-term">Entnazifizierung<span class="tooltip-content">Systematische Säuberung von Nationalsozialisten aus öffentlichen Ämtern und die juristische Aufarbeitung von NS-Verbrechen</span></span> war einer der wichtigen Beschlüsse der Alliierten Siegermächte. In der Umsetzung gab es jedoch nach Besatzungszone Unterschiede:
                 </div>
 
-                <table class="comparison-table">
-                    <tr>
-                        <th>Besatzungszone</th>
-                        <th>Verfahren</th>
-                        <th>Besonderheiten</th>
-                    </tr>
-                    <tr>
-                        <td>Westzonen</td>
-                        <td><span class="tooltip-term">Fragebogenaktion<span class="tooltip-content">Alle Deutschen mussten einen detaillierten Fragebogen über ihre NS-Vergangenheit ausfüllen</span></span>, <span class="tooltip-term">Spruchkammerverfahren<span class="tooltip-content">Deutsche Zivilgerichte zur Beurteilung der NS-Belastung einzelner Personen</span></span>, <span class="tooltip-term">Nürnberger Prozesse<span class="tooltip-content">Internationale Kriegsverbrecherprozesse gegen die Hauptkriegsverbrecher (1945/46)</span></span> (1945/46)</td>
-                        <td>Kategorisierung in 5 Stufen (Hauptschuldige bis Entlastete), viele ehemalige Verantwortliche wurden mit Strafen unterschiedlicher Höhe versehen</td>
-                    </tr>
-                    <tr>
-                        <td>Sowjetische Zone</td>
-                        <td>Politische Säuberung durch <span class="tooltip-term">SMAD<span class="tooltip-content">Sowjetische Militäradministration in Deutschland - Besatzungsbehörde der UdSSR</span></span></td>
-                        <td>Enthobung aller Nationalsozialisten aus höheren Ämtern, Verurteilung zahlreicher NSDAP-Mitglieder und anderer NS-Organisationen</td>
-                    </tr>
-                </table>
+                <!-- Desktop Table -->
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Besatzungszone</th>
+                            <th>Verfahren</th>
+                            <th>Besonderheiten</th>
+                        </tr>
+                        <tr>
+                            <td>Westzonen</td>
+                            <td><span class="tooltip-term">Fragebogenaktion<span class="tooltip-content">Alle Deutschen mussten einen detaillierten Fragebogen über ihre NS-Vergangenheit ausfüllen</span></span>, <span class="tooltip-term">Spruchkammerverfahren<span class="tooltip-content">Deutsche Zivilgerichte zur Beurteilung der NS-Belastung einzelner Personen</span></span>, <span class="tooltip-term">Nürnberger Prozesse<span class="tooltip-content">Internationale Kriegsverbrecherprozesse gegen die Hauptkriegsverbrecher (1945/46)</span></span> (1945/46)</td>
+                            <td>Kategorisierung in 5 Stufen (Hauptschuldige bis Entlastete)</td>
+                        </tr>
+                        <tr>
+                            <td>Sowjetische Zone</td>
+                            <td>Politische Säuberung durch <span class="tooltip-term">SMAD<span class="tooltip-content">Sowjetische Militäradministration in Deutschland - Besatzungsbehörde der UdSSR</span></span></td>
+                            <td>Enthobung aller Nationalsozialisten aus höheren Ämtern</td>
+                        </tr>
+                    </table>
+                </div>
 
-                <div class="content-text">
-                    In den Westzonen wurden zahlreiche Kriegsverbrecher im Rahmen der Nürnberger Prozesse (1945/46) verurteilt. In der Sowjetzone wurde die Entnazifizierung durch die Sowjetische Militäradministration in Deutschland (SMAD) vollzogen.
+                <!-- Mobile Card Layout -->
+                <div class="mobile-card-container">
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Westzonen</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Verfahren:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Fragebogenaktion<span class="tooltip-content">Alle Deutschen mussten einen detaillierten Fragebogen über ihre NS-Vergangenheit ausfüllen</span></span>, <span class="tooltip-term">Spruchkammerverfahren<span class="tooltip-content">Deutsche Zivilgerichte zur Beurteilung der NS-Belastung einzelner Personen</span></span>, <span class="tooltip-term">Nürnberger Prozesse<span class="tooltip-content">Internationale Kriegsverbrecherprozesse gegen die Hauptkriegsverbrecher (1945/46)</span></span> (1945/46)</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Besonderheiten:</div>
+                            <div class="mobile-card-value">Kategorisierung in 5 Stufen (Hauptschuldige bis Entlastete)</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Sowjetische Zone</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Verfahren:</div>
+                            <div class="mobile-card-value">Politische Säuberung durch <span class="tooltip-term">SMAD<span class="tooltip-content">Sowjetische Militäradministration in Deutschland - Besatzungsbehörde der UdSSR</span></span></div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Besonderheiten:</div>
+                            <div class="mobile-card-value">Enthobung aller Nationalsozialisten aus höheren Ämtern</div>
+                        </div>
+                    </div>
                 </div>
 
                 <h3 class="section-title">10.4 Die wirtschaftliche Entwicklung der Besatzungszonen</h3>
@@ -557,22 +764,17 @@
                 <div class="important-concept">
                     <strong>Unterschiedliche Staatskonzeptionen:</strong><br>
                     <strong>BRD:</strong> <span class="tooltip-term">Parlamentarische Demokratie<span class="tooltip-content">Regierungssystem, in dem die Regierung vom Parlament gewählt wird und diesem verantwortlich ist</span></span>, föderale Struktur, Gewaltenteilung, Grundrechte<br>
-                    <strong>DDR:</strong> <span class="tooltip-term">"Demokratischer Zentralismus"<span class="tooltip-content">Prinzip der kommunistischen Parteien: scheinbar demokratische Diskussion, aber zentrale Entscheidung durch die Parteiführung</span></span>, sozialistischer Staat, Führungsrolle der SED - diese Konzentration der Macht auf eine einzige Partei zeigte bereits die diktatorischen Züge des Systems auf
+                    <strong>DDR:</strong> <span class="tooltip-term">"Demokratischer Zentralismus"<span class="tooltip-content">Prinzip der kommunistischen Parteien: scheinbar demokratische Diskussion, aber zentrale Entscheidung durch die Parteiführung</span></span>, sozialistischer Staat, Führungsrolle der SED
                 </div>
 
                 <h3 class="section-title">10.6 Die Entwicklung der beiden deutschen Staaten</h3>
                 
-                <div class="content-text">
-                    Auch nach der doppelten Staatsgründung verlief die Entwicklung in der BRD und der DDR äußerst gegensätzlich.
-                </div>
-
                 <h4 class="subsection-title">Bundesrepublik Deutschland:</h4>
                 <div class="content-text">
                     <ul>
-                        <li><strong><span class="tooltip-term">Wirtschaftswunder<span class="tooltip-content">Schneller wirtschaftlicher Aufschwung der BRD in den 1950er/60er Jahren mit hohen Wachstumsraten und Vollbeschäftigung</span></span>:</strong> Wirtschaftlich entwickelte sich die BRD nach und nach zu einem modernen Industriestaat, der immer größere Teile der Bevölkerung zu einem gewissen Wohlstand brachte</li>
+                        <li><strong><span class="tooltip-term">Wirtschaftswunder<span class="tooltip-content">Schneller wirtschaftlicher Aufschwung der BRD in den 1950er/60er Jahren mit hohen Wachstumsraten und Vollbeschäftigung</span></span>:</strong> Wirtschaftlich entwickelte sich die BRD zu einem modernen Industriestaat</li>
                         <li><strong><span class="tooltip-term">Westintegration<span class="tooltip-content">Politik der BRD, sich politisch, militärisch und wirtschaftlich in westliche Strukturen zu integrieren</span></span>:</strong> NATO-Beitritt (1955), <span class="tooltip-term">EWG<span class="tooltip-content">Europäische Wirtschaftsgemeinschaft (1957) - Vorläufer der EU</span></span>-Gründungsmitglied (1957)</li>
                         <li><strong><span class="tooltip-term">Adenauer-Ära<span class="tooltip-content">Regierungszeit von Konrad Adenauer (1949-1963), geprägt von Westbindung und "Politik der Stärke"</span></span>:</strong> "Politik der Stärke", <span class="tooltip-term">Hallstein-Doktrin<span class="tooltip-content">BRD erkannte keine Staaten an, die die DDR anerkannten (außer UdSSR). Alleinvertretungsanspruch für ganz Deutschland</span></span></li>
-                        <li><strong>Demokratische Strukturen:</strong> Der 1. Deutsche Bundestag kam durch eine demokratische Wahl gemäß der Wahlgrundsätze zustande</li>
                         <li><strong><span class="tooltip-term">68er-Bewegung<span class="tooltip-content">Studentenproteste und gesellschaftlicher Aufbruch Ende der 1960er Jahre gegen autoritäre Strukturen</span></span>:</strong> Gesellschaftlicher Wandel und Generationenkonflikt</li>
                     </ul>
                 </div>
@@ -580,74 +782,115 @@
                 <h4 class="subsection-title">Deutsche Demokratische Republik:</h4>
                 <div class="content-text">
                     <ul>
-                        <li><strong>Sozialistischer Staat:</strong> Die DDR war ein sozialistischer Staat, wo der Lebensstandard für die Bevölkerung niedriger war</li>
-                        <li><strong>Diktatorische Strukturen:</strong> Die Bevölkerung der DDR sollte bei der Wahl zur 1. Volkskammer eine <span class="tooltip-term">Einheitsliste<span class="tooltip-content">Wahlzettel mit nur einer vorgegebenen Kandidatenliste ohne Auswahlmöglichkeit</span></span> der „Nationalen Front" bestätigen</li>
                         <li><strong><span class="tooltip-term">17. Juni 1953<span class="tooltip-content">Volksaufstand in der DDR gegen Normerhöhungen, niedergeschlagen mit sowjetischen Panzern. Bis 1990 Nationalfeiertag der BRD</span></span>:</strong> Volksaufstand in Ostberlin und der DDR</li>
                         <li><strong>Ostintegration:</strong> Warschauer Pakt (1955), RGW</li>
-                        <li><strong>Staatssicherheit:</strong> Gründung des <span class="tooltip-term">Ministeriums für Staatssicherheit<span class="tooltip-content">Geheimer Polizeiapparat der DDR (gegr. 1950), überwachte und unterdrückte die eigene Bevölkerung mit einem Netz von Spitzeln</span></span> (Stasi) 1950, das inländische Gegner und Andersdenkende systematisch unterdrückte und die antidemokratischen Elemente verstärkte</li>
+                        <li><strong>Staatssicherheit:</strong> Gründung des <span class="tooltip-term">Ministeriums für Staatssicherheit<span class="tooltip-content">Geheimer Polizeiapparat der DDR (gegr. 1950), überwachte und unterdrückte die eigene Bevölkerung mit einem Netz von Spitzeln</span></span> (Stasi) 1950</li>
                         <li><strong>Fluchtbewegung:</strong> Bis 1961 ca. 2,7 Millionen <span class="tooltip-term">Übersiedler<span class="tooltip-content">DDR-Bürger, die in den Westen flohen, meist über Berlin. Offizielle DDR-Bezeichnung zur Vermeidung des Wortes "Flucht"</span></span> in den Westen</li>
                     </ul>
                 </div>
 
-                <div class="important-concept">
-                    <strong>Blockbildung durch Integration:</strong><br>
-                    <strong>BRD - Westintegration:</strong> <span class="tooltip-term">Europarat<span class="tooltip-content">1949 gegründete europäische Organisation zur Förderung von Demokratie und Menschenrechten</span></span> (1950), <span class="tooltip-term">EGKS<span class="tooltip-content">Europäische Gemeinschaft für Kohle und Stahl - erste supranationale europäische Organisation</span></span>-Gründungsstaat (1952), <span class="tooltip-term">Deutschlandvertrag<span class="tooltip-content">Vertrag von 1952, der der BRD weitgehende Souveränität gewährte</span></span> (1952), <span class="tooltip-term">WEU<span class="tooltip-content">Westeuropäische Union - Verteidigungsbündnis westeuropäischer Staaten</span></span> (1954), NATO-Beitritt (1955), Wiederbewaffnung mit Bundeswehr<br>
-                    <strong>DDR - Ostintegration:</strong> RGW-Mitglied (1950), Warschauer Pakt-Gründungsmitglied (1955)
-                </div>
-
-                <div class="highlight-box">
-                    <strong><span class="tooltip-term">Alleinvertretungsanspruch<span class="tooltip-content">Beide deutsche Staaten beanspruchten anfangs, der einzig legitime deutsche Staat zu sein und ganz Deutschland zu vertreten</span></span>:</strong><br>
-                    Beide deutsche Staaten vertraten anfangs einen Alleinvertretungsanspruch und weigerten sich, den jeweils anderen Staat anzuerkennen. Während die DDR diesen Anspruch schnell aufgab, hielt die BRD, vor allem untermauert durch die Hallstein-Doktrin, daran fest. Vonseiten der UdSSR gab es durch die <span class="tooltip-term">Stalin-Note<span class="tooltip-content">Sowjetisches Angebot von 1952 für ein wiedervereinigtes, neutrales Deutschland - von Adenauer abgelehnt</span></span> (1952) sogar den Versuch, Deutschland zu Bedingungen der Sowjetunion wieder zu vereinen. Doch im Laufe der 1950er-Jahre rückte eine Wiedervereinigung in immer weitere Ferne und die Deutsche Frage blieb unbeantwortet.
-                </div>
-
                 <h3 class="section-title">10.7 Leben in Ost und West</h3>
                 
-                <table class="comparison-table">
-                    <tr>
-                        <th>Aspekt</th>
-                        <th>BRD</th>
-                        <th>DDR</th>
-                    </tr>
-                    <tr>
-                        <td>Lebensstandard</td>
-                        <td>Steigender Wohlstand, <span class="tooltip-term">Konsumgesellschaft<span class="tooltip-content">Gesellschaft, die durch Konsum und materiellen Wohlstand geprägt ist</span></span></td>
-                        <td>Grundversorgung, aber Mangel an Konsumgütern</td>
-                    </tr>
-                    <tr>
-                        <td>Bildung</td>
-                        <td>Föderales System, Bildungsautonomie der Länder</td>
-                        <td>Einheitliches System, <span class="tooltip-term">polytechnische Bildung<span class="tooltip-content">Bildungssystem, das theoretisches Lernen mit praktischer Arbeit verbindet</span></span></td>
-                    </tr>
-                    <tr>
-                        <td>Medien</td>
-                        <td>Pressefreiheit, plurale Medienlandschaft</td>
-                        <td>Staatliche Kontrolle, <span class="tooltip-term">Zensur<span class="tooltip-content">Staatliche Kontrolle und Unterdrückung unerwünschter Meinungen in Medien</span></span></td>
-                    </tr>
-                    <tr>
-                        <td>Reisefreiheit</td>
-                        <td>Freizügigkeit</td>
-                        <td>Eingeschränkt, besonders in den Westen</td>
-                    </tr>
-                </table>
+                <!-- Desktop Table -->
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Aspekt</th>
+                            <th>BRD</th>
+                            <th>DDR</th>
+                        </tr>
+                        <tr>
+                            <td>Lebensstandard</td>
+                            <td>Steigender Wohlstand, <span class="tooltip-term">Konsumgesellschaft<span class="tooltip-content">Gesellschaft, die durch Konsum und materiellen Wohlstand geprägt ist</span></span></td>
+                            <td>Grundversorgung, aber Mangel an Konsumgütern</td>
+                        </tr>
+                        <tr>
+                            <td>Bildung</td>
+                            <td>Föderales System, Bildungsautonomie der Länder</td>
+                            <td>Einheitliches System, <span class="tooltip-term">polytechnische Bildung<span class="tooltip-content">Bildungssystem, das theoretisches Lernen mit praktischer Arbeit verbindet</span></span></td>
+                        </tr>
+                        <tr>
+                            <td>Medien</td>
+                            <td>Pressefreiheit, plurale Medienlandschaft</td>
+                            <td>Staatliche Kontrolle, <span class="tooltip-term">Zensur<span class="tooltip-content">Staatliche Kontrolle und Unterdrückung unerwünschter Meinungen in Medien</span></span></td>
+                        </tr>
+                        <tr>
+                            <td>Reisefreiheit</td>
+                            <td>Freizügigkeit</td>
+                            <td>Eingeschränkt, besonders in den Westen</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Mobile Card Layout -->
+                <div class="mobile-card-container">
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Lebensstandard</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">BRD:</div>
+                            <div class="mobile-card-value">Steigender Wohlstand, <span class="tooltip-term">Konsumgesellschaft<span class="tooltip-content">Gesellschaft, die durch Konsum und materiellen Wohlstand geprägt ist</span></span></div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">DDR:</div>
+                            <div class="mobile-card-value">Grundversorgung, aber Mangel an Konsumgütern</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Bildung</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">BRD:</div>
+                            <div class="mobile-card-value">Föderales System, Bildungsautonomie der Länder</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">DDR:</div>
+                            <div class="mobile-card-value">Einheitliches System, <span class="tooltip-term">polytechnische Bildung<span class="tooltip-content">Bildungssystem, das theoretisches Lernen mit praktischer Arbeit verbindet</span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Medien</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">BRD:</div>
+                            <div class="mobile-card-value">Pressefreiheit, plurale Medienlandschaft</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">DDR:</div>
+                            <div class="mobile-card-value">Staatliche Kontrolle, <span class="tooltip-term">Zensur<span class="tooltip-content">Staatliche Kontrolle und Unterdrückung unerwünschter Meinungen in Medien</span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Reisefreiheit</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">BRD:</div>
+                            <div class="mobile-card-value">Freizügigkeit</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">DDR:</div>
+                            <div class="mobile-card-value">Eingeschränkt, besonders in den Westen</div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3 class="section-title">10.8 Aufstände in den Ostblockstaaten</h3>
                 
                 <div class="content-text">
-                    Die DDR gehörte wie die meisten anderen Staaten Osteuropas zu den Satellitenstaaten der Sowjetunion. In all diesen Staaten breitete sich nach dem Tod von <span class="tooltip-term">Stalin 1953<span class="tooltip-content">Josef Stalin, sowjetischer Diktator, starb am 5. März 1953. Sein Tod leitete eine Phase der "Entstalinisierung" ein</span></span> die Hoffnung aus, dass sein Nachfolger als russischer Staatschef mehr Freiheiten zugestehen würde und sich so die politischen und wirtschaftlichen Verhältnisse bessern könnten. Als sich jedoch abzeichnete, dass sich auch unter den neuen russischen Regierungschefs nur wenig ändern würde, kam es in vielen Ostblockstaaten zu Volksaufständen.
+                    Die DDR gehörte wie die meisten anderen Staaten Osteuropas zu den Satellitenstaaten der Sowjetunion. Nach dem Tod von <span class="tooltip-term">Stalin 1953<span class="tooltip-content">Josef Stalin, sowjetischer Diktator, starb am 5. März 1953. Sein Tod leitete eine Phase der "Entstalinisierung" ein</span></span> breitete sich die Hoffnung aus, dass sein Nachfolger mehr Freiheiten zugestehen würde.
                 </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">17. Juni 1953</div>
-                        <strong>DDR:</strong> Volksaufstand gegen <span class="tooltip-term">Normerhöhungen<span class="tooltip-content">Erhöhung der Arbeitsleistung bei gleichem Lohn - Auslöser der Proteste</span></span> - dieses Datum blieb bis zur Wiedervereinigung sogar offizieller Nationalfeiertag in der BRD
+                        <strong>DDR:</strong> Volksaufstand gegen <span class="tooltip-term">Normerhöhungen<span class="tooltip-content">Erhöhung der Arbeitsleistung bei gleichem Lohn - Auslöser der Proteste</span></span>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1956</div>
-                        <strong><span class="tooltip-term">Ungarn<span class="tooltip-content">Ungarischer Volksaufstand gegen sowjetische Herrschaft, brutal niedergeschlagen von sowjetischen Truppen</span></span>:</strong> Volksaufstand gegen sowjetische Herrschaft - besonders viele Todesopfer
+                        <strong><span class="tooltip-term">Ungarn<span class="tooltip-content">Ungarischer Volksaufstand gegen sowjetische Herrschaft, brutal niedergeschlagen von sowjetischen Truppen</span></span>:</strong> Volksaufstand gegen sowjetische Herrschaft
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1968</div>
-                        <strong><span class="tooltip-term">Prager Frühling<span class="tooltip-content">Reformbewegung in der Tschechoslowakei unter Alexander Dubček, beendet durch Invasion von Warschauer Pakt-Truppen</span></span>:</strong> Politische und wirtschaftliche Reformen in der Tschechoslowakei, durch Demonstrationen der Bevölkerung bekräftigt
+                        <strong><span class="tooltip-term">Prager Frühling<span class="tooltip-content">Reformbewegung in der Tschechoslowakei unter Alexander Dubček, beendet durch Invasion von Warschauer Pakt-Truppen</span></span>:</strong> Politische und wirtschaftliche Reformen in der Tschechoslowakei
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">1980/81</div>
@@ -655,43 +898,32 @@
                     </div>
                 </div>
 
-                <div class="important-concept">
-                    <strong>Gemeinsame Merkmale der Aufstände:</strong>
-                    Alle Aufstände hatten gemeinsam, dass sie weitgehend friedlich geführt, aber gewaltsam durch das sowjetische Militär niedergeschlagen wurden.
-                </div>
-
                 <h3 class="section-title">10.9 Der Mauerbau – Zementierung der Teilung</h3>
                 
                 <div class="content-text">
-                    In der DDR hatte die Unzufriedenheit der Bevölkerung zur Folge, dass immer mehr Bürgerinnen und Bürger das Land verließen, sehr viele davon von Ost- nach Westberlin. Die Fluchtursachen lagen meist in den politischen und wirtschaftlichen Verhältnissen begründet.
+                    In der DDR führte die Unzufriedenheit der Bevölkerung dazu, dass immer mehr Bürgerinnen und Bürger das Land verließen, sehr viele davon von Ost- nach Westberlin.
                 </div>
 
                 <div class="key-points">
                     <h4>Fluchtursachen:</h4>
                     <ul>
                         <li><strong>Bessere Lebensverhältnisse:</strong> Wunsch nach höherem Lebensstandard im Westen</li>
-                        <li><strong><span class="tooltip-term">Kollektivierung<span class="tooltip-content">Zwangsweise Zusammenlegung privater Bauernhöfe zu staatlich kontrollierten Landwirtschaftlichen Produktionsgenossenschaften (LPGs)</span></span>:</strong> Viele große landwirtschaftliche Betriebe waren kollektiviert worden, Landwirte mussten ihren Besitz an den Staat abtreten</li>
+                        <li><strong><span class="tooltip-term">Kollektivierung<span class="tooltip-content">Zwangsweise Zusammenlegung privater Bauernhöfe zu staatlich kontrollierten Landwirtschaftlichen Produktionsgenossenschaften (LPGs)</span></span>:</strong> Landwirte mussten ihren Besitz an den Staat abtreten</li>
                         <li><strong>Politischer Druck:</strong> Zwang zur politischen Organisation und systematischer Druck auf Andersdenkende</li>
-                        <li><strong><span class="tooltip-term">Passgesetz<span class="tooltip-content">DDR-Gesetz, das Bürgern verbot, ohne Genehmigung das Land zu verlassen</span></span>:</strong> Nicht wenige blieben in der BRD, weil sie durch einen Grenzübertritt gegen das Passgesetz verstießen</li>
                         <li><strong>Wirtschaftliche Schwächung:</strong> Die zunehmende Abwanderung schwächte die Wirtschaft der DDR</li>
                     </ul>
                 </div>
 
                 <div class="highlight-box">
                     <strong><span class="tooltip-term">13. August 1961 - Mauerbau<span class="tooltip-content">Errichtung der Berliner Mauer und Befestigung der innerdeutschen Grenze durch die DDR, um Fluchtbewegung zu stoppen</span></span>:</strong><br>
-                    Das DDR-Regime errichtete Grenzanlagen mit <span class="tooltip-term">Sperrzonen<span class="tooltip-content">Militärisch gesicherte Bereiche entlang der Grenze mit Stacheldraht, Minen und Wachtürmen</span></span> und <span class="tooltip-term">Selbstschussanlagen<span class="tooltip-content">Automatische Schusswaffen, die bei Berührung des Grenzzauns aktiviert wurden</span></span>, um sich gegen den Westen abzuschotten. Der Versuch, die Grenze unerlaubt zu überwinden, war strafbar.<br>
+                    Das DDR-Regime errichtete Grenzanlagen mit <span class="tooltip-term">Sperrzonen<span class="tooltip-content">Militärisch gesicherte Bereiche entlang der Grenze mit Stacheldraht, Minen und Wachtürmen</span></span> und <span class="tooltip-term">Selbstschussanlagen<span class="tooltip-content">Automatische Schusswaffen, die bei Berührung des Grenzzauns aktiviert wurden</span></span>, um sich gegen den Westen abzuschotten.<br>
                     <strong>Folgen:</strong> Endgültige Teilung Deutschlands, internationale Spannungen, Familien wurden getrennt
                 </div>
 
                 <h3 class="section-title">10.10 Internationale Ordnungssysteme zur Zeit des Kalten Krieges</h3>
                 
                 <div class="content-text">
-                    Die <span class="tooltip-term">UNO<span class="tooltip-content">United Nations Organization - 1945 gegründete internationale Organisation zur Wahrung des Weltfriedens</span></span> bemühte sich schon sehr früh darum, die harten Frontlinien zwischen den Westalliierten und der Sowjetunion inklusive der jeweiligen Verbündeten aufzuweichen und einen Dialog herzustellen, was aber nicht immer gelang. Schließlich wird in der Charta der Vereinten Nationen bis heute der Weltfrieden als erstes Ziel genannt.
-                </div>
-
-                <div class="important-concept">
-                    <strong>Probleme der UNO im Kalten Krieg:</strong><br>
-                    Im <span class="tooltip-term">UN-Sicherheitsrat<span class="tooltip-content">Oberstes Entscheidungsgremium der UNO mit 5 ständigen Mitgliedern (USA, UdSSR/Russland, China, Frankreich, Großbritannien) mit Vetorecht</span></span> wurden die Chancen und Grenzen dieser Organisation besonders deutlich, da die USA und die UdSSR durch die Wahrnehmung ihres <span class="tooltip-term">Veto-Rechts<span class="tooltip-content">Recht der ständigen Sicherheitsratsmitglieder, Beschlüsse zu blockieren</span></span> viele Entscheidungen blockierten. Die begrenzte Macht der UNO wurde besonders während des <span class="tooltip-term">Koreakrieges<span class="tooltip-content">Krieg zwischen Nord- und Südkorea (1950-1953), erster großer Stellvertreterkrieg des Kalten Krieges</span></span> (1950-1953) deutlich.
+                    Die <span class="tooltip-term">UNO<span class="tooltip-content">United Nations Organization - 1945 gegründete internationale Organisation zur Wahrung des Weltfriedens</span></span> bemühte sich darum, die harten Frontlinien zwischen den Westalliierten und der Sowjetunion aufzuweichen. Im <span class="tooltip-term">UN-Sicherheitsrat<span class="tooltip-content">Oberstes Entscheidungsgremium der UNO mit 5 ständigen Mitgliedern (USA, UdSSR/Russland, China, Frankreich, Großbritannien) mit Vetorecht</span></span> wurden die USA und die UdSSR durch die Wahrnehmung ihres <span class="tooltip-term">Veto-Rechts<span class="tooltip-content">Recht der ständigen Sicherheitsratsmitglieder, Beschlüsse zu blockieren</span></span> oft blockiert.
                 </div>
 
                 <div class="key-points">
@@ -701,10 +933,6 @@
                         <li><strong>Warschauer Pakt:</strong> UdSSR und Satellitenstaaten in Osteuropa</li>
                         <li><strong><span class="tooltip-term">Blockfreie Staaten<span class="tooltip-content">Länder, die sich keinem der beiden Blöcke anschlossen, z.B. Jugoslawien unter Tito</span></span>:</strong> Jugoslawien, Zypern und andere schafften es, neutral zu bleiben</li>
                     </ul>
-                </div>
-
-                <div class="content-text">
-                    Die weltweiten Kräfteverhältnisse wurden durch die Verteidigungsbündnisse NATO und Warschauer Pakt geprägt. Die Verteidigungsbündnisse trugen dadurch sehr zur Blockbildung bei.
                 </div>
 
                 <h3 class="section-title">10.11 Der Beginn der Europäischen Einigung</h3>
@@ -735,10 +963,6 @@
 
                 <h3 class="section-title">10.12 Blockkonfrontation</h3>
                 
-                <div class="content-text">
-                    Wichtige Krisen des Kalten Krieges:
-                </div>
-
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">1948/49</div>
@@ -891,38 +1115,84 @@
                     Der Zusammenbruch des kommunistischen Systems führte zu grundlegenden Veränderungen in ganz Osteuropa:
                 </div>
 
-                <table class="comparison-table">
-                    <tr>
-                        <th>Land</th>
-                        <th>Wendejahr</th>
-                        <th>Besonderheiten</th>
-                    </tr>
-                    <tr>
-                        <td>Polen</td>
-                        <td>1989</td>
-                        <td><span class="tooltip-term">Runder Tisch<span class="tooltip-content">Verhandlungen zwischen Regierung und Opposition über den friedlichen Übergang zur Demokratie</span></span>, friedlicher Übergang, Solidarność</td>
-                    </tr>
-                    <tr>
-                        <td>Ungarn</td>
-                        <td>1989</td>
-                        <td>Grenzöffnung zu Österreich, <span class="tooltip-term">sanfte Revolution<span class="tooltip-content">Friedlicher Übergang ohne Gewalt und Blutvergießen</span></span></td>
-                    </tr>
-                    <tr>
-                        <td>Tschechoslowakei</td>
-                        <td>1989</td>
-                        <td><span class="tooltip-term">"Samtene Revolution"<span class="tooltip-content">Friedlicher Sturz des kommunistischen Regimes in der Tschechoslowakei, benannt nach dem gewaltlosen Charakter</span></span>, <span class="tooltip-term">Václav Havel<span class="tooltip-content">Tschechischer Dramatiker, Dissident und erster Präsident der post-kommunistischen Tschechoslowakei</span></span></td>
-                    </tr>
-                    <tr>
-                        <td>Rumänien</td>
-                        <td>1989</td>
-                        <td>Gewaltsamer Sturz <span class="tooltip-term">Ceaușescus<span class="tooltip-content">Nicolae Ceaușescu, rumänischer Diktator, wurde 1989 gestürzt und hingerichtet</span></span></td>
-                    </tr>
-                    <tr>
-                        <td>Jugoslawien</td>
-                        <td>1991-2001</td>
-                        <td><span class="tooltip-term">Zerfall in Bürgerkriegen<span class="tooltip-content">Gewaltsame Auflösung Jugoslawiens in mehrere Nachfolgestaaten mit ethnischen Säuberungen und Völkermord</span></span></td>
-                    </tr>
-                </table>
+                <!-- Desktop Table -->
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Land</th>
+                            <th>Wendejahr</th>
+                            <th>Besonderheiten</th>
+                        </tr>
+                        <tr>
+                            <td>Polen</td>
+                            <td>1989</td>
+                            <td><span class="tooltip-term">Runder Tisch<span class="tooltip-content">Verhandlungen zwischen Regierung und Opposition über den friedlichen Übergang zur Demokratie</span></span>, friedlicher Übergang, Solidarność</td>
+                        </tr>
+                        <tr>
+                            <td>Ungarn</td>
+                            <td>1989</td>
+                            <td>Grenzöffnung zu Österreich, <span class="tooltip-term">sanfte Revolution<span class="tooltip-content">Friedlicher Übergang ohne Gewalt und Blutvergießen</span></span></td>
+                        </tr>
+                        <tr>
+                            <td>Tschechoslowakei</td>
+                            <td>1989</td>
+                            <td><span class="tooltip-term">"Samtene Revolution"<span class="tooltip-content">Friedlicher Sturz des kommunistischen Regimes in der Tschechoslowakei, benannt nach dem gewaltlosen Charakter</span></span>, <span class="tooltip-term">Václav Havel<span class="tooltip-content">Tschechischer Dramatiker, Dissident und erster Präsident der post-kommunistischen Tschechoslowakei</span></span></td>
+                        </tr>
+                        <tr>
+                            <td>Rumänien</td>
+                            <td>1989</td>
+                            <td>Gewaltsamer Sturz <span class="tooltip-term">Ceaușescus<span class="tooltip-content">Nicolae Ceaușescu, rumänischer Diktator, wurde 1989 gestürzt und hingerichtet</span></span></td>
+                        </tr>
+                        <tr>
+                            <td>Jugoslawien</td>
+                            <td>1991-2001</td>
+                            <td><span class="tooltip-term">Zerfall in Bürgerkriegen<span class="tooltip-content">Gewaltsame Auflösung Jugoslawiens in mehrere Nachfolgestaaten mit ethnischen Säuberungen und Völkermord</span></span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Mobile Card Layout -->
+                <div class="mobile-card-container">
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Polen (1989)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Besonderheiten:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Runder Tisch<span class="tooltip-content">Verhandlungen zwischen Regierung und Opposition über den friedlichen Übergang zur Demokratie</span></span>, friedlicher Übergang, Solidarność</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Ungarn (1989)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Besonderheiten:</div>
+                            <div class="mobile-card-value">Grenzöffnung zu Österreich, <span class="tooltip-term">sanfte Revolution<span class="tooltip-content">Friedlicher Übergang ohne Gewalt und Blutvergießen</span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Tschechoslowakei (1989)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Besonderheiten:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">"Samtene Revolution"<span class="tooltip-content">Friedlicher Sturz des kommunistischen Regimes in der Tschechoslowakei, benannt nach dem gewaltlosen Charakter</span></span>, <span class="tooltip-term">Václav Havel<span class="tooltip-content">Tschechischer Dramatiker, Dissident und erster Präsident der post-kommunistischen Tschechoslowakei</span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Rumänien (1989)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Besonderheiten:</div>
+                            <div class="mobile-card-value">Gewaltsamer Sturz <span class="tooltip-term">Ceaușescus<span class="tooltip-content">Nicolae Ceaușescu, rumänischer Diktator, wurde 1989 gestürzt und hingerichtet</span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Jugoslawien (1991-2001)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Besonderheiten:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Zerfall in Bürgerkriegen<span class="tooltip-content">Gewaltsame Auflösung Jugoslawiens in mehrere Nachfolgestaaten mit ethnischen Säuberungen und Völkermord</span></span></div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3 class="section-title">11.7 Internationale Ordnungssysteme nach dem Ende des Kalten Krieges</h3>
                 
@@ -988,33 +1258,87 @@
                     Nach dem Ende der bipolaren Ordnung entwickelte sich eine komplexere Weltordnung:
                 </div>
 
-                <table class="comparison-table">
-                    <tr>
-                        <th>Akteur</th>
-                        <th>Stärken</th>
-                        <th>Rolle in der Weltordnung</th>
-                    </tr>
-                    <tr>
-                        <td>USA</td>
-                        <td>Militärische Überlegenheit, Technologie, Dollar als Leitwährung</td>
-                        <td><span class="tooltip-term">Hegemon<span class="tooltip-content">Führungsmacht, die das internationale System dominiert</span></span>, aber relativer Machtverlust</td>
-                    </tr>
-                    <tr>
-                        <td>China</td>
-                        <td>Wirtschaftsmacht, große Bevölkerung, staatliche Lenkung</td>
-                        <td>Aufsteigende Supermacht</td>
-                    </tr>
-                    <tr>
-                        <td>Russland</td>
-                        <td>Rohstoffe, Atomwaffen, regionale Macht</td>
-                        <td><span class="tooltip-term">Revisionistische Macht<span class="tooltip-content">Staat, der die bestehende internationale Ordnung ändern will</span></span></td>
-                    </tr>
-                    <tr>
-                        <td>EU</td>
-                        <td>Wirtschaftsmacht, <span class="tooltip-term">soft power<span class="tooltip-content">Einfluss durch Attraktivität und Überzeugung statt durch Zwang</span></span>, Normsetzung</td>
-                        <td><span class="tooltip-term">Zivilmacht<span class="tooltip-content">Akteur, der vor allem durch wirtschaftliche und diplomatische Mittel Einfluss ausübt</span></span> mit begrenzter militärischer Rolle</td>
-                    </tr>
-                </table>
+                <!-- Desktop Table -->
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Akteur</th>
+                            <th>Stärken</th>
+                            <th>Rolle in der Weltordnung</th>
+                        </tr>
+                        <tr>
+                            <td>USA</td>
+                            <td>Militärische Überlegenheit, Technologie, Dollar als Leitwährung</td>
+                            <td><span class="tooltip-term">Hegemon<span class="tooltip-content">Führungsmacht, die das internationale System dominiert</span></span>, aber relativer Machtverlust</td>
+                        </tr>
+                        <tr>
+                            <td>China</td>
+                            <td>Wirtschaftsmacht, große Bevölkerung, staatliche Lenkung</td>
+                            <td>Aufsteigende Supermacht</td>
+                        </tr>
+                        <tr>
+                            <td>Russland</td>
+                            <td>Rohstoffe, Atomwaffen, regionale Macht</td>
+                            <td><span class="tooltip-term">Revisionistische Macht<span class="tooltip-content">Staat, der die bestehende internationale Ordnung ändern will</span></span></td>
+                        </tr>
+                        <tr>
+                            <td>EU</td>
+                            <td>Wirtschaftsmacht, <span class="tooltip-term">soft power<span class="tooltip-content">Einfluss durch Attraktivität und Überzeugung statt durch Zwang</span></span>, Normsetzung</td>
+                            <td><span class="tooltip-term">Zivilmacht<span class="tooltip-content">Akteur, der vor allem durch wirtschaftliche und diplomatische Mittel Einfluss ausübt</span></span> mit begrenzter militärischer Rolle</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Mobile Card Layout -->
+                <div class="mobile-card-container">
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">USA</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Stärken:</div>
+                            <div class="mobile-card-value">Militärische Überlegenheit, Technologie, Dollar als Leitwährung</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Rolle:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Hegemon<span class="tooltip-content">Führungsmacht, die das internationale System dominiert</span></span>, aber relativer Machtverlust</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">China</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Stärken:</div>
+                            <div class="mobile-card-value">Wirtschaftsmacht, große Bevölkerung, staatliche Lenkung</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Rolle:</div>
+                            <div class="mobile-card-value">Aufsteigende Supermacht</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Russland</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Stärken:</div>
+                            <div class="mobile-card-value">Rohstoffe, Atomwaffen, regionale Macht</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Rolle:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Revisionistische Macht<span class="tooltip-content">Staat, der die bestehende internationale Ordnung ändern will</span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">EU</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Stärken:</div>
+                            <div class="mobile-card-value">Wirtschaftsmacht, <span class="tooltip-term">soft power<span class="tooltip-content">Einfluss durch Attraktivität und Überzeugung statt durch Zwang</span></span>, Normsetzung</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Rolle:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Zivilmacht<span class="tooltip-content">Akteur, der vor allem durch wirtschaftliche und diplomatische Mittel Einfluss ausübt</span></span> mit begrenzter militärischer Rolle</div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="key-points">
                     <h4>Neue globale Herausforderungen:</h4>
@@ -1111,28 +1435,70 @@
                     </ul>
                 </div>
 
-                <table class="comparison-table">
-                    <tr>
-                        <th>Problem</th>
-                        <th>Ursachen</th>
-                        <th>Lösungsansätze</th>
-                    </tr>
-                    <tr>
-                        <td>Terrorismus (Boko Haram)</td>
-                        <td>Armut, fehlende Bildung, religiöse Radikalisierung</td>
-                        <td>Bildungsinvestitionen, Entwicklungshilfe, militärische Bekämpfung</td>
-                    </tr>
-                    <tr>
-                        <td>Umweltzerstörung</td>
-                        <td>Ölförderung, illegale Raffinerien, Klimawandel</td>
-                        <td>Umweltstandards, erneuerbare Energien, internationale Unterstützung</td>
-                    </tr>
-                    <tr>
-                        <td>Wirtschaftliche Probleme</td>
-                        <td><span class="tooltip-term">Rohstoffabhängigkeit<span class="tooltip-content">Einseitige Abhängigkeit der Wirtschaft von Rohstoffexporten, macht anfällig für Preisschwankungen</span></span>, Korruption, schwache Infrastruktur</td>
-                        <td><span class="tooltip-term">Diversifizierung<span class="tooltip-content">Ausweitung der Wirtschaft auf verschiedene Bereiche, um Abhängigkeiten zu reduzieren</span></span>, <span class="tooltip-term">Good Governance<span class="tooltip-content">Gute Regierungsführung mit transparenten, rechenschaftspflichtigen Institutionen</span></span>, Infrastrukturinvestitionen</td>
-                    </tr>
-                </table>
+                <!-- Desktop Table -->
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Problem</th>
+                            <th>Ursachen</th>
+                            <th>Lösungsansätze</th>
+                        </tr>
+                        <tr>
+                            <td>Terrorismus (Boko Haram)</td>
+                            <td>Armut, fehlende Bildung, religiöse Radikalisierung</td>
+                            <td>Bildungsinvestitionen, Entwicklungshilfe, militärische Bekämpfung</td>
+                        </tr>
+                        <tr>
+                            <td>Umweltzerstörung</td>
+                            <td>Ölförderung, illegale Raffinerien, Klimawandel</td>
+                            <td>Umweltstandards, erneuerbare Energien, internationale Unterstützung</td>
+                        </tr>
+                        <tr>
+                            <td>Wirtschaftliche Probleme</td>
+                            <td><span class="tooltip-term">Rohstoffabhängigkeit<span class="tooltip-content">Einseitige Abhängigkeit der Wirtschaft von Rohstoffexporten, macht anfällig für Preisschwankungen</span></span>, Korruption, schwache Infrastruktur</td>
+                            <td><span class="tooltip-term">Diversifizierung<span class="tooltip-content">Ausweitung der Wirtschaft auf verschiedene Bereiche, um Abhängigkeiten zu reduzieren</span></span>, <span class="tooltip-term">Good Governance<span class="tooltip-content">Gute Regierungsführung mit transparenten, rechenschaftspflichtigen Institutionen</span></span>, Infrastrukturinvestitionen</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Mobile Card Layout -->
+                <div class="mobile-card-container">
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Terrorismus (Boko Haram)</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Ursachen:</div>
+                            <div class="mobile-card-value">Armut, fehlende Bildung, religiöse Radikalisierung</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Lösungsansätze:</div>
+                            <div class="mobile-card-value">Bildungsinvestitionen, Entwicklungshilfe, militärische Bekämpfung</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Umweltzerstörung</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Ursachen:</div>
+                            <div class="mobile-card-value">Ölförderung, illegale Raffinerien, Klimawandel</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Lösungsansätze:</div>
+                            <div class="mobile-card-value">Umweltstandards, erneuerbare Energien, internationale Unterstützung</div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-card">
+                        <div class="mobile-card-header">Wirtschaftliche Probleme</div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Ursachen:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Rohstoffabhängigkeit<span class="tooltip-content">Einseitige Abhängigkeit der Wirtschaft von Rohstoffexporten, macht anfällig für Preisschwankungen</span></span>, Korruption, schwache Infrastruktur</div>
+                        </div>
+                        <div class="mobile-card-row">
+                            <div class="mobile-card-label">Lösungsansätze:</div>
+                            <div class="mobile-card-value"><span class="tooltip-term">Diversifizierung<span class="tooltip-content">Ausweitung der Wirtschaft auf verschiedene Bereiche, um Abhängigkeiten zu reduzieren</span></span>, <span class="tooltip-term">Good Governance<span class="tooltip-content">Gute Regierungsführung mit transparenten, rechenschaftspflichtigen Institutionen</span></span>, Infrastrukturinvestitionen</div>
+                        </div>
+                    </div>
+                </div>
 
                 <h3 class="section-title">12.4 Klimawandel – was kann Kunst?</h3>
                 
@@ -1244,185 +1610,176 @@
     </div>
 
     <script>
-        // JavaScript für responsive Tooltip-Positionierung
+        // Vollständig überarbeitete Tooltip-Logik
         document.addEventListener('DOMContentLoaded', function() {
             const tooltipTerms = document.querySelectorAll('.tooltip-term');
             const overlay = document.getElementById('tooltipOverlay');
             let activeTooltip = null;
+            let isMobile = window.innerWidth <= 768;
 
-            // Check if device supports hover
-            const supportsHover = window.matchMedia('(hover: hover)').matches;
+            // Update mobile detection on resize
+            window.addEventListener('resize', function() {
+                isMobile = window.innerWidth <= 768;
+                if (activeTooltip) {
+                    hideAllTooltips();
+                }
+            });
 
-            if (!supportsHover) {
-                // Mobile/touch device behavior
-                tooltipTerms.forEach(term => {
-                    term.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
+            tooltipTerms.forEach(term => {
+                const tooltip = term.querySelector('.tooltip-content');
+                if (!tooltip) return;
 
-                        const tooltip = this.querySelector('.tooltip-content');
-                        
-                        // Close currently active tooltip
-                        if (activeTooltip && activeTooltip !== tooltip) {
-                            activeTooltip.style.visibility = 'hidden';
-                            activeTooltip.style.opacity = '0';
-                            overlay.classList.remove('active');
-                        }
+                // Check if term is inside a table
+                const isInTable = term.closest('.comparison-table') !== null;
 
-                        // Toggle current tooltip
-                        if (activeTooltip === tooltip) {
-                            tooltip.style.visibility = 'hidden';
-                            tooltip.style.opacity = '0';
-                            overlay.classList.remove('active');
-                            activeTooltip = null;
-                        } else {
-                            tooltip.style.visibility = 'visible';
-                            tooltip.style.opacity = '1';
-                            overlay.classList.add('active');
-                            activeTooltip = tooltip;
-                        }
-                    });
-                });
-
-                // Close tooltip when clicking overlay
-                overlay.addEventListener('click', function() {
-                    if (activeTooltip) {
-                        activeTooltip.style.visibility = 'hidden';
-                        activeTooltip.style.opacity = '0';
-                        this.classList.remove('active');
-                        activeTooltip = null;
+                // Desktop: Hover Events
+                term.addEventListener('mouseenter', function(e) {
+                    if (!isMobile) {
+                        showTooltip(tooltip, term, isInTable);
                     }
                 });
 
-                // Close tooltip when clicking elsewhere
-                document.addEventListener('click', function(e) {
-                    if (!e.target.closest('.tooltip-term') && activeTooltip) {
-                        activeTooltip.style.visibility = 'hidden';
-                        activeTooltip.style.opacity = '0';
-                        overlay.classList.remove('active');
-                        activeTooltip = null;
+                term.addEventListener('mouseleave', function() {
+                    if (!isMobile && activeTooltip !== tooltip) {
+                        hideTooltip(tooltip);
                     }
                 });
-            } else {
-                // Desktop hover behavior
-                tooltipTerms.forEach(term => {
-                    const tooltip = term.querySelector('.tooltip-content');
-                    
-                    term.addEventListener('mouseenter', function() {
-                        // Check if tooltip is in a table
-                        const isInTable = this.closest('table') || this.closest('.comparison-table');
-                        
-                        if (isInTable) {
-                            positionTableTooltip(this, tooltip);
-                        } else {
-                            positionRegularTooltip(this, tooltip);
-                        }
-                    });
-                    
-                    term.addEventListener('mouseleave', function() {
-                        // Reset position styles on mouse leave
-                        tooltip.style.position = '';
-                        tooltip.style.left = '';
-                        tooltip.style.top = '';
-                        tooltip.style.right = '';
-                        tooltip.style.transform = '';
-                    });
+
+                // Mobile & Desktop: Click Events
+                term.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Schließe anderen aktiven Tooltip
+                    if (activeTooltip && activeTooltip !== tooltip) {
+                        hideTooltip(activeTooltip);
+                    }
+
+                    // Toggle aktuellen Tooltip
+                    if (activeTooltip === tooltip) {
+                        hideTooltip(tooltip);
+                        activeTooltip = null;
+                    } else {
+                        showTooltip(tooltip, term, isInTable);
+                        activeTooltip = term;
+                    }
                 });
+            });
+
+            function showTooltip(tooltip, term, isInTable) {
+                // Erst alle anderen schließen
+                hideAllTooltips();
+
+                if (isMobile) {
+                    tooltip.classList.add('mobile');
+                    overlay.classList.add('active');
+                } else {
+                    tooltip.classList.remove('mobile');
+                    overlay.classList.remove('active');
+                }
+
+                // Spezielle Behandlung für Tabellen-Tooltips
+                if (isInTable && !isMobile) {
+                    positionTableTooltip(tooltip, term);
+                } else if (!isMobile) {
+                    // Standard-Positionierung für normale Tooltips
+                    positionDefaultTooltip(tooltip, term);
+                }
+
+                tooltip.classList.add('show');
             }
 
-            function positionTableTooltip(term, tooltip) {
+            function positionTableTooltip(tooltip, term) {
                 const termRect = term.getBoundingClientRect();
-                const containerRect = document.querySelector('.container').getBoundingClientRect();
                 const viewportWidth = window.innerWidth;
                 const viewportHeight = window.innerHeight;
                 
-                // Use absolute positioning for table tooltips
-                tooltip.style.position = 'absolute';
-                tooltip.style.top = '-50px'; // Position above the term
-                tooltip.style.left = '0px';
-                tooltip.style.right = 'auto';
+                // Tooltip-Größe nach dem Rendering messen
+                tooltip.style.display = 'block';
+                const tooltipRect = tooltip.getBoundingClientRect();
+                const tooltipWidth = tooltipRect.width;
+                const tooltipHeight = tooltipRect.height;
+                tooltip.style.display = '';
+                
+                // Fixed positioning für Tabellen-Tooltips
+                tooltip.style.position = 'fixed';
+                tooltip.style.zIndex = '10001';
+                
+                // Berechne optimale Position
+                let top = termRect.top - tooltipHeight - 10;
+                let left = termRect.left + (termRect.width / 2) - (tooltipWidth / 2);
+
+                // Anpassung an Bildschirmränder
+                if (left < 10) left = 10;
+                if (left + tooltipWidth > viewportWidth - 10) {
+                    left = viewportWidth - tooltipWidth - 10;
+                }
+                
+                // Wenn oben nicht genug Platz ist, zeige Tooltip unten an
+                if (top < 10) {
+                    top = termRect.bottom + 10;
+                }
+                
+                // Wenn immer noch nicht genug Platz, zentriere vertikal
+                if (top + tooltipHeight > viewportHeight - 10) {
+                    top = Math.max(10, (viewportHeight - tooltipHeight) / 2);
+                }
+
+                // Positionierung anwenden
+                tooltip.style.top = top + 'px';
+                tooltip.style.left = left + 'px';
                 tooltip.style.transform = 'none';
-                
-                // After positioning, check for overflow and adjust
-                setTimeout(() => {
-                    const tooltipRect = tooltip.getBoundingClientRect();
-                    
-                    // Check horizontal overflow
-                    if (tooltipRect.right > viewportWidth - 20) {
-                        // Position to the left
-                        tooltip.style.left = 'auto';
-                        tooltip.style.right = '0px';
-                    }
-                    
-                    if (tooltipRect.left < 20) {
-                        // Position to the right
-                        tooltip.style.left = '0px';
-                        tooltip.style.right = 'auto';
-                    }
-                    
-                    // Check vertical overflow
-                    if (tooltipRect.top < 20) {
-                        // Position below the term
-                        tooltip.style.top = '100%';
-                    }
-                }, 10);
             }
 
-            function positionRegularTooltip(term, tooltip) {
-                const termRect = term.getBoundingClientRect();
-                const containerRect = document.querySelector('.container').getBoundingClientRect();
-                const viewportWidth = window.innerWidth;
-                
-                // Reset position
+            function positionDefaultTooltip(tooltip, term) {
+                // Setze Standard-Positionierung zurück
                 tooltip.style.position = 'absolute';
-                tooltip.style.left = '0';
-                tooltip.style.right = 'auto';
-                tooltip.style.top = '100%';
-                tooltip.style.transform = 'translateY(0)';
-                
-                // Check for viewport overflow after a short delay
-                setTimeout(() => {
-                    const tooltipRect = tooltip.getBoundingClientRect();
-                    
-                    // Check if tooltip would overflow right edge
-                    if (tooltipRect.right > viewportWidth - 20) {
-                        tooltip.style.left = 'auto';
-                        tooltip.style.right = '0';
-                    }
-                    
-                    // Check if tooltip would overflow left edge of container
-                    if (tooltipRect.left < containerRect.left + 20) {
-                        tooltip.style.left = '0';
-                        tooltip.style.right = 'auto';
-                    }
-                }, 10);
+                tooltip.style.top = '';
+                tooltip.style.left = '';
+                tooltip.style.bottom = '100%';
+                tooltip.style.right = '';
+                tooltip.style.transform = 'translate(-50%, -10px)';
+                tooltip.style.zIndex = '1000';
             }
 
-            // Prevent tooltip content from being selectable during drag
-            tooltipTerms.forEach(term => {
-                const tooltip = term.querySelector('.tooltip-content');
-                if (tooltip) {
-                    tooltip.addEventListener('selectstart', function(e) {
-                        e.stopPropagation();
-                    });
+            function hideTooltip(tooltip) {
+                tooltip.classList.remove('show', 'mobile');
+                overlay.classList.remove('active');
+                
+                // Reset alle inline styles
+                tooltip.style.position = '';
+                tooltip.style.top = '';
+                tooltip.style.left = '';
+                tooltip.style.right = '';
+                tooltip.style.bottom = '';
+                tooltip.style.transform = '';
+                tooltip.style.zIndex = '';
+            }
+
+            function hideAllTooltips() {
+                const allTooltips = document.querySelectorAll('.tooltip-content');
+                allTooltips.forEach(tooltip => {
+                    hideTooltip(tooltip);
+                });
+                activeTooltip = null;
+                overlay.classList.remove('active');
+            }
+
+            // Event Listeners
+            overlay.addEventListener('click', hideAllTooltips);
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.tooltip-term') && !e.target.closest('.tooltip-content')) {
+                    hideAllTooltips();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    hideAllTooltips();
                 }
             });
         });
-
-        // Keyboard accessibility
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const overlay = document.getElementById('tooltipOverlay');
-                const visibleTooltips = document.querySelectorAll('.tooltip-content[style*="visible"]');
-                
-                visibleTooltips.forEach(tooltip => {
-                    tooltip.style.visibility = 'hidden';
-                    tooltip.style.opacity = '0';
-                });
-                
-                overlay.classList.remove('active');
-            }
-        });
-    </script>
+        </script>
 </body>
 </html>
