@@ -4,260 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Von der NS-Diktatur zum Kriegsende - Chronologische Mindmap</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #333;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .timeline {
-            position: relative;
-            margin: 40px 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, #8e44ad, #c0392b, #e74c3c, #f39c12, #27ae60);
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin: 40px 0;
-            align-items: center;
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-        
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        .timeline-content {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            width: 45%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 3px solid;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        .machtubernahme {
-            border-color: #8e44ad;
-            background: linear-gradient(135deg, #f8f4ff, #ede7f6);
-        }
-        
-        .gleichschaltung {
-            border-color: #9b59b6;
-            background: linear-gradient(135deg, #f4f0ff, #e8daef);
-        }
-        
-        .verfolgung {
-            border-color: #c0392b;
-            background: linear-gradient(135deg, #fdf2f2, #fadbd8);
-        }
-        
-        .kriegsvorbereitung {
-            border-color: #e74c3c;
-            background: linear-gradient(135deg, #fef5f5, #fcf3cf);
-        }
-        
-        .kriegsphase {
-            border-color: #ff6b6b;
-            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
-        }
-        
-        .expansion {
-            border-color: #f39c12;
-            background: linear-gradient(135deg, #fef9e7, #fcf3cf);
-        }
-        
-        .wendepunkt {
-            border-color: #e67e22;
-            background: linear-gradient(135deg, #fdf6e3, #f8c471);
-        }
-        
-        .widerstand {
-            border-color: #2980b9;
-            background: linear-gradient(135deg, #ebf3fd, #d6eaf8);
-        }
-        
-        .rueckzug {
-            border-color: #3498db;
-            background: linear-gradient(135deg, #e8f4fd, #d5dbdb);
-        }
-        
-        .ende {
-            border-color: #27ae60;
-            background: linear-gradient(135deg, #eafaf1, #d5f4e6);
-        }
-        
-        .date {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .phase-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .event-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #34495e;
-        }
-        
-        .event-description {
-            line-height: 1.6;
-            color: #5d6d7e;
-            margin-bottom: 15px;
-        }
-        
-        .key-points {
-            background: rgba(52, 73, 94, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-        
-        .key-points h4 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        
-        .key-points ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .key-points li {
-            padding: 5px 0;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .key-points li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #3498db;
-            font-weight: bold;
-        }
-        
-        .legend {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 40px 0;
-            padding: 25px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 15px;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            padding: 8px 12px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            font-size: 0.9rem;
-        }
-        
-        .legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            margin-right: 8px;
-            border: 2px solid;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-item {
-                flex-direction: column;
-                align-items: flex-start;
-                margin-left: 40px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                flex-direction: column;
-            }
-            
-            .timeline-content {
-                width: 100%;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
 
-            .back-navigation {
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.timeline {
+    position: relative;
+    margin: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #8e44ad, #c0392b, #e74c3c, #f39c12, #27ae60);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    display: flex;
+    margin: 40px 0;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 45%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 3px solid;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.machtubernahme {
+    border-color: #8e44ad;
+    background: linear-gradient(135deg, #f8f4ff, #ede7f6);
+}
+
+.gleichschaltung {
+    border-color: #9b59b6;
+    background: linear-gradient(135deg, #f4f0ff, #e8daef);
+}
+
+.verfolgung {
+    border-color: #c0392b;
+    background: linear-gradient(135deg, #fdf2f2, #fadbd8);
+}
+
+.kriegsvorbereitung {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, #fef5f5, #fcf3cf);
+}
+
+.kriegsphase {
+    border-color: #ff6b6b;
+    background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+}
+
+.expansion {
+    border-color: #f39c12;
+    background: linear-gradient(135deg, #fef9e7, #fcf3cf);
+}
+
+.wendepunkt {
+    border-color: #e67e22;
+    background: linear-gradient(135deg, #fdf6e3, #f8c471);
+}
+
+.widerstand {
+    border-color: #2980b9;
+    background: linear-gradient(135deg, #ebf3fd, #d6eaf8);
+}
+
+.rueckzug {
+    border-color: #3498db;
+    background: linear-gradient(135deg, #e8f4fd, #d5dbdb);
+}
+
+.ende {
+    border-color: #27ae60;
+    background: linear-gradient(135deg, #eafaf1, #d5f4e6);
+}
+
+.date {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.phase-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.event-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+.event-description {
+    line-height: 1.6;
+    color: #5d6d7e;
+    margin-bottom: 15px;
+}
+
+.key-points {
+    background: rgba(52, 73, 94, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.key-points h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.key-points ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-points li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.key-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 2px solid;
+}
+
+/* Back Navigation Styling */
+.back-navigation {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -303,7 +282,31 @@
     white-space: nowrap;
 }
 
-            @media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 40px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .timeline-content {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    /* Back Navigation Mobile Styling */
     .back-navigation {
         position: relative;
         top: 0;
@@ -321,8 +324,9 @@
     .back-button:hover {
         background: rgba(255,255,255,0.1);
     }
-        }
-    </style>
+}
+</style>
+    
 </head>
 <body>
 
@@ -839,3 +843,4 @@
 </body>
 
 </html>
+
