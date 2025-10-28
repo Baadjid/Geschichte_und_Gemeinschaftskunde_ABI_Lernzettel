@@ -67,42 +67,6 @@
             box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
         }
 
-        .navigation-link {
-    margin-top: 20px;
-    padding: 15px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.internal-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #0066cc;
-    font-weight: 500;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.internal-link:hover {
-    color: #004499;
-    background-color: rgba(0, 102, 204, 0.1);
-    text-decoration: none;
-    transform: translateX(5px);
-}
-
-.internal-link:visited {
-    color: #0066cc;
-}
-
-.internal-link:visited:hover {
-    color: #004499;
-}
-
         .content-section {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -229,6 +193,20 @@
             font-size: 1.2em;
         }
 
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+        }
+
+        .table-scroll-hint {
+            display: none;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -246,11 +224,6 @@
             border-bottom: 1px solid #ddd;
             position: relative;
             overflow: visible;
-        }
-
-        /* Special handling for tooltips in tables */
-        table .tooltip-term .tooltip {
-            z-index: 10001;
         }
 
         th {
@@ -301,107 +274,117 @@
             border-radius: 0 10px 10px 0;
         }
 
-        /* Tooltip Styles */
-        .tooltip-term {
-            position: relative;
-            color: #3498db;
-            cursor: pointer;
-            text-decoration: none;
-            border-bottom: 1px dotted #3498db;
-            display: inline;
-        }
-
-        .tooltip-term:hover {
-            color: #2980b9;
-        }
-
-        .tooltip {
-            position: absolute;
-            background: #2c3e50;
-            color: white;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            line-height: 1.4;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            z-index: 10000;
-            max-width: 300px;
-            width: max-content;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            pointer-events: none;
-            word-wrap: break-word;
-            border: 1px solid #34495e;
-        }
-
-        .tooltip::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: var(--arrow-left, 15px);
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 5px solid #2c3e50;
-        }
-
-        .tooltip.tooltip-bottom::before {
-            top: auto;
-            bottom: -5px;
-            border-top: 5px solid #2c3e50;
-            border-bottom: none;
-            left: var(--arrow-left, 15px);
-        }
-
-        .tooltip.tooltip-left::before {
-            left: auto;
-            right: 15px;
-        }
-
-        /* Special styling for table tooltips */
-        table .tooltip {
-            position: absolute !important;
-            z-index: 10001;
-        }
-
-        .tooltip-term:hover .tooltip,
-        .tooltip-term:focus .tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Mobile optimizations */
+        /* Mobile Optimierungen */
         @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
             .container {
-                padding: 15px;
+                padding: 10px;
             }
-            
+
+            header {
+                padding: 20px 15px;
+            }
+
             h1 {
-                font-size: 2em;
+                font-size: 1.8em;
+                line-height: 1.2;
             }
-            
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .content-section {
+                padding: 20px 15px;
+                border-radius: 10px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+                word-wrap: break-word;
+            }
+
+            .subsection-title {
+                font-size: 1.3em;
+                word-wrap: break-word;
+            }
+
+            .subsubsection-title {
+                font-size: 1.1em;
+                word-wrap: break-word;
+                padding-left: 8px;
+            }
+
+            .text-content {
+                font-size: 1em;
+                line-height: 1.6;
+            }
+
+            li {
+                font-size: 1em;
+            }
+
+            .table-scroll-hint {
+                display: block;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px 8px;
+                min-width: 120px;
+            }
+
+            .warning-box, .info-box, .highlight-box {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            ul, ol {
+                margin-left: 20px;
+                padding-right: 10px;
+            }
+
+            .back-link {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
+            }
+
             .key-concepts {
                 grid-template-columns: 1fr;
-            }
-
-            .tooltip {
-                max-width: 280px;
-                font-size: 0.85em;
-                padding: 10px 12px;
-            }
-
-            .tooltip-term {
-                padding: 2px 0;
             }
         }
 
         @media (max-width: 480px) {
-            .tooltip {
-                max-width: 250px;
-                font-size: 0.8em;
-                padding: 8px 10px;
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .subsection-title {
+                font-size: 1.15em;
+            }
+
+            .subsubsection-title {
+                font-size: 1.05em;
+            }
+
+            table {
+                font-size: 0.85em;
+            }
+
+            th, td {
+                padding: 8px 6px;
+                min-width: 100px;
             }
         }
     </style>
@@ -412,7 +395,7 @@
         
         <header>
             <h1>Demokratie und Diktatur in Deutschland und Europa</h1>
-            <p class="subtitle">im 20. und 21. Jahrhundert</p>
+            <p class="subtitle">im 20. und 21. Jahrhundert - Vollständige Abitur-Version</p>
         </header>
 
         <!-- Kapitel 6: Politische Willensbildung -->
@@ -420,27 +403,27 @@
             <h2 class="section-title">6. Politische Willensbildung in Deutschland und in der EU</h2>
             
             <div class="text-content">
-                Die <span class="tooltip-term">politische Willensbildung<span class="tooltip">Der Prozess, durch den sich aus individuellen Meinungen und Interessen der Bürger kollektive politische Entscheidungen entwickeln. Erfolgt über Wahlen, Meinungsbildung, Diskussion und Kompromissfindung.</span></span> ist ein fundamentaler Prozess in jeder Demokratie. Sie beschreibt, wie sich aus individuellen Meinungen und Interessen der Bürger politische Entscheidungen entwickeln. In Deutschland und der Europäischen Union erfolgt dieser Prozess über verschiedene Kanäle und Institutionen.
+                Die politische Willensbildung ist ein fundamentaler Prozess in jeder Demokratie. Sie beschreibt, wie sich aus individuellen Meinungen und Interessen der Bürger politische Entscheidungen entwickeln. In Deutschland und der Europäischen Union erfolgt dieser Prozess über verschiedene Kanäle und Institutionen.
             </div>
 
             <h3 class="subsection-title">6.1 Wer beeinflusst die Politik?</h3>
             
             <div class="text-content">
-                Deutschland ist eine <span class="tooltip-term">repräsentative Demokratie<span class="tooltip">Staatsform, in der das Volk nicht direkt, sondern durch gewählte Vertreter (Repräsentanten) politische Entscheidungen trifft. Die Vertreter sind dem Volk gegenüber verantwortlich.</span></span>, in der Bürger ihre politischen Vertreter wählen. Doch wer beeinflusst tatsächlich die Politik? Die Antwort ist vielschichtig und umfasst verschiedene Akteure:
+                Deutschland ist eine repräsentative Demokratie, in der Bürger ihre politischen Vertreter wählen. Doch wer beeinflusst tatsächlich die Politik? Die Antwort ist vielschichtig und umfasst verschiedene Akteure:
             </div>
 
             <div class="key-concepts">
                 <div class="concept-card">
                     <div class="concept-title">Bürgerinnen und Bürger</div>
-                    <div>Durch Wahlen, Petitionen, Demonstrationen und <span class="tooltip-term">Bürgerinitiativen<span class="tooltip">Selbstorganisierte Zusammenschlüsse von Bürgern, die sich für bestimmte politische oder gesellschaftliche Ziele einsetzen, meist auf lokaler Ebene.</span></span> nehmen sie direkten Einfluss auf die Politik.</div>
+                    <div>Durch Wahlen, Petitionen, Demonstrationen und Bürgerinitiativen nehmen sie direkten Einfluss auf die Politik.</div>
                 </div>
                 <div class="concept-card">
                     <div class="concept-title">Interessengruppen</div>
-                    <div>Verbände, Gewerkschaften und <span class="tooltip-term">Lobbyisten<span class="tooltip">Personen oder Organisationen, die versuchen, politische Entscheidungsträger im Sinne bestimmter Interessen zu beeinflussen. Der Name kommt von "Lobby" (Wandelhalle des Parlaments).</span></span> vertreten spezifische Interessen gegenüber der Politik.</div>
+                    <div>Verbände, Gewerkschaften und Lobbyisten vertreten spezifische Interessen gegenüber der Politik.</div>
                 </div>
                 <div class="concept-card">
                     <div class="concept-title">Medien</div>
-                    <div>Sie informieren die Öffentlichkeit und setzen politische Themen auf die <span class="tooltip-term">Agenda<span class="tooltip">Die Liste der Themen, die in der politischen Diskussion und Entscheidungsfindung als wichtig und dringlich angesehen werden.</span></span>.</div>
+                    <div>Sie informieren die Öffentlichkeit und setzen politische Themen auf die Agenda.</div>
                 </div>
                 <div class="concept-card">
                     <div class="concept-title">Parteien</div>
@@ -449,17 +432,17 @@
             </div>
 
             <div class="info-box">
-                <strong><span class="tooltip-term">Pluralismus<span class="tooltip">Politisches Konzept, das die Vielfalt von Meinungen, Interessen und Gruppierungen in einer Gesellschaft als bereichernd und demokratisch notwendig ansieht.</span></span> in der Demokratie:</strong> Das Zusammenspiel verschiedener Akteure führt zu einem pluralistischen System, in dem unterschiedliche Interessen vertreten und ausgehandelt werden. Dies ist ein Kennzeichen funktionierender Demokratien.
+                <strong>Pluralismus in der Demokratie:</strong> Das Zusammenspiel verschiedener Akteure führt zu einem pluralistischen System, in dem unterschiedliche Interessen vertreten und ausgehandelt werden. Dies ist ein Kennzeichen funktionierender Demokratien.
             </div>
 
             <h3 class="subsection-title">6.2 Willensbildung durch Parteien?</h3>
             
             <div class="text-content">
-                Politische Parteien spielen eine zentrale Rolle in der demokratischen Willensbildung. Nach dem <span class="tooltip-term">Grundgesetz<span class="tooltip">Die Verfassung der Bundesrepublik Deutschland, die seit 1949 in Kraft ist und die grundlegenden Rechte, Staatsprinzipien und Staatsorganisation regelt.</span></span> wirken sie "bei der politischen Willensbildung des Volkes mit" (Art. 21 GG). Sie erfüllen mehrere wichtige Funktionen:
+                Politische Parteien spielen eine zentrale Rolle in der demokratischen Willensbildung. Nach dem Grundgesetz wirken sie "bei der politischen Willensbildung des Volkes mit" (Art. 21 GG). Sie erfüllen mehrere wichtige Funktionen:
             </div>
 
             <ul>
-                <li><strong><span class="tooltip-term">Interessenaggregation<span class="tooltip">Der Prozess der Bündelung und Zusammenfassung verschiedener gesellschaftlicher Interessen zu kohärenten politischen Positionen und Programmen.</span></span>:</strong> Sie bündeln verschiedene gesellschaftliche Interessen zu politischen Programmen</li>
+                <li><strong>Interessenaggregation:</strong> Sie bündeln verschiedene gesellschaftliche Interessen zu politischen Programmen</li>
                 <li><strong>Politische Bildung:</strong> Sie informieren Bürger über politische Themen und Positionen</li>
                 <li><strong>Rekrutierung:</strong> Sie wählen und fördern politisches Personal</li>
                 <li><strong>Regierungsbildung:</strong> Sie stellen Kandidaten für Ämter und bilden nach Wahlen Regierungen</li>
@@ -468,7 +451,7 @@
 
             <div class="method-box">
                 <div class="method-title">Methode: Karikaturen analysieren</div>
-                <p><span class="tooltip-term">Karikaturen<span class="tooltip">Übertreibende, oft satirische Darstellungen von Personen oder politischen Sachverhalten, die durch Verzerrung und Vereinfachung Kritik üben oder bestimmte Aspekte hervorheben.</span></span> sind wichtige Quellen für die politische Meinungsbildung. Sie übertreiben und vereinfachen komplexe politische Sachverhalte, um Kritik zu üben oder Standpunkte zu verdeutlichen.</p>
+                <p>Karikaturen sind wichtige Quellen für die politische Meinungsbildung. Sie übertreiben und vereinfachen komplexe politische Sachverhalte, um Kritik zu üben oder Standpunkte zu verdeutlichen.</p>
                 
                 <h4>Analyseschritte:</h4>
                 <ol>
@@ -483,11 +466,13 @@
             <h3 class="subsection-title">6.3 Partizipation durch Wahlen</h3>
             
             <div class="text-content">
-                Wahlen sind das zentrale Element der demokratischen <span class="tooltip-term">Partizipation<span class="tooltip">Die Teilhabe und Beteiligung der Bürger am politischen Prozess, etwa durch Wahlen, Meinungsäußerung oder zivilgesellschaftliches Engagement.</span></span>. Sie ermöglichen es den Bürgern, ihre Vertreter zu bestimmen und über die politische Richtung des Landes zu entscheiden.
+                Wahlen sind das zentrale Element der demokratischen Partizipation. Sie ermöglichen es den Bürgern, ihre Vertreter zu bestimmen und über die politische Richtung des Landes zu entscheiden.
             </div>
 
             <h4 class="subsubsection-title">Wahlsystem in Deutschland</h4>
             
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
             <table>
                 <tr>
                     <th>Wahlart</th>
@@ -496,7 +481,7 @@
                 </tr>
                 <tr>
                     <td>Bundestagswahl</td>
-                    <td><span class="tooltip-term">Personalisierte Verhältniswahl<span class="tooltip">Wahlsystem, das Mehrheits- und Verhältniswahlrecht kombiniert. Wähler haben zwei Stimmen: Erststimme für Direktkandidaten, Zweitstimme für Parteilisten.</span></span></td>
+                    <td>Personalisierte Verhältniswahl</td>
                     <td>Zwei Stimmen: Direktmandat und Landesliste</td>
                 </tr>
                 <tr>
@@ -515,46 +500,47 @@
                     <td>Je nach Bundesland unterschiedlich</td>
                 </tr>
             </table>
+            </div>
 
             <div class="highlight-box">
-                <strong><span class="tooltip-term">5-Prozent-Hürde<span class="tooltip">Sperrklausel im deutschen Wahlrecht: Parteien müssen mindestens 5% der Zweitstimmen oder 3 Direktmandate erreichen, um in den Bundestag einzuziehen. Verhindert extreme Parteienzersplitterung.</span></span>:</strong> Um in den Bundestag einzuziehen, muss eine Partei mindestens 5% der Zweitstimmen erhalten oder drei Direktmandate gewinnen. Diese Regelung soll eine zu starke Zersplitterung des Parlaments verhindern.
+                <strong>5-Prozent-Hürde:</strong> Um in den Bundestag einzuziehen, muss eine Partei mindestens 5% der Zweitstimmen erhalten oder drei Direktmandate gewinnen. Diese Regelung soll eine zu starke Zersplitterung des Parlaments verhindern.
             </div>
 
             <h3 class="subsection-title">6.4 Politische Information – Filterblasen und Fake News?</h3>
             
             <div class="text-content">
-                In der digitalen Ära hat sich die Art, wie Menschen politische Informationen erhalten und verarbeiten, grundlegend verändert. Soziale Medien und <span class="tooltip-term">Algorithmen<span class="tooltip">Computerbasierte Rechenverfahren, die in sozialen Medien bestimmen, welche Inhalte Nutzern angezeigt werden, oft basierend auf bisherigem Verhalten und Präferenzen.</span></span> beeinflussen zunehmend die politische Meinungsbildung.
+                In der digitalen Ära hat sich die Art, wie Menschen politische Informationen erhalten und verarbeiten, grundlegend verändert. Soziale Medien und Algorithmen beeinflussen zunehmend die politische Meinungsbildung.
             </div>
 
             <div class="warning-box">
                 <div class="warning-title">Herausforderungen der digitalen Meinungsbildung:</div>
                 <ul>
-                    <li><strong><span class="tooltip-term">Filterblasen<span class="tooltip">Phänomen, bei dem Personen hauptsächlich Informationen erhalten, die ihre bestehenden Überzeugungen bestätigen, wodurch andere Perspektiven ausgeblendet werden.</span></span>:</strong> Algorithmen zeigen Nutzern hauptsächlich Inhalte, die ihren bisherigen Präferenzen entsprechen</li>
-                    <li><strong><span class="tooltip-term">Fake News<span class="tooltip">Bewusst falsche oder irreführende Nachrichten, die als seriöse Informationen getarnt verbreitet werden, oft um politische oder gesellschaftliche Meinungen zu manipulieren.</span></span>:</strong> Bewusst falsche oder irreführende Informationen verbreiten sich schnell</li>
-                    <li><strong><span class="tooltip-term">Echokammern<span class="tooltip">Umgebungen, in denen Menschen nur Meinungen begegnen, die ihre eigenen widerspiegeln, wodurch bestehende Überzeugungen verstärkt und kaum hinterfragt werden.</span></span>:</strong> Menschen bewegen sich in Gemeinschaften mit ähnlichen Meinungen</li>
-                    <li><strong><span class="tooltip-term">Microtargeting<span class="tooltip">Gezielte Werbung oder politische Botschaften, die auf Basis persönlicher Daten und Verhaltensmuster an sehr spezifische Zielgruppen gerichtet werden.</span></span>:</strong> Gezielte politische Werbung basierend auf persönlichen Daten</li>
+                    <li><strong>Filterblasen:</strong> Algorithmen zeigen Nutzern hauptsächlich Inhalte, die ihren bisherigen Präferenzen entsprechen</li>
+                    <li><strong>Fake News:</strong> Bewusst falsche oder irreführende Informationen verbreiten sich schnell</li>
+                    <li><strong>Echokammern:</strong> Menschen bewegen sich in Gemeinschaften mit ähnlichen Meinungen</li>
+                    <li><strong>Microtargeting:</strong> Gezielte politische Werbung basierend auf persönlichen Daten</li>
                 </ul>
             </div>
 
             <h3 class="subsection-title">6.5 Grundrechte in Gefahr? – Das Beispiel Corona-Pandemie</h3>
             
             <div class="text-content">
-                Die <span class="tooltip-term">Corona-Pandemie<span class="tooltip">Die weltweite Ausbreitung des Coronavirus SARS-CoV-2 seit 2020, die zu erheblichen gesellschaftlichen, wirtschaftlichen und politischen Herausforderungen führte.</span></span> stellte die deutsche Demokratie vor beispiellose Herausforderungen. Zum Schutz der öffentlichen Gesundheit wurden weitreichende <span class="tooltip-term">Grundrechtseinschränkungen<span class="tooltip">Temporäre Beschränkungen verfassungsmäßig garantierter Rechte, die unter besonderen Umständen (wie Pandemien) zur Abwehr von Gefahren verhängt werden können.</span></span> vorgenommen, die intensive gesellschaftliche Debatten auslösten.
+                Die Corona-Pandemie stellte die deutsche Demokratie vor beispiellose Herausforderungen. Zum Schutz der öffentlichen Gesundheit wurden weitreichende Grundrechtseinschränkungen vorgenommen, die intensive gesellschaftliche Debatten auslösten.
             </div>
 
             <div class="info-box">
                 <strong>Betroffene Grundrechte während der Pandemie:</strong>
                 <ul>
-                    <li><span class="tooltip-term">Versammlungsfreiheit<span class="tooltip">Das in Art. 8 GG garantierte Recht, sich friedlich und ohne Anmeldung zu versammeln. Kann unter bestimmten Umständen eingeschränkt werden.</span></span> (Art. 8 GG)</li>
-                    <li><span class="tooltip-term">Freizügigkeit<span class="tooltip">Das Recht, sich frei im Bundesgebiet zu bewegen und den Aufenthaltsort zu wählen (Art. 11 GG).</span></span> (Art. 11 GG)</li>
-                    <li><span class="tooltip-term">Berufsfreiheit<span class="tooltip">Das Recht auf freie Wahl des Berufes, Arbeitsplatzes und der Ausbildungsstätte (Art. 12 GG).</span></span> (Art. 12 GG)</li>
+                    <li>Versammlungsfreiheit (Art. 8 GG)</li>
+                    <li>Freizügigkeit (Art. 11 GG)</li>
+                    <li>Berufsfreiheit (Art. 12 GG)</li>
                     <li>Religionsfreiheit (Art. 4 GG)</li>
                     <li>Allgemeine Handlungsfreiheit (Art. 2 GG)</li>
                 </ul>
             </div>
 
             <blockquote>
-                "Grundrechte sind nicht schrankenlos gewährleistet. In Krisenzeiten müssen verschiedene Grundrechte und Verfassungspositionen gegeneinander abgewogen werden." - <span class="tooltip-term">Bundesverfassungsgericht<span class="tooltip">Das höchste deutsche Gericht, das über die Einhaltung des Grundgesetzes wacht und als "Hüter der Verfassung" fungiert.</span></span>
+                "Grundrechte sind nicht schrankenlos gewährleistet. In Krisenzeiten müssen verschiedene Grundrechte und Verfassungspositionen gegeneinander abgewogen werden." - Bundesverfassungsgericht
             </blockquote>
         </div>
 
@@ -574,7 +560,7 @@
 
             <div class="key-concepts">
                 <div class="concept-card">
-                    <div class="concept-title">Ursachen für <span class="tooltip-term">Politikverdrossenheit<span class="tooltip">Gefühl der Entfremdung und des Desinteresses von Bürgern gegenüber der Politik, oft begleitet von Misstrauen gegenüber politischen Institutionen und Akteuren.</span></span></div>
+                    <div class="concept-title">Ursachen für Politikverdrossenheit</div>
                     <div>
                         <ul>
                             <li>Komplexe Entscheidungsprozesse</li>
@@ -585,7 +571,7 @@
                     </div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Demokratisches Defizit<span class="tooltip">Kritik an der EU, dass ihre Entscheidungsprozesse zu wenig demokratisch legitimiert und kontrolliert seien, besonders im Vergleich zu nationalen Demokratien.</span></span> der EU</div>
+                    <div class="concept-title">Demokratisches Defizit der EU</div>
                     <div>
                         <ul>
                             <li>Schwache Rolle des Europäischen Parlaments</li>
@@ -600,9 +586,11 @@
             <h3 class="subsection-title">7.2 Machtkontrolle durch Gewaltenteilung</h3>
             
             <div class="text-content">
-                Das Prinzip der <span class="tooltip-term">Gewaltenteilung<span class="tooltip">Aufteilung der Staatsgewalt in Legislative (Gesetzgebung), Exekutive (Regierung/Verwaltung) und Judikative (Rechtsprechung) zur Verhinderung von Machtmissbrauch.</span></span> ist ein fundamentales Element der Demokratie. Es verhindert die Konzentration der Macht in einer Hand und schafft ein System wechselseitiger Kontrolle.
+                Das Prinzip der Gewaltenteilung ist ein fundamentales Element der Demokratie. Es verhindert die Konzentration der Macht in einer Hand und schafft ein System wechselseitiger Kontrolle.
             </div>
 
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
             <table>
                 <tr>
                     <th>Gewalt</th>
@@ -611,33 +599,34 @@
                     <th>Kontrollmechanismen</th>
                 </tr>
                 <tr>
-                    <td><span class="tooltip-term">Legislative<span class="tooltip">Die gesetzgebende Gewalt, die Gesetze beschließt und die Regierung kontrolliert. In Deutschland: Bundestag und Bundesrat.</span></span></td>
+                    <td>Legislative</td>
                     <td>Bundestag, Bundesrat</td>
                     <td>Gesetzgebung, Kontrolle der Regierung</td>
                     <td>Verfassungsgerichtsbarkeit, Wahlen</td>
                 </tr>
                 <tr>
-                    <td><span class="tooltip-term">Exekutive<span class="tooltip">Die ausführende Gewalt, die Gesetze umsetzt und den Staat regiert. Umfasst Regierung und Verwaltung.</span></span></td>
+                    <td>Exekutive</td>
                     <td>Bundesregierung, Verwaltung</td>
                     <td>Durchführung der Gesetze, Regierung</td>
                     <td>Parlamentarische Kontrolle, Gerichte</td>
                 </tr>
                 <tr>
-                    <td><span class="tooltip-term">Judikative<span class="tooltip">Die rechtsprechende Gewalt, die Recht spricht und Gesetze auslegt. Unabhängig von den anderen Gewalten.</span></span></td>
+                    <td>Judikative</td>
                     <td>Gerichte, Bundesverfassungsgericht</td>
                     <td>Rechtsprechung, Verfassungsschutz</td>
                     <td>Richterliche Unabhängigkeit, Instanzenzug</td>
                 </tr>
             </table>
+            </div>
 
             <div class="method-box">
                 <div class="method-title">Methode: Fallanalyse</div>
-                <p>Eine <span class="tooltip-term">Fallanalyse<span class="tooltip">Systematische Untersuchung eines konkreten politischen Falls oder Ereignisses, um politische Prozesse und Entscheidungsstrukturen zu verstehen.</span></span> untersucht einen konkreten politischen Fall systematisch, um politische Prozesse und Entscheidungen zu verstehen.</p>
+                <p>Eine Fallanalyse untersucht einen konkreten politischen Fall systematisch, um politische Prozesse und Entscheidungen zu verstehen.</p>
                 
-                <h4>Analyserahmen (<span class="tooltip-term">Politik-Zyklus<span class="tooltip">Modell, das den politischen Entscheidungsprozess in verschiedene Phasen unterteilt, von der Problemerkennung bis zur Evaluation der Maßnahmen.</span></span>):</h4>
+                <h4>Analyserahmen (Politik-Zyklus):</h4>
                 <ol>
                     <li><strong>Problemdefinition:</strong> Wie wird ein Problem erkannt und definiert?</li>
-                    <li><strong><span class="tooltip-term">Agenda-Setting<span class="tooltip">Der Prozess, durch den bestimmte Themen auf die politische Tagesordnung gelangen und öffentliche Aufmerksamkeit erhalten.</span></span>:</strong> Wie gelangt das Problem auf die politische Agenda?</li>
+                    <li><strong>Agenda-Setting:</strong> Wie gelangt das Problem auf die politische Agenda?</li>
                     <li><strong>Politikformulierung:</strong> Welche Lösungsoptionen werden entwickelt?</li>
                     <li><strong>Entscheidung:</strong> Wie wird zwischen den Optionen entschieden?</li>
                     <li><strong>Implementation:</strong> Wie wird die Entscheidung umgesetzt?</li>
@@ -648,38 +637,38 @@
             <h3 class="subsection-title">7.3 Europäisierung der Gesetzgebung</h3>
             
             <div class="text-content">
-                Immer mehr politische Entscheidungen werden nicht mehr nur auf nationaler, sondern auf europäischer Ebene getroffen. Dieser Prozess der "<span class="tooltip-term">Europäisierung<span class="tooltip">Der Prozess, durch den EU-Politik und europäische Normen zunehmend die nationale Politik und Gesetzgebung beeinflussen und prägen.</span></span>" hat weitreichende Auswirkungen auf die nationale Politik.
+                Immer mehr politische Entscheidungen werden nicht mehr nur auf nationaler, sondern auf europäischer Ebene getroffen. Dieser Prozess der "Europäisierung" hat weitreichende Auswirkungen auf die nationale Politik.
             </div>
 
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">1951</div>
-                    <div class="timeline-event">Gründung der <span class="tooltip-term">Europäischen Gemeinschaft für Kohle und Stahl (EGKS)<span class="tooltip">Erste europäische Institution, gegründet von Deutschland, Frankreich, Italien und den Benelux-Staaten zur gemeinsamen Verwaltung der Kohle- und Stahlproduktion.</span></span></div>
+                    <div class="timeline-event">Gründung der Europäischen Gemeinschaft für Kohle und Stahl (EGKS)</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1957</div>
-                    <div class="timeline-event"><span class="tooltip-term">Römische Verträge<span class="tooltip">Gründungsverträge der Europäischen Wirtschaftsgemeinschaft (EWG) und der Europäischen Atomgemeinschaft (EURATOM), unterzeichnet in Rom.</span></span> - Gründung der EWG und EURATOM</div>
+                    <div class="timeline-event">Römische Verträge - Gründung der EWG und EURATOM</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1992</div>
-                    <div class="timeline-event"><span class="tooltip-term">Vertrag von Maastricht<span class="tooltip">Gründungsvertrag der Europäischen Union, der die politische Integration vorantrieb und die Einführung des Euro beschloss.</span></span> - Gründung der Europäischen Union</div>
+                    <div class="timeline-event">Vertrag von Maastricht - Gründung der Europäischen Union</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2009</div>
-                    <div class="timeline-event"><span class="tooltip-term">Vertrag von Lissabon<span class="tooltip">Reform der EU-Verträge, der die Entscheidungsprozesse reformierte und die Rolle des Europäischen Parlaments stärkte.</span></span> - Reform der EU-Institutionen</div>
+                    <div class="timeline-event">Vertrag von Lissabon - Reform der EU-Institutionen</div>
                 </div>
             </div>
 
             <h4 class="subsubsection-title">EU-Gesetzgebungsverfahren</h4>
             
             <div class="text-content">
-                Das <span class="tooltip-term">ordentliche Gesetzgebungsverfahren<span class="tooltip">Das Hauptverfahren der EU-Gesetzgebung, bei dem Europäisches Parlament und Rat der EU gleichberechtigt entscheiden (Mitentscheidungsverfahren).</span></span> der EU ist komplex und beteiligt mehrere Institutionen:
+                Das ordentliche Gesetzgebungsverfahren der EU ist komplex und beteiligt mehrere Institutionen:
             </div>
 
             <ol>
-                <li><strong>Initiative:</strong> Die <span class="tooltip-term">Europäische Kommission<span class="tooltip">Exekutivorgan der EU, das Gesetze vorschlägt, deren Umsetzung überwacht und als "Hüterin der Verträge" fungiert.</span></span> schlägt Gesetze vor</li>
-                <li><strong>Erste Lesung:</strong> <span class="tooltip-term">Europäisches Parlament<span class="tooltip">Direkt gewähltes Organ der EU, das Gesetze mitbeschließt, den EU-Haushalt genehmigt und die Kommission kontrolliert.</span></span> stimmt ab</li>
-                <li><strong>Ministerrat:</strong> <span class="tooltip-term">Rat der EU<span class="tooltip">Vertretung der Mitgliedstaaten auf Ministerebene, die zusammen mit dem Parlament Gesetze beschließt und wichtige politische Entscheidungen trifft.</span></span> (Vertreter der Mitgliedstaaten) entscheidet</li>
+                <li><strong>Initiative:</strong> Die Europäische Kommission schlägt Gesetze vor</li>
+                <li><strong>Erste Lesung:</strong> Europäisches Parlament stimmt ab</li>
+                <li><strong>Ministerrat:</strong> Rat der EU (Vertreter der Mitgliedstaaten) entscheidet</li>
                 <li><strong>Zweite Lesung:</strong> Bei Meinungsverschiedenheiten weitere Verhandlungen</li>
                 <li><strong>Vermittlungsverfahren:</strong> Bei anhaltenden Differenzen</li>
             </ol>
@@ -693,16 +682,16 @@
             <div class="warning-box">
                 <div class="warning-title">Gefährdungen der Demokratie:</div>
                 <ul>
-                    <li><strong><span class="tooltip-term">Populismus<span class="tooltip">Politischer Stil, der sich direkt an "das Volk" wendet, komplexe Sachverhalte vereinfacht und sich gegen "die Eliten" richtet, oft mit emotionalen Appellen.</span></span>:</strong> Vereinfachung komplexer Sachverhalte, Anti-Establishment-Rhetorik</li>
-                    <li><strong><span class="tooltip-term">Extremismus<span class="tooltip">Radikale politische Ideologien, die die demokratische Grundordnung ablehnen und durch totalitäre Systeme ersetzen wollen.</span></span>:</strong> Radikale Ideologien, die die demokratische Ordnung ablehnen</li>
+                    <li><strong>Populismus:</strong> Vereinfachung komplexer Sachverhalte, Anti-Establishment-Rhetorik</li>
+                    <li><strong>Extremismus:</strong> Radikale Ideologien, die die demokratische Ordnung ablehnen</li>
                     <li><strong>Autoritäre Tendenzen:</strong> Einschränkung von Pressefreiheit und Gewaltenteilung</li>
-                    <li><strong><span class="tooltip-term">Desinformation<span class="tooltip">Bewusst falsche oder irreführende Informationen, die gezielt verbreitet werden, um die öffentliche Meinung zu manipulieren oder demokratische Prozesse zu untergraben.</span></span>:</strong> Gezielte Falschinformationen zur Destabilisierung</li>
+                    <li><strong>Desinformation:</strong> Gezielte Falschinformationen zur Destabilisierung</li>
                     <li><strong>Polarisierung:</strong> Extreme gesellschaftliche Spaltung</li>
                 </ul>
             </div>
 
             <div class="info-box">
-                <strong>Schutz der Demokratie:</strong> Deutschland verfügt über verschiedene Instrumente zum Schutz der demokratischen Ordnung: die <span class="tooltip-term">wehrhafte Demokratie<span class="tooltip">Konzept einer Demokratie, die sich aktiv gegen ihre Feinde verteidigt und verfassungsfeindliche Bestrebungen bekämpft, um ihre eigene Abschaffung zu verhindern.</span></span>, das Bundesverfassungsgericht, den <span class="tooltip-term">Verfassungsschutz<span class="tooltip">Inlandsgeheimdienst, der verfassungsfeindliche Bestrebungen beobachtet und vor Gefahren für die demokratische Grundordnung warnt.</span></span> und die Möglichkeit von Parteiverboten.
+                <strong>Schutz der Demokratie:</strong> Deutschland verfügt über verschiedene Instrumente zum Schutz der demokratischen Ordnung: die wehrhafte Demokratie, das Bundesverfassungsgericht, den Verfassungsschutz und die Möglichkeit von Parteiverboten.
             </div>
         </div>
 
@@ -711,42 +700,42 @@
             <h2 class="section-title">8. Chancen und Gefahren für die Demokratie in der Weimarer Republik</h2>
             
             <div class="text-content">
-                Die <span class="tooltip-term">Weimarer Republik<span class="tooltip">Deutschlands erste parlamentarische Demokratie (1918-1933), benannt nach dem Tagungsort der verfassunggebenden Nationalversammlung in Weimar.</span></span> (1918-1933) war Deutschlands erster Versuch einer parlamentarischen Demokratie. Ihr Scheitern und die darauffolgende NS-Diktatur machen sie zu einem wichtigen Studienobjekt für die Fragilität demokratischer Systeme.
+                Die Weimarer Republik (1918-1933) war Deutschlands erster Versuch einer parlamentarischen Demokratie. Ihr Scheitern und die darauffolgende NS-Diktatur machen sie zu einem wichtigen Studienobjekt für die Fragilität demokratischer Systeme.
             </div>
 
             <h3 class="subsection-title">8.1 Die europäische Friedensordnung nach dem Ersten Weltkrieg</h3>
             
             <div class="text-content">
-                Der <span class="tooltip-term">Erste Weltkrieg<span class="tooltip">Globaler Konflikt von 1914-1918, der mit modernen Massenvernichtungswaffen geführt wurde und das Ende der europäischen Monarchien sowie eine neue Weltordnung zur Folge hatte.</span></span> (1914-1918) erschütterte Europa grundlegend. Die neue Friedensordnung sollte dauerhaften Frieden sichern, brachte jedoch neue Probleme mit sich.
+                Der Erste Weltkrieg (1914-1918) erschütterte Europa grundlegend. Die neue Friedensordnung sollte dauerhaften Frieden sichern, brachte jedoch neue Probleme mit sich.
             </div>
 
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">1918</div>
-                    <div class="timeline-event"><span class="tooltip-term">Waffenstillstand<span class="tooltip">Einstellung der Kampfhandlungen am 11. November 1918, die praktisch das Ende des Ersten Weltkriegs bedeutete.</span></span> am 11. November</div>
+                    <div class="timeline-event">Waffenstillstand am 11. November</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1919</div>
-                    <div class="timeline-event"><span class="tooltip-term">Versailler Vertrag<span class="tooltip">Friedensvertrag zwischen Deutschland und den Siegermächten, der Deutschland schwere Gebiets-, Rüstungs- und Reparationsauflagen auferlegte.</span></span> mit Deutschland</div>
+                    <div class="timeline-event">Versailler Vertrag mit Deutschland</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1920</div>
-                    <div class="timeline-event">Gründung des <span class="tooltip-term">Völkerbundes<span class="tooltip">Erste internationale Organisation zur Friedenssicherung, Vorläufer der UNO. Deutschland war zunächst ausgeschlossen.</span></span></div>
+                    <div class="timeline-event">Gründung des Völkerbundes</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1925</div>
-                    <div class="timeline-event"><span class="tooltip-term">Verträge von Locarno<span class="tooltip">Verträge zur Sicherung der Grenzen in Westeuropa und zur Entspannung zwischen Deutschland und seinen westlichen Nachbarn.</span></span></div>
+                    <div class="timeline-event">Verträge von Locarno</div>
                 </div>
             </div>
 
             <div class="highlight-box">
-                <strong><span class="tooltip-term">Wilsons 14-Punkte-Programm<span class="tooltip">Friedensprogramm des US-Präsidenten Woodrow Wilson von 1918, das auf Selbstbestimmung der Völker, offene Diplomatie und kollektive Sicherheit setzte.</span></span>:</strong> US-Präsident Wilson forderte eine neue internationale Ordnung basierend auf Selbstbestimmung der Völker, Demokratie und kollektiver Sicherheit. Nicht alle Punkte konnten jedoch umgesetzt werden.
+                <strong>Wilsons 14-Punkte-Programm:</strong> US-Präsident Wilson forderte eine neue internationale Ordnung basierend auf Selbstbestimmung der Völker, Demokratie und kollektiver Sicherheit. Nicht alle Punkte konnten jedoch umgesetzt werden.
             </div>
 
             <h3 class="subsection-title">8.2 Novemberrevolution 1918/19</h3>
             
             <div class="text-content">
-                Die <span class="tooltip-term">Novemberrevolution<span class="tooltip">Revolutionäre Umwälzung in Deutschland 1918/19, die das Ende der Monarchie und den Übergang zur Republik bewirkte.</span></span> beendete die Monarchie in Deutschland und leitete den Übergang zur Republik ein. Sie war geprägt von spontanen Aufständen und politischen Kämpfen zwischen verschiedenen Gruppen.
+                Die Novemberrevolution beendete die Monarchie in Deutschland und leitete den Übergang zur Republik ein. Sie war geprägt von spontanen Aufständen und politischen Kämpfen zwischen verschiedenen Gruppen.
             </div>
 
             <div class="key-concepts">
@@ -755,7 +744,7 @@
                     <div>
                         <ul>
                             <li>Militärische Niederlage im Ersten Weltkrieg</li>
-                            <li><span class="tooltip-term">Meuterei der Matrosen<span class="tooltip">Aufstand der Kriegsmatrosen in Kiel am 3. November 1918, der den Beginn der Novemberrevolution markierte.</span></span> in Kiel</li>
+                            <li>Meuterei der Matrosen in Kiel</li>
                             <li>Kriegsmüdigkeit der Bevölkerung</li>
                             <li>Wirtschaftliche Not und Hunger</li>
                         </ul>
@@ -766,9 +755,9 @@
                     <div>
                         <ul>
                             <li>3. November: Matrosenaufstand in Kiel</li>
-                            <li>9. November: <span class="tooltip-term">Abdankung Kaiser Wilhelm II.<span class="tooltip">Der deutsche Kaiser ging ins niederländische Exil, womit die Monarchie in Deutschland endete.</span></span></li>
-                            <li>9. November: Ausrufung der Republik durch <span class="tooltip-term">Scheidemann<span class="tooltip">Philipp Scheidemann (SPD) rief am 9. November 1918 vom Reichstag aus die deutsche Republik aus.</span></span></li>
-                            <li>10. November: <span class="tooltip-term">Friedrich Ebert<span class="tooltip">SPD-Politiker, der als erster Reichspräsident der Weimarer Republik die schwierige Übergangszeit nach dem Ersten Weltkrieg leitete.</span></span> wird Reichskanzler</li>
+                            <li>9. November: Abdankung Kaiser Wilhelm II.</li>
+                            <li>9. November: Ausrufung der Republik durch Scheidemann</li>
+                            <li>10. November: Friedrich Ebert wird Reichskanzler</li>
                         </ul>
                     </div>
                 </div>
@@ -784,6 +773,8 @@
                 Der am 28. Juni 1919 unterzeichnete Versailler Vertrag beendete offiziell den Krieg zwischen Deutschland und den Alliierten. Seine Bestimmungen prägten die gesamte Weimarer Zeit.
             </div>
 
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
             <table>
                 <tr>
                     <th>Bereich</th>
@@ -792,7 +783,7 @@
                 </tr>
                 <tr>
                     <td>Territorial</td>
-                    <td>Verlust von <span class="tooltip-term">Elsass-Lothringen<span class="tooltip">Region, die nach dem Deutsch-Französischen Krieg 1871 zu Deutschland gekommen war und nach dem Ersten Weltkrieg an Frankreich zurückfiel.</span></span>, Eupen-Malmedy, Teilen Preußens</td>
+                    <td>Verlust von Elsass-Lothringen, Eupen-Malmedy, Teilen Preußens</td>
                     <td>Verlust von 13% des Territoriums und 10% der Bevölkerung</td>
                 </tr>
                 <tr>
@@ -802,15 +793,16 @@
                 </tr>
                 <tr>
                     <td>Wirtschaftlich</td>
-                    <td><span class="tooltip-term">Reparationszahlungen<span class="tooltip">Entschädigungszahlungen, die Deutschland an die Siegermächte leisten musste, um Kriegsschäden zu kompensieren.</span></span>, Verlust der Kolonien</td>
+                    <td>Reparationszahlungen, Verlust der Kolonien</td>
                     <td>Schwere Belastung der Staatsfinanzen</td>
                 </tr>
                 <tr>
                     <td>Politisch</td>
-                    <td>Alleinige <span class="tooltip-term">Kriegsschuld<span class="tooltip">Artikel 231 des Versailler Vertrags, der Deutschland und seine Verbündeten für alle Kriegsschäden verantwortlich machte.</span></span> (Art. 231), Völkerbund ohne Deutschland</td>
+                    <td>Alleinige Kriegsschuld (Art. 231), Völkerbund ohne Deutschland</td>
                     <td>Internationale Isolation und innenpolitische Belastung</td>
                 </tr>
             </table>
+            </div>
 
             <div class="warning-box">
                 <div class="warning-title">Der "Kriegsschuldartikel" (Art. 231):</div>
@@ -820,7 +812,7 @@
             <h3 class="subsection-title">8.4 Die Verfassung der Weimarer Republik</h3>
             
             <div class="text-content">
-                Die am 31. Juli 1919 verabschiedete <span class="tooltip-term">Weimarer Verfassung<span class="tooltip">Erste demokratische Verfassung Deutschlands, die eine parlamentarische Republik mit starken direktdemokratischen Elementen und einem mächtigen Reichspräsidenten etablierte.</span></span> etablierte eine parlamentarische Demokratie mit föderaler Struktur. Sie enthielt sowohl Stärken als auch strukturelle Schwächen.
+                Die am 31. Juli 1919 verabschiedete Weimarer Verfassung etablierte eine parlamentarische Demokratie mit föderaler Struktur. Sie enthielt sowohl Stärken als auch strukturelle Schwächen.
             </div>
 
             <div class="key-concepts">
@@ -828,7 +820,7 @@
                     <div class="concept-title">Stärken der Verfassung</div>
                     <div>
                         <ul>
-                            <li>Umfassender <span class="tooltip-term">Grundrechtskatalog<span class="tooltip">Aufstellung der grundlegenden Rechte der Bürger, einschließlich sozialer Rechte - damals sehr fortschrittlich.</span></span></li>
+                            <li>Umfassender Grundrechtskatalog</li>
                             <li>Demokratisches Wahlrecht</li>
                             <li>Gewaltenteilung</li>
                             <li>Föderale Struktur</li>
@@ -840,8 +832,8 @@
                     <div>
                         <ul>
                             <li>Starke Stellung des Reichspräsidenten</li>
-                            <li><span class="tooltip-term">Artikel 48<span class="tooltip">Notverordnungsrecht des Reichspräsidenten, mit dem er bei Gefahr für die öffentliche Sicherheit Grundrechte außer Kraft setzen konnte.</span></span> (Notverordnungsrecht)</li>
-                            <li><span class="tooltip-term">Verhältniswahlrecht ohne Sperrklausel<span class="tooltip">Wahlsystem, das zu extremer Parteienzersplitterung führte, da auch kleine Parteien leicht ins Parlament gelangen konnten.</span></span></li>
+                            <li>Artikel 48 (Notverordnungsrecht)</li>
+                            <li>Verhältniswahlrecht ohne Sperrklausel</li>
                             <li>Konstruktives Misstrauensvotum fehlte</li>
                         </ul>
                     </div>
@@ -855,13 +847,13 @@
             <h3 class="subsection-title">8.5 Die Dolchstoßlegende</h3>
             
             <div class="text-content">
-                Die <span class="tooltip-term">Dolchstoßlegende<span class="tooltip">Falsche Behauptung, das deutsche Heer sei im Ersten Weltkrieg nicht militärisch besiegt, sondern von der "Heimatfront" (Demokraten, Sozialisten, Juden) verraten worden.</span></span> behauptete, das deutsche Heer sei im Ersten Weltkrieg nicht militärisch besiegt worden, sondern von der "Heimatfront" verraten worden. Diese Legende vergiftete das politische Klima der Weimarer Republik.
+                Die Dolchstoßlegende behauptete, das deutsche Heer sei im Ersten Weltkrieg nicht militärisch besiegt worden, sondern von der "Heimatfront" verraten worden. Diese Legende vergiftete das politische Klima der Weimarer Republik.
             </div>
 
             <div class="info-box">
                 <strong>Entstehung und Verbreitung:</strong>
                 <ul>
-                    <li>Ursprung bei der deutschen Militärführung (<span class="tooltip-term">Hindenburg<span class="tooltip">Paul von Hindenburg, deutscher Generalfeldmarschall im Ersten Weltkrieg und später Reichspräsident, der die Dolchstoßlegende verbreitete.</span></span>, Ludendorff)</li>
+                    <li>Ursprung bei der deutschen Militärführung (Hindenburg, Ludendorff)</li>
                     <li>Verantwortung für die Niederlage wurde abgeschoben</li>
                     <li>Demokraten, Sozialisten und Juden wurden als "Verräter" diffamiert</li>
                     <li>Grundlage für spätere NS-Propaganda</li>
@@ -871,7 +863,7 @@
             <h3 class="subsection-title">8.6 Krisenjahr 1923</h3>
             
             <div class="text-content">
-                Das Jahr 1923 war geprägt von multiplen Krisen: der <span class="tooltip-term">Ruhrbesetzung<span class="tooltip">Besetzung des Ruhrgebiets durch französische und belgische Truppen als Reaktion auf deutsche Reparationsrückstände.</span></span>, der <span class="tooltip-term">Hyperinflation<span class="tooltip">Extrem hohe Inflation, bei der das Geld fast wertlos wurde - ein Brot kostete am Ende Milliarden von Mark.</span></span> und separatistischen Bewegungen. Die Republik stand am Rande des Zusammenbruchs.
+                Das Jahr 1923 war geprägt von multiplen Krisen: der Ruhrbesetzung, der Hyperinflation und separatistischen Bewegungen. Die Republik stand am Rande des Zusammenbruchs.
             </div>
 
             <div class="timeline">
@@ -885,11 +877,11 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">8./9. November 1923</div>
-                    <div class="timeline-event"><span class="tooltip-term">Hitler-Ludendorff-Putsch<span class="tooltip">Gescheiterter Putschversuch der NSDAP in München, bei dem Hitler erstmals überregional bekannt wurde.</span></span> in München</div>
+                    <div class="timeline-event">Hitler-Ludendorff-Putsch in München</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">November 1923</div>
-                    <div class="timeline-event">Währungsreform - Einführung der <span class="tooltip-term">Rentenmark<span class="tooltip">Neue Währung, die die wertlose Papiermark ersetzte und durch Grund und Boden gedeckt war, um das Vertrauen wiederherzustellen.</span></span></div>
+                    <div class="timeline-event">Währungsreform - Einführung der Rentenmark</div>
                 </div>
             </div>
 
@@ -909,20 +901,20 @@
             <h3 class="subsection-title">8.7 Die 1920er-Jahre – moderne Strömungen in Kultur und Gesellschaft</h3>
             
             <div class="text-content">
-                Die "<span class="tooltip-term">Goldenen Zwanziger<span class="tooltip">Bezeichnung für die Zeit relativer Stabilität und kultureller Blüte in der Weimarer Republik von 1924-1929, geprägt von wirtschaftlichem Aufschwung und kultureller Moderne.</span></span>" waren eine Zeit des kulturellen Aufbruchs und der gesellschaftlichen Modernisierung. Berlin wurde zum kulturellen Zentrum Europas.
+                Die "Goldenen Zwanziger" waren eine Zeit des kulturellen Aufbruchs und der gesellschaftlichen Modernisierung. Berlin wurde zum kulturellen Zentrum Europas.
             </div>
 
             <div class="key-concepts">
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Neue Sachlichkeit<span class="tooltip">Kunstrichtung der 1920er Jahre, die sich durch nüchterne, realistische Darstellung und Ablehnung von Romantik und Expressionismus auszeichnete.</span></span></div>
+                    <div class="concept-title">Neue Sachlichkeit</div>
                     <div>Kunstrichtung, die sich durch nüchterne, realistische Darstellung auszeichnete</div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Bauhaus<span class="tooltip">Einflussreiche Kunstschule (1919-1933), die Kunst, Handwerk und Industrie verbinden wollte und das moderne Design prägte.</span></span></div>
+                    <div class="concept-title">Bauhaus</div>
                     <div>Kunstschule, die Kunst, Handwerk und Industrie verbinden wollte</div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Neue Frau<span class="tooltip">Bezeichnung für das neue Frauenbild der 1920er Jahre: berufstätig, selbstständig, modern gekleidet und emanzipiert.</span></span></div>
+                    <div class="concept-title">Neue Frau</div>
                     <div>Emanzipierte Frauen mit neuen Lebensentwürfen und Berufstätigkeit</div>
                 </div>
                 <div class="concept-card">
@@ -937,6 +929,8 @@
                 Die Weimarer Republik verfolgte eine Politik der schrittweisen Revision des Versailler Vertrags und der Wiedererlangung der Gleichberechtigung auf internationaler Ebene.
             </div>
 
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
             <table>
                 <tr>
                     <th>Jahr</th>
@@ -945,7 +939,7 @@
                 </tr>
                 <tr>
                     <td>1922</td>
-                    <td><span class="tooltip-term">Vertrag von Rapallo<span class="tooltip">Überraschender Vertrag zwischen Deutschland und der Sowjetunion, der beide aus der internationalen Isolation führte und geheime militärische Zusammenarbeit ermöglichte.</span></span></td>
+                    <td>Vertrag von Rapallo</td>
                     <td>Normalisierung der Beziehungen zur Sowjetunion</td>
                 </tr>
                 <tr>
@@ -955,20 +949,21 @@
                 </tr>
                 <tr>
                     <td>1926</td>
-                    <td><span class="tooltip-term">Berliner Vertrag<span class="tooltip">Neutralitätsabkommen zwischen Deutschland und der Sowjetunion, das die Beziehungen aus dem Rapallo-Vertrag erneuerte.</span></span></td>
+                    <td>Berliner Vertrag</td>
                     <td>Neutralitätsabkommen mit der Sowjetunion</td>
                 </tr>
                 <tr>
                     <td>1928</td>
-                    <td><span class="tooltip-term">Briand-Kellogg-Pakt<span class="tooltip">Internationaler Vertrag zur Ächtung des Krieges als Mittel der Politik, dem auch Deutschland beitrat.</span></span></td>
+                    <td>Briand-Kellogg-Pakt</td>
                     <td>Ächtung des Krieges als Mittel der Politik</td>
                 </tr>
             </table>
+            </div>
 
             <h3 class="subsection-title">8.9 Das Scheitern der Weimarer Republik</h3>
             
             <div class="text-content">
-                Die <span class="tooltip-term">Weltwirtschaftskrise<span class="tooltip">Globale Wirtschaftskrise ab 1929, ausgelöst durch den Börsencrash in New York, die zu Massenarbeitslosigkeit und politischer Radikalisierung führte.</span></span> ab 1929 leitete das Ende der Weimarer Republik ein. Massenarbeitslosigkeit, politische Radikalisierung und das Versagen der demokratischen Kräfte ebneten den Weg für die NS-Diktatur.
+                Die Weltwirtschaftskrise ab 1929 leitete das Ende der Weimarer Republik ein. Massenarbeitslosigkeit, politische Radikalisierung und das Versagen der demokratischen Kräfte ebneten den Weg für die NS-Diktatur.
             </div>
 
             <div class="warning-box">
@@ -976,7 +971,7 @@
                 <ul>
                     <li><strong>Strukturelle Schwächen:</strong> Verfassungsmängel, fehlende demokratische Tradition</li>
                     <li><strong>Wirtschaftliche Krisen:</strong> Inflation 1923, Weltwirtschaftskrise ab 1929</li>
-                    <li><strong>Politische Radikalisierung:</strong> Erstarken von <span class="tooltip-term">NSDAP<span class="tooltip">Nationalsozialistische Deutsche Arbeiterpartei - Hitlers Partei, die ab 1930 stark an Stimmen gewann.</span></span> und <span class="tooltip-term">KPD<span class="tooltip">Kommunistische Partei Deutschlands, die die Weimarer Demokratie als "bürgerliche" Herrschaft ablehnte und bekämpfte.</span></span></li>
+                    <li><strong>Politische Radikalisierung:</strong> Erstarken von NSDAP und KPD</li>
                     <li><strong>Antidemokratische Eliten:</strong> Konservative unterschätzten Hitler</li>
                     <li><strong>Zersplitterung der Demokraten:</strong> SPD und bürgerliche Parteien fanden nicht zusammen</li>
                 </ul>
@@ -985,15 +980,15 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">Oktober 1929</div>
-                    <div class="timeline-event"><span class="tooltip-term">Schwarzer Donnerstag<span class="tooltip">Börsencrash an der New Yorker Wall Street am 24. Oktober 1929, der die Weltwirtschaftskrise auslöste.</span></span> - Beginn der Weltwirtschaftskrise</div>
+                    <div class="timeline-event">Schwarzer Donnerstag - Beginn der Weltwirtschaftskrise</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">März 1930</div>
-                    <div class="timeline-event">Bruch der <span class="tooltip-term">Großen Koalition<span class="tooltip">Regierungskoalition aus SPD, Zentrum, DDP und DVP unter Reichskanzler Hermann Müller, die an der Finanzierung der Arbeitslosenversicherung zerbrach.</span></span> unter Hermann Müller</div>
+                    <div class="timeline-event">Bruch der Großen Koalition unter Hermann Müller</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1930-1932</div>
-                    <div class="timeline-event"><span class="tooltip-term">Präsidialkabinette<span class="tooltip">Regierungen, die sich hauptsächlich auf die Vollmachten des Reichspräsidenten stützten und nicht mehr vom Parlament getragen wurden.</span></span> Brüning, Papen, Schleicher</div>
+                    <div class="timeline-event">Präsidialkabinette Brüning, Papen, Schleicher</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">30. Januar 1933</div>
@@ -1002,34 +997,34 @@
             </div>
         </div>
 
-        <!-- Kapitel 9: Nationalsozialistische Diktatur -->
+        <!-- Kapitel 9: Nationalsozialistische Diktatur - ERWEITERT MIT PDF-INHALTEN -->
         <div class="content-section">
             <h2 class="section-title">9. Nationalsozialistische Diktatur 1933–1945</h2>
             
             <div class="text-content">
-                Die <span class="tooltip-term">nationalsozialistische Herrschaft<span class="tooltip">Totalitäre Diktatur unter Adolf Hitler von 1933-1945, geprägt von Rassismus, Krieg und Völkermord.</span></span> von 1933 bis 1945 stellt einen der dunkelsten Abschnitte der deutschen Geschichte dar. Die NS-Diktatur war geprägt von totalitärer Herrschaft, Rassismus, Krieg und Völkermord.
+                Die nationalsozialistische Herrschaft von 1933 bis 1945 stellt einen der dunkelsten Abschnitte der deutschen Geschichte dar. Die NS-Diktatur war geprägt von totalitärer Herrschaft, Rassismus, Krieg und Völkermord.
             </div>
 
             <h3 class="subsection-title">9.1 Ideologische Grundlagen des Nationalsozialismus</h3>
             
             <div class="text-content">
-                Die <span class="tooltip-term">NS-Ideologie<span class="tooltip">Wirres Gedankengebäude aus Rassismus, Antisemitismus, Nationalismus und Führerkult, das als Legitimation für Diktatur und Völkermord diente.</span></span> war ein Konglomerat verschiedener Elemente, das sich nicht durch Konsistenz, sondern durch seine mobilisierende Wirkung auszeichnete.
+                Die NS-Ideologie war ein Konglomerat verschiedener Elemente, das sich nicht durch Konsistenz, sondern durch seine mobilisierende Wirkung auszeichnete.
             </div>
 
             <div class="key-concepts">
                 <div class="concept-card">
-                    <div class="concept-title">Rassismus und <span class="tooltip-term">Antisemitismus<span class="tooltip">Feindschaft gegen Juden, die im Nationalsozialismus zur staatlichen Politik wurde und im Holocaust gipfelte.</span></span></div>
+                    <div class="concept-title">Rassismus und Antisemitismus</div>
                     <div>
                         <ul>
-                            <li>Lehre von der "<span class="tooltip-term">Herrenrasse<span class="tooltip">NS-Behauptung, die "arische Rasse" sei anderen überlegen und zum Herrschen bestimmt - pseudowissenschaftlicher Rassismus ohne jede Grundlage.</span></span>"</li>
+                            <li>Lehre von der "Herrenrasse"</li>
                             <li>Antisemitismus als zentrale Komponente</li>
-                            <li><span class="tooltip-term">Eugenik<span class="tooltip">Rassenlehre, die durch selektive "Züchtung" Menschen "verbessern" wollte - führte zu Zwangssterilisationen und "Euthanasie".</span></span> und "Rassenhygiene"</li>
-                            <li><span class="tooltip-term">Lebensraum-Ideologie<span class="tooltip">NS-Konzept, das Deutschland das Recht auf Expansion nach Osten zusprach, um "Lebensraum" für das deutsche Volk zu erobern.</span></span></li>
+                            <li>Eugenik und "Rassenhygiene"</li>
+                            <li>Lebensraum-Ideologie</li>
                         </ul>
                     </div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Führerprinzip<span class="tooltip">Hierarchisches Ordnungsprinzip, das absolute Autorität an der Spitze (Hitler) vorsah und demokratische Entscheidungsfindung ablehnte.</span></span></div>
+                    <div class="concept-title">Führerprinzip</div>
                     <div>
                         <ul>
                             <li>Absolute Führungsautorität</li>
@@ -1040,7 +1035,7 @@
                     </div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Volksgemeinschaft<span class="tooltip">NS-Propagandabegriff für eine idealisierte Gesellschaft ohne Klassengegensätze, die aber auf Ausgrenzung und Rassismus basierte.</span></span></div>
+                    <div class="concept-title">Volksgemeinschaft</div>
                     <div>
                         <ul>
                             <li>Idealisierte Gesellschaftsordnung</li>
@@ -1072,19 +1067,19 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">30. Januar 1933</div>
-                    <div class="timeline-event">Hitler wird Reichskanzler einer <span class="tooltip-term">Koalitionsregierung<span class="tooltip">Regierung aus NSDAP und konservativen Partnern - die Konservativen hofften, Hitler "einrahmen" und kontrollieren zu können.</span></span></div>
+                    <div class="timeline-event">Hitler wird Reichskanzler einer Koalitionsregierung</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">27. Februar 1933</div>
-                    <div class="timeline-event"><span class="tooltip-term">Reichstagsbrand<span class="tooltip">Brand im Reichstagsgebäude, den die Nazis als Vorwand für Massenverhaftungen und die Außerkraftsetzung von Grundrechten nutzten.</span></span> - Notverordnung zum Schutz von Volk und Staat</div>
+                    <div class="timeline-event">Reichstagsbrand - Notverordnung zum Schutz von Volk und Staat</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">23. März 1933</div>
-                    <div class="timeline-event"><span class="tooltip-term">Ermächtigungsgesetz<span class="tooltip">Gesetz, das der Regierung erlaubte, ohne Parlament und Reichsrat Gesetze zu erlassen - faktisches Ende der Demokratie.</span></span> - Ende der parlamentarischen Demokratie</div>
+                    <div class="timeline-event">Ermächtigungsgesetz - Ende der parlamentarischen Demokratie</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">2. Mai 1933</div>
-                    <div class="timeline-event">Zerschlagung der <span class="tooltip-term">Gewerkschaften<span class="tooltip">Gleichschaltung der Arbeiterbewegung - Gewerkschaften wurden verboten und durch die Deutsche Arbeitsfront (DAF) ersetzt.</span></span></div>
+                    <div class="timeline-event">Zerschlagung der Gewerkschaften</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">14. Juli 1933</div>
@@ -1096,12 +1091,116 @@
                 <strong>Das Ermächtigungsgesetz:</strong> Mit 444 gegen 94 Stimmen verabschiedet, ermöglichte es der Regierung, Gesetze ohne Zustimmung des Reichstags zu erlassen. Es war der entscheidende Schritt zur Diktatur.
             </div>
 
-            <h3 class="subsection-title">9.3 Herrschaftspraxis – wie sicherte das NS-Regime seine Macht?</h3>
+            <h3 class="subsection-title">9.3 Herrschaftspraxis – wie sicherte das NS-Regime seine Macht? (ERWEITERT)</h3>
             
             <div class="text-content">
-                Das NS-Regime etablierte ein System <span class="tooltip-term">totaler Herrschaft<span class="tooltip">Vollständige Kontrolle aller Lebensbereiche durch den Staat - charakteristisch für totalitäre Diktaturen.</span></span>, das alle Lebensbereiche durchdrang und verschiedene Herrschaftsinstrumente kombinierte.
+                Das NS-Regime etablierte ein System totaler Herrschaft, das alle Lebensbereiche durchdrang und verschiedene Herrschaftsinstrumente kombinierte.
             </div>
 
+            <h4 class="subsubsection-title">NS-Propaganda im Detail (NEU AUS PDF)</h4>
+            
+            <div class="info-box">
+                <strong>Definition Propaganda:</strong> Gezielte Verbreitung von Informationen, Ideen oder Meinungen, um die Einstellungen und das Verhalten einer Zielgruppe zu beeinflussen. Im Nationalsozialismus diente sie zur Verbreitung der NS-Ideologie, zur Indoktrination der Bevölkerung und zur Machtfestigung des Regimes.
+            </div>
+
+            <h5 style="font-weight: bold; margin-top: 20px;">Ziele der NS-Propaganda:</h5>
+            <ul>
+                <li><strong>Ideologische Indoktrination:</strong> Verbreitung der nationalsozialistischen Weltanschauung, einschließlich Rassismus, Antisemitismus und Führerkult</li>
+                <li><strong>Mobilisierung der Bevölkerung:</strong> Schaffung von Unterstützung für das Regime und seine Ziele, z.B. durch Kriegspropaganda</li>
+                <li><strong>Gleichschaltung der Meinung:</strong> Unterdrückung abweichender Meinungen und Schaffung einer scheinbaren Einheitlichkeit in der Gesellschaft</li>
+                <li><strong>Feindbilder schaffen:</strong> Dämonisierung von Gegnern wie Juden, Kommunisten oder anderen Staaten</li>
+            </ul>
+
+            <h5 style="font-weight: bold; margin-top: 20px;">Mittel und Umsetzung der Propaganda:</h5>
+            
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Medium</th>
+                    <th>Beschreibung</th>
+                    <th>Wirkung</th>
+                </tr>
+                <tr>
+                    <td><strong>Radio ("Volksempfänger")</strong></td>
+                    <td>Preisgünstiges Radiogerät, gezielt für die Massenverbreitung von NS-Botschaften eingesetzt</td>
+                    <td>Direkter Zugang in Millionen Haushalte für Reden und Propaganda</td>
+                </tr>
+                <tr>
+                    <td><strong>Presse</strong></td>
+                    <td>Kontrolle aller Zeitungen und Zeitschriften durch das Reichsministerium für Volksaufklärung und Propaganda unter Joseph Goebbels</td>
+                    <td>Einheitliche Berichterstattung im Sinne des Regimes</td>
+                </tr>
+                <tr>
+                    <td><strong>Film</strong></td>
+                    <td>Produktion von Propagandafilmen wie "Der ewige Jude" oder "Triumph des Willens" von Leni Riefenstahl</td>
+                    <td>Emotionale Manipulation durch visuelle Darstellungen</td>
+                </tr>
+                <tr>
+                    <td><strong>Massensuggestion</strong></td>
+                    <td>Großveranstaltungen wie Reichsparteitage mit Inszenierung und Symbolik zur Machtdemonstration</td>
+                    <td>Gemeinschaftsgefühl und Identifikation mit dem Regime</td>
+                </tr>
+                <tr>
+                    <td><strong>Plakate & Flugblätter</strong></td>
+                    <td>Einfache, emotionale Botschaften im öffentlichen Raum</td>
+                    <td>Ständige Präsenz der NS-Ideologie im Alltag</td>
+                </tr>
+            </table>
+            </div>
+
+            <h4 class="subsubsection-title">Das NS-Polizei- und Verfolgungssystem (NEU AUS PDF)</h4>
+            
+            <div class="warning-box">
+                <div class="warning-title">Entwicklung der politischen Polizei unter Himmler:</div>
+                <p><strong>Im Juni 1936</strong> gelang es Heinrich Himmler, die Führung der gesamten deutschen Polizei zu übernehmen. Die politische Polizei wurde unter einheitlicher Leitung zusammengefasst. <strong>Himmler vereinte in seiner Person SS, Politische Polizei und Konzentrationslager</strong> – das siegreiche Modell im Machtkampf innerhalb der NS-Führung.</p>
+                <p>Im April 1936 wurde Himmler zum Inspekteur der preußischen Gestapo ernannt. Die Polizei wurde aus der bisherigen Struktur der inneren Verwaltung herausgelöst und in einem Hauptamt Sicherheitspolizei zusammengefasst, wodurch die Kontrolle über den Polizeiapparat komplett in NS-Hand war.</p>
+            </div>
+
+            <h5 style="font-weight: bold; margin-top: 20px;">"Rassische Generalprävention"</h5>
+            
+            <div class="info-box">
+                <strong>Ideologische Grundlage:</strong> Der Historiker Ulrich Herbert beschrieb die NS-Idee: "Die Polizei hat das deutsche Volk als organisches Gesamtwesen, seine Lebenskraft und seine Einrichtungen gegen Zerstörungen und Zersetzung zu sichern."
+                <p style="margin-top: 10px;">Dies führte zur systematischen Verfolgung von Menschen, die nicht in die "Volksgemeinschaft" passten: "Asoziale", Homosexuelle, Roma und Sinti, politische Gegner wurden nach rassistischen Kriterien verfolgt und interniert.</p>
+            </div>
+
+            <h5 style="font-weight: bold; margin-top: 20px;">Errichtung der Konzentrationslager (NEU AUS PDF)</h5>
+            
+            <div class="text-content">
+                Himmler ließ alle bisherigen kleinen Schutzhaftlager auflösen und dafür neue, große Konzentrationslager errichten. Die Lager wurden nach rasssenbiologischen Kriterien gefüllt, nicht mehr primär nach politischer Gesinnung:
+            </div>
+
+            <ul>
+                <li><strong>1936: KZ Sachsenhausen</strong> bei Berlin als "Schutzhaftlager" errichtet</li>
+                <li><strong>1937: KZ Buchenwald</strong> nahe Weimar im Kontext der Gleichschaltung</li>
+                <li><strong>1938: KZ Neuengamme und Mauthausen</strong> nach dem "Anschluss" Österreichs</li>
+                <li><strong>1938: Frauenkonzentrationslager Ravensbrück</strong></li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>Im Oktober 1936</strong> wurde eine zentrale Stelle im Reichskriminalpolizeiamt zur <strong>"Bekämpfung der Homosexualität und der Abtreibung"</strong> eingerichtet. 
+                <p style="margin-top: 10px;"><strong>Im März 1937</strong> verhaftete die Kriminalpolizei etwa 2.000 sogenannte "Berufs-", "Gewohnheits-" und "Sittlichkeitsverbrecher" und sperrte sie in Dachau, Sachsenhausen und Buchenwald ein.</p>
+            </div>
+
+            <h4 class="subsubsection-title">Zwangssterilisation (NEU AUS PDF)</h4>
+            
+            <div class="text-content">
+                Am 14. Juli 1933 erließ das NS-Regime das <strong>Gesetz zur "Verhütung erbkranken Nachwuchses"</strong>.
+            </div>
+
+            <div class="highlight-box">
+                <strong>Paragraph 1:</strong> "Wer erbkrank ist, kann durch chirurgischen Eingriff unfruchtbar gemacht (sterilisiert) werden, wenn nach den Erfahrungen der ärztlichen Wissenschaft mit großer Wahrscheinlichkeit zu erwarten ist, dass seine Nachkommen an schweren körperlichen oder geistigen Erbschäden leiden werden."
+                <p style="margin-top: 10px;">Als Erbkrankheiten nannte das Gesetz: "angeborenen Schwachsinn", Schizophrenie, zirkuläres Irresein, erbliche Fallsucht, erblichen Veitstanz, erbliche Blindheit, erbliche Taubheit, schwere erbliche körperliche Missbildung und schweren Alkoholismus.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Umsetzung und Folgen:</div>
+                <p>Über die Sterilisation entschieden neu eingerichtete <strong>Erbgesundheitsgerichte</strong>, zusammengesetzt aus einem Richter, einem beamteten Arzt und einem Arzt mit der "Erbgesundheitslehre besonders vertraut".</p>
+                <p style="margin-top: 10px;"><strong>Zwischen 1934 und 1945 wurden etwa 300.000 bis 400.000 Menschen zwangssterilisiert.</strong></p>
+            </div>
+
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
             <table>
                 <tr>
                     <th>Herrschaftsinstrument</th>
@@ -1110,29 +1209,30 @@
                 </tr>
                 <tr>
                     <td>Terror und Repression</td>
-                    <td><span class="tooltip-term">SS<span class="tooltip">Schutzstaffel - Hitlers Elitetruppe, die zu einer mächtigen Organisation mit eigenen Konzentrationslagern wurde.</span></span>, <span class="tooltip-term">Gestapo<span class="tooltip">Geheime Staatspolizei - politische Polizei des NS-Staates, die Opposition verfolgte und überwachte.</span></span>, <span class="tooltip-term">Konzentrationslager<span class="tooltip">Lager zur Inhaftierung politischer Gegner und später zur systematischen Ermordung von Juden und anderen Opfergruppen.</span></span></td>
+                    <td>SS, Gestapo, Konzentrationslager</td>
                     <td>Überwachung, Verhaftungen, Gewalt</td>
                 </tr>
                 <tr>
-                    <td><span class="tooltip-term">Propaganda<span class="tooltip">Systematische Beeinflussung der öffentlichen Meinung durch das Reichspropagandaministerium unter Joseph Goebbels.</span></span></td>
+                    <td>Propaganda</td>
                     <td>Reichspropagandaministerium, Medien</td>
                     <td>Massenveranstaltungen, Filme, Radio</td>
                 </tr>
                 <tr>
-                    <td><span class="tooltip-term">Gleichschaltung<span class="tooltip">Zwangsweise Eingliederung aller gesellschaftlichen Organisationen in das NS-System oder deren Auflösung.</span></span></td>
+                    <td>Gleichschaltung</td>
                     <td>Partei, Verwaltung</td>
                     <td>Einbindung aller Organisationen</td>
                 </tr>
                 <tr>
                     <td>Soziale Integration</td>
-                    <td><span class="tooltip-term">DAF<span class="tooltip">Deutsche Arbeitsfront - NS-Ersatz für die Gewerkschaften, kontrollierte die Arbeitnehmer.</span></span>, <span class="tooltip-term">KdF<span class="tooltip">"Kraft durch Freude" - NS-Organisation für Freizeit und Urlaub, sollte die Arbeiter an das Regime binden.</span></span>, <span class="tooltip-term">HJ<span class="tooltip">Hitlerjugend - Jugendorganisation der NSDAP zur ideologischen Erziehung der Jugend.</span></span></td>
+                    <td>DAF, KdF, HJ</td>
                     <td>Freizeitgestaltung, Gemeinschaftserlebnisse</td>
                 </tr>
             </table>
+            </div>
 
             <div class="method-box">
-                <div class="method-title">Methode: Videoanalyse Zeitzeugeninterview</div>
-                <p><span class="tooltip-term">Zeitzeugeninterviews<span class="tooltip">Interviews mit Menschen, die historische Ereignisse persönlich erlebt haben - wichtige, aber subjektive Quellen.</span></span> sind wichtige Quellen für die NS-Zeit, müssen aber kritisch betrachtet werden:</p>
+                <div class="method-title">Methode: Videoanalyse Zeitzeugeninterview (NEU)</div>
+                <p>Zeitzeugeninterviews sind wichtige Quellen für die NS-Zeit, müssen aber kritisch betrachtet werden:</p>
                 
                 <h4>Analyseschritte:</h4>
                 <ol>
@@ -1144,27 +1244,134 @@
                 </ol>
             </div>
 
-            <h3 class="subsection-title">9.4 Nationalsozialistische "Rassenpolitik"</h3>
+            <h3 class="subsection-title">9.4 Nationalsozialistische "Rassenpolitik" (ERWEITERT MIT PDF)</h3>
             
             <div class="text-content">
-                Die NS-"<span class="tooltip-term">Rassenpolitik<span class="tooltip">Systematische Verfolgung und Ermordung von Menschen aufgrund ihrer Herkunft - der Begriff "Rasse" ist wissenschaftlich widerlegt.</span></span>" war ein zentraler Bestandteil der nationalsozialistischen Ideologie und führte zu systematischer Verfolgung und Ermordung von Millionen Menschen.
+                Die NS-"Rassenpolitik" war ein zentraler Bestandteil der nationalsozialistischen Ideologie und führte zu systematischer Verfolgung und Ermordung von Millionen Menschen.
+            </div>
+
+            <h4 class="subsubsection-title">Die Nürnberger Gesetze (15. September 1935) (NEU AUS PDF)</h4>
+            
+            <div class="warning-box">
+                <div class="warning-title">Reichsbürgergesetz vom 15. September 1935:</div>
+                <p><strong>§ 1:</strong> Staatsangehöriger ist, wer dem Schutzverband des Deutschen Reiches angehört und ihm dafür besonders verpflichtet ist.</p>
+                <p style="margin-top: 10px;"><strong>§ 2:</strong> <strong>Reichsbürger ist nur der Staatsangehörige deutschen oder artverwandten Blutes</strong>, der durch sein Verhalten beweist, dass er gewillt und geeignet ist, in Treue dem deutschen Volk und Reich zu dienen. Der Reichsbürger ist der alleinige Träger der vollen politischen Rechte nach Maßgabe der Gesetze.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Gesetz zum Schutze des deutschen Blutes und der deutschen Ehre (15. September 1935):</div>
+                <p><strong>§ 1:</strong> <strong>Eheschließungen zwischen Juden und Staatsangehörigen deutschen oder artverwandten Blutes sind verboten.</strong> Trotzdem geschlossene Ehen sind nichtig, auch wenn sie zur Umgehung dieses Gesetzes im Ausland geschlossen sind.</p>
+                <p style="margin-top: 10px;"><strong>§ 2:</strong> Außerehelicher Verkehr zwischen Juden und Staatsangehörigen deutschen oder artverwandten Blutes ist verboten.</p>
+                <p style="margin-top: 10px;"><strong>§ 3:</strong> Juden dürfen weibliche Staatsangehörige deutschen oder artverwandten Blutes unter 45 Jahren nicht in ihrem Haushalt beschäftigen.</p>
+            </div>
+
+            <h4 class="subsubsection-title">Systematische Ausgrenzung im Alltag (NEU AUS PDF)</h4>
+            
+            <div class="text-content">
+                Neben den großen Gesetzen gab es hunderte von Einzelverordnungen, die das Leben von Juden in Deutschland zunehmend unmöglich machten:
+            </div>
+
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Lebensbereich</th>
+                    <th>Einschränkung</th>
+                    <th>Jahr</th>
+                </tr>
+                <tr>
+                    <td>Mobilität</td>
+                    <td>Juden müssen ihre Führerscheine abgeben</td>
+                    <td>1938</td>
+                </tr>
+                <tr>
+                    <td>Mobilität</td>
+                    <td>Juden dürfen keine Zeltplätze benutzen</td>
+                    <td>1938</td>
+                </tr>
+                <tr>
+                    <td>Mobilität</td>
+                    <td>Juden dürfen in Zügen nur in besonderen Abteilen sitzen</td>
+                    <td>1938</td>
+                </tr>
+                <tr>
+                    <td>Wirtschaft</td>
+                    <td>Juden erhalten keine Kredite von der Bank mehr</td>
+                    <td>1938</td>
+                </tr>
+                <tr>
+                    <td>Wirtschaft</td>
+                    <td>Juden dürfen keine Geschäfte besitzen und kein Handwerk betreiben</td>
+                    <td>1938</td>
+                </tr>
+                <tr>
+                    <td>Wirtschaft</td>
+                    <td>Berufsverbot für jüdische Schauspieler, Musiker und Schriftsteller</td>
+                    <td>1934/35</td>
+                </tr>
+                <tr>
+                    <td>Freizeit</td>
+                    <td>Juden ist der Besuch von Theatern, Kinos, Konzerten verboten</td>
+                    <td>1938</td>
+                </tr>
+                <tr>
+                    <td>Freizeit</td>
+                    <td>Die Erteilung von Musikunterricht an jüdische Schüler wird untersagt</td>
+                    <td>1938</td>
+                </tr>
+                <tr>
+                    <td>Soziale Eingrenzung</td>
+                    <td>Heiraten zwischen Juden und Nichtjuden sind verboten</td>
+                    <td>1935</td>
+                </tr>
+                <tr>
+                    <td>Kommunikation</td>
+                    <td>Jüdische Familien erhalten kein Kindergeld</td>
+                    <td>1936</td>
+                </tr>
+            </table>
+            </div>
+
+            <h4 class="subsubsection-title">Reichspogromnacht (9./10. November 1938) (NEU AUS PDF)</h4>
+            
+            <div class="highlight-box">
+                <strong>Schlüsselereignis:</strong> Am 7. November 1938 wurde in Paris ein Attentat auf einen deutschen Diplomaten verübt. Dies nahmen die Nationalsozialisten zum Anlass für orchestrierte Gewalt gegen Juden.
+                <p style="margin-top: 10px;">Daraufhin <strong>zerstörten, plünderten und zündeten die Anhänger Hitlers Synagogen an und deportierten Juden in Konzentrationslager.</strong> Die Reichspogromnacht stellt ein Schlüsselereignis in der NS-Diktatur dar, da es das erste deutliche Zeichen der "Gleichschaltung" war: Die "Arier" sollten sich von den vermeintlich minderwertigen und verbrecherischen "Rassen" wie den Juden trennen.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Bedeutung:</div>
+                Dies zeigt die fortschreitende Handlungsbereitschaft Hitlers und seiner Anhänger zur systematischen Verfolgung und später Vernichtung der jüdischen Bevölkerung. Diese Staatsform zeigt deutliche Freiheitseinschränkungen des jüdischen Volkes auf. Das ist ein Versuch, Verbrechen zu legalisieren und zu legitimieren und die restliche Masse gegen die Juden aufzubringen.
             </div>
 
             <div class="warning-box">
                 <div class="warning-title">Stufen der Verfolgung:</div>
                 <ol>
                     <li><strong>Ausgrenzung (1933-1935):</strong> Boykotte, Berufsverbote</li>
-                    <li><strong>Entrechtung (1935-1938):</strong> <span class="tooltip-term">Nürnberger Gesetze<span class="tooltip">Rassengesetze von 1935, die Juden zu Bürgern zweiter Klasse machten und Eheschließungen zwischen Juden und "Ariern" verboten.</span></span></li>
-                    <li><strong>Vertreibung (1938-1941):</strong> <span class="tooltip-term">Reichspogromnacht<span class="tooltip">Organisierte Gewalt gegen Juden am 9./10. November 1938 - Synagogen wurden angezündet, Geschäfte zerstört, Menschen verhaftet.</span></span>, Emigration</li>
-                    <li><strong>Ghettoisierung (1939-1942):</strong> Deportation in <span class="tooltip-term">Ghettos<span class="tooltip">Abgeschlossene Stadtteile, in denen Juden unter erbärmlichen Bedingungen leben mussten, bevor sie in Vernichtungslager deportiert wurden.</span></span></li>
+                    <li><strong>Entrechtung (1935-1938):</strong> Nürnberger Gesetze</li>
+                    <li><strong>Vertreibung (1938-1941):</strong> Reichspogromnacht, Emigration</li>
+                    <li><strong>Ghettoisierung (1939-1942):</strong> Deportation in Ghettos</li>
                     <li><strong>Vernichtung (1942-1945):</strong> Systematischer Völkermord</li>
                 </ol>
             </div>
 
-            <h3 class="subsection-title">9.5 Hitlers Außenpolitik – eine Doppelstrategie?</h3>
+            <h3 class="subsection-title">9.5 Hitlers Außenpolitik – eine Doppelstrategie? (ERWEITERT)</h3>
             
             <div class="text-content">
                 Hitlers Außenpolitik verfolgte von Anfang an aggressive Ziele: die Revision von Versailles, die Schaffung von "Lebensraum" und die Errichtung einer deutschen Hegemonie in Europa.
+            </div>
+
+            <div class="info-box">
+                <strong>Begriffserklärungen (NEU):</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Annexion:</strong> Gewaltsame und widerrechtliche Aneignung eines fremden Gebietes</li>
+                    <li><strong>Hegemonie:</strong> Dominanz oder Vorherrschaft eines Staates über andere Staaten</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Frühe Warnsignale (1933) (NEU AUS PDF):</div>
+                Schon im Jahr 1933 ahnte die USA durch Hitlers "Friedensrede", dass er etwas im Schilde führte: Er wollte Rüstungskontrollen umgehen und kollektive Friedenssicherung ablehnen. Die westlichen Demokratien unterschätzten jedoch lange die tatsächliche Gefahr.
             </div>
 
             <div class="timeline">
@@ -1174,15 +1381,15 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1935</div>
-                    <div class="timeline-event">Wiedereinführung der <span class="tooltip-term">Wehrpflicht<span class="tooltip">Bruch des Versailler Vertrags - Deutschland begann offen aufzurüsten.</span></span></div>
+                    <div class="timeline-event">Wiedereinführung der Wehrpflicht</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1936</div>
-                    <div class="timeline-event"><span class="tooltip-term">Remilitarisierung des Rheinlands<span class="tooltip">Einmarsch deutscher Truppen ins entmilitarisierte Rheinland - weiterer Bruch von Versailles, der ungestraft blieb.</span></span></div>
+                    <div class="timeline-event">Remilitarisierung des Rheinlands</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1938</div>
-                    <div class="timeline-event">"<span class="tooltip-term">Anschluss<span class="tooltip">Eingliederung Österreichs ins Deutsche Reich - von Nazis als "Heimkehr" propagiert, war aber ein Akt der Aggression.</span></span>" Österreichs, <span class="tooltip-term">Sudetenkrise<span class="tooltip">Konflikt um die deutschsprachigen Gebiete der Tschechoslowakei, der mit dem Münchener Abkommen "gelöst" wurde.</span></span></div>
+                    <div class="timeline-event">"Anschluss" Österreichs, Sudetenkrise</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">1939</div>
@@ -1190,85 +1397,196 @@
                 </div>
             </div>
 
-            <h3 class="subsection-title">9.6 Der Zweite Weltkrieg</h3>
+            <h3 class="subsection-title">9.6 Der Zweite Weltkrieg (ERWEITERT)</h3>
 
-<div class="text-content">
-    Der von Deutschland ausgelöste <span class="tooltip-term">Zweite Weltkrieg<span class="tooltip">Globaler Krieg von 1939-1945, der über 50 Millionen Todesopfer forderte und weite Teile Europas und Asiens verwüstete.</span></span> kostete über 50 Millionen Menschen das Leben und verwüstete große Teile Europas und Asiens.
-</div>
+            <div class="text-content">
+                Der von Deutschland ausgelöste Zweite Weltkrieg kostete über 50 Millionen Menschen das Leben und verwüstete große Teile Europas und Asiens.
+            </div>
 
-<div class="key-concepts">
-    <div class="concept-card">
-        <div class="concept-title"><span class="tooltip-term">Blitzkrieg-Strategie<span class="tooltip">Deutsche Militärstrategie mit schnellen, koordinierten Angriffen von Panzern und Luftwaffe, um den Gegner zu überraschen und schnell zu besiegen.</span></span></div>
-        <div>Schnelle, koordinierte Angriffe mit Panzern und Luftwaffe</div>
-    </div>
-    <div class="concept-card">
-        <div class="concept-title"><span class="tooltip-term">Vernichtungskrieg<span class="tooltip">Kriegsführung besonders im Osten, die bewusst Völkerrecht brach und die Vernichtung des Gegners als Volk zum Ziel hatte.</span></span></div>
-        <div>Besonders im Osten: Missachtung des Völkerrechts</div>
-    </div>
-    <div class="concept-card">
-        <div class="concept-title"><span class="tooltip-term">Totaler Krieg<span class="tooltip">Kriegsführung, die alle gesellschaftlichen Ressourcen mobilisiert und zwischen Soldaten und Zivilisten nicht unterscheidet.</span></span></div>
-        <div>Mobilisierung aller gesellschaftlichen Ressourcen</div>
-    </div>
-    <div class="concept-card">
-        <div class="concept-title">Widerstand</div>
-        <div>Opposition in Deutschland und den besetzten Ländern</div>
-    </div>
-</div>
+            <div class="info-box">
+                <strong>Überblick WW2 (NEU AUS PDF):</strong>
+                <ul>
+                    <li><strong>1939:</strong> Beginn</li>
+                    <li><strong>1939-41:</strong> Blitzkrieg, fast ganz Europa besetzt</li>
+                    <li><strong>1941:</strong> Angriff UdSSR, scheitert später</li>
+                    <li><strong>1942-44:</strong> Wendepunkte, Stalingrad, Normandie</li>
+                    <li><strong>1945:</strong> Kriegsende</li>
+                    <li><strong>Bilanz:</strong> ca. 60-70 Millionen Tote</li>
+                </ul>
+            </div>
 
-<div class="navigation-link">
-    <a href="Von der NS-Diktatur zum Kriegsende.html" class="internal-link">
-        → Komplette Zeitleiste: Machtergreifung, Holocaust und Weltkrieg
-    </a>
-</div>
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <div class="concept-title">Blitzkrieg-Strategie</div>
+                    <div>Schnelle, koordinierte Angriffe mit Panzern und Luftwaffe</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-title">Vernichtungskrieg</div>
+                    <div>Besonders im Osten: Missachtung des Völkerrechts</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-title">Totaler Krieg</div>
+                    <div>Mobilisierung aller gesellschaftlichen Ressourcen</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-title">Widerstand</div>
+                    <div>Opposition in Deutschland und den besetzten Ländern</div>
+                </div>
+            </div>
+
+            <h5 style="font-weight: bold; margin-top: 20px;">NS-Besatzungspolitik (NEU AUS PDF)</h5>
+            
+            <div class="warning-box">
+                <div class="warning-title">Zeugenbericht zur Besatzungspraxis in Osteuropa:</div>
+                <p style="font-style: italic;">"Beim Einziehen, um Partisanen zu ermorden, mussten wir ganze Dörfer dem Erdboden gleichmachen, ohne Rücksicht auf Frauen, ohne Rücksicht auf Kinder und ohne Rücksicht auf die, die keine Partisanen waren. Bei solchen Einsätzen weigerte ich mich, Unschuldige zu erschießen und beim Zusehen verspürte ich eine erstickende Angst, eine tiefe Sprachlosigkeit, eine lähmende Erstarrung."</p>
+                <p style="margin-top: 10px;"><strong>Die Besatzungspraxis in Osteuropa war äußerst grausam, nahe zu unmenschlich, jedoch sehr effektiv und erfolgreich gegen mögliche zukünftige Bewegungen.</strong></p>
+            </div>
 
             <h3 class="subsection-title">9.7 Holocaust – der Mord an den europäischen Juden</h3>
             
             <div class="text-content">
-                Der <span class="tooltip-term">Holocaust<span class="tooltip">Der systematisch geplante und durchgeführte Völkermord an etwa sechs Millionen europäischen Juden - beispiellos in der Menschheitsgeschichte.</span></span> war der systematisch geplante und durchgeführte Völkermord an etwa sechs Millionen europäischen Juden. Er stellt den Höhepunkt der NS-Verbrechen dar.
+                Der Holocaust war der systematisch geplante und durchgeführte Völkermord an etwa sechs Millionen europäischen Juden. Er stellt den Höhepunkt der NS-Verbrechen dar.
             </div>
 
             <div class="warning-box">
-                <div class="warning-title"><span class="tooltip-term">Wannsee-Konferenz<span class="tooltip">Besprechung hochrangiger NS-Funktionäre am 20. Januar 1942, die die "Endlösung der Judenfrage" koordinierte.</span></span> (20. Januar 1942):</div>
+                <div class="warning-title">Wannsee-Konferenz (20. Januar 1942):</div>
                 Auf dieser Konferenz wurde die "Endlösung der Judenfrage" - die systematische Ermordung aller europäischen Juden - koordiniert. Sie markiert den Übergang zur industriellen Vernichtung.
             </div>
 
             <div class="info-box">
-                <strong><span class="tooltip-term">Vernichtungslager<span class="tooltip">Speziell für den Massenmord errichtete Lager, ausgestattet mit Gaskammern und Krematorien für die industrielle Tötung von Menschen.</span></span>:</strong> Auschwitz-Birkenau, Treblinka, Sobibor, Belzec, Chelmno und Majdanek waren speziell für den Massenmord errichtete Lager. Hier wurden Millionen von Menschen mit Giftgas ermordet.
+                <strong>Vernichtungslager:</strong> Auschwitz-Birkenau, Treblinka, Sobibor, Belzec, Chelmno und Majdanek waren speziell für den Massenmord errichtete Lager. Hier wurden Millionen von Menschen mit Giftgas ermordet.
             </div>
 
-            <h3 class="subsection-title">9.8 Widerstand gegen die NS-Herrschaft</h3>
+            <h4 class="subsubsection-title">NS-Sprachmanipulation: Euphemismen (NEU AUS PDF)</h4>
             
             <div class="text-content">
-                Trotz Terror und Überwachung gab es vielfältigen <span class="tooltip-term">Widerstand<span class="tooltip">Verschiedene Formen des Protests gegen das NS-Regime - von passiver Verweigerung bis hin zu aktiven Umsturzversuchen.</span></span> gegen das NS-Regime - von stillem Protest bis hin zu organisierten Umsturzversuchen.
+                Die Nationalsozialisten benutzten systematisch euphemistische Sprache, um ihre Verbrechen zu verschleiern und zu legitimieren:
             </div>
 
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Euphemismus (NS-Begriff)</th>
+                    <th>Tatsächliche Bedeutung</th>
+                </tr>
+                <tr>
+                    <td><strong>"Endlösung"</strong></td>
+                    <td>Systematische Ermordung der europäischen Juden (Holocaust)</td>
+                </tr>
+                <tr>
+                    <td><strong>"Arbeitseinsatz"</strong></td>
+                    <td>Zwangsarbeit unter unmenschlichen Bedingungen</td>
+                </tr>
+                <tr>
+                    <td><strong>"Natürliche Verminderung"</strong></td>
+                    <td>Mord durch Verhungern, Erschöpfung oder "Sterbehilfe"</td>
+                </tr>
+                <tr>
+                    <td><strong>"Auswanderung"</strong></td>
+                    <td>Flucht vor Verfolgung und Deportation</td>
+                </tr>
+                <tr>
+                    <td><strong>"Internierung"</strong></td>
+                    <td>Deportation in Konzentrations- oder Vernichtungslager</td>
+                </tr>
+                <tr>
+                    <td><strong>"Sonderbehandlung"</strong></td>
+                    <td>Exekution, Ermordung</td>
+                </tr>
+                <tr>
+                    <td><strong>"Umsiedlung"</strong></td>
+                    <td>Deportation in Ghettos oder Lager</td>
+                </tr>
+            </table>
+            </div>
+
+            <div class="info-box">
+                <strong>Zweck der Sprachmanipulation (NEU AUS PDF):</strong> 
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Euphemistische Verschleierung und Untertreibung</li>
+                    <li>Schließt die negativen Aspekte wie Folter, Hungersnot aus</li>
+                    <li>Manipulation der Öffentlichkeit und Täuschung</li>
+                    <li>Psychologische Distanzierung der Täter von ihren Taten</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">9.8 Widerstand gegen die NS-Herrschaft (ERWEITERT MIT PDF)</h3>
+            
+            <div class="text-content">
+                Trotz massivem Terror und Überwachung gab es vielfältigen Widerstand gegen das NS-Regime. Die Widerstandsbewegungen reichten von passiver Verweigerung über Flugblattaktionen bis hin zu Attentatsversuchen.
+            </div>
+
+            <h4 class="subsubsection-title">Überblick: Formen des Widerstands (ERWEITERT)</h4>
+            
+            <div class="info-box">
+                <strong>Insgesamt über 50 Attentatsversuche auf Hitler (NEU AUS PDF):</strong> Alle Attentate scheiterten aus verschiedenen Gründen – oft durch Zufall. Die bekanntesten sind die Versuche von Georg Elser (1939) und Claus Schenk Graf von Stauffenberg (20. Juli 1944).
+            </div>
+
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
             <table>
                 <tr>
                     <th>Widerstandsgruppe</th>
-                    <th>Beispiele</th>
+                    <th>Hauptakteure</th>
                     <th>Ziele und Methoden</th>
+                    <th>Schicksal</th>
+                </tr>
+                <tr>
+                    <td><strong>Kreisauer Kreis</strong> (NEU)</td>
+                    <td>Helmuth James Graf von Moltke, Peter Yorck von Wartenburg</td>
+                    <td>Entwicklung von Plänen für Neuordnung Deutschlands und Europas</td>
+                    <td>Viele Mitglieder nach 20. Juli 1944 hingerichtet</td>
+                </tr>
+                <tr>
+                    <td><strong>Edelweißpiraten</strong> (NEU)</td>
+                    <td>Jugendliche in verschiedenen Städten</td>
+                    <td>Opposition gegen HJ, Sabotage, Flugblätter; Verfolgten fanden Unterschlupf</td>
+                    <td>Brutale Verfolgung durch Gestapo</td>
+                </tr>
+                <tr>
+                    <td><strong>Dietrich Bonhoeffer</strong> (NEU)</td>
+                    <td>Protestantischer Theologe</td>
+                    <td>Lehrerlaubnis entzogen, öffentlich gegen NS-Regime, Bekennende Kirche</td>
+                    <td>1945 im KZ Flossenbürg hingerichtet</td>
+                </tr>
+                <tr>
+                    <td><strong>Georg Elser</strong> (NEU)</td>
+                    <td>Schreiner, Einzeltäter</td>
+                    <td>Attentat auf Hitler im Bürgerbräukeller München (8. Nov. 1939)</td>
+                    <td>Hitler überlebte durch Zufall, Elser 1945 ermordet</td>
+                </tr>
+                <tr>
+                    <td><strong>Weiße Rose</strong></td>
+                    <td>Sophie und Hans Scholl, Christoph Probst, Alexander Schmorell, Willi Graf, Kurt Huber</td>
+                    <td>Studenten München; Flugblätter in Süddeutschland und Österreich</td>
+                    <td>1943 verhaftet und hingerichtet</td>
+                </tr>
+                <tr>
+                    <td><strong>20. Juli 1944</strong></td>
+                    <td>Claus Schenk Graf von Stauffenberg und Verschwörer</td>
+                    <td>Bekanntester Attentatsversuch; Sturz des NS-Regimes, Friedensverhandlungen</td>
+                    <td>Attentat scheiterte, über 200 Beteiligte hingerichtet</td>
                 </tr>
                 <tr>
                     <td>Politischer Widerstand</td>
                     <td>SPD, KPD im Untergrund</td>
                     <td>Politische Opposition, Sabotage</td>
+                    <td>Viele verhaftet und ermordet</td>
                 </tr>
                 <tr>
                     <td>Kirchlicher Widerstand</td>
-                    <td><span class="tooltip-term">Bekennende Kirche<span class="tooltip">Protestantische Widerstandsbewegung gegen die NS-Kirchenpolitik, zu der auch Dietrich Bonhoeffer gehörte.</span></span>, <span class="tooltip-term">Dietrich Bonhoeffer<span class="tooltip">Protestantischer Theologe und Widerstandskämpfer, der 1945 hingerichtet wurde.</span></span></td>
+                    <td>Bekennende Kirche, Dietrich Bonhoeffer</td>
                     <td>Schutz der Religionsfreiheit</td>
-                </tr>
-                <tr>
-                    <td>Militärischer Widerstand</td>
-                    <td><span class="tooltip-term">20. Juli 1944<span class="tooltip">Gescheitertes Attentat auf Hitler durch Offiziere um Claus von Stauffenberg, die Deutschland vor der totalen Niederlage retten wollten.</span></span>, <span class="tooltip-term">Claus von Stauffenberg<span class="tooltip">Oberst, der die Bombe im Führerhauptquartier platzierte - das Attentat scheiterte durch Zufall.</span></span></td>
-                    <td>Attentat auf Hitler, Sturz des Regimes</td>
-                </tr>
-                <tr>
-                    <td>Jugendlicher Widerstand</td>
-                    <td><span class="tooltip-term">Weiße Rose<span class="tooltip">Studentische Widerstandsgruppe in München um die Geschwister Scholl, die Flugblätter gegen das NS-Regime verteilte.</span></span>, <span class="tooltip-term">Sophie und Hans Scholl<span class="tooltip">Geschwister und Medizinstudenten, die 1943 wegen ihres Widerstands hingerichtet wurden.</span></span></td>
-                    <td>Aufklärung, passive Resistenz</td>
+                    <td>Einige Geistliche hingerichtet</td>
                 </tr>
             </table>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Fazit zum Widerstand (NEU AUS PDF):</strong> Es gab unzählige Menschen und Gruppen, welche versuchten, die Nazis zu bremsen und einzudämmen, egal ob mit Flugblättern oder Sabotageakten. Viele Angriffe richteten sich auch direkt gegen Hitler oder andere Schlüsselfiguren des NS-Regimes.
+                <p style="margin-top: 10px;">Die Widerstandskämpfer schafften es allerdings nicht, die Bevölkerung im großen Sinne hinter sich zu bekommen. Desweiteren scheiterten viele Attentatsversuche, es gab aber auch nennenswerte Erfolge für die Bewegungen in Form von Aufklärung und moralischem Widerstand.</p>
+            </div>
 
             <blockquote>
                 "Es lebe die Freiheit!" - Letzte Worte von Hans Scholl vor seiner Hinrichtung, 22. Februar 1943
@@ -1277,13 +1595,13 @@
             <h3 class="subsection-title">9.9 Ende des Zweiten Weltkrieges</h3>
             
             <div class="text-content">
-                Mit der <span class="tooltip-term">bedingungslosen Kapitulation<span class="tooltip">Vollständige Aufgabe ohne Verhandlungen über Friedensbedingungen - Deutschland musste alle Forderungen der Alliierten akzeptieren.</span></span> am 8. Mai 1945 endete der Zweite Weltkrieg in Europa. Deutschland lag in Trümmern und wurde von den Alliierten besetzt.
+                Mit der bedingungslosen Kapitulation am 8. Mai 1945 endete der Zweite Weltkrieg in Europa. Deutschland lag in Trümmern und wurde von den Alliierten besetzt.
             </div>
 
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">6. Juni 1944</div>
-                    <div class="timeline-event"><span class="tooltip-term">D-Day<span class="tooltip">Landung der Alliierten in der Normandie, die die Eröffnung der "zweiten Front" in Westeuropa bedeutete.</span></span> - Landung der Alliierten in der Normandie</div>
+                    <div class="timeline-event">D-Day - Landung der Alliierten in der Normandie</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">20. Juli 1944</div>
@@ -1291,7 +1609,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">30. April 1945</div>
-                    <div class="timeline-event">Hitlers Selbstmord im <span class="tooltip-term">Führerbunker<span class="tooltip">Unterirdischer Bunker in Berlin, in dem Hitler die letzten Wochen des Krieges verbrachte und Selbstmord beging.</span></span></div>
+                    <div class="timeline-event">Hitlers Selbstmord im Führerbunker</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-year">8. Mai 1945</div>
@@ -1303,7 +1621,7 @@
                 </div>
             </div>
 
-            <h3 class="subsection-title">9.10 Umgang mit Schuld und Verantwortung</h3>
+            <h3 class="subsection-title">9.10 Umgang mit Schuld und Verantwortung (ERWEITERT)</h3>
             
             <div class="text-content">
                 Die Aufarbeitung der NS-Verbrechen war ein langwieriger Prozess, der bis heute andauert. Die Frage nach Schuld und Verantwortung prägte die deutsche Nachkriegsgeschichte.
@@ -1311,25 +1629,49 @@
 
             <div class="key-concepts">
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Nürnberger Prozesse<span class="tooltip">Internationale Kriegsverbrecherprozesse 1945-1949 gegen die Hauptkriegsverbrecher des NS-Regimes - erstmals wurden Verbrechen gegen die Menschlichkeit juristisch verfolgt.</span></span></div>
+                    <div class="concept-title">Nürnberger Prozesse</div>
                     <div>1945-1949: Kriegsverbrecherprozesse gegen NS-Führung</div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Entnazifizierung<span class="tooltip">Versuch der Alliierten, NS-Strukturen und -Personal aus wichtigen Positionen zu entfernen und die deutsche Gesellschaft zu "demokratisieren".</span></span></div>
+                    <div class="concept-title">Entnazifizierung</div>
                     <div>Versuch der Alliierten, NS-Strukturen zu beseitigen</div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Kollektivschuld-Debatte<span class="tooltip">Diskussion über die Verantwortung des deutschen Volkes für die NS-Verbrechen - umstrittenes Konzept, das individuelle Verantwortung betont.</span></span></div>
+                    <div class="concept-title">Kollektivschuld-Debatte</div>
                     <div>Diskussion über die Verantwortung des deutschen Volkes</div>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Erinnerungskultur<span class="tooltip">Die Art, wie eine Gesellschaft mit ihrer Vergangenheit umgeht und diese im kollektiven Gedächtnis bewahrt.</span></span></div>
+                    <div class="concept-title">Erinnerungskultur</div>
                     <div>Entwicklung einer kritischen Auseinandersetzung mit der NS-Zeit</div>
                 </div>
             </div>
 
             <div class="info-box">
-                <strong><span class="tooltip-term">Vergangenheitsbewältigung<span class="tooltip">Der Prozess der gesellschaftlichen Auseinandersetzung mit der NS-Vergangenheit - ein lange andauernder und vielschichtiger Prozess.</span></span>:</strong> Der Umgang mit der NS-Vergangenheit durchlief verschiedene Phasen: von Verdrängung in den 1950ern über gesellschaftliche Aufbrüche in den 1960ern bis hin zur institutionalisierten Erinnerungskultur heute.
+                <strong>Vergangenheitsbewältigung:</strong> Der Umgang mit der NS-Vergangenheit durchlief verschiedene Phasen: von Verdrängung in den 1950ern über gesellschaftliche Aufbrüche in den 1960ern bis hin zur institutionalisierten Erinnerungskultur heute.
+            </div>
+
+            <h4 class="subsubsection-title">Kritische Reflexion: Aufarbeitung der NS-Zeit (NEU AUS PDF)</h4>
+            
+            <h5 style="font-weight: bold; margin-top: 20px;">Argumente gegen intensive Aufarbeitung (kontroverse Positionen):</h5>
+            
+            <ul>
+                <li>Sie erinnert an schlimme Taten vergangener Generationen, ohne heutige Erfolge ausreichend zu berücksichtigen</li>
+                <li>Nachgeborene können nicht für Taten ihrer Vorfahren verantwortlich gemacht werden (Kollektivschuld-Problematik)</li>
+                <li>Information ohne moralischen Kontext könnte zu Missverständnissen führen</li>
+            </ul>
+
+            <h5 style="font-weight: bold; margin-top: 20px;">Argumente für intensive Aufarbeitung (historischer Konsens):</h5>
+            
+            <div class="highlight-box">
+                <strong>Notwendigkeit der Erinnerungskultur (NEU AUS PDF):</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Sensibilisierung der Gesellschaft</strong> bezüglich der NS-Zeit und ihrer Mechanismen</li>
+                    <li><strong>Kompetenzenbildung:</strong> Fähigkeit, emotionale Manipulation und Targeting zu erkennen</li>
+                    <li><strong>Wertschätzung der Diversität:</strong> Die Gesellschaft als Einheit verschiedener Personen verstehen</li>
+                    <li><strong>Medienkompetenz:</strong> Kritischer Umgang mit Propaganda und Desinformation</li>
+                    <li><strong>Demokratieverständnis:</strong> Erkennen, wie Demokratien untergraben werden können</li>
+                    <li><strong>"Nie wieder":</strong> Verhinderung ähnlicher Entwicklungen durch Wissen und Wachsamkeit</li>
+                </ul>
             </div>
         </div>
 
@@ -1347,9 +1689,9 @@
                     <div>
                         <ul>
                             <li>Bedeutung demokratischer Institutionen</li>
-                            <li>Gefahr der <span class="tooltip-term">Polarisierung<span class="tooltip">Extreme gesellschaftliche Spaltung, die den demokratischen Kompromiss erschwert oder unmöglich macht.</span></span></li>
+                            <li>Gefahr der Polarisierung</li>
                             <li>Notwendigkeit des Kompromisses</li>
-                            <li>Rolle der <span class="tooltip-term">Zivilgesellschaft<span class="tooltip">Selbstorganisierte Bereiche zwischen Staat, Markt und Privatsphäre - Vereine, NGOs, Bürgerinitiativen etc.</span></span></li>
+                            <li>Rolle der Zivilgesellschaft</li>
                         </ul>
                     </div>
                 </div>
@@ -1359,7 +1701,7 @@
                         <ul>
                             <li>Schutz vor verfassungsfeindlichen Kräften</li>
                             <li>Verfassungsgerichtsbarkeit</li>
-                            <li><span class="tooltip-term">Parteiverbotsverfahren<span class="tooltip">Rechtliches Verfahren, mit dem das Bundesverfassungsgericht verfassungsfeindliche Parteien verbieten kann.</span></span></li>
+                            <li>Parteiverbotsverfahren</li>
                             <li>Grundrechte mit Grenzen</li>
                         </ul>
                     </div>
@@ -1395,7 +1737,7 @@
             <div class="info-box">
                 <strong>Für die Zukunft:</strong> Die Stärkung der Demokratie erfordert:
                 <ul>
-                    <li><span class="tooltip-term">Politische Bildung<span class="tooltip">Bildung, die Menschen befähigt, politische Zusammenhänge zu verstehen und sich aktiv an demokratischen Prozessen zu beteiligen.</span></span> und <span class="tooltip-term">Medienkompetenz<span class="tooltip">Fähigkeit, Medieninhalte kritisch zu bewerten und Falschinformationen zu erkennen.</span></span></li>
+                    <li>Politische Bildung und Medienkompetenz</li>
                     <li>Bürgerbeteiligung und Zivilgesellschaft</li>
                     <li>Toleranz und Kompromissbereitschaft</li>
                     <li>Schutz von Minderheiten und Grundrechten</li>
@@ -1403,8 +1745,21 @@
                 </ul>
             </div>
 
+            <div class="info-box">
+                <strong>Für die Abiturvorbereitung wichtig (NEU):</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Verstehen Sie die <strong>Mechanismen</strong> totalitärer Herrschaft</li>
+                    <li>Kennen Sie die <strong>verschiedenen Phasen</strong> der Verfolgung</li>
+                    <li>Können Sie <strong>Propagandatechniken</strong> analysieren</li>
+                    <li>Verstehen Sie die Rolle von <strong>Sprache und Euphemismen</strong></li>
+                    <li>Kennen Sie <strong>konkrete Beispiele</strong> für Widerstand</li>
+                    <li>Können Sie historische <strong>Quellen kritisch analysieren</strong></li>
+                    <li>Verstehen Sie die <strong>Kontinuitäten und Brüche</strong> zur Weimarer Republik</li>
+                </ul>
+            </div>
+
             <blockquote>
-                "Die Demokratie ist die schlechteste aller Staatsformen, ausgenommen alle anderen." - <span class="tooltip-term">Winston Churchill<span class="tooltip">Britischer Premierminister während des Zweiten Weltkriegs und wichtiger Gegner des Nationalsozialismus.</span></span>
+                "Die Demokratie ist die schlechteste aller Staatsformen, ausgenommen alle anderen." - Winston Churchill
             </blockquote>
 
             <div class="text-content">
@@ -1412,200 +1767,7 @@
             </div>
         </div>
 
-        <!-- Weiterführende Informationen -->
-        <div class="content-section">
-            <h2 class="section-title">Weiterführende Informationen und Quellen</h2>
-            
-            <h3 class="subsection-title">Wichtige Begriffe</h3>
-            <div class="key-concepts">
-                <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Totalitarismus<span class="tooltip">Herrschaftsform, die alle Lebensbereiche kontrolliert und keine privaten oder unabhängigen Bereiche duldet.</span></span></div>
-                    <div>Herrschaftsform mit totaler Kontrolle über alle Lebensbereiche</div>
-                </div>
-                <div class="concept-card">
-                    <div class="concept-title">Pluralismus</div>
-                    <div>Vielfalt von Meinungen und Interessen in der Demokratie</div>
-                </div>
-                <div class="concept-card">
-                    <div class="concept-title"><span class="tooltip-term">Legitimität<span class="tooltip">Rechtmäßigkeit und Akzeptanz politischer Herrschaft durch die Beherrschten.</span></span></div>
-                    <div>Rechtmäßigkeit und Akzeptanz politischer Herrschaft</div>
-                </div>
-                <div class="concept-card">
-                    <div class="concept-title">Zivilgesellschaft</div>
-                    <div>Selbstorganisierte Bereiche zwischen Staat und Markt</div>
-                </div>
-            </div>
-
-            <h3 class="subsection-title">Empfohlene Literatur</h3>
-            <ul>
-                <li><span class="tooltip-term">Fritz Stern<span class="tooltip">Deutsch-amerikanischer Historiker, bekannt für seine Arbeiten zur deutschen Geschichte des 19. und 20. Jahrhunderts.</span></span>: "Das fünfte Deutschland"</li>
-                <li><span class="tooltip-term">Heinrich August Winkler<span class="tooltip">Deutscher Historiker, Experte für deutsche und europäische Geschichte der Neuzeit.</span></span>: "Geschichte des Westens"</li>
-                <li><span class="tooltip-term">Hans-Ulrich Wehler<span class="tooltip">Führender deutscher Sozialhistoriker, Vertreter der "Bielefelder Schule".</span></span>: "Deutsche Gesellschaftsgeschichte"</li>
-                <li><span class="tooltip-term">Wolfgang Benz<span class="tooltip">Deutscher Historiker, Experte für Antisemitismus- und NS-Forschung.</span></span>: "Geschichte des Dritten Reiches"</li>
-                <li><span class="tooltip-term">Jürgen Habermas<span class="tooltip">Einflussreicher deutscher Philosoph und Soziologe, wichtiger Theoretiker der Demokratie.</span></span>: "Strukturwandel der Öffentlichkeit"</li>
-            </ul>
-
-            <h3 class="subsection-title">Wichtige Gedenkstätten und Museen</h3>
-            <ul>
-                <li><span class="tooltip-term">Haus der Geschichte<span class="tooltip">Museum in Bonn, das die deutsche Geschichte seit 1945 darstellt.</span></span> (Bonn)</li>
-                <li><span class="tooltip-term">Deutsches Historisches Museum<span class="tooltip">Zentrales Museum für deutsche Geschichte in Berlin.</span></span> (Berlin)</li>
-                <li><span class="tooltip-term">Gedenkstätte Buchenwald<span class="tooltip">Gedenkstätte am Ort des ehemaligen Konzentrationslagers Buchenwald bei Weimar.</span></span></li>
-                <li><span class="tooltip-term">Dachau Concentration Camp Memorial<span class="tooltip">Gedenkstätte am Ort des ersten NS-Konzentrationslagers bei München.</span></span></li>
-                <li><span class="tooltip-term">Topographie des Terrors<span class="tooltip">Dokumentationszentrum in Berlin am ehemaligen Sitz der Gestapo und SS-Zentrale.</span></span> (Berlin)</li>
-                <li><span class="tooltip-term">Dokumentationszentrum Reichsparteitagsgelände<span class="tooltip">Museum auf dem ehemaligen Gelände der NS-Parteitage in Nürnberg.</span></span> (Nürnberg)</li>
-            </ul>
-
-            <h3 class="subsection-title">Online-Ressourcen</h3>
-            <ul>
-                <li><span class="tooltip-term">Bundeszentrale für politische Bildung<span class="tooltip">Bundesbehörde zur Förderung des Verständnisses für politische Sachverhalte und zur Stärkung des demokratischen Bewusstseins.</span></span> (bpb.de)</li>
-                <li><span class="tooltip-term">Lebendiges Museum Online<span class="tooltip">Online-Portal des Deutschen Historischen Museums zur deutschen Geschichte.</span></span> (dhm.de/lemo)</li>
-                <li>Deutsches Historisches Museum Online</li>
-                <li><span class="tooltip-term">Holocaust Encyclopedia<span class="tooltip">Umfassende Online-Enzyklopädie des US Holocaust Memorial Museums.</span></span> (ushmm.org)</li>
-                <li>Europarl.europa.eu (Europäisches Parlament)</li>
-            </ul>
-        </div>
         <a href="index.html" class="back-link" style="margin: 10px;">← Zurück zum Inhaltsverzeichnis</a>
     </div>
-
-    <script>
-        // JavaScript für responsive Tooltip-Positionierung
-        document.addEventListener('DOMContentLoaded', function() {
-            const tooltipTerms = document.querySelectorAll('.tooltip-term');
-            
-            tooltipTerms.forEach(term => {
-                const tooltip = term.querySelector('.tooltip');
-                
-                term.addEventListener('mouseenter', function() {
-                    positionTooltip(term, tooltip);
-                });
-                
-                term.addEventListener('mouseleave', function() {
-                    tooltip.classList.remove('tooltip-bottom', 'tooltip-left');
-                });
-                
-                // Touch support for mobile
-                term.addEventListener('touchstart', function(e) {
-                    e.preventDefault();
-                    positionTooltip(term, tooltip);
-                    tooltip.style.opacity = '1';
-                    tooltip.style.visibility = 'visible';
-                });
-                
-                term.addEventListener('touchend', function() {
-                    setTimeout(() => {
-                        tooltip.style.opacity = '0';
-                        tooltip.style.visibility = 'hidden';
-                        tooltip.classList.remove('tooltip-bottom', 'tooltip-left');
-                    }, 3000);
-                });
-            });
-            
-            function positionTooltip(term, tooltip) {
-                if (!tooltip) return;
-                
-                // Reset classes
-                tooltip.classList.remove('tooltip-bottom', 'tooltip-left');
-                
-                const termRect = term.getBoundingClientRect();
-                const containerRect = document.querySelector('.container').getBoundingClientRect();
-                const viewportWidth = window.innerWidth;
-                const viewportHeight = window.innerHeight;
-                
-                // Check if the term is inside a table
-                const isInTable = term.closest('table') !== null;
-                
-                if (isInTable) {
-                    // For table elements, position above but close to the term
-                    const table = term.closest('table');
-                    const tableRect = table.getBoundingClientRect();
-                    const cellRect = term.closest('td, th').getBoundingClientRect();
-                    
-                    // Use absolute positioning relative to the table container
-                    tooltip.style.position = 'absolute';
-                    
-                    // Position above the current table row/cell
-                    tooltip.style.top = '-50px'; // Position above the table cell
-                    
-                    // Center horizontally relative to the term within the cell
-                    let leftOffset = termRect.left - cellRect.left - 100; // Offset to center tooltip
-                    
-                    // Keep tooltip within table bounds horizontally
-                    const tableLeftEdge = tableRect.left - containerRect.left;
-                    const tableRightEdge = tableRect.right - containerRect.left;
-                    
-                    if (leftOffset < -tableLeftEdge) {
-                        leftOffset = -tableLeftEdge + 10;
-                    } else if (leftOffset + 300 > tableRightEdge - tableLeftEdge) {
-                        leftOffset = tableRightEdge - tableLeftEdge - 310;
-                    }
-                    
-                    tooltip.style.left = leftOffset + 'px';
-                    
-                    // Make sure tooltip doesn't go above viewport
-                    if (tableRect.top - 60 < 20) {
-                        tooltip.style.top = '25px'; // Position below if no space above
-                        tooltip.classList.add('tooltip-bottom');
-                    }
-                    
-                } else {
-                    // Regular positioning for non-table elements
-                    tooltip.style.position = 'absolute';
-                    tooltip.style.top = '-10px';
-                    tooltip.style.left = '0px';
-                    
-                    // Get tooltip dimensions after positioning
-                    const tooltipRect = tooltip.getBoundingClientRect();
-                    
-                    // Check if tooltip extends beyond right edge
-                    if (tooltipRect.right > viewportWidth - 20) {
-                        tooltip.classList.add('tooltip-left');
-                        tooltip.style.left = -(tooltipRect.width - termRect.width) + 'px';
-                    }
-                    
-                    // Check if tooltip extends beyond container left edge
-                    if (tooltipRect.left < containerRect.left + 20) {
-                        tooltip.classList.remove('tooltip-left');
-                        tooltip.style.left = '0px';
-                    }
-                    
-                    // Check if tooltip extends beyond top edge
-                    if (tooltipRect.top < 20) {
-                        tooltip.classList.add('tooltip-bottom');
-                        tooltip.style.top = termRect.height + 10 + 'px';
-                    }
-                    
-                    // Ensure tooltip stays within container bounds horizontally
-                    const newTooltipRect = tooltip.getBoundingClientRect();
-                    if (newTooltipRect.right > containerRect.right - 20) {
-                        const adjustment = newTooltipRect.right - containerRect.right + 20;
-                        const currentLeft = parseInt(tooltip.style.left) || 0;
-                        tooltip.style.left = (currentLeft - adjustment) + 'px';
-                    }
-                    
-                    if (newTooltipRect.left < containerRect.left + 20) {
-                        const adjustment = containerRect.left + 20 - newTooltipRect.left;
-                        const currentLeft = parseInt(tooltip.style.left) || 0;
-                        tooltip.style.left = (currentLeft + adjustment) + 'px';
-                    }
-                }
-            }
-            
-            // Close tooltips when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.tooltip-term')) {
-                    tooltipTerms.forEach(term => {
-                        const tooltip = term.querySelector('.tooltip');
-                        if (tooltip) {
-                            tooltip.style.opacity = '0';
-                            tooltip.style.visibility = 'hidden';
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 </body>
-
 </html>
-
-
