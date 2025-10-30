@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geschichte Zusammenfassung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 40px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .pdf-container {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            background: #f5f5f5;
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #667eea;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .controls {
+            padding: 15px;
+            background: #f9f9f9;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            display: none;
+            padding: 20px;
+            margin: 20px;
+            background: #fee;
+            border: 1px solid #fcc;
+            border-radius: 6px;
+            color: #c33;
+        }
+
+        /* Mobile Optimierung */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                height: calc(100vh - 20px);
+                border-radius: 8px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .controls {
+                padding: 10px;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Geschichte Zusammenfassung</h1>
+            <p>GK 2020-2022 | Melina Meißner & Malte Graf</p>
+        </div>
+
+        <div class="pdf-container">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>PDF wird geladen...</p>
+            </div>
+            <div class="error-message" id="error">
+                <strong>⚠️ Hinweis:</strong> Das PDF konnte nicht geladen werden. 
+                Bitte stellen Sie sicher, dass die Datei in Google Drive öffentlich freigegeben ist.
+                <br><br>
+                <strong>So geben Sie die Datei frei:</strong>
+                <ol style="margin-top: 10px; margin-left: 20px;">
+                    <li>Öffnen Sie die Datei in Google Drive</li>
+                    <li>Klicken Sie auf "Teilen"</li>
+                    <li>Wählen Sie "Jeder mit dem Link"</li>
+                    <li>Setzen Sie die Berechtigung auf "Betrachter"</li>
+                </ol>
+            </div>
+            <iframe 
+                id="pdfFrame"
+                class="pdf-frame" 
+                src="https://drive.google.com/file/d/1FoY89Xmo-ACdFnFjY4lHqHEByJR5_GAP/preview"
+                allow="autoplay"
+                onload="handleLoad()"
+                onerror="handleError()">
+            </iframe>
+        </div>
+
+        <div class="controls">
+            <a href="https://drive.google.com/file/d/1FoY89Xmo-ACdFnFjY4lHqHEByJR5_GAP/view" 
+               target="_blank" 
+               class="btn">
+                📄 In Google Drive öffnen
+            </a>
+            <a href="https://drive.google.com/uc?export=download&id=1FoY89Xmo-ACdFnFjY4lHqHEByJR5_GAP" 
+               class="btn">
+                ⬇️ PDF herunterladen
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let loadingTimeout;
+        
+        function handleLoad() {
+            clearTimeout(loadingTimeout);
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+            }, 500);
+        }
+
+        function handleError() {
+            clearTimeout(loadingTimeout);
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }
+
+        // Timeout für den Fall, dass das Laden sehr lange dauert
+        loadingTimeout = setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }, 10000);
+
+        // Versuche zu erkennen, ob das iframe erfolgreich geladen wurde
+        window.addEventListener('message', function(event) {
+            if (event.data === 'loaded') {
+                handleLoad();
+            }
+        });
+    </script>
+</body>
+</html>
