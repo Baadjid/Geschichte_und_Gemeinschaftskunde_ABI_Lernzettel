@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epochenschwelle 1500 - Geschichte Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        
+        /* Content Section */
+        .content-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .content-section h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .content-section h4 {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        
+        .content-section ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .content-section ul li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-box h3, .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 5px solid var(--warning-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 5px solid var(--success-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Timeline */
+        .timeline-item {
+            background: white;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '📅';
+            position: absolute;
+            left: -12px;
+            top: 20px;
+            font-size: 1.5em;
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+        }
+        
+        .timeline-item h4 {
+            color: var(--secondary-color);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        /* Key Concepts */
+        .key-concept {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-left: 5px solid #9c27b0;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        .key-concept strong {
+            color: #6a1b9a;
+            font-size: 1.1em;
+        }
+        
+        /* Collapsible Sections */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+        
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        
+        .collapsible-inner {
+            padding: 20px 10px;
+        }
+        
+        /* Quote Box */
+        .quote-box {
+            background: #f8f9fa;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .quote-box cite {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .content-section h2 {
+                font-size: 1.5em;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🌍 Epochenschwelle 1500</h1>
+            <p class="subtitle">Der Übergang zur Neuzeit: Renaissance, Entdeckungen und Reformation</p>
+            <a href="index.html" class="back-link">← Zurück zur Übersicht</a>
+        </div>
+
+      <!-- Einleitung -->
+        <div class="content-section">
+            <h2>Einleitung: Die Epochenschwelle um 1500</h2>
+            <p>
+                Die Zeit um 1500 markiert einen fundamentalen Wendepunkt in der europäischen und Weltgeschichte. 
+                Diese Epoche wird als <strong>Epochenschwelle</strong> bezeichnet, weil sie den Übergang vom Mittelalter 
+                zur Neuzeit darstellt. Drei große Transformationsprozesse prägten diese Zeit und veränderten das 
+                Weltbild der Menschen grundlegend:
+            </p>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>🎨 Renaissance</h4>
+                    <p>Die "Wiedergeburt" der Antike führte zu einem neuen Menschenbild, Humanismus und wissenschaftlichem Fortschritt.</p>
+                </div>
+                <div class="card">
+                    <h4>🌎 Entdeckungen</h4>
+                    <p>Europäische Seefahrer erschlossen neue Kontinente und begründeten das Zeitalter des Kolonialismus.</p>
+                </div>
+                <div class="card">
+                    <h4>⛪ Reformation</h4>
+                    <p>Martin Luthers Kritik an der Kirche spaltete das christliche Europa und führte zu Religionskriegen.</p>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h4>💡 Warum "Epochenschwelle"?</h4>
+                <p>
+                    Der Begriff "Epochenschwelle" betont, dass historische Übergänge nicht abrupt, sondern allmählich 
+                    verlaufen. Um 1500 überschneiden sich mittelalterliche Strukturen mit neuen, zukunftsweisenden 
+                    Entwicklungen. Diese Gleichzeitigkeit des Ungleichzeitigen macht die Besonderheit dieser Epoche aus.
+                </p>
+            </div>
+        </div>
+
+        <!-- Renaissance -->
+        <div class="content-section">
+            <h2>1. Renaissance – Wiedergeburt der Antike</h2>
+            
+            <div class="collapsible-header">
+                <h3>1.1 Wiedergeburt der Antike</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Der Begriff <strong>Renaissance</strong> (franz. "Wiedergeburt") bezeichnet die kulturelle 
+                        Bewegung des 14. bis 16. Jahrhunderts, die ihren Ursprung in Italien hatte. Die Renaissance 
+                        war geprägt von einer intensiven Rückbesinnung auf die Kunst, Literatur, Philosophie und 
+                        Wissenschaft der griechisch-römischen Antike.
+                    </p>
+                    
+                    <h4>Merkmale der Renaissance</h4>
+                    <ul>
+                        <li><strong>Rückbesinnung auf die Antike:</strong> Wiederentdeckung antiker Texte, Kunst und Architektur</li>
+                        <li><strong>Abkehr vom Mittelalter:</strong> Kritik an mittelalterlicher Scholastik und Dogmatismus</li>
+                        <li><strong>Weltliche Themen:</strong> Neben religiösen Motiven rückten weltliche Darstellungen in den Vordergrund</li>
+                        <li><strong>Zentrum Italien:</strong> Florenz, Rom und Venedig als kulturelle Zentren</li>
+                        <li><strong>Mäzenatentum:</strong> Reiche Familien (z.B. Medici) förderten Künstler und Gelehrte</li>
+                    </ul>
+                    
+                    <div class="timeline-item">
+                        <h4>1450 – Erfindung des Buchdrucks</h4>
+                        <p>
+                            Johannes Gutenberg revolutionierte mit dem Buchdruck mit beweglichen Lettern die 
+                            Wissensverbreitung. Erstmals konnten Bücher in großer Auflage und zu erschwinglichen 
+                            Preisen produziert werden. Dies ermöglichte eine nie dagewesene Verbreitung von Ideen 
+                            und Wissen – eine Medienrevolution vergleichbar mit dem Internet.
+                        </p>
+                    </div>
+                    
+                    <div class="key-concept">
+                        <strong>Schlüsselbegriff:</strong> Renaissance bedeutet nicht nur "Wiedergeburt", sondern auch 
+                        Innovation – die Antike diente als Inspiration für neue, eigenständige Entwicklungen.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>1.2 Neues Menschenbild – Humanismus</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Der <strong>Humanismus</strong> war die intellektuelle Bewegung der Renaissance. Im Zentrum 
+                        stand der Mensch mit seinen Fähigkeiten, seiner Würde und seinem Potenzial zur Selbstvervollkommnung.
+                    </p>
+                    
+                    <h4>Grundprinzipien des Humanismus</h4>
+                    
+                    <div class="info-box">
+                        <h4>1. Würde des Menschen (dignitas hominis)</h4>
+                        <p>
+                            Der Mensch wurde nicht mehr nur als sündiges Wesen gesehen, sondern als "Krone der Schöpfung" 
+                            mit der Fähigkeit zu Vernunft, Kreativität und Selbstbestimmung. Giovanni Pico della Mirandola 
+                            schrieb in seiner berühmten "Rede über die Würde des Menschen" (1486), dass der Mensch sein 
+                            Schicksal selbst gestalten könne.
+                        </p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>2. Bildung (studia humanitatis)</h4>
+                        <p>
+                            Bildung wurde zum zentralen Wert. Humanisten studierten intensiv die "studia humanitatis" – 
+                            Grammatik, Rhetorik, Poetik, Geschichte und Moralphilosophie. Ziel war die Formung einer 
+                            umfassend gebildeten Persönlichkeit (<em>homo universalis</em>).
+                        </p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>3. Individualismus</h4>
+                        <p>
+                            Die individuelle Persönlichkeit rückte in den Vordergrund. Anders als im Mittelalter, wo der 
+                            Mensch primär als Teil einer Gemeinschaft (Stand, Zunft, Familie) gesehen wurde, betonte die 
+                            Renaissance die Einzigartigkeit jedes Einzelnen.
+                        </p>
+                    </div>
+                    
+                    <h4>Wichtige Humanisten</h4>
+                    <ul>
+                        <li><strong>Francesco Petrarca (1304-1374):</strong> "Vater des Humanismus", Dichter und Gelehrter</li>
+                        <li><strong>Erasmus von Rotterdam (1466-1536):</strong> Größter Humanist Nordeuropas, Kirchenkritiker</li>
+                        <li><strong>Thomas Morus (1478-1535):</strong> Autor von "Utopia", Vision einer idealen Gesellschaft</li>
+                        <li><strong>Giovanni Pico della Mirandola (1463-1494):</strong> Philosoph, Verfasser der Rede über die Menschenwürde</li>
+                    </ul>
+                    
+                    <div class="quote-box">
+                        "Die größte Offenbarung ist die Stille."
+                        <cite>– Erasmus von Rotterdam</cite>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Grenzen des Humanismus</h4>
+                        <p>
+                            Trotz der fortschrittlichen Ideale blieb der Humanismus weitgehend eine Bewegung der 
+                            gebildeten Elite. Die große Mehrheit der Bevölkerung – Bauern, Handwerker – hatte keinen 
+                            Zugang zu humanistischer Bildung. Auch Frauen waren weitgehend von der humanistischen 
+                            Bildung ausgeschlossen, mit wenigen Ausnahmen wie Christine de Pizan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>1.3 Wissenschaftlicher Aufbruch</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Die Renaissance markierte den Beginn der modernen Naturwissenschaften. An die Stelle von 
+                        kirchlicher Autorität und überliefertem Wissen trat die <strong>empirische Methode</strong> 
+                        – Beobachtung, Experiment und rationale Analyse.
+                    </p>
+                    
+                    <h4>Kopernikanische Wende</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>1543 – Nikolaus Kopernikus: "De revolutionibus orbium coelestium"</h4>
+                        <p>
+                            Der polnische Astronom Nikolaus Kopernikus (1473-1543) revolutionierte das Weltbild mit 
+                            seiner These, dass die <strong>Erde sich um die Sonne dreht</strong> (heliozentrisches 
+                            Weltbild) und nicht umgekehrt. Dies widersprach dem kirchlich sanktionierten geozentrischen 
+                            Weltbild des Ptolemäus und erschütterte die Autorität der Kirche.
+                        </p>
+                    </div>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>🌍 Geozentrisch (Ptolemäus)</h4>
+                            <p><strong>Mittelalterliches Weltbild:</strong></p>
+                            <ul>
+                                <li>Erde im Zentrum des Universums</li>
+                                <li>Sonne, Mond, Planeten kreisen um die Erde</li>
+                                <li>Unterstützt von der Kirche</li>
+                                <li>Passte zur biblischen Vorstellung</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>☀️ Heliozentrisch (Kopernikus)</h4>
+                            <p><strong>Neues Weltbild:</strong></p>
+                            <ul>
+                                <li>Sonne im Zentrum</li>
+                                <li>Erde ist ein Planet unter vielen</li>
+                                <li>Basiert auf mathematischen Berechnungen</li>
+                                <li>Widersprach kirchlicher Lehre</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Weitere wissenschaftliche Pioniere</h4>
+                    
+                    <div class="success-box">
+                        <h4>Leonardo da Vinci (1452-1519)</h4>
+                        <p>
+                            Das Universalgenie der Renaissance vereinte Kunst und Wissenschaft. Er führte anatomische 
+                            Studien durch (sezierte über 30 Leichen), entwarf Flugmaschinen, Kriegsgeräte und 
+                            hydraulische Systeme. Seine Notizbücher enthalten über 13.000 Seiten mit Zeichnungen und 
+                            Beobachtungen. Bekannte Werke: "Mona Lisa", "Das letzte Abendmahl", "Vitruvianischer Mensch".
+                        </p>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Andreas Vesalius (1514-1564):</strong> Begründer der modernen Anatomie, verfasste "De humani corporis fabrica" (1543) mit präzisen anatomischen Zeichnungen</li>
+                        <li><strong>Galileo Galilei (1564-1642):</strong> Bestätigte das heliozentrische Weltbild durch Teleskopbeobachtungen, musste seine Thesen vor der Inquisition widerrufen</li>
+                        <li><strong>Johannes Kepler (1571-1630):</strong> Formulierte die Gesetze der Planetenbewegung</li>
+                        <li><strong>Francis Bacon (1561-1626):</strong> Entwickelte die Grundlagen der wissenschaftlichen Methode</li>
+                    </ul>
+                    
+                    <h4>Die empirische Methode</h4>
+                    <p>Die Renaissance-Wissenschaftler entwickelten neue Herangehensweisen:</p>
+                    <ol>
+                        <li><strong>Beobachtung:</strong> Systematische Erfassung von Phänomenen</li>
+                        <li><strong>Experiment:</strong> Gezielte Überprüfung von Hypothesen</li>
+                        <li><strong>Mathematische Analyse:</strong> Quantifizierung und Berechnung</li>
+                        <li><strong>Kritische Prüfung:</strong> Hinterfragen überlieferter Autoritäten</li>
+                    </ol>
+                    
+                    <div class="key-concept">
+                        <strong>Bedeutung:</strong> Der wissenschaftliche Aufbruch der Renaissance legte das Fundament 
+                        für die wissenschaftliche Revolution des 17. Jahrhunderts und die Aufklärung. Vernunft und 
+                        Empirie begannen, Tradition und Autorität als Wissensquellen abzulösen.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>1.4 Künstlerische Revolution</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Die Kunst der Renaissance brach radikal mit mittelalterlichen Traditionen und entwickelte 
+                        neue Techniken und Ausdrucksformen.
+                    </p>
+                    
+                    <h4>Neue künstlerische Techniken</h4>
+                    <ul>
+                        <li><strong>Zentralperspektive:</strong> Mathematisch korrekte Darstellung von Raum und Tiefe (entwickelt von Brunelleschi)</li>
+                        <li><strong>Sfumato:</strong> Weiche Übergänge zwischen Farben und Konturen (perfektioniert von Leonardo)</li>
+                        <li><strong>Chiaroscuro:</strong> Hell-Dunkel-Kontraste für Dramatik und Plastizität</li>
+                        <li><strong>Anatomische Präzision:</strong> Realistische Darstellung des menschlichen Körpers</li>
+                        <li><strong>Ölmalerei:</strong> Ermöglichte feinere Nuancen und leuchtendere Farben</li>
+                    </ul>
+                    
+                    <h4>Die großen Meister der Renaissance</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>🎨 Leonardo da Vinci (1452-1519)</h4>
+                            <p><strong>Der Universalgelehrte</strong></p>
+                            <ul>
+                                <li>Mona Lisa (1503-1519)</li>
+                                <li>Das letzte Abendmahl (1495-1498)</li>
+                                <li>Vitruvianischer Mensch</li>
+                                <li>Vereinte Kunst, Wissenschaft und Technik</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>🗿 Michelangelo Buonarroti (1475-1564)</h4>
+                            <p><strong>Der Bildhauer und Maler</strong></p>
+                            <ul>
+                                <li>David-Statue (1501-1504)</li>
+                                <li>Sixtinische Kapelle (1508-1512)</li>
+                                <li>Pietà (1498-1499)</li>
+                                <li>Meister der monumentalen Darstellung</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>🖼️ Raffael Sanzio (1483-1520)</h4>
+                            <p><strong>Der Harmonische</strong></p>
+                            <ul>
+                                <li>Die Schule von Athen (1509-1511)</li>
+                                <li>Sixtinische Madonna (1512-1513)</li>
+                                <li>Stanzen im Vatikan</li>
+                                <li>Ideal von Schönheit und Harmonie</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>Renaissance in Nordeuropa</h4>
+                        <p>
+                            Auch nördlich der Alpen entwickelte sich eine eigenständige Renaissance-Kunst:
+                        </p>
+                        <ul>
+                            <li><strong>Albrecht Dürer (1471-1528):</strong> Deutscher Maler und Grafiker, Meister des Holzschnitts und Kupferstichs</li>
+                            <li><strong>Jan van Eyck (ca. 1390-1441):</strong> Flämischer Maler, Pionier der Ölmalerei</li>
+                            <li><strong>Pieter Bruegel d. Ä. (ca. 1525-1569):</strong> Niederländischer Maler, bekannt für Alltagsszenen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- Neue Welten - Entdeckungen -->
+        <div class="content-section">
+            <h2>2. Neue Welten – Entdeckungen und Kolonialismus</h2>
+            
+            <div class="info-box">
+                <h4>🌍 Das Zeitalter der Entdeckungen (ca. 1400-1600)</h4>
+                <p>
+                    Europäische Seefahrer erschlossen im 15. und 16. Jahrhundert neue Seewege und Kontinente. 
+                    Diese Entdeckungsreisen hatten weitreichende Folgen: Sie führten zur europäischen Kolonialherrschaft, 
+                    zum Aufstieg des Welthandels und zu einem tiefgreifenden kulturellen Austausch – allerdings auch 
+                    zu Ausbeutung, Versklavung und Genozid an indigenen Völkern.
+                </p>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2.1 Voraussetzungen und Motive der Entdeckungsreisen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Technische Voraussetzungen</h4>
+                    <ul>
+                        <li><strong>Karavelle:</strong> Neuer Schiffstyp – wendiger, hochseetauglich, kombinierte Rahmen- und Lateinersegel</li>
+                        <li><strong>Kompass:</strong> Ermöglichte Navigation auch ohne Sichtkontakt zur Küste</li>
+                        <li><strong>Astrolabium:</strong> Instrument zur Bestimmung des Breitengrads</li>
+                        <li><strong>Portolankarten:</strong> Verbesserte Seekarten mit Küstenlinien und Kompasslinien</li>
+                        <li><strong>Schießpulver und Kanonen:</strong> Militärische Überlegenheit gegenüber anderen Kulturen</li>
+                    </ul>
+                    
+                    <h4>Wirtschaftliche Motive</h4>
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>💰 Gewürzhandel</h4>
+                            <p>
+                                Gewürze aus Asien (Pfeffer, Zimt, Muskatnuss, Nelken) waren in Europa extrem wertvoll. 
+                                Der traditionelle Landweg über den Nahen Osten wurde von osmanischen und arabischen 
+                                Zwischenhändlern kontrolliert, die hohe Preise verlangten. Europäer suchten einen 
+                                direkten Seeweg nach Indien.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h4>🏆 Gold und Silber</h4>
+                            <p>
+                                Die Suche nach Edelmetallen trieb Entdecker an. Gold aus Afrika und später aus Amerika 
+                                sollte die leeren Staatskassen füllen. Der Mythos von "El Dorado" – einer Stadt aus Gold 
+                                in Südamerika – beflügelte viele Expeditionen.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h4>📈 Handelsmonopole</h4>
+                            <p>
+                                Wer neue Seewege kontrollierte, konnte Handelsmonopole errichten und immense Gewinne 
+                                erzielen. Portugal und Spanien konkurrierten um die Vorherrschaft.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h4>Religiöse Motive</h4>
+                    <ul>
+                        <li><strong>Missionierung:</strong> Verbreitung des Christentums als religiöse Pflicht ("Heidenbekehrung")</li>
+                        <li><strong>Kampf gegen den Islam:</strong> Nach der Reconquista (Rückeroberung Spaniens von den Mauren) sollte der christliche Glauben weiter verbreitet werden</li>
+                        <li><strong>Suche nach dem Priesterkönig Johannes:</strong> Mythischer christlicher Herrscher in Afrika/Asien, mit dem man gegen die Muslime verbünden wollte</li>
+                    </ul>
+                    
+                    <h4>Politische Motive</h4>
+                    <ul>
+                        <li><strong>Prestigegewinn:</strong> Entdeckungen steigerten das Ansehen der Monarchen</li>
+                        <li><strong>Machtausdehnung:</strong> Kolonien erweiterten den Herrschaftsbereich</li>
+                        <li><strong>Konkurrenz der Nationen:</strong> Portugal, Spanien, später England, Frankreich und Niederlande wetteiferten um Kolonien</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <strong>Wichtig:</strong> Die Entdeckungsreisen waren keine reinen Abenteuerfahrten, sondern 
+                        strategisch geplante Unternehmungen mit klaren wirtschaftlichen, religiösen und politischen Zielen.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2.2 Die großen Entdeckungsreisen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="timeline-item">
+                        <h4>1488 – Bartolomeu Dias umrundet das Kap der Guten Hoffnung</h4>
+                        <p>
+                            Der portugiesische Seefahrer erreichte die Südspitze Afrikas und bewies damit, dass es 
+                            einen Seeweg nach Indien gab. Ursprünglich nannte er es "Kap der Stürme", König Johann II. 
+                            von Portugal taufte es in "Kap der Guten Hoffnung" um.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1492 – Christoph Kolumbus erreicht Amerika</h4>
+                        <p>
+                            Im Auftrag der spanischen Krone segelte der genuesische Seefahrer Christoph Kolumbus 
+                            westwärts, um einen kürzeren Weg nach Indien zu finden. Am 12. Oktober 1492 erreichte er 
+                            die Bahamas – er glaubte bis zu seinem Tod, in Asien gelandet zu sein. Diese "Entdeckung" 
+                            hatte dramatische Folgen für die indigene Bevölkerung Amerikas.
+                        </p>
+                        <ul>
+                            <li><strong>1. Reise (1492-1493):</strong> Bahamas, Kuba, Hispaniola</li>
+                            <li><strong>2. Reise (1493-1496):</strong> Kleine Antillen, Puerto Rico</li>
+                            <li><strong>3. Reise (1498-1500):</strong> Trinidad, Südamerika (Venezuela)</li>
+                            <li><strong>4. Reise (1502-1504):</strong> Mittelamerika</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1497-1499 – Vasco da Gama erreicht Indien auf dem Seeweg</h4>
+                        <p>
+                            Der Portugiese Vasco da Gama segelte um Afrika herum und erreichte 1498 Calicut (Indien). 
+                            Damit war der direkte Seeweg nach Indien gefunden. Portugal errichtete ein Handelsnetz 
+                            im Indischen Ozean und brach das Gewürzmonopol der arabischen und italienischen Händler.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1519-1522 – Erste Weltumsegelung durch Magellan/Elcano</h4>
+                        <p>
+                            Ferdinand Magellan startete im Auftrag Spaniens eine Expedition nach Westen. Er durchquerte 
+                            die nach ihm benannte Magellanstraße und erreichte den Pazifik. Magellan starb 1521 auf den 
+                            Philippinen. Sein Steuermann Juan Sebastián Elcano vollendete die erste Weltumsegelung 
+                            (1522) und bewies endgültig, dass die Erde eine Kugel ist.
+                        </p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>Der Vertrag von Tordesillas (1494)</h4>
+                        <p>
+                            Um Konflikte zwischen Spanien und Portugal zu vermeiden, teilte Papst Alexander VI. die 
+                            Welt in zwei Einflusssphären auf: Alles westlich einer Linie 370 Seemeilen westlich der 
+                            Kapverdischen Inseln gehörte Spanien, alles östlich davon Portugal. Dadurch erhielt 
+                            Portugal Afrika, Asien und (später entdeckt) Brasilien, Spanien den Rest Amerikas.
+                        </p>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Problematik des Begriffs "Entdeckung"</h4>
+                        <p>
+                            Der Begriff "Entdeckung Amerikas" ist eurozentrisch und problematisch. Amerika war nicht 
+                            "unbewohnt" – es lebten dort geschätzt 50-100 Millionen Menschen in hochentwickelten 
+                            Kulturen (Azteken, Maya, Inka). Aus ihrer Perspektive wurde ihr Kontinent nicht "entdeckt", 
+                            sondern erobert und kolonisiert. Treffender wäre: "Europäische Expansion" oder "Beginn des 
+                            transatlantischen Kontakts".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2.3 Spanische Eroberungspolitik – Die Konquistadoren</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Die <strong>Konquistadoren</strong> (spanisch "Eroberer") waren spanische Abenteurer und 
+                        Soldaten, die im 16. Jahrhundert Mittel- und Südamerika eroberten. Getrieben von Gier nach 
+                        Gold, religiösem Eifer und Ruhmsucht, zerstörten sie innerhalb weniger Jahrzehnte die großen 
+                        amerikanischen Hochkulturen.
+                    </p>
+                    
+                    <h4>Die Eroberung der Azteken (1519-1521)</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>Hernán Cortés und das Aztekenreich</h4>
+                        <p>
+                            1519 landete Hernán Cortés mit etwa 600 Soldaten, 16 Pferden und einigen Kanonen an der 
+                            Küste Mexikos. Das Aztekenreich unter Kaiser Moctezuma II. umfasste mehrere Millionen 
+                            Menschen und war eine der mächtigsten Zivilisationen Amerikas mit der Hauptstadt 
+                            Tenochtitlán (heute Mexiko-Stadt).
+                        </p>
+                        <p><strong>Verlauf der Eroberung:</strong></p>
+                        <ul>
+                            <li><strong>1519:</strong> Cortés zieht mit indigenen Verbündeten (Tlaxcalteken, die Feinde der Azteken waren) nach Tenochtitlán</li>
+                            <li><strong>November 1519:</strong> Cortés nimmt Moctezuma gefangen, kontrolliert Reich indirekt</li>
+                            <li><strong>Juni 1520:</strong> "Noche Triste" – blutige Vertreibung der Spanier aus Tenochtitlán</li>
+                            <li><strong>1521:</strong> Nach dreimonatiger Belagerung fällt Tenochtitlán. Die Stadt wird systematisch zerstört</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>⚔️ Gründe für den spanischen Sieg</h4>
+                            <ul>
+                                <li><strong>Waffentechnologie:</strong> Feuerwaffen, Stahlschwerter, Rüstungen</li>
+                                <li><strong>Pferde:</strong> Unbekannt in Amerika, verschafften militärischen Vorteil</li>
+                                <li><strong>Indigene Verbündete:</strong> Unterworfene Völker schlossen sich Spaniern an</li>
+                                <li><strong>Krankheiten:</strong> Pocken töteten 50-90% der Bevölkerung</li>
+                                <li><strong>Psychologische Faktoren:</strong> Prophezeiungen, Götterverehrung</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Die Eroberung der Inka (1532-1572)</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>Francisco Pizarro und das Inkareich</h4>
+                        <p>
+                            Das Inkareich erstreckte sich entlang der Anden von Ecuador bis Chile und umfasste etwa 
+                            12 Millionen Menschen. 1532 landete Francisco Pizarro mit nur 168 Soldaten in Peru. Das 
+                            Reich war durch einen Bürgerkrieg zwischen den Brüdern Atahualpa und Huáscar geschwächt.
+                        </p>
+                        <p><strong>Verlauf der Eroberung:</strong></p>
+                        <ul>
+                            <li><strong>November 1532:</strong> Pizarro lockt Inka-Herrscher Atahualpa in eine Falle in Cajamarca, nimmt ihn gefangen</li>
+                            <li><strong>1533:</strong> Trotz Lösegeldzahlung (ein Raum voll Gold) wird Atahualpa hingerichtet</li>
+                            <li><strong>1533:</strong> Einnahme der Hauptstadt Cuzco</li>
+                            <li><strong>1572:</strong> Letzter Widerstand wird mit der Hinrichtung von Túpac Amaru I. gebrochen</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>Brutalität der Eroberung</h4>
+                        <p>
+                            Die Eroberungen waren von extremer Gewalt geprägt: Massaker, Folter, Versklavung. 
+                            Bartolomé de las Casas, ein spanischer Dominikaner, dokumentierte die Gräueltaten in 
+                            seinem Werk "Kurzer Bericht von der Verwüstung der westindischen Länder" (1552). Er 
+                            schätzte, dass in den ersten 50 Jahren etwa 12 Millionen Indigene starben.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2.4 Das Encomienda-System</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Das <strong>Encomienda-System</strong> war die Form der kolonialen Ausbeutung in Spanisch-Amerika. 
+                        Spanische Eroberer und Siedler (Encomenderos) erhielten das Recht, indigene Bewohner einer 
+                        Region zu "verwalten".
+                    </p>
+                    
+                    <h4>Funktionsweise des Encomienda-Systems</h4>
+                    
+                    <div class="info-box">
+                        <h4>Theoretischer Anspruch</h4>
+                        <ul>
+                            <li>Indigene sollten <strong>"beschützt"</strong> und zum Christentum bekehrt werden</li>
+                            <li>Encomenderos hatten Fürsorgepflicht</li>
+                            <li>System sollte "vorübergehend" sein</li>
+                            <li>Keine formelle Versklavung (offiziell)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>Brutale Realität</h4>
+                        <ul>
+                            <li><strong>Zwangsarbeit:</strong> Indigene mussten in Minen, auf Plantagen und im Haushalt arbeiten</li>
+                            <li><strong>Tributpflicht:</strong> Abgaben in Form von Gütern, Nahrung oder Arbeit</li>
+                            <li><strong>Faktische Versklavung:</strong> Trotz offizieller Verbote wurden Indigene wie Sklaven behandelt</li>
+                            <li><strong>Keine Rechte:</strong> Indigene hatten keinerlei rechtlichen Schutz</li>
+                            <li><strong>Familienzerreißung:</strong> Männer wurden zur Arbeit weit von ihren Familien entfernt</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Arbeitsbedingungen in den Silberminen</h4>
+                    <p>
+                        Besonders brutal war die Arbeit in den Silberminen, vor allem in <strong>Potosí</strong> 
+                        (im heutigen Bolivien), der größten Silbermine der Welt:
+                    </p>
+                    <ul>
+                        <li>12-16 Stunden Arbeit pro Tag unter Tage</li>
+                        <li>Giftige Quecksilberdämpfe bei der Silbergewinnung</li>
+                        <li>Einsturzgefahr, Sauerstoffmangel</li>
+                        <li>Durchschnittliche Lebenserwartung: 3-4 Jahre nach Arbeitsbeginn</li>
+                        <li>Geschätzt 8 Millionen Tote in Potosí zwischen 1545 und 1825</li>
+                    </ul>
+                    
+                    <div class="quote-box">
+                        "Die Indianer werden wie Tiere behandelt, ja schlechter als Tiere, denn man sorgt besser für 
+                        die Maultiere als für die Indianer."
+                        <cite>– Bartolomé de las Casas, 1542</cite>
+                    </div>
+                    
+                    <div class="key-concept">
+                        <strong>Kritik und Reformen:</strong> Unter dem Druck von Kritikern wie Bartolomé de las Casas 
+                        erließ die spanische Krone die "Leyes Nuevas" (Neue Gesetze) 1542, die das Encomienda-System 
+                        reformieren sollten. In der Praxis wurden diese Gesetze jedoch weitgehend ignoriert.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2.5 Anspruch und Wirklichkeit der spanischen Herrschaft</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Spanien rechtfertigte seine Kolonialherrschaft mit religiösen und zivilisatorischen Argumenten. 
+                        Die Realität sah jedoch ganz anders aus.
+                    </p>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>✝️ Offizieller Anspruch</h4>
+                            <ul>
+                                <li><strong>Missionierung:</strong> Christianisierung der "Heiden"</li>
+                                <li><strong>Zivilisierung:</strong> Verbreitung europäischer Kultur</li>
+                                <li><strong>Rechtfertigung:</strong> Papst hatte Spanien die Herrschaft über Amerika "geschenkt"</li>
+                                <li><strong>Requerimiento:</strong> Offizielles Dokument, das Indigenen vorgelesen wurde und spanische Herrschaft "legitimierte"</li>
+                                <li><strong>Fürsorgepflicht:</strong> Spanier sollten Indigene "schützen"</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>💀 Brutale Wirklichkeit</h4>
+                            <ul>
+                                <li><strong>Genozid:</strong> Millionen Tote durch Gewalt und Krankheiten</li>
+                                <li><strong>Zwangsarbeit:</strong> Ausbeutung bis zum Tod</li>
+                                <li><strong>Kulturvernichtung:</strong> Zerstörung indigener Kulturen, Sprachen, Religionen</li>
+                                <li><strong>Raub:</strong> Systematischer Diebstahl von Gold, Silber und anderen Schätzen</li>
+                                <li><strong>Zwangschristianisierung:</strong> Unterdrückung indigener Religionen</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Der "Requerimiento" – Ein Dokument der Heuchelei</h4>
+                    <div class="warning-box">
+                        <p>
+                            Bevor Spanier ein Gebiet eroberten, mussten sie den Indigenen den <strong>Requerimiento</strong> 
+                            vorlesen – ein Dokument, das ihnen mitteilte, dass:
+                        </p>
+                        <ol>
+                            <li>Gott die Welt erschaffen hat</li>
+                            <li>Der Papst Gottes Stellvertreter auf Erden ist</li>
+                            <li>Der Papst Amerika Spanien geschenkt hat</li>
+                            <li>Sie sich unterwerfen müssen</li>
+                            <li>Bei Weigerung: Krieg, Versklavung und Tod</li>
+                        </ol>
+                        <p>
+                            <strong>Problem:</strong> Das Dokument wurde auf Spanisch vorgelesen – eine Sprache, die die 
+                            Indigenen nicht verstanden. Oft wurde es nachts verlesen, wenn niemand zuhörte, oder aus 
+                            großer Entfernung. Es war eine reine Farce zur "Legitimation" der Gewalt.
+                        </p>
+                    </div>
+                    
+                    <h4>Valladolid-Debatte (1550-1551)</h4>
+                    <p>
+                        Die berühmte Debatte zwischen Bartolomé de las Casas und Juan Ginés de Sepúlveda über die 
+                        Rechte der Indigenen:
+                    </p>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>Bartolomé de las Casas</h4>
+                            <p><strong>Position:</strong> Indigene sind gleichwertige Menschen</p>
+                            <ul>
+                                <li>Haben Seelen und Vernunft</li>
+                                <li>Zwangsbekehrung ist unmoralisch</li>
+                                <li>Eroberungen sind Unrecht</li>
+                                <li>Friedliche Missionierung gefordert</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Juan Ginés de Sepúlveda</h4>
+                            <p><strong>Position:</strong> Indigene sind "natürliche Sklaven"</p>
+                            <ul>
+                                <li>Intellektuell und moralisch unterlegen</li>
+                                <li>Eroberung ist gerechtfertigt</li>
+                                <li>Zwang ist notwendig für Zivilisierung</li>
+                                <li>Berief sich auf Aristoteles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <strong>Ergebnis:</strong> Keine eindeutige Entscheidung, aber Las Casas Position fand mehr 
+                        Unterstützung. Praktische Auswirkungen waren jedoch minimal – die Ausbeutung ging weiter.
+                    </p>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>2.6 Folgen für die Bevölkerung Süd- und Mittelamerikas</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Die europäische Eroberung hatte katastrophale Folgen für die indigene Bevölkerung Amerikas. 
+                        Innerhalb weniger Jahrzehnte brach die Bevölkerungszahl dramatisch ein – eine der größten 
+                        demografischen Katastrophen der Menschheitsgeschichte.
+                    </p>
+                    
+                    <h4>Demografischer Kollaps</h4>
+                    
+                    <div class="warning-box">
+                        <h4>💀 Bevölkerungsrückgang in Amerika (1492-1600)</h4>
+                        <ul>
+                            <li><strong>1492:</strong> Geschätzt 50-100 Millionen Indigene in Amerika</li>
+                            <li><strong>1600:</strong> Nur noch 5-10 Millionen Menschen</li>
+                            <li><strong>Rückgang:</strong> 80-95% der Bevölkerung</li>
+                            <li><strong>Karibik:</strong> Fast vollständige Ausrottung der Urbevölkerung</li>
+                        </ul>
+                        <p>
+                            <strong>Zum Vergleich:</strong> Dies entspricht dem Tod von mindestens 40-90 Millionen 
+                            Menschen – mehr als im Zweiten Weltkrieg.
+                        </p>
+                    </div>
+                    
+                    <h4>Hauptursachen des Bevölkerungsrückgangs</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>🦠 Krankheiten (Hauptursache: 50-90% der Todesfälle)</h4>
+                            <ul>
+                                <li><strong>Pocken:</strong> Tödlichste Krankheit, bis zu 90% Sterblichkeit</li>
+                                <li><strong>Masern:</strong> Schwere Epidemien</li>
+                                <li><strong>Typhus:</strong> Verbreitet durch schlechte Hygiene</li>
+                                <li><strong>Grippe:</strong> Für Indigene oft tödlich</li>
+                                <li><strong>Malaria und Gelbfieber:</strong> Später aus Afrika eingeschleppt</li>
+                            </ul>
+                            <p>
+                                <strong>Grund:</strong> Indigene hatten kein Immunsystem gegen europäische Krankheiten. 
+                                Europäer hatten über Jahrtausende Resistenzen entwickelt durch engen Kontakt mit 
+                                Haustieren (Zoonosen).
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h4>⚔️ Direkte Gewalt (10-20% der Todesfälle)</h4>
+                            <ul>
+                                <li>Massaker bei Eroberungen</li>
+                                <li>Hinrichtungen und Folter</li>
+                                <li>Niederschlagung von Aufständen</li>
+                                <li>Strafexpeditionen</li>
+                                <li>Kriegsführung mit Schusswaffen</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>💼 Ausbeutung und Zwangsarbeit</h4>
+                            <ul>
+                                <li>Tod durch Überarbeitung in Minen</li>
+                                <li>Mangelernährung</li>
+                                <li>Vergiftung durch Quecksilber</li>
+                                <li>Erschöpfung auf Plantagen</li>
+                                <li>Zusammenbruch der Versorgungssysteme</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Zerstörung der Kulturen</h4>
+                    
+                    <ul>
+                        <li><strong>Religiöse Unterdrückung:</strong> Verbot indigener Religionen, Zerstörung von Tempeln und Heiligtümern</li>
+                        <li><strong>Kulturelle Assimilation:</strong> Zwang zur Übernahme europäischer Kultur, Sprache, Kleidung</li>
+                        <li><strong>Bildungsverbot:</strong> Indigene durften keine höhere Bildung erhalten</li>
+                        <li><strong>Zerstörung von Wissen:</strong> Verbrennung von Kodizes (Büchern) der Maya und Azteken – unersetzliches Wissen ging verloren</li>
+                        <li><strong>Sprachverlust:</strong> Viele indigene Sprachen starben aus</li>
+                    </ul>
+                    
+                    <div class="info-box">
+                        <h4>Beispiel: Zerstörung der Maya-Kodizes</h4>
+                        <p>
+                            Bischof Diego de Landa ließ 1562 in Maní (Yucatán) alle Maya-Bücher verbrennen, die er 
+                            finden konnte. Von den Tausenden Kodizes haben nur vier überlebt. Diese Bücher enthielten 
+                            mathematisches, astronomisches und historisches Wissen, das unwiederbringlich verloren ging.
+                        </p>
+                        <p>
+                            <em>"Wir fanden eine große Anzahl von Büchern in diesen Schriftzeichen, und da sie nichts 
+                            enthielten als Aberglauben und Lügen des Teufels, verbrannten wir sie alle."</em> 
+                            – Diego de Landa
+                        </p>
+                    </div>
+                    
+                    <h4>Soziale und wirtschaftliche Folgen</h4>
+                    
+                    <ul>
+                        <li><strong>Zusammenbruch traditioneller Strukturen:</strong> Dorfgemeinschaften, Verwandtschaftssysteme zerbrachen</li>
+                        <li><strong>Landraub:</strong> Indigene wurden von ihrem angestammten Land vertrieben</li>
+                        <li><strong>Neue Gesellschaftsordnung:</strong> Rassistische Kastensystem (Spanier > Mestizen > Indigene > Schwarze Sklaven)</li>
+                        <li><strong>Wirtschaftliche Marginalisierung:</strong> Indigene wurden zu rechtlosen Arbeitskräften degradiert</li>
+                        <li><strong>Traumatisierung:</strong> Kollektive psychologische Traumata über Generationen</li>
+                    </ul>
+                    
+                    <h4>Transatlantischer Sklavenhandel</h4>
+                    
+                    <div class="warning-box">
+                        <h4>Der Dreieckshandel</h4>
+                        <p>
+                            Da die indigene Bevölkerung stark dezimiert war und die schwere Arbeit auf Plantagen nicht 
+                            mehr leisten konnte, begannen die Europäer, Sklaven aus Afrika zu verschleppen:
+                        </p>
+                        <ol>
+                            <li><strong>Europa → Afrika:</strong> Waffen, Alkohol, Textilien</li>
+                            <li><strong>Afrika → Amerika:</strong> Versklavte Afrikaner (Middle Passage)</li>
+                            <li><strong>Amerika → Europa:</strong> Zucker, Tabak, Baumwolle, Kaffee</li>
+                        </ol>
+                        <p>
+                            <strong>Zahlen:</strong> Zwischen 1500 und 1850 wurden etwa 12-15 Millionen Afrikaner 
+                            nach Amerika verschleppt. Weitere 2-4 Millionen starben während des Transports.
+                        </p>
+                    </div>
+                    
+                    <div class="key-concept">
+                        <strong>Langfristige Folgen:</strong> Die Folgen der Kolonialzeit wirken bis heute nach – 
+                        in Form von wirtschaftlicher Ungleichheit, sozialer Diskriminierung und kulturellem 
+                        Identitätsverlust. Viele indigene Völker kämpfen noch immer um ihre Rechte und die Anerkennung 
+                        ihrer Kultur.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2.7 Rückwirkungen des Kolonialismus auf Europa</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Die Entdeckungen und die koloniale Ausbeutung Amerikas hatten tiefgreifende Auswirkungen auf 
+                        Europa. Sie veränderten Wirtschaft, Gesellschaft, Machtverhältnisse und sogar die Ernährung.
+                    </p>
+                    
+                    <h4>Wirtschaftliche Folgen</h4>
+                    
+                    <div class="success-box">
+                        <h4>💰 Zufluss enormer Reichtümer</h4>
+                        <ul>
+                            <li><strong>Edelmetalle:</strong> Zwischen 1500-1650 flossen etwa 180 Tonnen Gold und 16.000 Tonnen Silber nach Europa</li>
+                            <li><strong>Spanien profitierte am meisten:</strong> Finanzierte damit Kriege und den Hofstaat</li>
+                            <li><strong>Handelsmonopole:</strong> Spanien und Portugal kontrollierten lukrative Handelswege</li>
+                            <li><strong>Plantagenwirtschaft:</strong> Zucker, Tabak, Kaffee wurden zu Massenprodukten</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Die Preisrevolution (16. Jahrhundert)</h4>
+                    
+                    <div class="info-box">
+                        <h4>Inflation durch Silber</h4>
+                        <p>
+                            Der massive Zufluss von Silber und Gold aus Amerika führte in Europa zu einer 
+                            <strong>Inflation</strong> – die Preise stiegen zwischen 1500 und 1650 um etwa 300-400%.
+                        </p>
+                        <p><strong>Folgen:</strong></p>
+                        <ul>
+                            <li><strong>Gewinner:</strong> Händler, Kaufleute, Grundbesitzer mit Marktproduktion</li>
+                            <li><strong>Verlierer:</strong> Lohnarbeiter, kleine Bauern, Adelige mit festen Renten</li>
+                            <li><strong>Sozialer Wandel:</strong> Aufstieg des Bürgertums, Niedergang des alten Adels</li>
+                            <li><strong>Wirtschaftsaufschwung:</strong> Kapitalakkumulation ermöglichte Investitionen</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Entstehung des Kapitalismus</h4>
+                    
+                    <ul>
+                        <li><strong>Kapitalakkumulation:</strong> Koloniale Gewinne ermöglichten große Investitionen</li>
+                        <li><strong>Fernhandel:</strong> Entstehung globaler Handelsnetze</li>
+                        <li><strong>Bankwesen:</strong> Entwicklung moderner Finanzinstrumente (Kredite, Wechsel, Versicherungen)</li>
+                        <li><strong>Aktiengesellschaften:</strong> Gründung der ersten Handelsgesellschaften (z.B. Niederländische Ostindien-Kompanie 1602)</li>
+                        <li><strong>Lohnarbeit:</strong> Zunehmende Bedeutung von Lohnarbeit statt Subsistenzwirtschaft</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <strong>These des Historikers Immanuel Wallerstein:</strong> Die europäische Expansion und 
+                        die Ausbeutung der Kolonien waren essenziell für die Entstehung des modernen Kapitalismus 
+                        und Europas Aufstieg zur dominanten Weltmacht.
+                    </div>
+                    
+                    <h4>Politische Machtverschiebungen</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>Aufstieg: Spanien und Portugal</h4>
+                            <ul>
+                                <li>Spanien wurde zur Weltmacht (16. Jh.)</li>
+                                <li>Riesige Kolonialreiche</li>
+                                <li>Karl V.: "Reich, in dem die Sonne nie untergeht"</li>
+                                <li>Portugal: Handelsnetz im Indischen Ozean</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Niedergang: Italien und deutsche Länder</h4>
+                            <ul>
+                                <li>Mittelmeerhandel verlor an Bedeutung</li>
+                                <li>Italienische Handelsstädte (Venedig, Genua) geschwächt</li>
+                                <li>Handelszentrum verlagerte sich zum Atlantik</li>
+                                <li>Deutsche Länder blieben zersplittert</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Aufstieg (später): England, Frankreich, Niederlande</h4>
+                            <ul>
+                                <li>17. Jh.: Übernahmen Kolonien von Spanien/Portugal</li>
+                                <li>Effizientere Kolonialverwaltung</li>
+                                <li>Niederländisches "Goldenes Zeitalter"</li>
+                                <li>Britisches Empire (18./19. Jh.)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Der "Columbian Exchange" – Austausch von Pflanzen, Tieren und Krankheiten</h4>
+                    
+                    <div class="info-box">
+                        <h4>🌽 Von Amerika nach Europa</h4>
+                        <p><strong>Nahrungsmittel:</strong></p>
+                        <ul>
+                            <li><strong>Kartoffel:</strong> Wurde zum Grundnahrungsmittel, ermöglichte Bevölkerungswachstum</li>
+                            <li><strong>Mais:</strong> Wichtige Getreideart</li>
+                            <li><strong>Tomaten:</strong> Revolutionierten europäische Küche (Italien!)</li>
+                            <li><strong>Kakao/Schokolade:</strong> Luxusgut, später Massenprodukt</li>
+                            <li><strong>Tabak:</strong> Verbreitete sich trotz Kritik schnell</li>
+                            <li><strong>Chili, Paprika, Vanille, Erdnüsse, Ananas</strong></li>
+                        </ul>
+                        <p><strong>Sonstiges:</strong></p>
+                        <ul>
+                            <li><strong>Gummi:</strong> Aus Kautschuk (später industriell wichtig)</li>
+                            <li><strong>Chinarinde:</strong> Gegen Malaria (Chinin)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>🐴 Von Europa/Afrika nach Amerika</h4>
+                        <p><strong>Tiere:</strong></p>
+                        <ul>
+                            <li><strong>Pferde:</strong> Veränderten indigene Kulturen (v.a. Prärie-Indianer)</li>
+                            <li><strong>Rinder, Schweine, Schafe, Ziegen:</strong> Bildeten Grundlage der Viehzucht</li>
+                            <li><strong>Hühner:</strong> Neue Proteinquelle</li>
+                        </ul>
+                        <p><strong>Pflanzen:</strong></p>
+                        <ul>
+                            <li><strong>Weizen, Reis, Gerste:</strong> Europäische Getreidearten</li>
+                            <li><strong>Zuckerrohr:</strong> Basis der Plantagenwirtschaft</li>
+                            <li><strong>Kaffee:</strong> Später in Südamerika angebaut</li>
+                            <li><strong>Weinreben, Olivenbäume</strong></li>
+                        </ul>
+                        <p><strong>Krankheiten (mit verheerenden Folgen für Indigene):</strong></p>
+                        <ul>
+                            <li>Pocken, Masern, Grippe, Typhus, Malaria, Gelbfieber</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="success-box">
+                        <h4>🥔 Die Kartoffel – Europas Retterin?</h4>
+                        <p>
+                            Die aus Peru stammende Kartoffel etablierte sich im 17./18. Jahrhundert in Europa. Sie:
+                        </p>
+                        <ul>
+                            <li>Lieferte mehr Kalorien pro Fläche als Getreide</li>
+                            <li>Wuchs auf ärmeren Böden</li>
+                            <li>War nahrhafter als Brot</li>
+                            <li>Ermöglichte ein Bevölkerungswachstum von 50-100% in manchen Regionen</li>
+                            <li>Half, Hungersnöte zu überwinden</li>
+                        </ul>
+                        <p>
+                            <strong>Aber:</strong> Die einseitige Abhängigkeit von der Kartoffel führte zur 
+                            katastrophalen <strong>Großen Hungersnot in Irland</strong> (1845-1852), als die 
+                            Kartoffelfäule die Ernte vernichtete. Über 1 Million Menschen starben, weitere 
+                            1-2 Millionen emigrierten.
+                        </p>
+                    </div>
+                    
+                    <h4>Kulturelle und gesellschaftliche Folgen</h4>
+                    
+                    <ul>
+                        <li><strong>Erweitertes Weltbild:</strong> Europa sah sich als Zentrum der Welt, aber erkannte ihre geografische Vielfalt</li>
+                        <li><strong>Rassismus und Überlegenheitsdenken:</strong> Entwicklung rassistischer Theorien zur Rechtfertigung der Kolonialherrschaft</li>
+                        <li><strong>Wissenschaftlicher Fortschritt:</strong> Botanik, Zoologie, Geografie, Kartografie entwickelten sich</li>
+                        <li><strong>Neue Konsumgüter:</strong> Kaffee, Kakao, Tabak wurden zu Alltagsprodukten</li>
+                        <li><strong>Globalisierung:</strong> Erste Phase der Globalisierung – weltweite Handelsnetze</li>
+                        <li><strong>Missionierung:</strong> Weltweite Ausbreitung des Christentums</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Problematisches Erbe</h4>
+                        <p>
+                            Der europäische Kolonialismus begründete ein Weltsystem der Ungleichheit, das bis heute 
+                            nachwirkt:
+                        </p>
+                        <ul>
+                            <li>Wirtschaftliche Ausbeutung der Kolonien zugunsten Europas</li>
+                            <li>Entwicklung rassistischer Ideologien</li>
+                            <li>Zerstörung indigener Kulturen und Gesellschaften</li>
+                            <li>Globale Ungleichheit zwischen Nord und Süd</li>
+                            <li>Bis heute: Diskussionen über Reparationen und Aufarbeitung</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-concept">
+                        <strong>Fazit:</strong> Die "Entdeckung" Amerikas war ein Wendepunkt der Weltgeschichte. 
+                        Sie leitete die europäische Dominanz ein, führte aber auch zu unermesslichem Leid. Die 
+                        Folgen – wirtschaftlich, politisch, kulturell – prägen unsere Welt bis heute.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- Reformation und Kirchenspaltung -->
+        <div class="content-section">
+            <h2>3. Reformation und Kirchenspaltung</h2>
+            
+            <div class="info-box">
+                <h4>⛪ Die Reformation – Spaltung der christlichen Kirche</h4>
+                <p>
+                    Die <strong>Reformation</strong> (lat. reformatio = Erneuerung) war eine religiöse Erneuerungs-
+                    bewegung im 16. Jahrhundert, die zur Spaltung der westlichen Kirche in katholische und 
+                    protestantische Konfessionen führte. Sie begann 1517 mit Martin Luthers Kritik am Ablasshandel 
+                    und entwickelte sich zu einer europäischen Bewegung mit weitreichenden religiösen, politischen, 
+                    gesellschaftlichen und kulturellen Folgen.
+                </p>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>3.1 Ursachen der Reformation</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Die Reformation hatte vielfältige Ursachen – sie war nicht nur eine religiöse, sondern auch 
+                        eine politische, wirtschaftliche und soziale Bewegung.
+                    </p>
+                    
+                    <h4>Religiöse Ursachen – Missstände in der Kirche</h4>
+                    
+                    <div class="warning-box">
+                        <h4>💰 Der Ablasshandel</h4>
+                        <p>
+                            Der <strong>Ablasshandel</strong> war der unmittelbare Auslöser der Reformation. Die 
+                            katholische Kirche verkaufte "Ablassbriefe" – gegen Geld konnten Gläubige angeblich ihre 
+                            Sündenstrafen im Fegefeuer verringern oder sogar die Seelen bereits Verstorbener "freikaufen".
+                        </p>
+                        <p><strong>Verkaufsargumente:</strong></p>
+                        <ul>
+                            <li>"Sobald das Geld im Kasten klingt, die Seele aus dem Fegefeuer springt" – Johann Tetzel</li>
+                            <li>Ablassbriefe als "Ticket in den Himmel"</li>
+                            <li>Befreiung von Beichte und Buße</li>
+                            <li>Auch für Verstorbene käuflich</li>
+                        </ul>
+                        <p><strong>Zweck:</strong></p>
+                        <ul>
+                            <li>Finanzierung des Neubaus des Petersdoms in Rom</li>
+                            <li>Tilgung der Schulden des Erzbischofs Albrecht von Mainz</li>
+                            <li>Bereicherung der Kirche und ihrer Vertreter</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Weitere kirchliche Missstände</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>Verweltlichung der Kirche</h4>
+                            <ul>
+                                <li><strong>Prunksucht:</strong> Päpste lebten wie weltliche Fürsten in Luxus</li>
+                                <li><strong>Nepotismus:</strong> Ämtervergabe an Verwandte (lat. nepos = Neffe)</li>
+                                <li><strong>Simonie:</strong> Kauf und Verkauf kirchlicher Ämter</li>
+                                <li><strong>Machtpolitik:</strong> Päpste führten Kriege, schlossen Bündnisse</li>
+                                <li><strong>Renaissance-Päpste:</strong> Mehr an Kunst und Kultur als an Seelsorge interessiert</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Verfall der Geistlichkeit</h4>
+                            <ul>
+                                <li><strong>Ungebildete Priester:</strong> Viele konnten kaum Latein, kannten Bibel nicht</li>
+                                <li><strong>Zölibatsbruch:</strong> Verbreitet waren Konkubinate (uneheliche Partnerinnen)</li>
+                                <li><strong>Pfründenhäufung:</strong> Ein Kleriker hatte mehrere Ämter mit Einkünften</li>
+                                <li><strong>Absentismus:</strong> Bischöfe lebten nicht in ihren Bistümern</li>
+                                <li><strong>Habgier:</strong> Ausbeutung der Gläubigen durch Gebühren</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Theologische Probleme</h4>
+                    
+                    <ul>
+                        <li><strong>Heiligenverehrung:</strong> Übertriebener Reliquienkult (z.B. angebliche Knochen von Heiligen)</li>
+                        <li><strong>Werkgerechtigkeit:</strong> Lehre, dass man durch gute Werke (Spenden, Wallfahrten, Gebete) das Seelenheil erlangen könne</li>
+                        <li><strong>Monopol der Bibelauslegung:</strong> Nur Kirche durfte Bibel auslegen, Laien hatten keinen direkten Zugang</li>
+                        <li><strong>Lateinische Bibel:</strong> Volk verstand Gottesdienst nicht (Latein)</li>
+                        <li><strong>Vermittlerrolle der Kirche:</strong> Priester als notwendige Mittler zwischen Gott und Mensch</li>
+                    </ul>
+                    
+                    <h4>Politische und wirtschaftliche Ursachen</h4>
+                    
+                    <div class="info-box">
+                        <h4>Finanzielle Ausbeutung durch Rom</h4>
+                        <ul>
+                            <li><strong>Kirchensteuer (Zehnter):</strong> 10% des Ertrags an die Kirche</li>
+                            <li><strong>Annaten:</strong> Erste Jahreseinnahme eines kirchlichen Amtes ging an Rom</li>
+                            <li><strong>Ablass:</strong> Zusätzliche Einnahmequelle</li>
+                            <li><strong>Gebühren:</strong> Für Sakramente, Taufe, Ehe, Bestattung</li>
+                            <li><strong>"Geldabfluss nach Rom":</strong> Deutsches Geld finanzierte italienischen Prunk</li>
+                        </ul>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Macht der Kirche:</strong> Etwa 1/3 des Landes in Deutschland gehörte der Kirche</li>
+                        <li><strong>Gerichtsbarkeit:</strong> Eigene kirchliche Gerichte, Kleriker unterlagen nicht weltlichem Recht</li>
+                        <li><strong>Konkurrenz zur weltlichen Macht:</strong> Konflikte zwischen Kaiser und Papst</li>
+                        <li><strong>Autonomiestreben der Fürsten:</strong> Wollten sich von Rom unabhängig machen</li>
+                        <li><strong>Nationalismus:</strong> Deutsches Nationalgefühl gegen "italienische Ausbeutung"</li>
+                    </ul>
+                    
+                    <h4>Soziale Ursachen</h4>
+                    
+                    <ul>
+                        <li><strong>Unzufriedenheit der Bauern:</strong> Fühlten sich von Kirche und Adel ausgebeutet</li>
+                        <li><strong>Aufstieg des Bürgertums:</strong> Selbstbewusste Städter kritisierten kirchliche Privilegien</li>
+                        <li><strong>Humanismus:</strong> Forderte Rückkehr zu den Quellen (Bibel), kritische Prüfung der Tradition</li>
+                        <li><strong>Buchdruck:</strong> Ermöglichte schnelle Verbreitung reformatorischer Ideen</li>
+                        <li><strong>Bildungsanstieg:</strong> Mehr Menschen konnten lesen und wollten Bibel selbst lesen</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <strong>Zusammenfassung:</strong> Die Reformation war keine spontane Revolte, sondern Ergebnis 
+                        lang aufgestauter Unzufriedenheit mit kirchlichen Missständen, theologischen Problemen und 
+                        politisch-wirtschaftlicher Ausbeutung. Luther brachte das Fass zum Überlaufen.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>3.2 Martin Luther – Der Reformator</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Leben und Werdegang</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>1483 – Geburt in Eisleben</h4>
+                        <p>
+                            Martin Luther wurde als Sohn des Bergmanns Hans Luder (später Luther) geboren. Sein Vater 
+                            wollte, dass er Jurist wird – ein sozialer Aufstieg.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1505 – Das Gewittererlebnis</h4>
+                        <p>
+                            Bei einem schweren Gewitter gelobte Luther in Todesangst: "Hilf du, heilige Anna, ich will 
+                            Mönch werden!" Gegen den Willen des Vaters trat er ins Augustinerkloster in Erfurt ein.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1507 – Priesterweihe und Theologiestudium</h4>
+                        <p>
+                            Luther wurde Priester und studierte Theologie. Er plagte sich mit Gewissensfragen: 
+                            "Wie bekomme ich einen gnädigen Gott?" Die Angst vor Gottes Strafe trieb ihn um.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1510 – Romreise</h4>
+                        <p>
+                            Luthers Reise nach Rom wurde zum Schlüsselerlebnis. Er war schockiert über:
+                        </p>
+                        <ul>
+                            <li>Prunksucht und Luxus des Papstes</li>
+                            <li>Oberflächliche, geschäftsmäßige Gottesdienste</li>
+                            <li>Sittenverfall der römischen Geistlichkeit</li>
+                            <li>Zweifel an der Heiligkeit der Kirche</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1512 – Professor in Wittenberg</h4>
+                        <p>
+                            Luther wurde Professor für Bibelauslegung an der neu gegründeten Universität Wittenberg. 
+                            Durch intensives Bibelstudium fand er die Antwort auf seine Gottesfrage.
+                        </p>
+                    </div>
+                    
+                    <h4>Luthers reformatorische Entdeckung – Rechtfertigung aus Glauben</h4>
+                    
+                    <div class="success-box">
+                        <h4>🔑 Das "Turmerlebnis" (ca. 1512-1515)</h4>
+                        <p>
+                            Bei der Vorbereitung einer Vorlesung über den Römerbrief hatte Luther seine theologische 
+                            Erleuchtung (angeblich auf dem Turm des Klosters – daher "Turmerlebnis"):
+                        </p>
+                        <blockquote>
+                            <em>"Der Gerechte wird aus Glauben leben" (Römer 1,17)</em>
+                        </blockquote>
+                        <p>
+                            <strong>Luthers Erkenntnis:</strong> Der Mensch wird nicht durch gute Werke, Gebete, 
+                            Wallfahrten oder Ablasszahlungen vor Gott gerecht, sondern <strong>allein durch den 
+                            Glauben</strong> (sola fide). Gott schenkt seine Gnade bedingungslos – man kann sie nicht 
+                            "verdienen" oder "kaufen".
+                        </p>
+                    </div>
+                    
+                    <h4>Die vier "Solas" der Reformation</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>Sola Scriptura</h4>
+                            <p><strong>Allein die Schrift</strong></p>
+                            <p>
+                                Nur die Bibel ist Quelle des Glaubens, nicht kirchliche Tradition oder päpstliche 
+                                Dekrete. Jeder Christ soll die Bibel selbst lesen können.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h4>Sola Fide</h4>
+                            <p><strong>Allein durch Glauben</strong></p>
+                            <p>
+                                Der Mensch wird allein durch Glauben gerechtfertigt, nicht durch gute Werke. 
+                                Gute Taten sind Folge des Glaubens, nicht Voraussetzung für das Heil.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h4>Sola Gratia</h4>
+                            <p><strong>Allein durch Gnade</strong></p>
+                            <p>
+                                Gott schenkt seine Gnade ohne Vorleistung. Der Mensch kann nichts zu seinem Heil 
+                                beitragen – es ist Gottes freies Geschenk.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h4>Solus Christus</h4>
+                            <p><strong>Allein Christus</strong></p>
+                            <p>
+                                Jesus Christus ist der einzige Mittler zwischen Gott und Mensch. Keine Heiligen, 
+                                keine Maria, kein Papst – nur Christus.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h4>Die 95 Thesen (31. Oktober 1517)</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>Der Thesenanschlag</h4>
+                        <p>
+                            Am 31. Oktober 1517 veröffentlichte Luther 95 Thesen gegen den Ablasshandel. Der Legende 
+                            nach schlug er sie an die Tür der Schlosskirche in Wittenberg – historisch ist das 
+                            umstritten. Sicher ist: Er verschickte die Thesen an Bischöfe und theologische Kollegen.
+                        </p>
+                        <p><strong>Zentrale Aussagen der Thesen:</strong></p>
+                        <ul>
+                            <li><strong>These 1:</strong> "Unser Herr und Meister Jesus Christus hat gewollt, dass das ganze Leben der Gläubigen Buße sein soll."</li>
+                            <li><strong>These 27:</strong> "Sie predigen Menschenlehre, die da sagen, sobald das Geld im Kasten klingt, die Seele aus dem Fegfeuer springt."</li>
+                            <li><strong>These 32:</strong> "Die da glauben, durch Ablassbriefe ihres Heils sicher zu sein, werden mitsamt ihren Lehrern ewig verdammt werden."</li>
+                            <li><strong>These 86:</strong> "Warum baut der Papst nicht die Basilika St. Peter von seinem eigenen Geld, statt von dem der armen Gläubigen?"</li>
+                        </ul>
+                        <p><strong>Wirkung:</strong> Dank Buchdruck verbreiteten sich die Thesen innerhalb von zwei 
+                        Wochen in ganz Deutschland und Europa – eine Medienrevolution!</p>
+                    </div>
+                    
+                    <h4>Die Eskalation (1518-1521)</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>1518 – Verhör in Augsburg</h4>
+                        <p>
+                            Kardinal Cajetan sollte Luther zum Widerruf bewegen. Luther weigerte sich: 
+                            "Hier stehe ich, ich kann nicht anders."
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1519 – Leipziger Disputation</h4>
+                        <p>
+                            Im Streitgespräch mit dem katholischen Theologen Johannes Eck radikalisierte sich Luther:
+                        </p>
+                        <ul>
+                            <li>Bestritt die Unfehlbarkeit des Papstes</li>
+                            <li>Bestritt die Autorität von Konzilien</li>
+                            <li>Erklärte: Nur die Bibel ist maßgeblich</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>1520 – Die reformatorischen Hauptschriften</h4>
+                        <p>Luther veröffentlichte drei programmatische Schriften:</p>
+                        <ul>
+                            <li><strong>"An den christlichen Adel deutscher Nation":</strong> Appell an Fürsten, Kirche zu reformieren</li>
+                            <li><strong>"Von der babylonischen Gefangenschaft der Kirche":</strong> Kritik an katholischen Sakramenten</li>
+                            <li><strong>"Von der Freiheit eines Christenmenschen":</strong> "Ein Christenmensch ist ein freier Herr über alle Dinge und niemandem untertan. Ein Christenmensch ist ein dienstbarer Knecht aller Dinge und jedermann untertan."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>15. Juni 1520 – Bannandrohungsbulle</h4>
+                        <p>
+                            Papst Leo X. drohte Luther mit dem Kirchenbann (Exkommunikation), falls er nicht widerrufe. 
+                            Luther verbrannte die Bulle öffentlich am 10. Dezember 1520 in Wittenberg – ein 
+                            revolutionärer Akt!
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>3. Januar 1521 – Exkommunikation</h4>
+                        <p>Luther wurde aus der katholischen Kirche ausgeschlossen.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>April 1521 – Reichstag zu Worms</h4>
+                        <p>
+                            Kaiser Karl V. lud Luther vor den Reichstag. Dort sollte er seine Schriften widerrufen. 
+                            Luthers berühmte Antwort:
+                        </p>
+                        <blockquote>
+                            <em>"Wenn ich nicht durch Zeugnisse der Schrift und klare Vernunftgründe überzeugt werde 
+                            [...], so kann und will ich nichts widerrufen, weil es gefährlich und unmöglich ist, 
+                            etwas gegen das Gewissen zu tun. Hier stehe ich, ich kann nicht anders. Gott helfe mir. 
+                            Amen."</em>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Mai 1521 – Reichsacht (Wormser Edikt)</h4>
+                        <p>
+                            Luther wurde für vogelfrei erklärt – jeder durfte ihn straflos töten. Kurfürst Friedrich 
+                            der Weise von Sachsen ließ Luther "entführen" und auf die Wartburg bringen – zu seinem 
+                            Schutz.
+                        </p>
+                    </div>
+                    
+                    <h4>Auf der Wartburg (1521-1522)</h4>
+                    
+                    <div class="success-box">
+                        <h4>📖 Bibelübersetzung</h4>
+                        <p>
+                            Auf der Wartburg (als "Junker Jörg" getarnt) übersetzte Luther das Neue Testament in nur 
+                            11 Wochen ins Deutsche. Die Übersetzung erschien 1522 ("Septembertestament") und wurde 
+                            ein Bestseller – über 100.000 Exemplare in kürzester Zeit!
+                        </p>
+                        <p><strong>Bedeutung:</strong></p>
+                        <ul>
+                            <li>Erstmals konnten alle Deutschen die Bibel in ihrer Sprache lesen</li>
+                            <li>Luthers Sprachgewalt prägte die deutsche Schriftsprache</li>
+                            <li>Redewendungen wie "Perlen vor die Säue werfen", "sein Licht nicht unter den Scheffel stellen"</li>
+                            <li>1534: Vollständige Bibelübersetzung (AT und NT)</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Luthers spätere Jahre</h4>
+                    
+                    <ul>
+                        <li><strong>1525:</strong> Heirat mit Katharina von Bora, einer ehemaligen Nonne – 6 Kinder</li>
+                        <li><strong>1529:</strong> Kleiner und Großer Katechismus (Glaubenslehre für das Volk)</li>
+                        <li><strong>1534:</strong> Vollständige Bibelübersetzung erscheint</li>
+                        <li><strong>Kirchenlieder:</strong> "Ein feste Burg ist unser Gott" (Reformationshymne)</li>
+                        <li><strong>1546:</strong> Tod in Eisleben</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Luthers Schattenseiten</h4>
+                        <p><strong>Antisemitismus:</strong></p>
+                        <p>
+                            Luther verfasste späte Schriften mit abscheulichen Hetzreden gegen Juden, besonders 
+                            "Von den Juden und ihren Lügen" (1543). Er forderte:
+                        </p>
+                        <ul>
+                            <li>Verbrennung von Synagogen</li>
+                            <li>Zerstörung jüdischer Häuser</li>
+                            <li>Verbot jüdischer Schriften</li>
+                            <li>Zwangsarbeit für Juden</li>
+                        </ul>
+                        <p>
+                            Diese Schriften wurden Jahrhunderte später von den Nationalsozialisten missbraucht. 
+                            Die evangelische Kirche hat sich heute klar von Luthers Antisemitismus distanziert.
+                        </p>
+                        <p><strong>Intoleranz gegenüber anderen Reformatoren:</strong></p>
+                        <p>Luther bekämpfte Andersdenkende (z.B. Täufer, Zwingli) vehement.</p>
+                    </div>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>3.3 Der Bauernkrieg (1524-1525)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Der <strong>Deutsche Bauernkrieg</strong> war die größte Massenerhebung in der deutschen 
+                        Geschichte vor der Revolution von 1848. Etwa 300.000 Bauern erhoben sich gegen ihre 
+                        Unterdrückung – inspiriert auch durch Luthers Freiheitsbotschaft.
+                    </p>
+                    
+                    <h4>Ursachen des Bauernkriegs</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>Wirtschaftliche Ursachen</h4>
+                            <ul>
+                                <li><strong>Feudale Lasten:</strong> Hohe Abgaben an Adel und Kirche (oft 50-70% des Ertrags)</li>
+                                <li><strong>Frondienste:</strong> Unbezahlte Zwangsarbeit für den Grundherrn</li>
+                                <li><strong>Neue Steuern:</strong> "Türkensteuer", Zölle, Marktabgaben</li>
+                                <li><strong>Einschränkung der Allmende:</strong> Verlust gemeinschaftlicher Nutzungsrechte (Wald, Weiden)</li>
+                                <li><strong>Jagdverbot:</strong> Nur Adel durfte jagen, Bauern nicht einmal Wildschweine abwehren</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Soziale Ursachen</h4>
+                            <ul>
+                                <li><strong>Leibeigenschaft:</strong> Bauern waren persönlich unfrei</li>
+                                <li><strong>Rechtlosigkeit:</strong> Willkür der Grundherren</li>
+                                <li><strong>Demütigung:</strong> Menschenunwürdige Behandlung</li>
+                                <li><strong>Ständische Ordnung:</strong> Keine Aufstiegsmöglichkeiten</li>
+                                <li><strong>Bevölkerungswachstum:</strong> Mehr Menschen, kleinere Höfe</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>Religiöse Ursachen – Missverstandene Reformation</h4>
+                        <p>
+                            Die Bauern interpretierten Luthers Freiheitsbotschaft sozial-revolutionär:
+                        </p>
+                        <ul>
+                            <li>Luther predigte die <strong>"Freiheit eines Christenmenschen"</strong></li>
+                            <li>Bauern verstanden: Auch soziale und politische Freiheit</li>
+                            <li>Alle sind vor Gott gleich → Dann auch in der Gesellschaft?</li>
+                            <li>Bibel als Grundlage: "Macht euch die Erde untertan" (nicht: "dem Adel untertan")</li>
+                            <li><strong>Priestertum aller Gläubigen:</strong> Keine Vermittler nötig → Keine Herren nötig?</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Die Zwölf Artikel (März 1525)</h4>
+                    
+                    <div class="success-box">
+                        <h4>📜 Erste Menschenrechtserklärung auf deutschem Boden</h4>
+                        <p>
+                            Die "Zwölf Artikel" waren das gemeinsame Forderungsprogramm der aufständischen Bauern – 
+                            erstaunlich moderat und auf die Bibel bezogen:
+                        </p>
+                        <ol>
+                            <li><strong>Freie Pfarrerwahl:</strong> Gemeinden sollen ihren Pfarrer selbst wählen</li>
+                            <li><strong>Gerechter Zehnter:</strong> Nur für kirchliche Zwecke, nicht für weltliche Herren</li>
+                            <li><strong>Abschaffung der Leibeigenschaft:</strong> "Christus hat uns alle mit seinem Blut erlöst"</li>
+                            <li><strong>Jagd- und Fischereirechte:</strong> Freier Zugang zu Wild und Fischen</li>
+                            <li><strong>Holznutzungsrecht:</strong> Recht, im Wald Holz zu schlagen</li>
+                            <li><strong>Mäßigung der Frondienste:</strong> Weniger unbezahlte Zwangsarbeit</li>
+                            <li><strong>Angemessene Bezahlung:</strong> Für geleistete Arbeit</li>
+                            <li><strong>Gerechte Pachtzinsen:</strong> Keine willkürliche Erhöhung</li>
+                            <li><strong>Gerechte Strafen:</strong> Keine Willkürjustiz</li>
+                            <li><strong>Rückgabe der Allmende:</strong> Gemeinschaftsland zurück an Dorfgemeinschaft</li>
+                            <li><strong>Abschaffung des Todfalls:</strong> Keine Beschlagnahme des Erbes beim Tod</li>
+                            <li><strong>Biblische Prüfung:</strong> Falls eine Forderung nicht biblisch begründbar sei, würden sie diese zurücknehmen</li>
+                        </ol>
+                        <p>
+                            <strong>Wichtig:</strong> Die Bauern forderten keine Revolution, sondern <strong>Reform</strong> 
+                            und beriefen sich auf <strong>christliche Grundsätze</strong>.
+                        </p>
+                    </div>
+                    
+                    <h4>Verlauf des Bauernkriegs</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>1524 – Beginn im Schwarzwald</h4>
+                        <p>
+                            Der Aufstand begann im Hochschwarzwald und breitete sich schnell nach Schwaben, Franken, 
+                            Thüringen und Österreich aus. Bis zu 300.000 Bauern nahmen teil.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Frühjahr 1525 – Höhepunkt</h4>
+                        <p>
+                            Bauernhaufen eroberten Städte, Klöster und Burgen. Anfangs waren sie oft erfolgreich, 
+                            da die Fürsten überrascht waren. Teilweise kam es zu Gewaltexzessen – Plünderungen, 
+                            Brandschatzung von Klöstern.
+                        </p>
+                        <p><strong>Wichtige Anführer:</strong></p>
+                        <ul>
+                            <li><strong>Thomas Müntzer:</strong> Radikaler Theologe, predigte Gewalt gegen "Gottlose" (Adel)</li>
+                            <li><strong>Florian Geyer:</strong> Fränkischer Ritter, stellte sich auf Seite der Bauern</li>
+                            <li><strong>Götz von Berlichingen:</strong> "Ritter mit der eisernen Hand"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Mai 1525 – Luthers Reaktion</h4>
+                        <p>
+                            Luther verfasste die berüchtigte Schrift <strong>"Wider die räuberischen und mörderischen 
+                            Rotten der Bauern"</strong>:
+                        </p>
+                        <blockquote>
+                            <em>"Man soll sie zerschmeißen, würgen, stechen, heimlich und öffentlich, wer da kann, 
+                            wie man einen tollen Hund erschlagen muss."</em>
+                        </blockquote>
+                        <p><strong>Luthers Begründung:</strong></p>
+                        <ul>
+                            <li>Bauern hätten seine Lehre <strong>missbraucht</strong></li>
+                            <li>Geistliche Freiheit bedeute <strong>nicht</strong> weltliche Freiheit</li>
+                            <li>Obrigkeit sei von Gott eingesetzt – Aufstand gegen sie sei Sünde</li>
+                            <li>Gewalt sei nur der Obrigkeit erlaubt (Römer 13)</li>
+                        </ul>
+                        <p><strong>Folge:</strong> Luther verlor viel Sympathie beim einfachen Volk</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Mai-Juni 1525 – Blutige Niederschlagung</h4>
+                        <p>
+                            Die Fürsten schlugen den Aufstand mit brutaler Gewalt nieder:
+                        </p>
+                        <ul>
+                            <li><strong>15. Mai 1525:</strong> Schlacht bei Frankenhausen – 6.000 Bauern getötet, Thomas Müntzer hingerichtet</li>
+                            <li><strong>Massaker:</strong> Systematische Vernichtung der Bauernhaufen</li>
+                            <li><strong>Rache der Fürsten:</strong> Plünderung, Brandschatzung, Massenhinrichtungen</li>
+                            <li><strong>Etwa 100.000 Tote</strong> (manche Schätzungen bis 130.000)</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Folgen des Bauernkriegs</h4>
+                    
+                    <div class="warning-box">
+                        <h4>Unmittelbare Folgen</h4>
+                        <ul>
+                            <li><strong>Verschärfung der Leibeigenschaft:</strong> Bauern verloren auch letzte Rechte</li>
+                            <li><strong>Höhere Lasten:</strong> Mussten "Kriegsschäden" bezahlen</li>
+                            <li><strong>Terror:</strong> Hinrichtungen, Verstümmelungen, Vertreibungen</li>
+                            <li><strong>Verbot der Versammlungsfreiheit:</strong> Keine Bauernzusammenkünfte mehr</li>
+                            <li><strong>Waffenverbot:</strong> Bauern durften keine Waffen tragen</li>
+                        </ul>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Politisch:</strong> Stärkung der Fürstenmacht, Schwächung der Bauern für Jahrhunderte</li>
+                        <li><strong>Sozial:</strong> Vertiefung der Kluft zwischen Oberschicht und Unterschicht</li>
+                        <li><strong>Reformation:</strong> Luther stellte sich endgültig auf Seite der Fürsten – "Fürstenreformation"</li>
+                        <li><strong>Trauma:</strong> Bauernkrieg wurde zur Warnung vor Volksaufständen</li>
+                        <li><strong>Historische Bedeutung:</strong> Erste große soziale Revolution in Deutschland – aber gescheitert</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <strong>Bewertung:</strong> Der Bauernkrieg war der Versuch, die Reformation auch sozial 
+                        umzusetzen. Luther distanzierte sich davon – die Reformation blieb eine religiöse, nicht 
+                        soziale Bewegung. Die soziale Frage blieb ungelöst und verschärfte sich sogar.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>3.4 Der Augsburger Religionsfrieden (1555)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Nach Jahrzehnten religiöser und politischer Konflikte zwischen katholischen und protestantischen 
+                        Reichsständen wurde 1555 auf dem Reichstag zu Augsburg ein Kompromiss gefunden.
+                    </p>
+                    
+                    <h4>Vorgeschichte</h4>
+                    
+                    <ul>
+                        <li><strong>1521:</strong> Wormser Edikt – Luther wurde geächtet, Reformation verboten</li>
+                        <li><strong>1526/1529:</strong> Reichstage zu Speyer – Territorialfürsten durften selbst über Religion entscheiden</li>
+                        <li><strong>1529:</strong> "Protestation" evangelischer Fürsten → Begriff "Protestanten"</li>
+                        <li><strong>1530:</strong> Augsburger Bekenntnis (Confessio Augustana) – protestantisches Glaubensbekenntnis</li>
+                        <li><strong>1531:</strong> Schmalkaldischer Bund – Militärbündnis evangelischer Fürsten</li>
+                        <li><strong>1546-1547:</strong> Schmalkaldischer Krieg – Kaiser Karl V. besiegt protestantische Fürsten</li>
+                        <li><strong>1552:</strong> Fürstenaufstand – Protestanten gewinnen Territorium zurück</li>
+                    </ul>
+                    
+                    <h4>Bestimmungen des Augsburger Religionsfriedens</h4>
+                    
+                    <div class="success-box">
+                        <h4>Cuius regio, eius religio</h4>
+                        <p>
+                            <strong>"Wessen Gebiet, dessen Religion"</strong> – Der Landesherr bestimmt die 
+                            Konfession in seinem Territorium.
+                        </p>
+                        <ul>
+                            <li>Reichsfürsten dürfen wählen: Katholisch oder lutherisch (Augsburger Bekenntnis)</li>
+                            <li>Untertanen müssen Religion des Landesherrn übernehmen</li>
+                            <li>Untertanen haben <strong>Auswanderungsrecht</strong> (ius emigrandi), falls sie nicht konvertieren wollen</li>
+                            <li>Ende der Reichsacht gegen Protestanten</li>
+                            <li>Sicherung des protestantischen Besitzstandes (Kirchengüter bis 1552)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>Geistlicher Vorbehalt (reservatum ecclesiasticum)</h4>
+                        <p>
+                            Umstrittene Sonderregelung:
+                        </p>
+                        <ul>
+                            <li>Wenn ein <strong>geistlicher Fürst</strong> (Bischof) Protestant wird, verliert er sein Amt und Territorium</li>
+                            <li>Verhindern, dass katholische Bistümer an Protestanten fallen</li>
+                            <li>Protestanten erkannten dies nicht an → Konfliktpotenzial</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Bedeutung und Bewertung</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>✅ Positive Aspekte</h4>
+                            <ul>
+                                <li><strong>Religionsfrieden:</strong> Beendigung der Religionskriege (vorerst)</li>
+                                <li><strong>Rechtliche Anerkennung:</strong> Luthertum wurde reichsrechtlich anerkannt</li>
+                                <li><strong>Koexistenz:</strong> Katholiken und Lutheraner konnten nebeneinander existieren</li>
+                                <li><strong>Toleranz (begrenzt):</strong> Erstmals religiöser Pluralismus im Reich</li>
+                                <li><strong>Frieden:</strong> 63 Jahre relativer Frieden bis zum Dreißigjährigen Krieg</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>❌ Problematische Aspekte</h4>
+                            <ul>
+                                <li><strong>Keine Religionsfreiheit:</strong> Nur Landesherren durften wählen, nicht das Volk</li>
+                                <li><strong>Zwang zur Konformität:</strong> Untertanen mussten Religion des Fürsten annehmen</li>
+                                <li><strong>Calvinisten ausgeschlossen:</strong> Nur Lutheraner anerkannt, nicht Reformierte</li>
+                                <li><strong>Täufer und andere:</strong> Ebenfalls nicht anerkannt → Verfolgung ging weiter</li>
+                                <li><strong>Konfessionalisierung:</strong> Vertiefte religiöse Spaltung Deutschlands</li>
+                                <li><strong>Konfliktpotenzial:</strong> Geistlicher Vorbehalt blieb umstritten</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Langfristige Folgen</h4>
+                    
+                    <ul>
+                        <li><strong>Territoriale Zersplitterung:</strong> Jeder Fürst hatte eigene Kirchenpolitik → über 300 Territorien mit unterschiedlicher Konfession</li>
+                        <li><strong>Konfessionelle Landkarte:</strong> Nord- und Mitteldeutschland überwiegend protestantisch, Süden katholisch</li>
+                        <li><strong>Fürstenmacht gestärkt:</strong> Landesherren wurden auch Kirchenoberhäupter (landesherrliches Kirchenregiment)</li>
+                        <li><strong>Schwächung des Kaisers:</strong> Konnte Religion nicht mehr im Reich durchsetzen</li>
+                        <li><strong>Vorbereitung des Dreißigjährigen Kriegs:</strong> Ungelöste Konflikte brachen 1618 wieder auf</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <strong>Historische Einordnung:</strong> Der Augsburger Religionsfrieden war ein pragmatischer 
+                        Kompromiss, kein Durchbruch zur Toleranz. Er schuf Frieden zwischen den Konfessionen, aber 
+                        keine individuelle Religionsfreiheit. Trotzdem war er ein wichtiger Schritt zur Akzeptanz 
+                        religiöser Vielfalt.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>3.5 Der Dreißigjährige Krieg (1618-1648)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Der <strong>Dreißigjährige Krieg</strong> (1618-1648) war der verheerendste Konflikt auf 
+                        deutschem Boden bis zum Zweiten Weltkrieg. Was als Religionskonflikt begann, entwickelte sich 
+                        zu einem europäischen Machtkrieg, der Deutschland verwüstete.
+                    </p>
+                    
+                    <h4>Ursachen</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>Religiöse Ursachen</h4>
+                            <ul>
+                                <li><strong>Konfessionelle Spannungen:</strong> Katholiken vs. Protestanten (Lutheraner und Calvinisten)</li>
+                                <li><strong>Gegenreformation:</strong> Katholische Kirche versuchte, verlorene Gebiete zurückzugewinnen</li>
+                                <li><strong>Jesuitenorden:</strong> Aggressive Missionierung und Rekatholisierung</li>
+                                <li><strong>Calvinismus:</strong> Nicht im Augsburger Religionsfrieden anerkannt</li>
+                                <li><strong>Fanatismus:</strong> Beide Seiten waren kompromisslos</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Politische Ursachen</h4>
+                            <ul>
+                                <li><strong>Machtkampf:</strong> Kaiser vs. Reichsfürsten (Autonomiestreben)</li>
+                                <li><strong>Dynastie Habsburg:</strong> Versuch, kaiserliche Zentralgewalt zu stärken</li>
+                                <li><strong>Bündnisse:</strong> Union (protestantisch) vs. Liga (katholisch)</li>
+                                <li><strong>Europäische Mächte:</strong> Frankreich, Schweden, Spanien mischten sich ein</li>
+                                <li><strong>Böhmischer Aufstand:</strong> Unmittelbarer Auslöser</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Verlauf – Die vier Phasen</h4>
+                    
+                    <div class="timeline-item">
+                        <h4>Phase 1: Böhmisch-Pfälzischer Krieg (1618-1623)</h4>
+                        <p><strong>Auslöser – Prager Fenstersturz (23. Mai 1618):</strong></p>
+                        <p>
+                            Böhmische protestantische Adelige warfen zwei katholische Statthalter des Kaisers aus dem 
+                            Fenster der Prager Burg (überlebten durch Landung auf Misthaufen). Dies war eine Rebellion 
+                            gegen Kaiser Ferdinand II., der die Religionsfreiheit in Böhmen einschränken wollte.
+                        </p>
+                        <ul>
+                            <li>Böhmen wählte den protestantischen Kurfürsten Friedrich V. von der Pfalz zum König</li>
+                            <li><strong>1620:</strong> Schlacht am Weißen Berg – Katholische Liga besiegt Böhmen</li>
+                            <li>Friedrich V. floh (spöttisch "Winterkönig" genannt – nur ein Jahr König)</li>
+                            <li>Brutal Rekatholisierung Böhmens</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Phase 2: Dänisch-Niedersächsischer Krieg (1625-1629)</h4>
+                        <ul>
+                            <li>Dänischer König Christian IV. griff ein (Protestant, wollte Norddeutschland kontrollieren)</li>
+                            <li>Kaiserliche Armeen unter <strong>Wallenstein</strong> und <strong>Tilly</strong> siegten</li>
+                            <li><strong>1629:</strong> Restitutionsedikt – Protestanten mussten seit 1552 säkularisierte Kirchengüter zurückgeben</li>
+                            <li>Höhepunkt der katholischen Macht</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Phase 3: Schwedischer Krieg (1630-1635)</h4>
+                        <p><strong>Gustav II. Adolf von Schweden griff ein:</strong></p>
+                        <ul>
+                            <li>Motiv: Schutz der Protestanten + schwedische Machtinteressen in Ostseeraum</li>
+                            <li>Schweden als "Retter des Protestantismus"</li>
+                            <li><strong>1631:</strong> Magdeburg wurde von Tillys Truppen erobert und niedergebrannt – 20.000 Tote</li>
+                            <li><strong>1631:</strong> Schlacht bei Breitenfeld – Schweden siegte</li>
+                            <li><strong>1632:</strong> Gustav Adolf fiel in der Schlacht bei Lützen</li>
+                            <li><strong>1634:</strong> Schlacht bei Nördlingen – Schweden besiegt</li>
+                            <li><strong>1635:</strong> Prager Frieden – Kompromiss zwischen Kaiser und protestantischen Fürsten</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Phase 4: Schwedisch-Französischer Krieg (1635-1648)</h4>
+                        <p><strong>Frankreich griff aktiv ein – obwohl katholisch!</strong></p>
+                        <ul>
+                            <li>Kardinal Richelieu setzte Machtpolitik über Religion</li>
+                            <li>Ziel: Schwächung der Habsburger (Umzingelung Frankreichs verhindern)</li>
+                            <li>Frankreich und Schweden kämpften gemeinsam gegen Kaiser</li>
+                            <li>Verwüstung Deutschlands nahm zu</li>
+                            <li>Alle Seiten waren erschöpft</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Charakter des Krieges</h4>
+                    
+                    <div class="warning-box">
+                        <h4>💀 Totaler Krieg – Verwüstung Deutschlands</h4>
+                        <ul>
+                            <li><strong>Söldnerheere:</strong> Lebten von Plünderungen ("Der Krieg ernährt den Krieg")</li>
+                            <li><strong>Massenverbrechen:</strong> Plünderung, Brandschatzung, Vergewaltigung, Mord</li>
+                            <li><strong>Hungersnöte:</strong> Zerstörung der Landwirtschaft</li>
+                            <li><strong>Seuchen:</strong> Pest, Typhus, Ruhr dezimierten Bevölkerung</li>
+                            <li><strong>Bevölkerungsverluste:</strong> Deutschland verlor 30-40% der Bevölkerung (von 16-18 Mio. auf 10-11 Mio.)</li>
+                            <li><strong>Regionale Unterschiede:</strong> Manche Regionen verloren bis zu 70% (z.B. Mecklenburg, Pommern)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quote-box">
+                        "Die Soldaten hausten ärger als die Türken. Sie sengten, raubten und mordeten, schändeten 
+                        Frauen und Jungfrauen und marterten die Bauern."
+                        <cite>– Zeitgenössischer Bericht</cite>
+                    </div>
+                    
+                    <h4>Der Westfälische Frieden (1648)</h4>
+                    
+                    <div class="success-box">
+                        <h4>🕊️ Friedensschluss in Münster und Osnabrück</h4>
+                        <p>
+                            Nach jahrelangen Verhandlungen wurde 1648 der Westfälische Frieden geschlossen 
+                            (eigentlich zwei Verträge: Münster für Katholiken, Osnabrück für Protestanten).
+                        </p>
+                        
+                        <p><strong>Religiöse Bestimmungen:</strong></p>
+                        <ul>
+                            <li><strong>Anerkennung des Calvinismus:</strong> Calvinisten gleichberechtigt mit Lutheranern und Katholiken</li>
+                            <li><strong>Normaljahr 1624:</strong> Besitzstand von 1624 wurde festgeschrieben</li>
+                            <li><strong>Cuius regio, eius religio</strong> bestätigt, aber mit Einschränkungen</li>
+                            <li><strong>Religionsfrieden:</strong> Konfessionen mussten sich gegenseitig tolerieren</li>
+                            <li><strong>Parität:</strong> In manchen Reichsstädten konfessionelle Gleichberechtigung</li>
+                        </ul>
+                        
+                        <p><strong>Politische Bestimmungen:</strong></p>
+                        <ul>
+                            <li><strong>Landeshoheit der Fürsten:</strong> Reichsfürsten erhielten weitgehende Souveränität</li>
+                            <li><strong>Bündnisrecht:</strong> Fürsten durften Bündnisse schließen (auch mit ausländischen Mächten)</li>
+                            <li><strong>Schwächung des Kaisers:</strong> Kaiser wurde faktisch zum Titularherrscher</li>
+                            <li><strong>Schweiz und Niederlande:</strong> Unabhängigkeit anerkannt</li>
+                            <li><strong>Gebietsabtretungen:</strong> Frankreich erhielt Elsass, Schweden Vorpommern und Bremen</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Folgen des Dreißigjährigen Kriegs</h4>
+                    
+                    <div class="grid-container">
+                        <div class="card">
+                            <h4>Demografische Folgen</h4>
+                            <ul>
+                                <li>30-40% Bevölkerungsverlust im Reich</li>
+                                <li>Manche Städte um 50-70% geschrumpft</li>
+                                <li>Generationenverlust</li>
+                                <li>Traumatisierung der Überlebenden</li>
+                                <li>Erst um 1700 war Vorkriegsniveau wieder erreicht</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Wirtschaftliche Folgen</h4>
+                            <ul>
+                                <li>Zerstörung von Städten und Dörfern</li>
+                                <li>Verwüstung der Landwirtschaft</li>
+                                <li>Zusammenbruch des Handels</li>
+                                <li>Verarmung weiter Bevölkerungsschichten</li>
+                                <li>Deutschland fiel wirtschaftlich zurück</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Politische Folgen</h4>
+                            <ul>
+                                <li>Kleinstaaterei: Über 300 souveräne Territorien</li>
+                                <li>Kaiser ohne wirkliche Macht</li>
+                                <li>Partikularismus (Eigenständigkeit der Fürsten)</li>
+                                <li>Aufstieg Frankreichs zur europäischen Macht</li>
+                                <li>Schweden als Ostseemacht</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Religiöse Folgen</h4>
+                            <ul>
+                                <li>Ende der Religionskriege in Deutschland</li>
+                                <li>Konfessionelle Koexistenz</li>
+                                <li>Säkularisierung: Religion verlor an politischer Bedeutung</li>
+                                <li>Konfessionelle Landkarte verfestigt</li>
+                                <li>Toleranzgedanke wuchs langsam</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="key-concept">
+                        <strong>Bedeutung:</strong> Der Dreißigjährige Krieg war die Katastrophe des 17. Jahrhunderts 
+                        für Deutschland. Er beendete zwar die Religionskriege, zementierte aber die politische 
+                        Zersplitterung für weitere 200 Jahre. Deutschland brauchte Generationen, um sich zu erholen. 
+                        Das kollektive Trauma wirkte jahrhundertelang nach.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- Zusammenfassung und Bedeutung -->
+        <div class="content-section">
+            <h2>Zusammenfassung: Die Epochenschwelle 1500 – Ein Wendepunkt der Geschichte</h2>
+            
+            <p>
+                Die Zeit um 1500 markiert einen der bedeutendsten Wendepunkte in der europäischen und Weltgeschichte. 
+                Drei große Transformationsprozesse – <strong>Renaissance</strong>, <strong>Entdeckungen</strong> und 
+                <strong>Reformation</strong> – veränderten das mittelalterliche Europa grundlegend und schufen die 
+                Grundlagen der modernen Welt.
+            </p>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>🎨 Renaissance</h4>
+                    <p><strong>Kulturelle Revolution</strong></p>
+                    <ul>
+                        <li>Humanismus und neues Menschenbild</li>
+                        <li>Wissenschaftlicher Fortschritt (Kopernikus, da Vinci)</li>
+                        <li>Künstlerische Blütezeit</li>
+                        <li>Buchdruck revolutioniert Wissensverbreitung</li>
+                        <li><strong>Ergebnis:</strong> Von der Gottesfurcht zum Selbstbewusstsein</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🌍 Entdeckungen</h4>
+                    <p><strong>Globale Expansion</strong></p>
+                    <ul>
+                        <li>Erschließung neuer Kontinente</li>
+                        <li>Kolonialismus und Ausbeutung</li>
+                        <li>Genozid an indigenen Völkern</li>
+                        <li>Entstehung des Welthandels</li>
+                        <li><strong>Ergebnis:</strong> Beginn der europäischen Dominanz</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>⛪ Reformation</h4>
+                    <p><strong>Religiöse Spaltung</strong></p>
+                    <ul>
+                        <li>Luther spaltet die Kirche</li>
+                        <li>Bauernkrieg und soziale Konflikte</li>
+                        <li>Konfessionalisierung Europas</li>
+                        <li>Dreißigjähriger Krieg verwüstet Deutschland</li>
+                        <li><strong>Ergebnis:</strong> Ende der religiösen Einheit</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Langfristige Bedeutung der Epochenschwelle</h3>
+            
+            <div class="info-box">
+                <h4>🔄 Übergang vom Mittelalter zur Neuzeit</h4>
+                <p>Die Epochenschwelle 1500 wird traditionell als Übergang vom Mittelalter zur Neuzeit betrachtet:</p>
+                
+                <p><strong>Ende des Mittelalters:</strong></p>
+                <ul>
+                    <li>Zusammenbruch der religiösen Einheit Europas</li>
+                    <li>Ende des universalen Kaisertums</li>
+                    <li>Auflösung der feudalen Ordnung (beginnend)</li>
+                    <li>Überwindung des ptolemäischen Weltbilds</li>
+                </ul>
+                
+                <p><strong>Beginn der Neuzeit:</strong></p>
+                <ul>
+                    <li>Neue Wissenschaftlichkeit (Empirie statt Autorität)</li>
+                    <li>Individualismus und Subjektivität</li>
+                    <li>Entstehung des modernen Staates</li>
+                    <li>Kapitalismus und Welthandel</li>
+                    <li>Globalisierung (erste Phase)</li>
+                </ul>
+            </div>
+            
+            <h3>Kontinuitäten und Brüche</h3>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>✅ Was war neu?</h4>
+                    <ul>
+                        <li>Empirische Wissenschaft</li>
+                        <li>Individualismus</li>
+                        <li>Religiöser Pluralismus</li>
+                        <li>Globale Vernetzung</li>
+                        <li>Buchdruck und Massenkommunikation</li>
+                        <li>Frühkapitalismus</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🔄 Was blieb?</h4>
+                    <ul>
+                        <li>Ständegesellschaft (noch lange)</li>
+                        <li>Monarchische Herrschaft</li>
+                        <li>Leibeigenschaft der Bauern</li>
+                        <li>Patriarchalische Strukturen</li>
+                        <li>Religiöse Intoleranz</li>
+                        <li>Wirtschaft basiert auf Landwirtschaft</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prüfungsvorbereitung -->
+        <div class="content-section">
+            <h2>📚 Abitur-Vorbereitung: Epochenschwelle 1500</h2>
+            
+            <div class="warning-box">
+                <h4>⚠️ Häufige Prüfungsthemen</h4>
+                <ul>
+                    <li><strong>Quellenanalyse:</strong> Luthers 95 Thesen, Requerimiento, Ablassbriefe</li>
+                    <li><strong>Vergleiche:</strong> Mittelalter vs. Neuzeit, Katholizismus vs. Protestantismus</li>
+                    <li><strong>Ursache-Wirkungs-Zusammenhänge:</strong> Ursachen der Reformation, Folgen der Entdeckungen</li>
+                    <li><strong>Bewertungen:</strong> Rechtfertigung des Kolonialismus, Luthers Haltung zum Bauernkrieg</li>
+                    <li><strong>Langzeitwirkungen:</strong> Wie wirken Renaissance, Entdeckungen, Reformation bis heute nach?</li>
+                </ul>
+            </div>
+            
+            <h3>Wichtige Daten (Überblick)</h3>
+            
+            <div class="info-box">
+                <h4>📅 Zeitleiste Epochenschwelle 1500</h4>
+                <ul>
+                    <li><strong>ca. 1450:</strong> Gutenberg erfindet Buchdruck mit beweglichen Lettern</li>
+                    <li><strong>1492:</strong> Kolumbus erreicht Amerika</li>
+                    <li><strong>1517:</strong> Luther veröffentlicht 95 Thesen → Beginn der Reformation</li>
+                    <li><strong>1519-1521:</strong> Cortés erobert Aztekenreich</li>
+                    <li><strong>1521:</strong> Luther vor dem Reichstag zu Worms</li>
+                    <li><strong>1524-1525:</strong> Deutscher Bauernkrieg</li>
+                    <li><strong>1532:</strong> Pizarro erobert Inkareich</li>
+                    <li><strong>1543:</strong> Kopernikus: "De revolutionibus" (heliozentrisches Weltbild)</li>
+                    <li><strong>1555:</strong> Augsburger Religionsfrieden</li>
+                    <li><strong>1618-1648:</strong> Dreißigjähriger Krieg</li>
+                </ul>
+            </div>
+            
+            <h3>Zentrale Begriffe</h3>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Renaissance & Humanismus</h4>
+                    <ul>
+                        <li><strong>Renaissance:</strong> Wiedergeburt der Antike</li>
+                        <li><strong>Humanismus:</strong> Menschenbild, Bildung</li>
+                        <li><strong>Empirische Methode:</strong> Beobachtung, Experiment</li>
+                        <li><strong>Individualismus:</strong> Betonung des Einzelnen</li>
+                        <li><strong>Säkularisierung:</strong> Verweltlichung</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Entdeckungen & Kolonialismus</h4>
+                    <ul>
+                        <li><strong>Konquistadoren:</strong> Spanische Eroberer</li>
+                        <li><strong>Encomienda:</strong> Zwangsarbeitssystem</li>
+                        <li><strong>Columbian Exchange:</strong> Austausch von Pflanzen, Tieren, Krankheiten</li>
+                        <li><strong>Preisrevolution:</strong> Inflation durch Edelmetallzufluss</li>
+                        <li><strong>Genozid:</strong> Völkermord an Indigenen</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Reformation</h4>
+                    <ul>
+                        <li><strong>Ablasshandel:</strong> Verkauf von Sündenvergebung</li>
+                        <li><strong>Sola Scriptura/Fide/Gratia:</strong> Reformatorische Prinzipien</li>
+                        <li><strong>Exkommunikation:</strong> Ausschluss aus der Kirche</li>
+                        <li><strong>Gegenreformation:</strong> Katholische Reaktion</li>
+                        <li><strong>Konfessionalisierung:</strong> Verfestigung konfessioneller Identitäten</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Politische Begriffe</h4>
+                    <ul>
+                        <li><strong>Cuius regio, eius religio:</strong> Wessen Land, dessen Religion</li>
+                        <li><strong>Reichsacht:</strong> Ächtung im Heiligen Römischen Reich</li>
+                        <li><strong>Landeshoheit:</strong> Souveränität der Territorialfürsten</li>
+                        <li><strong>Partikularismus:</strong> Kleinstaaterei</li>
+                        <li><strong>Westfälischer Frieden:</strong> Friedensschluss 1648</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Mögliche Prüfungsfragen</h3>
+            
+            <div class="success-box">
+                <h4>💡 Übungsfragen zur Selbstkontrolle</h4>
+                <ol>
+                    <li><strong>Analysieren Sie</strong> die Bedeutung des Buchdrucks für die Verbreitung reformatorischer Ideen.</li>
+                    <li><strong>Erläutern Sie</strong> die vier "Solas" der Reformation und ihre theologische Bedeutung.</li>
+                    <li><strong>Beurteilen Sie</strong> Luthers Haltung zum Bauernkrieg. War sein Verhalten gerechtfertigt?</li>
+                    <li><strong>Vergleichen Sie</strong> das mittelalterliche mit dem humanistischen Menschenbild.</li>
+                    <li><strong>Erörtern Sie</strong> die Frage: War die "Entdeckung" Amerikas ein Segen oder Fluch?</li>
+                    <li><strong>Erklären Sie</strong> den Zusammenhang zwischen Kolonialismus und der Entstehung des Kapitalismus.</li>
+                    <li><strong>Bewerten Sie</strong> den Augsburger Religionsfrieden aus Sicht der religiösen Toleranz.</li>
+                    <li><strong>Diskutieren Sie</strong> die These: "Der Dreißigjährige Krieg war ein Religionskrieg."</li>
+                    <li><strong>Untersuchen Sie</strong> die Langzeitwirkungen der Reformation auf die deutsche Geschichte.</li>
+                    <li><strong>Setzen Sie sich auseinander</strong> mit der Frage: Wie rechtfertigten die Spanier ihren Kolonialismus?</li>
+                </ol>
+            </div>
+            
+            <h3>Methodische Hinweise</h3>
+            
+            <div class="info-box">
+                <h4>🔍 Quellenarbeit zur Epochenschwelle</h4>
+                <p><strong>Typische Quellengattungen:</strong></p>
+                <ul>
+                    <li><strong>Theologische Texte:</strong> Luthers Schriften, Konzilsbeschlüsse</li>
+                    <li><strong>Berichte:</strong> Konquistadoren-Berichte, Las Casas' Anklagen</li>
+                    <li><strong>Bildquellen:</strong> Renaissance-Gemälde, Holzschnitte, Karikaturen</li>
+                    <li><strong>Rechtsdokumente:</strong> Augsburger Religionsfrieden, Westfälischer Frieden</li>
+                    <li><strong>Pamphlete und Flugschriften:</strong> Reformatorische Propaganda</li>
+                </ul>
+                
+                <p><strong>Analyseschritte:</strong></p>
+                <ol>
+                    <li><strong>Formale Quellenanalyse:</strong> Autor, Datum, Quellenart, Adressat</li>
+                    <li><strong>Inhaltliche Erschließung:</strong> Worum geht es? Hauptaussagen?</li>
+                    <li><strong>Kontextualisierung:</strong> Historischer Hintergrund, Einordnung</li>
+                    <li><strong>Intention:</strong> Was will der Autor erreichen? Perspektive?</li>
+                    <li><strong>Kritische Bewertung:</strong> Glaubwürdigkeit, Grenzen der Quelle</li>
+                    <li><strong>Historische Bedeutung:</strong> Welche Rolle spielte die Quelle damals?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Aktuelle Bezüge -->
+        <div class="content-section">
+            <h2>🌐 Aktualität: Warum ist die Epochenschwelle 1500 heute noch relevant?</h2>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Kolonialismus & Postkolonialismus</h4>
+                    <p>
+                        Die Folgen des Kolonialismus wirken bis heute nach:
+                    </p>
+                    <ul>
+                        <li>Globale Ungleichheit zwischen Nord und Süd</li>
+                        <li>Diskussionen über Reparationen</li>
+                        <li>Rückgabe von Raubkunst</li>
+                        <li>Rassismus als koloniales Erbe</li>
+                        <li>Aufarbeitung in Museen und Schulbüchern</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Religionsfreiheit & Toleranz</h4>
+                    <p>
+                        Die Reformation begann den Weg zu religiösem Pluralismus:
+                    </p>
+                    <ul>
+                        <li>Von der Intoleranz zur Toleranz (langer Prozess)</li>
+                        <li>Religionsfreiheit als Grundrecht</li>
+                        <li>Säkularisierung der Gesellschaft</li>
+                        <li>Aktuelle Konflikte um Religion (z.B. Kopftuchstreit)</li>
+                        <li>Umgang mit religiöser Vielfalt heute</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Wissenschaft & Aufklärung</h4>
+                    <p>
+                        Renaissance-Wissenschaft legte Grundlagen:
+                    </p>
+                    <ul>
+                        <li>Empirische Methode bis heute Standard</li>
+                        <li>Kritisches Denken statt Autoritätsgläubigkeit</li>
+                        <li>Wissenschaftliche Revolution</li>
+                        <li>Aktuelle Debatten: Wissenschaftsleugnung, Fake News</li>
+                        <li>Bedeutung von Bildung</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Globalisierung</h4>
+                    <p>
+                        Erste Phase der Globalisierung um 1500:
+                    </p>
+                    <ul>
+                        <li>Entstehung globaler Handelsnetze</li>
+                        <li>Austausch von Ideen, Waren, Menschen</li>
+                        <li>Aber auch: Ausbeutung und Ungleichheit</li>
+                        <li>Parallelen zur heutigen Globalisierung</li>
+                        <li>Lehren für faire Weltordnung?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="key-concept">
+                <strong>Fazit:</strong> Die Epochenschwelle 1500 ist keine ferne Vergangenheit. Viele Strukturen, 
+                Probleme und Chancen unserer Gegenwart haben hier ihren Ursprung. Das Verständnis dieser Epoche 
+                hilft uns, die Gegenwart besser zu verstehen und die Zukunft zu gestalten.
+            </div>
+        </div>
+
+        <!-- Weiterführende Ressourcen -->
+        <div class="content-section">
+            <h2>📖 Weiterführende Ressourcen</h2>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>📚 Empfohlene Literatur</h4>
+                    <ul>
+                        <li><strong>Heinz Schilling:</strong> Martin Luther. Rebell in einer Zeit des Umbruchs (2016)</li>
+                        <li><strong>Yuval Noah Harari:</strong> Eine kurze Geschichte der Menschheit (Kapitel über Kolonialismus)</li>
+                        <li><strong>Jared Diamond:</strong> Arm und Reich. Die Schicksale menschlicher Gesellschaften (1997)</li>
+                        <li><strong>Peter Burke:</strong> Die europäische Renaissance (1998)</li>
+                        <li><strong>Heinz Duchhardt:</strong> Barock und Aufklärung (2007)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🎬 Dokumentationen & Filme</h4>
+                    <ul>
+                        <li><strong>Luther (Film, 2003):</strong> Spielfilm über Martin Luther</li>
+                        <li><strong>Die Deutschen (ZDF):</strong> Folge über Luther</li>
+                        <li><strong>Terra X:</strong> Diverse Folgen zu Renaissance und Entdeckungen</li>
+                        <li><strong>Apocalypto (2006):</strong> Spielfilm über Maya (vor Eroberung)</li>
+                        <li><strong>1492 - Die Eroberung des Paradieses (1992):</strong> Film über Kolumbus</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🌐 Online-Ressourcen</h4>
+                    <ul>
+                        <li><strong>LeMO (Lebendiges Museum Online):</strong> Deutsches Historisches Museum</li>
+                        <li><strong>bpb.de:</strong> Bundeszentrale für politische Bildung</li>
+                        <li><strong>Planet Wissen:</strong> Viele Artikel zur Reformation</li>
+                        <li><strong>Stadtmuseum Wittenberg:</strong> Lutherhaus Wittenberg</li>
+                        <li><strong>Zentraldossier Reformation (bpb):</strong> Umfassende Darstellung</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🏛️ Museen & Gedenkstätten</h4>
+                    <ul>
+                        <li><strong>Lutherstadt Wittenberg:</strong> Lutherhaus, Schlosskirche</li>
+                        <li><strong>Wartburg (Eisenach):</strong> Luthers Versteck</li>
+                        <li><strong>Germanisches Nationalmuseum (Nürnberg):</strong> Renaissance-Sammlung</li>
+                        <li><strong>Uffizien (Florenz):</strong> Renaissance-Kunst</li>
+                        <li><strong>Museo de América (Madrid):</strong> Kolonialgeschichte</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Index Link -->
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="index.html" class="back-link">← Zurück zur Hauptübersicht</a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Epochenschwelle 1500 - Abitur 2026</strong></p>
+            <p>Renaissance, Entdeckungen und Reformation als Wendepunkt zur Neuzeit</p>
+            <p style="margin-top: 15px; color: #95a5a6; font-size: 0.85em;">
+                Diese Zusammenfassung dient der Abiturvorbereitung und erhebt keinen Anspruch auf Vollständigkeit. 
+                Für vertiefende Studien wird auf Fachliteratur verwiesen.
+            </p>
+            <p class="copyright" style="margin-top: 20px;">© 2026 Geschichte Abitur Lernplattform</p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎓 Epochenschwelle 1500 - Seite geladen');
+            
+            // ========================================
+            // Collapsible Sections
+            // ========================================
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    // Toggle active class on header
+                    this.classList.toggle('active');
+                    
+                    // Get the content div
+                    const content = this.nextElementSibling;
+                    
+                    // Toggle active class on content
+                    content.classList.toggle('active');
+                    
+                    // Smooth scroll to header if opening
+                    if (content.classList.contains('active')) {
+                        setTimeout(() => {
+                            this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 300);
+                    }
+                });
+            });
+
+            // ========================================
+            // Smooth Scrolling for Anchor Links
+            // ========================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                });
+            });
+
+            // ========================================
+            // Scroll to Top Button
+            // ========================================
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            // Scroll to top when clicked
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ 
+                    top: 0, 
+                    behavior: 'smooth' 
+                });
+            });
+
+            // ========================================
+            // Keyboard Shortcuts
+            // ========================================
+            document.addEventListener('keydown', function(e) {
+                // Press 'T' to scroll to top
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const activeElement = document.activeElement;
+                    // Only trigger if not typing in input field
+                    if (activeElement.tagName !== 'INPUT' && activeElement.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ 
+                            top: 0, 
+                            behavior: 'smooth' 
+                        });
+                    }
+                }
+                
+                // Press 'E' to expand all sections
+                if ((e.key === 'e' || e.key === 'E') && e.ctrlKey) {
+                    e.preventDefault();
+                    expandAllSections();
+                }
+                
+                // Press 'C' to collapse all sections
+                if ((e.key === 'c' || e.key === 'C') && e.ctrlKey) {
+                    e.preventDefault();
+                    collapseAllSections();
+                }
+            });
+
+            // ========================================
+            // Expand/Collapse All Functions
+            // ========================================
+            function expandAllSections() {
+                collapsibleHeaders.forEach(header => {
+                    header.classList.add('active');
+                    header.nextElementSibling.classList.add('active');
+                });
+                console.log('✅ Alle Abschnitte ausgeklappt');
+            }
+
+            function collapseAllSections() {
+                collapsibleHeaders.forEach(header => {
+                    header.classList.remove('active');
+                    header.nextElementSibling.classList.remove('active');
+                });
+                console.log('✅ Alle Abschnitte eingeklappt');
+            }
+
+            // ========================================
+            // Print Preparation
+            // ========================================
+            window.addEventListener('beforeprint', function() {
+                // Expand all sections before printing
+                expandAllSections();
+            });
+
+            // ========================================
+            // Reading Progress Indicator (optional)
+            // ========================================
+            function updateReadingProgress() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                
+                // You could add a progress bar here if desired
+                // For now, just log it
+                if (scrolled > 50 && !window.halfwayLogged) {
+                    console.log('📖 Halber Weg geschafft!');
+                    window.halfwayLogged = true;
+                }
+            }
+
+            window.addEventListener('scroll', updateReadingProgress);
+
+            // ========================================
+            // Local Storage for Collapsed State (optional)
+            // ========================================
+            // Save which sections are expanded
+            function saveCollapsedState() {
+                const states = {};
+                collapsibleHeaders.forEach((header, index) => {
+                    states[index] = header.classList.contains('active');
+                });
+                localStorage.setItem('epochenschwelleCollapsedState', JSON.stringify(states));
+            }
+
+            // Load collapsed state
+            function loadCollapsedState() {
+                const savedStates = localStorage.getItem('epochenschwelleCollapsedState');
+                if (savedStates) {
+                    const states = JSON.parse(savedStates);
+                    collapsibleHeaders.forEach((header, index) => {
+                        if (states[index]) {
+                            header.classList.add('active');
+                            header.nextElementSibling.classList.add('active');
+                        }
+                    });
+                }
+            }
+
+            // Load state on page load
+            loadCollapsedState();
+
+            // Save state when sections are toggled
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    setTimeout(saveCollapsedState, 100);
+                });
+            });
+
+            // ========================================
+            // Highlight Active Section on Scroll (optional)
+            // ========================================
+            function highlightActiveSection() {
+                const sections = document.querySelectorAll('.content-section');
+                const scrollPos = window.pageYOffset + 200;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        // Could add highlighting here if desired
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightActiveSection);
+
+            // ========================================
+            // Easter Egg - Konami Code
+            // ========================================
+            let konamiCode = [];
+            const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+            
+            document.addEventListener('keydown', function(e) {
+                konamiCode.push(e.key);
+                konamiCode = konamiCode.slice(-10);
+                
+                if (konamiCode.join(',') === konamiPattern.join(',')) {
+                    console.log('🎉 Konami Code aktiviert! Du hast das Easter Egg gefunden!');
+                    console.log('🎓 Luther wäre stolz auf deine Entdeckergabe!');
+                    // Could add a visual effect here
+                    document.body.style.animation = 'rainbow 2s infinite';
+                }
+            });
+
+            // ========================================
+            // Study Timer (optional feature)
+            // ========================================
+            let studyStartTime = Date.now();
+            
+            window.addEventListener('beforeunload', function() {
+                const studyDuration = Math.floor((Date.now() - studyStartTime) / 60000); // in minutes
+                if (studyDuration > 0) {
+                    console.log(`📚 Lernzeit: ${studyDuration} Minuten. Gut gemacht!`);
+                }
+            });
+
+            // ========================================
+            // Finalization
+            // ========================================
+            console.log('✅ Alle Funktionen geladen');
+            console.log('💡 Tastenkürzel:');
+            console.log('   - T: Nach oben scrollen');
+            console.log('   - Strg+E: Alle Abschnitte ausklappen');
+            console.log('   - Strg+C: Alle Abschnitte einklappen');
+            console.log('📖 Viel Erfolg beim Lernen für das Abitur 2026!');
+        });
+    </script>
+</body>
+</html>
