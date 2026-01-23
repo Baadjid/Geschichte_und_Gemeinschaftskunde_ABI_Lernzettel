@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrielle Revolution und soziale Frage - Geschichte Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            margin-top: 15px;
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        
+        /* Navigation */
+        .quick-nav {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .quick-nav h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .quick-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .quick-nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .quick-nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        
+        /* Main Content */
+        .main-content {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .intro-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .intro-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .intro-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 40px 0 25px 0;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .section-header h2 {
+            margin: 0;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-header .icon {
+            font-size: 1.2em;
+        }
+        
+        /* Subsection Styles */
+        .subsection {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .subsection h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .subsection h4 {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .subsection p {
+            margin: 15px 0;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .subsection ul, .subsection ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.9;
+        }
+        
+        .subsection li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #2196f3;
+            box-shadow: 0 3px 10px rgba(33, 150, 243, 0.2);
+        }
+        
+        .info-box h4 {
+            color: #1976d2;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        
+        .info-box p, .info-box li {
+            color: #333;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid var(--warning-color);
+            box-shadow: 0 3px 10px rgba(243, 156, 18, 0.2);
+        }
+        
+        .warning-box h4 {
+            color: #f57c00;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid var(--success-color);
+            box-shadow: 0 3px 10px rgba(39, 174, 96, 0.2);
+        }
+        
+        .success-box h4 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+        }
+        
+        .timeline-item {
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 51%;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 51%;
+            margin-right: 0;
+            text-align: left;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-event {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        /* Grid Layouts */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .grid-3col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #555;
+        }
+        
+        .card li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 0.8em;
+        }
+        
+        /* Quote Styles */
+        .quote {
+            background: #f8f9fa;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px 25px;
+            margin: 25px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1em;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.5em;
+            }
+            
+            .quick-nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2col, .grid-3col {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Strong emphasis */
+        strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Links in content */
+        .main-content a:not(.back-link):not(.quick-nav-link) {
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .main-content a:not(.back-link):not(.quick-nav-link):hover {
+            border-bottom-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⚙️ Industrielle Revolution und soziale Frage</h1>
+            <p class="subtitle">Von der Agrar- zur Industriegesellschaft – Wirtschaftlicher Aufstieg und soziale Probleme</p>
+            <a href="index.html" class="back-link">← Zurück zur Hauptseite</a>
+        </div>
+
+      <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <h3>📑 Schnellnavigation - Inhaltsübersicht</h3>
+            <div class="quick-nav-grid">
+                <a href="#einleitung" class="quick-nav-link">Einleitung</a>
+                <a href="#england" class="quick-nav-link">1. England</a>
+                <a href="#deutschland" class="quick-nav-link">2. Deutschland</a>
+                <a href="#usa" class="quick-nav-link">3. USA</a>
+                <a href="#soziale-frage" class="quick-nav-link">4. Soziale Frage</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <!-- Einleitung -->
+            <div class="intro-section" id="einleitung">
+                <h2>📖 Einleitung: Die Industrielle Revolution als Epochenwende</h2>
+                <p>
+                    Die <strong>Industrielle Revolution</strong> bezeichnet den tiefgreifenden wirtschaftlichen und gesellschaftlichen Wandel, der im späten 18. Jahrhundert in England begann und sich im Laufe des 19. Jahrhunderts über Europa und Nordamerika ausbreitete. Sie markiert den Übergang von der Agrargesellschaft zur Industriegesellschaft und veränderte das Leben der Menschen grundlegend und nachhaltig.
+                </p>
+                <p>
+                    Charakteristisch für die Industrialisierung sind: die <strong>Mechanisierung der Produktion</strong>, der Einsatz neuer <strong>Energiequellen</strong> (Dampfkraft, später Elektrizität), die Entstehung von <strong>Fabriken</strong> und Massenproduktion, neue <strong>Verkehrsmittel</strong> (Eisenbahn, Dampfschiff) und tiefgreifende <strong>gesellschaftliche Veränderungen</strong> (Urbanisierung, neue Sozialstrukturen).
+                </p>
+                <p>
+                    Mit dem wirtschaftlichen Aufschwung entstanden jedoch auch massive <strong>soziale Probleme</strong> – die sogenannte "soziale Frage". Arbeiter lebten unter elenden Bedingungen, Kinderarbeit war weit verbreitet, und soziale Absicherung existierte kaum. Die Bewältigung dieser Herausforderungen führte zur Entstehung der Arbeiterbewegung, des modernen Sozialstaats und neuer politischer Ideologien.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h4>🕐 Periodisierung der Industriellen Revolution</h4>
+                <ul>
+                    <li><strong>Erste Industrielle Revolution (ca. 1760-1840):</strong> Dampfmaschine, Textilindustrie, mechanische Webstühle</li>
+                    <li><strong>Zweite Industrielle Revolution (ca. 1870-1914):</strong> Elektrizität, Chemie, Stahlindustrie, Verbrennungsmotor</li>
+                    <li><strong>Dritte Industrielle Revolution (ab 1970):</strong> Elektronik, Computer, Automatisierung</li>
+                    <li><strong>Vierte Industrielle Revolution (ab 2000):</strong> Digitalisierung, künstliche Intelligenz, Vernetzung</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 1: England -->
+            <div class="section-header" id="england">
+                <h2><span class="icon">🏭</span> 1. England – Das Mutterland der Industrialisierung</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>1.1 Voraussetzungen der Industrialisierung in England</h3>
+                <p>
+                    England war das erste Land, in dem die Industrielle Revolution stattfand. Dies war kein Zufall, sondern das Ergebnis einer einzigartigen Kombination günstiger Voraussetzungen:
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>🌍 Politische und rechtliche Faktoren</h4>
+                        <ul>
+                            <li><strong>Politische Stabilität:</strong> Nach der Glorious Revolution (1688/89) entwickelte sich ein stabiles parlamentarisches System</li>
+                            <li><strong>Rechtsstaatlichkeit:</strong> Eigentumsrechte waren gesichert, Vertragsrecht funktionierte verlässlich</li>
+                            <li><strong>Liberale Wirtschaftsordnung:</strong> Geringe staatliche Eingriffe, freier Handel</li>
+                            <li><strong>Kolonialreich:</strong> Zugang zu Rohstoffen und Absatzmärkten weltweit</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>💰 Wirtschaftliche Faktoren</h4>
+                        <ul>
+                            <li><strong>Kapitalverfügbarkeit:</strong> Reiche Kaufleute und Bankensystem ermöglichten Investitionen</li>
+                            <li><strong>Agrarrevolution:</strong> Höhere Produktivität in der Landwirtschaft schuf Kapital und Arbeitskräfte</li>
+                            <li><strong>Handelsnetze:</strong> Weltweiter Handel seit Jahrhunderten etabliert</li>
+                            <li><strong>Bankwesen:</strong> Entwickeltes Kredit- und Finanzsystem</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>⚡ Natürliche Ressourcen</h4>
+                        <ul>
+                            <li><strong>Kohlevorkommen:</strong> Reichhaltige Steinkohlevorkommen als Energiequelle</li>
+                            <li><strong>Eisenerz:</strong> Verfügbarkeit von Eisenerz für Maschinen und Werkzeuge</li>
+                            <li><strong>Wasserstraßen:</strong> Flüsse und Kanäle für Transport</li>
+                            <li><strong>Häfen:</strong> Günstige Lage als Insel mit vielen Häfen</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🔬 Wissenschaft und Innovation</h4>
+                        <ul>
+                            <li><strong>Innovationskultur:</strong> Hohe Wertschätzung technischer Neuerungen</li>
+                            <li><strong>Praktisches Wissen:</strong> Handwerker experimentierten und erfanden</li>
+                            <li><strong>Patentrecht:</strong> Schutz von Erfindungen förderte Innovation</li>
+                            <li><strong>Royal Society:</strong> Wissenschaftliche Gesellschaft förderte Austausch</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Agrarrevolution als Voraussetzung</h4>
+                    <p>
+                        Die <strong>Agrarrevolution</strong> des 18. Jahrhunderts war eine entscheidende Voraussetzung für die Industrialisierung. Durch neue Anbaumethoden (Fruchtwechselwirtschaft, Einhegungen/Enclosures) und Züchtungen stieg die landwirtschaftliche Produktivität. Dies führte zu:
+                    </p>
+                    <ul>
+                        <li><strong>Bevölkerungswachstum:</strong> Bessere Ernährung ermöglichte mehr Menschen</li>
+                        <li><strong>Freisetzung von Arbeitskräften:</strong> Weniger Bauern ernährten mehr Menschen – überschüssige Arbeitskräfte für Fabriken</li>
+                        <li><strong>Kapitalbildung:</strong> Landbesitzer investierten Gewinne in Industrie</li>
+                        <li><strong>Nachfrage:</strong> Mehr Menschen mit Einkommen schufen Absatzmärkte</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>1.2 Leitsektoren der englischen Industrialisierung</h3>
+                <p>
+                    Die Industrialisierung vollzog sich nicht gleichmäßig in allen Wirtschaftsbereichen, sondern konzentrierte sich zunächst auf bestimmte <strong>Leitsektoren</strong>, die als Motor für die gesamte wirtschaftliche Entwicklung wirkten.
+                </p>
+
+                <h4>🧵 Die Textilindustrie – Der erste Leitsektor</h4>
+                <p>
+                    Die <strong>Baumwollindustrie</strong> war der erste und wichtigste Leitsektor der englischen Industrialisierung. Hier wurden die entscheidenden technischen Innovationen gemacht:
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1733</div>
+                            <div class="timeline-event">Schnellschütze (Flying Shuttle) – John Kay</div>
+                            <p>Beschleunigte das Weben erheblich, schuf aber Engpass beim Spinnen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1764</div>
+                            <div class="timeline-event">Spinning Jenny – James Hargreaves</div>
+                            <p>Ermöglichte das gleichzeitige Spinnen von 8 Fäden (später bis 120)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1769</div>
+                            <div class="timeline-event">Waterframe – Richard Arkwright</div>
+                            <p>Wasserkraftbetriebene Spinnmaschine, erste Fabriken entstehen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1779</div>
+                            <div class="timeline-event">Spinning Mule – Samuel Crompton</div>
+                            <p>Kombinierte Vorteile beider Systeme, produzierte feineres Garn</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1785</div>
+                            <div class="timeline-event">Mechanischer Webstuhl – Edmund Cartwright</div>
+                            <p>Vollständige Mechanisierung der Textilproduktion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>📊 Auswirkungen der Textilindustrialisierung</h4>
+                    <ul>
+                        <li><strong>Produktivitätssteigerung:</strong> Ein Arbeiter konnte mit Maschinen das 200-fache eines Handspinners leisten</li>
+                        <li><strong>Preisverfall:</strong> Baumwollstoffe wurden erschwinglich für breite Bevölkerungsschichten</li>
+                        <li><strong>Exportboom:</strong> Englische Textilien eroberten Weltmärkte</li>
+                        <li><strong>Soziale Folgen:</strong> Handweber verarmten, Fabrikarbeit entstand, Kinderarbeit verbreitete sich</li>
+                        <li><strong>Urbanisierung:</strong> Textilstädte wie Manchester wuchsen explosionsartig</li>
+                    </ul>
+                </div>
+
+                <h4>⚙️ Die Dampfmaschine – Die Schlüsseltechnologie</h4>
+                <p>
+                    Die <strong>Dampfmaschine</strong> war die zentrale Innovation, die die Industrielle Revolution erst ermöglichte. Sie machte die Produktion unabhängig von natürlichen Energiequellen (Wasser, Wind) und revolutionierte sowohl Produktion als auch Transport.
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>🔧 Technische Entwicklung</h4>
+                        <ul>
+                            <li><strong>1712:</strong> Thomas Newcomen – erste brauchbare Dampfmaschine (ineffizient, nur für Bergwerke)</li>
+                            <li><strong>1769:</strong> James Watt – entscheidende Verbesserung durch separaten Kondensator (75% Brennstoffersparnis)</li>
+                            <li><strong>1781:</strong> Watt entwickelt Drehbewegung – Einsatz in Fabriken möglich</li>
+                            <li><strong>1800:</strong> Hochdruckdampfmaschinen – kompakter und effizienter</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🏭 Anwendungsbereiche</h4>
+                        <ul>
+                            <li><strong>Bergbau:</strong> Wasserpumpen in Kohleminen – tieferer Abbau möglich</li>
+                            <li><strong>Textilindustrie:</strong> Antrieb von Spinn- und Webmaschinen</li>
+                            <li><strong>Metallverarbeitung:</strong> Hämmer, Walzen, Gebläse in Eisenhütten</li>
+                            <li><strong>Verkehr:</strong> Dampflokomotiven und Dampfschiffe</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote">
+                    "Die Dampfmaschine war der größte Segen für die Menschheit, den je ein einzelner Erfinder der Welt geschenkt hat."
+                    <div class="quote-author">– Friedrich Engels</div>
+                </div>
+
+                <h4>🚂 Die Eisenbahn – Revolution des Verkehrs</h4>
+                <p>
+                    Die <strong>Eisenbahn</strong> war nicht nur ein neues Verkehrsmittel, sondern wurde zum Symbol und Motor der Industrialisierung. Sie verband Rohstoffquellen mit Produktionsstätten und Märkten, beschleunigte den Güter- und Personenverkehr dramatisch und stimulierte zahlreiche Industriezweige.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1804</div>
+                            <div class="timeline-event">Erste Dampflokomotive – Richard Trevithick</div>
+                            <p>Erfolgreiche Testfahrt in Wales, noch zu schwer für Schienen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1814</div>
+                            <div class="timeline-event">Verbesserte Lokomotive – George Stephenson</div>
+                            <p>"Blücher" befördert Kohle in Bergwerk</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1825</div>
+                            <div class="timeline-event">Erste öffentliche Eisenbahnlinie</div>
+                            <p>Stockton-Darlington (40 km) – Transport von Kohle und Passagieren</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1830</div>
+                            <div class="timeline-event">Liverpool-Manchester-Linie</div>
+                            <p>Erste moderne Eisenbahnlinie zwischen zwei Großstädten, "Rocket" erreicht 48 km/h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1850</div>
+                            <div class="timeline-event">Eisenbahnboom</div>
+                            <p>England verfügt über 10.000 km Schienennetz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Bedeutung der Eisenbahn für die Industrialisierung</h4>
+                    <ul>
+                        <li><strong>Transportrevolution:</strong> Geschwindigkeit stieg von 5 km/h (Postkutsche) auf 50-80 km/h</li>
+                        <li><strong>Kostenreduktion:</strong> Transportkosten sanken um 80-95%</li>
+                        <li><strong>Markterweiterung:</strong> Nationale und internationale Märkte wurden verbunden</li>
+                        <li><strong>Nachfrageimpuls:</strong> Eisenbahnbau stimulierte Kohle-, Eisen- und Stahlindustrie massiv</li>
+                        <li><strong>Urbanisierung:</strong> Städte wuchsen entlang der Eisenbahnlinien</li>
+                        <li><strong>Beschäftigung:</strong> Hunderttausende Arbeitsplätze im Bau und Betrieb</li>
+                        <li><strong>Zeitverständnis:</strong> Einheitliche Zeitmessung wurde nötig (Fahrpläne)</li>
+                    </ul>
+                </div>
+
+                <h4>🔨 Eisen- und Stahlindustrie</h4>
+                <p>
+                    Die <strong>Schwerindustrie</strong> war eng mit den anderen Leitsektoren verknüpft und gewann zunehmend an Bedeutung:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jahr</th>
+                            <th>Innovation</th>
+                            <th>Bedeutung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1709</td>
+                            <td>Kokshochofen (Abraham Darby)</td>
+                            <td>Eisenverhüttung mit Koks statt Holzkohle – höhere Produktion</td>
+                        </tr>
+                        <tr>
+                            <td>1784</td>
+                            <td>Puddel-Verfahren (Henry Cort)</td>
+                            <td>Bessere Qualität des Schmiedeeisens</td>
+                        </tr>
+                        <tr>
+                            <td>1856</td>
+                            <td>Bessemer-Verfahren</td>
+                            <td>Massenproduktion von Stahl – Preisverfall um 80%</td>
+                        </tr>
+                        <tr>
+                            <td>1860er</td>
+                            <td>Siemens-Martin-Verfahren</td>
+                            <td>Noch höhere Qualität und Effizienz</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3>1.3 Gesellschaftliche Folgen in England</h3>
+                <p>
+                    Die Industrialisierung veränderte die englische Gesellschaft grundlegend. Innerhalb weniger Jahrzehnte vollzog sich ein dramatischer Wandel von einer ländlich-agrarischen zu einer städtisch-industriellen Gesellschaft.
+                </p>
+
+                <h4>🏙️ Urbanisierung – Wachstum der Industriestädte</h4>
+                <div class="info-box">
+                    <h4>📈 Bevölkerungsentwicklung englischer Städte</h4>
+                    <ul>
+                        <li><strong>Manchester:</strong> 1750: 18.000 Einwohner → 1851: 303.000 Einwohner</li>
+                        <li><strong>Birmingham:</strong> 1750: 24.000 Einwohner → 1851: 233.000 Einwohner</li>
+                        <li><strong>Leeds:</strong> 1750: 16.000 Einwohner → 1851: 172.000 Einwohner</li>
+                        <li><strong>Anteil Stadtbevölkerung:</strong> 1750: 15% → 1850: 50% → 1900: 75%</li>
+                    </ul>
+                </div>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>👥 Neue Sozialstruktur</h4>
+                        <ul>
+                            <li><strong>Bürgertum (Bourgeoisie):</strong> Fabrikbesitzer, Unternehmer, Händler – wirtschaftliche Macht</li>
+                            <li><strong>Kleinbürgertum:</strong> Handwerker, kleine Ladenbesitzer, Angestellte</li>
+                            <li><strong>Industrieproletariat:</strong> Fabrikarbeiter ohne Eigentum – nur Arbeitskraft</li>
+                            <li><strong>Alter Adel:</strong> Verlust politischer Macht, teilweise Anpassung</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>⚖️ Soziale Konflikte</h4>
+                        <ul>
+                            <li><strong>Klassen-Gegensätze:</strong> Wachsende Kluft zwischen Arm und Reich</li>
+                            <li><strong>Ludditenbewegung (1811-1816):</strong> Maschinenstürmer protestieren gegen Arbeitslosigkeit</li>
+                            <li><strong>Chartistenbewegung (1838-1848):</strong> Forderung nach Wahlrecht für Arbeiter</li>
+                            <li><strong>Streiks und Aufstände:</strong> Zunehmende Konfrontation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Sektion 2: Deutschland -->
+            <div class="section-header" id="deutschland">
+                <h2><span class="icon">🇩🇪</span> 2. Deutschland – Verspätete aber erfolgreiche Industrialisierung</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>2.1 "Revolution von oben" – Preußische Reformen</h3>
+                <p>
+                    Anders als England begann Deutschlands Industrialisierung deutlich später und unter anderen Voraussetzungen. Die Niederlage gegen Napoleon 1806 wurde zum Auslöser für umfassende Modernisierungsmaßnahmen – die sogenannten <strong>Preußischen Reformen</strong> (1807-1815).
+                </p>
+
+                <div class="info-box">
+                    <h4>📋 Die wichtigsten Preußischen Reformen</h4>
+                    <ul>
+                        <li><strong>Oktoberedikt (1807) – Bauernbefreiung:</strong> Aufhebung der Erbuntertänigkeit, freie Berufswahl, Aufhebung der Ständeschranken beim Grundbesitz</li>
+                        <li><strong>Gewerbefreiheit (1810/11):</strong> Abschaffung der Zunftordnung, freie Berufs- und Gewerbeausübung</li>
+                        <li><strong>Städteordnung (1808):</strong> Selbstverwaltung der Städte, Bürgerbeteiligung</li>
+                        <li><strong>Heeresreform (Scharnhorst/Gneisenau):</strong> Allgemeine Wehrpflicht, Leistungsprinzip statt Herkunft</li>
+                        <li><strong>Bildungsreform (Wilhelm von Humboldt):</strong> Gründung der Berliner Universität (1810), allgemeine Schulpflicht, humanistische Bildung</li>
+                        <li><strong>Hardenbergsche Reformen (ab 1810):</strong> Modernisierung der Verwaltung, Finanzreformen, Gewerbesteuer</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Grenzen der Reformen</h4>
+                    <p>
+                        Die Preußischen Reformen waren ambivalent – sie modernisierten die Gesellschaft, blieben aber in wichtigen Punkten unvollständig:
+                    </p>
+                    <ul>
+                        <li><strong>Keine Verfassung:</strong> Versprochene konstitutionelle Ordnung blieb aus</li>
+                        <li><strong>Obrigkeitsstaat:</strong> Monarch behielt absolute Macht</li>
+                        <li><strong>Bauernbefreiung nur teilweise:</strong> Viele Bauern mussten Land abgeben (Regulierung), Gutsherrschaft blieb stark</li>
+                        <li><strong>Adel behielt Privilegien:</strong> Offiziersstellen, höhere Verwaltung, Gutsbesitz</li>
+                        <li><strong>"Revolution von oben":</strong> Reformen ohne Beteiligung des Volkes – "Modernisierung ohne Demokratisierung"</li>
+                    </ul>
+                </div>
+
+                <h4>🚧 Weitere Hindernisse der Industrialisierung in Deutschland</h4>
+                <div class="grid-3col">
+                    <div class="card">
+                        <h4>Politische Zersplitterung</h4>
+                        <ul>
+                            <li>39 souveräne Staaten im Deutschen Bund (1815)</li>
+                            <li>Unterschiedliche Gesetze, Währungen, Maße</li>
+                            <li>Zollgrenzen behinderten Handel</li>
+                            <li>Kein einheitlicher Wirtschaftsraum</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Wirtschaftliche Rückständigkeit</h4>
+                        <ul>
+                            <li>80% der Bevölkerung in Landwirtschaft</li>
+                            <li>Zünfte behinderten Innovation</li>
+                            <li>Kapitalmangel für Investitionen</li>
+                            <li>Schlechte Verkehrsinfrastruktur</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Soziale Strukturen</h4>
+                        <ul>
+                            <li>Starke ständische Ordnung</li>
+                            <li>Adel dominierte Politik und Militär</li>
+                            <li>Schwaches Bürgertum</li>
+                            <li>Bildungsdefizite bei Landbevölkerung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>✅ Maßnahmen zur Überwindung der Hindernisse</h4>
+                <div class="success-box">
+                    <h4>🤝 Der Deutsche Zollverein (1834)</h4>
+                    <p>
+                        Der <strong>Deutsche Zollverein</strong> unter preußischer Führung war ein entscheidender Durchbruch:
+                    </p>
+                    <ul>
+                        <li><strong>Einheitlicher Wirtschaftsraum:</strong> Beseitigung der Binnenzölle zwischen den Mitgliedsstaaten</li>
+                        <li><strong>Gemeinsamer Außenzoll:</strong> Schutz vor ausländischer Konkurrenz</li>
+                        <li><strong>Mitgliedschaft:</strong> 1834: 18 Staaten mit 23 Mio. Einwohnern → 1871: fast ganz Deutschland (außer Österreich)</li>
+                        <li><strong>Wirtschaftswachstum:</strong> Handel innerhalb des Zollvereins verdreifachte sich bis 1850</li>
+                        <li><strong>Politische Bedeutung:</strong> "Kleindeutsche Lösung" wurde wirtschaftlich vorbereitet</li>
+                        <li><strong>Standardisierung:</strong> Einheitliche Maße, Gewichte, Handelsnormen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>2.2 Verspäteter industrieller Take-off (ab 1850er Jahre)</h3>
+                <p>
+                    Die deutsche Industrialisierung begann etwa 50-70 Jahre später als in England, verlief dann aber besonders dynamisch. Der entscheidende Durchbruch – der sogenannte <strong>"Take-off"</strong> – erfolgte in den 1850er und 1860er Jahren.
+                </p>
+
+                <h4>🚂 Die Eisenbahn als Schrittmacher</h4>
+                <p>
+                    In Deutschland spielte die <strong>Eisenbahn</strong> eine noch wichtigere Rolle als in England. Sie war nicht nur Folge, sondern vor allem <strong>Motor der Industrialisierung</strong>:
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1835</div>
+                            <div class="timeline-event">Erste deutsche Eisenbahn</div>
+                            <p>Nürnberg-Fürth (6 km) – noch englische Lokomotive "Adler"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1839</div>
+                            <div class="timeline-event">Leipzig-Dresden</div>
+                            <p>Erste Fernverbindung (120 km) – Beweis der Machbarkeit</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1840er</div>
+                            <div class="timeline-event">Eisenbahnfieber</div>
+                            <p>Private und staatliche Investitionen, rascher Netzausbau</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1850</div>
+                            <div class="timeline-event">Schienennetz wächst</div>
+                            <p>Über 6.000 km Schienen – Verbindung wichtiger Wirtschaftszentren</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1870</div>
+                            <div class="timeline-event">Verdichtung des Netzes</div>
+                            <p>Über 19.000 km – dichteres Netz als in England</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1913</div>
+                            <div class="timeline-event">Zweitgrößtes Netz der Welt</div>
+                            <p>63.000 km Schienen – nur USA haben mehr</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>🔄 Die Eisenbahn als Multiplikator</h4>
+                    <p>Der Eisenbahnbau stimulierte zahlreiche Wirtschaftszweige gleichzeitig:</p>
+                    <ul>
+                        <li><strong>Montanindustrie:</strong> Enorme Nachfrage nach Eisen, Stahl, Kohle für Schienen, Lokomotiven, Waggons</li>
+                        <li><strong>Maschinenbau:</strong> Bau von Lokomotiven und Eisenbahnausrüstung</li>
+                        <li><strong>Bauindustrie:</strong> Brücken, Tunnel, Bahnhöfe, Infrastruktur</li>
+                        <li><strong>Finanzwesen:</strong> Gründung von Banken zur Finanzierung (Aktiengesellschaften)</li>
+                        <li><strong>Beschäftigung:</strong> Hunderttausende direkte und indirekte Arbeitsplätze</li>
+                        <li><strong>Regionale Integration:</strong> Überwindung der Kleinstaaterei, nationale Einigung vorbereitet</li>
+                    </ul>
+                </div>
+
+                <h4>⛏️ Montanindustrie – Das Ruhrgebiet entsteht</h4>
+                <p>
+                    Die <strong>Montanindustrie</strong> (Bergbau und Schwerindustrie) wurde zum zweiten zentralen Leitsektor der deutschen Industrialisierung. Das <strong>Ruhrgebiet</strong> entwickelte sich zum industriellen Herzen Deutschlands:
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>🏗️ Entstehung des Ruhrgebiets</h4>
+                        <ul>
+                            <li><strong>Natürliche Voraussetzungen:</strong> Riesige Kohle- und Erzvorkommen</li>
+                            <li><strong>Verkehrsanbindung:</strong> Ruhr, Rhein, später Kanäle und Eisenbahn</li>
+                            <li><strong>Pionierunternehmer:</strong> Krupp (Essen), Thyssen, Stinnes, Haniel</li>
+                            <li><strong>Technologietransfer:</strong> Übernahme englischer Technologien</li>
+                            <li><strong>Bevölkerungswachstum:</strong> 1850: 300.000 → 1910: 3,5 Millionen Einwohner</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>📊 Wirtschaftliche Bedeutung</h4>
+                        <ul>
+                            <li><strong>Kohleförderung:</strong> 1850: 1,7 Mio. t → 1913: 114 Mio. t</li>
+                            <li><strong>Stahlproduktion:</strong> Rasantes Wachstum, vor allem nach Einführung neuer Verfahren</li>
+                            <li><strong>Exportindustrie:</strong> Deutsche Qualitätsprodukte weltweit gefragt</li>
+                            <li><strong>Verbundwirtschaft:</strong> Enge Verflechtung von Kohle, Stahl, Maschinenbau</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Die dunkle Seite: Arbeitsbedingungen im Bergbau</h4>
+                    <ul>
+                        <li><strong>Schichtarbeit:</strong> 10-14 Stunden unter Tage, 6 Tage die Woche</li>
+                        <li><strong>Gefahren:</strong> Grubenunglücke, Explosionen, Einstürze – Tausende Tote jährlich</li>
+                        <li><strong>Gesundheit:</strong> Staublunge, chronische Atemwegserkrankungen</li>
+                        <li><strong>Kinderarbeit:</strong> Kinder ab 8 Jahren als "Kohlenjungen"</li>
+                        <li><strong>Wohnsituation:</strong> Überfüllte Arbeiterwohnungen, "Schlafgänger"-System</li>
+                        <li><strong>Löhne:</strong> Knapp über Existenzminimum, anfangs keine soziale Absicherung</li>
+                    </ul>
+                </div>
+
+                <h4>🔬 Chemie- und Elektroindustrie – Deutsche Innovationen</h4>
+                <p>
+                    Deutschland entwickelte in der zweiten Phase der Industrialisierung (ab 1870) besondere Stärken in <strong>forschungsintensiven Branchen</strong>:
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>🧪 Chemische Industrie</h4>
+                        <ul>
+                            <li><strong>Weltmarktführer:</strong> BASF, Bayer, Hoechst, Agfa – "Big Six" der Chemieindustrie</li>
+                            <li><strong>Synthetische Farbstoffe:</strong> 80% des Weltmarkts (1900)</li>
+                            <li><strong>Pharmazie:</strong> Aspirin (Bayer 1899), erste synthetische Medikamente</li>
+                            <li><strong>Düngemittel:</strong> Haber-Bosch-Verfahren (Ammoniaksynthese) – Revolution der Landwirtschaft</li>
+                            <li><strong>Wissenschaftsbasis:</strong> Enge Verbindung zu Universitäten und Forschung</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>⚡ Elektroindustrie</h4>
+                        <ul>
+                            <li><strong>Weltkonzerne:</strong> Siemens & Halske, AEG (Allgemeine Elektricitäts-Gesellschaft)</li>
+                            <li><strong>Innovationen:</strong> Dynamo, Elektromotor, Glühbirne, Telegrafie</li>
+                            <li><strong>Elektrifizierung:</strong> Kraftwerke, Straßenbahnen, Beleuchtung</li>
+                            <li><strong>Patente:</strong> Deutsche Ingenieure weltweit führend</li>
+                            <li><strong>Export:</strong> Elektrotechnik "Made in Germany" als Qualitätsmerkmal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Deutsche Besonderheiten der Industrialisierung</h4>
+                    <ul>
+                        <li><strong>"Verspätung als Vorteil":</strong> Deutschland konnte modernste Technologien übernehmen, ohne alte Strukturen abbauen zu müssen</li>
+                        <li><strong>Rolle der Banken:</strong> Deutsche Großbanken (Deutsche Bank, Dresdner Bank) finanzierten und steuerten Industrialisierung aktiv</li>
+                        <li><strong>Bildungssystem:</strong> Technische Hochschulen, Ingenieurausbildung, enge Verbindung Wissenschaft-Wirtschaft</li>
+                        <li><strong>Staatliche Förderung:</strong> Infrastruktur, Schutzzölle, Kartellrecht</li>
+                        <li><strong>Korporatismus:</strong> Enge Zusammenarbeit zwischen Staat, Unternehmern, später auch Gewerkschaften</li>
+                        <li><strong>Konzentration:</strong> Bildung von Kartellen und Konzernen (IG Farben, Vereinigte Stahlwerke)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>2.3 Gründerboom und Gründerkrach (1871-1873)</h3>
+                <p>
+                    Die <strong>Reichsgründung 1871</strong> löste einen beispiellosen Wirtschaftsboom aus – die sogenannten <strong>"Gründerjahre"</strong>. Auf die Euphorie folgte jedoch bereits 1873 ein dramatischer Einbruch.
+                </p>
+
+                <h4>📈 Der Gründerboom (1871-1873)</h4>
+                <div class="info-box">
+                    <h4>Faktoren des Booms:</h4>
+                    <ul>
+                        <li><strong>Französische Kriegsentschädigung:</strong> 5 Milliarden Goldfrancs flossen nach Deutschland</li>
+                        <li><strong>Einheitlicher Wirtschaftsraum:</strong> Beseitigung letzter Handelshemmnisse</li>
+                        <li><strong>Währungsreform:</strong> Einführung der Goldmark als einheitliche Währung (1871)</li>
+                        <li><strong>Psychologischer Faktor:</strong> Nationale Euphorie, Optimismus, Zukunftsvertrauen</li>
+                        <li><strong>Liberales Wirtschaftsrecht:</strong> Gewerbeordnung 1869, Aktienrecht liberalisiert</li>
+                        <li><strong>Infrastrukturausbau:</strong> Eisenbahn, Kanäle, Telegrafennetze</li>
+                    </ul>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bereich</th>
+                            <th>Entwicklung 1871-1873</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Aktiengesellschaften</strong></td>
+                            <td>928 Neugründungen (vs. 295 in den 20 Jahren zuvor)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Banken</strong></td>
+                            <td>107 neue Banken gegründet</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aktienkurse</strong></td>
+                            <td>Verdopplung bis Verdreifachung innerhalb von 2 Jahren</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eisenbahnbau</strong></td>
+                            <td>5.000 km neue Strecken geplant</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bauindustrie</strong></td>
+                            <td>Bauboom in Berlin, Hamburg, Köln – "Gründerzeitviertel"</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>📉 Der Gründerkrach (1873)</h4>
+                <p>
+                    Die <strong>Spekulation</strong> hatte sich von der realen Wirtschaft abgekoppelt. Im Mai 1873 begann der Zusammenbruch:
+                </p>
+
+                <div class="warning-box">
+                    <h4>⚠️ Ursachen und Folgen des Crashs</h4>
+                    <p><strong>Ursachen:</strong></p>
+                    <ul>
+                        <li><strong>Überspekulation:</strong> Viele Unternehmen ohne reale Geschäftsgrundlage</li>
+                        <li><strong>Überproduktion:</strong> Angebot überstieg Nachfrage (besonders Stahl, Bau)</li>
+                        <li><strong>Kreditklemme:</strong> Banken hatten zu riskant verliehen</li>
+                        <li><strong>Internationale Verflechtung:</strong> Wiener Börsenkrach (Mai 1873) griff auf Deutschland über</li>
+                        <li><strong>Vertrauensverlust:</strong> Panikverkäufe, Bank-Runs</li>
+                    </ul>
+                    <p><strong>Folgen:</strong></p>
+                    <ul>
+                        <li><strong>Weltwirtschaftskrise:</strong> Lange Depression bis 1879/1890er</li>
+                        <li><strong>Unternehmenszusammenbrüche:</strong> Hunderte Firmen gingen bankrott</li>
+                        <li><strong>Arbeitslosigkeit:</strong> Massenentlassungen, soziale Not</li>
+                        <li><strong>Politische Folgen:</strong> Ende des wirtschaftlichen Liberalismus, Forderung nach Schutzzöllen</li>
+                        <li><strong>Konzentrationsprozess:</strong> Kleinere Firmen verschwanden, Kartellbildung verstärkte sich</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>2.4 Hochindustrialisierung (1890-1914) – Deutschland überholt England</h3>
+                <p>
+                    Nach Überwindung der Krise setzte in den 1890er Jahren die <strong>Hochindustrialisierung</strong> ein. Deutschland entwickelte sich zur führenden Industrienation Europas und überholte in vielen Bereichen England.
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>📊 Wirtschaftliche Kennzahlen (1870-1913)</h4>
+                        <ul>
+                            <li><strong>Kohleförderung:</strong> 34 Mio. t (1870) → 190 Mio. t (1913)</li>
+                            <li><strong>Stahlproduktion:</strong> 0,3 Mio. t (1870) → 18,3 Mio. t (1913) – <em>Weltspitze!</em></li>
+                            <li><strong>Elektrizität:</strong> Deutschland wird Weltmarktführer</li>
+                            <li><strong>Chemie:</strong> 90% der weltweiten Farbstoffproduktion</li>
+                            <li><strong>Außenhandel:</strong> Verdreifachung des Exports</li>
+                            <li><strong>BSP-Wachstum:</strong> Durchschnittlich 3% pro Jahr</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🏭 Strukturwandel der Wirtschaft</h4>
+                        <ul>
+                            <li><strong>Erwerbstätige in Industrie:</strong> 1870: 30% → 1914: 43%</li>
+                            <li><strong>Erwerbstätige in Landwirtschaft:</strong> 1870: 50% → 1914: 35%</li>
+                            <li><strong>Verstädterung:</strong> 1871: 36% in Städten → 1910: 60%</li>
+                            <li><strong>Großstädte (>100.000):</strong> 1871: 8 → 1910: 48</li>
+                            <li><strong>Berlin:</strong> 1871: 826.000 → 1910: 2,1 Mio. Einwohner</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Gründe für den deutschen Erfolg</h4>
+                    <ul>
+                        <li><strong>Wissenschaft und Forschung:</strong> Weltbeste technische Hochschulen, Nobelpreisträger, enge Verzahnung mit Wirtschaft</li>
+                        <li><strong>"Made in Germany":</strong> Anfangs abwertend gemeint (Warnung vor Billigprodukten), entwickelte sich zum Qualitätssiegel</li>
+                        <li><strong>Soziale Marktwirtschaft avant la lettre:</strong> Bismarcks Sozialgesetzgebung stabilisierte System</li>
+                        <li><strong>Organisierte Moderne:</strong> Kartelle, Konzerne, rationale Betriebsführung ("Taylorismus")</li>
+                        <li><strong>Duale Ausbildung:</strong> Meister- und Lehrlingssystem sicherte Fachkräfte</li>
+                        <li><strong>Infrastruktur:</strong> Dichtes Eisenbahn-, Kanal- und Telegrafennetz</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>🔗 Kartelle und Konzerne – "Organisierter Kapitalismus"</h4>
+                    <p>
+                        In Deutschland bildeten sich mehr Kartelle als in anderen Ländern. 1905 existierten etwa 385 Kartelle:
+                    </p>
+                    <ul>
+                        <li><strong>Rheinisch-Westfälisches Kohlensyndikat:</strong> Kontrollierte 95% der Kohleförderung im Ruhrgebiet</li>
+                        <li><strong>Stahlwerksverband:</strong> Koordinierte Preise und Produktionsmengen</li>
+                        <li><strong>IG Farben (gegr. 1925):</strong> Fusion der großen Chemiekonzerne – größtes Chemieunternehmen der Welt</li>
+                        <li><strong>AEG und Siemens:</strong> Teilten den Elektromarkt untereinander auf</li>
+                        <li><strong>Krupp:</strong> Vertikale Integration – vom Erz bis zum fertigen Produkt</li>
+                    </ul>
+                    <p><strong>Kritik:</strong> Monopolbildung, Preisabsprachen, Wettbewerbsverzerrung – aber auch: Krisenresistenz, Planbarkeit, Investitionssicherheit</p>
+                </div>
+            </div>
+
+          <!-- Sektion 3: USA -->
+            <div class="section-header" id="usa">
+                <h2><span class="icon">🗽</span> 3. USA – Vom Agrarland zur Weltmacht</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>3.1 Voraussetzungen der amerikanischen Industrialisierung</h3>
+                <p>
+                    Die <strong>Industrialisierung der USA</strong> begann später als in England, aber früher als in Deutschland. Besonders nach dem Bürgerkrieg (1861-1865) entwickelten sich die USA rasant zur führenden Industrienation der Welt.
+                </p>
+
+                <div class="grid-3col">
+                    <div class="card">
+                        <h4>🌎 Natürliche Vorteile</h4>
+                        <ul>
+                            <li><strong>Riesige Fläche:</strong> Kontinentale Ausdehnung – unbegrenzte Expansion möglich</li>
+                            <li><strong>Rohstoffe:</strong> Kohle, Eisenerz, Öl, Holz, Baumwolle in Fülle</li>
+                            <li><strong>Fruchtbare Böden:</strong> Landwirtschaft hochproduktiv</li>
+                            <li><strong>Verkehrswege:</strong> Große Flüsse, später transkontinentale Eisenbahnen</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>👥 Bevölkerung und Arbeitskräfte</h4>
+                        <ul>
+                            <li><strong>Massenmigration:</strong> 1820-1920: über 30 Mio. Einwanderer aus Europa</li>
+                            <li><strong>Bevölkerungswachstum:</strong> 1800: 5 Mio. → 1900: 76 Mio. → 1920: 106 Mio.</li>
+                            <li><strong>Arbeitsreservoir:</strong> Billige Arbeitskräfte aus allen Teilen der Welt</li>
+                            <li><strong>Unternehmergeist:</strong> "American Dream" – Aufstieg durch harte Arbeit</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>💡 Wirtschaftskultur</h4>
+                        <ul>
+                            <li><strong>Liberalismus:</strong> Minimale staatliche Eingriffe, Laissez-faire</li>
+                            <li><strong>Innovationsfreude:</strong> Pragmatismus, "Yankee ingenuity"</li>
+                            <li><strong>Risikobereitschaft:</strong> Venture-Kapital, Gründermentalität</li>
+                            <li><strong>Binnenmarkt:</strong> Riesiger Absatzmarkt ohne Zollgrenzen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>⚔️ Der Bürgerkrieg (1861-1865) als Katalysator</h4>
+                    <p>
+                        Der <strong>Amerikanische Bürgerkrieg</strong> beschleunigte paradoxerweise die Industrialisierung:
+                    </p>
+                    <ul>
+                        <li><strong>Sieg des Nordens:</strong> Triumph des industriellen Systems über die Plantagenwirtschaft des Südens</li>
+                        <li><strong>Militärische Nachfrage:</strong> Massenproduktion von Waffen, Uniformen, Konserven, Eisenbahnen</li>
+                        <li><strong>Finanzierung:</strong> Entwicklung moderner Finanzinstrumente (Staatsanleihen, Papiergeld)</li>
+                        <li><strong>Technologische Innovation:</strong> Telegrafie, Eisenbahnlogistik, Standardisierung</li>
+                        <li><strong>Sklavenbefreiung (1865):</strong> Schuf freien Arbeitsmarkt im gesamten Land</li>
+                        <li><strong>Homestead Act (1862):</strong> Förderung der Westexpansion – Landverteilung</li>
+                    </ul>
+                </div>
+
+                <h4>🚂 Die transkontinentalen Eisenbahnen</h4>
+                <p>
+                    Der Bau der <strong>transkontinentalen Eisenbahnen</strong> war das größte Infrastrukturprojekt des 19. Jahrhunderts und Symbol des amerikanischen Fortschrittsglaubens:
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1862</div>
+                            <div class="timeline-event">Pacific Railroad Act</div>
+                            <p>Kongress beschließt Bau einer Eisenbahn vom Atlantik zum Pazifik</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1863-1869</div>
+                            <div class="timeline-event">Bau der First Transcontinental Railroad</div>
+                            <p>Union Pacific (von Osten) und Central Pacific (von Westen) bauen aufeinander zu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">10. Mai 1869</div>
+                            <div class="timeline-event">Golden Spike Ceremony</div>
+                            <p>Fertigstellung in Promontory Summit, Utah – "Coast to Coast" in 6 Tagen statt 6 Monaten</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1870-1890</div>
+                            <div class="timeline-event">Weitere transkontinentale Linien</div>
+                            <p>Southern Pacific, Northern Pacific, Great Northern – Erschließung des Westens</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1900</div>
+                            <div class="timeline-event">Eisenbahnnetz vollendet</div>
+                            <p>USA verfügen über 320.000 km Schienen – mehr als Europa gesamt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Bedeutung der Eisenbahn für die USA</h4>
+                    <ul>
+                        <li><strong>Nationale Integration:</strong> Vereinigung von Ost- und Westküste</li>
+                        <li><strong>Wirtschaftsraum:</strong> Zugang zu Rohstoffen, Erschließung neuer Märkte</li>
+                        <li><strong>Siedlung:</strong> Entlang der Bahnen entstanden Städte und Farmen</li>
+                        <li><strong>Zeitzone:</strong> 1883 Einführung einheitlicher Zeitzonen (wegen Fahrplänen)</li>
+                        <li><strong>Industrie-Stimulus:</strong> Enorme Nachfrage nach Stahl, Kohle, Holz</li>
+                        <li><strong>Finanzmarkt:</strong> Eisenbahnaktien dominierten Börse, erste Investmentbanken</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Schattenseiten des Eisenbahnbaus</h4>
+                    <ul>
+                        <li><strong>Ausbeutung:</strong> Chinesische und irische Arbeiter schufteten unter lebensgefährlichen Bedingungen</li>
+                        <li><strong>Tausende Tote:</strong> Lawinen, Sprengungen, Unfälle forderten hohen Blutzoll</li>
+                        <li><strong>Landraub:</strong> Eisenbahngesellschaften erhielten riesige Landflächen (25% von Bundesländern!)</li>
+                        <li><strong>Vernichtung der Indianer:</strong> Eisenbahn durchschnitt Jagdgebiete, Büffel wurden ausgerottet, Vertreibung und Kriege</li>
+                        <li><strong>Korruption:</strong> Politiker bestochen, öffentliche Gelder veruntreut (Crédit Mobilier Skandal)</li>
+                        <li><strong>Monopole:</strong> Eisenbahnbarone diktierten Preise, ruinierten Farmer und Kleinunternehmer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>3.2 Big Business – Das Zeitalter der Industriemagnaten</h3>
+                <p>
+                    Nach dem Bürgerkrieg entstand in den USA eine neue Form des Kapitalismus – das <strong>"Big Business"</strong>. Einige wenige Unternehmer kontrollierten ganze Industriezweige und häuften unvorstellbare Reichtümer an. Sie wurden als <strong>"Robber Barons"</strong> (Raubritter) oder als <strong>"Captains of Industry"</strong> (Kapitäne der Industrie) bezeichnet – je nach Perspektive.
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>🛢️ John D. Rockefeller (1839-1937)</h4>
+                        <p><strong>Standard Oil Company – Ölmonopol</strong></p>
+                        <ul>
+                            <li><strong>Geschäftsmodell:</strong> Horizontale Integration – Aufkauf aller Konkurrenten</li>
+                            <li><strong>Marktmacht:</strong> 1890 kontrollierte Standard Oil 90% der US-Ölraffinerien</li>
+                            <li><strong>Methoden:</strong> Preisdumping, geheime Rabattverträge mit Eisenbahnen, Spionage</li>
+                            <li><strong>Vermögen:</strong> Reichster Mensch der Geschichte (inflationsbereinigt: ca. 400 Mrd. $)</li>
+                            <li><strong>Trust:</strong> Erfand das Trust-Modell zur Umgehung von Kartellgesetzen</li>
+                            <li><strong>Philanthropie:</strong> Spendete Hälfte seines Vermögens – Gründung University of Chicago, Rockefeller Foundation</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🏭 Andrew Carnegie (1835-1919)</h4>
+                        <p><strong>Carnegie Steel Company – Stahlimperium</strong></p>
+                        <ul>
+                            <li><strong>Geschäftsmodell:</strong> Vertikale Integration – Kontrolle der gesamten Produktionskette (Erzminen, Transport, Stahlwerke)</li>
+                            <li><strong>Marktmacht:</strong> 1900 größter Stahlproduzent der Welt (25% der US-Produktion)</li>
+                            <li><strong>Innovation:</strong> Frühe Übernahme des Bessemer-Verfahrens, effiziente Massenproduktion</li>
+                            <li><strong>Verkauf:</strong> 1901 an J.P. Morgan für 480 Mio. $ → US Steel Corporation</li>
+                            <li><strong>"Gospel of Wealth":</strong> Reiche haben Pflicht, Vermögen der Gesellschaft zurückzugeben</li>
+                            <li><strong>Philanthropie:</strong> Stiftete 3.000 Bibliotheken, Carnegie Hall, Universitäten</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>💰 J.P. Morgan (1837-1913)</h4>
+                        <p><strong>J.P. Morgan & Co. – Finanzimperium</strong></p>
+                        <ul>
+                            <li><strong>Geschäftsmodell:</strong> Investmentbanking, Unternehmensfinanzierung, Fusionen</li>
+                            <li><strong>Marktmacht:</strong> Finanzierte Eisenbahnen, Stahl, Elektrizität – kontrollierte 25% des US-Vermögens</li>
+                            <li><strong>"Morganization":</strong> Reorganisation ineffizienter Unternehmen, Schaffung von Monopolen</li>
+                            <li><strong>US Steel (1901):</strong> Erste Milliarden-Dollar-Corporation der Geschichte</li>
+                            <li><strong>Rettungsaktion 1907:</strong> Verhinderte Finanzkrise mit eigenem Geld – mächtiger als die Regierung</li>
+                            <li><strong>Kunstsammler:</strong> Hinterließ weltberühmte Sammlung (Metropolitan Museum)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🚗 Henry Ford (1863-1947)</h4>
+                        <p><strong>Ford Motor Company – Automobilrevolution</strong></p>
+                        <ul>
+                            <li><strong>Geschäftsmodell:</strong> Massenproduktion durch Fließband, erschwingliche Autos für alle</li>
+                            <li><strong>Model T (ab 1908):</strong> "Tin Lizzie" – von 850$ (1908) auf 260$ (1925)</li>
+                            <li><strong>Fließband (1913):</strong> Montagezeit von 12 Std. auf 93 Min. reduziert</li>
+                            <li><strong>15 Mio. Model T verkauft</strong> – Auto wurde Massenprodukt</li>
+                            <li><strong>$5-Tag (1914):</strong> Verdopplung der Löhne – Arbeiter konnten sich eigenes Auto leisten</li>
+                            <li><strong>Sozialpolitik:</strong> Aber auch autoritär, anti-gewerkschaftlich, antisemitisch</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>🔗 Unternehmensformen des Big Business</h4>
+                    <ul>
+                        <li><strong>Trust:</strong> Mehrere Unternehmen unter einheitlicher Kontrolle (Standard Oil Trust 1882)</li>
+                        <li><strong>Holding:</strong> Dachgesellschaft besitzt Anteile an operativen Gesellschaften</li>
+                        <li><strong>Kartell:</strong> Absprachen über Preise und Produktionsmengen</li>
+                        <li><strong>Vertikale Integration:</strong> Kontrolle der gesamten Wertschöpfungskette (Carnegie)</li>
+                        <li><strong>Horizontale Integration:</strong> Aufkauf aller Konkurrenten (Rockefeller)</li>
+                        <li><strong>Konglomerat:</strong> Zusammenschluss von Unternehmen verschiedener Branchen</li>
+                    </ul>
+                </div>
+
+                <h4>⚖️ Reaktion: Progressive Era und Kartellgesetzgebung</h4>
+                <p>
+                    Die Macht der Monopole rief zunehmenden Widerstand hervor. In der <strong>"Progressive Era"</strong> (1890er-1920er) forderten Reformer staatliche Regulierung:
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1890</div>
+                            <div class="timeline-event">Sherman Antitrust Act</div>
+                            <p>Erstes Kartellgesetz der USA – verbot Monopole und Handelsbeschränkungen (zunächst kaum durchgesetzt)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1901-1909</div>
+                            <div class="timeline-event">Präsident Theodore Roosevelt – "Trust-Buster"</div>
+                            <p>Aktive Kartellbekämpfung, 44 Kartellverfahren, Zerschlagung Northern Securities Company</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1911</div>
+                            <div class="timeline-event">Zerschlagung von Standard Oil</div>
+                            <p>Supreme Court ordnet Aufspaltung in 34 Unternehmen an (Exxon, Mobil, Chevron etc.)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1914</div>
+                            <div class="timeline-event">Clayton Antitrust Act & Federal Trade Commission</div>
+                            <p>Verschärfung des Kartellrechts, Verbot unlauterer Geschäftspraktiken, Gewerkschaftsrechte gestärkt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>3.3 Die Roaring Twenties – Goldene 1920er Jahre</h3>
+                <p>
+                    Die <strong>"Roaring Twenties"</strong> (1920-1929) waren eine Zeit beispiellosen wirtschaftlichen Aufschwungs, kultureller Innovation und gesellschaftlichen Wandels. Die USA wurden zur reichsten Nation der Welt.
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>📈 Wirtschaftsboom</h4>
+                        <ul>
+                            <li><strong>BIP-Wachstum:</strong> +42% zwischen 1920 und 1929</li>
+                            <li><strong>Massenproduktion:</strong> Automobile, Radios, Haushaltsgeräte, Telefone</li>
+                            <li><strong>Elektrifizierung:</strong> 1920: 35% der Haushalte → 1929: 68% mit Elektrizität</li>
+                            <li><strong>Konsumgesellschaft:</strong> Ratenkauf ermöglichte Massenkonsum – "Buy now, pay later"</li>
+                            <li><strong>Werbung:</strong> Neue Marketingmethoden, Radio-Werbung</li>
+                            <li><strong>Börsenboom:</strong> Dow Jones: 1921: 63 Punkte → 1929: 381 Punkte</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🎭 Kulturelle Blüte</h4>
+                        <ul>
+                            <li><strong>Jazz Age:</strong> Jazz, Swing, Harlem Renaissance (Duke Ellington, Louis Armstrong)</li>
+                            <li><strong>Hollywood:</strong> Filmindustrie wird zur Weltmacht (Charlie Chaplin, Buster Keaton)</li>
+                            <li><strong>Literatur:</strong> F. Scott Fitzgerald ("The Great Gatsby"), Ernest Hemingway</li>
+                            <li><strong>"Flapper":</strong> Neue, selbstbewusste Frauen – kurze Röcke, kurze Haare, Rauchen</li>
+                            <li><strong>Sport-Stars:</strong> Babe Ruth (Baseball), Jack Dempsey (Boxen) – Heldenstatus</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Schattenseiten der Zwanziger</h4>
+                    <ul>
+                        <li><strong>Prohibition (1920-1933):</strong> Alkoholverbot führte zu organisiertem Verbrechen (Al Capone), Korruption, "Speakeasies"</li>
+                        <li><strong>Soziale Ungleichheit:</strong> Wohlstand ungleich verteilt – Farmer und Arbeiter profitierten kaum</li>
+                        <li><strong>Rassismus:</strong> Ku-Klux-Klan erlebte Aufschwung (4 Mio. Mitglieder), Lynchjustiz im Süden</li>
+                        <li><strong>Xenophobie:</strong> Immigration Quota Acts (1921/1924) – drastische Beschränkung der Einwanderung</li>
+                        <li><strong>Red Scare:</strong> Antikommunistische Hysterie, Palmer Raids (1919/20), Verfolgung von Linken</li>
+                        <li><strong>Spekulation:</strong> Börsenspekulation auf Kredit – "Buying on margin" – gefährliche Blase</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>🚗 Die Automobilrevolution</h4>
+                    <p>
+                        Das <strong>Automobil</strong> veränderte das amerikanische Leben fundamental:
+                    </p>
+                    <ul>
+                        <li><strong>Produktion:</strong> 1920: 8 Mio. Autos → 1929: 23 Mio. Autos registriert (1 Auto pro 5 Personen!)</li>
+                        <li><strong>Wirtschaftliche Bedeutung:</strong> Automobilindustrie größter Abnehmer von Stahl, Glas, Gummi, Öl</li>
+                        <li><strong>Arbeitsplätze:</strong> Jeder 8. Arbeiter direkt oder indirekt in Autoindustrie beschäftigt</li>
+                        <li><strong>Infrastruktur:</strong> Bau von Highways, Tankstellen, Motels, Vororten ("Suburbia")</li>
+                        <li><strong>Lebensstil:</strong> Mobilität, Unabhängigkeit, Wochenendausflüge, Drive-In-Kinos</li>
+                        <li><strong>Sozialstruktur:</strong> Vorstädte entstehen, Zersiedelung, Trennung Wohnen/Arbeiten</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>3.4 Börsenkrach und Große Depression (1929-1939)</h3>
+                <p>
+                    Der <strong>"Schwarze Donnerstag"</strong> (24. Oktober 1929) und der <strong>"Schwarze Dienstag"</strong> (29. Oktober 1929) beendeten den Boom abrupt. Es folgte die schwerste Wirtschaftskrise der modernen Geschichte – die <strong>"Great Depression"</strong>.
+                </p>
+
+                <h4>📉 Der Börsenkrach vom Oktober 1929</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">24. Okt. 1929</div>
+                            <div class="timeline-event">"Schwarzer Donnerstag"</div>
+                            <p>12,9 Mio. Aktien verkauft, Panik an Wall Street, Banker versuchen Kurse zu stützen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">29. Okt. 1929</div>
+                            <div class="timeline-event">"Schwarzer Dienstag"</div>
+                            <p>16,4 Mio. Aktien verkauft (Rekord), totaler Zusammenbruch, Kurse stürzen ins Bodenlose</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Bis 1932</div>
+                            <div class="timeline-event">Fortgesetzte Talfahrt</div>
+                            <p>Dow Jones fällt von 381 (Sept. 1929) auf 41 Punkte (Juli 1932) – Verlust von 89%!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Ursachen des Crashs</h4>
+                    <ul>
+                        <li><strong>Überspekulation:</strong> Aktien auf Kredit gekauft ("margin buying" – nur 10% Eigenkapital nötig)</li>
+                        <li><strong>Überproduktion:</strong> Industrie produzierte mehr als verkauft werden konnte</li>
+                        <li><strong>Unterkonsumption:</strong> Löhne stiegen langsamer als Produktion – Kaufkraft fehlte</li>
+                        <li><strong>Ungleiche Verteilung:</strong> 1% der Bevölkerung besaß 40% des Vermögens</li>
+                        <li><strong>Agrarkrise:</strong> Farmpreise niedrig, Verschuldung hoch, Farmer konnten nicht konsumieren</li>
+                        <li><strong>Bankensystem instabil:</strong> Viele kleine Banken, keine Einlagensicherung</li>
+                        <li><strong>Internationales Ungleichgewicht:</strong> USA als Gläubiger, Europa verschuldet, Reparationszahlungen</li>
+                    </ul>
+                </div>
+
+                <h4>😔 Die Große Depression – Soziale Katastrophe</h4>
+                <p>
+                    Aus dem Börsenkrach wurde eine umfassende Wirtschaftskrise mit verheerenden sozialen Folgen:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Indikator</th>
+                            <th>1929</th>
+                            <th>1933 (Tiefpunkt)</th>
+                            <th>Veränderung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Arbeitslosenquote</strong></td>
+                            <td>3,2%</td>
+                            <td>24,9%</td>
+                            <td>13 Mio. Arbeitslose</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bruttoinlandsprodukt</strong></td>
+                            <td>103 Mrd. $</td>
+                            <td>56 Mrd. $</td>
+                            <td>-46%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Industrieproduktion</strong></td>
+                            <td>Index 100</td>
+                            <td>Index 53</td>
+                            <td>-47%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bankzusammenbrüche</strong></td>
+                            <td>659 Banken</td>
+                            <td>4.000 Banken (1930-33)</td>
+                            <td>40% aller Banken</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aktienkurse</strong></td>
+                            <td>Dow 381</td>
+                            <td>Dow 41</td>
+                            <td>-89%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <h4>😢 Menschliche Tragödien</h4>
+                    <ul>
+                        <li><strong>Obdachlosigkeit:</strong> "Hoovervilles" – Zeltlager von Obdachlosen in Großstädten</li>
+                        <li><strong>Hunger:</strong> Suppenküchen, Brotschlangen, Mangelernährung weit verbreitet</li>
+                        <li><strong>Zwangsversteigerungen:</strong> Tausende Farmer verloren ihre Höfe</li>
+                        <li><strong>"Dust Bowl" (1930-36):</strong> Dürre und Erosion verwüsteten die Great Plains – Massenf lucht nach Westen ("Okies")</li>
+                        <li><strong>Auswanderung:</strong> Erstmals wanderten mehr Menschen aus als ein</li>
+                        <li><strong>Psychologische Folgen:</strong> Depression, Suizide, Familien zerbrachen</li>
+                        <li><strong>"Brother, Can You Spare a Dime?":</strong> Lied symbolisierte Verzweiflung der Ära</li>
+                    </ul>
+                </div>
+            </div>
+
+          <div class="subsection">
+                <h3>3.5 Roosevelts New Deal (1933-1939)</h3>
+                <p>
+                    <strong>Franklin D. Roosevelt</strong> (FDR) wurde im November 1932 zum Präsidenten gewählt mit dem Versprechen eines <strong>"New Deal for the American People"</strong>. Seine Politik markierte einen fundamentalen Wandel: Erstmals griff der Staat massiv in die Wirtschaft ein.
+                </p>
+
+                <div class="quote">
+                    "The only thing we have to fear is fear itself." 
+                    <div class="quote-author">– Franklin D. Roosevelt, Antrittsrede, 4. März 1933</div>
+                </div>
+
+                <h4>🏛️ Die drei Säulen des New Deal</h4>
+                <div class="grid-3col">
+                    <div class="card">
+                        <h4>Relief (Soforthilfe)</h4>
+                        <p><strong>Unmittelbare Hilfe für Notleidende</strong></p>
+                        <ul>
+                            <li>Nahrungsmittel, Geld, Unterkünfte</li>
+                            <li>Arbeitsbeschaffungsmaßnahmen</li>
+                            <li>Unterstützung für Obdachlose</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Recovery (Erholung)</h4>
+                        <p><strong>Wiederankurbelung der Wirtschaft</strong></p>
+                        <ul>
+                            <li>Bankenreform</li>
+                            <li>Stimulierung von Nachfrage</li>
+                            <li>Infrastrukturprogramme</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Reform (Reform)</h4>
+                        <p><strong>Strukturelle Veränderungen</strong></p>
+                        <ul>
+                            <li>Regulierung der Finanzmärkte</li>
+                            <li>Sozialversicherungssystem</li>
+                            <li>Arbeitnehmerrechte</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>📋 Die wichtigsten New Deal Programme</h4>
+                
+                <div class="info-box">
+                    <h4>🏦 First New Deal (1933-1934) – Erste 100 Tage</h4>
+                    <ul>
+                        <li><strong>Emergency Banking Act (9. März 1933):</strong> Bankenschließung für 4 Tage, Überprüfung aller Banken, nur solide Banken durften wieder öffnen – Vertrauen wiederhergestellt</li>
+                        <li><strong>Federal Deposit Insurance Corporation (FDIC):</strong> Einlagensicherung bis 5.000$ – Panik beendet</li>
+                        <li><strong>Glass-Steagall Act:</strong> Trennung von Geschäfts- und Investmentbanken</li>
+                        <li><strong>Securities Act (1933) & SEC (1934):</strong> Börsenaufsicht, Transparenzpflichten, Insiderhandel verboten</li>
+                        <li><strong>Agricultural Adjustment Act (AAA):</strong> Subventionen für Farmer, Produktionsbeschränkung → Preise stiegen</li>
+                        <li><strong>National Industrial Recovery Act (NIRA):</strong> Industriekodizes, Mindestlöhne, Höchstarbeitszeiten, Gewerkschaftsrechte</li>
+                        <li><strong>Tennessee Valley Authority (TVA):</strong> Riesiges Infrastrukturprojekt – Staudämme, Elektrifizierung, Hochwasserschutz</li>
+                        <li><strong>Civilian Conservation Corps (CCC):</strong> Arbeitsprogramm für junge Männer (18-25 Jahre) – Aufforstung, Naturschutz, 3 Mio. Teilnehmer</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <h4>🏗️ Works Progress Administration (WPA, 1935-1943)</h4>
+                    <p>Das größte Arbeitsbeschaffungsprogramm der Geschichte:</p>
+                    <ul>
+                        <li><strong>Beschäftigung:</strong> 8,5 Millionen Menschen in 8 Jahren</li>
+                        <li><strong>Infrastruktur:</strong> 650.000 Meilen Straßen, 125.000 öffentliche Gebäude, 75.000 Brücken gebaut/renoviert</li>
+                        <li><strong>Flughäfen:</strong> 800 Flughäfen gebaut – Grundlage für US-Luftfahrt</li>
+                        <li><strong>Kulturprogramme:</strong> Federal Writers Project, Federal Art Project, Federal Theatre Project</li>
+                        <li><strong>Kosten:</strong> 11 Milliarden Dollar (riesige Summe, aber Investition in Infrastruktur)</li>
+                        <li><strong>Kritik:</strong> "Leaf-raking" – Vorwurf sinnloser Beschäftigungstherapie</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>⚖️ Second New Deal (1935-1938) – Reform und Sozialstaat</h4>
+                    <ul>
+                        <li><strong>Social Security Act (1935):</strong> Renten-, Arbeitslosen- und Unfallversicherung – Grundstein des US-Sozialstaats</li>
+                        <li><strong>National Labor Relations Act / Wagner Act (1935):</strong> Stärkung der Gewerkschaften, Recht auf Tarifverhandlungen, Verbot unfairer Arbeitgeberpraktiken</li>
+                        <li><strong>Fair Labor Standards Act (1938):</strong> Bundesweiter Mindestlohn (25 Cent/Std.), 40-Stunden-Woche, Verbot von Kinderarbeit unter 16 Jahren</li>
+                        <li><strong>Revenue Act (1935):</strong> Erhöhung der Spitzensteuersätze auf bis zu 79% – Umverteilung</li>
+                        <li><strong>Rural Electrification Act:</strong> Elektrifizierung ländlicher Gebiete – von 10% auf 90% bis 1950</li>
+                    </ul>
+                </div>
+
+                <h4>📊 Bewertung des New Deal</h4>
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>✅ Erfolge</h4>
+                        <ul>
+                            <li><strong>Psychologische Wende:</strong> Hoffnung und Zuversicht wiederhergestellt</li>
+                            <li><strong>Arbeitslosigkeit gesenkt:</strong> Von 25% (1933) auf 14% (1937)</li>
+                            <li><strong>Bankenreform:</strong> Vertrauen in Finanzsystem wiederhergestellt, keine Bank-Runs mehr</li>
+                            <li><strong>Infrastruktur:</strong> Enorme Investitionen, die bis heute genutzt werden</li>
+                            <li><strong>Sozialstaat:</strong> Erstmals soziale Absicherung in den USA</li>
+                            <li><strong>Gewerkschaften:</strong> Stärkung der Arbeiterbewegung, Tarifautonomie</li>
+                            <li><strong>Umweltschutz:</strong> Aufforstung, Bodenschutz, Nationalparks</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>❌ Grenzen und Kritik</h4>
+                        <ul>
+                            <li><strong>Depression nicht beendet:</strong> Erst der Zweite Weltkrieg brachte Vollbeschäftigung</li>
+                            <li><strong>Rezession 1937/38:</strong> Vorzeitige Sparmaßnahmen führten zu erneutem Einbruch</li>
+                            <li><strong>Verfassungskonflikt:</strong> Supreme Court erklärte wichtige Programme für verfassungswidrig</li>
+                            <li><strong>Ungleichheit blieb:</strong> Afroamerikaner, Frauen, Latinos oft ausgeschlossen</li>
+                            <li><strong>Große Staatsschulden:</strong> Defizitfinanzierung umstritten</li>
+                            <li><strong>Unternehmer-Opposition:</strong> "Sozialismus" – Vorwurf von Konservativen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Historische Bedeutung des New Deal</h4>
+                    <p>
+                        Der New Deal war ein <strong>Paradigmenwechsel</strong> in der amerikanischen Politik:
+                    </p>
+                    <ul>
+                        <li><strong>Vom Laissez-faire zum Interventionsstaat:</strong> Staat übernahm Verantwortung für Wirtschaft und Soziales</li>
+                        <li><strong>Keynesianische Politik:</strong> Deficit spending zur Konjunkturbelebung wurde akzeptiert</li>
+                        <li><strong>Sozialstaat entstand:</strong> Sicherheitsnetz für Alte, Arbeitslose, Arme</li>
+                        <li><strong>Demokratische Koalition:</strong> FDR schmiedete Koalition aus Arbeitern, Minderheiten, Intellektuellen – prägte US-Politik bis 1960er</li>
+                        <li><strong>Präsidialmacht gestärkt:</strong> "Imperial Presidency" – Präsident als aktiver Problemlöser</li>
+                        <li><strong>Vorbild für Europa:</strong> Nach 1945 orientierten sich europäische Sozialstaaten am New Deal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sektion 4: Die Soziale Frage -->
+            <div class="section-header" id="soziale-frage">
+                <h2><span class="icon">⚖️</span> 4. Die soziale Frage – Schattenseiten der Industrialisierung</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>4.1 Was ist die "soziale Frage"?</h3>
+                <p>
+                    Die <strong>"soziale Frage"</strong> bezeichnet die sozialen Probleme und Konflikte, die durch die Industrialisierung im 19. Jahrhundert entstanden. Im Zentrum stand die prekäre Lage der Arbeiterschaft – des neu entstandenen <strong>Proletariats</strong>.
+                </p>
+
+                <div class="info-box">
+                    <h4>🏭 Das Industrieproletariat</h4>
+                    <p>
+                        Das <strong>Proletariat</strong> war eine neue soziale Klasse, die durch die Industrialisierung entstand:
+                    </p>
+                    <ul>
+                        <li><strong>Definition:</strong> Besitzlose Lohnarbeiter, die nur ihre Arbeitskraft verkaufen konnten</li>
+                        <li><strong>Herkunft:</strong> Verarmte Bauern, verarmte Handwerker, Landflucht (Pauperismus)</li>
+                        <li><strong>Abhängigkeit:</strong> Existenz hing vollständig vom Arbeitgeber ab</li>
+                        <li><strong>Größe:</strong> Um 1900 stellten Arbeiter etwa 45% der Erwerbstätigen in Deutschland</li>
+                        <li><strong>Lebenslage:</strong> Extrem unsicher – bei Krankheit, Unfall oder Alter drohte totale Armut</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>4.2 Schattenseiten der Industrialisierung</h3>
+                <p>
+                    Die Industrialisierung brachte zwar wirtschaftlichen Fortschritt, ging aber mit massiven sozialen Problemen einher:
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>⏰ Arbeitsbedingungen</h4>
+                        <ul>
+                            <li><strong>Arbeitszeit:</strong> 12-16 Stunden täglich, 6 Tage pro Woche (75-90 Std./Woche)</li>
+                            <li><strong>Monotonie:</strong> Eintönige, entfremdete Arbeit am Fließband</li>
+                            <li><strong>Gefahren:</strong> Unfälle durch ungeschützte Maschinen, keine Sicherheitsvorschriften</li>
+                            <li><strong>Gesundheit:</strong> Lärm, Staub, giftige Dämpfe, enge Räume, keine Belüftung</li>
+                            <li><strong>Disziplin:</strong> Strenge Fabrikordnungen, Geldstrafen, Entlassungen</li>
+                            <li><strong>Kein Kündigungsschutz:</strong> Jederzeit fristlos entlassbar</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>💰 Löhne und Preise</h4>
+                        <ul>
+                            <li><strong>Hungerlöhne:</strong> Reichten kaum zum Überleben</li>
+                            <li><strong>Lohndrückerei:</strong> Überangebot an Arbeitskräften → niedrige Löhne</li>
+                            <li><strong>Lohndifferenzen:</strong> Frauen verdienten 30-50% weniger als Männer für gleiche Arbeit</li>
+                            <li><strong>Truck-System:</strong> Auszahlung in Warengutscheinen für Fabrikläden (teurer)</li>
+                            <li><strong>Konjunkturabhängigkeit:</strong> Bei Krisen sofortige Lohnkürzungen</li>
+                            <li><strong>Keine Ersparnisse:</strong> Unmöglich für Alter vorzusorgen</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>👶 Kinderarbeit</h4>
+                        <ul>
+                            <li><strong>Verbreitung:</strong> Kinder ab 5-6 Jahren in Fabriken, Bergwerken</li>
+                            <li><strong>Gründe:</strong> Familien brauchten Einkommen, Kinder billige Arbeitskräfte</li>
+                            <li><strong>Tätigkeiten:</strong> In engen Schächten, unter Maschinen, als "Kohlenjungen"</li>
+                            <li><strong>Gesundheit:</strong> Wachstumsstörungen, Verkrüppelungen, hohe Sterblichkeit</li>
+                            <li><strong>Bildung:</strong> Keine Schulbildung – Teufelskreis der Armut</li>
+                            <li><strong>Erst spät verboten:</strong> Schrittweise Einschränkungen ab 1839 (England), 1853 (Preußen)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🏚️ Wohnverhältnisse</h4>
+                        <ul>
+                            <li><strong>"Mietskasernen":</strong> Überfüllte, dunkle Hinterhofwohnungen</li>
+                            <li><strong>Überbelegung:</strong> 8-10 Personen in 1-2 Zimmern normal</li>
+                            <li><strong>"Schlafgänger":</strong> Betten wurden stundenweise an Schichtarbeiter vermietet</li>
+                            <li><strong>Hygiene:</strong> Keine Toiletten in Wohnungen, Wasserpumpen im Hof</li>
+                            <li><strong>Krankheiten:</strong> Tuberkulose, Cholera, Typhus grassierten</li>
+                            <li><strong>Smog und Schmutz:</strong> Industrieabgase, ungeklärte Abwässer, Kohleverfeuerung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Fehlende soziale Absicherung</h4>
+                    <p>Die größte Bedrohung war die völlige Schutzlosigkeit vor Lebensrisiken:</p>
+                    <ul>
+                        <li><strong>Krankheit:</strong> Kein Lohnfortzahlung, Arzt unbezahlbar → Verelendung</li>
+                        <li><strong>Arbeitsunfall:</strong> Keine Haftung des Arbeitgebers, Invalidität = Bettelei</li>
+                        <li><strong>Arbeitslosigkeit:</strong> Kein Arbeitslosengeld, sofortiger Absturz in Armut</li>
+                        <li><strong>Alter:</strong> Keine Rente, bei Arbeitsunfähigkeit auf Almosen angewiesen</li>
+                        <li><strong>Tod des Ernährers:</strong> Familie fiel ins Bodenlose</li>
+                        <li><strong>Armenhäuser:</strong> Demütigende "Hilfe" – Zwangsarbeit, Familien getrennt</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    "Die Arbeiter im Fabrikbetrieb sind wie die Neger auf den Plantagen zu betrachten."
+                    <div class="quote-author">– Fabrikant im Rheinland, um 1850</div>
+                </div>
+
+                <div class="info-box">
+                    <h4>📊 Statistische Belege</h4>
+                    <ul>
+                        <li><strong>Lebenserwartung:</strong> Arbeiter in Manchester (1842): 17 Jahre | Landbevölkerung: 38 Jahre | Oberschicht: 45 Jahre</li>
+                        <li><strong>Kindersterblichkeit:</strong> In Arbeiterfamilien starben 50% der Kinder vor dem 5. Lebensjahr</li>
+                        <li><strong>Körpergröße:</strong> Fabrikarbeiter durchschnittlich 10-15 cm kleiner als Oberschicht (Mangelernährung)</li>
+                        <li><strong>Wohnfläche:</strong> Durchschnittlich 3-4 m² pro Person in Arbeitervierteln</li>
+                        <li><strong>Reallohn:</strong> Sank zwischen 1820-1850 trotz Wirtschaftswachstum!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>4.3 Lösungsansätze – Wege aus der sozialen Frage</h3>
+                <p>
+                    Auf die soziale Frage wurden verschiedene Antworten gegeben. Unterschiedliche gesellschaftliche Gruppen entwickelten unterschiedliche Lösungsstrategien:
+                </p>
+
+                <h4>⛪ Christliche Soziallehre – Kirchen reagieren</h4>
+                <div class="info-box">
+                    <h4>Katholische Soziallehre</h4>
+                    <ul>
+                        <li><strong>Bischof Wilhelm Emmanuel von Ketteler:</strong> Pionier, forderte Arbeiterschutz, Sonntagsruhe, Verbot der Kinderarbeit</li>
+                        <li><strong>Enzyklika "Rerum Novarum" (1891):</strong> Papst Leo XIII. verurteilte Ausbeutung, forderte gerechten Lohn</li>
+                        <li><strong>Katholische Arbeitervereine:</strong> Selbsthilfe, Bildung, religiöse Bindung</li>
+                        <li><strong>Kolpingwerk (1849):</strong> Adolph Kolping gründete Gesellenvereine – Herbergen, Bildung, Gemeinschaft</li>
+                        <li><strong>Prinzipien:</strong> Subsidiarität, Solidarität, Personalität, Gemeinwohl</li>
+                        <li><strong>Kritik:</strong> Ablehnung des Sozialismus, Betonung von Pflichten statt Rechten, paternalistisch</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Evangelische Soziallehre</h4>
+                    <ul>
+                        <li><strong>Johann Hinrich Wichern:</strong> Gründer der Inneren Mission (1848) – Diakonie, Rettungshäuser</li>
+                        <li><strong>Friedrich von Bodelschwingh:</strong> Bethel-Anstalten (1867) – Fürsorge für Behinderte, Arbeitslose</li>
+                        <li><strong>Adolf Stoecker:</strong> Hofprediger, gründete Christlich-Soziale Arbeiterpartei (1878)</li>
+                        <li><strong>Prinzipien:</strong> Nächstenliebe, individuelle Fürsorge, Bewahrung der Ordnung</li>
+                        <li><strong>Kritik:</strong> Oft zu obrigkeitsnah, Ablehnung revolutionärer Veränderungen</li>
+                    </ul>
+                </div>
+
+                <h4>🏭 Unternehmerische Sozialpolitik – "Patriarchaler Betriebsstil"</h4>
+                <p>
+                    Einige Unternehmer entwickelten soziale Programme – aus unterschiedlichen Motiven:
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>Beispiele</h4>
+                        <ul>
+                            <li><strong>Krupp (Essen):</strong> Werkswohnungen, Krankenkasse, Konsum-Anstalt, Pensionskasse</li>
+                            <li><strong>Zeiss (Jena):</strong> 8-Stunden-Tag (1900!), Gewinnbeteiligung, Sozialeinrichtungen</li>
+                            <li><strong>Bosch (Stuttgart):</strong> 8-Stunden-Tag (1906), Urlaub, Sozialversicherung</li>
+                            <li><strong>Harpen (Bergbau):</strong> Siedlungsbau für Arbeiter, Schulen, Krankenhäuser</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Motive</h4>
+                        <ul>
+                            <li><strong>Paternalismus:</strong> Fürsorgepflicht des "Betriebsherrn"</li>
+                            <li><strong>Bindung:</strong> Loyale, seshafte Arbeitskräfte</li>
+                            <li><strong>Produktivität:</strong> Gesunde, zufriedene Arbeiter leisten mehr</li>
+                            <li><strong>Kontrolle:</strong> Abhängigkeit – Wohnung an Arbeitsstelle gebunden</li>
+                            <li><strong>Sozialdisziplinierung:</strong> Ordentliches Leben, keine Trunksucht</li>
+                            <li><strong>Anti-Sozialismus:</strong> Abwehr der Arbeiterbewegung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Grenzen der Werkssozialpolitik</h4>
+                    <ul>
+                        <li><strong>Nur Minderheit erreicht:</strong> Großbetriebe mit solchen Programmen waren selten</li>
+                        <li><strong>Abhängigkeit:</strong> Verlust des Arbeitsplatzes = Verlust der Sozialleistungen</li>
+                        <li><strong>Paternalismus:</strong> Bevormundung, keine Mitbestimmung</li>
+                        <li><strong>Kontrolle:</strong> Eindringen in Privatleben (Alkoholverbot, Besuchszeiten)</li>
+                        <li><strong>Gewerkschaftsfeindlich:</strong> Oft Bedingung: keine Gewerkschaftsmitgliedschaft</li>
+                    </ul>
+                </div>
+
+                <h4>🏛️ Staatliche Sozialpolitik – Bismarcks Sozialgesetzgebung</h4>
+                <p>
+                    <strong>Otto von Bismarck</strong> schuf mit seiner Sozialgesetzgebung (1883-1889) das weltweit erste staatliche Sozialversicherungssystem. Dies war revolutionär – aber hatte auch machtpolitische Motive.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1883</div>
+                            <div class="timeline-event">Krankenversicherung</div>
+                            <p>Pflichtversicherung für Arbeiter, 2/3 Arbeitgeber – 1/3 Arbeitnehmer, Lohnfortzahlung bei Krankheit, Arztkosten</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1884</div>
+                            <div class="timeline-event">Unfallversicherung</div>
+                            <p>Finanzierung durch Arbeitgeber, Entschädigung bei Arbeitsunfällen, Invalidenrente</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1889</div>
+                            <div class="timeline-event">Alters- und Invaliditätsversicherung</div>
+                            <p>Rente ab 70 Jahren (später 65), Beiträge je zur Hälfte Arbeitgeber-Arbeitnehmer-Staat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>✅ Bedeutung und Erfolge</h4>
+                        <ul>
+                            <li><strong>Weltpremiere:</strong> Erste umfassende Sozialversicherung überhaupt</li>
+                            <li><strong>Vorbild:</strong> Andere Länder übernahmen das System</li>
+                            <li><strong>Absicherung:</strong> Arbeiter hatten erstmals Schutz vor Lebensrisiken</li>
+                            <li><strong>Sozialfrieden:</strong> Entschärfung sozialer Spannungen</li>
+                            <li><strong>Bis heute:</strong> Grundlage des deutschen Sozialstaats</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>❌ Grenzen und Kritik</h4>
+                        <ul>
+                            <li><strong>Niedrige Leistungen:</strong> Renten reichten kaum zum Leben</li>
+                            <li><strong>Nicht alle erfasst:</strong> Landarbeiter, Dienstboten ausgeschlossen</li>
+                            <li><strong>Keine Arbeitslosenversicherung:</strong> Kam erst 1927!</li>
+                            <li><strong>Machtpolitisches Kalkül:</strong> "Zuckerbrot und Peitsche" – kombiniert mit Sozialistengesetz</li>
+                            <li><strong>Autoritär:</strong> Kein Mitspracherecht der Versicherten</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote">
+                    "Mein Gedanke war, die arbeitenden Klassen zu gewinnen, oder soll ich sagen zu bestechen, den Staat als soziale Einrichtung anzusehen, die ihretwegen besteht und für ihr Wohl sorgen möchte."
+                    <div class="quote-author">– Otto von Bismarck über seine Sozialpolitik</div>
+                </div>
+            </div>
+
+          <div class="subsection">
+                <h3>4.4 Marx und die Arbeiterbewegung – Revolution statt Reform</h3>
+                <p>
+                    Während Kirchen, Unternehmer und Staat auf Reform und Integration setzten, entwickelte sich parallel eine <strong>revolutionäre Arbeiterbewegung</strong>, die das kapitalistische System grundsätzlich in Frage stellte. Zentrale Figur war <strong>Karl Marx</strong>.
+                </p>
+
+                <h4>📚 Karl Marx (1818-1883) und der wissenschaftliche Sozialismus</h4>
+                <div class="info-box">
+                    <h4>Leben und Werk</h4>
+                    <ul>
+                        <li><strong>Herkunft:</strong> Geboren in Trier, jüdische Familie (zum Protestantismus konvertiert)</li>
+                        <li><strong>Studium:</strong> Philosophie, Jura, Geschichte in Bonn und Berlin – Anhänger Hegels</li>
+                        <li><strong>Journalist:</strong> Redakteur der "Rheinischen Zeitung" – wegen Zensur ins Exil (Paris, Brüssel)</li>
+                        <li><strong>Freundschaft mit Engels:</strong> Friedrich Engels (Fabrikantensohn) wurde Mitdenker und Finanzier</li>
+                        <li><strong>London:</strong> Ab 1849 im Exil, arbeitete im British Museum an seinem Hauptwerk</li>
+                        <li><strong>Armut:</strong> Lebte selbst in prekären Verhältnissen, mehrere Kinder starben</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <h4>📖 Hauptwerke und zentrale Ideen</h4>
+                    <ul>
+                        <li><strong>"Kommunistisches Manifest" (1848, mit Engels):</strong> Programmatische Schrift – "Proletarier aller Länder, vereinigt euch!"</li>
+                        <li><strong>"Das Kapital" (Band 1: 1867):</strong> Analyse des Kapitalismus – Mehrwerttheorie, Ausbeutung, Verelendung</li>
+                        <li><strong>Historischer Materialismus:</strong> Geschichte ist Geschichte von Klassenkämpfen, ökonomische Basis bestimmt gesellschaftlichen Überbau</li>
+                        <li><strong>Dialektik:</strong> Kapitalismus schafft eigene Totengräber – das Proletariat</li>
+                        <li><strong>Revolution:</strong> Unvermeidlicher Zusammenbruch des Kapitalismus, Diktatur des Proletariats, klassenlose Gesellschaft</li>
+                        <li><strong>Entfremdung:</strong> Arbeiter entfremdet von Produkt, Arbeitsprozess, Mitmenschen, sich selbst</li>
+                    </ul>
+                </div>
+
+                <h4>🔨 Die Mehrwerttheorie – Kern der Marx'schen Kapitalismuskritik</h4>
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>Die Theorie</h4>
+                        <ul>
+                            <li><strong>Arbeitswerttheorie:</strong> Wert einer Ware = in ihr steckende Arbeitszeit</li>
+                            <li><strong>Arbeitskraft als Ware:</strong> Arbeiter verkauft Arbeitskraft für Lohn</li>
+                            <li><strong>Mehrwert:</strong> Arbeiter produziert mehr Wert als sein Lohn</li>
+                            <li><strong>Ausbeutung:</strong> Kapitalist eignet sich Mehrwert an – unbezahlte Arbeit</li>
+                            <li><strong>Profit:</strong> Stammt aus Ausbeutung, nicht aus unternehmerischer Leistung</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Beispiel</h4>
+                        <p>Arbeiter arbeitet 12 Stunden:</p>
+                        <ul>
+                            <li><strong>6 Stunden:</strong> Reproduziert Wert seines Lohns (notwendige Arbeit)</li>
+                            <li><strong>6 Stunden:</strong> Produziert Mehrwert für Kapitalist (Mehrarbeit)</li>
+                            <li><strong>Mehrwertrate:</strong> 100% (6/6)</li>
+                            <li><strong>Kapitalist:</strong> Verkauft Produkt, streicht Mehrwert ein</li>
+                            <li><strong>Folge:</strong> Kapital akkumuliert, Arbeiter bleibt arm</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Marx' Prognosen – Revolution und Zusammenbruch</h4>
+                    <p>Marx sagte voraus, dass der Kapitalismus an seinen inneren Widersprüchen zugrunde gehen würde:</p>
+                    <ul>
+                        <li><strong>Verelendungstheorie:</strong> Arbeiter werden immer ärmer (relative und absolute Verelendung)</li>
+                        <li><strong>Konzentration:</strong> Wenige Großkapitalisten verdrängen viele Kleine</li>
+                        <li><strong>Krisen:</strong> Überproduktionskrisen werden häufiger und heftiger</li>
+                        <li><strong>Klassenbewusstsein:</strong> Proletariat erkennt gemeinsame Interessen</li>
+                        <li><strong>Revolution:</strong> Proletariat stürzt Bourgeoisie – "Expropriation der Expropriateure"</li>
+                        <li><strong>Diktatur des Proletariats:</strong> Übergangsstadium zur klassenlosen Gesellschaft</li>
+                        <li><strong>Kommunismus:</strong> "Jeder nach seinen Fähigkeiten, jedem nach seinen Bedürfnissen"</li>
+                    </ul>
+                    <p><strong>Realität:</strong> Revolution blieb in entwickelten Industrieländern aus – Sozialstaat, Gewerkschaften, Demokratie integrierten Arbeiterklasse</p>
+                </div>
+
+                <h4>🚩 Die Arbeiterbewegung – Organisation und Kampf</h4>
+                <p>
+                    Parallel zur theoretischen Entwicklung organisierte sich die <strong>Arbeiterbewegung</strong> in drei Bereichen: <strong>Gewerkschaften</strong>, <strong>Arbeiterparteien</strong> und <strong>Genossenschaften</strong>.
+                </p>
+
+                <div class="grid-3col">
+                    <div class="card">
+                        <h4>🤝 Gewerkschaften</h4>
+                        <p><strong>Kampf um bessere Arbeitsbedingungen</strong></p>
+                        <ul>
+                            <li><strong>Anfänge:</strong> Geheimbünde, Streikkassen</li>
+                            <li><strong>Koalitionsverbot:</strong> Zunächst verboten – Aufhebung 1869 (Norddt. Bund)</li>
+                            <li><strong>Freie Gewerkschaften:</strong> SPD-nah, sozialistisch</li>
+                            <li><strong>Christliche Gewerkschaften:</strong> Katholisch/evangelisch orientiert</li>
+                            <li><strong>Mittel:</strong> Streik, Boykott, Tarifverhandlungen</li>
+                            <li><strong>Erfolge:</strong> Lohnerhöhungen, Arbeitszeitverkürzung, Arbeitsschutz</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🗳️ Arbeiterparteien</h4>
+                        <p><strong>Politische Vertretung</strong></p>
+                        <ul>
+                            <li><strong>ADAV (1863):</strong> Allgemeiner Deutscher Arbeiterverein (Ferdinand Lassalle)</li>
+                            <li><strong>SDAP (1869):</strong> Sozialdemokratische Arbeiterpartei (Bebel, Liebknecht)</li>
+                            <li><strong>SPD (1875):</strong> Fusion in Gotha – Sozialdemokratische Partei Deutschlands</li>
+                            <li><strong>Sozialistengesetz (1878-1890):</strong> Bismarck verbot SPD – wirkte im Untergrund</li>
+                            <li><strong>Erfurter Programm (1891):</strong> Marxistisches Programm – Klassenkampf, Revolution</li>
+                            <li><strong>Erfolg:</strong> 1912 stärkste Partei im Reichstag (34,8%)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🏪 Genossenschaften</h4>
+                        <p><strong>Ökonomische Selbsthilfe</strong></p>
+                        <ul>
+                            <li><strong>Konsumgenossenschaften:</strong> Gemeinsamer Einkauf – billigere Preise</li>
+                            <li><strong>Produktivgenossenschaften:</strong> Gemeinsames Arbeiten ohne Chef</li>
+                            <li><strong>Baugenossenschaften:</strong> Gemeinsamer Wohnungsbau</li>
+                            <li><strong>Raiffeisen:</strong> Ländliche Genossenschaftsbanken (1864)</li>
+                            <li><strong>Schulze-Delitzsch:</strong> Städtische Kreditgenossenschaften (1850)</li>
+                            <li><strong>Ziel:</strong> Unabhängigkeit von Kapitalisten</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>📅 Wichtige Meilensteine der Arbeiterbewegung</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Jahr</th>
+                                <th>Ereignis</th>
+                                <th>Bedeutung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1848</td>
+                                <td>Kommunistisches Manifest</td>
+                                <td>Theoretische Grundlage der Bewegung</td>
+                            </tr>
+                            <tr>
+                                <td>1863</td>
+                                <td>Gründung ADAV</td>
+                                <td>Erste deutsche Arbeiterpartei</td>
+                            </tr>
+                            <tr>
+                                <td>1864</td>
+                                <td>Erste Internationale (London)</td>
+                                <td>Internationale Vernetzung – Marx beteiligt</td>
+                            </tr>
+                            <tr>
+                                <td>1869</td>
+                                <td>Aufhebung Koalitionsverbot</td>
+                                <td>Gewerkschaften legal</td>
+                            </tr>
+                            <tr>
+                                <td>1875</td>
+                                <td>Gründung SPD (Gotha)</td>
+                                <td>Vereinigung der Arbeiterparteien</td>
+                            </tr>
+                            <tr>
+                                <td>1878-1890</td>
+                                <td>Sozialistengesetz</td>
+                                <td>Verfolgung, aber auch Radikalisierung</td>
+                            </tr>
+                            <tr>
+                                <td>1889</td>
+                                <td>Zweite Internationale (Paris)</td>
+                                <td>1. Mai als internationaler Kampftag</td>
+                            </tr>
+                            <tr>
+                                <td>1891</td>
+                                <td>Erfurter Programm</td>
+                                <td>Marxistisches Programm der SPD</td>
+                            </tr>
+                            <tr>
+                                <td>1906</td>
+                                <td>Mannheimer Abkommen</td>
+                                <td>Gleichberechtigung SPD-Gewerkschaften</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Erfolge der Arbeiterbewegung bis 1914</h4>
+                    <ul>
+                        <li><strong>Arbeitszeit:</strong> Von 12-16 Std. auf 10-11 Std. (in einigen Branchen 8 Std.)</li>
+                        <li><strong>Löhne:</strong> Reallöhne stiegen um 50-100% zwischen 1870-1914</li>
+                        <li><strong>Arbeitsschutz:</strong> Gesetze gegen Kinderarbeit, für Sicherheit am Arbeitsplatz</li>
+                        <li><strong>Sozialversicherung:</strong> Bismarcks Gesetze – Arbeiter hatten Sicherheit</li>
+                        <li><strong>Politische Teilhabe:</strong> SPD stärkste Partei, Gewerkschaften anerkannt</li>
+                        <li><strong>Bildung und Kultur:</strong> Arbeiterbildungsvereine, Bibliotheken, Arbeitersport</li>
+                        <li><strong>Selbstbewusstsein:</strong> "Arbeiterstolz" – nicht mehr nur Objekt, sondern Subjekt der Geschichte</li>
+                        <li><strong>Internationale Solidarität:</strong> "Proletarier aller Länder, vereinigt euch!" – grenzübergreifend</li>
+                    </ul>
+                </div>
+
+                <h4>🤔 Reformismus vs. Revolution – Die Revisionismus-Debatte</h4>
+                <p>
+                    Um 1900 entbrannte innerhalb der SPD eine heftige Debatte: <strong>Revolution oder Reform?</strong>
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>Eduard Bernstein – Revisionismus</h4>
+                        <p><strong>"Die Bewegung ist alles, das Ziel ist nichts"</strong></p>
+                        <ul>
+                            <li><strong>These:</strong> Marx hatte sich geirrt – keine Verelendung, sondern Verbesserungen</li>
+                            <li><strong>Strategie:</strong> Allmähliche Reformen statt gewaltsamer Revolution</li>
+                            <li><strong>Weg:</strong> Parlamentarismus, Gewerkschaften, Sozialgesetzgebung</li>
+                            <li><strong>Ziel:</strong> "Demokratischer Sozialismus" durch Evolution</li>
+                            <li><strong>Kritik an Marx:</strong> Zusammenbruchstheorie empirisch widerlegt</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>Karl Kautsky, Rosa Luxemburg – Orthodoxe</h4>
+                        <p><strong>Festhalten am Revolutionsziel</strong></p>
+                        <ul>
+                            <li><strong>These:</strong> Kapitalismus bleibt ausbeuterisch, Reform reicht nicht</li>
+                            <li><strong>Strategie:</strong> Taktisch Reformen, strategisch Revolution</li>
+                            <li><strong>Weg:</strong> Klassenkampf bis zur Machtergreifung</li>
+                            <li><strong>Ziel:</strong> Sozialistische Revolution, Diktatur des Proletariats</li>
+                            <li><strong>Warnung:</strong> Integration ins System schwächt revolutionäre Kraft</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Spaltung der Arbeiterbewegung im Ersten Weltkrieg</h4>
+                    <p>
+                        1914 zerbrach die internationale Solidarität der Arbeiterbewegung:
+                    </p>
+                    <ul>
+                        <li><strong>Burgfrieden:</strong> SPD stimmte für Kriegskredite – "In der Stunde der Gefahr lassen wir das Vaterland nicht im Stich"</li>
+                        <li><strong>Nationalismus:</strong> Arbeiter zogen begeistert in den Krieg – gegen "Brüder" aus anderen Ländern</li>
+                        <li><strong>Spaltung:</strong> Radikale verließen SPD → USPD (1917) → KPD (1918/19)</li>
+                        <li><strong>Rosa Luxemburg, Karl Liebknecht:</strong> "Der Hauptfeind steht im eigenen Land" – lehnten Krieg ab, wurden ermordet (1919)</li>
+                        <li><strong>Zweite Internationale:</strong> Brach zusammen – Sozialismus vs. Nationalismus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>4.5 Fazit: Die soziale Frage heute</h3>
+                <p>
+                    Die klassische soziale Frage des 19. Jahrhunderts wurde durch <strong>Sozialstaat</strong>, <strong>Gewerkschaften</strong>, <strong>Demokratie</strong> und <strong>Wohlstandssteigerung</strong> weitgehend entschärft. Doch soziale Ungleichheit und neue Formen der Prekarität bestehen fort.
+                </p>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>✅ Was wurde erreicht?</h4>
+                        <ul>
+                            <li><strong>Sozialstaat:</strong> Umfassendes Sicherungssystem gegen Lebensrisiken</li>
+                            <li><strong>Arbeitsrecht:</strong> Kündigungsschutz, Mitbestimmung, Tarifautonomie</li>
+                            <li><strong>Wohlstand:</strong> Breite Mittelschicht, Massenkonsum</li>
+                            <li><strong>Bildung:</strong> Bildungsexpansion, soziale Mobilität</li>
+                            <li><strong>Demokratie:</strong> Politische Teilhabe aller Schichten</li>
+                            <li><strong>Lebensqualität:</strong> Lebenserwartung verdoppelt, Arbeitszeit halbiert</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>⚠️ Neue soziale Fragen</h4>
+                        <ul>
+                            <li><strong>Globalisierung:</strong> Lohndruck, Verlagerung von Produktion</li>
+                            <li><strong>Digitalisierung:</strong> Automatisierung bedroht Arbeitsplätze</li>
+                            <li><strong>Prekäre Beschäftigung:</strong> Befristung, Leiharbeit, Minijobs</li>
+                            <li><strong>Ungleichheit:</strong> Schere zwischen Arm und Reich öffnet sich wieder</li>
+                            <li><strong>Migration:</strong> Integration, Konkurrenz am Arbeitsmarkt</li>
+                            <li><strong>Sozialstaat unter Druck:</strong> Demografischer Wandel, Finanzierung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>🔮 Zukunft der Arbeit – Industrie 4.0</h4>
+                    <p>
+                        Die <strong>Digitale Revolution</strong> wirft neue Fragen auf, die an die Industrielle Revolution erinnern:
+                    </p>
+                    <ul>
+                        <li><strong>Automatisierung:</strong> KI und Roboter ersetzen nicht nur Fließbandarbeit, sondern auch Bürojobs</li>
+                        <li><strong>Plattformökonomie:</strong> Uber, Deliveroo – neue Formen prekärer Beschäftigung ohne Sozialversicherung</li>
+                        <li><strong>Bedingungsloses Grundeinkommen:</strong> Diskussion als Antwort auf Arbeitsplatzvernichtung</li>
+                        <li><strong>New Work:</strong> Homeoffice, Flexibilität – aber auch Entgrenzung von Arbeit und Privatleben</li>
+                        <li><strong>Qualifikation:</strong> Lebenslanges Lernen wird Voraussetzung</li>
+                        <li><strong>Nachhaltigkeit:</strong> Soziale und ökologische Frage verbinden sich</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    "Die Geschichte der sozialen Frage zeigt: Soziale Probleme lösen sich nicht von selbst. Sie erfordern politisches Handeln, gesellschaftliche Auseinandersetzung und die Bereitschaft, bestehende Machtverhältnisse zu hinterfragen."
+                    <div class="quote-author">– Historische Lehre</div>
+                </div>
+            </div>
+
+            <!-- Zusammenfassung und Abiturrelevanz -->
+            <div class="section-header">
+                <h2><span class="icon">📝</span> Zusammenfassung und Abiturrelevanz</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>Zentrale Aspekte für das Abitur</h3>
+                
+                <div class="success-box">
+                    <h4>🎯 Kernthemen und Zusammenhänge</h4>
+                    <ul>
+                        <li><strong>Industrialisierung als Prozess:</strong> Verstehen Sie die unterschiedlichen Verläufe in England, Deutschland und USA</li>
+                        <li><strong>Leitsektoren:</strong> Textilindustrie, Dampfmaschine, Eisenbahn, Schwerindustrie, Chemie/Elektro</li>
+                        <li><strong>Voraussetzungen:</strong> Können Sie die spezifischen Faktoren für jedes Land benennen</li>
+                        <li><strong>Soziale Frage:</strong> Ursachen, Auswirkungen und unterschiedliche Lösungsansätze</li>
+                        <li><strong>Ambivalenz:</strong> Fortschritt UND soziales Elend – beide Seiten berücksichtigen</li>
+                        <li><strong>Langfristige Folgen:</strong> Moderne Gesellschaft, Sozialstaat, Gewerkschaften, Demokratisierung</li>
+                    </ul>
+                </div>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>📚 Wichtige Begriffe</h4>
+                        <ul>
+                            <li>Industrielle Revolution</li>
+                            <li>Take-off / Hochindustrialisierung</li>
+                            <li>Leitsektoren</li>
+                            <li>Soziale Frage</li>
+                            <li>Proletariat / Pauperismus</li>
+                            <li>Kapitalismus</li>
+                            <li>Klassenkampf</li>
+                            <li>Arbeiterbewegung</li>
+                            <li>Sozialgesetzgebung</li>
+                            <li>Big Business / Monopole</li>
+                            <li>New Deal</li>
+                            <li>Weltwirtschaftskrise</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>👤 Wichtige Personen</h4>
+                        <ul>
+                            <li>James Watt (Dampfmaschine)</li>
+                            <li>George Stephenson (Eisenbahn)</li>
+                            <li>Andrew Carnegie (Stahl)</li>
+                            <li>John D. Rockefeller (Öl)</li>
+                            <li>Henry Ford (Automobil)</li>
+                            <li>Otto von Bismarck (Sozialpolitik)</li>
+                            <li>Karl Marx / Friedrich Engels</li>
+                            <li>Franklin D. Roosevelt (New Deal)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>✍️ Typische Abituraufgaben</h4>
+                    <ul>
+                        <li><strong>Quellenanalyse:</strong> Marx-Texte, Arbeiterbeschreibungen, Statistiken zur Industrialisierung</li>
+                        <li><strong>Vergleich:</strong> Industrialisierung in verschiedenen Ländern, Lösungsansätze zur sozialen Frage</li>
+                        <li><strong>Erörterung:</strong> "War die Industrialisierung Fortschritt oder Rückschritt?"</li>
+                        <li><strong>Historische Urteilsbildung:</strong> Bewertung von Bismarcks Sozialpolitik, New Deal, Marx</li>
+                        <li><strong>Gegenwartsbezug:</strong> Industrie 4.0, neue soziale Frage, Sozialstaat heute</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Häufige Fehler vermeiden</h4>
+                    <ul>
+                        <li><strong>Nicht monokausal denken:</strong> Industrialisierung hatte VIELE Ursachen und Folgen</li>
+                        <li><strong>Ambivalenz beachten:</strong> Nicht nur positiv oder negativ bewerten – beide Seiten sehen</li>
+                        <li><strong>Kontextualisieren:</strong> Entwicklungen im zeitlichen und räumlichen Kontext betrachten</li>
+                        <li><strong>Unterschiede beachten:</strong> England ≠ Deutschland ≠ USA – je eigener Verlauf</li>
+                        <li><strong>Multiperspektivität:</strong> Unternehmer, Arbeiter, Staat – verschiedene Sichtweisen einbeziehen</li>
+                        <li><strong>Begriffe präzise verwenden:</strong> Proletariat, Bürgertum, Kapitalismus – exakt definieren</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="quick-nav" style="margin-top: 40px;">
+            <h3>🔗 Weiterführende Themen</h3>
+            <div class="quick-nav-grid">
+                <a href="Epochenschwelle.html" class="quick-nav-link">← Epochenschwelle 1500</a>
+                <a href="PolitischeRevolutionenDerModerne.html" class="quick-nav-link">Politische Revolutionen →</a>
+                <a href="Deutschland18151933.html" class="quick-nav-link">Deutschland 1815-1933 →</a>
+                <a href="index.html" class="quick-nav-link">🏠 Zur Startseite</a>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Add fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe subsections for animation
+            document.querySelectorAll('.subsection, .card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            console.log('✅ Industrielle Revolution und soziale Frage - Seite geladen!');
+            console.log('💡 Tipp: Drücke "T" um nach oben zu scrollen');
+        });
+    </script>
+</body>
+</html>
