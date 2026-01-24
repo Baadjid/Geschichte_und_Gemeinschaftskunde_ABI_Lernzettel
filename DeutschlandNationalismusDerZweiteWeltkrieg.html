@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutschland 1933-1945: Nationalsozialismus und Zweiter Weltkrieg - Geschichte Abitur</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #c0392b;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+            --dark-bg: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #c0392b, #e74c3c, #8b0000);
+        }
+        
+        .page-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .page-header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* Navigation */
+        .quick-nav {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .quick-nav h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            text-align: center;
+        }
+        
+        .quick-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .quick-nav-link {
+            background: linear-gradient(45deg, var(--danger-color), #e74c3c);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .quick-nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+            background: linear-gradient(45deg, #e74c3c, var(--danger-color));
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+        
+        .subsection-title {
+            color: var(--dark-bg);
+            font-size: 1.5em;
+            margin: 30px 0 20px 0;
+            padding-left: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .subsubsection-title {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        .text-content {
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .text-content p {
+            margin-bottom: 15px;
+        }
+        
+        /* Info Boxes */
+        .info-box, .warning-box, .highlight-box {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid;
+        }
+        
+        .info-box {
+            background: #e8f4f8;
+            border-color: var(--secondary-color);
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-color: var(--warning-color);
+        }
+        
+        .highlight-box {
+            background: #ffe6e6;
+            border-color: var(--accent-color);
+        }
+        
+        .warning-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.8;
+        }
+        
+        ul li, ol li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        ul li strong, ol li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Key Concepts Grid */
+        .key-concepts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .concept-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .concept-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 100px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 25px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--secondary-color);
+        }
+        
+        .timeline-content.machtubernahme::before {
+            background: #c0392b;
+            box-shadow: 0 0 0 4px #c0392b;
+        }
+        
+        .timeline-content.gleichschaltung::before {
+            background: #e74c3c;
+            box-shadow: 0 0 0 4px #e74c3c;
+        }
+        
+        .timeline-content.verfolgung::before {
+            background: #8b0000;
+            box-shadow: 0 0 0 4px #8b0000;
+        }
+        
+        .timeline-content.kriegsvorbereitung::before {
+            background: #e74c3c;
+            box-shadow: 0 0 0 4px #e74c3c;
+        }
+        
+        .timeline-content.kriegsphase::before {
+            background: #ff6b6b;
+            box-shadow: 0 0 0 4px #ff6b6b;
+        }
+        
+        .timeline-content.expansion::before {
+            background: #f39c12;
+            box-shadow: 0 0 0 4px #f39c12;
+        }
+        
+        .timeline-content.wendepunkt::before {
+            background: #e67e22;
+            box-shadow: 0 0 0 4px #e67e22;
+        }
+        
+        .timeline-content.widerstand::before {
+            background: #2980b9;
+            box-shadow: 0 0 0 4px #2980b9;
+        }
+        
+        .timeline-content.rueckzug::before {
+            background: #3498db;
+            box-shadow: 0 0 0 4px #3498db;
+        }
+        
+        .timeline-content.ende::before {
+            background: #27ae60;
+            box-shadow: 0 0 0 4px #27ae60;
+        }
+        
+        .date {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .phase-icon {
+            font-size: 1.3em;
+        }
+        
+        .event-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+        
+        .event-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .key-points {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .key-points h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        
+        .key-points ul {
+            margin: 10px 0 0 20px;
+        }
+        
+        .key-points li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        
+        /* Timeline Legend */
+        .timeline-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px;
+        }
+        
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .table-scroll-hint {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-bg));
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--accent-color), #c0392b);
+        }
+        
+        /* Tooltip */
+        .tooltip-term {
+            position: relative;
+            border-bottom: 2px dotted var(--secondary-color);
+            cursor: help;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .tooltip-content {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-bg);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: 250px;
+            font-size: 0.9em;
+            font-weight: normal;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+        
+        .tooltip-term:hover .tooltip-content {
+            display: block;
+        }
+        
+        .tooltip-content::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--dark-bg);
+        }
+        
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content-section {
+                padding: 25px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.6em;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .quick-nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .key-concepts {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-wrapper {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="page-header">
+            <h1>⚡ Deutschland 1933-1945</h1>
+            <p class="subtitle">Nationalsozialismus und Zweiter Weltkrieg</p>
+            <a href="index.html" class="back-link">← Zurück zur Übersicht</a>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <h3>🗂️ Schnellnavigation zu den Kapiteln</h3>
+            <div class="quick-nav-grid">
+                <a href="#ns-ideologie" class="quick-nav-link">NS-Ideologie</a>
+                <a href="#machtergreifung" class="quick-nav-link">Machtergreifung</a>
+                <a href="#herrschaftspraxis" class="quick-nav-link">Herrschaftspraxis</a>
+                <a href="#judenverfolgung" class="quick-nav-link">Judenverfolgung</a>
+                <a href="#widerstand" class="quick-nav-link">Widerstand</a>
+                <a href="#weg-in-krieg" class="quick-nav-link">Weg in den Krieg</a>
+                <a href="#zweiter-weltkrieg" class="quick-nav-link">Zweiter Weltkrieg</a>
+                <a href="#holocaust" class="quick-nav-link">Holocaust</a>
+                <a href="#kriegsende" class="quick-nav-link">Kriegsende</a>
+            </div>
+        </div>
+
+      <!-- Hauptinhalt: NS-Ideologie -->
+        <div class="content-section" id="ns-ideologie">
+            <h2 class="section-title">1. Ideologische Grundlagen des Nationalsozialismus</h2>
+            
+            <div class="text-content">
+                <p>Die nationalsozialistische Ideologie war kein geschlossenes, konsistentes System, sondern ein Konglomerat verschiedener Elemente, das sich vor allem durch seine emotionale und mobilisierende Wirkung auszeichnete. Im Kern stand eine rassistische Weltanschauung, die alle Bereiche des politischen und gesellschaftlichen Handelns durchdrang.</p>
+            </div>
+
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <div class="concept-title">🔴 Rassismus und Antisemitismus</div>
+                    <div>
+                        <ul>
+                            <li><strong>Lehre von der "Herrenrasse":</strong> Behauptung einer biologischen Überlegenheit der "arischen" bzw. "nordischen" Rasse</li>
+                            <li><strong>Antisemitismus als Kern:</strong> Pathologischer Judenhass, Juden als "Feindbild" und angebliche Ursache aller Probleme</li>
+                            <li><strong>"Rassenhygiene":</strong> Eugenik, Zwangssterilisation "Erbkranker", später systematischer Völkermord</li>
+                            <li><strong>Lebensraum-Ideologie:</strong> Eroberung von "Lebensraum im Osten" auf Kosten "minderwertiger" Völker</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">👤 Führerprinzip</div>
+                    <div>
+                        <ul>
+                            <li><strong>Absolute Führerautorität:</strong> Hitler als unfehlbarer "Führer" mit unbeschränkter Macht</li>
+                            <li><strong>Hierarchische Ordnung:</strong> Befehl und Gehorsam statt demokratischer Mitbestimmung</li>
+                            <li><strong>Charismatische Herrschaft:</strong> Personenkult um Hitler, quasi-religiöse Verehrung</li>
+                            <li><strong>Ablehnung der Demokratie:</strong> Parlamentarismus als "jüdisch-bolschewistische" Verfallserscheinung</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">👥 Volksgemeinschaft</div>
+                    <div>
+                        <ul>
+                            <li><strong>Idealisierte Gemeinschaft:</strong> Überwindung von Klassengegensätzen innerhalb der "Volksgenossen"</li>
+                            <li><strong>Ausgrenzung:</strong> "Gemeinschaftsfremde" wurden systematisch verfolgt und ermordet</li>
+                            <li><strong>Soziale Kontrolle:</strong> Gleichschaltung aller Lebensbereiche</li>
+                            <li><strong>Propaganda der Einheit:</strong> "Ein Volk, ein Reich, ein Führer"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">🎖️ Militarismus und Nationalismus</div>
+                    <div>
+                        <ul>
+                            <li><strong>Übersteigerter Nationalstolz:</strong> Glorifizierung des deutschen "Volkstums"</li>
+                            <li><strong>Revisionismus:</strong> Ablehnung des Versailler Vertrags als "Diktat"</li>
+                            <li><strong>Imperialistische Expansion:</strong> Streben nach Großmachtstellung und Weltherrschaft</li>
+                            <li><strong>Verherrlichung des Krieges:</strong> Krieg als natürlicher Zustand und Bewährungsprobe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 Wichtig für das Abitur:</strong> Die NS-Ideologie war widersprüchlich und irrational, aber gerade deshalb mobilisierend. Sie bot einfache Antworten auf komplexe Probleme, versprach nationale Größe und identifizierte klare "Feinde". Entscheidend ist das Zusammenspiel von Rassismus, Antisemitismus, Führerkult und Expansionsdrang.
+            </div>
+
+            <h3 class="subsection-title">Aufstieg der NSDAP (1919-1933)</h3>
+            
+            <div class="text-content">
+                <p>Die Nationalsozialistische Deutsche Arbeiterpartei (NSDAP) wurde 1920 aus der Deutschen Arbeiterpartei (DAP) gegründet. Adolf Hitler übernahm 1921 die Führung und baute die Partei zu einer straff organisierten Bewegung aus.</p>
+            </div>
+
+            <h4 class="subsubsection-title">Gründe für den Aufstieg:</h4>
+            <ul>
+                <li><strong>Weltwirtschaftskrise ab 1929:</strong> Massenarbeitslosigkeit (über 6 Millionen 1932), wirtschaftliche Not und soziale Verunsicherung</li>
+                <li><strong>Versailler Vertrag:</strong> Ausnutzung der weit verbreiteten Ablehnung der "Kriegsschuld" und der Reparationszahlungen</li>
+                <li><strong>Schwäche der Weimarer Republik:</strong> Politische Instabilität, häufige Regierungswechsel, Präsidialkabinette</li>
+                <li><strong>Propaganda-Maschinerie:</strong> Geschickte Nutzung moderner Medien (Plakate, Rundfunk, Massenveranstaltungen)</li>
+                <li><strong>SA als Kampftruppe:</strong> Einschüchterung politischer Gegner, Straßenkämpfe, Inszenierung als "Ordnungsmacht"</li>
+                <li><strong>Finanzielle Unterstützung:</strong> Gelder von Teilen der Industrie und Großgrundbesitzern</li>
+                <li><strong>Unterschätzung durch Eliten:</strong> Konservative Politiker wie Papen glaubten, Hitler "zähmen" zu können</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>📊 Wahlergebnisse der NSDAP (Reichstagswahlen):</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Mai 1928: 2,6% (810.000 Stimmen)</li>
+                    <li>September 1930: 18,3% (6,4 Millionen Stimmen) – Durchbruch!</li>
+                    <li>Juli 1932: 37,3% (13,7 Millionen) – Stärkste Partei</li>
+                    <li>November 1932: 33,1% (11,7 Millionen) – Leichter Rückgang</li>
+                    <li>März 1933: 43,9% (17,3 Millionen) – Unter Terrorbedingungen</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">⚠️ Wichtige Erkenntnis:</div>
+                Die NSDAP erhielt bei keiner freien Wahl die absolute Mehrheit. Hitler kam durch eine Kombination aus demokratischen Mitteln, Intrigen konservativer Eliten und systematischem Terror an die Macht – nicht durch einen Wahlsieg allein.
+            </div>
+        </div>
+
+        <!-- Machtergreifung und Gleichschaltung -->
+        <div class="content-section" id="machtergreifung">
+            <h2 class="section-title">2. "Machtergreifung" und Errichtung der Diktatur (1933)</h2>
+            
+            <div class="text-content">
+                <p>Der Begriff "Machtergreifung" ist historisch umstritten, da er suggeriert, die Nationalsozialisten hätten die Macht gewaltsam an sich gerissen. Tatsächlich wurde Hitler am 30. Januar 1933 legal zum Reichskanzler ernannt. Allerdings zerstörten die Nationalsozialisten dann systematisch und mit großer Geschwindigkeit die demokratischen Strukturen der Weimarer Republik.</p>
+            </div>
+
+            <div class="timeline-legend">
+                <div class="legend-item">
+                    <div class="legend-color machtubernahme" style="border-color: #c0392b; background: #c0392b;"></div>
+                    <span>Machtübernahme</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color gleichschaltung" style="border-color: #e74c3c; background: #e74c3c;"></div>
+                    <span>Gleichschaltung</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color verfolgung" style="border-color: #8b0000; background: #8b0000;"></div>
+                    <span>Verfolgung</span>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content machtubernahme">
+                        <div class="date">
+                            <span class="phase-icon">🗳️</span>
+                            30. Januar 1933
+                        </div>
+                        <div class="event-title">Ernennung Hitlers zum Reichskanzler</div>
+                        <div class="event-description">
+                            Reichspräsident Hindenburg ernennt Adolf Hitler zum Reichskanzler einer Koalitionsregierung mit konservativen Partnern (DNVP). Die Konservativen um Franz von Papen glauben, Hitler "einrahmen" und kontrollieren zu können – ein fataler Irrtum.
+                        </div>
+                        <div class="key-points">
+                            <h4>Hintergründe der Ernennung:</h4>
+                            <ul>
+                                <li>NSDAP stärkste Partei im Reichstag (33,1% im November 1932)</li>
+                                <li>Konservative Eliten suchen nach Massenunterstützung für autoritäre Pläne</li>
+                                <li>Hindenburg gibt nach monatelangem Zögern nach</li>
+                                <li>Nur 3 von 11 Ministern sind Nationalsozialisten</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content gleichschaltung">
+                        <div class="date">
+                            <span class="phase-icon">🔥</span>
+                            27. Februar 1933
+                        </div>
+                        <div class="event-title">Reichstagsbrand und Notverordnung</div>
+                        <div class="event-description">
+                            Der Reichstag brennt – bis heute ist umstritten, wer verantwortlich war. Die Nationalsozialisten nutzen das Ereignis propagandistisch aus und beschuldigen die Kommunisten. Noch in derselben Nacht erlässt Hindenburg die "Verordnung zum Schutz von Volk und Staat" (Reichstagsbrandverordnung).
+                        </div>
+                        <div class="key-points">
+                            <h4>Folgen der Notverordnung:</h4>
+                            <ul>
+                                <li><strong>Ausserkraftsetzung der Grundrechte:</strong> Meinungs-, Presse-, Versammlungsfreiheit werden faktisch abgeschafft</li>
+                                <li><strong>Massenverhaftungen:</strong> Über 10.000 Kommunisten, Sozialdemokraten und andere Oppositionelle werden verhaftet</li>
+                                <li><strong>"Schutzhaft":</strong> Haft ohne Anklage und Gerichtsverfahren wird möglich</li>
+                                <li><strong>Erste KZs entstehen:</strong> Dachau (März 1933) als "Schutzhaftlager"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content gleichschaltung">
+                        <div class="date">
+                            <span class="phase-icon">⚖️</span>
+                            23. März 1933
+                        </div>
+                        <div class="event-title">Ermächtigungsgesetz – Ende der Demokratie</div>
+                        <div class="event-description">
+                            Der Reichstag verabschiedet mit 444 gegen 94 Stimmen (nur SPD stimmt dagegen, KPD-Abgeordnete bereits verhaftet oder untergetaucht) das "Gesetz zur Behebung der Not von Volk und Reich". Es ermöglicht der Regierung, ohne Zustimmung des Reichstags Gesetze zu erlassen – auch solche, die von der Verfassung abweichen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Bedeutung des Ermächtigungsgesetzes:</h4>
+                            <ul>
+                                <li>Regierung kann ohne Parlament Gesetze erlassen</li>
+                                <li>Gewaltenteilung faktisch aufgehoben</li>
+                                <li>Reichstag wird bedeutungslos</li>
+                                <li>Entscheidender Schritt zur totalen Diktatur</li>
+                                <li>Zentrum und andere bürgerliche Parteien stimmen zu (in der Hoffnung auf Mäßigung)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content gleichschaltung">
+                        <div class="date">
+                            <span class="phase-icon">🏭</span>
+                            2. Mai 1933
+                        </div>
+                        <div class="event-title">Zerschlagung der Gewerkschaften</div>
+                        <div class="event-description">
+                            Einen Tag nach dem propagandistisch inszenierten "Tag der Arbeit" (1. Mai) besetzen SA und SS die Gewerkschaftshäuser, beschlagnahmen das Vermögen und verhaften Funktionäre. Die freien Gewerkschaften werden aufgelöst und durch die "Deutsche Arbeitsfront" (DAF) unter Robert Ley ersetzt.
+                        </div>
+                        <div class="key-points">
+                            <h4>Folgen:</h4>
+                            <ul>
+                                <li>Streikrecht wird abgeschafft</li>
+                                <li>Arbeiterbewegung ihrer Organisation beraubt</li>
+                                <li>DAF als NS-Massenorganisation (später 25 Millionen Mitglieder)</li>
+                                <li>Arbeitsbedingungen werden diktiert</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content gleichschaltung">
+                        <div class="date">
+                            <span class="phase-icon">🚫</span>
+                            14. Juli 1933
+                        </div>
+                        <div class="event-title">Verbot aller Parteien – NSDAP wird Staatspartei</div>
+                        <div class="event-description">
+                            Das "Gesetz gegen die Neubildung von Parteien" macht Deutschland zum Einparteienstaat. Die NSDAP wird zur einzigen zugelassenen Partei erklärt. Bereits zuvor hatten sich die meisten Parteien unter Druck selbst aufgelöst (SPD verboten am 22. Juni, Zentrum löst sich am 5. Juli auf).
+                        </div>
+                        <div class="key-points">
+                            <h4>Gleichschaltung ist abgeschlossen:</h4>
+                            <ul>
+                                <li>Innerhalb von 6 Monaten wird aus einer Demokratie eine Diktatur</li>
+                                <li>Pluralismus ist ausgeschaltet</li>
+                                <li>Politische Opposition wird kriminalisiert</li>
+                                <li>Rechtsstaatliche Prinzipien aufgehoben</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">🗡️</span>
+                            30. Juni 1934
+                        </div>
+                        <div class="event-title">"Röhm-Putsch" – Entmachtung der SA</div>
+                        <div class="event-description">
+                            Hitler lässt den SA-Chef Ernst Röhm und weitere SA-Führer sowie politische Gegner ermorden ("Nacht der langen Messer"). Insgesamt werden ca. 150-200 Menschen ermordet, darunter auch der ehemalige Reichskanzler Kurt von Schleicher. Die SS unter Heinrich Himmler führt die Morde durch und steigt zur wichtigsten Machtorganisation auf.
+                        </div>
+                        <div class="key-points">
+                            <h4>Hintergründe und Folgen:</h4>
+                            <ul>
+                                <li>Konflikt zwischen SA (4 Millionen Mann) und Reichswehr</li>
+                                <li>Röhm fordert "zweite Revolution" mit sozialistischen Elementen</li>
+                                <li>Hitler sichert sich Loyalität der Reichswehr</li>
+                                <li>SS wird zur zentralen Terror- und Überwachungsorganisation</li>
+                                <li>Rechtfertigung durch nachträgliches "Gesetz" – Willkürjustiz</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content machtubernahme">
+                        <div class="date">
+                            <span class="phase-icon">👑</span>
+                            2. August 1934
+                        </div>
+                        <div class="event-title">Hitler wird "Führer und Reichskanzler"</div>
+                        <div class="event-description">
+                            Nach dem Tod Hindenburgs vereint Hitler die Ämter des Reichspräsidenten und Reichskanzlers in seiner Person. Die Wehrmacht wird auf Hitler persönlich vereidigt (nicht auf die Verfassung!). Eine Volksabstimmung am 19. August ergibt 89,9% Zustimmung (unter massivem Propagandadruck).
+                        </div>
+                        <div class="key-points">
+                            <h4>Vollendung der Diktatur:</h4>
+                            <ul>
+                                <li>Absolute Machtkonzentration in einer Person</li>
+                                <li>Keine institutionellen Kontrollmechanismen mehr</li>
+                                <li>Eid der Wehrmacht auf Hitler persönlich</li>
+                                <li>Führerprinzip wird Staatsgrundlage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>📖 Historische Einordnung:</strong> Die "Machtergreifung" war ein Prozess, keine einzelne Handlung. Innerhalb von nur 18 Monaten (Januar 1933 bis August 1934) verwandelten die Nationalsozialisten Deutschland von einer - wenn auch geschwächten - Demokratie in eine totalitäre Diktatur. Dies geschah durch eine Kombination aus legalen Mitteln, Terror, Propaganda und der Ausnutzung bestehender Strukturen.
+            </div>
+        </div>
+
+      <!-- Herrschaftspraxis -->
+        <div class="content-section" id="herrschaftspraxis">
+            <h2 class="section-title">3. Herrschaftspraxis – Wie sicherte das NS-Regime seine Macht?</h2>
+            
+            <div class="text-content">
+                <p>Das NS-Regime etablierte ein System totaler Herrschaft, das alle Lebensbereiche durchdrang. Die Herrschaft beruhte auf einem komplexen Zusammenspiel verschiedener Instrumente: Terror, Propaganda, soziale Integration und Gleichschaltung der Gesellschaft.</p>
+            </div>
+
+            <h3 class="subsection-title">Propaganda als Herrschaftsinstrument</h3>
+            
+            <div class="info-box">
+                <strong>Definition Propaganda:</strong> Gezielte Verbreitung von Informationen, Ideen oder Meinungen, um die Einstellungen und das Verhalten einer Zielgruppe zu beeinflussen. Im Nationalsozialismus diente sie zur Verbreitung der NS-Ideologie, zur Indoktrination der Bevölkerung und zur Machtfestigung des Regimes.
+            </div>
+
+            <h4 class="subsubsection-title">Ziele der NS-Propaganda:</h4>
+            <ul>
+                <li><strong>Ideologische Indoktrination:</strong> Verbreitung der nationalsozialistischen Weltanschauung, einschließlich Rassismus, Antisemitismus und Führerkult</li>
+                <li><strong>Mobilisierung der Bevölkerung:</strong> Schaffung von Unterstützung für das Regime und seine Ziele, z.B. durch Kriegspropaganda</li>
+                <li><strong>Gleichschaltung der Meinung:</strong> Unterdrückung abweichender Meinungen und Schaffung einer scheinbaren Einheitlichkeit in der Gesellschaft</li>
+                <li><strong>Feindbilder schaffen:</strong> Dämonisierung von Gegnern wie Juden, Kommunisten oder anderen Staaten</li>
+                <li><strong>Legitimation der Herrschaft:</strong> Darstellung Hitlers als Retter und genialer Führer</li>
+            </ul>
+
+            <h4 class="subsubsection-title">Mittel und Methoden der Propaganda:</h4>
+            
+            <div class="table-scroll-hint">← Tabelle horizontal scrollbar →</div>
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>Medium</th>
+                        <th>Beschreibung</th>
+                        <th>Wirkung</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Reichsministerium für Volksaufklärung und Propaganda</strong></td>
+                        <td>Geleitet von Joseph Goebbels ab März 1933, kontrollierte alle Medien und kulturellen Aktivitäten</td>
+                        <td>Zentrale Steuerung aller Informationsflüsse</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Radio ("Volksempfänger")</strong></td>
+                        <td>Preisgünstiges Radiogerät (35 RM), gezielt für die Massenverbreitung von NS-Botschaften entwickelt</td>
+                        <td>Direkter Zugang in Millionen Haushalte für Hitlers Reden und NS-Propaganda</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Presse</strong></td>
+                        <td>Kontrolle aller Zeitungen und Zeitschriften, "Schriftleitergesetz" (1933), jüdische und oppositionelle Journalisten entfernt</td>
+                        <td>Einheitliche Berichterstattung im Sinne des Regimes, keine kritischen Stimmen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Film</strong></td>
+                        <td>Produktion von Propagandafilmen wie "Der ewige Jude" (antisemitisch), "Triumph des Willens" (Leni Riefenstahl, 1935), "Jud Süß" (1940)</td>
+                        <td>Emotionale Manipulation durch visuelle Darstellungen, Unterhaltung mit ideologischem Inhalt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Massenveranstaltungen</strong></td>
+                        <td>Reichsparteitage in Nürnberg, Aufmärsche, Fackelzüge mit ausgefeilter Inszenierung und Symbolik</td>
+                        <td>Gemeinschaftsgefühl, Machtdemonstration, Identifikation mit dem Regime</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plakate & Flugblätter</strong></td>
+                        <td>Einfache, emotionale Botschaften im öffentlichen Raum</td>
+                        <td>Ständige Präsenz der NS-Ideologie im Alltag</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bücherverbrennung</strong></td>
+                        <td>10. Mai 1933: Öffentliche Verbrennung von Werken "undeutscher" Autoren</td>
+                        <td>Symbolische Vernichtung abweichender Gedanken, Einschüchterung</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">⚠️ Goebbels' Propagandaprinzipien:</div>
+                <ul>
+                    <li><strong>Vereinfachung:</strong> Komplexe Sachverhalte auf einfache Botschaften reduzieren</li>
+                    <li><strong>Wiederholung:</strong> Ständiges Wiederholen derselben Parolen</li>
+                    <li><strong>Emotionalisierung:</strong> Ansprechen von Gefühlen statt Verstand</li>
+                    <li><strong>Feindbild:</strong> Klare Benennung von "Feinden" (Juden, Kommunisten, "Volksschädlinge")</li>
+                    <li><strong>Lüge:</strong> "Eine Lüge muss nur oft genug wiederholt werden, dann wird sie geglaubt"</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Terror und Überwachung</h3>
+            
+            <div class="text-content">
+                <p>Neben der Propaganda war der systematische Terror das zweite zentrale Herrschaftsinstrument. Das NS-Regime schuf einen Überwachungs- und Verfolgungsapparat, der alle Lebensbereiche durchdrang und jeden Widerstand im Keim ersticken sollte.</p>
+            </div>
+
+            <h4 class="subsubsection-title">Das NS-Polizei- und Verfolgungssystem:</h4>
+            
+            <div class="warning-box">
+                <div class="warning-title">Entwicklung der politischen Polizei unter Himmler:</div>
+                <p><strong>Im Juni 1936</strong> gelang es Heinrich Himmler, die Führung der gesamten deutschen Polizei zu übernehmen. Die politische Polizei wurde unter einheitlicher Leitung zusammengefasst. <strong>Himmler vereinte in seiner Person SS, Politische Polizei und Konzentrationslager</strong> – das siegreiche Modell im Machtkampf innerhalb der NS-Führung.</p>
+                <p style="margin-top: 10px;">Im April 1936 wurde Himmler zum Inspekteur der preußischen Gestapo ernannt. Die Polizei wurde aus der bisherigen Struktur der inneren Verwaltung herausgelöst und in einem Hauptamt Sicherheitspolizei zusammengefasst, wodurch die Kontrolle über den Polizeiapparat komplett in NS-Hand war.</p>
+            </div>
+
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <div class="concept-title">👮 Gestapo (Geheime Staatspolizei)</div>
+                    <div>
+                        <ul>
+                            <li>Gegründet 1933 von Hermann Göring in Preußen</li>
+                            <li>Ab 1936 reichsweit unter Himmler/Heydrich</li>
+                            <li>Verhaftungen ohne Gerichtsverfahren ("Schutzhaft")</li>
+                            <li>Folter und Verhörmethoden</li>
+                            <li>Netz von Spitzeln und Denunzianten</li>
+                            <li>Ca. 32.000 Mitarbeiter (1944)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">⚡ SS (Schutzstaffel)</div>
+                    <div>
+                        <ul>
+                            <li>Ursprünglich Hitlers Leibgarde</li>
+                            <li>Ab 1929 unter Heinrich Himmler</li>
+                            <li>Eliteorganisation mit Rassenwahn</li>
+                            <li>SS-Totenkopfverbände: Bewachung der KZs</li>
+                            <li>Waffen-SS: militärische Kampfverbände</li>
+                            <li>1945: über 800.000 Mitglieder</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">🏕️ Konzentrationslager (KZ)</div>
+                    <div>
+                        <ul>
+                            <li><strong>1933:</strong> Erste "wilde" KZs, ab März 1933 Dachau</li>
+                            <li><strong>1936:</strong> Sachsenhausen bei Berlin</li>
+                            <li><strong>1937:</strong> Buchenwald bei Weimar</li>
+                            <li><strong>1938:</strong> Mauthausen, Flossenbürg</li>
+                            <li><strong>1939:</strong> Ravensbrück (Frauen-KZ)</li>
+                            <li>Haft ohne Urteil, brutale Bedingungen</li>
+                            <li>Zwangsarbeit, medizinische Experimente</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">🔍 SD (Sicherheitsdienst)</div>
+                    <div>
+                        <ul>
+                            <li>Nachrichtendienst der SS unter Reinhard Heydrich</li>
+                            <li>Überwachung der Bevölkerung</li>
+                            <li>Erstellung von Stimmungsberichten</li>
+                            <li>Bekämpfung weltanschaulicher "Gegner"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="subsubsection-title">"Rassische Generalprävention" und Verfolgung</h4>
+            
+            <div class="text-content">
+                <p>Der Historiker Ulrich Herbert beschrieb die NS-Polizei-Ideologie: "Die Polizei hat das deutsche Volk als organisches Gesamtwesen, seine Lebenskraft und seine Einrichtungen gegen Zerstörungen und Zersetzung zu sichern." Dies führte zur systematischen Verfolgung von Menschen, die nicht in die "Volksgemeinschaft" passten.</p>
+            </div>
+
+            <h4 class="subsubsection-title">Verfolgte Gruppen (neben Juden):</h4>
+            <ul>
+                <li><strong>Politische Gegner:</strong> Kommunisten, Sozialdemokraten, Gewerkschafter (erste Opfer ab 1933)</li>
+                <li><strong>"Asoziale":</strong> Obdachlose, Bettler, Arbeitsscheue – ab 1937 Massenverhaftungen (ca. 10.000 Personen)</li>
+                <li><strong>Homosexuelle:</strong> § 175 verschärft, ca. 50.000 verurteilt, 5.000-15.000 in KZs ermordet</li>
+                <li><strong>Roma und Sinti:</strong> Als "rassisch minderwertig" verfolgt, ca. 500.000 ermordet im "Porajmos"</li>
+                <li><strong>"Erbkranke":</strong> Zwangssterilisation (ca. 400.000 Personen), später "Euthanasie"-Morde</li>
+                <li><strong>Zeugen Jehovas:</strong> Wegen Verweigerung des Militärdienstes verfolgt</li>
+                <li><strong>"Berufsverbrecher":</strong> Kriminelle in "Vorbeugehaft" (ab 1933)</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 Zwangssterilisation:</strong> Am 14. Juli 1933 erließ das NS-Regime das <strong>Gesetz zur "Verhütung erbkranken Nachwuchses"</strong>. Bis 1945 wurden etwa <strong>400.000 Menschen</strong> zwangssterilisiert – Menschen mit körperlichen oder geistigen Behinderungen, psychischen Erkrankungen oder einfach sozial Auffällige. Dies war der Auftakt zur späteren systematischen Ermordung im Rahmen der "Euthanasie"-Programme.
+            </div>
+
+            <h3 class="subsection-title">Soziale Integration und "Volksgemeinschaft"</h3>
+            
+            <div class="text-content">
+                <p>Das NS-Regime verfolgte nicht nur mit Terror, sondern versuchte auch, die Bevölkerung durch soziale Angebote und Massenorganisationen einzubinden. Die "Volksgemeinschaft" sollte Klassengegensätze überwinden – allerdings nur für "Volksgenossen".</p>
+            </div>
+
+            <h4 class="subsubsection-title">NS-Massenorganisationen:</h4>
+            
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>Organisation</th>
+                        <th>Aufgabe</th>
+                        <th>Mitglieder</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Deutsche Arbeitsfront (DAF)</strong></td>
+                        <td>Ersatz für Gewerkschaften, Kontrolle der Arbeiter, "Betriebsgemeinschaft" statt Klassenkampf</td>
+                        <td>25 Millionen (1942)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kraft durch Freude (KdF)</strong></td>
+                        <td>Freizeitorganisation der DAF: günstige Urlaubsreisen, Theater, Sport, "KdF-Wagen" (VW Käfer)</td>
+                        <td>Teil der DAF</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hitlerjugend (HJ)</strong></td>
+                        <td>Jugendorganisation für Jungen (10-18 Jahre), militärische Erziehung, Indoktrination</td>
+                        <td>8,7 Millionen (1939)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bund Deutscher Mädel (BDM)</strong></td>
+                        <td>Mädchenorganisation (10-18 Jahre), Vorbereitung auf Mutterrolle</td>
+                        <td>Teil der HJ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NS-Frauenschaft</strong></td>
+                        <td>Organisation für erwachsene Frauen, Propagierung des Mutterideals</td>
+                        <td>2,3 Millionen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reichsarbeitsdienst (RAD)</strong></td>
+                        <td>Ab 1935 Pflichtdienst (6 Monate) für junge Männer und Frauen</td>
+                        <td>Pflichtig für alle</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <strong>📊 Erfolge der NS-Sozialpolitik (aus Sicht der Zeitgenossen):</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Arbeitslosigkeit:</strong> Rückgang von 6 Millionen (1933) auf unter 1 Million (1936) – aber durch Aufrüstung, Zwangsarbeit und statistische Tricks</li>
+                    <li><strong>Wirtschaftsaufschwung:</strong> Autobahnen, Wohnungsbau, Rüstungsindustrie</li>
+                    <li><strong>Soziale Mobilität:</strong> Aufstiegschancen in Partei und Wehrmacht</li>
+                    <li><strong>"Volksgemeinschaft":</strong> Überwindung scheinbarer Klassengrenzen bei Massenveranstaltungen</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>⚠️ Aber:</strong> Dies beruhte auf Kriegsvorbereitung, Ausbeutung, Ausgrenzung und sollte nicht über die verbrecherische Natur des Regimes hinwegtäuschen!</p>
+            </div>
+
+            <h3 class="subsection-title">Gleichschaltung der Gesellschaft</h3>
+            
+            <div class="text-content">
+                <p>"Gleichschaltung" bezeichnet die Unterordnung aller gesellschaftlichen Bereiche unter die NS-Ideologie und Kontrolle. Binnen kürzester Zeit wurden alle unabhängigen Organisationen und Institutionen aufgelöst oder eingegliedert.</p>
+            </div>
+
+            <h4 class="subsubsection-title">Bereiche der Gleichschaltung:</h4>
+            <ul>
+                <li><strong>Kultur und Medien:</strong> Reichskulturkammer (1933) unter Goebbels – Mitgliedschaft Pflicht für alle Kulturschaffenden, jüdische und oppositionelle Künstler ausgeschlossen</li>
+                <li><strong>Justiz:</strong> "Volksgerichtshof" (1934) für politische Prozesse, Richter auf Hitler vereidigt, NS-Gesetze statt Rechtsstaatlichkeit</li>
+                <li><strong>Universitäten:</strong> "Gesetz zur Wiederherstellung des Berufsbeamtentums" (April 1933) entfernt jüdische und politisch unliebsame Professoren</li>
+                <li><strong>Kirchen:</strong> Versuch der Gleichschaltung bei evangelischer Kirche ("Deutsche Christen"), Konkordat mit katholischer Kirche (1933) – faktisch gebrochen</li>
+                <li><strong>Wirtschaft:</strong> Keine Verstaatlichung, aber staatliche Lenkung, Vierjahrespläne, Kriegswirtschaft</li>
+                <li><strong>Länder:</strong> "Gleichschaltungsgesetze" (1933/34) heben Föderalismus auf, Reichsstatthalter ersetzen Landesregierungen</li>
+            </ul>
+
+            <div class="warning-box">
+                <div class="warning-title">⚠️ Wichtig für das Abitur:</div>
+                Die NS-Herrschaft funktionierte nicht nur durch Zwang, sondern auch durch Zustimmung und Mitläufertum. Viele Deutsche profitierten vom Regime (Arbeitsplätze, Aufstieg, "Arisierung" jüdischen Eigentums) oder schwiegen aus Angst, Gleichgültigkeit oder Opportunismus. Die Verbindung von Terror UND Zustimmung macht die NS-Herrschaft historisch so einzigartig.
+            </div>
+        </div>
+
+      <!-- Judenverfolgung und Holocaust -->
+        <div class="content-section" id="judenverfolgung">
+            <h2 class="section-title">4. Judenverfolgung und Holocaust</h2>
+            
+            <div class="text-content">
+                <p>Die systematische Verfolgung und Ermordung der europäischen Juden bildet das dunkelste Kapitel der deutschen Geschichte. Der Holocaust war kein spontanes Ereignis, sondern das Ergebnis einer radikalen antisemitischen Ideologie, die schrittweise zur industriellen Massenvernichtung führte.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">⚠️ Historische Verantwortung:</div>
+                Der Holocaust kostete etwa <strong>6 Millionen jüdische Menschen</strong> das Leben – etwa zwei Drittel aller europäischen Juden. Dies war ein beispielloser Zivilisationsbruch, der industrielle Vernichtungsmethoden mit bürokratischer Effizienz verband. Die Erinnerung daran und die Verantwortung bleiben zentrale Aufgaben der deutschen Geschichtskultur.
+            </div>
+
+            <h3 class="subsection-title">Phasen der antisemitischen Judenpolitik (1933-1945)</h3>
+            
+            <div class="text-content">
+                <p>Die NS-Judenpolitik lässt sich in verschiedene Phasen einteilen, die von Diskriminierung über Ausgrenzung und Vertreibung schließlich zur systematischen Vernichtung führten.</p>
+            </div>
+
+            <h4 class="subsubsection-title">Phase 1: Diskriminierung und Ausgrenzung (1933-1935)</h4>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">🚫</span>
+                            1. April 1933
+                        </div>
+                        <div class="event-title">Boykott jüdischer Geschäfte</div>
+                        <div class="event-description">
+                            Reichsweiter Boykott jüdischer Geschäfte, Ärzte und Anwälte. SA-Männer stehen vor Geschäften mit Schildern "Kauft nicht bei Juden!" – erste öffentliche antisemitische Aktion des Regimes.
+                        </div>
+                        <div class="key-points">
+                            <h4>Bedeutung:</h4>
+                            <ul>
+                                <li>Erstes öffentliches Signal der antisemitischen Politik</li>
+                                <li>Test der öffentlichen Reaktion (teils Ablehnung, teils Gleichgültigkeit)</li>
+                                <li>Beginn der wirtschaftlichen Existenzvernichtung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">📜</span>
+                            7. April 1933
+                        </div>
+                        <div class="event-title">"Gesetz zur Wiederherstellung des Berufsbeamtentums"</div>
+                        <div class="event-description">
+                            Entfernung von Juden und politisch Missliebigen aus dem öffentlichen Dienst. "Arierparagraph" wird eingeführt – Beamte müssen "arischer Abstammung" sein.
+                        </div>
+                        <div class="key-points">
+                            <h4>Folgen:</h4>
+                            <ul>
+                                <li>Jüdische Beamte, Lehrer, Professoren verlieren ihre Stellen</li>
+                                <li>Ausnahmen zunächst für Frontkämpfer des Ersten Weltkriegs</li>
+                                <li>Beginn der systematischen Entrechtung</li>
+                                <li>Emigration vieler jüdischer Wissenschaftler (u.a. Albert Einstein)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>Weitere Diskriminierungsmaßnahmen 1933-1935:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Ausschluss aus Kulturorganisationen (Reichskulturkammer)</li>
+                    <li>Verbot für jüdische Sportler, in deutschen Vereinen aktiv zu sein</li>
+                    <li>Verbrennung von Büchern jüdischer Autoren (10. Mai 1933)</li>
+                    <li>Schilder "Juden unerwünscht" in vielen Gemeinden</li>
+                    <li>Berufsverbote für jüdische Ärzte und Anwälte</li>
+                </ul>
+            </div>
+
+            <h4 class="subsubsection-title">Phase 2: Institutionalisierte Entrechtung (1935-1938)</h4>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">📜</span>
+                            15. September 1935
+                        </div>
+                        <div class="event-title">Nürnberger Gesetze</div>
+                        <div class="event-description">
+                            Auf dem NSDAP-Reichsparteitag werden zwei grundlegende antisemitische Gesetze verkündet: das "Reichsbürgergesetz" und das "Gesetz zum Schutze des deutschen Blutes und der deutschen Ehre".
+                        </div>
+                        <div class="key-points">
+                            <h4>Inhalt der Nürnberger Gesetze:</h4>
+                            <ul>
+                                <li><strong>Reichsbürgergesetz:</strong> Unterscheidung zwischen "Reichsbürgern" (nur "deutsche oder artverwandte Blutes") und "Staatsangehörigen" – Juden verlieren politische Rechte</li>
+                                <li><strong>"Blutschutzgesetz":</strong> Verbot von Ehen und außerehelichem Verkehr zwischen Juden und "Ariern"</li>
+                                <li><strong>Definition "Jude":</strong> Nach "Rassenkriterien", nicht nach Religion – auch getaufte Christen jüdischer Herkunft betroffen</li>
+                                <li><strong>"Mischlinge":</strong> Komplizierte Kategorisierung nach Anzahl jüdischer Großeltern</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Bedeutung der Nürnberger Gesetze:</div>
+                Die Nürnberger Gesetze schufen die rechtliche Grundlage für alle weiteren Verfolgungsmaßnahmen. Juden wurden zu Bürgern zweiter Klasse degradiert, systematisch aus der "Volksgemeinschaft" ausgeschlossen und stigmatisiert. Die pseudowissenschaftliche "Rassendefinition" machte auch konvertierte Christen zu Verfolgten.
+            </div>
+
+            <h4 class="subsubsection-title">Weitere Maßnahmen 1935-1938:</h4>
+            <ul>
+                <li><strong>1936:</strong> Olympische Spiele in Berlin – temporäre Mäßigung der Verfolgung aus Propagandagründen</li>
+                <li><strong>1937:</strong> Verstärkte "Arisierung" – Zwangsverkauf jüdischer Unternehmen weit unter Wert</li>
+                <li><strong>1938 (März):</strong> "Anschluss" Österreichs – sofortige antisemitische Gewalt in Wien</li>
+                <li><strong>1938 (April):</strong> Anmeldepflicht für jüdisches Vermögen über 5.000 Reichsmark</li>
+                <li><strong>1938 (Juni):</strong> "Arisierung" jüdischer Betriebe wird systematisiert</li>
+                <li><strong>1938 (August):</strong> Zwang zu zusätzlichen Vornamen "Israel" (Männer) bzw. "Sara" (Frauen)</li>
+                <li><strong>1938 (Oktober):</strong> Kennzeichnung der Reisepässe mit einem "J"</li>
+            </ul>
+
+            <h4 class="subsubsection-title">Phase 3: Pogrome und verstärkte Vertreibung (1938-1939)</h4>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">🔥</span>
+                            9./10. November 1938
+                        </div>
+                        <div class="event-title">Novemberpogrom ("Reichskristallnacht")</div>
+                        <div class="event-description">
+                            Nach dem Attentat des 17-jährigen Herschel Grynszpan auf den deutschen Diplomaten Ernst vom Rath in Paris inszeniert das NS-Regime reichsweite Pogrome gegen Juden. Die Gewalt wird als "spontaner Volkszorn" dargestellt, war aber zentral gesteuert.
+                        </div>
+                        <div class="key-points">
+                            <h4>Ausmaß der Gewalt:</h4>
+                            <ul>
+                                <li><strong>Ca. 400 Ermordete:</strong> Direkt oder an Folgen der Misshandlungen</li>
+                                <li><strong>Ca. 1.400 Synagogen:</strong> Zerstört oder schwer beschädigt</li>
+                                <li><strong>Ca. 7.500 Geschäfte:</strong> Verwüstet und geplündert</li>
+                                <li><strong>Ca. 30.000 jüdische Männer:</strong> Verhaftet und in KZs verschleppt (Dachau, Buchenwald, Sachsenhausen)</li>
+                                <li><strong>Wohnungen zerstört:</strong> Tausende jüdische Familien obdachlos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>⚠️ Folgen des Novemberpogroms:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>"Sühneleistung":</strong> Juden mussten 1 Milliarde Reichsmark "Buße" zahlen – Opfer wurden zu Zahlern gemacht!</li>
+                    <li><strong>Versicherungsgelder:</strong> Beschlagnahmt durch den Staat, nicht an jüdische Geschädigte ausgezahlt</li>
+                    <li><strong>Berufsverbote:</strong> Juden aus Wirtschaft verbannt (12. November 1938)</li>
+                    <li><strong>Ausgehverbote:</strong> Einschränkung der Bewegungsfreiheit</li>
+                    <li><strong>Ausschluss aus Schulen:</strong> Jüdische Kinder aus deutschen Schulen entfernt</li>
+                    <li><strong>Emigrationswelle:</strong> Verstärkte Flucht aus Deutschland (ca. 150.000 bis Kriegsbeginn)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>📖 Historische Bewertung:</strong> Das Novemberpogrom markiert eine Zäsur – von rechtlicher Diskriminierung zu offener, gewalttätiger Verfolgung. Die internationale Reaktion war überwiegend ablehnend, aber ohne konkrete Hilfe für die Verfolgten. Die Pogrome zeigten, dass das Regime vor offener Gewalt nicht zurückschreckte.
+            </div>
+
+            <h4 class="subsubsection-title">Phase 4: Gettoisierung und Deportation (1939-1941)</h4>
+            
+            <div class="text-content">
+                <p>Mit Kriegsbeginn 1939 verschärfte sich die Verfolgung dramatisch. Die Eroberung Polens brachte etwa 2 Millionen polnische Juden unter deutsche Herrschaft. Die NS-Führung begann mit der räumlichen Konzentration und Isolierung der jüdischen Bevölkerung.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">⭐</span>
+                            September 1939
+                        </div>
+                        <div class="event-title">Einführung des "Judensterns"</div>
+                        <div class="event-description">
+                            In Polen müssen Juden ab November 1939 einen weißen Armband mit blauem Davidstern tragen. Im September 1941 wird dies auf das gesamte Deutsche Reich ausgeweitet – gelber Stern mit der Aufschrift "Jude".
+                        </div>
+                        <div class="key-points">
+                            <h4>Bedeutung der Kennzeichnungspflicht:</h4>
+                            <ul>
+                                <li>Öffentliche Stigmatisierung und Demütigung</li>
+                                <li>Erleichterung der Überwachung und Kontrolle</li>
+                                <li>Ausschluss aus dem öffentlichen Leben</li>
+                                <li>Psychologische Vorbereitung der Bevölkerung auf weitere Maßnahmen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">🏘️</span>
+                            1939-1941
+                        </div>
+                        <div class="event-title">Errichtung von Ghettos in Polen</div>
+                        <div class="event-description">
+                            In polnischen Städten werden Juden in abgeriegelte Stadtteile ("Ghettos") gepfercht – überwacht, unterversorgt und zur Zwangsarbeit gezwungen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Größte Ghettos:</h4>
+                            <ul>
+                                <li><strong>Warschau:</strong> Bis zu 450.000 Menschen auf 3,4 km² (November 1940)</li>
+                                <li><strong>Łódź (Litzmannstadt):</strong> Ca. 160.000 Menschen</li>
+                                <li><strong>Krakau:</strong> Ca. 20.000 Menschen</li>
+                                <li>Hunger, Krankheiten, Tod – Überlebensrate minimal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">🚂</span>
+                            Oktober 1941
+                        </div>
+                        <div class="event-title">Beginn der Deportationen aus Deutschland</div>
+                        <div class="event-description">
+                            Systematische Deportation deutscher Juden in Ghettos und Lager im Osten beginnt. Ziel ist zunächst "Evakuierung", tatsächlich Vorbereitung der Vernichtung.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="subsubsection-title">Phase 5: "Endlösung" – Systematische Vernichtung (1941-1945)</h4>
+            
+            <div class="text-content">
+                <p>Mit dem Überfall auf die Sowjetunion am 22. Juni 1941 begann die systematische Massenvernichtung der Juden. Die NS-Führung ging zur industriellen Ermordung über.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">☠️</span>
+                            Juni 1941
+                        </div>
+                        <div class="event-title">Einsatzgruppen in der Sowjetunion</div>
+                        <div class="event-description">
+                            Hinter der vorrückenden Wehrmacht folgen vier "Einsatzgruppen" (A, B, C, D) mit etwa 3.000 Mann. Ihre Aufgabe: Ermordung von Juden, Kommunisten und anderen "Feinden".
+                        </div>
+                        <div class="key-points">
+                            <h4>Vorgehen der Einsatzgruppen:</h4>
+                            <ul>
+                                <li>Massenerschießungen von Männern, Frauen, Kindern</li>
+                                <li>Unterstützung durch Wehrmacht und lokale Kollaborateure</li>
+                                <li><strong>Babi Jar (29./30. September 1941):</strong> 33.771 Juden in zwei Tagen erschossen</li>
+                                <li>Bis Ende 1941: über 500.000 ermordete Juden</li>
+                                <li>Bis Kriegsende: ca. 1,5 Millionen Opfer der Einsatzgruppen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content verfolgung">
+                        <div class="date">
+                            <span class="phase-icon">📋</span>
+                            20. Januar 1942
+                        </div>
+                        <div class="event-title">Wannsee-Konferenz</div>
+                        <div class="event-description">
+                            In einer Villa am Berliner Wannsee koordinieren 15 hochrangige NS-Vertreter unter Vorsitz von Reinhard Heydrich die "Endlösung der Judenfrage" – euphemistischer Code für den geplanten Völkermord an allen europäischen Juden.
+                        </div>
+                        <div class="key-points">
+                            <h4>Entscheidungen der Konferenz:</h4>
+                            <ul>
+                                <li>Systematische Erfassung aller 11 Millionen europäischen Juden</li>
+                                <li>Deportation in Vernichtungslager im Osten</li>
+                                <li>Arbeitsfähige zur Zwangsarbeit (mit kalkuliertem Tod)</li>
+                                <li>Nicht Arbeitsfähige sofortige Ermordung</li>
+                                <li>Bürokratische Organisation des Massenmords</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">⚠️ Vernichtungslager:</div>
+                <p>Ab 1941/42 wurden spezielle Vernichtungslager errichtet, deren einziger Zweck die industrielle Massenermordung war:</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Chełmno:</strong> Ab Dezember 1941, Gaswagen, ca. 150.000 Opfer</li>
+                    <li><strong>Bełżec:</strong> März-Dezember 1942, ca. 430.000 Opfer</li>
+                    <li><strong>Sobibór:</strong> Mai 1942-Oktober 1943, ca. 180.000 Opfer</li>
+                    <li><strong>Treblinka:</strong> Juli 1942-August 1943, ca. 900.000 Opfer</li>
+                    <li><strong>Majdanek:</strong> Ab 1942, ca. 80.000 Opfer (auch anderer Gruppen)</li>
+                    <li><strong>Auschwitz-Birkenau:</strong> Ab 1942, größtes Vernichtungslager, ca. 1,1 Millionen Opfer</li>
+                </ul>
+            </div>
+
+            <h4 class="subsubsection-title">Auschwitz – Symbol des Holocaust:</h4>
+            
+            <div class="text-content">
+                <p>Das Lager Auschwitz, bestehend aus dem Stammlager Auschwitz I, dem Vernichtungslager Auschwitz-Birkenau (Auschwitz II) und dem Arbeitslager Auschwitz-Monowitz (Auschwitz III), wurde zum Synonym für den industrialisierten Massenmord.</p>
+            </div>
+
+            <div class="info-box">
+                <strong>Ablauf der Vernichtung in Auschwitz-Birkenau:</strong>
+                <ol style="margin-top: 10px; line-height: 1.8;">
+                    <li><strong>Ankunft:</strong> Deportationszüge mit bis zu 2.000 Menschen</li>
+                    <li><strong>Selektion:</strong> SS-Ärzte entscheiden über Leben oder Tod – Arbeitsfähige (ca. 10-30%) zur Zwangsarbeit, Rest sofort zur Ermordung</li>
+                    <li><strong>Gaskammern:</strong> Als "Duschen" getarnt, Zyklon B-Gas, Tod nach 15-20 Minuten</li>
+                    <li><strong>Krematorien:</strong> Verbrennung der Leichen, Asche auf Felder gestreut</li>
+                    <li><strong>Raub:</strong> Kleidung, Wertsachen, sogar Goldzähne werden "verwertet"</li>
+                </ol>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💔 Opferzahlen des Holocaust:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Etwa 6 Millionen ermordete Juden</strong> – zwei Drittel der europäischen Juden</li>
+                    <li>Davon ca. 165.000 deutsche Juden</li>
+                    <li>Ca. 3 Millionen polnische Juden</li>
+                    <li>Nahezu vollständige Vernichtung der Juden in den baltischen Staaten</li>
+                    <li>Zusätzlich: Roma und Sinti (ca. 500.000), sowjetische Kriegsgefangene (ca. 3 Millionen), "Euthanasie"-Opfer (ca. 200.000), politische Gefangene, Homosexuelle, Zeugen Jehovas und andere</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">📖 Für das Abitur wichtig:</div>
+                <ul>
+                    <li>Der Holocaust war kein plötzliches Ereignis, sondern Ergebnis einer schrittweisen Radikalisierung</li>
+                    <li>Er war bürokratisch organisiert und involvierte Tausende Täter aus allen Gesellschaftsschichten</li>
+                    <li>Die Vernichtung geschah nicht im Verborgenen – viele wussten oder ahnten, was geschah</li>
+                    <li>Der Holocaust ist ein beispielloser Zivilisationsbruch und Kern der deutschen Erinnerungskultur</li>
+                    <li>Begriffe wie "Endlösung", "Sonderbehandlung", "Evakuierung" waren euphemistische Tarnbegriffe für Mord</li>
+                </ul>
+            </div>
+        </div>
+
+      <!-- Widerstand -->
+        <div class="content-section" id="widerstand">
+            <h2 class="section-title">5. Widerstand gegen den Nationalsozialismus</h2>
+            
+            <div class="text-content">
+                <p>Widerstand gegen das NS-Regime war lebensgefährlich und fand unter extremen Bedingungen statt. Trotz totaler Überwachung, brutaler Verfolgung und Todesdrohung leisteten Menschen aus unterschiedlichsten gesellschaftlichen Gruppen und Motiven Widerstand – von passiver Verweigerung bis zu aktiven Umsturzversuchen.</p>
+            </div>
+
+            <div class="info-box">
+                <strong>📖 Was ist Widerstand?</strong>
+                <p style="margin-top: 10px;">Der Begriff "Widerstand" ist in der Forschung umstritten. Man unterscheidet:</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Widerstand im engeren Sinne:</strong> Aktive, organisierte Versuche, das Regime zu stürzen oder zu sabotieren</li>
+                    <li><strong>Widerstand im weiteren Sinne:</strong> Verweigerung, Protest, Nonkonformität</li>
+                    <li><strong>Resistenz:</strong> Passive Verweigerung, Distanz zum Regime</li>
+                    <li><strong>Dissens:</strong> Abweichende Meinungen ohne aktive Opposition</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Formen und Motive des Widerstands</h3>
+            
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <div class="concept-title">🔴 Arbeiterbewegung</div>
+                    <div>
+                        <ul>
+                            <li><strong>Kommunisten (KPD):</strong> Illegale Zellen, Flugblätter, Sabotage</li>
+                            <li><strong>Sozialdemokraten (SPD):</strong> Untergrundgruppen, "Rote Kapelle", SOPADE im Exil</li>
+                            <li><strong>Gewerkschafter:</strong> Unterstützungsnetzwerke</li>
+                            <li><strong>Härteste Verfolgung:</strong> Tausende Tote in KZs</li>
+                            <li><strong>Bedeutung:</strong> Größte Widerstandsgruppe, aber zersplittert</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">✝️ Kirchlicher Widerstand</div>
+                    <div>
+                        <ul>
+                            <li><strong>Bekennende Kirche:</strong> Opposition gegen "Deutsche Christen"</li>
+                            <li><strong>Martin Niemöller:</strong> Pfarrer, kritische Predigten, 1937-1945 in KZ-Haft</li>
+                            <li><strong>Dietrich Bonhoeffer:</strong> Theologe, Kontakte zum militärischen Widerstand, 1945 hingerichtet</li>
+                            <li><strong>Katholische Kirche:</strong> Protest gegen "Euthanasie" (Bischof von Galen)</li>
+                            <li><strong>Grenzen:</strong> Meist nur bei Übergriffen auf Kirche selbst</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">👨‍🎓 Jugendlicher Widerstand</div>
+                    <div>
+                        <ul>
+                            <li><strong>Weiße Rose:</strong> Studentengruppe um Geschwister Scholl</li>
+                            <li><strong>Edelweißpiraten:</strong> Arbeiterjugendliche im Rheinland</li>
+                            <li><strong>Swing-Jugend:</strong> Verweigerung durch Lebensstil</li>
+                            <li><strong>Herbert Baum-Gruppe:</strong> Jüdische Widerstandsgruppe</li>
+                            <li><strong>Motive:</strong> Moral, Freiheitsdrang, Protest</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">🎖️ Militärischer Widerstand</div>
+                    <div>
+                        <ul>
+                            <li><strong>Konservative Offiziere:</strong> Abwehr unter Canaris</li>
+                            <li><strong>Kreisauer Kreis:</strong> Planung für Deutschland nach Hitler</li>
+                            <li><strong>20. Juli 1944:</strong> Stauffenberg-Attentat</li>
+                            <li><strong>Späte Aktivität:</strong> Erst nach militärischen Niederlagen</li>
+                            <li><strong>Motive:</strong> Patriotismus, Ehre, christliche Werte</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Wichtige Widerstandsgruppen und -aktionen</h3>
+
+            <h4 class="subsubsection-title">Die Weiße Rose (1942-1943)</h4>
+            
+            <div class="text-content">
+                <p>Die Weiße Rose war eine studentische Widerstandsgruppe in München, die mit Flugblättern zum Widerstand gegen das NS-Regime aufrief. Ihre Mitglieder waren junge Akademiker, geprägt von christlichen und humanistischen Werten.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content widerstand">
+                        <div class="date">
+                            <span class="phase-icon">📄</span>
+                            Juni 1942 - Februar 1943
+                        </div>
+                        <div class="event-title">Flugblattaktionen der Weißen Rose</div>
+                        <div class="event-description">
+                            Kernmitglieder Hans und Sophie Scholl, Alexander Schmorell, Willi Graf, Christoph Probst und Professor Kurt Huber verfassen sechs Flugblätter, die heimlich verteilt werden.
+                        </div>
+                        <div class="key-points">
+                            <h4>Zentrale Aussagen der Flugblätter:</h4>
+                            <ul>
+                                <li>Aufruf zum passiven Widerstand gegen die NS-Diktatur</li>
+                                <li>Anprangerung der Verbrechen, besonders der Judenverfolgung</li>
+                                <li>Appell an das Gewissen und die Menschlichkeit</li>
+                                <li>"Zerreißt den Mantel der Gleichgültigkeit"</li>
+                                <li>Forderung nach Freiheit, Demokratie und Rechtsstaatlichkeit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content widerstand">
+                        <div class="date">
+                            <span class="phase-icon">⚖️</span>
+                            18. Februar 1943
+                        </div>
+                        <div class="event-title">Verhaftung und Hinrichtung</div>
+                        <div class="event-description">
+                            Hans und Sophie Scholl werden beim Verteilen von Flugblättern in der Münchner Universität vom Hausmeister beobachtet und der Gestapo übergeben. Nach viertägiger Haft werden sie am 22. Februar 1943 vom "Volksgerichtshof" unter Roland Freisler zum Tode verurteilt und noch am selben Tag durch die Guillotine hingerichtet.
+                        </div>
+                        <div class="key-points">
+                            <h4>Weitere Hinrichtungen:</h4>
+                            <ul>
+                                <li>Christoph Probst (22. Februar 1943)</li>
+                                <li>Alexander Schmorell, Kurt Huber (13. Juli 1943)</li>
+                                <li>Willi Graf (12. Oktober 1943)</li>
+                                <li>Insgesamt über 50 Personen verhaftet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 Bedeutung der Weißen Rose:</strong> Die Weiße Rose steht symbolisch für mutigen Widerstand aus moralischer Überzeugung. Ihre Mitglieder wussten um die Lebensgefahr, handelten aber aus tiefer ethischer Verpflichtung. Sophie Scholls letzte Worte: "So ein herrlicher, sonniger Tag, und ich muss gehen. Aber was liegt an unserem Tod, wenn durch uns Tausende von Menschen aufgerüttelt und geweckt werden."
+            </div>
+
+            <h4 class="subsubsection-title">Der 20. Juli 1944 – Stauffenberg-Attentat</h4>
+            
+            <div class="text-content">
+                <p>Der militärische Widerstand kulminierte im Attentat vom 20. Juli 1944. Eine Gruppe konservativer Offiziere und Zivilisten um Claus Schenk Graf von Stauffenberg versuchte, Hitler zu töten und einen Staatsstreich durchzuführen.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content widerstand">
+                        <div class="date">
+                            <span class="phase-icon">💣</span>
+                            20. Juli 1944, 12:42 Uhr
+                        </div>
+                        <div class="event-title">Bombenattentat in der "Wolfsschanze"</div>
+                        <div class="event-description">
+                            Stauffenberg platziert eine Bombe in Hitlers Hauptquartier "Wolfsschanze" bei Rastenburg (Ostpreußen). Die Bombe explodiert während der Lagebesprechung, doch Hitler überlebt mit leichten Verletzungen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Gründe für das Scheitern:</h4>
+                            <ul>
+                                <li>Verlegung der Besprechung in Holzbaracke statt Bunker (geringere Druckwirkung)</li>
+                                <li>Nur eine von zwei Bomben platziert (Zeitdruck)</li>
+                                <li>Schwerer Eichentisch schützt Hitler teilweise</li>
+                                <li>Zögerliches Handeln nach dem Attentat in Berlin</li>
+                                <li>Hitlers schnelle Reaktion und Radioansprache</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content widerstand">
+                        <div class="date">
+                            <span class="phase-icon">⚖️</span>
+                            20./21. Juli 1944
+                        </div>
+                        <div class="event-title">Zusammenbruch des Umsturzversuchs</div>
+                        <div class="event-description">
+                            Der geplante Staatsstreich ("Operation Walküre") scheitert. Stauffenberg, Friedrich Olbricht, Werner von Haeften und Albrecht Mertz von Quirnheim werden noch in der Nacht im Bendlerblock in Berlin erschossen. Es folgt eine beispiellose Verfolgungswelle.
+                        </div>
+                        <div class="key-points">
+                            <h4>Rache des Regimes:</h4>
+                            <ul>
+                                <li>Über 200 Hinrichtungen (oft nach Folter)</li>
+                                <li>Schauprozesse vor dem Volksgerichtshof (Freisler)</li>
+                                <li>Erhängen mit Klaviersaiten, gefilmt für Hitler</li>
+                                <li>"Sippenhaft" für Familien der Verschwörer</li>
+                                <li>Ca. 7.000 Verhaftungen im weiteren Umfeld</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>📖 Wichtige Personen des militärischen Widerstands:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Claus Schenk Graf von Stauffenberg:</strong> Oberst, führender Kopf des Attentats</li>
+                    <li><strong>Ludwig Beck:</strong> Generaloberst, sollte Staatsoberhaupt werden</li>
+                    <li><strong>Carl Friedrich Goerdeler:</strong> Ehemaliger Oberbürgermeister Leipzig, designierter Reichskanzler</li>
+                    <li><strong>Henning von Tresckow:</strong> Generalstabsoffizier, Initiator früherer Attentatsversuche</li>
+                    <li><strong>Erwin von Witzleben:</strong> Generalfeldmarschall, sollte Oberbefehlshaber werden</li>
+                    <li><strong>Adam von Trott zu Solz:</strong> Diplomat, Kontakte zum Ausland</li>
+                    <li><strong>Helmuth James Graf von Moltke:</strong> Jurist, Kopf des Kreisauer Kreises</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">⚠️ Kontroverse um den 20. Juli:</div>
+                <p>Der militärische Widerstand ist historisch umstritten:</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Kritik:</strong> Viele Verschwörer hatten zuvor das Regime unterstützt, Karriere gemacht und an Kriegsverbrechen teilgenommen. Der Widerstand kam sehr spät (erst nach absehbarer Niederlage).</li>
+                    <li><strong>Anerkennung:</strong> Trotzdem verdienen sie Respekt für ihren Mut, letztlich das Leben für ein besseres Deutschland zu opfern. Sie durchbrachen den Kadavergehorsam und handelten aus Gewissen.</li>
+                    <li><strong>Historische Bedeutung:</strong> Der 20. Juli zeigt, dass es auch in der Wehrmacht Widerstand gab – wichtig für die deutsche Erinnerungskultur.</li>
+                </ul>
+            </div>
+
+            <h4 class="subsubsection-title">Weitere wichtige Widerstandsgruppen:</h4>
+
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>Gruppe</th>
+                        <th>Mitglieder</th>
+                        <th>Aktivitäten</th>
+                        <th>Schicksal</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Rote Kapelle</strong></td>
+                        <td>Arvid Harnack, Harro Schulze-Boysen, Libertas Schulze-Boysen und ca. 150 weitere</td>
+                        <td>Spionage für Sowjetunion, Flugblätter, Hilfeleistung für Verfolgte</td>
+                        <td>1942 enttarnt, über 50 Hinrichtungen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kreisauer Kreis</strong></td>
+                        <td>Helmuth James von Moltke, Peter Yorck von Wartenburg, Jesuiten, Sozialdemokraten</td>
+                        <td>Diskussion über Deutschland nach Hitler, Verfassungspläne, christlich-soziale Ordnung</td>
+                        <td>Nach 20. Juli 1944 verfolgt, Moltke und Yorck hingerichtet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Edelweißpiraten</strong></td>
+                        <td>Arbeiterjugendliche, v.a. Köln und Ruhrgebiet</td>
+                        <td>Verweigerung HJ, illegale Treffen, Sabotage, Flugblätter, teils bewaffneter Widerstand</td>
+                        <td>Viele verhaftet, 13 in Köln-Ehrenfeld öffentlich erhängt (1944)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Herbert Baum-Gruppe</strong></td>
+                        <td>Jüdische Jugendliche in Berlin</td>
+                        <td>Brandanschlag auf NS-Propagandaausstellung "Das Sowjetparadies" (1942)</td>
+                        <td>Fast alle verhaftet und hingerichtet, als "Vergeltung" 500 Berliner Juden deportiert</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Solf-Kreis</strong></td>
+                        <td>Intellektuelle, Diplomaten um Hanna Solf</td>
+                        <td>Diskussionsrunden, Hilfe für Verfolgte, Kontakte zum Ausland</td>
+                        <td>1943 enttarnt durch Spitzel, mehrere Hinrichtungen</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Warum gab es so wenig Widerstand?</h3>
+            
+            <div class="text-content">
+                <p>Trotz der Verbrechen des Regimes blieb organisierter Widerstand eine Minderheitenerscheinung. Dafür gab es vielfältige Gründe:</p>
+            </div>
+
+            <ul>
+                <li><strong>Totale Überwachung:</strong> Gestapo, Spitzel, Denunzianten – jeder konnte Verräter sein</li>
+                <li><strong>Drakonische Strafen:</strong> Todesstrafe und Sippenhaft schreckten ab</li>
+                <li><strong>Terror und Angst:</strong> Frühe Zerschlagung der Opposition (KPD, SPD), KZs als abschreckendes Beispiel</li>
+                <li><strong>Propaganda-Erfolge:</strong> Viele glaubten an Hitler, besonders nach außenpolitischen Erfolgen 1935-1940</li>
+                <li><strong>Wirtschaftliche Erfolge:</strong> Beseitigung der Arbeitslosigkeit, materieller Wohlstand (auf Kredit)</li>
+                <li><strong>Volksgemeinschafts-Ideologie:</strong> Gefühl der Zugehörigkeit, Überwindung von Klassengegensätzen</li>
+                <li><strong>Krieg und Patriotismus:</strong> "Man steht zu seinem Land", auch wenn man das Regime ablehnt</li>
+                <li><strong>Unkenntnis:</strong> Viele wussten nicht genau über Verbrechen Bescheid (obwohl Gerüchte kursierten)</li>
+                <li><strong>Verdrängung und Mitläufertum:</strong> Bequemlichkeit, Karrieredenken, "Es wird schon nicht so schlimm sein"</li>
+                <li><strong>Zersplitterung der Opposition:</strong> KPD und SPD verfeindet, keine gemeinsame Strategie</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 Für das Abitur wichtig:</strong> Widerstand gegen das NS-Regime war außerordentlich schwierig und gefährlich. Die Widerstandskämpfer verdienen höchsten Respekt. Gleichzeitig darf nicht vergessen werden, dass die Mehrheit der Deutschen das Regime mittrug – aus Überzeugung, Opportunismus oder Angst. Die Frage "Was hätte ich getan?" bleibt eine wichtige ethische Herausforderung für jede Generation.
+            </div>
+
+            <div class="info-box">
+                <strong>📖 Historische Bewertung des Widerstands:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Widerstand war moralisch notwendig, aber politisch meist erfolglos</li>
+                    <li>Er diente nicht der Rettung des NS-Staates, sondern seiner Überwindung</li>
+                    <li>Widerstandskämpfer riskierten alles und sind moralische Vorbilder</li>
+                    <li>Nach 1945 waren sie wichtig für die demokratische Legitimität der Bundesrepublik</li>
+                    <li>Ihr Andenken verpflichtet zur Verteidigung von Demokratie und Menschenrechten</li>
+                </ul>
+            </div>
+        </div>
+
+      <!-- Weg in den Krieg -->
+        <div class="content-section" id="weg-in-krieg">
+            <h2 class="section-title">6. Hitlers Weg in den Krieg (1933-1939)</h2>
+            
+            <div class="text-content">
+                <p>Von Anfang an war Hitlers Außenpolitik auf Krieg ausgerichtet. Die "Lebensraum"-Ideologie, die Revision des Versailler Vertrags und die Vorbereitung eines Eroberungskrieges waren zentrale Ziele des NS-Regimes. Geschickt nutzte Hitler zunächst diplomatische Mittel und die Beschwichtigungspolitik (Appeasement) der Westmächte, bevor er zur offenen Aggression überging.</p>
+            </div>
+
+            <div class="timeline-legend">
+                <div class="legend-item">
+                    <div class="legend-color kriegsvorbereitung" style="border-color: #e74c3c; background: #e74c3c;"></div>
+                    <span>Aufrüstung & Vertragsbrüche</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color expansion" style="border-color: #f39c12; background: #f39c12;"></div>
+                    <span>Territoriale Expansion</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color kriegsphase" style="border-color: #ff6b6b; background: #ff6b6b;"></div>
+                    <span>Kriegsbeginn</span>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content kriegsvorbereitung">
+                        <div class="date">
+                            <span class="phase-icon">🚫</span>
+                            Oktober 1933
+                        </div>
+                        <div class="event-title">Austritt aus dem Völkerbund</div>
+                        <div class="event-description">
+                            Deutschland verlässt die Genfer Abrüstungskonferenz und tritt aus dem Völkerbund aus. Hitler begründet dies mit der verweigerten Gleichberechtigung in Rüstungsfragen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Bedeutung:</h4>
+                            <ul>
+                                <li>Erster außenpolitischer Alleingang</li>
+                                <li>Freie Hand für Aufrüstung</li>
+                                <li>Test der westlichen Reaktion (bleibt schwach)</li>
+                                <li>Propaganda-Erfolg im Inland</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content kriegsvorbereitung">
+                        <div class="date">
+                            <span class="phase-icon">⚔️</span>
+                            16. März 1935
+                        </div>
+                        <div class="event-title">Wiedereinführung der Wehrpflicht</div>
+                        <div class="event-description">
+                            Hitler verkündet die Wiedereinführung der allgemeinen Wehrpflicht und den Aufbau einer Wehrmacht von 550.000 Mann – ein eklatanter Bruch des Versailler Vertrags (der nur 100.000 Mann Reichswehr erlaubte).
+                        </div>
+                        <div class="key-points">
+                            <h4>Westliche Reaktion:</h4>
+                            <ul>
+                                <li>Protest, aber keine ernsthaften Konsequenzen</li>
+                                <li>Deutsch-britisches Flottenabkommen (Juni 1935) – legitimiert deutsche Aufrüstung zur See</li>
+                                <li>Frankreich und England beginnen ebenfalls aufzurüsten</li>
+                                <li>Hitler fühlt sich bestärkt</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content kriegsvorbereitung">
+                        <div class="date">
+                            <span class="phase-icon">🏛️</span>
+                            7. März 1936
+                        </div>
+                        <div class="event-title">Remilitarisierung des Rheinlands</div>
+                        <div class="event-description">
+                            Deutsche Truppen marschieren in die entmilitarisierte Zone des Rheinlands ein – ein weiterer Bruch des Versailler Vertrags und des Locarno-Pakts. Hitler riskiert viel: Bei französischem Widerstand hätten sich die schwachen deutschen Truppen zurückziehen müssen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Folgen:</h4>
+                            <ul>
+                                <li>Frankreich reagiert nicht militärisch (innenpolitische Schwäche)</li>
+                                <li>England will nicht wegen einer "deutschen Provinz" Krieg riskieren</li>
+                                <li>Riesiger Prestigegewinn für Hitler im Inland</li>
+                                <li>Ermutigung zu weiteren aggressiven Schritten</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content kriegsvorbereitung">
+                        <div class="date">
+                            <span class="phase-icon">🤝</span>
+                            1936-1939
+                        </div>
+                        <div class="event-title">Bündnisse und Interventionen</div>
+                        <div class="event-description">
+                            Deutschland schmiedet Bündnisse und testet seine Streitkräfte im Spanischen Bürgerkrieg.
+                        </div>
+                        <div class="key-points">
+                            <h4>Wichtige Entwicklungen:</h4>
+                            <ul>
+                                <li><strong>Oktober 1936:</strong> "Achse Berlin-Rom" mit faschistischem Italien (Mussolini)</li>
+                                <li><strong>November 1936:</strong> "Antikominternpakt" mit Japan (später auch Italien) gegen Sowjetunion</li>
+                                <li><strong>1936-1939:</strong> "Legion Condor" kämpft für Franco im Spanischen Bürgerkrieg (Testfeld für Luftwaffe, Bombardierung Guernicas 1937)</li>
+                                <li><strong>1937:</strong> Hossbach-Protokoll dokumentiert Hitlers Kriegspläne</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">🇦🇹</span>
+                            12. März 1938
+                        </div>
+                        <div class="event-title">"Anschluss" Österreichs</div>
+                        <div class="event-description">
+                            Deutsche Truppen marschieren in Österreich ein. Der "Anschluss" wird als "Heimholung ins Reich" propagiert und durch eine manipulierte Volksabstimmung (99,73% Zustimmung) legitimiert.
+                        </div>
+                        <div class="key-points">
+                            <h4>Hintergründe und Folgen:</h4>
+                            <ul>
+                                <li>Österreichischer Bundeskanzler Schuschnigg unter massivem Druck</li>
+                                <li>Begeisterter Empfang in Teilen der österreichischen Bevölkerung</li>
+                                <li>Sofortige antisemitische Gewalt in Wien</li>
+                                <li>Westmächte protestieren nur formal</li>
+                                <li>6,7 Millionen "Reichsdeutsche" mehr, strategisch wichtige Position</li>
+                                <li>Verstoß gegen Versailler Vertrag (Anschlussverbot)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">🇨🇿</span>
+                            September 1938
+                        </div>
+                        <div class="event-title">Münchner Abkommen – Sudetenkrise</div>
+                        <div class="event-description">
+                            Hitler fordert die Abtretung des Sudetenlandes (3,5 Millionen Deutschsprachige in der Tschechoslowakei). Auf der Münchner Konferenz (29./30. September) stimmen England (Chamberlain), Frankreich (Daladier) und Italien (Mussolini) der Annexion zu – ohne die Tschechoslowakei einzubeziehen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Appeasement-Politik:</h4>
+                            <ul>
+                                <li><strong>Chamberlains Hoffnung:</strong> "Peace for our time" – Krieg durch Zugeständnisse verhindern</li>
+                                <li><strong>Fehlkalkulation:</strong> Hitler will nicht nur das Sudetenland, sondern ganz Europa unterwerfen</li>
+                                <li><strong>Folge:</strong> Tschechoslowakei wehrlos, Westmächte diskreditiert</li>
+                                <li><strong>Hitler:</strong> Enttäuscht, dass er keinen Krieg führen konnte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">⚡</span>
+                            15. März 1939
+                        </div>
+                        <div class="event-title">Zerschlagung der "Rest-Tschechei"</div>
+                        <div class="event-description">
+                            Deutsche Truppen besetzen Böhmen und Mähren (Errichtung des "Protektorats"). Die Slowakei wird "unabhängiger" Vasallenstaat. Damit bricht Hitler erstmals das Selbstbestimmungsrecht der Völker – er annektiert kein "deutsches" Gebiet mehr.
+                        </div>
+                        <div class="key-points">
+                            <h4>Wendepunkt:</h4>
+                            <ul>
+                                <li>England und Frankreich erkennen: Hitler ist nicht zu beschwichtigen</li>
+                                <li>Garantieerklärung für Polen (31. März 1939)</li>
+                                <li>Ende der Appeasement-Politik</li>
+                                <li>Hitler plant nun offen den Krieg gegen Polen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content kriegsvorbereitung">
+                        <div class="date">
+                            <span class="phase-icon">🤝</span>
+                            23. August 1939
+                        </div>
+                        <div class="event-title">Hitler-Stalin-Pakt (Molotow-Ribbentrop-Pakt)</div>
+                        <div class="event-description">
+                            Deutschland und die Sowjetunion schließen überraschend einen Nichtangriffspakt. Im geheimen Zusatzprotokoll vereinbaren sie die Aufteilung Polens und die sowjetische Interessensphäre in Osteuropa.
+                        </div>
+                        <div class="key-points">
+                            <h4>Bedeutung:</h4>
+                            <ul>
+                                <li>Hitler sichert sich freie Hand im Westen (kein Zweifrontenkrieg zunächst)</li>
+                                <li>Stalin gewinnt Zeit für Aufrüstung und territoriale Gewinne</li>
+                                <li>Schock für westliche Kommunisten (Pakt zwischen Todfeinden)</li>
+                                <li>Grünes Licht für deutschen Angriff auf Polen</li>
+                                <li>Polen ist isoliert</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content kriegsphase">
+                        <div class="date">
+                            <span class="phase-icon">💥</span>
+                            1. September 1939, 4:45 Uhr
+                        </div>
+                        <div class="event-title">Überfall auf Polen – Beginn des Zweiten Weltkriegs</div>
+                        <div class="event-description">
+                            Deutsche Truppen überfallen Polen ohne Kriegserklärung. Als Vorwand dient der fingierte Überfall auf den Sender Gleiwitz (von SS-Männern in polnischen Uniformen inszeniert). Hitler im Reichstag: "Seit 5:45 Uhr wird zurückgeschossen!" (tatsächlich 4:45 Uhr).
+                        </div>
+                        <div class="key-points">
+                            <h4>Beginn des Weltkriegs:</h4>
+                            <ul>
+                                <li><strong>3. September 1939:</strong> England und Frankreich erklären Deutschland den Krieg</li>
+                                <li>Polen wird innerhalb von Wochen überrannt (Blitzkrieg)</li>
+                                <li><strong>17. September:</strong> Sowjetunion marschiert von Osten ein</li>
+                                <li><strong>28. September:</strong> Warschau kapituliert, Polen wird aufgeteilt</li>
+                                <li>Beginn des brutalsten Krieges der Geschichte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">⚠️ Warum verhinderten die Westmächte den Krieg nicht?</div>
+                <ul>
+                    <li><strong>Appeasement-Politik:</strong> Hoffnung, Hitler durch Zugeständnisse zu besänftigen</li>
+                    <li><strong>Traumatisierung durch den Ersten Weltkrieg:</strong> Angst vor einem neuen Krieg</li>
+                    <li><strong>Verständnis für deutsche Forderungen:</strong> Versailler Vertrag galt vielen als zu hart</li>
+                    <li><strong>Antikommunismus:</strong> Teils Sympathie für Hitler als "Bollwerk gegen den Bolschewismus"</li>
+                    <li><strong>Militärische Schwäche:</strong> England und Frankreich erst ab 1938/39 ernsthaft aufgerüstet</li>
+                    <li><strong>Innenpolitische Probleme:</strong> Wirtschaftskrise, politische Instabilität (besonders Frankreich)</li>
+                    <li><strong>Fehleinschätzung Hitlers:</strong> Man hielt ihn für einen rationalen Politiker, nicht für einen Ideologen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Zweiter Weltkrieg -->
+        <div class="content-section" id="zweiter-weltkrieg">
+            <h2 class="section-title">7. Der Zweite Weltkrieg (1939-1945)</h2>
+            
+            <div class="text-content">
+                <p>Der Zweite Weltkrieg war der größte und verheerendste Krieg der Geschichte. Er kostete über 60 Millionen Menschen das Leben und verwüstete ganze Kontinente. Für Deutschland bedeutete er nicht nur eine militärische Niederlage, sondern auch die moralische Katastrophe des Holocaust und anderer Kriegsverbrechen.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">📊 Dimensionen des Krieges:</div>
+                <ul>
+                    <li><strong>Opfer insgesamt:</strong> 60-70 Millionen Tote (genaue Zahlen umstritten)</li>
+                    <li><strong>Sowjetunion:</strong> Ca. 27 Millionen Tote (fast die Hälfte aller Opfer!)</li>
+                    <li><strong>Deutschland:</strong> Ca. 6-7 Millionen Tote (davon ca. 5 Millionen Soldaten)</li>
+                    <li><strong>Polen:</strong> Ca. 6 Millionen Tote (davon 3 Millionen Juden)</li>
+                    <li><strong>Zerstörung:</strong> Ganze Städte vernichtet, Europa und Asien verwüstet</li>
+                    <li><strong>Flüchtlinge:</strong> Millionen Vertriebene, Verschleppte, Entwurzelte</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Charakter des Krieges</h3>
+            
+            <div class="text-content">
+                <p>Der Zweite Weltkrieg unterschied sich fundamental von früheren Kriegen. Er war ein totaler Krieg, ein Vernichtungskrieg und ein ideologischer Krieg.</p>
+            </div>
+
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <div class="concept-title">⚔️ Totaler Krieg</div>
+                    <div>
+                        <ul>
+                            <li>Mobilisierung aller gesellschaftlichen Ressourcen</li>
+                            <li>Heimatfront wird Kriegsschauplatz (Bombenkrieg)</li>
+                            <li>Keine Unterscheidung zwischen Soldaten und Zivilisten</li>
+                            <li>Wirtschaft komplett auf Kriegsproduktion ausgerichtet</li>
+                            <li>Goebbels' Sportpalast-Rede (1943): "Wollt ihr den totalen Krieg?"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">☠️ Vernichtungskrieg</div>
+                    <div>
+                        <ul>
+                            <li>Ziel: Vernichtung des Gegners, nicht nur militärischer Sieg</li>
+                            <li>Besonders im Osten: Rassistischer Vernichtungskrieg gegen "Untermenschen"</li>
+                            <li>Systematische Ermordung von Zivilisten</li>
+                            <li>Aushungern von Kriegsgefangenen (3 Millionen sowjetische Gefangene ermordet)</li>
+                            <li>"Kommissarbefehl": Erschießung sowjetischer Politoffiziere</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">🎯 Ideologischer Krieg</div>
+                    <div>
+                        <ul>
+                            <li>Kampf zwischen Weltanschauungen: Nationalsozialismus vs. "jüdischer Bolschewismus"</li>
+                            <li>Rassistische Begründung: "Lebensraum" für "Herrenrasse"</li>
+                            <li>"Generalplan Ost": Vertreibung und Versklavung slawischer Völker</li>
+                            <li>Keine Gnade für "rassisch Minderwertige"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">✈️ Technologischer Krieg</div>
+                    <div>
+                        <ul>
+                            <li>Modernste Waffentechnik: Panzer, Flugzeuge, U-Boote</li>
+                            <li>Strategische Bomberflotten (Flächenbombardements)</li>
+                            <li>Erste ballistische Raketen (V1, V2)</li>
+                            <li>Atomwaffen (Hiroshima, Nagasaki 1945)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Kriegsverlauf in Phasen</h3>
+
+            <div class="timeline-legend">
+                <div class="legend-item">
+                    <div class="legend-color kriegsphase" style="border-color: #ff6b6b; background: #ff6b6b;"></div>
+                    <span>Kriegsbeginn</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color expansion" style="border-color: #f39c12; background: #f39c12;"></div>
+                    <span>Deutsche Expansion</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color wendepunkt" style="border-color: #e67e22; background: #e67e22;"></div>
+                    <span>Wendepunkte</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color rueckzug" style="border-color: #3498db; background: #3498db;"></div>
+                    <span>Deutscher Rückzug</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color ende" style="border-color: #27ae60; background: #27ae60;"></div>
+                    <span>Kriegsende</span>
+                </div>
+            </div>
+
+            <h4 class="subsubsection-title">Phase 1: Deutsche Blitzkriege und Expansion (1939-1941)</h4>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">🇵🇱</span>
+                            September 1939
+                        </div>
+                        <div class="event-title">Polenfeldzug</div>
+                        <div class="event-description">
+                            Polen wird innerhalb von 5 Wochen erobert. Die Wehrmacht demonstriert die neue "Blitzkrieg"-Taktik: schnelle Panzervorstöße, Luftüberlegenheit, Umfassungsmanöver.
+                        </div>
+                        <div class="key-points">
+                            <h4>Verbrechen in Polen:</h4>
+                            <ul>
+                                <li>Sofortige Verfolgung der polnischen Elite (Intellektuelle, Priester, Offiziere)</li>
+                                <li>Errichtung von Ghettos für jüdische Bevölkerung</li>
+                                <li>Massenmorde durch Einsatzgruppen</li>
+                                <li>Vertreibung von Polen zur "Germanisierung"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">❄️</span>
+                            Winter 1939/40
+                        </div>
+                        <div class="event-title">"Sitzkrieg" im Westen</div>
+                        <div class="event-description">
+                            An der Westfront passiert monatelang fast nichts. Frankreich und England warten hinter der Maginot-Linie, Deutschland bereitet sich auf den Westfeldzug vor.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">🇩🇰🇳🇴</span>
+                            April-Juni 1940
+                        </div>
+                        <div class="event-title">Eroberung Dänemarks und Norwegens</div>
+                        <div class="event-description">
+                            Überraschende Besetzung Dänemarks und Norwegens zur Sicherung von Eisenerz-Importen aus Schweden und U-Boot-Stützpunkten.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">🇫🇷</span>
+                            Mai-Juni 1940
+                        </div>
+                        <div class="event-title">Westfeldzug – Fall Frankreichs</div>
+                        <div class="event-description">
+                            Am 10. Mai 1940 beginnt der deutsche Angriff auf Niederlande, Belgien, Luxemburg und Frankreich. Die Wehrmacht umgeht die Maginot-Linie durch die Ardennen. Frankreich kapituliert am 22. Juni 1940 – ein Schock für die Welt.
+                        </div>
+                        <div class="key-points">
+                            <h4>Folgen:</h4>
+                            <ul>
+                                <li>Frankreich geteilt: Nord unter deutscher Besatzung, Süd unter Vichy-Regime (Kollaborationsregierung)</li>
+                                <li>British Expeditionary Force evakuiert von Dünkirchen (338.000 Soldaten gerettet)</li>
+                                <li>Hitler auf dem Höhepunkt seiner Macht</li>
+                                <li>England steht allein gegen Deutschland</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">✈️</span>
+                            Juli 1940 - Mai 1941
+                        </div>
+                        <div class="event-title">Luftschlacht um England</div>
+                        <div class="event-description">
+                            Deutsche Luftwaffe versucht, England in die Knie zu zwingen. Ziel: Luftüberlegenheit für geplante Invasion ("Unternehmen Seelöwe"). Die Royal Air Force (RAF) verteidigt sich erfolgreich.
+                        </div>
+                        <div class="key-points">
+                            <h4>Ergebnis:</h4>
+                            <ul>
+                                <li>Erste deutsche Niederlage im Krieg</li>
+                                <li>Invasion Englands wird abgesagt</li>
+                                <li>Churchill: "Never in the field of human conflict was so much owed by so many to so few"</li>
+                                <li>Deutscher "Blitz" (Bombenkrieg gegen Städte) tötet 40.000 Zivilisten, bricht aber nicht den Widerstand</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">🌍</span>
+                            1940-1941
+                        </div>
+                        <div class="event-title">Krieg weitet sich aus</div>
+                        <div class="event-description">
+                            Der Krieg wird global: Nordafrika (Rommel), Balkan (Griechenland, Jugoslawien), Italien greift an, Japan expandiert in Asien.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="subsubsection-title">Phase 2: Höhepunkt und Wende (1941-1943)</h4>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content expansion">
+                        <div class="date">
+                            <span class="phase-icon">☭</span>
+                            22. Juni 1941
+                        </div>
+                        <div class="event-title">"Unternehmen Barbarossa" – Überfall auf die Sowjetunion</div>
+                        <div class="event-description">
+                            3 Millionen deutsche Soldaten greifen auf breiter Front die Sowjetunion an – der größte Feldzug der Geschichte beginnt. Hitler bricht den Nichtangriffspakt und will die UdSSR in einem "Blitzkrieg" vernichten.
+                        </div>
+                        <div class="key-points">
+                            <h4>Ziele und Charakter:</h4>
+                            <ul>
+                                <li><strong>"Lebensraum im Osten":</strong> Eroberung, Versklavung, Kolonisierung</li>
+                                <li><strong>Vernichtungskrieg:</strong> Kein "normaler" Krieg, sondern rassistischer Ausrottungsfeldzug</li>
+                                <li><strong>"Hungerpunkt":</strong> Plan, 30 Millionen Sowjetbürger verhungern zu lassen</li>
+                                <li><strong>Holocaust:</strong> Einsatzgruppen ermorden Juden hinter der Front</li>
+                                <li>Anfangserfolge: Millionen sowjetischer Gefangener, große Gebietsgewinne</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content wendepunkt">
+                        <div class="date">
+                            <span class="phase-icon">❄️</span>
+                            Dezember 1941
+                        </div>
+                        <div class="event-title">Schlacht um Moskau – Erste große Niederlage</div>
+                        <div class="event-description">
+                            Die Wehrmacht steht vor Moskau, ist aber durch den frühen und harten Winter (bis -40°C) geschwächt. Sowjetische Gegenoffensive wirft deutsche Truppen zurück. Der Blitzkrieg ist gescheitert.
+                        </div>
+                        <div class="key-points">
+                            <h4>Bedeutung:</h4>
+                            <ul>
+                                <li>Mythos der Unbesiegbarkeit der Wehrmacht zerstört</li>
+                                <li>Krieg wird zum Abnutzungskrieg</li>
+                                <li>Hitler übernimmt persönlich Oberbefehl (fatale Entscheidung)</li>
+                                <li>Keine "Winterausrüstung" – Tausende erfrieren</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content wendepunkt">
+                        <div class="date">
+                            <span class="phase-icon">🇺🇸</span>
+                            7./11. Dezember 1941
+                        </div>
+                        <div class="event-title">Kriegseintritt der USA</div>
+                        <div class="event-description">
+                            Japan greift Pearl Harbor an (7. Dezember). Hitler erklärt den USA den Krieg (11. Dezember) – ein katastrophaler strategischer Fehler. Der Krieg wird endgültig zum Weltkrieg.
+                        </div>
+                        <div class="key-points">
+                            <h4>Folgen:</h4>
+                            <ul>
+                                <li>Größte Industriemacht der Welt gegen Deutschland</li>
+                                <li>Materielle Überlegenheit der Alliierten wird erdrückend</li>
+                                <li>Dreier-Allianz USA-England-UdSSR gegen Achsenmächte</li>
+                                <li>Niederlage Deutschlands langfristig besiegelt</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content wendepunkt">
+                        <div class="date">
+                            <span class="phase-icon">🏭</span>
+                            August 1942 - Februar 1943
+                        </div>
+                        <div class="event-title">Schlacht von Stalingrad – Wendepunkt des Krieges</div>
+                        <div class="event-description">
+                            Die 6. Armee unter General Paulus kämpft um die symbolisch wichtige Stadt Stalingrad. Nach monatelangen erbitterten Häuserkämpfen wird sie eingekesselt. Hitler verbietet den Ausbruch. Am 2. Februar 1943 kapituliert Paulus – 91.000 Soldaten gehen in Gefangenschaft (die meisten sterben).
+                        </div>
+                        <div class="key-points">
+                            <h4>Bedeutung von Stalingrad:</h4>
+                            <ul>
+                                <li><strong>Militärisch:</strong> Schwerste Niederlage der Wehrmacht, ca. 700.000 deutsche Verluste</li>
+                                <li><strong>Psychologisch:</strong> Ende des Siegesglaubens, Schock in Deutschland</li>
+                                <li><strong>Propagandistisch:</strong> Sowjetischer Triumph, Wende an der Ostfront</li>
+                                <li><strong>Symbolisch:</strong> Wendepunkt des Zweiten Weltkriegs</li>
+                                <li>Ab jetzt nur noch Rückzugsgefechte im Osten</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 1943 als Wendejahr:</strong> Neben Stalingrad auch deutsche Niederlagen in Nordafrika (Kapitulation in Tunis, Mai 1943), verlorene Schlacht im Atlantik (U-Boot-Krieg), Beginn des alliierten Bombenkriegs gegen deutsche Städte. Die strategische Initiative geht endgültig an die Alliierten über.
+            </div>
+
+          <h4 class="subsubsection-title">Phase 3: Totaler Krieg und Zusammenbruch (1943-1945)</h4>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content rueckzug">
+                        <div class="date">
+                            <span class="phase-icon">💣</span>
+                            1943-1945
+                        </div>
+                        <div class="event-title">Alliierter Bombenkrieg</div>
+                        <div class="event-description">
+                            Anglo-amerikanische Luftflotten bombardieren systematisch deutsche Städte. Ziel: Zerstörung der Industrie und Demoralisierung der Bevölkerung.
+                        </div>
+                        <div class="key-points">
+                            <h4>Verheerendste Angriffe:</h4>
+                            <ul>
+                                <li><strong>Hamburg (Juli 1943):</strong> "Operation Gomorrha", Feuersturm, ca. 35.000 Tote</li>
+                                <li><strong>Dresden (Februar 1945):</strong> Umstritten, ca. 25.000 Tote, Stadt zerstört</li>
+                                <li><strong>Weitere:</strong> Köln, Berlin, Essen, Dortmund – fast alle Großstädte schwer beschädigt</li>
+                                <li>Insgesamt ca. 400.000-600.000 Tote durch Bombenkrieg</li>
+                                <li>Millionen obdachlos, Infrastruktur zerstört</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content rueckzug">
+                        <div class="date">
+                            <span class="phase-icon">🌊</span>
+                            6. Juni 1944
+                        </div>
+                        <div class="event-title">D-Day – Invasion in der Normandie</div>
+                        <div class="event-description">
+                            Alliierte Truppen (USA, England, Kanada) landen an den Stränden der Normandie. Die größte Landungsoperation der Geschichte eröffnet die zweite Front im Westen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Folgen:</h4>
+                            <ul>
+                                <li>156.000 Soldaten am ersten Tag gelandet</li>
+                                <li>Deutschland kämpft nun an zwei Fronten</li>
+                                <li>Paris befreit (25. August 1944)</li>
+                                <li>Westalliierten rücken auf Deutschland vor</li>
+                                <li>Kriegsende absehbar, aber Deutschland kämpft weiter</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content rueckzug">
+                        <div class="date">
+                            <span class="phase-icon">⚡</span>
+                            Juni 1944 - März 1945
+                        </div>
+                        <div class="event-title">Sowjetische Großoffensiven im Osten</div>
+                        <div class="event-description">
+                            Die Rote Armee rollt die deutsche Ostfront auf. Polen, Baltikum, Rumänien, Ungarn werden befreit. Millionen fliehen vor der heranrückenden Front.
+                        </div>
+                        <div class="key-points">
+                            <h4>Kriegsverbrechen auf beiden Seiten:</h4>
+                            <ul>
+                                <li>Deutsche: Verbrannte Erde, Massaker an Zivilisten</li>
+                                <li>Sowjets: Rache, Vergewaltigungen (ca. 2 Millionen deutsche Frauen), Plünderungen</li>
+                                <li>Flucht und Vertreibung von 12-14 Millionen Deutschen</li>
+                                <li>Hunderttausende sterben auf der Flucht</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content rueckzug">
+                        <div class="date">
+                            <span class="phase-icon">🔥</span>
+                            Herbst 1944 - Frühjahr 1945
+                        </div>
+                        <div class="event-title">Letztes Aufgebot – "Totaler Krieg"</div>
+                        <div class="event-description">
+                            Das NS-Regime mobilisiert alle Reserven. "Volkssturm" (15-60-jährige Männer), Hitlerjugend, selbst Verwundete werden an die Front geschickt. Goebbels propagiert den "Endsieg" und droht mit Erschießung von "Defaitisten".
+                        </div>
+                        <div class="key-points">
+                            <h4>Sinnloses Weiterkämpfen:</h4>
+                            <ul>
+                                <li>Hitler befiehlt: Kein Rückzug, keine Kapitulation</li>
+                                <li>"Nero-Befehl" (März 1945): Zerstörung deutscher Infrastruktur (kaum umgesetzt)</li>
+                                <li>Standgerichte erschießen "Feiglinge" und "Verräter"</li>
+                                <li>Zehntausende sterben noch in den letzten Kriegswochen völlig sinnlos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content ende">
+                        <div class="date">
+                            <span class="phase-icon">🏛️</span>
+                            16. April - 2. Mai 1945
+                        </div>
+                        <div class="event-title">Schlacht um Berlin</div>
+                        <div class="event-description">
+                            Die Rote Armee erobert Berlin in erbitterten Straßenkämpfen. Hitler versteckt sich im "Führerbunker" unter der Reichskanzlei und weigert sich, die Stadt zu verlassen.
+                        </div>
+                        <div class="key-points">
+                            <h4>Ende Hitlers:</h4>
+                            <ul>
+                                <li><strong>29. April:</strong> Hitler heiratet Eva Braun, verfasst sein "Testament"</li>
+                                <li><strong>30. April 1945:</strong> Hitler und Eva Braun begehen Suizid</li>
+                                <li>Leichen werden verbrannt, später von Sowjets geborgen</li>
+                                <li><strong>2. Mai:</strong> Berlin kapituliert</li>
+                                <li>Ca. 170.000 Soldaten und 100.000 Zivilisten sterben in der Schlacht um Berlin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content ende">
+                        <div class="date">
+                            <span class="phase-icon">🕊️</span>
+                            8. Mai 1945
+                        </div>
+                        <div class="event-title">Bedingungslose Kapitulation – Ende des Zweiten Weltkriegs in Europa</div>
+                        <div class="event-description">
+                            Großadmiral Dönitz, Hitlers Nachfolger, unterzeichnet die bedingungslose Kapitulation der Wehrmacht. Der Krieg in Europa ist zu Ende.
+                        </div>
+                        <div class="key-points">
+                            <h4>Das Ende:</h4>
+                            <ul>
+                                <li><strong>7. Mai:</strong> Kapitulation in Reims (Westalliierten)</li>
+                                <li><strong>8. Mai:</strong> Wiederholung in Berlin-Karlshorst (mit Sowjetunion)</li>
+                                <li><strong>8. Mai:</strong> "Tag der Befreiung" (Bundespräsident Weizsäcker 1985)</li>
+                                <li>Deutschland vollständig besetzt, Souveränität verloren</li>
+                                <li>NSDAP-Staat hat aufgehört zu existieren</li>
+                                <li><strong>Asien:</strong> Krieg geht bis September 1945 weiter (Atombomben auf Japan)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">📖 Die letzten Kriegsmonate – Ein sinnloses Sterben:</div>
+                <p>Etwa die Hälfte aller deutschen Kriegstoten (ca. 2,5 Millionen) fiel in den letzten 10 Monaten des Krieges (ab Sommer 1944), obwohl der Krieg längst verloren war. Hitler und die NS-Führung opferten Millionen Menschen für einen "Endsieg", der niemals eintreten konnte. Dies zeigt die verbrecherische Verantwortungslosigkeit des Regimes bis zum Schluss.</p>
+            </div>
+
+            <h3 class="subsection-title" id="holocaust">Holocaust – Die systematische Vernichtung</h3>
+            
+            <div class="text-content">
+                <p>Parallel zum Kriegsgeschehen lief die systematische Ermordung der europäischen Juden – der Holocaust. Bereits oben ausführlich dargestellt, hier die wichtigsten Punkte in kompakter Form:</p>
+            </div>
+
+            <div class="info-box">
+                <strong>📊 Zentrale Fakten zum Holocaust:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Opferzahl:</strong> Etwa 6 Millionen ermordete Juden (zwei Drittel aller europäischen Juden)</li>
+                    <li><strong>Methoden:</strong> Erschießungen (Einsatzgruppen), Vergasung (Vernichtungslager), Zwangsarbeit, Hunger</li>
+                    <li><strong>Vernichtungslager:</strong> Auschwitz-Birkenau, Treblinka, Sobibór, Bełżec, Chełmno, Majdanek</li>
+                    <li><strong>Wannsee-Konferenz (20. Januar 1942):</strong> Bürokratische Organisation der "Endlösung"</li>
+                    <li><strong>Täter:</strong> SS, Gestapo, Wehrmacht (teilweise beteiligt), Verwaltung, Bahn – Tausende Täter aus allen Schichten</li>
+                    <li><strong>Mitwisser:</strong> Viele Deutsche wussten oder ahnten von den Verbrechen</li>
+                    <li><strong>Einzigartigkeit:</strong> Industrielle, bürokratisch organisierte Massenvernichtung ohne Beispiel</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Kriegskonferenzen der Alliierten</h3>
+            
+            <div class="text-content">
+                <p>Während des Krieges trafen sich die "Großen Drei" (Churchill, Roosevelt/Truman, Stalin) mehrfach, um über die Kriegsführung und die Nachkriegsordnung zu beraten.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <tr>
+                        <th>Konferenz</th>
+                        <th>Datum</th>
+                        <th>Teilnehmer</th>
+                        <th>Wichtigste Beschlüsse</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Casablanca</strong></td>
+                        <td>Januar 1943</td>
+                        <td>Roosevelt, Churchill</td>
+                        <td>Forderung nach "bedingungsloser Kapitulation" Deutschlands, Japans und Italiens</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Teheran</strong></td>
+                        <td>November 1943</td>
+                        <td>Roosevelt, Churchill, Stalin</td>
+                        <td>Koordination der militärischen Operationen, Zusage einer zweiten Front (D-Day), Diskussion über Nachkriegsordnung, polnische Westverschiebung angedeutet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jalta</strong></td>
+                        <td>Februar 1945</td>
+                        <td>Roosevelt, Churchill, Stalin</td>
+                        <td>Aufteilung Deutschlands in Besatzungszonen, Oder-Neiße-Linie (polnische Westgrenze), Reparationen, Gründung der UNO, Stalin verspricht Kriegseintritt gegen Japan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Potsdam</strong></td>
+                        <td>Juli-August 1945</td>
+                        <td>Truman, Churchill/Attlee, Stalin</td>
+                        <td>5 D's für Deutschland (siehe unten), endgültige Oder-Neiße-Grenze, Vertreibung der Deutschen, Nürnberger Prozesse beschlossen</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <strong>📜 Die "5 D's" des Potsdamer Abkommens:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Demokratisierung:</strong> Aufbau demokratischer Strukturen</li>
+                    <li><strong>Demilitarisierung:</strong> Vollständige Abrüstung und Auflösung der Wehrmacht</li>
+                    <li><strong>Denazifizierung:</strong> Beseitigung des Nationalsozialismus aus allen Lebensbereichen</li>
+                    <li><strong>Dezentralisierung:</strong> Föderale Strukturen statt Zentralstaat</li>
+                    <li><strong>Dekartellisierung:</strong> Zerschlagung wirtschaftlicher Monopole</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title" id="kriegsende">Flucht und Vertreibung</h3>
+            
+            <div class="text-content">
+                <p>Mit dem Vorrücken der Roten Armee im Osten flohen Millionen Deutsche aus den Ostgebieten. Nach Kriegsende wurden weitere Millionen aus Polen, Tschechoslowakei und anderen Ländern vertrieben.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">📊 Ausmaß der Flucht und Vertreibung:</div>
+                <ul>
+                    <li><strong>Insgesamt:</strong> 12-14 Millionen Deutsche flohen oder wurden vertrieben</li>
+                    <li><strong>Tote:</strong> Ca. 600.000 bis 2 Millionen (Zahlen umstritten) starben auf der Flucht, bei Vertreibung oder in Lagern</li>
+                    <li><strong>Herkunftsgebiete:</strong> Ostpreußen, Pommern, Schlesien, Sudetenland, Danzig, Ostbrandenburg</li>
+                    <li><strong>Bedingungen:</strong> Oft brutal, Winter, Gewalt, Vergewaltigungen, Plünderungen</li>
+                    <li><strong>Tragödien:</strong> Versenkung der "Wilhelm Gustloff" (Januar 1945) – ca. 9.000 Tote</li>
+                    <li><strong>Integration:</strong> Schwierige Aufnahme in West- und Ostdeutschland, Lastenausgleich in BRD</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 Historische Einordnung:</strong> Die Vertreibung der Deutschen war eine humanitäre Katastrophe und ist als solche zu verurteilen. Gleichzeitig muss sie im Kontext der deutschen Verbrechen im Zweiten Weltkrieg gesehen werden – sie war Folge (nicht Rechtfertigung!) der NS-Gewaltpolitik. Die Vertreibung ist Teil der gemeinsamen deutsch-polnischen/tschechischen Geschichte und bleibt kontrovers.
+            </div>
+        </div>
+
+        <!-- Fazit und Reflexion -->
+        <div class="content-section">
+            <h2 class="section-title">8. Fazit: Lehren aus der NS-Zeit und dem Zweiten Weltkrieg</h2>
+            
+            <div class="text-content">
+                <p>Die Zeit des Nationalsozialismus und der Zweite Weltkrieg stellen einen beispiellosen Zivilisationsbruch dar. Die systematische Ermordung von Millionen Menschen, der Vernichtungskrieg und die totale Missachtung menschlicher Würde haben tiefe Narben in der deutschen und europäischen Geschichte hinterlassen.</p>
+            </div>
+
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <div class="concept-title">🎓 Für das Abitur wichtig</div>
+                    <div>
+                        <ul>
+                            <li>NS-Ideologie beruhte auf Rassismus, Antisemitismus und Führerkult</li>
+                            <li>"Machtergreifung" war Kombination aus legalen Mitteln, Terror und Elite-Versagen</li>
+                            <li>Herrschaft durch Terror UND Zustimmung (Volksgemeinschaft, Propaganda)</li>
+                            <li>Holocaust war bürokratisch organisierter, industrieller Völkermord</li>
+                            <li>Zweiter Weltkrieg als Vernichtungs- und Weltanschauungskrieg</li>
+                            <li>Widerstand war selten, gefährlich, aber moralisch essentiell</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">⚖️ Verantwortung und Schuld</div>
+                    <div>
+                        <ul>
+                            <li><strong>Täter:</strong> NS-Führung, SS, Gestapo, Wehrmacht (teils), Verwaltung</li>
+                            <li><strong>Mitläufer:</strong> Millionen profitierten oder schwiegen</li>
+                            <li><strong>Mitwisser:</strong> Viele wussten von Verbrechen, handelten nicht</li>
+                            <li><strong>Kollektive Verantwortung:</strong> Nicht Kollektivschuld, aber Verantwortung zur Aufarbeitung</li>
+                            <li><strong>Erinnerungskultur:</strong> "Nie wieder!" als Verpflichtung</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">🕊️ Lehren für die Gegenwart</div>
+                    <div>
+                        <ul>
+                            <li><strong>Demokratie:</strong> Ist nicht selbstverständlich, muss verteidigt werden</li>
+                            <li><strong>Wachsamkeit:</strong> Frühe Warnsignale autoritärer Entwicklungen erkennen</li>
+                            <li><strong>Menschenrechte:</strong> Unantastbare Würde jedes Menschen</li>
+                            <li><strong>Zivilcourage:</strong> Nicht wegschauen bei Unrecht</li>
+                            <li><strong>Erinnerung:</strong> Geschichte mahnt zur Verantwortung</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-title">📚 Kontroversen</div>
+                    <div>
+                        <ul>
+                            <li><strong>Täterforschung:</strong> "Hitlerismus" vs. "Dynamik von unten"?</li>
+                            <li><strong>Wehrmacht:</strong> Wie schuldig war die "saubere Wehrmacht"? (Mythos widerlegt!)</li>
+                            <li><strong>Widerstand:</strong> Zu wenig, zu spät? Moralische Bewertung</li>
+                            <li><strong>Bombenkrieg:</strong> Waren Flächenbombardements Kriegsverbrechen?</li>
+                            <li><strong>Vertreibung:</strong> Humanitäre Katastrophe vs. Konsequenz deutscher Politik</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💭 Zum Nachdenken:</strong> 
+                <p style="margin-top: 10px;">"Die Erinnerung ist wie das Wasser: Sie ist lebensnotwendig und sie sucht sich ihre eigenen Wege in neue Räume und zu anderen Menschen. Sie ist immer konkret: Sie hat Gesichter vor Augen, und Orte, Bilder und Stimmen." – <em>Bundespräsident Richard von Weizsäcker, 8. Mai 1985</em></p>
+                <p style="margin-top: 10px;">Die Auseinandersetzung mit der NS-Zeit ist keine historische Pflichtübung, sondern eine Verpflichtung zur Gestaltung einer menschlichen Zukunft. Die Frage "Was hätte ich getan?" sollte jede Generation neu stellen – und aus der Antwort Konsequenzen für das eigene Handeln ziehen.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Diese Seite ist Teil der umfassenden Lernplattform für das Geschichte-Abitur 2026.</p>
+            <p><a href="index.html" style="color: var(--secondary-color); text-decoration: none;">← Zurück zur Hauptseite</a></p>
+            <p style="margin-top: 15px; color: #95a5a6; font-size: 0.9em;">
+                Alle Inhalte sind sorgfältig recherchiert und abiturgerecht aufbereitet. 
+                Quellen: Historische Fachliteratur, Bundeszentrale für politische Bildung, 
+                Bildungspläne Baden-Württemberg, wissenschaftliche Standardwerke.
+            </p>
+            <p class="copyright" style="margin-top: 15px;">© 2026 Geschichte Abitur Lernplattform</p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Tooltip functionality enhancement
+            const tooltipTerms = document.querySelectorAll('.tooltip-term');
+            tooltipTerms.forEach(term => {
+                term.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Toggle tooltip on mobile devices
+                    const tooltip = this.querySelector('.tooltip-content');
+                    if (tooltip) {
+                        tooltip.style.display = tooltip.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            });
+
+            // Timeline item animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+
+            // Print current section to console for debugging
+            console.log('✅ Seite "Deutschland 1933-1945: Nationalsozialismus und Zweiter Weltkrieg" erfolgreich geladen!');
+            console.log('📚 Navigiere mit den Schnelllinks oder drücke T zum nach oben scrollen.');
+            
+            // Count content sections
+            const sections = document.querySelectorAll('.content-section').length;
+            const timelineItems = document.querySelectorAll('.timeline-item').length;
+            console.log(`📊 Diese Seite enthält ${sections} Hauptabschnitte und ${timelineItems} Timeline-Ereignisse.`);
+        });
+    </script>
+</body>
+</html>
