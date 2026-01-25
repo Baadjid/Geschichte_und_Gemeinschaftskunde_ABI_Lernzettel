@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalter Krieg (1947-1991) - Geschichte Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .header .description {
+            color: #95a5a6;
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* Section Card Styles */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .section-card h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .section-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .section-card p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        /* Collapsible Headers */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        
+        .collapsible-inner {
+            padding: 20px 10px;
+        }
+        
+        /* Lists */
+        .content-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .content-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .content-list li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 0.8em;
+        }
+        
+        .content-list li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f7 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .important-box {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+            border-left: 4px solid var(--warning-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .important-box strong {
+            color: #d68910;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .danger-box {
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .danger-box strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            background: white;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover td {
+            background: #f8f9fa;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 5px;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .section-card {
+                padding: 20px;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline-item::before {
+                left: 12px;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>❄️ Kalter Krieg (1947-1991)</h1>
+            <p class="subtitle">Der globale Ost-West-Konflikt zwischen USA und UdSSR</p>
+            <p class="description">Von der Blockbildung über Stellvertreterkriege und Entspannungspolitik bis zum Ende der Sowjetunion</p>
+            <a href="index.html" class="back-link">← Zurück zur Übersicht</a>
+        </div>
+
+      <!-- Main Content -->
+        <div class="main-content">
+            
+            <!-- Einleitung -->
+            <div class="section-card">
+                <h2>📖 Einleitung: Der Kalte Krieg</h2>
+                
+                <p>Der <strong>Kalte Krieg</strong> bezeichnet den globalen Systemkonflikt zwischen den beiden Supermächten USA und UdSSR sowie ihren jeweiligen Verbündeten, der von etwa 1947 bis 1991 andauerte. Der Begriff "kalt" bedeutet, dass die beiden Hauptkontrahenten nie direkt militärisch gegeneinander kämpften, sondern ihre Auseinandersetzung über Stellvertreterkriege, Rüstungswettlauf, Propaganda und ideologischen Wettstreit austrugen. Trotz fehlender direkter militärischer Konfrontation stand die Welt mehrmals am Rand eines atomaren Weltkrieges.</p>
+                
+                <div class="highlight-box">
+                    <strong>Kernmerkmale des Kalten Krieges:</strong>
+                    <ul class="content-list">
+                        <li><strong>Bipolare Weltordnung:</strong> Zwei Supermächte teilten die Welt in Einflusssphären</li>
+                        <li><strong>Ideologischer Konflikt:</strong> Kapitalismus/Demokratie vs. Kommunismus/Diktatur</li>
+                        <li><strong>Nukleares Gleichgewicht des Schreckens:</strong> Beide Seiten verfügten über Atomwaffen</li>
+                        <li><strong>Stellvertreterkriege:</strong> Konflikte in Korea, Vietnam, Afghanistan statt direkter Konfrontation</li>
+                        <li><strong>Rüstungswettlauf:</strong> Massive Aufrüstung auf beiden Seiten</li>
+                        <li><strong>Blockbildung:</strong> NATO gegen Warschauer Pakt</li>
+                    </ul>
+                </div>
+                
+                <h3>Die beiden Blöcke im Vergleich</h3>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>Westlicher Block (USA)</th>
+                        <th>Östlicher Block (UdSSR)</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Ideologie:</strong> Kapitalismus, Demokratie, Pluralismus<br>
+                            <strong>Wirtschaft:</strong> Freie Marktwirtschaft, Privateigentum<br>
+                            <strong>Politik:</strong> Gewaltenteilung, Mehrparteiensystem, freie Wahlen<br>
+                            <strong>Bündnis:</strong> NATO (1949)<br>
+                            <strong>Führungsmacht:</strong> USA<br>
+                            <strong>Wichtige Mitglieder:</strong> Westeuropa, Kanada, später BRD
+                        </td>
+                        <td>
+                            <strong>Ideologie:</strong> Kommunismus, Sozialismus, Einparteiendiktatur<br>
+                            <strong>Wirtschaft:</strong> Planwirtschaft, Staatseigentum<br>
+                            <strong>Politik:</strong> Diktatur der Kommunistischen Partei, keine freien Wahlen<br>
+                            <strong>Bündnis:</strong> Warschauer Pakt (1955)<br>
+                            <strong>Führungsmacht:</strong> UdSSR<br>
+                            <strong>Wichtige Mitglieder:</strong> Osteuropa, DDR, später China (mit Konflikten)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Kapitel 1: Verhärtung der Fronten (1947-1962) -->
+            <div class="section-card">
+                <h2>1️⃣ Verhärtung der Fronten (1947-1962)</h2>
+                
+                <p>In den ersten anderthalb Jahrzehnten des Kalten Krieges verhärteten sich die Fronten zwischen Ost und West dramatisch. Aus den ehemaligen Alliierten gegen Hitler-Deutschland wurden erbitterte Gegner, die sich gegenseitig bedrohten.</p>
+                
+                <div class="collapsible-header">
+                    <h3>1.1 Ursachen des Kalten Krieges</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Die Ursachen des Kalten Krieges waren vielfältig und reichten von ideologischen Gegensätzen bis zu machtpolitischen Interessen:</p>
+                        
+                        <ul class="content-list">
+                            <li><strong>Ideologische Gegensätze:</strong> Unvereinbarkeit von kapitalistischer Demokratie und kommunistischer Diktatur. Beide Systeme sahen sich als überlegen und beanspruchten weltweite Gültigkeit.</li>
+                            <li><strong>Machtvakuum in Europa:</strong> Nach der Niederlage Deutschlands und der Schwächung der traditionellen europäischen Großmächte entstand ein Machtvakuum, das USA und UdSSR zu füllen versuchten.</li>
+                            <li><strong>Gegenseitiges Misstrauen:</strong> Die westlichen Demokratien misstrauten Stalins expansiver Politik in Osteuropa. Die UdSSR fürchtete die kapitalistische Einkreisung und sah sich durch die USA bedroht.</li>
+                            <li><strong>Sowjetische Expansion:</strong> Die UdSSR installierte in Osteuropa (Polen, Ungarn, Tschechoslowakei, Rumänien, Bulgarien, DDR) kommunistische Satellitenregime und ignorierte die Selbstbestimmung der Völker.</li>
+                            <li><strong>Atomwaffenmonopol der USA:</strong> 1945 waren die USA die einzige Atommacht. Dies änderte sich 1949, als die UdSSR ihre erste Atombombe zündete.</li>
+                            <li><strong>Wirtschaftliche Interessen:</strong> Die USA wollten freie Märkte für ihre Wirtschaft, die UdSSR wollte ihre Planwirtschaft in ihren Einflussbereich ausdehnen.</li>
+                        </ul>
+                        
+                        <div class="important-box">
+                            <strong>Winston Churchills "Eiserner Vorhang" (5. März 1946):</strong>
+                            <p>Der britische Premierminister Winston Churchill prägte in seiner berühmten Rede in Fulton (USA) den Begriff "Eiserner Vorhang": <em>"Von Stettin an der Ostsee bis nach Triest an der Adria ist ein eiserner Vorhang über den Kontinent niedergegangen."</em> Damit beschrieb er die Teilung Europas zwischen Ost und West. Diese Rede gilt als symbolischer Beginn des Kalten Krieges.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>1.2 Truman-Doktrin und Marshall-Plan (1947)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h3>Truman-Doktrin (12. März 1947)</h3>
+                        <p>US-Präsident Harry S. Truman verkündete die nach ihm benannte <strong>Truman-Doktrin</strong>, die den Beginn der amerikanischen <strong>Containment-Politik</strong> (Eindämmungspolitik) markierte:</p>
+                        
+                        <ul class="content-list">
+                            <li><strong>Grundprinzip:</strong> Die USA würden alle "freien Völker" unterstützen, die sich gegen kommunistische Bedrohung wehren.</li>
+                            <li><strong>Anlass:</strong> Kommunistische Bedrohung in Griechenland und der Türkei – Großbritannien konnte diese Länder nicht mehr wirtschaftlich unterstützen.</li>
+                            <li><strong>Ziel:</strong> Eindämmung (Containment) des Kommunismus – Verhinderung weiterer sowjetischer Expansion.</li>
+                            <li><strong>Methode:</strong> Militärische und wirtschaftliche Hilfe für bedrohte Länder.</li>
+                            <li><strong>Bedeutung:</strong> Offizielle Abkehr von der US-Isolationspolitik und Beginn der globalen Eindämmungspolitik.</li>
+                        </ul>
+                        
+                        <h3>Marshall-Plan (5. Juni 1947)</h3>
+                        <p>Der US-Außenminister George C. Marshall verkündete das <strong>European Recovery Program (ERP)</strong>, besser bekannt als <strong>Marshall-Plan</strong>:</p>
+                        
+                        <ul class="content-list">
+                            <li><strong>Umfang:</strong> 13,1 Milliarden US-Dollar (heute ca. 150 Milliarden Dollar) für den Wiederaufbau Westeuropas zwischen 1948 und 1952.</li>
+                            <li><strong>Offizielle Ziele:</strong> Bekämpfung von Hunger, Armut und Chaos in Europa; Wiederaufbau der Wirtschaft; Förderung der europäischen Zusammenarbeit.</li>
+                            <li><strong>Inoffizielle Ziele:</strong> Eindämmung des Kommunismus durch wirtschaftliche Stärkung; Schaffung von Absatzmärkten für die US-Wirtschaft; politische Bindung Westeuropas an die USA.</li>
+                            <li><strong>Hauptempfänger:</strong> Großbritannien, Frankreich, Italien, BRD (ab 1949) und weitere westeuropäische Staaten.</li>
+                            <li><strong>Ablehnung durch Ostblock:</strong> Stalin zwang die osteuropäischen Staaten, die Marshall-Plan-Hilfe abzulehnen. Als Gegenmodell gründete die UdSSR 1949 den Rat für gegenseitige Wirtschaftshilfe (RGW/COMECON).</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <strong>Folgen des Marshall-Plans:</strong>
+                            <p>Der Marshall-Plan war außerordentlich erfolgreich und trug maßgeblich zum "Wirtschaftswunder" in Westeuropa bei. Er festigte die Westbindung der europäischen Länder, vertiefte aber gleichzeitig die Spaltung Europas in Ost und West.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>1.3 Berlin-Blockade und Luftbrücke (1948/49)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Die <strong>Berlin-Blockade</strong> war die erste große Krise des Kalten Krieges und brachte die Welt an den Rand eines bewaffneten Konflikts.</p>
+                        
+                        <h3>Vorgeschichte:</h3>
+                        <ul class="content-list">
+                            <li><strong>Währungsreform:</strong> Am 20. Juni 1948 führten die Westalliierten in ihren Besatzungszonen die D-Mark ein (ohne Absprache mit der UdSSR).</li>
+                            <li><strong>Stalins Reaktion:</strong> Die UdSSR sah darin einen Bruch der Potsdamer Beschlüsse und eine Vorbereitung zur Gründung eines westdeutschen Separatstaates.</li>
+                        </ul>
+                        
+                        <h3>Die Blockade (24. Juni 1948 - 12. Mai 1949):</h3>
+                        <ul class="content-list">
+                            <li><strong>Maßnahmen:</strong> Die Sowjetunion sperrte alle Land- und Wasserwege nach West-Berlin. Strom- und Lebensmittellieferungen wurden eingestellt.</li>
+                            <li><strong>Ziel:</strong> Die Westalliierten sollten gezwungen werden, West-Berlin aufzugeben oder die Währungsreform rückgängig zu machen.</li>
+                            <li><strong>Betroffene:</strong> 2,2 Millionen West-Berliner waren von der Außenwelt abgeschnitten.</li>
+                        </ul>
+                        
+                        <h3>Die Luftbrücke:</h3>
+                        <ul class="content-list">
+                            <li><strong>Antwort der Westalliierten:</strong> Versorgung West-Berlins aus der Luft – eine logistische Meisterleistung.</li>
+                            <li><strong>Umfang:</strong> In 462 Tagen wurden etwa 2,3 Millionen Tonnen Versorgungsgüter (Lebensmittel, Kohle, Medikamente) eingeflogen.</li>
+                            <li><strong>Flüge:</strong> Etwa 277.000 Flüge, in Spitzenzeiten landete alle 90 Sekunden ein Flugzeug in West-Berlin.</li>
+                            <li><strong>Flughäfen:</strong> Tempelhof, Gatow und der eigens gebaute Flughafen Tegel.</li>
+                            <li><strong>Opfer:</strong> 78 Menschen starben bei Unfällen während der Luftbrücke.</li>
+                            <li><strong>Symbol:</strong> Die "Rosinenbomber" – US-Piloten warfen Süßigkeiten für Kinder ab.</li>
+                        </ul>
+                        
+                        <div class="important-box">
+                            <strong>Ergebnis und Bedeutung:</strong>
+                            <p>Am 12. Mai 1949 hob Stalin die Blockade auf – die Luftbrücke hatte funktioniert. Die Berlin-Blockade führte zur endgültigen Teilung Deutschlands: Im Mai 1949 wurde die Bundesrepublik Deutschland gegründet, im Oktober 1949 die DDR. Die Krise festigte die Westbindung der BRD und beschleunigte die Gründung der NATO.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>1.4 Blockbildung: NATO und Warschauer Pakt</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h3>NATO (North Atlantic Treaty Organization) – 4. April 1949</h3>
+                        
+                        <ul class="content-list">
+                            <li><strong>Gründungsmitglieder:</strong> USA, Kanada, Großbritannien, Frankreich, Belgien, Niederlande, Luxemburg, Italien, Portugal, Dänemark, Norwegen, Island.</li>
+                            <li><strong>Erweiterungen:</strong> 1952 Griechenland und Türkei, 1955 BRD, 1982 Spanien.</li>
+                            <li><strong>Kernprinzip (Artikel 5):</strong> "Ein Angriff auf einen Mitgliedstaat ist ein Angriff auf alle." Kollektive Verteidigung als Abschreckung.</li>
+                            <li><strong>Ziele:</strong> Gemeinsame Verteidigung gegen sowjetische Expansion; Abschreckung durch militärische Stärke; politische Bindung der USA an Europa.</li>
+                            <li><strong>Oberbefehl:</strong> Stets ein amerikanischer General (Supreme Allied Commander Europe – SACEUR).</li>
+                            <li><strong>Hauptquartier:</strong> Zunächst Paris, ab 1967 Brüssel (nach Frankreichs Austritt aus der militärischen Integration).</li>
+                        </ul>
+                        
+                        <h3>Warschauer Pakt – 14. Mai 1955</h3>
+                        
+                        <ul class="content-list">
+                            <li><strong>Gründungsmitglieder:</strong> UdSSR, DDR, Polen, Tschechoslowakei, Ungarn, Rumänien, Bulgarien, Albanien (trat 1968 aus).</li>
+                            <li><strong>Anlass:</strong> Reaktion auf die Aufnahme der BRD in die NATO und deren Wiederbewaffnung.</li>
+                            <li><strong>Offizieller Name:</strong> "Vertrag über Freundschaft, Zusammenarbeit und gegenseitigen Beistand".</li>
+                            <li><strong>Realität:</strong> Instrument zur sowjetischen Kontrolle über Osteuropa; de facto von Moskau dominiert.</li>
+                            <li><strong>Militärische Struktur:</strong> Integriertes Oberkommando unter sowjetischer Führung; sowjetische Truppen in allen Mitgliedsstaaten stationiert.</li>
+                            <li><strong>Politische Funktion:</strong> Legitimierung sowjetischer Interventionen (Ungarn 1956, Tschechoslowakei 1968).</li>
+                            <li><strong>Ende:</strong> Auflösung am 1. Juli 1991 nach dem Zusammenbruch des Ostblocks.</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <strong>Bedeutung der Blockbildung:</strong>
+                            <p>Die Gründung von NATO und Warschauer Pakt manifestierte die Teilung Europas und der Welt in zwei feindliche Lager. Die bipolare Weltordnung war nun institutionalisiert. Jede Seite versuchte, ihren Einflussbereich zu halten und auszubauen – was zu zahlreichen Krisen und Stellvertreterkriegen führte.</p>
+                        </div>
+                    </div>
+                </div>
+
+              <div class="collapsible-header">
+                    <h3>1.5 Koreakrieg (1950-1953) – Erster heißer Krieg im Kalten Krieg</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Der <strong>Koreakrieg</strong> war der erste große militärische Konflikt des Kalten Krieges und der erste Stellvertreterkrieg zwischen den Supermächten. Er zeigte, wie gefährlich die Ost-West-Konfrontation werden konnte.</p>
+                        
+                        <h3>Vorgeschichte:</h3>
+                        <ul class="content-list">
+                            <li><strong>Teilung Koreas (1945):</strong> Nach der japanischen Kapitulation wurde Korea am 38. Breitengrad geteilt: Norden unter sowjetischer, Süden unter US-amerikanischer Besatzung.</li>
+                            <li><strong>Nordkorea:</strong> Kommunistische Volksrepublik unter Kim Il-sung, unterstützt von UdSSR und China.</li>
+                            <li><strong>Südkorea:</strong> Republik unter Syngman Rhee, unterstützt von den USA.</li>
+                            <li><strong>Beide Seiten beanspruchten Gesamtkorea</strong> und planten die Wiedervereinigung unter ihrem System.</li>
+                        </ul>
+                        
+                        <h3>Verlauf des Krieges:</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">25. Juni 1950</div>
+                                <p><strong>Kriegsbeginn:</strong> Nordkoreanische Truppen überschreiten den 38. Breitengrad und greifen Südkorea an. Mit Stalins Zustimmung und chinesischer Unterstützung. Nordkorea erobert fast die gesamte koreanische Halbinsel.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">September 1950</div>
+                                <p><strong>UN-Intervention:</strong> Der UN-Sicherheitsrat (UdSSR boykottierte die Sitzung) autorisiert militärische Hilfe für Südkorea. US-geführte UN-Truppen unter General Douglas MacArthur landen in Incheon und drängen Nordkorea zurück.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oktober 1950</div>
+                                <p><strong>Chinesische Intervention:</strong> Als UN-Truppen bis an die chinesische Grenze vorrücken, greift China mit 300.000 "Freiwilligen" ein. Die UN-Truppen werden zurückgedrängt.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">1951-1953</div>
+                                <p><strong>Stellungskrieg:</strong> Der Krieg erstarrt in einem zermürbenden Stellungskrieg entlang des 38. Breitengrades. Verhandlungen beginnen 1951, dauern aber zwei Jahre.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">27. Juli 1953</div>
+                                <p><strong>Waffenstillstand:</strong> Nach Stalins Tod (März 1953) wird ein Waffenstillstand unterzeichnet. Korea bleibt am 38. Breitengrad geteilt – bis heute gibt es keinen Friedensvertrag.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Folgen und Bedeutung:</h3>
+                        <ul class="content-list">
+                            <li><strong>Opfer:</strong> Etwa 3-4 Millionen Tote (Soldaten und Zivilisten), darunter über 36.000 US-Soldaten.</li>
+                            <li><strong>Zerstörung:</strong> Korea lag in Trümmen, besonders der Norden war durch massive US-Bombardements verwüstet.</li>
+                            <li><strong>Status quo:</strong> Die Teilung blieb bestehen – keine Seite hatte gewonnen.</li>
+                            <li><strong>Eskalation des Kalten Krieges:</strong> Der Krieg zeigte, dass der Kalte Krieg "heiß" werden konnte und dass beide Seiten bereit waren, militärisch zu intervenieren.</li>
+                            <li><strong>Militarisierung:</strong> Massive Aufrüstung im Westen; US-Militärausgaben vervierfachten sich.</li>
+                            <li><strong>NSC-68:</strong> US-Strategiepapier forderte globale Eindämmung des Kommunismus mit allen Mitteln.</li>
+                            <li><strong>Gefahr der Eskalation:</strong> General MacArthur wollte Atombomben gegen China einsetzen – wurde daraufhin von Präsident Truman abgesetzt.</li>
+                        </ul>
+                        
+                        <div class="danger-box">
+                            <strong>Korea als Muster für Stellvertreterkriege:</strong>
+                            <p>Der Koreakrieg wurde zum Modell für spätere Stellvertreterkriege des Kalten Krieges: Die Supermächte kämpften nicht direkt gegeneinander, sondern unterstützten jeweils eine Seite in regionalen Konflikten. Dies sollte sich in Vietnam, Afghanistan und vielen anderen Kriegen wiederholen.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>1.6 Kubakrise (Oktober 1962) – Die Welt am Rand des Atomkriegs</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Die <strong>Kubakrise</strong> war der Höhepunkt und die gefährlichste Krise des Kalten Krieges. Zum ersten und einzigen Mal standen sich die Supermächte am Rand eines nuklearen Weltkrieges gegenüber.</p>
+                        
+                        <h3>Vorgeschichte:</h3>
+                        <ul class="content-list">
+                            <li><strong>Kubanische Revolution (1959):</strong> Fidel Castro stürzt die pro-amerikanische Diktatur Batistas und errichtet ein sozialistisches Regime nur 150 km von den USA entfernt.</li>
+                            <li><strong>Bay of Pigs (April 1961):</strong> Von der CIA unterstützter Invasionsversuch exilkubanischer Truppen scheitert kläglich. Castro wendet sich noch stärker der UdSSR zu.</li>
+                            <li><strong>Sowjetische Raketen in der Türkei:</strong> Die USA hatten Mittelstreckenraketen in der Türkei (an der sowjetischen Grenze) stationiert – die UdSSR fühlte sich bedroht.</li>
+                            <li><strong>Chruschtschows Kalkül:</strong> Der sowjetische Parteiführer wollte das strategische Gleichgewicht wiederherstellen und Kuba vor weiteren US-Angriffen schützen.</li>
+                        </ul>
+                        
+                        <h3>Verlauf der Krise – 13 Tage, die die Welt veränderten:</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">14. Oktober 1962</div>
+                                <p><strong>Entdeckung:</strong> US-Aufklärungsflugzeuge (U-2) fotografieren sowjetische Raketenstellungen auf Kuba. Die Raketen könnten in wenigen Minuten US-Städte erreichen.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">16.-21. Oktober</div>
+                                <p><strong>Geheime Beratungen:</strong> Präsident John F. Kennedy berät sich mit seinem Exekutivkomitee (ExComm). Optionen: Militärschlag, Invasion oder Blockade?</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">22. Oktober</div>
+                                <p><strong>Kennedys Fernsehansprache:</strong> Kennedy informiert die Weltöffentlichkeit und verhängt eine "Quarantäne" (Seeblockade) um Kuba. US-Streitkräfte in höchster Alarmbereitschaft (DEFCON 2).</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">24. Oktober</div>
+                                <p><strong>Konfrontation auf See:</strong> Sowjetische Schiffe nähern sich der Blockadelinie. Die Welt hält den Atem an – dann drehen die sowjetischen Schiffe ab. "Wir stehen Auge in Auge, und ich glaube, der andere hat gerade geblinzelt" (US-Außenminister Dean Rusk).</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">26. Oktober</div>
+                                <p><strong>Chruschtschows erstes Angebot:</strong> Abbau der Raketen gegen US-Zusage, Kuba nicht anzugreifen.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">27. Oktober</div>
+                                <p><strong>"Schwarzer Samstag":</strong> Chruschtschow fordert zusätzlich den Abbau der US-Raketen in der Türkei. Ein US-Aufklärungsflugzeug wird über Kuba abgeschossen, der Pilot stirbt. Die Situation eskaliert – Kriegsgefahr ist am höchsten.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">28. Oktober</div>
+                                <p><strong>Einigung:</strong> Kennedy akzeptiert öffentlich nur das erste Angebot (Nicht-Angriff auf Kuba), sagt aber geheim zu, die Raketen aus der Türkei abzuziehen. Chruschtschow lenkt ein und befiehlt den Abbau der Raketen auf Kuba.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Folgen und Bedeutung:</h3>
+                        <ul class="content-list">
+                            <li><strong>Abgewendeter Atomkrieg:</strong> Beide Seiten erkannten, wie nah die Welt am nuklearen Holocaust stand. Historiker schätzen, dass die Wahrscheinlichkeit eines Atomkriegs bei 33-50% lag.</p>
+                            <li><strong>"Heißer Draht":</strong> Einrichtung einer direkten Fernschreiberverbindung (später Telefon) zwischen Washington und Moskau zur Krisenkommunikation (Juni 1963).</li>
+                            <li><strong>Atomteststopp-Abkommen (1963):</strong> Verbot von Atomtests in der Atmosphäre, im Weltraum und unter Wasser.</li>
+                            <li><strong>Beginn der Entspannung:</strong> Beide Seiten erkannten die Notwendigkeit von Rüstungskontrolle und Dialog.</li>
+                            <li><strong>Kennedy als Sieger:</strong> In der westlichen Wahrnehmung hatte Kennedy Stärke gezeigt und Chruschtschow zum Rückzug gezwungen.</li>
+                            <li><strong>Chruschtschows Sturz:</strong> Chruschtschow wurde 1964 teilweise wegen der "Niederlage" in der Kubakrise gestürzt.</li>
+                            <li><strong>Kuba blieb kommunistisch:</strong> Castro konsolidierte seine Macht, Kuba blieb bis heute sozialistisch.</li>
+                        </ul>
+                        
+                        <div class="danger-box">
+                            <strong>Wie nah war der Atomkrieg wirklich?</strong>
+                            <p>Erst später wurde bekannt, dass sowjetische U-Boot-Kommandanten auf Kuba die Autorität hatten, taktische Atomwaffen einzusetzen. Ein sowjetisches U-Boot wurde von US-Zerstörern mit Wasserbomben angegriffen und wäre beinahe mit einem atomaren Torpedo zurückgeschossen – nur die Weigerung eines einzigen Offiziers (Wassili Archipow) verhinderte den Abschuss. Die Welt stand näher am Abgrund als damals bekannt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kapitel 2: Zwischen Entspannung und erneuter Konfrontation (1963-1991) -->
+            <div class="section-card">
+                <h2>2️⃣ Zwischen Entspannung und erneuter Konfrontation (1963-1991)</h2>
+                
+                <p>Nach der Kubakrise begann eine Phase vorsichtiger Annäherung zwischen Ost und West. Die Supermächte erkannten, dass ein direkter Krieg zu vermeiden war. Es folgte eine Periode der Entspannung (Détente), die jedoch immer wieder durch Krisen unterbrochen wurde.</p>
+                
+                <div class="collapsible-header">
+                    <h3>2.1 Phasen der Entspannung (1963-1979)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Die <strong>Entspannungspolitik</strong> (Détente) bezeichnete den Versuch, die Spannungen zwischen Ost und West durch Dialog, Verhandlungen und Rüstungskontrolle zu verringern.</p>
+                        
+                        <h3>Wichtige Schritte der Entspannung:</h3>
+                        
+                        <ul class="content-list">
+                            <li><strong>Atomteststopp-Abkommen (5. August 1963):</strong> Verbot von Kernwaffentests in der Atmosphäre, im Weltraum und unter Wasser. Unterzeichnet von USA, UdSSR und Großbritannien. Erste bedeutende Rüstungskontrollvereinbarung.</li>
+                            
+                            <li><strong>Atomwaffensperrvertrag (1. Juli 1968):</strong> Verpflichtung der Atomwaffenstaaten, keine Kernwaffen weiterzugeben. Verpflichtung der Nicht-Atomwaffenstaaten, keine Kernwaffen zu erwerben. Ziel: Verhinderung der Weiterverbreitung von Atomwaffen. 191 Staaten sind heute Mitglieder.</li>
+                            
+                            <li><strong>SALT I (1972):</strong> Strategic Arms Limitation Talks (Gespräche zur Begrenzung strategischer Waffen). Unterzeichnet von US-Präsident Richard Nixon und KPdSU-Generalsekretär Leonid Breschnew. Begrenzung der Zahl von Interkontinentalraketen und U-Boot-gestützten Raketen. ABM-Vertrag: Begrenzung von Raketenabwehrsystemen.</li>
+                            
+                            <li><strong>SALT II (1979):</strong> Weitere Begrenzung strategischer Waffen. Wurde vom US-Senat nicht ratifiziert (wegen des sowjetischen Einmarsches in Afghanistan), aber von beiden Seiten weitgehend eingehalten.</li>
+                        </ul>
+                        
+                        <h3>Neue Ostpolitik in Deutschland:</h3>
+                        <p>Die Entspannungspolitik hatte auch direkte Auswirkungen auf Deutschland:</p>
+                        
+                        <ul class="content-list">
+                            <li><strong>Willy Brandts "Wandel durch Annäherung":</strong> Der SPD-Bundeskanzler (1969-1974) verfolgte eine Politik der Öffnung gegenüber dem Ostblock.</li>
+                            <li><strong>Moskauer Vertrag (12. August 1970):</strong> Anerkennung der bestehenden Grenzen in Europa, Gewaltverzicht.</li>
+                            <li><strong>Warschauer Vertrag (7. Dezember 1970):</strong> Anerkennung der Oder-Neiße-Grenze. Brandts Kniefall am Denkmal für die Opfer des Warschauer Ghetto-Aufstands (7. Dezember 1970) wurde zum Symbol der Versöhnung.</li>
+                            <li><strong>Viermächteabkommen über Berlin (3. September 1971):</strong> Regelung des Status von West-Berlin, Erleichterung des Transitverkehrs.</li>
+                            <li><strong>Grundlagenvertrag (21. Dezember 1972):</strong> Normalisierung der Beziehungen zwischen BRD und DDR. Beide deutsche Staaten erkannten sich gegenseitig an (ohne völkerrechtliche Anerkennung). 1973 Aufnahme beider deutscher Staaten in die UNO.</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <strong>Willy Brandt erhielt 1971 den Friedensnobelpreis</strong>
+                            <p>Für seine Entspannungspolitik und seinen Beitrag zur Versöhnung zwischen Ost und West wurde Bundeskanzler Willy Brandt 1971 mit dem Friedensnobelpreis ausgezeichnet.</p>
+                        </div>
+                    </div>
+                </div>
+
+              <div class="collapsible-header">
+                    <h3>2.2 KSZE-Schlussakte von Helsinki (1975)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Die <strong>Konferenz über Sicherheit und Zusammenarbeit in Europa (KSZE)</strong> war der Höhepunkt der Entspannungspolitik und ein bedeutender Schritt zur Überwindung der europäischen Teilung.</p>
+                        
+                        <h3>Entstehung und Verhandlungen:</h3>
+                        <ul class="content-list">
+                            <li><strong>Initiative des Ostblocks (1954):</strong> Die UdSSR schlug bereits in den 1950er Jahren eine gesamteuropäische Sicherheitskonferenz vor.</li>
+                            <li><strong>Westliche Skepsis:</strong> Der Westen befürchtete, dass die UdSSR damit die Teilung Europas zementieren und die USA aus Europa verdrängen wollte.</li>
+                            <li><strong>Verhandlungsbeginn (3. Juli 1973):</strong> In Helsinki begannen 35 Staaten (alle europäischen Staaten außer Albanien, plus USA und Kanada) mit den Verhandlungen.</li>
+                            <li><strong>Verhandlungsort:</strong> Die Hauptverhandlungen fanden 1973-1975 in Genf statt.</li>
+                        </ul>
+                        
+                        <h3>Die Schlussakte von Helsinki (1. August 1975):</h3>
+                        <p>Nach zweijährigen Verhandlungen unterzeichneten 35 Staats- und Regierungschefs die KSZE-Schlussakte. Sie war keine völkerrechtlich bindende Vereinbarung, sondern eine politische Absichtserklärung.</p>
+                        
+                        <div class="important-box">
+                            <strong>Die drei "Körbe" der KSZE-Schlussakte:</strong>
+                            
+                            <p><strong>Korb I - Sicherheit in Europa:</strong></p>
+                            <ul class="content-list">
+                                <li>Unverletzlichkeit der Grenzen (wichtig für Polen und DDR)</li>
+                                <li>Gewaltverzicht und friedliche Streitbeilegung</li>
+                                <li>Souveränität und territoriale Integrität der Staaten</li>
+                                <li>Nichteinmischung in innere Angelegenheiten</li>
+                                <li>Gleichberechtigung und Selbstbestimmungsrecht der Völker</li>
+                                <li>Vertrauensbildende Maßnahmen: Ankündigung militärischer Manöver, gegenseitige Beobachtung</li>
+                            </ul>
+                            
+                            <p><strong>Korb II - Wirtschaftliche Zusammenarbeit:</strong></p>
+                            <ul class="content-list">
+                                <li>Handel, Industrie, Wissenschaft und Technik</li>
+                                <li>Umweltschutz und Verkehr</li>
+                                <li>Förderung des wirtschaftlichen Austauschs zwischen Ost und West</li>
+                            </ul>
+                            
+                            <p><strong>Korb III - Menschliche Kontakte und Menschenrechte:</strong></p>
+                            <ul class="content-list">
+                                <li>Achtung der Menschenrechte und Grundfreiheiten</li>
+                                <li>Erleichterung menschlicher Kontakte (Reisen, Familienzusammenführung)</li>
+                                <li>Informationsfreiheit und Kulturaustausch</li>
+                                <li>Freier Austausch von Ideen und Informationen</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Unterschiedliche Erwartungen:</h3>
+                        <ul class="content-list">
+                            <li><strong>Ostblock-Ziele:</strong> Anerkennung der Grenzen und des Status quo in Europa. Internationale Anerkennung der DDR. Wirtschaftliche Zusammenarbeit mit dem Westen. Nichteinmischung in innere Angelegenheiten.</li>
+                            <li><strong>Westliche Ziele:</strong> Verbesserung der Menschenrechtssituation im Ostblock. Erleichterung von Reisen und Kontakten. Informationsfreiheit. Friedenssicherung durch Vertrauensbildung.</li>
+                        </ul>
+                        
+                        <h3>Bedeutung und Folgen:</h3>
+                        <ul class="content-list">
+                            <li><strong>Kurzfristig:</strong> Viele im Westen sahen die KSZE als Erfolg für den Ostblock – die Grenzen waren anerkannt, aber Menschenrechte wurden weiter missachtet.</li>
+                            <li><strong>Langfristig:</strong> Korb III wurde zur "Trojanischen Pferd" für den Kommunismus. Menschenrechtsgruppen im Ostblock beriefen sich auf die Schlussakte (z.B. "Charta 77" in der Tschechoslowakei). Die Forderungen nach Reisefreiheit und Menschenrechten unterhöhlten die kommunistischen Regime.</li>
+                            <li><strong>Folgekonferenzen:</strong> In Belgrad (1977-78), Madrid (1980-83) und Wien (1986-89) wurde die Umsetzung der Schlussakte überprüft.</li>
+                            <li><strong>Ende des Kalten Krieges:</strong> Die KSZE trug zur Überwindung der Teilung Europas bei. Die "Charta von Paris" (21. November 1990) markierte das Ende des Kalten Krieges.</li>
+                            <li><strong>OSZE (seit 1995):</strong> Die KSZE wurde 1995 in die "Organisation für Sicherheit und Zusammenarbeit in Europa" (OSZE) umgewandelt und ist heute die größte regionale Sicherheitsorganisation (57 Teilnehmerstaaten).</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <strong>Historische Bewertung:</strong>
+                            <p>Die KSZE-Schlussakte gilt heute als einer der wichtigsten Schritte auf dem Weg zum Ende des Kalten Krieges. Sie schuf einen Rahmen für Dialog und Zusammenarbeit und legitimierte Forderungen nach Menschenrechten und Demokratie im Ostblock. Ohne Helsinki wäre die friedliche Revolution von 1989 schwerer vorstellbar gewesen.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>2.3 Vietnamkrieg (1964-1975) – Trauma der USA</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Der <strong>Vietnamkrieg</strong> war der längste und umstrittenste Stellvertreterkrieg des Kalten Krieges. Er endete mit einer Niederlage der USA und hatte weitreichende Folgen für die amerikanische Gesellschaft und Außenpolitik.</p>
+                        
+                        <h3>Vorgeschichte:</h3>
+                        <ul class="content-list">
+                            <li><strong>Französische Kolonialherrschaft:</strong> Vietnam war Teil von Französisch-Indochina. Nach dem Zweiten Weltkrieg versuchte Frankreich, die Kontrolle zurückzugewinnen.</li>
+                            <li><strong>Ho Chi Minh:</strong> Der kommunistische Nationalist führte den Widerstand gegen die Franzosen.</li>
+                            <li><strong>Schlacht von Dien Bien Phu (1954):</strong> Vernichtende Niederlage Frankreichs. Ende der französischen Kolonialherrschaft.</li>
+                            <li><strong>Genfer Indochina-Konferenz (1954):</strong> Teilung Vietnams am 17. Breitengrad. Nordvietnam: Kommunistisch unter Ho Chi Minh, unterstützt von UdSSR und China. Südvietnam: Antikommunistisch, unterstützt von den USA. Für 1956 waren gesamtvietnamesische Wahlen vorgesehen – sie fanden nie statt.</li>
+                        </ul>
+                        
+                        <h3>Amerikanisches Engagement:</h3>
+                        <ul class="content-list">
+                            <li><strong>Domino-Theorie:</strong> Die USA fürchteten, dass bei einem Fall Südvietnams ganz Südostasien kommunistisch würde ("Domino-Effekt").</li>
+                            <li><strong>Militärberater (ab 1954):</strong> Zunächst entsandten die USA nur Berater und Ausrüstung.</li>
+                            <li><strong>Vietcong:</strong> Kommunistische Guerilla-Bewegung in Südvietnam, unterstützt von Nordvietnam.</li>
+                            <li><strong>Tonkin-Zwischenfall (August 1964):</strong> Angeblicher Angriff nordvietnamesischer Schnellboote auf US-Zerstörer (umstritten, ob er wirklich stattfand). Der US-Kongress verabschiedete die "Tonkin-Resolution" – Ermächtigung des Präsidenten zu militärischen Maßnahmen ohne Kriegserklärung.</li>
+                        </ul>
+                        
+                        <h3>Eskalation und Kriegsführung:</h3>
+                        <ul class="content-list">
+                            <li><strong>Operation Rolling Thunder (1965-1968):</strong> Massive Bombardierung Nordvietnams. Mehr Bomben als im gesamten Zweiten Weltkrieg.</li>
+                            <li><strong>Bodentruppen:</strong> 1965 Entsendung der ersten US-Kampftruppen. Auf dem Höhepunkt (1968) über 500.000 US-Soldaten in Vietnam.</li>
+                            <li><strong>Guerilla-Krieg:</strong> Der Vietcong kannte das Gelände, nutzte den Dschungel und hatte Rückhalt in der Bevölkerung. Die US-Armee war auf konventionelle Kriegsführung ausgerichtet.</li>
+                            <li><strong>Entlaubungsmittel "Agent Orange":</strong> Chemische Kriegsführung zur Entlaubung des Dschungels – mit verheerenden Gesundheitsfolgen.</li>
+                            <li><strong>My Lai-Massaker (16. März 1968):</strong> US-Soldaten ermordeten über 500 unbewaffnete vietnamesische Zivilisten. Schockierte die amerikanische Öffentlichkeit.</li>
+                        </ul>
+                        
+                        <h3>Tet-Offensive (Januar 1968):</h3>
+                        <ul class="content-list">
+                            <li><strong>Überraschungsangriff:</strong> Vietcong und Nordvietnam griffen während des Tet-Neujahrsfestes über 100 Städte in Südvietnam an.</li>
+                            <li><strong>Militärisch gescheitert:</strong> Die Offensive wurde zurückgeschlagen, der Vietcong erlitt schwere Verluste.</li>
+                            <li><strong>Psychologischer Sieg:</strong> Die Offensive zeigte, dass der Feind nicht besiegt war, trotz jahrelanger Bombardements. Wendepunkt in der US-Öffentlichkeit gegen den Krieg.</li>
+                        </ul>
+                        
+                        <h3>Friedensverhandlungen und Rückzug:</h3>
+                        <ul class="content-list">
+                            <li><strong>Nixon-Doktrin (1969):</strong> "Vietnamisierung" – Südvietnam sollte den Krieg selbst führen, USA zogen schrittweise Truppen ab.</li>
+                            <li><strong>Pariser Friedensabkommen (27. Januar 1973):</strong> Waffenstillstand, Abzug der US-Truppen, Freilassung der Kriegsgefangenen. Nordvietnam durfte Truppen in Südvietnam belassen – ein fauler Kompromiss.</li>
+                            <li><strong>Fall von Saigon (30. April 1975):</strong> Nordvietnamesische Truppen eroberten die südvietnamesische Hauptstadt. Dramatische Evakuierung der letzten US-Amerikaner per Hubschrauber. Vietnam wurde unter kommunistischer Herrschaft wiedervereinigt (Sozialistische Republik Vietnam).</li>
+                        </ul>
+                        
+                        <h3>Folgen und Bedeutung:</h3>
+                        <ul class="content-list">
+                            <li><strong>Opfer:</strong> Etwa 58.000 gefallene US-Soldaten, über 300.000 verwundete. 1-3 Millionen vietnamesische Tote (Soldaten und Zivilisten). Hunderttausende Flüchtlinge ("Boat People").</li>
+                            <li><strong>Trauma für die USA:</strong> Erste militärische Niederlage in der US-Geschichte. Tiefe Spaltung der amerikanischen Gesellschaft. Misstrauen gegenüber der Regierung ("Vietnam-Syndrom").</li>
+                            <li><strong>Kriegsdienstverweigerer:</strong> Zehntausende flohen nach Kanada oder gingen ins Gefängnis.</li>
+                            <li><strong>Anti-Kriegs-Bewegung:</strong> Massive Proteste in den USA und weltweit gegen den Krieg.</li>
+                            <li><strong>War Powers Resolution (1973):</strong> Der Kongress beschränkte die Kriegsbefugnisse des Präsidenten.</li>
+                            <li><strong>Ende der Eindämmungspolitik:</strong> Die USA waren vorsichtiger bei militärischen Interventionen.</li>
+                            <li><strong>Südostasien:</strong> Kambodscha fiel ebenfalls an die Kommunisten (Rote Khmer, Völkermord), ebenso Laos. Thailand, Malaysia und Indonesien blieben jedoch antikommunistisch – die "Dominotheorie" traf nur teilweise zu.</li>
+                        </ul>
+                        
+                        <div class="danger-box">
+                            <strong>Vietnam als Wendepunkt:</strong>
+                            <p>Der Vietnamkrieg markierte das Ende der uneingeschränkten US-Intervention gegen den Kommunismus. Er zeigte die Grenzen militärischer Macht und führte zu einer Phase der Zurückhaltung in der US-Außenpolitik. Das "Vietnam-Syndrom" – die Angst vor einem erneuten militärischen Debakel – prägte die US-Politik bis zum Golfkrieg 1991.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>2.4 Breschnew-Doktrin und Prager Frühling (1968)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Parallel zum Vietnamkrieg zeigte auch die UdSSR ihre Bereitschaft, ihre Einflusssphäre mit Gewalt zu verteidigen.</p>
+                        
+                        <h3>Prager Frühling (Januar-August 1968):</h3>
+                        <ul class="content-list">
+                            <li><strong>Alexander Dubček:</strong> Der neue Parteichef der Tschechoslowakei wollte einen "Sozialismus mit menschlichem Antlitz".</li>
+                            <li><strong>Reformen:</strong> Pressefreiheit, Meinungsfreiheit, Reisefreiheit, wirtschaftliche Liberalisierung. Die Bevölkerung begrüßte die Reformen enthusiastisch.</li>
+                            <li><strong>Moskaus Misstrauen:</strong> Die sowjetische Führung fürchtete, die Tschechoslowakei könnte dem Warschauer Pakt den Rücken kehren und dass die Reformen auf andere Ostblockstaaten übergreifen könnten.</li>
+                        </ul>
+                        
+                        <h3>Niederschlagung (21. August 1968):</h3>
+                        <ul class="content-list">
+                            <li><strong>Einmarsch:</strong> Truppen des Warschauer Paktes (UdSSR, Polen, Ungarn, Bulgarien, DDR) marschierten mit 500.000 Soldaten in die Tschechoslowakei ein.</li>
+                            <li><strong>Gewaltloser Widerstand:</strong> Die Bevölkerung leistete überwiegend passiven Widerstand. Der Student Jan Palach verbrannte sich im Januar 1969 aus Protest selbst.</li>
+                            <li><strong>Normalisierung:</strong> Dubček wurde abgesetzt, die Reformen rückgängig gemacht. Die Tschechoslowakei blieb unter sowjetischer Kontrolle.</li>
+                        </ul>
+                        
+                        <h3>Breschnew-Doktrin:</h3>
+                        <p>Der sowjetische Parteichef Leonid Breschnew verkündete im September 1968 die nach ihm benannte Doktrin:</p>
+                        
+                        <div class="danger-box">
+                            <strong>Kernaussage der Breschnew-Doktrin:</strong>
+                            <p><em>"Wenn Kräfte, die der sozialistischen Entwicklung feindlich sind, versuchen, in irgendeinem sozialistischen Land den Sozialismus rückgängig zu machen, wird dies zu einem gemeinsamen Problem aller sozialistischen Länder."</em></p>
+                            <p><strong>Bedeutung:</strong> Die UdSSR beanspruchte das Recht, in jedem Ostblockstaat militärisch zu intervenieren, wenn das sozialistische System bedroht schien. Dies war eine klare Absage an nationale Souveränität im Ostblock. Die Doktrin legitimierte sowjetische Interventionen und machte Reformen unmöglich.</p>
+                        </div>
+                        
+                        <h3>Reaktionen:</h3>
+                        <ul class="content-list">
+                            <li><strong>Westliche Proteste:</strong> Scharfe Verurteilung, aber keine militärischen Gegenmaßnahmen.</li>
+                            <li><strong>Innerhalb des Ostblocks:</strong> Jugoslawien und Rumänien verurteilten die Intervention. China distanzierte sich weiter von der UdSSR.</li>
+                            <li><strong>Folgen für die Entspannung:</strong> Kurzfristiger Rückschlag, aber die Entspannungspolitik wurde fortgesetzt.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>2.5 Second Cold War / Neuer Kalter Krieg (1979-1985)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Ende der 1970er Jahre erlebte der Kalte Krieg eine dramatische Verschärfung – der sogenannte "Zweite Kalte Krieg".</p>
+                        
+                        <h3>Sowjetischer Einmarsch in Afghanistan (Dezember 1979):</h3>
+                        <ul class="content-list">
+                            <li><strong>Hintergrund:</strong> Afghanistan hatte eine kommunistische Regierung seit 1978, die jedoch unpopulär war und gegen islamische Aufständische (Mudschaheddin) kämpfte.</li>
+                            <li><strong>Sowjetische Intervention (27. Dezember 1979):</strong> Die UdSSR marschierte mit 100.000 Soldaten ein, um die kommunistische Regierung zu stützen.</li>
+                            <li><strong>Guerilla-Krieg:</strong> Die Mudschaheddin führten einen erbitterten Guerilla-Krieg gegen die Sowjets. Sie wurden massiv von den USA, Pakistan und Saudi-Arabien unterstützt (mit Waffen und Geld).</li>
+                            <li><strong>Sowjetisches Vietnam:</strong> Der Krieg wurde zum Debakel für die UdSSR – hohe Verluste, keine militärische Lösung, internationale Isolation.</li>
+                            <li><strong>Abzug (1989):</strong> Unter Gorbatschow zogen die Sowjets die letzten Truppen ab. Etwa 15.000 sowjetische Soldaten starben, über 1 Million Afghanen.</li>
+                            <li><strong>Langfristige Folgen:</strong> Der Krieg schwächte die UdSSR wirtschaftlich und moralisch. Aus den Mudschaheddin gingen später die Taliban und Al-Qaida hervor.</li>
+                        </ul>
+                        
+                        <h3>NATO-Doppelbeschluss (12. Dezember 1979):</h3>
+                        <ul class="content-list">
+                            <li><strong>Auslöser:</strong> Die UdSSR stationierte ab 1977 moderne SS-20-Mittelstreckenraketen, die Westeuropa bedrohten.</li>
+                            <li><strong>Beschluss:</strong> Falls keine Einigung über Abrüstung erzielt würde, würden ab 1983 US-Pershing II und Cruise Missiles in Westeuropa (vor allem BRD) stationiert.</li>
+                            <li><strong>Doppelstrategie:</strong> Verhandlungen + Aufrüstung (Nachrüstung).</li>
+                            <li><strong>Kontroverse:</strong> Massive Friedensbewegung in Westeuropa protestierte gegen die Stationierung (Friedensdemonstrationen mit Hunderttausenden Teilnehmern).</li>
+                            <li><strong>Stationierung:</strong> Da keine Einigung erzielt wurde, begann 1983 die Stationierung in der BRD, Italien, Großbritannien, Belgien und den Niederlanden.</li>
+                        </ul>
+
+                      <h3>Weitere Krisenpunkte:</h3>
+                        <ul class="content-list">
+                            <li><strong>Carter-Doktrin (1980):</strong> Nach dem sowjetischen Einmarsch in Afghanistan erklärte US-Präsident Jimmy Carter, die USA würden jede sowjetische Expansion im Persischen Golf mit militärischen Mitteln verhindern.</li>
+                            <li><strong>US-Boykott der Olympischen Spiele in Moskau (1980):</strong> Als Protest gegen Afghanistan-Invasion, 65 Staaten schlossen sich an.</li>
+                            <li><strong>Sowjetischer Boykott der Olympischen Spiele in Los Angeles (1984):</strong> Vergeltungsmaßnahme.</li>
+                            <li><strong>Kriegsrecht in Polen (1981):</strong> General Jaruzelski verhängte das Kriegsrecht zur Unterdrückung der Gewerkschaft Solidarność.</li>
+                            <li><strong>Reagan als Hardliner:</strong> US-Präsident Ronald Reagan (1981-1989) bezeichnete die UdSSR als "Reich des Bösen" und rüstete massiv auf.</li>
+                            <li><strong>SDI - "Star Wars" (1983):</strong> Reagan kündigte die Strategic Defense Initiative an – ein weltraumgestütztes Raketenabwehrsystem. Die UdSSR konnte technologisch und finanziell nicht mithalten.</li>
+                        </ul>
+                        
+                        <div class="danger-box">
+                            <strong>Gefahr eines Atomkriegs:</strong>
+                            <p>Der Zweite Kalte Krieg brachte die Welt erneut an den Rand eines Atomkriegs. Im September 1983 schoss die UdSSR ein südkoreanisches Verkehrsflugzeug ab, das in ihren Luftraum eingedrungen war (269 Tote). Im November 1983 interpretierte die UdSSR ein NATO-Manöver ("Able Archer 83") als Vorbereitung auf einen Angriff und versetzte ihre Atomstreitkräfte in Alarmbereitschaft. Nur die Weigerung des sowjetischen Offiziers Stanislaw Petrow, einen angeblichen US-Raketenangriff (Fehlalarm) zu melden, verhinderte möglicherweise einen Atomkrieg.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>2.6 Gorbatschows Reformpolitik – Glasnost und Perestroika</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Mit dem Amtsantritt von <strong>Michail Gorbatschow</strong> als Generalsekretär der KPdSU im März 1985 begann die entscheidende Wende, die zum Ende des Kalten Krieges führte.</p>
+                        
+                        <h3>Die Krise der UdSSR:</h3>
+                        <ul class="content-list">
+                            <li><strong>Wirtschaftliche Stagnation:</strong> Die Planwirtschaft funktionierte nicht mehr, Versorgungsengpässe, technologischer Rückstand.</li>
+                            <li><strong>Rüstungswettlauf:</strong> Die UdSSR gab bis zu 25% des BIP für Militär aus und konnte mit der US-Hochrüstung unter Reagan nicht mithalten.</li>
+                            <li><strong>Afghanistan-Krieg:</strong> Kostspieliges militärisches Debakel.</li>
+                            <li><strong>Tschernobyl (26. April 1986):</strong> Die Reaktorkatastrophe offenbarte die Mängel des sowjetischen Systems.</li>
+                            <li><strong>Unzufriedenheit:</strong> Die Bevölkerung war der Mangelwirtschaft und Unfreiheit überdrüssig.</li>
+                        </ul>
+                        
+                        <h3>Gorbatschows Reformen:</h3>
+                        
+                        <div class="important-box">
+                            <strong>Glasnost (Offenheit/Transparenz):</strong>
+                            <ul class="content-list">
+                                <li>Meinungs- und Pressefreiheit – kritische Diskussionen wurden möglich</li>
+                                <li>Aufarbeitung der stalinistischen Verbrechen</li>
+                                <li>Kulturelle Liberalisierung – verbotene Bücher wurden veröffentlicht</li>
+                                <li>Freilassung politischer Gefangener (z.B. Andrei Sacharow)</li>
+                                <li>Offenheit auch in der Außenpolitik</li>
+                            </ul>
+                            
+                            <strong>Perestroika (Umbau/Umgestaltung):</strong>
+                            <ul class="content-list">
+                                <li>Wirtschaftliche Reformen – mehr Marktwirtschaft, Privatinitiative</li>
+                                <li>Dezentralisierung – mehr Autonomie für Betriebe</li>
+                                <li>Politische Reformen – demokratische Wahlen (1989 erste halbwegs freie Wahlen)</li>
+                                <li>Reduzierung der Macht der Kommunistischen Partei</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Neue Außenpolitik:</h3>
+                        <ul class="content-list">
+                            <li><strong>Ende der Breschnew-Doktrin:</strong> Gorbatschow verkündete, dass die Ostblockstaaten ihren eigenen Weg gehen könnten ("Sinatra-Doktrin": "I did it my way").</li>
+                            <li><strong>Rückzug aus Afghanistan (1989):</strong> Gorbatschow zog die sowjetischen Truppen ab.</li>
+                            <li><strong>Abrüstung:</strong> Intensive Verhandlungen mit den USA über Rüstungskontrolle.</li>
+                            <li><strong>Entspannung:</strong> Gorbatschow wollte die Spannungen mit dem Westen abbauen, um sich auf innere Reformen zu konzentrieren.</li>
+                        </ul>
+                        
+                        <h3>Wichtige Gipfeltreffen:</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">November 1985</div>
+                                <p><strong>Genf:</strong> Erstes Treffen zwischen Gorbatschow und Reagan. Persönlicher Kontakt, aber keine konkreten Ergebnisse.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oktober 1986</div>
+                                <p><strong>Reykjavik:</strong> Gescheiterter, aber wichtiger Gipfel. Gorbatschow schlug radikale Abrüstung vor, Reagan bestand auf SDI. Trotz Scheiterns: Durchbruch in der Atmosphäre.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Dezember 1987</div>
+                                <p><strong>Washington - INF-Vertrag:</strong> Abkommen über die Vernichtung aller landgestützten Mittelstreckenraketen (500-5.500 km Reichweite). Erstmals wurden Atomwaffen nicht nur begrenzt, sondern eine ganze Kategorie abgeschafft. Umfassende Kontrollen und Inspektionen vereinbart.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Dezember 1988</div>
+                                <p><strong>New York:</strong> Gorbatschow verkündete vor der UNO einseitige Truppenreduzierungen in Osteuropa um 500.000 Mann.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Dezember 1989</div>
+                                <p><strong>Malta:</strong> Gorbatschow und US-Präsident George H.W. Bush erklärten das Ende des Kalten Krieges.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <strong>Bedeutung Gorbatschows:</strong>
+                            <p>Gorbatschow wollte die UdSSR reformieren und retten, löste aber unbeabsichtigt deren Zusammenbruch aus. Seine Reformen ermöglichten die friedliche Revolution in Osteuropa 1989, die deutsche Wiedervereinigung 1990 und das Ende des Kalten Krieges. 1990 erhielt er den Friedensnobelpreis. In Russland ist er heute umstritten, im Westen wird er als Held der Freiheit gefeiert.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>2.7 Ende des Kalten Krieges (1989-1991)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p>Das Ende des Kalten Krieges kam schneller und friedlicher als die meisten erwartet hatten.</p>
+                        
+                        <h3>Zusammenbruch des Ostblocks (1989):</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">Juni 1989</div>
+                                <p><strong>Polen:</strong> Erste halbwegs freie Wahlen im Ostblock. Solidarność-Bewegung gewinnt erdrutschartig. Erste nichtkommunistische Regierung (Tadeusz Mazowiecki).</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">September 1989</div>
+                                <p><strong>Ungarn:</strong> Öffnung der Grenze zu Österreich. Tausende DDR-Bürger fliehen in den Westen.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">9. November 1989</div>
+                                <p><strong>Fall der Berliner Mauer:</strong> Nach Montagsdemonstrationen in der DDR öffnet das SED-Regime die Grenze. Symbol des Endes des Kalten Krieges.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">November/Dezember 1989</div>
+                                <p><strong>Tschechoslowakei - "Samtene Revolution":</strong> Friedlicher Sturz der kommunistischen Regierung. Václav Havel wird Präsident.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Dezember 1989</div>
+                                <p><strong>Rumänien:</strong> Gewaltsamer Sturz des Diktators Nicolae Ceaușescu, der hingerichtet wird.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">3. Oktober 1990</div>
+                                <p><strong>Deutsche Wiedervereinigung:</strong> Die DDR tritt der Bundesrepublik bei. Deutschland wird souverän (Zwei-plus-Vier-Vertrag).</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Ende der Sowjetunion (1991):</h3>
+                        <ul class="content-list">
+                            <li><strong>Baltische Staaten:</strong> Litauen, Lettland und Estland erklärten 1990/91 ihre Unabhängigkeit.</li>
+                            <li><strong>Augustputsch (19.-21. August 1991):</strong> Kommunistische Hardliner versuchten, Gorbatschow zu stürzen und die Reformen zu stoppen. Der Putsch scheiterte am Widerstand der Bevölkerung (angeführt von Boris Jelzin in Moskau).</li>
+                            <li><strong>Auflösung der UdSSR (26. Dezember 1991):</strong> Die Sowjetunion hörte offiziell auf zu existieren. 15 unabhängige Staaten entstanden. Gorbatschow trat als Präsident zurück. Die rote Fahne mit Hammer und Sichel wurde vom Kreml eingeholt – die russische Trikolore gehisst.</li>
+                            <li><strong>Russische Föderation:</strong> Boris Jelzin wurde erster Präsident Russlands.</li>
+                            <li><strong>GUS:</strong> Die "Gemeinschaft Unabhängiger Staaten" wurde als loses Bündnis ehemaliger Sowjetrepubliken gegründet.</li>
+                        </ul>
+                        
+                        <h3>Charta von Paris (21. November 1990):</h3>
+                        <ul class="content-list">
+                            <li><strong>Unterzeichner:</strong> 34 Staats- und Regierungschefs (KSZE-Staaten)</li>
+                            <li><strong>Inhalt:</strong> Feierliche Erklärung des Endes der Teilung Europas. Bekenntnis zu Demokratie, Menschenrechten und Rechtsstaatlichkeit. "Neues Zeitalter der Demokratie, des Friedens und der Einheit".</li>
+                            <li><strong>Bedeutung:</strong> Offizielles Ende des Kalten Krieges in Europa.</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <strong>Warum endete der Kalte Krieg friedlich?</strong>
+                            <ul class="content-list">
+                                <li><strong>Gorbatschows Politik:</strong> Keine militärische Intervention mehr im Ostblock</li>
+                                <li><strong>Wirtschaftlicher Kollaps:</strong> Die UdSSR konnte den Rüstungswettlauf nicht mehr finanzieren</li>
+                                <li><strong>Friedliche Revolutionen:</strong> Die Bevölkerungen in Osteuropa forderten Freiheit und Demokratie</li>
+                                <li><strong>Atomwaffen:</strong> Beide Seiten wussten, dass ein Krieg zur gegenseitigen Vernichtung führen würde</li>
+                                <li><strong>Westliche Zurückhaltung:</strong> USA und NATO provozierten nicht, sondern unterstützten den Wandel diplomatisch</li>
+                                <li><strong>KSZE-Prozess:</strong> Helsinki-Schlussakte schuf Rahmen für friedlichen Wandel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kapitel 3: Militärische Strategien während des Kalten Krieges -->
+            <div class="section-card">
+                <h2>3️⃣ Militärische Strategien während des Kalten Krieges</h2>
+                
+                <p>Der Kalte Krieg war auch ein Krieg der Strategien und Doktrinen. Beide Seiten entwickelten komplexe militärische Konzepte, um den Gegner abzuschrecken und im Ernstfall zu besiegen.</p>
+                
+                <div class="collapsible-header">
+                    <h3>3.1 Rüstungswettlauf und nukleare Strategien</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h3>Der atomare Rüstungswettlauf:</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">1945</div>
+                                <p><strong>USA zünden erste Atombombe:</strong> Trinity-Test (16. Juli), dann Hiroshima und Nagasaki (6./9. August). USA haben Atomwaffenmonopol.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">1949</div>
+                                <p><strong>UdSSR zündet erste Atombombe:</strong> Früher als vom Westen erwartet (durch Spionage). Ende des US-Monopols.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">1952/1953</div>
+                                <p><strong>Wasserstoffbomben:</strong> USA (1952) und UdSSR (1953) entwickeln H-Bomben – tausendmal stärker als Atombomben.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">1957</div>
+                                <p><strong>UdSSR startet Sputnik:</strong> Erster künstlicher Satellit. Beweis, dass die UdSSR Interkontinentalraketen (ICBMs) bauen kann. "Sputnik-Schock" im Westen.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">1960er Jahre</div>
+                                <p><strong>Massive Aufrüstung:</strong> Beide Seiten bauen tausende Atomsprengköpfe. U-Boot-gestützte Raketen werden entwickelt. Mehrfachsprengköpfe (MIRVs) ermöglichen Angriff mehrerer Ziele mit einer Rakete.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">Höhepunkt (1980er)</div>
+                                <p><strong>Über 60.000 Atomsprengköpfe weltweit:</strong> USA und UdSSR verfügten zusammen über genug Sprengkraft, um die Erde mehrfach zu vernichten.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Nukleare Strategien:</h3>
+                        
+                        <div class="important-box">
+                            <strong>MAD - Mutual Assured Destruction (Gegenseitig gesicherte Zerstörung):</strong>
+                            <p>Das zentrale Konzept der nuklearen Abschreckung im Kalten Krieg:</p>
+                            <ul class="content-list">
+                                <li><strong>Grundprinzip:</strong> Beide Seiten verfügen über genug Atomwaffen, um den Gegner auch nach einem Erstschlag vollständig zu vernichten (Zweitschlagfähigkeit).</li>
+                                <li><strong>Abschreckung:</strong> Da jeder Angriff zur eigenen Vernichtung führt, wird kein rationaler Akteur angreifen.</li>
+                                <li><strong>Balance of Terror:</strong> Gleichgewicht des Schreckens hält den Frieden – paradoxerweise.</li>
+                                <li><strong>Triade:</strong> Atomwaffen auf drei Plattformen (Landraketen, U-Boote, Bomber) – mindestens eine überlebt jeden Erstschlag.</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Verschiedene Strategien der NATO:</h3>
+                        <ul class="content-list">
+                            <li><strong>Massive Retaliation (1950er):</strong> Bei jedem sowjetischen Angriff (auch konventionell) würden die USA mit massivem Atomschlag antworten. Problem: Unglaubwürdig bei kleineren Konflikten.</li>
+                            
+                            <li><strong>Flexible Response (ab 1967):</strong> Stufenweise Reaktion: konventioneller Angriff → konventionelle Verteidigung, dann taktische Atomwaffen, dann strategische Atomwaffen. Ermöglichte angemessene Reaktion auf verschiedene Bedrohungen.</li>
+                            
+                            <li><strong>Erstschlagsverbot:</strong> NATO versprach, Atomwaffen nur zur Verteidigung einzusetzen (No-First-Use wurde diskutiert, aber nie offiziell erklärt).</li>
+                        </ul>
+                        
+                        <h3>Weltraumrüstung:</h3>
+                        <ul class="content-list">
+                            <li><strong>Wettlauf ins All:</strong> UdSSR zunächst überlegen (Sputnik 1957, Juri Gagarin 1961). USA holten auf (Mondlandung 1969).</li>
+                            <li><strong>Militärische Nutzung:</strong> Aufklärungssatelliten, Frühwarnsysteme, Kommunikation.</li>
+                            <li><strong>SDI (1983):</strong> Reagans "Star Wars" – weltraumgestütztes Raketenabwehrsystem. Technisch unrealistisch, aber politisch wirksam (UdSSR konnte nicht mithalten).</li>
+                        </ul>
+                        
+                        <div class="danger-box">
+                            <strong>Die Gefahr des Atomkriegs:</strong>
+                            <p>Der Kalte Krieg war geprägt von der ständigen Gefahr, dass aus einem Missverständnis, einem technischen Fehler oder einer Fehlkalkulation ein nuklearer Weltkrieg entstehen könnte. Mehrmals standen wir am Rand der Katastrophe (Kubakrise 1962, Able Archer 1983, diverse Fehlalarme). Nur Glück, Besonnenheit und die Abschreckungswirkung der Atomwaffen verhinderten die Katastrophe.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>3.2 Konventionelle Streitkräfte und Stellvertreterkriege</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h3>Konventionelle Überlegenheit des Warschauer Pakts:</h3>
+                        <ul class="content-list">
+                            <li><strong>Zahlenmäßige Überlegenheit:</strong> Der Warschauer Pakt hatte deutlich mehr Panzer, Artillerie und Soldaten in Europa als die NATO.</li>
+                            <li><strong>Angriffsplanung:</strong> Sowjetische Kriegspläne sahen einen schnellen Vorstoß bis zum Rhein vor.</li>
+                            <li><strong>NATO-Strategie:</strong> Nutzung taktischer Atomwaffen zur Kompensation der konventionellen Unterlegenheit.</li>
+                        </ul>
+                        
+                        <h3>Stellvertreterkriege:</h3>
+                        <p>Da ein direkter Krieg zwischen den Supermächten zu gefährlich war, trugen sie ihre Konflikte in der "Dritten Welt" aus:</p>
+                        
+                        <ul class="content-list">
+                            <li><strong>Koreakrieg (1950-1953):</strong> Erster großer Stellvertreterkrieg</li>
+                            <li><strong>Vietnamkrieg (1964-1975):</strong> USA vs. Nordvietnam (unterstützt von UdSSR/China)</li>
+                            <li><strong>Afghanistan (1979-1989):</strong> UdSSR vs. Mudschaheddin (unterstützt von USA)</li>
+                            <li><strong>Angola (1975-2002):</strong> Kubanische und sowjetische Truppen vs. US-unterstützte Rebellen</li>
+                            <li><strong>Nicaragua (1980er):</strong> USA unterstützten Contras gegen sandinistische Regierung</li>
+                            <li><strong>Äthiopien/Somalia (1970er/80er):</strong> Wechselnde Allianzen und Interventionen</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <strong>Muster der Stellvertreterkriege:</strong>
+                            <p>Supermächte unterstützten lokale Akteure mit Waffen, Geld, Ausbildung und manchmal Truppen. Sie kämpften nie direkt gegeneinander. Ziel: Einflussgewinn ohne Risiko eines Atomkriegs. Folge: Verheerend für die betroffenen Länder (Millionen Tote, Zerstörung, Trauma).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Zusammenfassung und Bedeutung -->
+            <div class="section-card">
+                <h2>📊 Zusammenfassung und historische Bedeutung</h2>
+                
+                <h3>Phasen des Kalten Krieges im Überblick:</h3>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>Phase</th>
+                        <th>Zeitraum</th>
+                        <th>Charakteristik</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Beginn und Verhärtung</strong></td>
+                        <td>1947-1953</td>
+                        <td>Truman-Doktrin, Marshall-Plan, Berlin-Blockade, NATO-Gründung, Koreakrieg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Koexistenz und Krisen</strong></td>
+                        <td>1953-1962</td>
+                        <td>Chruschtschows "Friedliche Koexistenz", Ungarn-Aufstand, Mauerbau, Kubakrise</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entspannung (Détente)</strong></td>
+                        <td>1963-1979</td>
+                        <td>Rüstungskontrolle (SALT), Ostpolitik, KSZE, Vietnamkrieg, Prager Frühling</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zweiter Kalter Krieg</strong></td>
+                        <td>1979-1985</td>
+                        <td>Afghanistan, NATO-Doppelbeschluss, Reagan-Aufrüstung, höchste Spannungen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ende des Kalten Krieges</strong></td>
+                        <td>1985-1991</td>
+                        <td>Gorbatschows Reformen, Fall der Mauer, Zusammenbruch der UdSSR</td>
+                    </tr>
+                </table>
+                
+                <h3>Ursachen für das Ende des Kalten Krieges:</h3>
+                
+                <div class="highlight-box">
+                    <ul class="content-list">
+                        <li><strong>Wirtschaftliche Erschöpfung der UdSSR:</strong> Die sowjetische Planwirtschaft konnte mit dem Westen nicht mithalten. Der Rüstungswettlauf überlastete die Wirtschaft.</li>
+                        <li><strong>Gorbatschows Reformen:</strong> Glasnost und Perestroika sollten die UdSSR retten, führten aber zu ihrem Zusammenbruch.</li>
+                        <li><strong>Systemkonkurrenz verloren:</strong> Der Kommunismus hatte sich als wirtschaftlich und politisch unterlegen erwiesen.</li>
+                        <li><strong>Friedliche Revolutionen 1989:</strong> Die Bevölkerungen in Osteuropa forderten Freiheit – die UdSSR intervenierte nicht mehr.</li>
+                        <li><strong>KSZE-Prozess:</strong> Helsinki-Schlussakte legitimierte Menschenrechtsforderungen und schuf Kommunikationskanäle.</li>
+                        <li><strong>Persönlichkeiten:</strong> Gorbatschow, Reagan, Bush, Kohl, Walesa und andere Akteure trugen zum friedlichen Ende bei.</li>
+                    </ul>
+                </div>
+                
+                <h3>Folgen des Kalten Krieges:</h3>
+                
+                <ul class="content-list">
+                    <li><strong>Ende der bipolaren Weltordnung:</strong> USA als einzige Supermacht ("unipolare Moment"). Heute: Multipolare Welt (USA, China, EU, Russland).</li>
+                    <li><strong>Demokratisierung:</strong> Viele ehemals kommunistische Staaten wurden Demokratien (Mittel-/Osteuropa, Baltikum).</li>
+                    <li><strong>NATO- und EU-Erweiterung:</strong> Viele Ostblockstaaten traten NATO und EU bei.</li>
+                    <li><strong>Wiedervereinigung Deutschlands:</strong> Deutschland wurde wieder souverän und vereinigt.</li>
+                    <li><strong>Neue Konflikte:</strong> Jugoslawien-Kriege, Konflikte im Kaukasus (Tschetschenien, Georgien), Nationalitätenkonflikte.</li>
+                    <li><strong>Wirtschaftlicher Schock:</strong> Transformation von Plan- zu Marktwirtschaft war schmerzhaft (besonders in Russland).</li>
+                    <li><strong>Abrüstung:</strong> START-Verträge reduzierten Atomwaffenarsenale deutlich.</li>
+                    <li><strong>Globalisierung:</strong> Wegfall der ideologischen Blockade beschleunigte wirtschaftliche Globalisierung.</li>
+                    <li><strong>Neue Bedrohungen:</strong> Internationaler Terrorismus, "Schurkenstaaten", regionale Konflikte ersetzten die Ost-West-Konfrontation.</li>
+                    <li><strong>Russland heute:</strong> Putin versucht, Russlands Großmachtstatus wiederherzustellen (Ukraine-Konflikt, Syrien). "Neuer Kalter Krieg"?</li>
+                </ul>
+                
+                <h3>Bewertung des Kalten Krieges:</h3>
+                
+                <div class="important-box">
+                    <strong>Positiv:</strong>
+                    <ul class="content-list">
+                        <li>Kein direkter Krieg zwischen den Supermächten – Atomkrieg vermieden</li>
+                        <li>Friedliches Ende ohne große Gewalt</li>
+                        <li>Triumph von Demokratie und Freiheit über Diktatur</li>
+                        <li>Rüstungskontrolle und Abrüstung möglich</li>
+                        <li>Europäische Integration beschleunigt</li>
+                    </ul>
+                </div>
+                
+                <div class="danger-box">
+                    <strong>Negativ:</strong>
+                    <ul class="content-list">
+                        <li>Millionen Tote in Stellvertreterkriegen (Korea, Vietnam, Afghanistan, Angola, etc.)</li>
+                        <li>Enorme Ressourcen für Rüstung verschwendet statt für Entwicklung</li>
+                        <li>Unterdrückung von Freiheit und Demokratie in vielen Ländern</li>
+                        <li>Nukleares Wettrüsten – die Menschheit lebte 45 Jahre unter der Bedrohung der totalen Vernichtung</li>
+                        <li>Teilung Europas und Deutschlands – getrennte Familien, Mauertote</li>
+                        <li>Unterstützung von Diktatoren auf beiden Seiten aus strategischen Gründen</li>
+                    </ul>
+                </div>
+                
+                <h3>Lehren aus dem Kalten Krieg:</h3>
+                
+                <ul class="content-list">
+                    <li><strong>Dialog ist wichtig:</strong> Kommunikation und Diplomatie können Kriege verhindern ("Heißer Draht").</li>
+                    <li><strong>Rüstungskontrolle notwendig:</strong> Abrüstungsverträge reduzieren Gefahren und Kosten.</li>
+                    <li><strong>Ideologien sind gefährlich:</strong> Ideologische Verblendung führt zu Konfrontation und Leid.</li>
+                    <li><strong>Atomwaffen sind keine Lösung:</strong> Sie schaffen nur gegenseitige Bedrohung.</li>
+                    <li><strong>Freiheit und Menschenrechte:</strong> Langfristig setzen sich Demokratie und Freiheit durch – der Kommunismus scheiterte.</li>
+                    <li><strong>Wirtschaft entscheidet:</strong> Die UdSSR verlor den Kalten Krieg, weil ihre Wirtschaft dem Westen unterlegen war.</li>
+                    <li><strong>Friedlicher Wandel möglich:</strong> Der Kalte Krieg endete ohne großen Krieg – ein Wunder der Geschichte.</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>Relevanz für heute:</strong>
+                    <p>Der Kalte Krieg ist Geschichte, aber seine Strukturen wirken nach. Die NATO existiert noch. Russland fühlt sich von der NATO-Osterweiterung bedroht. Der Ukraine-Konflikt (seit 2014) und Russlands Krieg gegen die Ukraine (seit 2022) werden manchmal als "Neuer Kalter Krieg" bezeichnet. China ist zur neuen Herausforderung für den Westen geworden. Die Gefahr nuklearer Waffen besteht weiter (Nordkorea, Iran, Modernisierung der Arsenale).</p>
+                    <p><strong>Die zentrale Frage bleibt:</strong> Wie können Staaten mit unterschiedlichen Systemen und Interessen friedlich zusammenleben, ohne dass es zum Krieg kommt?</p>
+                </div>
+            </div>
+
+            <!-- Abitur-relevante Aspekte -->
+            <div class="section-card">
+                <h2>🎓 Wichtige Aspekte für das Abitur</h2>
+                
+                <h3>Zentrale Begriffe und Konzepte:</h3>
+                <ul class="content-list">
+                    <li><strong>Kalter Krieg:</strong> Systemkonflikt ohne direkte militärische Auseinandersetzung</li>
+                    <li><strong>Bipolare Weltordnung:</strong> Aufteilung der Welt in zwei Blöcke (USA vs. UdSSR)</li>
+                    <li><strong>Containment/Eindämmung:</strong> US-Strategie zur Begrenzung des Kommunismus</li>
+                    <li><strong>Eiserner Vorhang:</strong> Symbol für die Teilung Europas (Churchill 1946)</li>
+                    <li><strong>Truman-Doktrin:</strong> USA unterstützen "freie Völker" gegen Kommunismus</li>
+                    <li><strong>Marshall-Plan:</strong> Wirtschaftliche Wiederaufbauhilfe für Westeuropa</li>
+                    <li><strong>NATO vs. Warschauer Pakt:</strong> Militärische Bündnissysteme</li>
+                    <li><strong>MAD:</strong> Mutual Assured Destruction – gegenseitig gesicherte Zerstörung</li>
+                    <li><strong>Stellvertreterkriege:</strong> Konflikte, in denen Supermächte indirekt kämpfen</li>
+                    <li><strong>Entspannungspolitik/Détente:</strong> Phase der Annäherung (1960er-70er)</li>
+                    <li><strong>KSZE/Helsinki:</strong> Konferenz für Sicherheit und Zusammenarbeit in Europa</li>
+                    <li><strong>Glasnost und Perestroika:</strong> Gorbatschows Reformpolitik</li>
+                    <li><strong>Breschnew-Doktrin:</strong> UdSSR beanspruchte Interventionsrecht im Ostblock</li>
+                </ul>
+                
+                <h3>Wichtige Daten (chronologisch):</h3>
+                <ul class="content-list">
+                    <li><strong>1947:</strong> Truman-Doktrin, Marshall-Plan – Beginn des Kalten Krieges</li>
+                    <li><strong>1948/49:</strong> Berlin-Blockade und Luftbrücke</li>
+                    <li><strong>1949:</strong> Gründung der NATO, Gründung der BRD und DDR, erste sowjetische Atombombe</li>
+                    <li><strong>1950-1953:</strong> Koreakrieg</li>
+                    <li><strong>1955:</strong> Warschauer Pakt gegründet</li>
+                    <li><strong>1961:</strong> Bau der Berliner Mauer</li>
+                    <li><strong>1962:</strong> Kubakrise</li>
+                    <li><strong>1964-1975:</strong> Vietnamkrieg (US-Engagement)</li>
+                    <li><strong>1968:</strong> Prager Frühling und Breschnew-Doktrin</li>
+                    <li><strong>1972:</strong> SALT I, Grundlagenvertrag BRD-DDR</li>
+                    <li><strong>1975:</strong> KSZE-Schlussakte von Helsinki</li>
+                    <li><strong>1979:</strong> NATO-Doppelbeschluss, Sowjetischer Einmarsch in Afghanistan</li>
+                    <li><strong>1985:</strong> Gorbatschow wird Generalsekretär</li>
+                    <li><strong>1987:</strong> INF-Vertrag</li>
+                    <li><strong>1989:</strong> Fall der Berliner Mauer, Zusammenbruch des Ostblocks</li>
+                    <li><strong>1990:</strong> Deutsche Wiedervereinigung, Charta von Paris</li>
+                    <li><strong>1991:</strong> Auflösung der Sowjetunion, Ende des Kalten Krieges</li>
+                </ul>
+                
+                <h3>Mögliche Abitur-Aufgabenstellungen:</h3>
+                <ul class="content-list">
+                    <li>Analysieren Sie die Ursachen des Kalten Krieges</li>
+                    <li>Erläutern Sie die Rolle der Atomwaffen im Kalten Krieg</li>
+                    <li>Vergleichen Sie die Kubakrise mit der Berlin-Blockade</li>
+                    <li>Bewerten Sie die Bedeutung der KSZE für das Ende des Kalten Krieges</li>
+                    <li>Erörtern Sie, warum der Kalte Krieg friedlich endete</li>
+                    <li>Analysieren Sie die Rolle Gorbatschows beim Ende des Kalten Krieges</li>
+                    <li>Erklären Sie das Konzept der "Abschreckung" im Kalten Krieg</li>
+                    <li>Untersuchen Sie die Auswirkungen des Kalten Krieges auf Deutschland</li>
+                    <li>Diskutieren Sie, ob der Begriff "Kalter Krieg" angemessen ist</li>
+                    <li>Vergleichen Sie Entspannungs- und Konfrontationsphasen des Kalten Krieges</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Kalter Krieg (1947-1991)</strong> – Ein Überblick über den globalen Ost-West-Konflikt</p>
+            <p>Von der Blockbildung über Stellvertreterkriege und Entspannungspolitik bis zum friedlichen Ende durch Gorbatschows Reformen</p>
+            <p style="margin-top: 15px; color: #95a5a6; font-size: 0.85em;">
+                © 2026 Geschichte Abitur Lernplattform | Alle Inhalte sind faktenkorrekt und abiturgerecht aufbereitet
+            </p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections functionality
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    // Toggle active class on header
+                    this.classList.toggle('active');
+                    
+                    // Toggle active class on content
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                    
+                    // Smooth scroll to header if opening
+                    if (content.classList.contains('active')) {
+                        setTimeout(() => {
+                            this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 100);
+                    }
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                });
+            });
+
+            // Scroll to top button functionality
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            // Scroll to top when button is clicked
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ 
+                    top: 0, 
+                    behavior: 'smooth' 
+                });
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Press 'T' to scroll to top
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey && !e.metaKey) {
+                    const activeElement = document.activeElement;
+                    // Only trigger if not typing in an input field
+                    if (activeElement.tagName !== 'INPUT' && 
+                        activeElement.tagName !== 'TEXTAREA' && 
+                        !activeElement.isContentEditable) {
+                        window.scrollTo({ 
+                            top: 0, 
+                            behavior: 'smooth' 
+                        });
+                    }
+                }
+                
+                // Press 'Escape' to close all collapsible sections
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.collapsible-content.active').forEach(content => {
+                        content.classList.remove('active');
+                        content.previousElementSibling.classList.remove('active');
+                    });
+                }
+            });
+
+            // Add animation when sections come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all section cards
+            document.querySelectorAll('.section-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Console message
+            console.log('✅ Kalter Krieg (1947-1991) - Seite erfolgreich geladen!');
+            console.log('💡 Tastatur-Shortcuts:');
+            console.log('   - Drücke "T" um nach oben zu scrollen');
+            console.log('   - Drücke "Escape" um alle Abschnitte zu schließen');
+        });
+
+        // Print preparation
+        window.addEventListener('beforeprint', function() {
+            // Expand all sections before printing
+            document.querySelectorAll('.collapsible-content').forEach(content => {
+                content.style.maxHeight = 'none';
+            });
+        });
+
+        window.addEventListener('afterprint', function() {
+            // Restore collapsible state after printing
+            document.querySelectorAll('.collapsible-content:not(.active)').forEach(content => {
+                content.style.maxHeight = '0';
+            });
+        });
+    </script>
+</body>
+</html>
