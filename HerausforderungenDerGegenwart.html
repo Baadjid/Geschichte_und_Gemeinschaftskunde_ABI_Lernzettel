@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herausforderungen der Gegenwart (1991-heute) - Geschichte Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* Section Card Styles */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .section-card h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .section-card h4 {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .section-card p {
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .section-card ul, .section-card ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .section-card li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        
+        /* Collapsible Headers */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        
+        .collapsible-inner {
+            padding: 20px 10px;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid var(--success-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .box-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1em;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .section-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🌐 Herausforderungen der Gegenwart (1991-heute)</h1>
+            <p class="subtitle">Die Welt nach dem Ende des Kalten Krieges</p>
+            <a href="index.html" class="back-link">← Zurück zur Übersicht</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+          <!-- Einleitung -->
+            <div class="section-card">
+                <h2>Einleitung: Die Welt nach 1991</h2>
+                <p>
+                    Mit dem Ende des Kalten Krieges 1991 und dem Zerfall der Sowjetunion begann eine neue Ära der Weltpolitik. 
+                    Die bipolare Ordnung zwischen USA und UdSSR wurde abgelöst durch eine zunächst unipolare, dann zunehmend 
+                    multipolare Weltordnung. Neue Hoffnungen auf eine "Friedensdividende" und demokratische Entwicklung standen 
+                    gleichzeitig neuen Herausforderungen gegenüber: ethnische Konflikte, internationaler Terrorismus, 
+                    Klimawandel, Migrationsbewegungen und das Wiederaufleben autoritärer Machtpolitik.
+                </p>
+                <p>
+                    Deutschland erlebte die Wiedervereinigung und musste seine neue Rolle in Europa und der Welt definieren. 
+                    Die Europäische Union erweiterte sich nach Osten und vertiefte ihre Integration, stand aber auch vor 
+                    existenziellen Krisen. Diese Epoche ist geprägt von der Spannung zwischen Globalisierung und nationalen 
+                    Interessen, zwischen multilateraler Kooperation und unilateralem Handeln.
+                </p>
+            </div>
+
+            <!-- Von der bipolaren Ordnung zur neuen Unübersichtlichkeit -->
+            <div class="section-card">
+                <h2>1. Von der bipolaren Ordnung zur neuen Unübersichtlichkeit</h2>
+                
+                <div class="collapsible-header">
+                    <h3>1.1 Das Ende der bipolaren Weltordnung (1989-1991)</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Zusammenbruch des Ostblocks</h4>
+                        <p>
+                            Der Fall der Berliner Mauer am 9. November 1989 symbolisierte das Ende der Teilung Europas. 
+                            In rascher Folge brachen die kommunistischen Regime in Osteuropa zusammen: Polen, Ungarn, 
+                            Tschechoslowakei, Bulgarien und Rumänien. Die "samtenen Revolutionen" (mit Ausnahme Rumäniens) 
+                            zeigten den friedlichen Machtwechsel von kommunistischen zu demokratischen Systemen.
+                        </p>
+                        
+                        <h4>Auflösung der Sowjetunion (1991)</h4>
+                        <p>
+                            Gorbatschows Reformpolitik (Glasnost und Perestroika) hatte unbeabsichtigt den Zerfall der UdSSR 
+                            beschleunigt. Der gescheiterte Putsch konservativer Kräfte im August 1991 schwächte Gorbatschow 
+                            endgültig. Am 25. Dezember 1991 trat er zurück, die Sowjetunion hörte auf zu existieren. 
+                            15 unabhängige Nachfolgestaaten entstanden, darunter Russland als Rechtsnachfolger.
+                        </p>
+
+                        <div class="info-box">
+                            <div class="box-title">📌 Folgen des Zusammenbruchs</div>
+                            <ul>
+                                <li><strong>Politisch:</strong> Ende der ideologischen Blockkonfrontation zwischen Kapitalismus und Kommunismus</li>
+                                <li><strong>Militärisch:</strong> Auflösung des Warschauer Pakts (1991), NATO als einziges großes Militärbündnis</li>
+                                <li><strong>Wirtschaftlich:</strong> Transformationsprozess von Plan- zu Marktwirtschaft in Osteuropa</li>
+                                <li><strong>Gesellschaftlich:</strong> Demokratisierungswelle, aber auch Unsicherheit und soziale Verwerfungen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>1.2 Die "Neue Weltordnung" der 1990er Jahre</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Unipolare Moment der USA</h4>
+                        <p>
+                            US-Präsident George H.W. Bush proklamierte 1990 eine "New World Order" unter amerikanischer Führung. 
+                            Die USA waren die einzige verbliebene Supermacht mit globaler militärischer, wirtschaftlicher und 
+                            kultureller Dominanz. Der Golfkrieg 1991 gegen den Irak demonstrierte die militärische Überlegenheit 
+                            und die Fähigkeit, eine internationale Koalition unter UN-Mandat zu führen.
+                        </p>
+
+                        <h4>Hoffnung auf Demokratisierung und Frieden</h4>
+                        <p>
+                            Francis Fukuyama sprach vom "Ende der Geschichte" - der Triumph liberaler Demokratie und 
+                            Marktwirtschaft schien unaufhaltsam. Die 1990er Jahre sahen tatsächlich eine Welle von 
+                            Demokratisierungen in Osteuropa, Lateinamerika und Teilen Asiens und Afrikas. Die Mitgliederzahl 
+                            demokratischer Staaten stieg deutlich an.
+                        </p>
+
+                        <h4>Grenzen der neuen Ordnung</h4>
+                        <p>
+                            Die Euphorie wurde schnell gedämpft durch:
+                        </p>
+                        <ul>
+                            <li><strong>Jugoslawienkriege (1991-1999):</strong> Ethnische Säuberungen und Genozid mitten in Europa (Srebrenica 1995)</li>
+                            <li><strong>Ruanda (1994):</strong> Völkermord mit ca. 800.000-1 Million Toten, internationale Gemeinschaft blieb untätig</li>
+                            <li><strong>Somalia (1992-1993):</strong> Gescheiterte humanitäre Intervention der USA</li>
+                            <li><strong>Tschetschenien-Kriege:</strong> Russlands brutale Unterdrückung separatistischer Bestrebungen</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <div class="box-title">⚠️ Das Dilemma humanitärer Interventionen</div>
+                            Die 1990er Jahre stellten die Frage: Wann und wie soll die internationale Gemeinschaft bei 
+                            Menschenrechtsverletzungen eingreifen? Die NATO-Intervention im Kosovo 1999 erfolgte ohne 
+                            UN-Mandat und setzte einen umstrittenen Präzedenzfall. Das Konzept der "Responsibility to Protect" 
+                            (R2P, 2005) sollte diese Frage regeln, bleibt aber bis heute kontrovers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>1.3 Aufstieg neuer Mächte und multipolare Ordnung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>China als Weltmacht</h4>
+                        <p>
+                            Seit Deng Xiaopings Reformen (1978) erlebte China ein beispielloses Wirtschaftswachstum. 
+                            Der Beitritt zur Welthandelsorganisation (WTO) 2001 beschleunigte Chinas Integration in die 
+                            Weltwirtschaft. Heute ist China:
+                        </p>
+                        <ul>
+                            <li>Zweitgrößte Volkswirtschaft der Welt (nach nominellem BIP)</li>
+                            <li>Größter Handelspartner vieler Staaten</li>
+                            <li>Militärisch stark aufgerüstet</li>
+                            <li>Selbstbewusst auf der Weltbühne (z.B. "Neue Seidenstraße"-Initiative BRI seit 2013)</li>
+                        </ul>
+                        <p>
+                            Unter Xi Jinping (seit 2013) verfolgt China eine assertivere Außenpolitik und ein autoritäres 
+                            Entwicklungsmodell als Alternative zur westlichen Demokratie.
+                        </p>
+
+                        <h4>Russland unter Putin</h4>
+                        <p>
+                            Nach dem chaotischen Niedergang der 1990er Jahre unter Jelzin konsolidierte Wladimir Putin 
+                            (Präsident seit 2000, mit Unterbrechung 2008-2012) Russlands Macht:
+                        </p>
+                        <ul>
+                            <li>Autoritäre Machtkonzentration, Einschränkung der Pressefreiheit</li>
+                            <li>Wiedererstarken durch Öl- und Gasreichtum</li>
+                            <li>Revision der postsowjetischen Ordnung: Georgien-Krieg 2008, Annexion der Krim 2014, Krieg in der Ostukraine</li>
+                            <li>Vollständige Invasion der Ukraine 2022 - größter Krieg in Europa seit 1945</li>
+                            <li>Einflussnahme durch Cyberattacken und Desinformationskampagnen</li>
+                        </ul>
+
+                        <h4>Weitere aufstrebende Mächte (BRICS)</h4>
+                        <p>
+                            Brasilien, Indien und Südafrika bilden zusammen mit Russland und China die BRICS-Staaten, 
+                            die seit 2009 regelmäßig Gipfeltreffen abhalten. Sie repräsentieren etwa 40% der Weltbevölkerung 
+                            und fordern mehr Mitsprache in internationalen Institutionen. Indien entwickelt sich zur 
+                            bevölkerungsreichsten Nation und wichtigen Wirtschaftsmacht.
+                        </p>
+
+                        <div class="info-box">
+                            <div class="box-title">🌍 Multipolare Weltordnung</div>
+                            Die heutige Weltordnung ist gekennzeichnet durch:
+                            <ul>
+                                <li>Mehrere Machtzentren (USA, China, EU, Russland, regionale Mächte)</li>
+                                <li>Systemischer Wettbewerb zwischen liberalen Demokratien und autoritären Regimen</li>
+                                <li>Geschwächte multilaterale Institutionen (UN-Sicherheitsrat oft blockiert)</li>
+                                <li>Fragmentierung statt globaler Kooperation bei vielen Themen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Globale Bedrohung durch Terrorismus -->
+            <div class="section-card">
+                <h2>2. Globale Bedrohung durch Terrorismus</h2>
+                
+                <div class="collapsible-header">
+                    <h3>2.1 Der 11. September 2001 als Zäsur</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Die Anschläge und ihre unmittelbaren Folgen</h4>
+                        <p>
+                            Am 11. September 2001 entführten 19 Terroristen der islamistischen Organisation Al-Qaida vier 
+                            Passagierflugzeuge. Zwei davon rasten in die Zwillingstürme des World Trade Centers in New York, 
+                            ein weiteres ins Pentagon bei Washington. Das vierte Flugzeug stürzte in Pennsylvania ab, nachdem 
+                            Passagiere die Kontrolle zurückzuerlangen versuchten. Knapp 3.000 Menschen starben bei den Anschlägen.
+                        </p>
+                        <p>
+                            Die Anschläge stellten die schwerste Attacke auf amerikanischem Boden seit Pearl Harbor dar und 
+                            führten zu einer grundlegenden Neuausrichtung der US-Außen- und Sicherheitspolitik.
+                        </p>
+
+                        <div class="danger-box">
+                            <div class="box-title">💥 Paradigmenwechsel in der Sicherheitspolitik</div>
+                            <ul>
+                                <li><strong>War on Terror:</strong> Präsident George W. Bush erklärte den "Krieg gegen den Terror" als langfristigen Kampf</li>
+                                <li><strong>NATO-Bündnisfall:</strong> Erstmals wurde Artikel 5 (Beistandspflicht) aktiviert</li>
+                                <li><strong>USA PATRIOT Act:</strong> Massive Ausweitung von Überwachungsbefugnissen der Sicherheitsbehörden</li>
+                                <li><strong>Bush-Doktrin:</strong> Recht auf präventive Selbstverteidigung gegen potenzielle Bedrohungen</li>
+                            </ul>
+                        </div>
+
+                        <h4>Afghanistan-Krieg (2001-2021)</h4>
+                        <p>
+                            Im Oktober 2001 begannen die USA und Verbündete (darunter Deutschland) den Krieg in Afghanistan 
+                            gegen das Taliban-Regime, das Al-Qaida Unterschlupf gewährt hatte. Zunächst erfolgreich, 
+                            entwickelte sich daraus ein 20 Jahre währender Konflikt:
+                        </p>
+                        <ul>
+                            <li>Sturz der Taliban innerhalb weniger Wochen (Ende 2001)</li>
+                            <li>Aufbau demokratischer Strukturen, aber instabile Regierung</li>
+                            <li>Rückkehr der Taliban als Aufstandsbewegung ab 2003</li>
+                            <li>Zunehmende Kriegsmüdigkeit in westlichen Staaten</li>
+                            <li>Chaotischer Abzug der internationalen Truppen 2021</li>
+                            <li>Erneute Taliban-Machtübernahme im August 2021</li>
+                        </ul>
+
+                        <h4>Irak-Krieg (2003-2011)</h4>
+                        <p>
+                            2003 marschierten die USA mit Großbritannien und kleineren Verbündeten im Irak ein, offiziell 
+                            wegen angeblicher Massenvernichtungswaffen (die nie gefunden wurden) und Verbindungen zu Al-Qaida 
+                            (die nicht existierten). Deutschland unter Kanzler Schröder verweigerte die Teilnahme - eine 
+                            historische Distanzierung von den USA.
+                        </p>
+                        <p>
+                            Der Krieg führte zu:
+                        </p>
+                        <ul>
+                            <li>Sturz Saddam Husseins, aber Zerfall staatlicher Ordnung</li>
+                            <li>Über 100.000 zivile Todesopfer (Schätzungen variieren stark)</li>
+                            <li>Sektierischer Bürgerkrieg zwischen Schiiten und Sunniten</li>
+                            <li>Machtvakuum, das später den Aufstieg des "Islamischen Staates" begünstigte</li>
+                            <li>Beschädigung der transatlantischen Beziehungen und der UN-Autorität</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>2.2 Islamistischer Terrorismus weltweit</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Al-Qaida und ihre Entwicklung</h4>
+                        <p>
+                            Al-Qaida ("Die Basis") wurde Ende der 1980er Jahre von Osama bin Laden gegründet, zunächst 
+                            im Kampf gegen die sowjetische Besatzung Afghanistans. Ihre Ideologie verbindet:
+                        </p>
+                        <ul>
+                            <li>Radikale Auslegung des Islam (Salafismus/Wahhabismus)</li>
+                            <li>Kampf gegen "ungläubige" westliche Einflüsse in muslimischen Ländern</li>
+                            <li>Ablehnung "korrupter" arabischer Regime</li>
+                            <li>Etablierung eines weltweiten Kalifats als Endziel</li>
+                        </ul>
+                        <p>
+                            Nach 9/11 erfolgte die Dezentralisierung: Regionale Ableger entstanden (Al-Qaida im Maghreb, 
+                            auf der Arabischen Halbinsel, in Ostafrika). Osama bin Laden wurde 2011 von US-Spezialeinheiten 
+                            in Pakistan getötet, die Organisation blieb aber aktiv.
+                        </p>
+
+                        <h4>Der "Islamische Staat" (IS/ISIS/Daesh)</h4>
+                        <p>
+                            2014 rief die Terrororganisation "Islamischer Staat" ein Kalifat im Irak und Syrien aus:
+                        </p>
+                        <ul>
+                            <li>Kontrollierte zeitweise Gebiete mit 8-12 Millionen Einwohnern</li>
+                            <li>Extremste Form islamistischen Terrors: Massenhinrichtungen, Versklavung, Zerstörung von Kulturerbe</li>
+                            <li>Professionelle Propaganda und Social-Media-Nutzung zur Rekrutierung</li>
+                            <li>Zehntausende ausländische Kämpfer, auch aus Europa</li>
+                            <li>Terroranschläge weltweit inspiriert (Paris 2015, Brüssel 2016, Berlin 2016, u.v.m.)</li>
+                            <li>Territoriale Niederlage 2017-2019 durch internationale Koalition</li>
+                            <li>Als Untergrundorganisation weiterhin aktiv</li>
+                        </ul>
+
+                        <h4>Anschläge in Europa</h4>
+                        <p>
+                            Europa wurde wiederholt Ziel islamistischer Anschläge:
+                        </p>
+                        <ul>
+                            <li><strong>Madrid 2004:</strong> Zuganschläge, 191 Tote</li>
+                            <li><strong>London 2005:</strong> U-Bahn- und Bus-Anschläge, 52 Tote</li>
+                            <li><strong>Paris 2015:</strong> Koordinierte Anschläge (Bataclan, Stade de France), 130 Tote</li>
+                            <li><strong>Brüssel 2016:</strong> Flughafen und Metro, 32 Tote</li>
+                            <li><strong>Berlin 2016:</strong> LKW-Anschlag auf Weihnachtsmarkt, 12 Tote</li>
+                            <li><strong>Manchester 2017, Nizza 2016, Wien 2020:</strong> und viele weitere</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <div class="box-title">⚠️ Gesellschaftliche Folgen in Europa</div>
+                            <ul>
+                                <li>Verstärkte Sicherheitsmaßnahmen und Überwachung</li>
+                                <li>Debatte über Integration muslimischer Minderheiten</li>
+                                <li>Erstarken rechtspopulistischer und islamfeindlicher Bewegungen</li>
+                                <li>Spannungsfeld zwischen Sicherheit und Freiheitsrechten</li>
+                                <li>Herausforderung durch "homegrown terrorists" (in Europa aufgewachsene Täter)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>2.3 Andere Formen des Terrorismus</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Rechtsextremer Terrorismus</h4>
+                        <p>
+                            Neben islamistischem Terror stellt rechtsextremer Terrorismus eine wachsende Bedrohung dar:
+                        </p>
+                        <ul>
+                            <li><strong>NSU in Deutschland (2000-2011):</strong> 10 Morde, jahrelang unentdeckt, Versagen der Sicherheitsbehörden</li>
+                            <li><strong>Anders Breivik, Norwegen (2011):</strong> 77 Tote, richtete sich gegen Multikulturalismus</li>
+                            <li><strong>Christchurch, Neuseeland (2019):</strong> 51 Tote bei Anschlag auf Moscheen</li>
+                            <li><strong>Halle, Deutschland (2019):</strong> Anschlag auf Synagoge, 2 Tote</li>
+                            <li><strong>Hanau, Deutschland (2020):</strong> Rassistisch motivierter Anschlag, 9 Tote</li>
+                            <li><strong>Buffalo, USA (2022):</strong> Rassistischer Anschlag in Supermarkt, 10 Tote</li>
+                        </ul>
+
+                        <h4>Cyberterrorismus</h4>
+                        <p>
+                            Die digitale Dimension des Terrorismus gewinnt an Bedeutung:
+                        </p>
+                        <ul>
+                            <li>Angriffe auf kritische Infrastruktur (Stromnetze, Wasserversorgung, Krankenhäuser)</li>
+                            <li>Datendiebstahl und Erpressung durch Ransomware</li>
+                            <li>Verbreitung von Propaganda und Rekrutierung über soziale Medien</li>
+                            <li>Desinformationskampagnen zur Destabilisierung</li>
+                            <li>Schwierige Zuordnung der Täter (staatliche vs. nicht-staatliche Akteure)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Asymmetrische Kriegsführung -->
+            <div class="section-card">
+                <h2>3. Asymmetrische Kriegsführung</h2>
+                
+                <div class="collapsible-header">
+                    <h3>3.1 Konzept und Merkmale</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Definition</h4>
+                        <p>
+                            Asymmetrische Kriegsführung bezeichnet Konflikte zwischen Gegnern mit stark unterschiedlichen 
+                            militärischen Fähigkeiten. Die schwächere Seite nutzt unkonventionelle Taktiken, um die 
+                            Überlegenheit des Gegners zu neutralisieren.
+                        </p>
+
+                        <h4>Typische Merkmale</h4>
+                        <ul>
+                            <li><strong>Guerillataktik:</strong> Vermeidung offener Schlachten, Hit-and-Run-Angriffe</li>
+                            <li><strong>Nutzung der Zivilbevölkerung:</strong> Verstecken unter Zivilisten, Missbrauch als menschliche Schutzschilde</li>
+                            <li><strong>Improvised Explosive Devices (IEDs):</strong> Kostengünstige, aber effektive Sprengfallen</li>
+                            <li><strong>Terroranschläge:</strong> Gezielte Angriffe auf zivile Ziele zur Demoralisierung</li>
+                            <li><strong>Medienkrieg:</strong> Ausnutzen westlicher Medien zur Propaganda</li>
+                            <li><strong>Zeitfaktor:</strong> Ausnützen der begrenzten Geduld demokratischer Gesellschaften</li>
+                        </ul>
+
+                        <h4>Herausforderungen für konventionelle Streitkräfte</h4>
+                        <p>
+                            Moderne High-Tech-Armeen sind oft schlecht auf asymmetrische Konflikte vorbereitet:
+                        </p>
+                        <ul>
+                            <li>Schwierigkeit, zwischen Kombattanten und Zivilisten zu unterscheiden</li>
+                            <li>Hohe Anfälligkeit für IEDs und Selbstmordattentäter</li>
+                            <li>Begrenzte Nützlichkeit überlegener Waffensysteme (Panzer, Kampfjets) gegen Guerillas</li>
+                            <li>Jeder zivile Kollateralschaden schadet der Legitimität und nützt dem Gegner propagandistisch</li>
+                            <li>Lange Kriegsdauer führt zu sinkender öffentlicher Unterstützung in Demokratien</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <div class="box-title">📚 Historisches Beispiel: Vietnamkrieg</div>
+                            Der Vietnamkrieg (1955-1975) war ein klassisches Beispiel asymmetrischer Kriegsführung. 
+                            Trotz massiver militärischer Überlegenheit der USA konnten die Vietcong durch Guerillataktik, 
+                            Ausdauer und geschickte Propaganda die amerikanischen Truppen zermürben. Der Krieg endete mit 
+                            dem Rückzug der USA und der Niederlage Südvietnams - ein Trauma für die amerikanische 
+                            Gesellschaft.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>3.2 Moderne Beispiele asymmetrischer Kriegsführung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Afghanistan (2001-2021)</h4>
+                        <p>
+                            Der längste Krieg der USA demonstrierte die Grenzen militärischer Macht gegen eine 
+                            entschlossene Aufstandsbewegung:
+                        </p>
+                        <ul>
+                            <li>Taliban nutzten Kenntnis des Terrains und Unterstützung in ländlichen Gebieten</li>
+                            <li>Rückzug nach Pakistan bei Druck, Rückkehr bei Gelegenheit</li>
+                            <li>IEDs wurden zur Hauptbedrohung für internationale Truppen</li>
+                            <li>Trotz über 2 Billionen Dollar Kosten und 20 Jahren Krieg: Taliban wieder an der Macht</li>
+                            <li>Zeigt Grenzen des "Nation Building" von außen</li>
+                        </ul>
+
+                        <h4>Irak nach 2003</h4>
+                        <p>
+                            Der Aufstand gegen die amerikanische Besatzung kombinierte verschiedene asymmetrische Taktiken:
+                        </p>
+                        <ul>
+                            <li>Sunnitische Aufständische und Al-Qaida-Ableger bekämpften Besatzer und schiitische Regierung</li>
+                            <li>Selbstmordattentate auf Märkten, Moscheen, Checkpoints</li>
+                            <li>Entführungen und Hinrichtungen von Ausländern, oft gefilmt für Propagandazwecke</li>
+                            <li>"Surge" 2007: Aufstockung amerikanischer Truppen brachte vorübergehende Stabilisierung</li>
+                            <li>Abzug 2011, aber Rückkehr 2014 wegen IS</li>
+                        </ul>
+
+                        <h4>Syrien-Konflikt (seit 2011)</h4>
+                        <p>
+                            Der syrische Bürgerkrieg zeigt das Chaos moderner asymmetrischer Konflikte:
+                        </p>
+                        <ul>
+                            <li>Multiple Akteure: Assad-Regime, gemäßigte Rebellen, Islamischer Staat, kurdische Milizen</li>
+                            <li>Externe Mächte: Russland und Iran unterstützen Assad, USA und Türkei verschiedene Rebellengruppen</li>
+                            <li>Über 500.000 Tote, Millionen Flüchtlinge</li>
+                            <li>Einsatz von Chemiewaffen durch das Regime</li>
+                            <li>Keine klare Lösung in Sicht trotz internationalem Engagement</li>
+                        </ul>
+
+                        <h4>Drohnenkrieg</h4>
+                        <p>
+                            Die USA und andere Staaten setzen zunehmend auf unbemannte Drohnen:
+                        </p>
+                        <ul>
+                            <li>Gezielte Tötungen von Terrorverdächtigen ohne Gerichtsverfahren</li>
+                            <li>Einsätze in Pakistan, Jemen, Somalia ohne formelle Kriegserklärung</li>
+                            <li>Hohe Zahl ziviler Opfer ("Kollateralschäden")</li>
+                            <li>Rechtlich und ethisch umstritten</li>
+                            <li>Erzeugt Hass und kann Radikalisierung fördern</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <div class="box-title">⚖️ Völkerrechtliche Probleme</div>
+                            Asymmetrische Kriegsführung stellt das Völkerrecht vor Herausforderungen:
+                            <ul>
+                                <li>Sind nicht-staatliche Akteure legitime Kriegspartner?</li>
+                                <li>Gelten Genfer Konventionen für Terroristen?</li>
+                                <li>Ist präventive Selbstverteidigung gegen potenzielle Anschläge erlaubt?</li>
+                                <li>Dürfen Drohnenangriffe in fremden Ländern ohne deren Zustimmung erfolgen?</li>
+                                <li>Wie ist mit Kombattanten umzugehen, die bewusst keine Uniform tragen?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Wiederaufleben des Kalten Krieges -->
+            <div class="section-card">
+                <h2>4. Wiederaufleben des Kalten Krieges – Neue Ost-West-Spannungen</h2>
+                
+                <div class="collapsible-header">
+                    <h3>4.1 Russlands Revisionismus unter Putin</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Putins Weltbild und Machtkonsolidierung</h4>
+                        <p>
+                            Wladimir Putin sieht den Zusammenbruch der Sowjetunion als "größte geopolitische Katastrophe 
+                            des 20. Jahrhunderts". Seit seiner Machtübernahme 2000 verfolgt er das Ziel, Russlands Status 
+                            als Großmacht wiederherzustellen:
+                        </p>
+                        <ul>
+                            <li><strong>Innenpolitisch:</strong> Autoritäre Herrschaft, Kontrolle der Medien, Ausschaltung der Opposition</li>
+                            <li><strong>Wirtschaftlich:</strong> Staatskapitalismus mit Kontrolle über Energiesektor (Gazprom, Rosneft)</li>
+                            <li><strong>Ideologisch:</strong> Betonung "traditioneller Werte", Anti-Westliche Rhetorik, Orthodoxie als Legitimation</li>
+                            <li><strong>Außenpolitisch:</strong> Wiederherstellung der russischen Einflusssphäre im "nahen Ausland"</li>
+                        </ul>
+
+                        <h4>NATO-Osterweiterung als russische Sichtweise</h4>
+                        <p>
+                            Aus russischer Perspektive stellte die NATO-Osterweiterung einen Vertrauensbruch dar:
+                        </p>
+                        <ul>
+                            <li>1999: Polen, Tschechien, Ungarn treten bei</li>
+                            <li>2004: Baltische Staaten, Slowakei, Slowenien, Rumänien, Bulgarien</li>
+                            <li>2009: Albanien und Kroatien</li>
+                            <li>2017: Montenegro; 2020: Nordmazedonien</li>
+                            <li>Russland sieht dies als Einkreisung und Bedrohung</li>
+                            <li>Putins Münchner Rede 2007: Scharfe Kritik an westlicher Dominanz</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <div class="box-title">🤔 Verschiedene Narrative</div>
+                            <p><strong>Westliche Sicht:</strong> Souveräne Staaten haben das Recht, Bündnisse frei zu wählen. 
+                            Die NATO ist ein Verteidigungsbündnis ohne aggressive Absichten. Die Erweiterung erfolgte auf Wunsch 
+                            der beigetretenen Länder, die sich vor Russland schützen wollten.</p>
+                            <p><strong>Russische Sicht:</strong> Der Westen hat nach dem Kalten Krieg mündliche Zusagen gebrochen, 
+                            die NATO nicht nach Osten zu erweitern. Die Erweiterung bedroht Russlands Sicherheit und zielt 
+                            darauf ab, Russland zu schwächen und einzukreisen.</p>
+                        </div>
+
+                        <h4>Georgien-Krieg 2008</h4>
+                        <p>
+                            Im August 2008 eskalierte der Konflikt um die abtrünnigen georgischen Regionen Südossetien 
+                            und Abchasien:
+                        </p>
+                        <ul>
+                            <li>Georgien versuchte militärisch, Südossetien zurückzuerobern</li>
+                            <li>Russland intervenierte mit massiver Gewalt, drang tief nach Georgien ein</li>
+                            <li>Waffenstillstand nach fünf Tagen, aber Russland erkannte Unabhängigkeit der Regionen an</li>
+                            <li>Erste militärische Invasion Russlands außerhalb seiner Grenzen seit 1979 (Afghanistan)</li>
+                            <li>Warnsignal an den Westen: Russland ist bereit, Gewalt einzusetzen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>4.2 Ukraine-Krise ab 2014</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Euromaidan und Sturz Janukowitschs</h4>
+                        <p>
+                            Ende 2013 weigerte sich der ukrainische Präsident Viktor Janukowitsch, ein Assoziierungsabkommen 
+                            mit der EU zu unterzeichnen, und wandte sich stattdessen Russland zu. Dies löste Massenproteste 
+                            in Kiew aus (Euromaidan):
+                        </p>
+                        <ul>
+                            <li>Monatelange Proteste auf dem Maidan-Platz in Kiew</li>
+                            <li>Gewaltsame Niederschlagung durch Sicherheitskräfte, über 100 Tote im Februar 2014</li>
+                            <li>Flucht Janukowitschs nach Russland</li>
+                            <li>Bildung einer prowestlichen Übergangsregierung</li>
+                            <li>Russland sieht dies als "illegalen Putsch" und westliche Einmischung</li>
+                        </ul>
+
+                        <h4>Annexion der Krim (März 2014)</h4>
+                        <p>
+                            Unmittelbar nach Janukowitschs Sturz besetzte Russland die Krim:
+                        </p>
+                        <ul>
+                            <li>"Grüne Männchen" ohne Hoheitsabzeichen (später als russische Soldaten bestätigt) übernahmen Kontrolle</li>
+                            <li>Umstrittenes Referendum am 16. März 2014: angeblich 97% für Anschluss an Russland</li>
+                            <li>Formelle Annexion durch Russland am 18. März 2014</li>
+                            <li>International nicht anerkannt, als völkerrechtswidrig verurteilt</li>
+                            <li>Erstmalige gewaltsame Grenzverschiebung in Europa seit 1945</li>
+                            <li>Strategische Bedeutung: Sewastopol als Marinebasis der Schwarzmeerflotte</li>
+                        </ul>
+
+                        <h4>Krieg in der Ostukraine (Donbass)</h4>
+                        <p>
+                            Parallel zur Krim-Annexion entstand ein bewaffneter Konflikt in der Ostukraine:
+                        </p>
+                        <ul>
+                            <li>Prorussische Separatisten riefen "Volksrepubliken" Donezk und Luhansk aus</li>
+                            <li>Russland unterstützte die Separatisten mit Waffen, Freiwilligen und regulären Truppen (offiziell geleugnet)</li>
+                            <li>Abschuss von Malaysia Airlines Flug MH17 im Juli 2014: 298 Tote, vermutlich durch russische Luftabwehrrakete</li>
+                            <li>Minsker Abkommen (2014/2015) sollten Waffenstillstand bringen, wurden aber nie umgesetzt</li>
+                            <li>Eingefrorener Konflikt mit über 14.000 Toten bis 2022</li>
+                        </ul>
+
+                        <h4>Westliche Reaktion</h4>
+                        <ul>
+                            <li><strong>Wirtschaftssanktionen:</strong> EU und USA verhängten Sanktionen gegen Russland (Finanzsektor, Energietechnologie, Rüstung)</li>
+                            <li><strong>Keine militärische Intervention:</strong> Ukraine war nicht NATO-Mitglied, daher keine Beistandspflicht</li>
+                            <li><strong>Militärische Unterstützung:</strong> Waffenlieferungen und Training für ukrainische Streitkräfte</li>
+                            <li><strong>NATO-Verstärkung:</strong> Stationierung von Truppen in östlichen Mitgliedsstaaten</li>
+                            <li><strong>Diplomatische Bemühungen:</strong> Deutschland und Frankreich versuchten im "Normandie-Format" zu vermitteln</li>
+                        </ul>
+
+                        <div class="danger-box">
+                            <div class="box-title">⚔️ Vollständige Invasion der Ukraine (24. Februar 2022)</div>
+                            <p>
+                                Am 24. Februar 2022 begann Russland eine umfassende Invasion der Ukraine - der größte 
+                                Krieg in Europa seit 1945:
+                            </p>
+                            <ul>
+                                <li>Angriff aus mehreren Richtungen mit dem Ziel, die Regierung in Kiew zu stürzen</li>
+                                <li>Gescheiterter Versuch, Kiew schnell einzunehmen</li>
+                                <li>Massive Zerstörung ukrainischer Städte (Mariupol, Butscha, Charkiw)</li>
+                                <li>Kriegsverbrechen: Angriffe auf Zivilisten, Folter, Massengräber</li>
+                                <li>Millionen Flüchtlinge, vor allem nach Europa</li>
+                                <li>Annexion weiterer ukrainischer Gebiete durch Russland (September 2022)</li>
+                                <li>Massive westliche Militärhilfe für Ukraine (Waffen, Ausbildung, Geheimdienst)</li>
+                                <li>Beispiellose Wirtschaftssanktionen gegen Russland</li>
+                                <li>Energiekrise in Europa durch Unterbrechung russischer Gaslieferungen</li>
+                                <li>Finnland und Schweden treten NATO bei (2023/2024)</li>
+                                <li>Konflikt dauert an (Stand 2026) mit verheerenden Folgen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>4.3 Weitere Konfliktherde und hybride Kriegsführung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Hybride Kriegsführung</h4>
+                        <p>
+                            Russland (und andere Akteure) nutzen eine Kombination aus militärischen und nicht-militärischen Mitteln:
+                        </p>
+                        <ul>
+                            <li><strong>Cyberangriffe:</strong> Auf Regierungen, Infrastruktur, Wahlen (z.B. Estland 2007, USA 2016, Deutschland mehrfach)</li>
+                            <li><strong>Desinformation:</strong> Verbreitung von Fake News über soziale Medien und Troll-Fabriken</li>
+                            <li><strong>Einflussnahme auf Wahlen:</strong> Unterstützung extremer Parteien, Diskreditierung demokratischer Prozesse</li>
+                            <li><strong>Energiewaffe:</strong> Nutzung von Öl- und Gaslieferungen als politisches Druckmittel</li>
+                            <li><strong>Söldner:</strong> Einsatz der Wagner-Gruppe in Syrien, Libyen, Afrika</li>
+                            <li><strong>Grüne Männchen:</strong> Verdeckte militärische Operationen ohne offizielle Anerkennung</li>
+                        </ul>
+
+                        <h4>Spannungen im Südchinesischen Meer</h4>
+                        <p>
+                            China beansprucht fast das gesamte Südchinesische Meer für sich:
+                        </p>
+                        <ul>
+                            <li>Bau künstlicher Inseln und deren Militarisierung</li>
+                            <li>Konflikte mit Nachbarstaaten (Vietnam, Philippinen, Malaysia)</li>
+                            <li>Internationale Schiedsgerichtsurteil 2016 wies Chinas Ansprüche zurück - wurde von China ignoriert</li>
+                            <li>"Freedom of Navigation"-Operationen der US-Marine</li>
+                            <li>Gefahr militärischer Eskalation</li>
+                        </ul>
+
+                        <h4>Taiwan-Frage</h4>
+                        <p>
+                            China betrachtet Taiwan als abtrünnige Provinz und droht mit Gewaltanwendung:
+                        </p>
+                        <ul>
+                            <li>Zunehmende militärische Drohgebärden (Luftraumverletzungen, Manöver)</li>
+                            <li>USA haben sich zur Verteidigung Taiwans verpflichtet (aber bewusst zweideutig)</li>
+                            <li>Mögliche Invasion Taiwans durch China wird als größtes sicherheitspolitisches Risiko gesehen</li>
+                            <li>Taiwan ist weltweit führend in Halbleiterproduktion - strategische Bedeutung für Weltwirtschaft</li>
+                        </ul>
+
+                        <h4>Naher Osten: Iran vs. Saudi-Arabien/Israel</h4>
+                        <p>
+                            Stellvertreterkonflikt zwischen Iran und seinen Gegnern prägt die Region:
+                        </p>
+                        <ul>
+                            <li>Irans Nuklearprogramm und westliche Versuche, es einzudämmen (Atomabkommen 2015, Ausstieg USA 2018)</li>
+                            <li>Unterstützung schiitischer Milizen im Irak, Hisbollah im Libanon, Huthi-Rebellen im Jemen</li>
+                            <li>Jemen-Krieg (seit 2014): Humanitäre Katastrophe</li>
+                            <li>Israel-Iran-Konflikt: Angriffe auf iranische Nuklearanlagen und Wissenschaftler</li>
+                            <li>Abraham-Abkommen (2020): Normalisierung zwischen Israel und arabischen Staaten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Europäische Union -->
+            <div class="section-card">
+                <h2>5. Die Europäische Union: Erweiterung, Vertiefung und Krisen</h2>
+                
+                <div class="collapsible-header">
+                    <h3>5.1 Von der EG zur EU: Vertiefung der Integration</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Vertrag von Maastricht (1992)</h4>
+                        <p>
+                            Der Maastricht-Vertrag schuf die Europäische Union und ging weit über wirtschaftliche Integration hinaus:
+                        </p>
+                        <ul>
+                            <li><strong>Drei-Säulen-Modell:</strong> EG (supranational), Gemeinsame Außen- und Sicherheitspolitik, Justiz und Inneres</li>
+                            <li><strong>Europäische Währungsunion:</strong> Einführung des Euro ab 1999/2002</li>
+                            <li><strong>Unionsbürgerschaft:</strong> Freizügigkeit, Wahlrecht auf kommunaler und EU-Ebene</li>
+                            <li><strong>Subsidiaritätsprinzip:</strong> EU handelt nur, wenn Ziele nicht ausreichend auf nationaler Ebene erreicht werden können</li>
+                            <li><strong>Konvergenzkriterien:</strong> Haushaltsdisziplin, Inflationsstabilität für Euro-Beitritt</li>
+                        </ul>
+
+                        <h4>Vertrag von Lissabon (2009)</h4>
+                        <p>
+                            Nach dem Scheitern der EU-Verfassung reformierte der Lissabon-Vertrag die Strukturen:
+                        </p>
+                        <ul>
+                            <li>Aufhebung des Drei-Säulen-Modells, einheitliche Rechtspersönlichkeit der EU</li>
+                            <li>Stärkung des Europäischen Parlaments (Mitentscheidung in fast allen Bereichen)</li>
+                            <li>Einführung eines ständigen Präsidenten des Europäischen Rates</li>
+                            <li>Hoher Vertreter für Außen- und Sicherheitspolitik</li>
+                            <li>Charta der Grundrechte wird rechtsverbindlich</li>
+                            <li>Vereinfachte Austrittsklausel (Artikel 50) - später relevant für Brexit</li>
+                        </ul>
+
+                        <h4>Der Euro: Erfolge und Probleme</h4>
+                        <p>
+                            Die gemeinsame Währung brachte Vorteile, aber auch strukturelle Schwächen:
+                        </p>
+                        <ul>
+                            <li><strong>Erfolge:</strong> Wegfall von Wechselkursrisiken, erleichterte Handelsbeziehungen, zweitgrößte Reservewährung</li>
+                            <li><strong>Probleme:</strong> Währungsunion ohne Fiskalunion, unterschiedliche Wettbewerbsfähigkeit der Mitglieder</li>
+                            <li><strong>Konstruktionsfehler:</strong> Keine gemeinsame Wirtschaftsregierung, schwache Durchsetzung der Stabilitätskriterien</li>
+                            <li>19 von 27 EU-Staaten haben den Euro (Stand 2024)</li>
+                        </ul>
+
+                        <div class="success-box">
+                            <div class="box-title">✅ Errungenschaften der EU</div>
+                            <ul>
+                                <li>Längste Friedensperiode in Westeuropa seit Jahrhunderten</li>
+                                <li>Größter Binnenmarkt der Welt (freier Verkehr von Waren, Kapital, Dienstleistungen, Personen)</li>
+                                <li>Schengen-Raum: Reisen ohne Grenzkontrollen</li>
+                                <li>Hohe Sozial- und Umweltstandards</li>
+                                <li>Schutz von Verbraucherrechten</li>
+                                <li>Erasmus-Programm: Millionen Studenten haben im Ausland studiert</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>5.2 Osterweiterung: Von 15 auf 28 Mitglieder</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Die großen Erweiterungsrunden</h4>
+                        <ul>
+                            <li><strong>2004 (10 neue Mitglieder):</strong> Polen, Tschechien, Slowakei, Ungarn, Slowenien, Estland, Lettland, Litauen, Malta, Zypern</li>
+                            <li><strong>2007:</strong> Rumänien, Bulgarien</li>
+                            <li><strong>2013:</strong> Kroatien</li>
+                            <li>Kandidaten: Türkei (seit 1999, Verhandlungen faktisch eingefroren), Nordmazedonien, Montenegro, Serbien, Albanien</li>
+                            <li>Potenzielle Kandidaten: Bosnien-Herzegowina, Kosovo</li>
+                            <li>Ukraine und Moldau erhielten 2022 Kandidatenstatus</li>
+                        </ul>
+
+                        <h4>Herausforderungen der Erweiterung</h4>
+                        <ul>
+                            <li>Enorme Wohlstandsunterschiede zwischen alten und neuen Mitgliedern</li>
+                            <li>Migration von Ost nach West ("Ost-West-Wanderung")</li>
+                            <li>Notwendigkeit institutioneller Reformen bei wachsender Mitgliederzahl</li>
+                            <li>Unterschiedliche historische Erfahrungen und politische Kulturen</li>
+                            <li>Spannungen über gemeinsame Werte (Rechtsstaatlichkeit, Demokratie)</li>
+                        </ul>
+
+                        <h4>Erfolge der Osterweiterung</h4>
+                        <ul>
+                            <li>Überwindung der Teilung Europas</li>
+                            <li>Demokratische Konsolidierung in Mittel- und Osteuropa</li>
+                            <li>Wirtschaftliches Aufholen durch EU-Fördergelder und Marktzugang</li>
+                            <li>Stärkung der EU als globaler Akteur</li>
+                        </ul>
+                    </div>
+                </div>
+
+              <div class="collapsible-header">
+                    <h3>5.3 Die Krisen der EU im 21. Jahrhundert</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Eurokrise (ab 2010)</h4>
+                        <p>
+                            Die globale Finanzkrise 2008 deckte strukturelle Schwächen der Eurozone auf:
+                        </p>
+                        <ul>
+                            <li><strong>Griechenland (2010):</strong> Verschleierung des Haushaltsdefizits, drohende Staatspleite</li>
+                            <li><strong>Dominoeffekt:</strong> Irland, Portugal, Spanien, Italien, Zypern in Schwierigkeiten</li>
+                            <li><strong>Rettungspakete:</strong> Europäischer Stabilitätsmechanismus (ESM), Kredite von IWF und EU</li>
+                            <li><strong>Auflagen:</strong> Harte Sparmaßnahmen, strukturelle Reformen ("Troika" aus EU, EZB, IWF)</li>
+                            <li><strong>Soziale Folgen:</strong> Massenarbeitslosigkeit (Jugendarbeitslosigkeit in Griechenland, Spanien >50%), Verarmung, Auswanderung</li>
+                            <li><strong>EZB-Politik:</strong> Mario Draghi ("Whatever it takes", 2012), Anleihenkäufe, Niedrigzinspolitik</li>
+                            <li><strong>Nord-Süd-Konflikt:</strong> Spannungen zwischen "sparsamen" Nordländern und "verschuldeten" Südländern</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <div class="box-title">⚠️ Legitimationskrise der EU</div>
+                            <p>
+                                Die Eurokrise führte zu wachsender EU-Skepsis:
+                            </p>
+                            <ul>
+                                <li>Gefühl, von Brüssel bevormundet zu werden ("Demokratiedefizit")</li>
+                                <li>Ablehnung von Rettungspaketen und "Schuldenunion"</li>
+                                <li>Aufstieg europakritischer und populistischer Parteien</li>
+                                <li>Debatte über Solidarität vs. nationale Interessen</li>
+                            </ul>
+                        </div>
+
+                        <h4>Flüchtlingskrise (2015/2016)</h4>
+                        <p>
+                            2015 erreichte die Migration nach Europa einen Höhepunkt:
+                        </p>
+                        <ul>
+                            <li>Über 1 Million Menschen kamen 2015 nach Europa (hauptsächlich Syrer, Afghanen, Iraker)</li>
+                            <li>Dramatische Szenen an EU-Außengrenzen (Griechenland, Italien)</li>
+                            <li>Tausende Tote im Mittelmeer</li>
+                            <li>Deutschland öffnete Grenzen (Merkels "Wir schaffen das", September 2015)</li>
+                            <li>Dublin-Regeln (Zuständigkeit des Ersteinreisestaats) faktisch außer Kraft</li>
+                            <li>Massive Überforderung südeuropäischer Staaten</li>
+                        </ul>
+
+                        <h4>Spaltung der EU</h4>
+                        <p>
+                            Die Flüchtlingskrise offenbarte tiefe Gräben:
+                        </p>
+                        <ul>
+                            <li><strong>Osteuropäische Staaten:</strong> Ungarn, Polen, Tschechien, Slowakei weigerten sich, Flüchtlinge aufzunehmen</li>
+                            <li><strong>Grenzschließungen:</strong> Mehrere Staaten führten wieder Grenzkontrollen ein (Schengen faktisch ausgesetzt)</li>
+                            <li><strong>EU-Türkei-Deal (2016):</strong> Umstrittenes Abkommen zur Begrenzung der Migration</li>
+                            <li><strong>Hotspots:</strong> Italien und Griechenland als Auffanglager Europas</li>
+                            <li><strong>Gescheiterte Quotenregelung:</strong> Verteilung von Flüchtlingen auf EU-Staaten scheiterte</li>
+                            <li><strong>Politische Folgen:</strong> Erstarken rechtspopulistischer Parteien europaweit</li>
+                        </ul>
+
+                        <h4>Brexit (2016-2020)</h4>
+                        <p>
+                            Am 23. Juni 2016 stimmten 51,9% der Briten für den Austritt aus der EU:
+                        </p>
+                        <ul>
+                            <li><strong>Ursachen:</strong> Souveränitätswunsch, Ablehnung von Immigration, EU-Bürokratie, nostalgische Großmachtträume</li>
+                            <li><strong>Kampagne:</strong> Falsche Versprechungen ("350 Mio. Pfund/Woche für NHS"), emotionale Mobilisierung</li>
+                            <li><strong>Verhandlungen:</strong> Langwierig und konfrontativ (2017-2019)</li>
+                            <li><strong>Innenpolitisches Chaos:</strong> Drei Premierminister (Cameron, May, Johnson), Parlamentskrisen</li>
+                            <li><strong>Formaler Austritt:</strong> 31. Januar 2020, Übergangsphase bis 31. Dezember 2020</li>
+                            <li><strong>Nordirland-Problem:</strong> Spezialregelung notwendig wegen Karfreitagsabkommen</li>
+                            <li><strong>Schottland:</strong> Mehrheit stimmte für Verbleib, neue Unabhängigkeitsdebatte</li>
+                        </ul>
+
+                        <h4>Folgen des Brexit</h4>
+                        <ul>
+                            <li><strong>Für UK:</strong> Wirtschaftliche Nachteile (Handelshemmnisse, fehlende Arbeitskräfte), verlorener EU-Marktzugang</li>
+                            <li><strong>Für EU:</strong> Verlust eines wichtigen Mitglieds, aber auch Abschreckungseffekt für weitere Austritte</li>
+                            <li><strong>Symbolisch:</strong> Erste Verkleinerung der EU, Ende der "immer engeren Union"?</li>
+                        </ul>
+
+                        <h4>Rechtsstaatskrise: Polen und Ungarn</h4>
+                        <p>
+                            Polen und Ungarn entwickelten sich zu "illiberalen Demokratien":
+                        </p>
+                        <ul>
+                            <li><strong>Ungarn unter Orbán:</strong> Einschränkung der Pressefreiheit, Kontrolle der Justiz, Anti-LGBTQ-Gesetze, Angriffe auf NGOs</li>
+                            <li><strong>Polen (PiS-Regierung 2015-2023):</strong> Justizreform untergräbt Gewaltenteilung, Mediengleichschaltung</li>
+                            <li><strong>EU-Reaktion:</strong> Vertragsverletzungsverfahren, Artikel 7-Verfahren (kann zu Stimmrechtsentzug führen)</li>
+                            <li><strong>Sanktionen:</strong> Zurückhaltung von EU-Geldern wegen Rechtsstaatsverstößen</li>
+                            <li><strong>Dilemma:</strong> Schwierige Balance zwischen Respekt für nationale Souveränität und Durchsetzung gemeinsamer Werte</li>
+                        </ul>
+
+                        <h4>COVID-19-Pandemie (2020-2022)</h4>
+                        <p>
+                            Die Pandemie stellte die EU vor neue Herausforderungen:
+                        </p>
+                        <ul>
+                            <li><strong>Anfängliche Uneinigkeit:</strong> Grenzschließungen, Export-Stopps von Schutzausrüstung</li>
+                            <li><strong>Gemeinsame Impfstoffbeschaffung:</strong> EU koordinierte Einkauf, aber langsamer als UK oder USA</li>
+                            <li><strong>Wiederaufbaufonds (Next Generation EU):</strong> 750 Mrd. Euro, erstmals gemeinsame Schuldenaufnahme</li>
+                            <li><strong>Solidarität:</strong> Transfer von Patienten über Grenzen, gegenseitige Hilfe</li>
+                            <li><strong>Langfristig:</strong> Stärkung der EU durch gemeinsames Handeln</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <div class="box-title">🔮 Zukunft der EU</div>
+                            <p>Die EU steht vor grundlegenden Fragen:</p>
+                            <ul>
+                                <li>Vertiefung (engere Integration) vs. Erweiterung (mehr Mitglieder)?</li>
+                                <li>Wie mit illiberalen Mitgliedern umgehen?</li>
+                                <li>Reform der Institutionen (Einstimmigkeitsprinzip abschaffen)?</li>
+                                <li>Gemeinsame Außen- und Sicherheitspolitik stärken?</li>
+                                <li>Eurozone zu Fiskalunion weiterentwickeln?</li>
+                                <li>Balance zwischen Bürgernähe und Handlungsfähigkeit finden</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deutschlands Rolle in der Welt -->
+            <div class="section-card">
+                <h2>6. Deutschlands Rolle in der Welt</h2>
+                
+                <div class="collapsible-header">
+                    <h3>6.1 Von der "Zivilmacht" zur Verantwortung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Nachkriegs-Zurückhaltung</h4>
+                        <p>
+                            Nach den Erfahrungen des Zweiten Weltkriegs verfolgte Deutschland eine zurückhaltende Außenpolitik:
+                        </p>
+                        <ul>
+                            <li>Konzentration auf wirtschaftliche Stärke ("Wirtschaftswunderland")</li>
+                            <li>Einbindung in multilaterale Strukturen (NATO, EU, UN)</li>
+                            <li>Verzicht auf militärische Machtprojektion</li>
+                            <li>Kultur der Zurückhaltung ("Nie wieder Krieg")</li>
+                            <li>"Scheckbuch-Diplomatie": Finanzbeiträge statt militärisches Engagement</li>
+                        </ul>
+
+                        <h4>Graduelle Veränderung nach 1990</h4>
+                        <p>
+                            Die Wiedervereinigung und das Ende des Kalten Krieges führten zu neuen Erwartungen:
+                        </p>
+                        <ul>
+                            <li><strong>Golfkrieg 1991:</strong> Deutschland zahlte, sendete aber keine Truppen</li>
+                            <li><strong>Balkankriege 1990er:</strong> Erstmals Bundeswehr-Einsatz außerhalb NATO-Gebiet (Bosnien, Kosovo 1999)</li>
+                            <li><strong>Afghanistan ab 2001:</strong> Längster Auslandseinsatz der Bundeswehr</li>
+                            <li><strong>Ablehnung Irakkrieg 2003:</strong> Schröders "deutscher Weg", Distanz zu USA</li>
+                            <li><strong>Libyen 2011:</strong> Deutschland enthielt sich im UN-Sicherheitsrat - Kritik von Verbündeten</li>
+                        </ul>
+
+                        <h4>Das Konzept der "Zivilmacht"</h4>
+                        <p>
+                            Deutschland entwickelte ein spezifisches außenpolitisches Profil:
+                        </p>
+                        <ul>
+                            <li>Betonung von Diplomatie, Dialog, Entwicklungshilfe</li>
+                            <li>Multilateralismus und Stärkung internationaler Institutionen</li>
+                            <li>Zurückhaltung bei militärischen Interventionen</li>
+                            <li>Kritik: Zu zögerlich? Trittbrettfahrer bei Sicherheit?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>6.2 Wachsende internationale Verantwortung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Bundespräsident Gauck (2014): "Deutschland muss mehr Verantwortung übernehmen"</h4>
+                        <p>
+                            Ab 2014 forderten Bundespräsident Gauck und Außenminister Steinmeier mehr deutsches Engagement:
+                        </p>
+                        <ul>
+                            <li>Deutschland als größte europäische Wirtschaftsmacht hat besondere Pflichten</li>
+                            <li>Mehr Einsatz bei internationalen Krisen</li>
+                            <li>Auch militärische Mittel wenn nötig ("ultima ratio")</li>
+                            <li>Balance zwischen historischer Verantwortung und aktueller Notwendigkeit</li>
+                        </ul>
+
+                        <h4>Deutsche Führungsrolle in der Eurokrise</h4>
+                        <p>
+                            Während der Eurokrise übernahm Deutschland (oft widerwillig) eine Führungsrolle:
+                        </p>
+                        <ul>
+                            <li>Angela Merkel als zentrale Figur bei Rettungspaketen</li>
+                            <li>Deutschland als größter Beitragszahler zu Rettungsschirmen</li>
+                            <li>Durchsetzung von Sparpolitik und Reformen in Krisenländern</li>
+                            <li>Kritik: "Deutsches Diktat", mangelnde Solidarität, "Merkels Europa"</li>
+                            <li>Spannungen mit Südeuropa, besonders Griechenland</li>
+                        </ul>
+
+                        <h4>Flüchtlingspolitik 2015: Deutscher Sonderweg</h4>
+                        <p>
+                            Merkels Entscheidung, die Grenzen zu öffnen, war mutig aber umstritten:
+                        </p>
+                        <ul>
+                            <li>Deutschland nahm über 1 Million Flüchtlinge auf</li>
+                            <li>"Willkommenskultur" vs. Überforderung von Kommunen</li>
+                            <li>Isolation in der EU - andere Staaten folgten nicht</li>
+                            <li>Innenpolitische Folgen: Aufstieg der AfD, Verlust von Merkels Autorität</li>
+                            <li>Langfristig: Deutschland bewies humanitäre Werte, aber ohne europäische Lösung</li>
+                        </ul>
+
+                        <h4>Deutschlands Rolle in der Ukraine-Krise</h4>
+                        <p>
+                            Deutschland spielte eine zentrale, aber ambivalente Rolle:
+                        </p>
+                        <ul>
+                            <li><strong>Bis 2022:</strong> Zurückhaltung, Hoffnung auf Diplomatie, Nordstream 2-Pipeline trotz Bedenken</li>
+                            <li><strong>2014:</strong> Merkel und Hollande vermittelten Minsker Abkommen</li>
+                            <li><strong>Kritik:</strong> Zu große Abhängigkeit von russischem Gas, naive "Wandel durch Handel"-Politik</li>
+                            <li><strong>Nach Invasion 2022:</strong> "Zeitenwende" (Kanzler Scholz)</li>
+                            <li><strong>Kehrtwende:</strong> Massive Aufrüstung (100 Mrd. Euro Sondervermögen), Waffenlieferungen an Ukraine</li>
+                            <li><strong>Stopp von Nordstream 2:</strong> Ende der Energieabhängigkeit von Russland</li>
+                            <li><strong>Aber:</strong> Zögerlich bei Panzerlieferungen, Kritik für zu langsame Reaktion</li>
+                        </ul>
+
+                        <div class="success-box">
+                            <div class="box-title">📊 Deutschland als globaler Akteur heute</div>
+                            <p><strong>Stärken:</strong></p>
+                            <ul>
+                                <li>Größte Volkswirtschaft Europas, viertgrößte weltweit</li>
+                                <li>Exportweltmeister bei Industriegütern</li>
+                                <li>Anerkannter Vermittler in internationalen Konflikten</li>
+                                <li>Hohe Reputation bei Entwicklungshilfe und humanitärer Hilfe</li>
+                                <li>Zentrale Rolle in EU-Institutionen</li>
+                            </ul>
+                            <p><strong>Schwächen:</strong></p>
+                            <ul>
+                                <li>Unterfinanzierte Bundeswehr</li>
+                                <li>Energieabhängigkeit (verbessert seit 2022)</li>
+                                <li>Zögerlichkeit bei schnellen Entscheidungen</li>
+                                <li>Spannungsfeld zwischen Geschichte und Verantwortung</li>
+                                <li>Keine ständige Mitgliedschaft im UN-Sicherheitsrat</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>6.3 Transatlantische Beziehungen</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Partnerschaft unter Druck</h4>
+                        <p>
+                            Die deutsch-amerikanischen Beziehungen durchliefen Höhen und Tiefen:
+                        </p>
+                        <ul>
+                            <li><strong>2003:</strong> Irakkrieg - tiefe Kluft zwischen Schröder und Bush</li>
+                            <li><strong>2013:</strong> NSA-Abhörskandal (Merkels Handy) belastete Vertrauen</li>
+                            <li><strong>2017-2021:</strong> Trump-Präsidentschaft - offene Kritik ("Deutschland zahlt zu wenig für NATO"), Handelsstreit</li>
+                            <li><strong>Ab 2021:</strong> Verbesserung unter Biden, aber weiterhin Druck zu höheren Verteidigungsausgaben</li>
+                            <li><strong>2022/23:</strong> Engere Kooperation wegen Ukraine-Krieg</li>
+                        </ul>
+
+                        <h4>Verteidigungsausgaben-Debatte</h4>
+                        <ul>
+                            <li>NATO-Ziel: 2% des BIP für Verteidigung (seit 2014)</li>
+                            <li>Deutschland erreichte lange nur ca. 1,2-1,5%</li>
+                            <li>Kritik von USA: Deutschland profitiert von amerikanischem Schutz ohne angemessenen Beitrag</li>
+                            <li>Nach 2022: Deutschland verpflichtet sich zu 2%-Ziel</li>
+                        </ul>
+
+                        <h4>Europäische Strategische Autonomie</h4>
+                        <p>
+                            Debatte über europäische Unabhängigkeit von den USA:
+                        </p>
+                        <ul>
+                            <li>Macrons Forderung nach "europäischer Souveränität"</li>
+                            <li>Gemeinsame europäische Armee? (umstritten)</li>
+                            <li>Unabhängigkeit in Rüstung, Technologie, Verteidigung?</li>
+                            <li>Deutschland zwischen transatlantischer Bindung und europäischer Autonomie</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Weitere globale Herausforderungen -->
+            <div class="section-card">
+                <h2>7. Weitere globale Herausforderungen</h2>
+                
+                <div class="collapsible-header">
+                    <h3>7.1 Klimawandel und Umweltkrise</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Die Klimakrise als existenzielle Bedrohung</h4>
+                        <p>
+                            Der menschengemachte Klimawandel ist eine der größten Herausforderungen des 21. Jahrhunderts:
+                        </p>
+                        <ul>
+                            <li><strong>Erderwärmung:</strong> Globale Temperatur bereits ca. 1,1-1,2°C über vorindustriellem Niveau (Stand 2024)</li>
+                            <li><strong>Extremwetter:</strong> Zunahme von Hitzewellen, Dürren, Überschwemmungen, Stürmen</li>
+                            <li><strong>Meeresspiegelanstieg:</strong> Bedrohung von Küstenregionen und Inselstaaten</li>
+                            <li><strong>Artensterben:</strong> Sechstes Massenaussterben der Erdgeschichte</li>
+                            <li><strong>Ressourcenknappheit:</strong> Wasser, Ackerland werden zu umkämpften Gütern</li>
+                        </ul>
+
+                        <h4>Internationale Klimapolitik</h4>
+                        <ul>
+                            <li><strong>Kyoto-Protokoll (1997):</strong> Erste bindende Emissionsziele, aber ohne USA und China</li>
+                            <li><strong>Pariser Klimaabkommen (2015):</strong> Ziel: Erderwärmung auf "deutlich unter 2°C" begrenzen, idealerweise 1,5°C
+                                <ul>
+                                    <li>195 Staaten unterzeichneten</li>
+                                    <li>USA traten unter Trump aus (2017), unter Biden wieder bei (2021)</li>
+                                    <li>Nationale Selbstverpflichtungen ("Nationally Determined Contributions")</li>
+                                    <li>Problem: Bisherige Zusagen reichen nicht für 1,5°C-Ziel</li>
+                                </ul>
+                            </li>
+                            <li><strong>Klimagipfel (COPs):</strong> Jährliche Konferenzen mit wechselndem Erfolg
+                                <ul>
+                                    <li>COP26 Glasgow (2021): Bekenntnis zu Kohleausstieg (verwässert)</li>
+                                    <li>COP27 Ägypten (2022): Fonds für Klimaschäden in armen Ländern</li>
+                                    <li>COP28 Dubai (2023): Ausstieg aus fossilen Energien (Durchbruch)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>Herausforderungen der Klimapolitik</h4>
+                        <ul>
+                            <li><strong>Verteilungskonflikte:</strong> Wer trägt die Kosten? Industrie- vs. Entwicklungsländer</li>
+                            <li><strong>Historische Verantwortung:</strong> Westliche Staaten haben meiste Emissionen verursacht</li>
+                            <li><strong>Entwicklungsrecht:</strong> Dürfen ärmere Länder fossile Energien nutzen wie der Westen es tat?</li>
+                            <li><strong>Nationale Interessen:</strong> Ölstaaten blockieren ambitionierte Klimaziele</li>
+                            <li><strong>Zeitdruck:</strong> Kipppunkte drohen (Abtauen Permafrost, Kollaps Amazonas-Regenwald)</li>
+                            <li><strong>Soziale Dimension:</strong> "Gelbe Westen" in Frankreich zeigten: Klimaschutz braucht sozialen Ausgleich</li>
+                        </ul>
+
+                        <h4>Klimabewegungen</h4>
+                        <ul>
+                            <li><strong>Fridays for Future (ab 2018):</strong> Greta Thunberg, weltweite Schulstreiks</li>
+                            <li><strong>Extinction Rebellion:</strong> Radikalere Protestformen, ziviler Ungehorsam</li>
+                            <li><strong>"Letzte Generation":</strong> Straßenblockaden in Deutschland (umstritten)</li>
+                            <li><strong>Wirkung:</strong> Klimathema in Mainstream, aber auch Polarisierung</li>
+                        </ul>
+
+                        <h4>Energiewende und Green Deal</h4>
+                        <ul>
+                            <li><strong>EU Green Deal (2019):</strong> Klimaneutralität bis 2050</li>
+                            <li><strong>Deutschland:</strong> Kohleausstieg bis 2038 (nach Druck: früher), Ausbau erneuerbarer Energien</li>
+                            <li><strong>Herausforderungen:</strong> Netzausbau, Speichertechnologien, soziale Akzeptanz</li>
+                            <li><strong>Ukraine-Krieg-Effekt:</strong> Beschleunigung der Energiewende, aber auch kurzfristig mehr Kohle/LNG</li>
+                        </ul>
+
+                        <div class="danger-box">
+                            <div class="box-title">🌡️ Kipppunkte und Folgen</div>
+                            <p>Wissenschaftler warnen vor kritischen Schwellen ("Tipping Points"):</p>
+                            <ul>
+                                <li><strong>Eisschmelze:</strong> Grönland, Antarktis - unumkehrbarer Meeresspiegelanstieg</li>
+                                <li><strong>Permafrostböden:</strong> Freisetzung von Methan - Beschleunigung der Erwärmung</li>
+                                <li><strong>Amazonas-Regenwald:</strong> Umkippen zur Savanne - globale Folgen</li>
+                                <li><strong>Golfstrom:</strong> Abschwächung - drastische Klimaänderungen in Europa</li>
+                                <li><strong>Folgen:</strong> Klimaflüchtlinge (100+ Millionen prognostiziert), Kriege um Ressourcen, Destabilisierung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>7.2 Migration und Flucht</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Globale Migrationsbewegungen</h4>
+                        <p>
+                            Nie waren so viele Menschen auf der Flucht wie heute:
+                        </p>
+                        <ul>
+                            <li><strong>Zahlen (UNHCR 2023):</strong> Über 110 Millionen Menschen auf der Flucht weltweit</li>
+                            <li><strong>Binnenvertriebene:</strong> Über 60 Millionen innerhalb ihrer Heimatländer</li>
+                            <li><strong>Flüchtlinge:</strong> Über 35 Millionen haben internationalen Schutz gesucht</li>
+                            <li><strong>Hauptherkunftsländer:</strong> Syrien, Afghanistan, Venezuela, Ukraine, Südsudan</li>
+                        </ul>
+
+                        <h4>Fluchtursachen</h4>
+                        <ul>
+                            <li><strong>Krieg und Gewalt:</strong> Syrien, Afghanistan, Jemen, Myanmar, Tigray (Äthiopien)</li>
+                            <li><strong>Verfolgung:</strong> Politische, religiöse, ethnische Gründe</li>
+                            <li><strong>Armut und Perspektivlosigkeit:</strong> Subsahara-Afrika, Zentralamerika</li>
+                            <li><strong>Klimawandel:</strong> Dürren, Überschwemmungen, Meeresspiegelanstieg (noch relativ gering, aber steigend)</li>
+                            <li><strong>Failed States:</strong> Somalia, Libyen, Haiti - Zusammenbruch staatlicher Ordnung</li>
+                        </ul>
+
+                        <h4>Europäische Migrationspolitik</h4>
+                        <p>
+                            Die EU ringt seit Jahren um eine gemeinsame Linie:
+                        </p>
+                        <ul>
+                            <li><strong>Frontex:</strong> EU-Grenzschutzagentur, umstritten wegen Pushbacks</li>
+                            <li><strong>Dublin-System:</strong> Ersteinreiseland zuständig - überfordert Griechenland, Italien</li>
+                            <li><strong>Reform gescheitert:</strong> Keine Einigung auf Verteilungsmechanismus</li>
+                            <li><strong>Externalisierung:</strong> Deals mit Türkei, Libyen, Tunesien zur Migrationsabwehr (ethisch problematisch)</li>
+                            <li><strong>Tote im Mittelmeer:</strong> Zehntausende seit 2014, NGO-Rettungsschiffe behindert</li>
+                            <li><strong>Asylverfahren:</strong> Lange Wartezeiten, unterschiedliche Standards in EU-Staaten</li>
+                        </ul>
+
+                        <h4>Politische und gesellschaftliche Folgen</h4>
+                        <ul>
+                            <li><strong>Rechtspopulismus:</strong> Parteien wie AfD, FPÖ, Rassemblement National, Lega profitieren von Ängsten</li>
+                            <li><strong>Polarisierung:</strong> "Willkommenskultur" vs. "Überfremdung"</li>
+                            <li><strong>Integration:</strong> Erfolge und Herausforderungen bei Integration von Millionen Neuankömmlingen</li>
+                            <li><strong>Demographischer Wandel:</strong> Migration kann alternde Gesellschaften verjüngen und Fachkräftemangel lindern</li>
+                            <li><strong>Humanitäre Verpflichtung:</strong> Genfer Flüchtlingskonvention vs. Überforderung der Aufnahmegesellschaften</li>
+                        </ul>
+
+                        <h4>Zukunftsperspektive</h4>
+                        <ul>
+                            <li>Migrationsdruck wird zunehmen (Klimawandel, Bevölkerungswachstum in Afrika)</li>
+                            <li>Notwendigkeit legaler Migrationswege</li>
+                            <li>Bekämpfung von Fluchtursachen (Entwicklungszusammenarbeit, Konfliktprävention)</li>
+                            <li>Faire Lastenverteilung international</li>
+                            <li>Schutz von Flüchtlingen und Menschenrechten</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>7.3 Digitalisierung und Technologie</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Digitale Revolution</h4>
+                        <p>
+                            Die Digitalisierung verändert Wirtschaft, Politik und Gesellschaft fundamental:
+                        </p>
+                        <ul>
+                            <li><strong>Big Data und KI:</strong> Künstliche Intelligenz revolutioniert Bereiche von Medizin bis Militär</li>
+                            <li><strong>Soziale Medien:</strong> Facebook, Twitter/X, TikTok prägen öffentlichen Diskurs</li>
+                            <li><strong>Plattformökonomie:</strong> Amazon, Google, Alibaba dominieren Märkte</li>
+                            <li><strong>Automatisierung:</strong> Roboter und KI ersetzen menschliche Arbeit</li>
+                            <li><strong>Kryptowährungen:</strong> Bitcoin, Blockchain als Alternative zu traditionellem Finanzwesen</li>
+                        </ul>
+
+                        <h4>Chancen</h4>
+                        <ul>
+                            <li>Effizienzsteigerung in allen Bereichen</li>
+                            <li>Neue Kommunikations- und Beteiligungsmöglichkeiten</li>
+                            <li>Zugang zu Wissen und Bildung weltweit</li>
+                            <li>Medizinische Durchbrüche durch KI und Big Data</li>
+                            <li>Lösungen für globale Probleme (Klimamodelle, Pandemiebekämpfung)</li>
+                        </ul>
+
+                        <h4>Risiken und Herausforderungen</h4>
+                        <ul>
+                            <li><strong>Desinformation:</strong> Fake News, Deepfakes, manipulierte Bilder/Videos</li>
+                            <li><strong>Überwachung:</strong> China's Social Credit System, NSA-Überwachung, Gesichtserkennung</li>
+                            <li><strong>Datenschutz:</strong> Sammlung und Missbrauch persönlicher Daten</li>
+                            <li><strong>Wahlmanipulation:</strong> Cambridge Analytica, russische Trollfabriken</li>
+                            <li><strong>Filterblase und Echokammern:</strong> Algorithmisch verstärkte Polarisierung</li>
+                            <li><strong>Cyberkriminalität:</strong> Ransomware, Identitätsdiebstahl</li>
+                            <li><strong>Automatisierung:</strong> Arbeitsplatzverlust, soziale Verwerfungen</li>
+                            <li><strong>KI-Waffen:</strong> Autonome Waffensysteme ("Killerroboter")</li>
+                            <li><strong>Digitale Spaltung:</strong> Ungleicher Zugang zu Technologie zwischen und innerhalb von Gesellschaften</li>
+                        </ul>
+
+                        <h4>Regulierungsversuche</h4>
+                        <ul>
+                            <li><strong>EU:</strong> DSGVO (Datenschutz), Digital Services Act, AI Act (Regulierung von KI)</li>
+                            <li><strong>Deutschland:</strong> Netzwerkdurchsetzungsgesetz gegen Hate Speech</li>
+                            <li><strong>Problem:</strong> Regulierung hinkt technischer Entwicklung hinterher</li>
+                            <li><strong>Dilemma:</strong> Innovation vs. Kontrolle, Freiheit vs. Sicherheit</li>
+                            <li><strong>Globale Dimension:</strong> Unterschiedliche Ansätze (USA: marktliberal, China: staatliche Kontrolle, EU: regulatorisch)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>7.4 Globale Gesundheitskrisen</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>COVID-19-Pandemie (2020-2023)</h4>
+                        <p>
+                            Die Pandemie war die größte globale Gesundheitskrise seit der Spanischen Grippe 1918:
+                        </p>
+                        <ul>
+                            <li><strong>Ausmaß:</strong> Über 7 Millionen offizielle Todesfälle weltweit (reale Zahl deutlich höher)</li>
+                            <li><strong>Wirtschaftliche Folgen:</strong> Tiefste Rezession seit Weltwirtschaftskrise, Millionen Arbeitslose</li>
+                            <li><strong>Lockdowns:</strong> Beispiellose Einschränkungen von Grundrechten</li>
+                            <li><strong>Impfstoffentwicklung:</strong> Rekordzeit durch mRNA-Technologie</li>
+                            <li><strong>Impfnationalismus:</strong> Reiche Länder sicherten sich Dosen, arme Länder gingen leer aus</li>
+                            <li><strong>Verschwörungstheorien:</strong> Massive Verbreitung von Falschinformationen</li>
+                            <li><strong>Politische Folgen:</strong> Gestärkte Exekutive, Infragestellung demokratischer Prozesse</li>
+                        </ul>
+
+                        <h4>Lehren aus der Pandemie</h4>
+                        <ul>
+                            <li>Notwendigkeit globaler Kooperation bei Gesundheitskrisen</li>
+                            <li>Stärkung der WHO und internationaler Frühwarnsysteme</li>
+                            <li>Gerechte Verteilung von Impfstoffen und Medikamenten</li>
+                            <li>Resilienz der Gesundheitssysteme</li>
+                            <li>Balance zwischen Gesundheitsschutz und Freiheitsrechten</li>
+                        </ul>
+
+                        <h4>Zukünftige Pandemierisiken</h4>
+                        <ul>
+                            <li>Antibiotikaresistenzen ("post-antibiotische Ära")</li>
+                            <li>Zoonosen durch Entwaldung und Klimawandel</li>
+                            <li>Bioterrorismus und "Gain-of-Function"-Forschung</li>
+                            <li>Globalisierung ermöglicht schnelle Verbreitung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>7.5 Demokratie unter Druck</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <h4>Globale Demokratiekrise</h4>
+                        <p>
+                            Seit etwa 2005 befindet sich die Demokratie weltweit auf dem Rückzug:
+                        </p>
+                        <ul>
+                            <li><strong>"Democratic Backsliding":</strong> Abbau demokratischer Normen in etablierten Demokratien</li>
+                            <li><strong>Autoritäre Regime:</strong> China, Russland als selbstbewusste Gegenmodelle</li>
+                            <li><strong>Hybridregime:</strong> Türkei, Ungarn - formal demokratisch, faktisch autoritär</li>
+                            <li><strong>Populismus:</strong> Trump, Bolsonaro, Orban, Le Pen untergraben demokratische Institutionen</li>
+                            <li><strong>Vertrauen schwindet:</strong> Skepsis gegenüber Medien, Experten, Institutionen</li>
+                        </ul>
+
+                        <h4>Bedrohungen für Demokratien</h4>
+                        <ul>
+                            <li><strong>Desinformation:</strong> Gezielte Untergrabung von Wahrheit und Fakten</li>
+                            <li><strong>Polarisierung:</strong> Gesellschaften spalten sich in unversöhnliche Lager</li>
+                            <li><strong>Populismus:</strong> Vereinfachung komplexer Probleme, "Volk vs. Elite"</li>
+                            <li><strong>Externe Einflussnahme:</strong> Russland, China versuchen westliche Demokratien zu destabilisieren</li>
+                            <li><strong>Soziale Medien:</strong> Algorithmische Radikalisierung, Hate Speech</li>
+                            <li><strong>Wirtschaftliche Ungleichheit:</strong> Wachsende Kluft zwischen Arm und Reich</li>
+                            <li><strong>Vertrauensverlust:</strong> Eliten gelten als abgehoben, korrupt</li>
+                        </ul>
+
+                        <h4>Stärkung der Demokratie</h4>
+                        <ul>
+                            <li><strong>Demokratiebildung:</strong> Politische Bildung, Medienkompetenz</li>
+                            <li><strong>Transparenz:</strong> Offenlegung von Parteispenden, Lobbyismus</li>
+                            <li><strong>Bürgerbeteiligung:</strong> Bürgerräte, partizipative Formate</li>
+                            <li><strong>Rechtsstaatlichkeit:</strong> Unabhängige Justiz, Gewaltenteilung verteidigen</li>
+                            <li><strong>Soziale Gerechtigkeit:</strong> Ungleichheit bekämpfen</li>
+                            <li><strong>Wehrhaftigkeit:</strong> Demokratien müssen sich gegen ihre Feinde verteidigen</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <div class="box-title">⚖️ Die Fragilität der Demokratie</div>
+                            <p>
+                                Die Geschichte zeigt: Demokratie ist nicht selbstverständlich. Sie kann durch Gleichgültigkeit, 
+                                wirtschaftliche Krisen, Extremismus oder externe Feinde zerstört werden. Die Weimarer Republik 
+                                ist mahnendes Beispiel. Demokratie erfordert aktive Bürgerinnen und Bürger, die für ihre Werte 
+                                einstehen und sie gegen Bedrohungen verteidigen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fazit und Ausblick -->
+            <div class="section-card">
+                <h2>8. Fazit und Ausblick</h2>
+                <p>
+                    Die Gegenwart ist geprägt von einer "neuen Unübersichtlichkeit" (Habermas). Die klaren Fronten 
+                    des Kalten Krieges sind einer komplexen multipolaren Welt gewichen, in der staatliche und 
+                    nicht-staatliche Akteure miteinander konkurrieren und kooperieren.
+                </p>
+                
+                <h3>Zentrale Erkenntnisse</h3>
+                <ul>
+                    <li><strong>Multipolarität:</strong> Die unipolare Moment der USA ist vorbei. China, Russland und 
+                    andere Mächte fordern die westliche Dominanz heraus. Die Weltordnung ist im Umbruch.</li>
+                    
+                    <li><strong>Systemwettbewerb:</strong> Liberal-demokratische Systeme stehen in Konkurrenz zu 
+                    autoritären Modellen. China präsentiert sich als Alternative zum westlichen Weg.</li>
+                    
+                    <li><strong>Asymmetrische Bedrohungen:</strong> Traditionelle zwischenstaatliche Kriege sind seltener 
+                    geworden, aber Terrorismus, Cyberangriffe und hybride Kriegsführung stellen neue Herausforderungen dar.</li>
+                    
+                    <li><strong>Globale Probleme erfordern globale Lösungen:</strong> Klimawandel, Pandemien, Migration 
+                    können nur durch internationale Kooperation bewältigt werden - die aber zunehmend schwieriger wird.</li>
+                    
+                    <li><strong>Europa zwischen Integration und Desintegration:</strong> Die EU hat sich erweitert und 
+                    vertieft, steht aber vor existenziellen Krisen und inneren Spannungen.</li>
+                    
+                    <li><strong>Deutschland wächst in Verantwortung:</strong> Als größte europäische Wirtschaftsmacht und 
+                    bevölkerungsreichstes EU-Land muss Deutschland mehr Verantwortung übernehmen - militärisch, politisch, 
+                    moralisch.</li>
+                    
+                    <li><strong>Technologie als Fluch und Segen:</strong> Digitalisierung und KI bieten enorme Chancen, 
+                    aber auch Risiken für Demokratie, Privatsphäre und soziale Stabilität.</li>
+                    
+                    <li><strong>Demokratie unter Druck:</strong> Weltweit sind demokratische Systeme bedroht - von außen 
+                    durch autoritäre Regime, von innen durch Populismus und Polarisierung.</li>
+                </ul>
+
+                <h3>Perspektiven für die Zukunft</h3>
+                <p>
+                    Die kommenden Jahrzehnte werden entscheidend sein:
+                </p>
+                <ul>
+                    <li>Wird es gelingen, die Erderwärmung zu begrenzen und die Klimakrise abzuwenden?</li>
+                    <li>Kann die internationale Gemeinschaft Konflikte friedlich lösen oder drohen neue Weltkriege?</li>
+                    <li>Werden Demokratien sich behaupten oder autoritäre Systeme die Oberhand gewinnen?</li>
+                    <li>Führt Globalisierung zu mehr Wohlstand für alle oder vertieft sie Ungleichheiten?</li>
+                    <li>Können wir Technologie zum Wohle der Menschheit nutzen oder wird sie zur Bedrohung?</li>
+                    <li>Gelingt europäische Integration oder zerfällt die EU?</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="box-title">💡 Historische Perspektive</div>
+                    <p>
+                        Die Geschichte lehrt uns: Nichts ist vorherbestimmt. Krisen können zu Katastrophen führen oder 
+                        zu Reformen und Fortschritt. Die Entscheidungen, die wir heute treffen, bestimmen die Welt von 
+                        morgen. Jede Generation steht vor der Aufgabe, ihre Zeit zu gestalten und Verantwortung zu 
+                        übernehmen. Die Herausforderungen der Gegenwart sind enorm, aber sie sind nicht unlösbar - wenn 
+                        wir aus der Geschichte lernen und gemeinsam handeln.
+                    </p>
+                </div>
+
+                <h3>Abiturrelevante Kompetenzen</h3>
+                <p>Für das Abitur solltet ihr in der Lage sein:</p>
+                <ul>
+                    <li><strong>Zu analysieren:</strong> Aktuelle Konflikte in historischen Kontext einordnen</li>
+                    <li><strong>Zu vergleichen:</strong> Verschiedene Akteure, Systeme, Lösungsansätze gegenüberstellen</li>
+                    <li><strong>Zu beurteilen:</strong> Sachurteile über Effizienz von Maßnahmen fällen</li>
+                    <li><strong>Zu bewerten:</strong> Werturteile auf Basis demokratischer Grundwerte formulieren</li>
+                    <li><strong>Multiperspektivität:</strong> Verschiedene Sichtweisen (z.B. westliche vs. russische Sicht auf NATO-Osterweiterung) darstellen</li>
+                    <li><strong>Gegenwartsbezug:</strong> Historisches Wissen auf aktuelle Probleme anwenden</li>
+                    <li><strong>Strukturiert argumentieren:</strong> These - Argument - Beispiel - Beleg</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Diese Seite behandelt die Herausforderungen der Gegenwart von 1991 bis heute.</p>
+            <p>Themen: Neue Weltordnung, Terrorismus, Asymmetrische Kriegsführung, Neue Ost-West-Spannungen, 
+            Europäische Union, Deutschlands Rolle, Klimawandel, Migration, Digitalisierung, Globale Gesundheit, 
+            Demokratie unter Druck</p>
+            <p style="margin-top: 15px; font-size: 0.85em; color: #95a5a6;">
+                © 2026 Geschichte Abitur Lernplattform | Alle Inhalte sind abiturgerecht aufbereitet
+            </p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            console.log('✅ Herausforderungen der Gegenwart (1991-heute) geladen!');
+        });
+    </script>
+</body>
+</html>
