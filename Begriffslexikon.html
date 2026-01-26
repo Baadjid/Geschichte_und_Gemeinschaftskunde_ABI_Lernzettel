@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begriffslexikon - Geschichte Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .header .description {
+            color: #95a5a6;
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--success-color), #2ecc71);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+            background: linear-gradient(45deg, #2ecc71, var(--success-color));
+        }
+
+        /* Search Container */
+        .search-container {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        /* Alphabet Navigation */
+        .alphabet-nav {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .alphabet-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .alphabet-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        /* Main Content */
+        .content {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            color: #555;
+            font-size: 1.05em;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 8px;
+        }
+
+        /* Letter Sections */
+        .letter-section {
+            margin-bottom: 40px;
+        }
+
+        .letter-header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 2em;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+        }
+
+        /* Term Styles */
+        .term {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .term:hover {
+            background: #e8f4f8;
+            border-left-color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .term-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .term-definition {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        footer .copyright {
+            color: #95a5a6;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1em;
+            }
+
+            .alphabet-nav {
+                gap: 5px;
+            }
+
+            .alphabet-link {
+                padding: 8px 12px;
+                min-width: 35px;
+                font-size: 0.9em;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+
+            .term {
+                padding: 15px;
+            }
+
+            .letter-header {
+                font-size: 1.5em;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>📖 Begriffslexikon</h1>
+            <p class="subtitle">Wichtige historische Fachbegriffe für das Geschichte-Abitur 2026</p>
+            <p class="description">Umfassendes Glossar mit über 100 Begriffen aus allen Epochen – von der Aufklärung bis zur Gegenwart</p>
+        </div>
+
+        <!-- Back Link -->
+        <a href="index.html" class="back-link">← Zurück zur Hauptseite</a>
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <input type="text" id="searchBox" class="search-box" placeholder="🔍 Begriff suchen... (z.B. Absolutismus, Holocaust, Kalter Krieg)">
+        </div>
+
+        <!-- Alphabet Navigation -->
+        <div class="alphabet-nav" id="alphabetNav">
+            <a href="#A" class="alphabet-link">A</a>
+            <a href="#B" class="alphabet-link">B</a>
+            <a href="#C" class="alphabet-link">C</a>
+            <a href="#D" class="alphabet-link">D</a>
+            <a href="#E" class="alphabet-link">E</a>
+            <a href="#F" class="alphabet-link">F</a>
+            <a href="#G" class="alphabet-link">G</a>
+            <a href="#H" class="alphabet-link">H</a>
+            <a href="#I" class="alphabet-link">I</a>
+            <a href="#J" class="alphabet-link">J</a>
+            <a href="#K" class="alphabet-link">K</a>
+            <a href="#L" class="alphabet-link">L</a>
+            <a href="#M" class="alphabet-link">M</a>
+            <a href="#N" class="alphabet-link">N</a>
+            <a href="#O" class="alphabet-link">O</a>
+            <a href="#P" class="alphabet-link">P</a>
+            <a href="#Q" class="alphabet-link">Q</a>
+            <a href="#R" class="alphabet-link">R</a>
+            <a href="#S" class="alphabet-link">S</a>
+            <a href="#T" class="alphabet-link">T</a>
+            <a href="#U" class="alphabet-link">U</a>
+            <a href="#V" class="alphabet-link">V</a>
+            <a href="#W" class="alphabet-link">W</a>
+            <a href="#Z" class="alphabet-link">Z</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="intro-text">
+                <strong>📌 Hinweis zur Nutzung:</strong> Dieses Lexikon enthält alle prüfungsrelevanten Fachbegriffe für das Geschichte-Abitur 2026. Die Begriffe sind alphabetisch sortiert und können über die Suchfunktion oder die Buchstabennavigation gefunden werden. Jeder Begriff ist präzise definiert und im historischen Kontext erklärt.
+            </div>
+
+          <!-- Buchstabe A -->
+            <div class="letter-section" data-letter="A" id="A">
+                <h2 class="letter-header">A</h2>
+                
+                <div class="term">
+                    <div class="term-name">14 Punkte</div>
+                    <div class="term-definition">Friedensprogramm des US-Präsidenten Woodrow Wilson vom Januar 1918. Die "14 Punkte" enthielten Forderungen nach einer neuen Landkarte Europas durch Festlegung verschiedener Grenzen und somit Anerkennung neuer selbständiger Staaten sowie die Forderung nach der Gründung des Völkerbundes. Das Programm sollte eine gerechte Friedensordnung nach dem Ersten Weltkrieg schaffen und basierte auf dem Selbstbestimmungsrecht der Völker.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Absolutismus</div>
+                    <div class="term-definition">Der Begriff bezeichnet die unumschränkte Macht in der Person eines Herrschers. Als absoluter König besaß dieser die alleinige Souveränität. Es gab keine Gewaltenteilung, die gesamte Staatsgewalt befand sich dem Konzept nach bei einer Person und war niemand anderem verantwortlich. Typisch war der Ausspruch Ludwig XIV. von Frankreich: "L'état c'est moi" (Der Staat bin ich). Der Absolutismus prägte Europa vom 17. bis zum 18. Jahrhundert.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Aggression</div>
+                    <div class="term-definition">Unprovozierter Angriff eines Staates auf einen anderen Staat. Völkerrechtlich ist Aggression verboten und stellt einen Bruch des internationalen Rechts dar. Aggressive Handlungen können militärischer, wirtschaftlicher oder politischer Natur sein. Der Begriff spielt insbesondere bei der Beurteilung von Kriegen und bewaffneten Konflikten eine zentrale Rolle.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Ancien Régime</div>
+                    <div class="term-definition">Französisch für "alte Ordnung" - Bezeichnung für Frankreich vor der Französischen Revolution 1789. Es steht für ein politisches System mit absolutistischer Monarchie und eine Gesellschaft, die sozial von der ständischen Privilegiengesellschaft geprägt war. Die drei Stände waren: Klerus (Erster Stand), Adel (Zweiter Stand) und Bürgertum/Bauern (Dritter Stand). Der Dritte Stand trug die Steuerlast, während die beiden privilegierten Stände von Abgaben befreit waren.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Antisemitismus</div>
+                    <div class="term-definition">Seit Ende des 19. Jahrhunderts verwendeter Begriff für Judenfeindlichkeit. Im Gegensatz zum traditionellen religiös begründeten Antijudaismus basierte der moderne Antisemitismus auf rassistischen und pseudowissenschaftlichen Theorien. Er versuchte, mit einer Ideologie eine systematische Abneigung gegen Juden zu schaffen und stellte sie als "minderwertige Rasse" dar. Der nationalsozialistische Antisemitismus führte schließlich zum Holocaust.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Appeasement</div>
+                    <div class="term-definition">Englisch für "Beschwichtigung" - Politik der Verhandlung und des Nachgebens, die vor dem Zweiten Weltkrieg von Frankreich und Großbritannien gegenüber dem nationalsozialistischen Deutschland verfolgt wurde. Die westlichen Demokratien zeigten die Bereitschaft, territoriale Zugeständnisse und Forderungen Hitlers zu erfüllen, um einen neuen Krieg zu vermeiden. Höhepunkt war das Münchner Abkommen 1938, das die Annexion des Sudetenlandes erlaubte. Die Politik scheiterte, als Hitler 1939 Polen überfiel.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Arbeiterbewegung</div>
+                    <div class="term-definition">Die Arbeiterbewegung entstand im Zuge der Industrialisierung. Der Begriff umfasst den Zusammenschluss von Lohnarbeitern, um politische und soziale Ziele durchzusetzen. Im Sinne der sozialen Frage formulierte die Arbeiterbewegung Forderungen zur Verbesserung der sozialen Lage der Arbeiterschaft. Wichtige Organisationsformen waren Gewerkschaften und sozialistische Parteien. In Deutschland entwickelte sich die SPD zur wichtigsten politischen Vertretung der Arbeiter.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Asyl</div>
+                    <div class="term-definition">Aufnahme und Schutz vor Verfolgung. Asylsuchende sind Menschen, die in ihrem Herkunftsland aus politischen, religiösen, ethnischen oder anderen Gründen verfolgt werden. Das Asylrecht gewährt Schutz vor politischer Verfolgung im Zufluchtsland. In Deutschland ist das Grundrecht auf Asyl in Artikel 16a des Grundgesetzes verankert und wurde als Lehre aus der NS-Zeit aufgenommen, als viele Verfolgte keine Zuflucht fanden.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Aufklärung</div>
+                    <div class="term-definition">Europäische Reformbewegung des 17. und 18. Jahrhunderts. Sie wollte den Weg des Menschen aus seiner "selbstverschuldeten Unmündigkeit" (Kant) aufzeigen. Das Fundament der Aufklärung war Wissensgewinn durch Vernunft, Toleranz gegenüber anderen Menschen und Religionen sowie ein von Rationalität geprägtes Handeln. Wichtige Vertreter waren Kant, Voltaire, Rousseau und Montesquieu. Die Aufklärung beeinflusste die Amerikanische und Französische Revolution maßgeblich.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe B -->
+            <div class="letter-section" data-letter="B" id="B">
+                <h2 class="letter-header">B</h2>
+                
+                <div class="term">
+                    <div class="term-name">Berlin-Blockade</div>
+                    <div class="term-definition">Absperrung West-Berlins durch die UdSSR vom 24. Juni 1948 bis 12. Mai 1949 als Reaktion auf die Währungsreform der Westzonen und die Gründung der Bundesrepublik Deutschland. Die Landwege nach West-Berlin wurden gesperrt, sodass die Stadt per Flugzeug durch die Luftbrücke versorgt werden musste. Die Blockade war die erste große Krise im Kalten Krieg und führte zur endgültigen Teilung Deutschlands. Die erfolgreiche Luftbrücke stärkte das Vertrauen der West-Berliner in die Westmächte.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Berliner Mauer</div>
+                    <div class="term-definition">Am 13. August 1961 begann die DDR-Führung mit dem Bau der Berliner Mauer, um die Massenflucht von DDR-Bürgern in den Westen zu stoppen. Die Mauer war 156 km lang und teilte Berlin in Ost und West. Sie wurde zum Symbol der deutschen Teilung und des Kalten Krieges. Mindestens 140 Menschen starben beim Versuch, die Grenze zu überwinden. Der Fall der Mauer am 9. November 1989 leitete die deutsche Wiedervereinigung ein.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Bündnispolitik</div>
+                    <div class="term-definition">System von Verträgen zwischen Staaten zur gegenseitigen Unterstützung, insbesondere im Kriegsfall. Bismarcks Bündnissystem nach 1871 zielte darauf ab, Frankreich zu isolieren und Deutschland vor einem Zweifrontenkrieg zu schützen. Nach Bismarcks Entlassung 1890 zerbrach dieses System. Die Blockbildung vor dem Ersten Weltkrieg (Dreibund vs. Entente) trug zur Eskalation bei, da lokale Konflikte durch Bündnisverpflichtungen zum Weltkrieg wurden.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Bürgerkrieg</div>
+                    <div class="term-definition">Bewaffneter Konflikt innerhalb eines Staates zwischen verschiedenen Gruppen der Bevölkerung. Charakteristisch sind der Kampf um die politische Macht und die Spaltung der Gesellschaft in gegnerische Lager. Beispiele: Spanischer Bürgerkrieg 1936-1939 (Republik vs. Franco), amerikanischer Bürgerkrieg 1861-1865 (Nord- vs. Südstaaten), russischer Bürgerkrieg 1918-1920 (Rote vs. Weiße Armee).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Bürgertum</div>
+                    <div class="term-definition">Soziale Schicht zwischen Adel und Unterschichten, die sich durch Bildung, Besitz und wirtschaftliche Tätigkeit definierte. Im 19. Jahrhundert wurde das Bürgertum zur tragenden Kraft von Liberalismus und Nationalismus. Man unterscheidet zwischen Großbürgertum (Unternehmer, Bankiers), Bildungsbürgertum (Akademiker, Beamte) und Kleinbürgertum (Handwerker, kleine Kaufleute). Das Bürgertum prägte die Kultur und Politik des 19. Jahrhunderts entscheidend.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe C -->
+            <div class="letter-section" data-letter="C" id="C">
+                <h2 class="letter-header">C</h2>
+                
+                <div class="term">
+                    <div class="term-name">Charta der Grundrechte der Europäischen Union</div>
+                    <div class="term-definition">Sie hält die Rechte und Freiheiten der in der Europäischen Union lebenden Menschen fest. Die 2000 proklamierte und 2009 mit dem Vertrag von Lissabon rechtsverbindlich gewordene Charta umfasst die Würde des Menschen, Freiheiten, Gleichheit, Solidarität, Bürgerrechte und justizielle Rechte. Sie gilt für alle EU-Institutionen und die Mitgliedstaaten bei der Anwendung von EU-Recht.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Code Civil</div>
+                    <div class="term-definition">Das von Napoleon 1804 eingeführte französische Zivilgesetzbuch, das auf den Prinzipien der Französischen Revolution basierte: Gleichheit vor dem Gesetz, Trennung von Kirche und Staat, Eigentumsrecht. Der Code Civil wurde in vielen von Frankreich besetzten oder beeinflussten Gebieten eingeführt und beeinflusste die Rechtsentwicklung in Europa nachhaltig. In Deutschland führte er zur Modernisierung des Rechtswesens.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Containment</div>
+                    <div class="term-definition">Eindämmungspolitik der USA gegenüber der Sowjetunion im Kalten Krieg. Die von George F. Kennan entwickelte Strategie zielte darauf ab, die weitere Ausbreitung des Kommunismus zu verhindern, ohne einen direkten militärischen Konflikt mit der UdSSR zu riskieren. Instrumente waren wirtschaftliche Hilfe (Marshall-Plan), militärische Bündnisse (NATO) und gegebenenfalls Stellvertreterkriege (Korea, Vietnam).</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe D -->
+            <div class="letter-section" data-letter="D" id="D">
+                <h2 class="letter-header">D</h2>
+                
+                <div class="term">
+                    <div class="term-name">Demokratie</div>
+                    <div class="term-definition">Staatsform, in der die Staatsgewalt vom Volk ausgeht. Charakteristisch sind freie Wahlen, Gewaltenteilung, Rechtsstaatlichkeit, Schutz von Minderheiten und Grundrechten. Man unterscheidet zwischen direkter Demokratie (Volk entscheidet direkt) und repräsentativer Demokratie (gewählte Vertreter entscheiden). Deutschland ist eine parlamentarische Demokratie mit Elementen direkter Demokratie (Volksentscheide auf Länderebene).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Diktatur</div>
+                    <div class="term-definition">Herrschaftsform, in der eine einzelne Person oder eine kleine Gruppe uneingeschränkte Macht ausübt. Charakteristisch sind die Aufhebung von Gewaltenteilung, Unterdrückung der Opposition, Einschränkung von Grundrechten und Meinungsfreiheit. Beispiele: NS-Diktatur (1933-1945), Stalin-Diktatur in der UdSSR, SED-Diktatur in der DDR. Diktaturen legitimieren sich oft durch Ideologien und setzen ihre Herrschaft mit Terror und Propaganda durch.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Digitalisierung</div>
+                    <div class="term-definition">Beschreibt den Vorgang der Wandlung, in der analoge Prozesse zunehmend computergesteuert und digital umgesetzt werden. Die Digitalisierung hat seit dem Beginn der Internetzeit auf die Gesellschaft einen immer stärkeren Einfluss auf alle Bereiche des Lebens: Arbeit, Kommunikation, Politik, Wirtschaft. Sie bietet Chancen (Vernetzung, Effizienz) und Herausforderungen (Datenschutz, digitale Spaltung, Überwachung).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Diplomatie</div>
+                    <div class="term-definition">Kunst der Verhandlung zwischen Staaten zur friedlichen Regelung internationaler Beziehungen. Diplomatie umfasst offizielle Verhandlungen, Verträge und die Arbeit von Botschaftern und Konsulaten. Sie ist ein wesentliches Instrument der Außenpolitik und dient der Konfliktvermeidung oder -lösung ohne militärische Gewalt. Im Zeitalter des Absolutismus entwickelte sich ein professionelles Diplomatensystem.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Dolchstoßlegende</div>
+                    <div class="term-definition">Der Begriff bezeichnet die Verschwörungsmythen von einem "Dolchstoß von hinten". Nach diesem Mythos hätten Sozialdemokraten, Kommunisten und Juden die angeblich unbesiegte deutsche Armee durch einen "Dolchstoß in den Rücken" verraten. Diese Legende diente dazu, die Schuld für die deutsche Niederlage im Ersten Weltkrieg auf andere zu schieben und die militärische Führung zu entlasten. Sie wurde von rechten Kreisen und später von den Nationalsozialisten zur Propaganda missbraucht und vergiftete die politische Kultur der Weimarer Republik.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Dreißigjähriger Krieg</div>
+                    <div class="term-definition">Konfessionskrieg von 1618 bis 1648, der hauptsächlich auf dem Gebiet des Heiligen Römischen Reiches ausgetragen wurde. Ursprünglich ein Konflikt zwischen Katholiken und Protestanten, entwickelte er sich zu einem europäischen Machtkampf. Der Krieg verwüstete weite Teile Deutschlands, die Bevölkerung ging um etwa ein Drittel zurück. Der Westfälische Frieden 1648 brachte das Ende und bestätigte die konfessionelle Spaltung Deutschlands.</div>
+                </div>
+            </div>
+
+          <!-- Buchstabe E -->
+            <div class="letter-section" data-letter="E" id="E">
+                <h2 class="letter-header">E</h2>
+                
+                <div class="term">
+                    <div class="term-name">Emanzipation</div>
+                    <div class="term-definition">Befreiung aus Abhängigkeit und Unmündigkeit, Erlangung der Gleichberechtigung. Historisch bedeutsam sind die jüdische Emanzipation (rechtliche Gleichstellung der Juden im 19. Jahrhundert) und die Frauenemanzipation (Kampf um Gleichberechtigung, Wahlrecht, wirtschaftliche Unabhängigkeit). Die Emanzipationsbewegungen prägten die gesellschaftliche Entwicklung der Moderne und sind bis heute aktuell.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Emigration</div>
+                    <div class="term-definition">Auswanderung aus dem Heimatland, meist aus politischen, wirtschaftlichen oder religiösen Gründen. Während der NS-Zeit flohen etwa 500.000 Menschen, darunter viele Juden, Intellektuelle und politische Gegner, ins Exil. Viele deutsche Wissenschaftler, Künstler und Schriftsteller emigrierten nach Großbritannien, USA oder in andere Länder. Diese Emigration bedeutete einen enormen Verlust für Deutschland ("brain drain").</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Ermächtigungsgesetz</div>
+                    <div class="term-definition">Gesetz vom 24. März 1933, das der Regierung Hitler das Recht gab, ohne Zustimmung des Reichstags und ohne Gegenzeichnung des Reichspräsidenten Gesetze zu erlassen. Mit diesem Gesetz schaltete Hitler faktisch das Parlament aus und errichtete die Diktatur auf "legalem" Weg. Nur die SPD stimmte dagegen, die KPD-Abgeordneten waren bereits verhaftet oder im Untergrund. Das Ermächtigungsgesetz markiert das Ende der Weimarer Republik.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Entspannungspolitik</div>
+                    <div class="term-definition">Phase im Kalten Krieg (ca. 1963-1979), in der die Supermächte versuchten, ihre Beziehungen zu verbessern und das Risiko eines Atomkriegs zu verringern. Wichtige Elemente waren Abrüstungsverträge (SALT I und II), wirtschaftliche Zusammenarbeit und der KSZE-Prozess. In Deutschland war die Neue Ostpolitik Willy Brandts Teil dieser Entspannung. Die Entspannung endete mit dem sowjetischen Einmarsch in Afghanistan 1979.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Europäische Integration</div>
+                    <div class="term-definition">Prozess des Zusammenwachsens europäischer Staaten seit 1945. Begann mit der Montanunion (1951), führte über die EWG (1957) zur heutigen EU (seit 1993). Ziele sind Friedenssicherung, wirtschaftliche Zusammenarbeit, gemeinsamer Markt und zunehmend auch politische Union. Wichtige Schritte waren die Einführung des Euro, die Osterweiterung und der Vertrag von Lissabon. Die Integration ist ein historisch einzigartiges Projekt zur Überwindung nationaler Konflikte.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Europäische Union (EU)</div>
+                    <div class="term-definition">Staatenverbund von derzeit 27 europäischen Ländern (nach dem Brexit). Gegründet 1993 durch den Vertrag von Maastricht, baut sie auf den Europäischen Gemeinschaften auf. Die EU hat Zuständigkeiten in vielen Politikbereichen, einen gemeinsamen Binnenmarkt und mit dem Euro eine gemeinsame Währung (20 Mitgliedstaaten). Organe sind Europäisches Parlament, Europäischer Rat, Rat der EU, Europäische Kommission und Europäischer Gerichtshof.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Exil</div>
+                    <div class="term-definition">Erzwungener oder freiwilliger Aufenthalt außerhalb der Heimat, meist aus politischen Gründen. Während der NS-Zeit gingen zahlreiche Schriftsteller, Künstler, Wissenschaftler und Politiker ins Exil, darunter Thomas Mann, Bertolt Brecht, Albert Einstein. Das Exil war oft von materieller Not, Heimweh und dem Kampf gegen das NS-Regime geprägt. Viele Exilanten kehrten nach 1945 nicht nach Deutschland zurück.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe F -->
+            <div class="letter-section" data-letter="F" id="F">
+                <h2 class="letter-header">F</h2>
+                
+                <div class="term">
+                    <div class="term-name">Faschismus</div>
+                    <div class="term-definition">Radikale politische Bewegung und Herrschaftsform des 20. Jahrhunderts, charakterisiert durch Diktatur, extremen Nationalismus, Militarismus und die Ablehnung von Demokratie und Marxismus. Entstanden in Italien unter Mussolini (1922), breitete sich der Faschismus in verschiedenen Formen in Europa aus. Der deutsche Nationalsozialismus war eine besonders radikale Variante mit rassistischem und antisemitischem Kern. Merkmale: Führerkult, Gewaltverherrlichung, Massenorganisation, totalitärer Herrschaftsanspruch.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Föderalismus</div>
+                    <div class="term-definition">Organisationsprinzip, bei dem staatliche Aufgaben zwischen Gesamtstaat (Bund) und Gliedstaaten (Länder) aufgeteilt sind. Die einzelnen Mitglieder haben je nach konkreter Ausgestaltung in unterschiedlichem Maße selbstverwaltende Rechte. Beim deutschen Föderalismus sind das die Bundesländer, die eigene Verfassungen, Parlamente und Regierungen haben. Der Föderalismus soll Machtmissbrauch verhindern, regionale Vielfalt bewahren und Bürgernähe gewährleisten. Er wurde im Grundgesetz als Lehre aus der zentralistischen NS-Diktatur verankert.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Französische Revolution</div>
+                    <div class="term-definition">Umwälzung der politischen und gesellschaftlichen Verhältnisse in Frankreich von 1789 bis 1799. Sie begann mit dem Sturm auf die Bastille am 14. Juli 1789 und führte zum Sturz der absolutistischen Monarchie. Die Revolution proklamierte die Menschenrechte, schaffte Feudalismus und Ständegesellschaft ab, entwickelte sich aber über die Terrorphase zur Diktatur und endete mit Napoleons Machtübernahme. Ihre Ideen (Freiheit, Gleichheit, Brüderlichkeit) beeinflussten die europäische Geschichte nachhaltig.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Frauenbewegung</div>
+                    <div class="term-definition">Soziale Bewegung, die sich für die Gleichberechtigung der Frau auf gesellschaftlicher, politischer und wirtschaftlicher Ebene einsetzt. Sie hat ihre Anfänge im 18. Jahrhundert. Die erste Welle (19. Jahrhundert bis 1920er) kämpfte vor allem um das Wahlrecht und rechtliche Gleichstellung. Die zweite Welle (ab 1960er) konzentrierte sich auf die Überwindung traditioneller Geschlechterrollen, gleiches Entgelt, Selbstbestimmung und Abtreibungsrecht. Die dritte Welle (ab 1990er) behandelt Themen wie Diversität und Intersektionalität.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Führerprinzip</div>
+                    <div class="term-definition">Zentrales Organisationsprinzip der nationalsozialistischen Diktatur. Es besagte, dass allein der "Führer" (Hitler) die Richtlinien der Politik bestimmte und absolute Autorität besaß. Alle nachgeordneten "Führer" waren ihm zu unbedingtem Gehorsam verpflichtet. Das Prinzip durchzog alle Bereiche von Staat, Partei und Gesellschaft und ersetzte demokratische Entscheidungsprozesse. Es legitimierte Hitlers Alleinherrschaft und machte Widerspruch unmöglich.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Fundamentalismus</div>
+                    <div class="term-definition">Strömung, die religiöse oder politische Grundsätze kompromisslos durchsetzen will und dabei oft zu Intoleranz und Gewalt neigt. Religiöser Fundamentalismus interpretiert heilige Schriften wörtlich und lehnt moderne gesellschaftliche Entwicklungen ab. Islamistischer Fundamentalismus ist seit den 1980er Jahren eine globale Herausforderung und äußert sich in Terrorismus. Der Begriff wird auch auf extreme politische Ideologien angewendet, die keine Kompromisse dulden.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe G -->
+            <div class="letter-section" data-letter="G" id="G">
+                <h2 class="letter-header">G</h2>
+                
+                <div class="term">
+                    <div class="term-name">Gestapo</div>
+                    <div class="term-definition">Geheime Staatspolizei - terroristische Polizeiorganisation des NS-Staates, die politische Gegner verfolgte, folterte und in Konzentrationslager verschleppte. Die 1933 gegründete Gestapo war nicht an Gesetze gebunden und konnte willkürlich verhaften ("Schutzhaft"). Sie spielte eine zentrale Rolle bei der Verfolgung von Juden, Widerstandskämpfern, Kommunisten und anderen als "Staatsfeinde" deklarierten Personen. Nach 1945 wurden viele Gestapo-Mitarbeiter als Kriegsverbrecher verurteilt.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Gewaltenteilung</div>
+                    <div class="term-definition">Das Prinzip, wonach die Staatsgewalt getrennt werden sollte, geht auf die Aufklärer John Locke (1632-1704) und Charles de Montesquieu (1689-1755) zurück. Darauf basierend verteilt sich die Staatsgewalt in Deutschland heute auf die gesetzgebende Gewalt (Legislative: Bundestag, Landtage), die ausführende Gewalt (Exekutive: Regierung, Verwaltung) und die rechtsprechende Gewalt (Judikative: Gerichte). Die Gewaltenteilung soll Machtmissbrauch verhindern und die Freiheit der Bürger sichern.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Glasnost</div>
+                    <div class="term-definition">Russisch für "Offenheit" - Politik der Transparenz und Meinungsfreiheit unter dem sowjetischen Generalsekretär Michail Gorbatschow ab 1985. Glasnost erlaubte erstmals öffentliche Kritik am System, freiere Berichterstattung und offene Diskussionen über Missstände. Zusammen mit Perestroika (Umgestaltung) sollte Glasnost die Sowjetunion reformieren, führte aber ungewollt zur Infragestellung des kommunistischen Systems und trug zum Zusammenbruch der UdSSR bei.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Gleichschaltung</div>
+                    <div class="term-definition">NS-Begriff für die gewaltsame Vereinheitlichung aller gesellschaftlichen Bereiche unter nationalsozialistischer Kontrolle 1933/34. Betroffen waren Länder, Parteien, Gewerkschaften, Vereine, Medien und Kultur. Alle Organisationen wurden entweder aufgelöst oder mit NS-Funktionären besetzt. Die Gleichschaltung vernichtete den Pluralismus der Weimarer Republik und schuf eine totalitäre Diktatur, in der nur noch die NSDAP und ihre Gliederungen existieren durften.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Globalisierung</div>
+                    <div class="term-definition">Prozess der weltweiten Verflechtung in Wirtschaft, Politik, Kultur, Umwelt und Kommunikation. Beschleunigt durch technologische Entwicklungen (Internet, Transport) seit den 1990er Jahren. Merkmale sind internationale Arbeitsteilung, globale Finanzmärkte, multinationale Konzerne, weltweite Migration und Kulturaustausch. Globalisierung bietet Chancen (Wohlstand, Innovation) und Risiken (Ausbeutung, Umweltzerstörung, Verlust lokaler Kulturen, wachsende Ungleichheit).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Grundgesetz</div>
+                    <div class="term-definition">Verfassung der Bundesrepublik Deutschland, verkündet am 23. Mai 1949. Ursprünglich als Provisorium bis zur Wiedervereinigung gedacht, gilt es seit 1990 für ganz Deutschland. Das Grundgesetz beginnt mit den unveränderlichen Grundrechten (Art. 1-19), garantiert Menschenwürde, Demokratie, Rechtsstaatlichkeit, Föderalismus und Sozialstaatsprinzip. Es enthält die "Ewigkeitsklausel" (Art. 79 Abs. 3), die Grundprinzipien vor Änderungen schützt - eine Lehre aus dem Untergang der Weimarer Republik.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Gulag</div>
+                    <div class="term-definition">System von Straflagern in der Sowjetunion, in denen politische Gefangene und Kriminelle unter unmenschlichen Bedingungen Zwangsarbeit leisten mussten. Unter Stalin erreichte der Gulag seinen Höhepunkt: Millionen Menschen wurden deportiert, viele starben an Kälte, Hunger und Erschöpfung. Der Gulag war Instrument des Terrors zur Unterdrückung jeglicher Opposition. Nach Stalins Tod 1953 wurden viele Lager aufgelöst, das System existierte aber bis in die 1980er Jahre.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe H -->
+            <div class="letter-section" data-letter="H" id="H">
+                <h2 class="letter-header">H</h2>
+                
+                <div class="term">
+                    <div class="term-name">Hitler-Ludendorff-Putsch</div>
+                    <div class="term-definition">Gescheiterter Putschversuch Adolf Hitlers und Erich Ludendorffs am 8./9. November 1923 in München. Hitler versuchte, die bayerische Regierung zu stürzen und von München aus einen "Marsch auf Berlin" zu starten, nach dem Vorbild von Mussolinis "Marsch auf Rom". Der Putsch wurde von der Polizei niedergeschlagen, Hitler zu fünf Jahren Festungshaft verurteilt (verbüßte nur neun Monate). Im Gefängnis schrieb er "Mein Kampf". Der gescheiterte Putsch machte Hitler in Deutschland bekannt und ließ ihn zur "legalen" Machtübernahme umschwenken.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Holocaust / Shoah</div>
+                    <div class="term-definition">Der Holocaust (griechisch: "totale Verbrennung") oder Shoah (hebräisch: "Katastrophe") bezeichnet die systematische, staatlich organisierte Ermordung von etwa sechs Millionen europäischen Juden durch das nationalsozialistische Deutschland zwischen 1941 und 1945. Die Ermordung fand in Ghettos, Konzentrationslagern, bei Massenerschießungen und in eigens errichteten Vernichtungslagern (Auschwitz, Treblinka, Sobibor, Belzec, Chelmno, Majdanek) statt. Der Holocaust gilt als einzigartiges Verbrechen in der Geschichte und als Zivilisationsbruch. Er ist zentraler Bezugspunkt der deutschen Erinnerungskultur.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Humanismus</div>
+                    <div class="term-definition">Geistige Bewegung der Renaissance (15./16. Jahrhundert), die den Menschen und seine Würde in den Mittelpunkt stellte. Humanisten wie Erasmus von Rotterdam studierten antike Texte, förderten Bildung und betonten die Fähigkeit des Menschen zu Vernunft und Selbstbestimmung. Der Humanismus bereitete die Aufklärung vor und beeinflusste das moderne Menschenbild. Heute bezeichnet Humanismus allgemein eine Weltanschauung, die Menschenrechte, Toleranz und Rationalität betont.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Hyperinflation</div>
+                    <div class="term-definition">Extreme Geldentwertung in Deutschland 1923, als die Preise täglich stiegen und das Geld seinen Wert verlor. Ein Dollar kostete im November 1923 4,2 Billionen Mark. Ursachen waren die Kriegsfinanzierung durch Gelddrucken, Reparationszahlungen und der Ruhrkampf. Die Hyperinflation vernichtete Ersparnisse des Mittelstands, führte zu sozialer Not und erschütterte das Vertrauen in die Weimarer Republik. Die Rentenmark-Einführung im November 1923 beendete die Inflation.</div>
+                </div>
+            </div>
+
+          <!-- Buchstabe I -->
+            <div class="letter-section" data-letter="I" id="I">
+                <h2 class="letter-header">I</h2>
+                
+                <div class="term">
+                    <div class="term-name">Ideologie</div>
+                    <div class="term-definition">Geschlossenes System von Weltanschauungen, Werten und Ideen, das das Denken und Handeln von Individuen oder Gruppen prägt. Ideologien bieten Erklärungen für gesellschaftliche Verhältnisse und enthalten oft politische Handlungsanweisungen. Beispiele: Liberalismus, Sozialismus, Konservatismus, Nationalismus, Kommunismus, Faschismus. Im negativen Sinn bezeichnet Ideologie ein starres, realitätsfernes Denksystem, das Kritik nicht zulässt (wie im Nationalsozialismus oder Stalinismus).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Imperialismus</div>
+                    <div class="term-definition">Unter Imperialismus versteht man das Streben der Kolonialmächte, Imperien (Weltmächte) zu bilden. Im Zeitalter des Imperialismus (von ca. 1880 bis 1918) griff jede europäische Großmacht sowie die USA und Japan weit aus und bildete Imperien mit weitreichenden Einflusssphären. Dadurch entstand ein Wettlauf der Kolonialmächte um die Aufteilung der Welt ("Scramble for Africa"). Motive waren wirtschaftliche Interessen (Rohstoffe, Absatzmärkte), Machtstreben und die Ideologie der "Zivilisierungsmission". Der Imperialismus trug zur Rivalität bei, die in den Ersten Weltkrieg führte.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Industrialisierung / Industrielle Revolution</div>
+                    <div class="term-definition">Industrielle Revolution bezeichnet den tiefgreifenden wirtschaftlichen und gesellschaftlichen Wandel, der in England um 1770 begann und bis heute andauert. Merkmale: Übergang von der Agrar- zur Industriegesellschaft, industrielle Produktionsweise mit neuen Energiequellen (Kohle, Dampfkraft), Fabriken, Maschinen, Massenproduktion, Arbeitsteilung und starkes Wachstum des Sozialprodukts. Gesellschaftliche Folgen waren Urbanisierung, Entstehung des Proletariats, soziale Frage und fundamentale Veränderungen der Lebenswelten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Integration</div>
+                    <div class="term-definition">Prozess der Eingliederung von Individuen oder Gruppen in eine größere Gemeinschaft. In der Migration bezeichnet Integration die Einbeziehung von Zuwanderern in die Gesellschaft des Aufnahmelandes, wobei beide Seiten aufeinander zugehen sollen (keine Assimilation). Integration umfasst sprachliche, berufliche, soziale und kulturelle Teilhabe. In Deutschland ist Integration seit den 1990er Jahren ein zentrales politisches Thema, da Deutschland faktisch ein Einwanderungsland ist.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Internationale Beziehungen</div>
+                    <div class="term-definition">Beziehungen zwischen Staaten, internationalen Organisationen und anderen Akteuren auf der weltpolitischen Bühne. Sie umfassen Diplomatie, Handel, Verträge, Konflikte und Kooperationen. Nach 1945 wurden internationale Beziehungen durch den Kalten Krieg geprägt, nach 1990 durch Globalisierung, neue Konflikte und multilaterale Institutionen (UN, EU, NATO, WTO). Zentrale Herausforderungen sind Terrorismus, Klimawandel, Migration und die Rivalität zwischen Großmächten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Islamismus</div>
+                    <div class="term-definition">Politische Bewegung, die einen auf dem Islam basierenden Staat und eine islamische Gesellschaftsordnung anstrebt. Islamisten interpretieren den Islam fundamentalistisch und lehnen westliche Werte wie Demokratie, Säkularismus und individuelle Freiheitsrechte ab. Extremer Islamismus bedient sich terroristischer Mittel (Al-Qaida, IS). Islamismus gewann seit der iranischen Revolution 1979 an Bedeutung und ist eine der größten sicherheitspolitischen Herausforderungen des 21. Jahrhunderts. Wichtig: Islamismus ist nicht gleichzusetzen mit dem Islam als Religion.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe J -->
+            <div class="letter-section" data-letter="J" id="J">
+                <h2 class="letter-header">J</h2>
+                
+                <div class="term">
+                    <div class="term-name">Julikrise 1914</div>
+                    <div class="term-definition">Internationale Krise im Juli 1914, die zum Ausbruch des Ersten Weltkriegs führte. Ausgelöst durch das Attentat von Sarajevo (28. Juni 1914), bei dem der österreichisch-ungarische Thronfolger Franz Ferdinand ermordet wurde. Österreich-Ungarn stellte Serbien ein ultimatives Ultimatum, das teilweise abgelehnt wurde. Durch das System der Bündnisverpflichtungen (Dreibund vs. Entente) eskalierten die Spannungen: Österreich-Ungarn erklärte Serbien den Krieg, Russland mobilisierte, Deutschland erklärte Russland und Frankreich den Krieg. Die Julikrise zeigt, wie ein lokaler Konflikt durch Nationalismus, Bündnisdynamik und Fehleinschätzungen zum Weltkrieg werden konnte.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Jalta-Konferenz</div>
+                    <div class="term-definition">Konferenz der "Großen Drei" (Roosevelt, Churchill, Stalin) vom 4. bis 11. Februar 1945 auf der Krim. Wichtige Beschlüsse: Aufteilung Deutschlands in Besatzungszonen, Forderung nach bedingungsloser Kapitulation, Gründung der UNO, Anerkennung sowjetischer Einflusssphäre in Osteuropa. Die Konferenz legte Grundlagen für die Nachkriegsordnung und den Kalten Krieg. Umstritten ist, ob die Westmächte Osteuropa "verraten" haben oder ob Stalin militärische Fakten schuf, die nicht rückgängig zu machen waren.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe K -->
+            <div class="letter-section" data-letter="K" id="K">
+                <h2 class="letter-header">K</h2>
+                
+                <div class="term">
+                    <div class="term-name">Kalter Krieg</div>
+                    <div class="term-definition">Globaler Konflikt zwischen den USA und der UdSSR von 1947 bis 1991, der nicht als direkter militärischer Konflikt ("heißer Krieg") ausgetragen wurde, sondern durch ideologische, wirtschaftliche und politische Konfrontation. Charakteristisch waren: Blockbildung (NATO vs. Warschauer Pakt), Wettrüsten, Stellvertreterkriege (Korea, Vietnam, Afghanistan), Spionage und Propagandaschlachten. Der Kalte Krieg prägte die Weltordnung nach 1945 und führte mehrmals fast zum Atomkrieg (Kubakrise 1962). Er endete mit dem Zusammenbruch der Sowjetunion 1991.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Kapitalismus</div>
+                    <div class="term-definition">Wirtschafts- und Gesellschaftssystem, das auf Privateigentum an Produktionsmitteln, Marktwirtschaft, Gewinnstreben und Wettbewerb basiert. Im Kapitalismus bestimmen Angebot und Nachfrage die Preise. Entstanden in der frühen Neuzeit, voll entwickelt mit der Industrialisierung. Kritiker (Marx) bemängelten Ausbeutung und soziale Ungleichheit. Der moderne Kapitalismus ist meist sozial reguliert (Soziale Marktwirtschaft). Nach 1990 setzte sich der Kapitalismus weltweit durch, steht aber wegen Ungleichheit und Umweltzerstörung in der Kritik.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Karlsbader Beschlüsse</div>
+                    <div class="term-definition">Repressive Maßnahmen, die auf einer Ministerkonferenz in Karlsbad im August 1819 beschlossen wurden. Nach der Ermordung des Dichters August von Kotzebue durch den Burschenschafter Karl Ludwig Sand reagierte Metternich mit Verfolgung der liberalen und nationalen Opposition. Die Beschlüsse umfassten: Verbot der Burschenschaften, Zensur von Publikationen, Überwachung der Universitäten, Untersuchungskommissionen gegen "Demagogen". Die Karlsbader Beschlüsse kennzeichnen die repressive Politik der Restaurationszeit und wurden zum Symbol der Unterdrückung freiheitlicher Bestrebungen.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Kolonialismus</div>
+                    <div class="term-definition">Herrschaft europäischer Mächte über außereuropäische Gebiete vom 16. bis 20. Jahrhundert. Kolonialmächte (Spanien, Portugal, England, Frankreich, Niederlande, Deutschland u.a.) eroberten und kontrollierten Territorien in Amerika, Asien und Afrika. Motive waren wirtschaftliche Ausbeutung (Rohstoffe, Arbeitskräfte), Machtgewinn und "Zivilisierungsmission". Der Kolonialismus führte zu Unterdrückung, Ausbeutung und kultureller Zerstörung der unterworfenen Völker. Nach 1945 begann die Dekolonisation. Die Folgen des Kolonialismus prägen Nord-Süd-Beziehungen bis heute.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Kommunismus</div>
+                    <div class="term-definition">Politische Ideologie und Bewegung, die eine klassenlose Gesellschaft ohne Privateigentum an Produktionsmitteln anstrebt. Entwickelt von Karl Marx und Friedrich Engels im 19. Jahrhundert. Nach marxistischer Theorie führt die Revolution des Proletariats über die "Diktatur des Proletariats" zum Kommunismus. In der Praxis schufen kommunistische Regime (Sowjetunion, DDR, China, Kuba) autoritäre Einparteienstaaten mit Planwirtschaft. Der Realsozialismus scheiterte in Europa 1989-1991 an wirtschaftlicher Ineffizienz und politischer Unterdrückung.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Konzentrationslager (KZ)</div>
+                    <div class="term-definition">Lager zur Inhaftierung und Vernichtung von Menschen, die das NS-Regime als Feinde oder "Untermenschen" ansah. Erste KZ entstanden 1933 (Dachau), waren zunächst für politische Gegner gedacht. Später wurden Juden, Sinti und Roma, Homosexuelle, "Asoziale", Kriegsgefangene und andere dort gefangen gehalten, zur Zwangsarbeit gezwungen oder ermordet. Ab 1941 entstanden Vernichtungslager (Auschwitz-Birkenau, Treblinka) mit dem alleinigen Zweck der Massenvernichtung. Die KZ waren zentrale Instrumente des Holocaust und des NS-Terrors.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Kubakrise</div>
+                    <div class="term-definition">Internationale Krise im Oktober 1962, als die Welt am Rand eines Atomkriegs stand. Die UdSSR stationierte heimlich Atomraketen auf Kuba, die USA verhängten eine Seeblockade. Nach 13 Tagen intensiver Verhandlungen zog die Sowjetunion die Raketen ab, im Gegenzug zogen die USA Raketen aus der Türkei ab und garantierten, Kuba nicht anzugreifen. Die Kubakrise war der Höhepunkt des Kalten Kriegs und führte zu einem Umdenken: Danach bemühten sich beide Supermächte um Entspannung und Rüstungskontrolle (heißer Draht, Atomteststoppabkommen).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Kulturkampf</div>
+                    <div class="term-definition">Konflikt zwischen dem preußischen Staat unter Bismarck und der katholischen Kirche in den 1870er Jahren. Bismarck fürchtete den Einfluss der katholischen Zentrumspartei und des Papstes. Er erließ repressive Gesetze gegen die Kirche (Kanzelparagraph, Schulaufsicht, Ausweisung von Jesuiten). Der Kulturkampf scheiterte, da die Katholiken zusammenhielten und das Zentrum erstarkte. Ab 1878 lenkte Bismarck ein und beendete den Konflikt schrittweise, um das Zentrum für seine Politik zu gewinnen.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe L -->
+            <div class="letter-section" data-letter="L" id="L">
+                <h2 class="letter-header">L</h2>
+                
+                <div class="term">
+                    <div class="term-name">Lebensraum</div>
+                    <div class="term-definition">Zentraler Begriff der nationalsozialistischen Ideologie. Hitler forderte die Eroberung von "Lebensraum im Osten" für das deutsche Volk, vor allem in der Sowjetunion. Diese Ideologie verband Rassismus (slawische "Untermenschen" sollten vertrieben oder versklavt werden), Antisemitismus ("jüdischer Bolschewismus") und Expansionsdrang. Der Lebensraum-Gedanke war die ideologische Rechtfertigung für den Vernichtungskrieg im Osten ab 1941, der Millionen von Toten forderte.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Legitimität</div>
+                    <div class="term-definition">Rechtmäßigkeit und Anerkennung politischer Herrschaft. Eine Regierung gilt als legitim, wenn sie von der Bevölkerung als rechtmäßig anerkannt wird. In Demokratien ergibt sich Legitimität aus freien Wahlen und Verfassungsmäßigkeit. In der Restaurationszeit vertrat Metternich das Prinzip der dynastischen Legitimität (Herrschaft durch Gottesgnadentum). Diktaturen versuchen oft, sich durch Ideologie, Propaganda oder wirtschaftliche Erfolge zu legitimieren, ohne demokratisch legitimiert zu sein.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Liberalismus</div>
+                    <div class="term-definition">Politische Ideologie, die individuelle Freiheit, Bürgerrechte, Rechtsstaatlichkeit und Gewaltenteilung betont. Im 19. Jahrhundert kämpften Liberale für Verfassungen, Parlamente, Pressefreiheit und wirtschaftliche Freiheit (Gewerbefreiheit, freier Handel). Sie wandten sich gegen Absolutismus, Zensur und ständische Privilegien. Im Wirtschaftsliberalismus wird staatliche Einmischung abgelehnt. Der politische Liberalismus prägte die Entwicklung moderner Demokratien. In Deutschland war der Liberalismus in der Revolution 1848/49 und im Kaiserreich einflussreich, verlor aber an Bedeutung gegenüber Konservativen und Sozialisten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Luftbrücke</div>
+                    <div class="term-definition">Versorgung West-Berlins durch amerikanische und britische Flugzeuge während der Berlin-Blockade (24. Juni 1948 bis 12. Mai 1949). Da die Sowjetunion alle Landwege nach West-Berlin gesperrt hatte, wurde die 2,2-Millionen-Stadt fast ein Jahr lang aus der Luft versorgt. Etwa 277.000 Flüge transportierten über 2,3 Millionen Tonnen Lebensmittel, Kohle und andere Güter. Die erfolgreiche Luftbrücke demonstrierte die Entschlossenheit des Westens und stärkte das Vertrauen der Berliner in die Westmächte.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe M -->
+            <div class="letter-section" data-letter="M" id="M">
+                <h2 class="letter-header">M</h2>
+                
+                <div class="term">
+                    <div class="term-name">Marshall-Plan</div>
+                    <div class="term-definition">Wirtschaftshilfeprogramm der USA für Europa nach dem Zweiten Weltkrieg, benannt nach US-Außenminister George C. Marshall. Von 1948 bis 1952 stellten die USA über 13 Milliarden Dollar bereit (heute etwa 150 Milliarden). Ziele waren wirtschaftlicher Wiederaufbau, Eindämmung des Kommunismus und Schaffung von Absatzmärkten. 16 westeuropäische Staaten nahmen teil, die Sowjetunion lehnte ab und verbot auch ihren Satellitenstaaten die Teilnahme. Der Marshall-Plan trug wesentlich zum "Wirtschaftswunder" und zur Westintegration der Bundesrepublik bei.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Marxismus</div>
+                    <div class="term-definition">Von Karl Marx und Friedrich Engels entwickelte Gesellschafts- und Wirtschaftstheorie. Kernthesen: Die Geschichte ist ein Klassenkampf zwischen Besitzenden und Besitzlosen; der Kapitalismus beutet die Arbeiter aus; die proletarische Revolution wird den Kapitalismus stürzen und eine klassenlose Gesellschaft schaffen. Der Marxismus beeinflusste die Arbeiterbewegung enorm und war ideologische Grundlage kommunistischer Staaten. In der Praxis führte er zu autoritären Regimen. Heute ist der orthodoxe Marxismus weitgehend diskreditiert, marxistische Analysekategorien werden aber weiter in den Sozialwissenschaften verwendet.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Menschenrechte</div>
+                    <div class="term-definition">Grundlegende Rechte, die jedem Menschen von Geburt an zustehen, unabhängig von Herkunft, Geschlecht, Religion oder sozialem Status. Wurzeln in der Aufklärung (Naturrecht). Erste Kodifizierung in der Virginia Bill of Rights (1776) und der französischen Erklärung der Menschen- und Bürgerrechte (1789). Nach dem Zweiten Weltkrieg verkündeten die Vereinten Nationen die Allgemeine Erklärung der Menschenrechte (1948). Menschenrechte umfassen bürgerliche Freiheiten (Meinungsfreiheit, Rechtsstaatlichkeit), politische Rechte (Wahlrecht) und soziale Rechte (Bildung, Arbeit). Ihre Durchsetzung ist eine zentrale Herausforderung internationaler Politik.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Migration</div>
+                    <div class="term-definition">Wanderungsbewegung von Menschen zwischen Ländern oder Regionen. Unterschieden werden: Emigration (Auswanderung), Immigration (Einwanderung), Arbeitsmigration, Flucht und Vertreibung. Motive sind wirtschaftliche Not, politische Verfolgung, Kriege, Umweltkatastrophen. Deutschland war im 19. Jahrhundert Auswanderungsland (nach USA), im 20. Jahrhundert wurde es zum Einwanderungsland (Gastarbeiter, Aussiedler, Flüchtlinge). Migration ist ein prägendes Phänomen der Globalisierung und politisch hochumstritten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Militarismus</div>
+                    <div class="term-definition">Überbewertung des Militärischen in Staat und Gesellschaft. Im deutschen Kaiserreich genoss das Militär hohes Ansehen, Offiziere hatten großen gesellschaftlichen Status, militärische Werte (Gehorsam, Disziplin, Pflichterfüllung) prägten das Denken. Der Militarismus äußerte sich in Flottenrüstung, Kriegsbegeisterung und dem Glauben, Konflikte militärisch lösen zu können. Er trug zum Ausbruch des Ersten Weltkriegs bei. Auch im Nationalsozialismus spielte Militarismus eine zentrale Rolle.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Moderne</div>
+                    <div class="term-definition">Epoche ab etwa 1800, gekennzeichnet durch Industrialisierung, Urbanisierung, Säkularisierung, Rationalisierung und gesellschaftlichen Wandel. Die Moderne brachte technischen Fortschritt, Wohlstand und individuelle Freiheit, aber auch Massengesellschaft, Entfremdung und neue Formen der Gewalt (Weltkriege, totalitäre Diktaturen). Kulturell zeichnet sich die Moderne durch Brüche mit Traditionen aus (Moderne Kunst, Literatur). Die Frage, ob die Moderne Segen oder Fluch ist, prägt die Diskussion bis heute (Postmoderne).</div>
+                </div>
+            </div>
+
+          <!-- Buchstabe N -->
+            <div class="letter-section" data-letter="N" id="N">
+                <h2 class="letter-header">N</h2>
+                
+                <div class="term">
+                    <div class="term-name">Nationalismus</div>
+                    <div class="term-definition">Politische Ideologie, die die Nation als höchsten Wert ansieht und nationale Interessen über internationale Zusammenarbeit stellt. Im 19. Jahrhundert war Nationalismus eine progressive Kraft (Einigungsbewegungen in Deutschland und Italien, Befreiungsbewegungen). Er verband sich oft mit Liberalismus und Demokratie. Später entwickelte sich ein aggressiver, chauvinistischer Nationalismus, der andere Nationen abwertete und Expansionspolitik rechtfertigte. Dieser extreme Nationalismus trug zu beiden Weltkriegen bei. Nach 1945 verlor der Nationalismus in Westeuropa an Bedeutung (europäische Integration), erlebt aber seit den 1990er Jahren eine Renaissance (Rechtspopulismus).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Nationalsozialismus</div>
+                    <div class="term-definition">Totalitäre Ideologie und Herrschaftssystem in Deutschland von 1933 bis 1945 unter Adolf Hitler. Kernelemente der NS-Ideologie waren: extremer Rassismus (Herrenrasse vs. "Untermenschen"), radikaler Antisemitismus (Juden als "Weltfeind"), Führerprinzip, Sozialdarwinismus, Lebensraum-Politik und die Ablehnung von Demokratie und Marxismus. Der Nationalsozialismus errichtete eine Diktatur mit totaler Kontrolle über alle Lebensbereiche, verfolgte und ermordete Millionen Menschen (Holocaust) und entfesselte den Zweiten Weltkrieg. Der Nationalsozialismus gilt als verbrecherisches System und größte Katastrophe der deutschen Geschichte.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">NATO (North Atlantic Treaty Organization)</div>
+                    <div class="term-definition">Nordatlantisches Verteidigungsbündnis, gegründet 1949 von zunächst 12 westlichen Staaten (heute 32 Mitglieder) als Reaktion auf die sowjetische Bedrohung. Artikel 5 des NATO-Vertrags besagt: Ein Angriff auf ein Mitglied gilt als Angriff auf alle (Beistandspflicht). Die NATO war während des Kalten Krieges das militärische Gegengewicht zum Warschauer Pakt. Nach 1990 erweiterte sich die NATO nach Osten, was zu Spannungen mit Russland führte. Die NATO bleibt das wichtigste Militärbündnis des Westens und Kern der transatlantischen Beziehungen.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Novemberrevolution</div>
+                    <div class="term-definition">Revolution in Deutschland im November 1918, die das Ende des Kaiserreichs und die Gründung der Republik brachte. Ausgelöst durch Matrosenaufstand in Kiel (3. November), breitete sich die Revolution schnell aus. Am 9. November dankte Kaiser Wilhelm II. ab, Philipp Scheidemann rief die Republik aus, Karl Liebknecht die sozialistische Republik. Die Revolution wurde von SPD-geführter Regierung (Rat der Volksbeauftragten) kanalisiert und endete mit der Niederschlagung des Spartakusaufstands (Januar 1919) und den Wahlen zur Nationalversammlung. Die Novemberrevolution schuf die Weimarer Republik, wurde aber von rechts als "Verrat" diffamiert.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Nürnberger Gesetze</div>
+                    <div class="term-definition">Antisemitische Rassengesetze, verkündet auf dem NSDAP-Parteitag in Nürnberg im September 1935. Sie umfassten das "Reichsbürgergesetz" (Juden verloren ihre Bürgerrechte und wurden zu "Staatsangehörigen") und das "Gesetz zum Schutze des deutschen Blutes und der deutschen Ehre" (Verbot von Ehen und Sexualverkehr zwischen Juden und "Ariern"). Die Nürnberger Gesetze institutionalisierten die Diskriminierung und Ausgrenzung der Juden und bereiteten den Weg für ihre spätere Vernichtung. Sie galten als pseudorechtliche Grundlage der Judenverfolgung.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Nürnberger Prozesse</div>
+                    <div class="term-definition">Kriegsverbrecherprozesse gegen führende Nationalsozialisten vor einem internationalen Militärtribunal (USA, Großbritannien, Frankreich, Sowjetunion) von November 1945 bis Oktober 1946 in Nürnberg. 24 Hauptangeklagte (darunter Göring, Heß, Ribbentrop) wurden wegen Verbrechen gegen den Frieden, Kriegsverbrechen und Verbrechen gegen die Menschlichkeit angeklagt. 12 wurden zum Tod verurteilt, 7 zu Haftstrafen. Die Prozesse dokumentierten die NS-Verbrechen und schufen Präzedenzfälle für internationales Strafrecht. Es folgten 12 Nachfolgeprozesse gegen Ärzte, Juristen, Industrielle und andere.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe O -->
+            <div class="letter-section" data-letter="O" id="O">
+                <h2 class="letter-header">O</h2>
+                
+                <div class="term">
+                    <div class="term-name">Oktoberrevolution</div>
+                    <div class="term-definition">Bolschewistische Revolution in Russland am 25. Oktober 1917 (nach julianischem Kalender, 7. November nach gregorianischem). Die von Lenin geführten Bolschewiki stürzten die provisorische Regierung und übernahmen die Macht. Die Parole "Frieden, Land, Brot" und "Alle Macht den Sowjets" mobilisierte Arbeiter, Soldaten und Bauern. Es folgte ein blutiger Bürgerkrieg (1918-1920), aus dem die Bolschewiki siegreich hervorgingen. Die Oktoberrevolution führte zur Gründung der Sowjetunion (1922) und etablierte das erste kommunistische Regime der Geschichte.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Opposition</div>
+                    <div class="term-definition">Politische Kräfte, die der Regierung oder dem herrschenden System widersprechen oder es bekämpfen. In Demokratien ist Opposition legitim und notwendig (parlamentarische Opposition). In Diktaturen wird Opposition unterdrückt und verfolgt. Im Nationalsozialismus gab es verschiedene Formen des Widerstands: passive Resistenz, Emigration, Widerstandsgruppen (Weiße Rose, Kreisauer Kreis), Attentatsversuche (20. Juli 1944). Die meisten Deutschen leisteten keinen aktiven Widerstand, viele arrangierten sich oder unterstützten das Regime.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Ostpolitik</div>
+                    <div class="term-definition">Neue Ostpolitik der sozialliberalen Koalition unter Bundeskanzler Willy Brandt (1969-1974). Ziel war "Wandel durch Annäherung" an die DDR und Osteuropa. Wichtige Schritte: Moskauer Vertrag und Warschauer Vertrag (1970, Anerkennung der Oder-Neiße-Grenze), Grundlagenvertrag mit der DDR (1972), Prager Vertrag mit der Tschechoslowakei (1973). Der berühmte Kniefall Brandts in Warschau symbolisierte die Versöhnung mit Polen. Die Ostpolitik war innenpolitisch umstritten (CDU/CSU sprach von "Ausverkauf"), international aber erfolgreich und erhielt 1971 den Friedensnobelpreis für Brandt.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Ost-West-Konflikt</div>
+                    <div class="term-definition">Siehe Kalter Krieg. Begriff für die globale Auseinandersetzung zwischen dem kapitalistischen Westen (angeführt von den USA) und dem kommunistischen Osten (angeführt von der UdSSR) von 1947 bis 1991. Der Konflikt war ideologisch (Demokratie vs. Kommunismus), politisch (verschiedene Gesellschaftssysteme), militärisch (Wettrüsten, Stellvertreterkriege) und wirtschaftlich (Kapitalismus vs. Planwirtschaft). Der Ost-West-Konflikt teilte die Welt in Blöcke und prägte alle internationalen Beziehungen. Deutschland war als geteiltes Land Brennpunkt des Konflikts.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe P -->
+            <div class="letter-section" data-letter="P" id="P">
+                <h2 class="letter-header">P</h2>
+                
+                <div class="term">
+                    <div class="term-name">Parlamentarische Demokratie</div>
+                    <div class="term-definition">Regierungsform, in der das Parlament (vom Volk gewählt) die zentrale Rolle spielt. Das Parlament wählt die Regierung und kann ihr das Vertrauen entziehen. In Deutschland ist die parlamentarische Demokratie im Grundgesetz verankert: Der Bundestag wählt den Bundeskanzler, die Regierung ist dem Parlament verantwortlich. Im Unterschied zur präsidialen Demokratie (USA) ist das Staatsoberhaupt (Bundespräsident) nicht Regierungschef. Das parlamentarische System soll durch gegenseitige Kontrolle Machtmissbrauch verhindern.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Perestroika</div>
+                    <div class="term-definition">Russisch für "Umgestaltung" - Reformpolitik des sowjetischen Generalsekretärs Michail Gorbatschow ab 1985. Perestroika zielte auf die wirtschaftliche und politische Modernisierung der erstarrten Sowjetunion. Elemente waren: Dezentralisierung der Wirtschaft, begrenzte Privatinitiative, Demokratisierung der Partei. Zusammen mit Glasnost (Offenheit) sollte Perestroika die UdSSR retten, löste aber einen Prozess aus, der zur Auflösung der Sowjetunion (1991) führte. Die Reformen kamen zu spät und gingen nicht weit genug, führten aber zum Ende des Kalten Krieges.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Pogrom</div>
+                    <div class="term-definition">Gewaltsame, oft von Behörden geduldete oder organisierte Ausschreitungen gegen eine religiöse, ethnische oder andere Minderheit. Historisch besonders gegen Juden gerichtet. Die Novemberpogrome 1938 ("Reichskristallnacht") waren eine von den Nationalsozialisten organisierte Gewaltwelle gegen Juden: Synagogen wurden niedergebrannt, Geschäfte geplündert, mindestens 91 Juden ermordet, 30.000 in KZ verschleppt. Die Pogrome markierten den Übergang von Diskriminierung zu offener Gewalt und bereiteten den Holocaust vor.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Potsdamer Abkommen</div>
+                    <div class="term-definition">Beschlüsse der Siegermächte (USA, Großbritannien, Sowjetunion) auf der Potsdamer Konferenz (17. Juli - 2. August 1945) über die Behandlung Deutschlands nach der Kapitulation. Wichtigste Punkte: Die "4 D's" - Demokratisierung, Denazifizierung, Demilitarisierung, Dezentralisierung; Aufteilung in vier Besatzungszonen; Reparationen aus den jeweiligen Zonen; Abtretung deutscher Ostgebiete an Polen und die Sowjetunion; "geordnete" Vertreibung der deutschen Bevölkerung aus Osteuropa. Das Abkommen sollte Deutschland als wirtschaftliche Einheit erhalten, führte aber zur Teilung.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Propaganda</div>
+                    <div class="term-definition">Gezielte Verbreitung von Informationen, Ideen oder Gerüchten zur Beeinflussung der öffentlichen Meinung. In Diktaturen ist Propaganda Mittel der Massenmobilisierung und -manipulation. Im Nationalsozialismus kontrollierte das Reichsministerium für Volksaufklärung und Propaganda unter Goebbels alle Medien. Durch Filme, Rundfunk, Plakate, Massenveranstaltungen und Zensur wurde die NS-Ideologie verbreitet und Kritik unterdrückt. Moderne Propaganda nutzt auch soziale Medien und Desinformation ("Fake News").</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Proletariat</div>
+                    <div class="term-definition">Marxistischer Begriff für die besitzlose Arbeiterklasse, die nur ihre Arbeitskraft verkaufen kann. Nach Marx wird das Proletariat im Kapitalismus ausgebeutet und bildet das revolutionäre Subjekt, das durch Revolution die klassenlose Gesellschaft erkämpfen wird. Das Industrieproletariat des 19. Jahrhunderts lebte oft in Armut und prekären Verhältnissen (soziale Frage). Die Arbeiterbewegung organisierte das Proletariat politisch (Parteien, Gewerkschaften). Im 20. Jahrhundert verbesserte sich die Lage durch Sozialgesetzgebung und Wirtschaftswachstum.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe Q -->
+            <div class="letter-section" data-letter="Q" id="Q">
+                <h2 class="letter-header">Q</h2>
+                
+                <div class="term">
+                    <div class="term-name">Quisling</div>
+                    <div class="term-definition">Bezeichnung für einen Kollaborateur, der mit einer Besatzungsmacht zusammenarbeitet und sein eigenes Volk verrät. Benannt nach Vidkun Quisling, norwegischer Politiker, der während der deutschen Besatzung (1940-1945) eine Marionettenregierung unter deutscher Kontrolle führte. Nach dem Krieg wurde er wegen Hochverrats hingerichtet. Der Begriff "Quisling" wurde zum Synonym für Verräter und Kollaborateure in besetzten Ländern.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe R -->
+            <div class="letter-section" data-letter="R" id="R">
+                <h2 class="letter-header">R</h2>
+                
+                <div class="term">
+                    <div class="term-name">Rassismus</div>
+                    <div class="term-definition">Ideologie, die Menschen aufgrund körperlicher Merkmale (Hautfarbe, Herkunft) in "Rassen" einteilt und bewertet. Rassismus behauptet, es gebe höher- und minderwertige "Rassen" - eine wissenschaftlich widerlegte Theorie. Der Rassismus rechtfertigte Kolonialismus, Sklaverei und Völkermord. Der nationalsozialistische Rassismus erklärte die "arische Rasse" zur Herrenrasse und Juden, Sinti und Roma sowie Slawen zu "Untermenschen", was zum Holocaust führte. Rassismus existiert bis heute in Form von Diskriminierung, Fremdenfeindlichkeit und Gewalt.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Rationalisierung</div>
+                    <div class="term-definition">Einsatz von Technik und Organisation zur Steigerung der Effizienz in der Produktion. In der Weimarer Republik führte die Rationalisierung (Fließbandarbeit, Taylorismus) zu Produktivitätssteigerungen, aber auch zu Arbeitslosigkeit und Intensivierung der Arbeit. Die Weltwirtschaftskrise verstärkte diese Probleme. Heute bezeichnet Rationalisierung allgemein die Optimierung von Arbeitsabläufen, oft verbunden mit Personalabbau durch Automatisierung und Digitalisierung.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Rechtsstaat</div>
+                    <div class="term-definition">Staat, in dem staatliches Handeln an Recht und Gesetz gebunden ist. Merkmale: Gewaltenteilung, unabhängige Justiz, Grundrechtsschutz, Rechtsschutz gegen staatliche Willkür, Verhältnismäßigkeit staatlichen Handelns. In Deutschland ist das Rechtsstaatsprinzip im Grundgesetz verankert. Der Rechtsstaat schützt die Bürger vor staatlicher Willkür und garantiert Rechtssicherheit. In Diktaturen gibt es keinen Rechtsstaat, da die Herrschenden über dem Gesetz stehen.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Reformation</div>
+                    <div class="term-definition">Kirchliche Erneuerungsbewegung im 16. Jahrhundert, ausgelöst durch Martin Luthers 95 Thesen (1517) gegen den Ablasshandel. Luther forderte die Rückkehr zur Bibel als alleiniger Autorität ("sola scriptura") und Rechtfertigung allein durch Glauben ("sola fide"). Die Reformation führte zur Spaltung der westlichen Christenheit in katholische und protestantische Konfessionen. Sie hatte weitreichende politische, soziale und kulturelle Folgen: Bauernkrieg (1524/25), konfessionelle Kriege, Entstehung von Territorialkirchen, Förderung von Bildung (Bibelübersetzung) und Individualismus.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Reichskristallnacht</div>
+                    <div class="term-definition">Beschönigende Bezeichnung für die Novemberpogrome vom 9./10. November 1938. Siehe auch Pogrom. Heute wird der verharmlosende Begriff "Kristallnacht" vermieden und stattdessen von Novemberpogromen oder Reichspogromnacht gesprochen.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Reichstagsbrand</div>
+                    <div class="term-definition">Brand des Reichstagsgebäudes in Berlin in der Nacht vom 27. auf den 28. Februar 1933, vier Wochen nach Hitlers Machtergreifung. Der niederländische Kommunist Marinus van der Lubbe wurde als Brandstifter verhaftet. Die Nazis nutzten den Brand als Vorwand für die "Reichstagsbrandverordnung", die Grundrechte außer Kraft setzte und die Verfolgung politischer Gegner legalisierte. Ob die Nazis selbst hinter dem Brand steckten, ist bis heute umstritten. Der Reichstagsbrand war entscheidend für die Errichtung der NS-Diktatur.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Renaissance</div>
+                    <div class="term-definition">Kulturelle Blütezeit in Europa (14.-16. Jahrhundert), die sich durch Rückbesinnung auf die Antike auszeichnete. "Renaissance" bedeutet "Wiedergeburt". Zentren waren italienische Städte (Florenz, Venedig, Rom). Die Renaissance brachte herausragende Künstler (Leonardo da Vinci, Michelangelo, Raffael), Wissenschaftler (Kopernikus, Galilei) und Humanisten (Erasmus von Rotterdam) hervor. Sie betonte den Menschen als selbstbestimmtes Individuum, förderte Wissenschaft und empirische Forschung und bereitete die Moderne vor.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Reparationen</div>
+                    <div class="term-definition">Wiedergutmachungszahlungen, die ein Staat nach einem verlorenen Krieg leisten muss. Nach dem Ersten Weltkrieg musste Deutschland laut Versailler Vertrag hohe Reparationen zahlen (132 Milliarden Goldmark), was die Wirtschaft belastete und politisch instrumentalisiert wurde ("Knechtschaft"). Die Zahlungen trugen zur Inflation bei und wurden 1932 eingestellt. Nach dem Zweiten Weltkrieg musste Deutschland ebenfalls Reparationen leisten, vor allem an die Sowjetunion (Demontagen). Auch Israel erhielt Wiedergutmachungszahlungen für den Holocaust.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Restauration</div>
+                    <div class="term-definition">Wiederherstellung der vorrevolutionären Ordnung nach 1815. Auf dem Wiener Kongress (1814/15) ordneten die Siegermächte über Napoleon Europa neu und versuchten, die Zustände vor der Französischen Revolution wiederherzustellen. Fürst Metternich vertrat das Prinzip der Legitimität (Herrschaft der alten Dynastien) und der Solidarität der Monarchen gegen revolutionäre Bestrebungen. Die Restauration unterdrückte nationale und liberale Bewegungen (Heilige Allianz, Karlsbader Beschlüsse), konnte aber den gesellschaftlichen Wandel nicht aufhalten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Revolution</div>
+                    <div class="term-definition">Grundlegende, meist gewaltsame Umwälzung der politischen, sozialen und wirtschaftlichen Verhältnisse. Revolutionen brechen mit der bestehenden Ordnung und schaffen neue Strukturen. Historisch bedeutsam: Französische Revolution (1789), Revolution von 1848/49, Russische Revolution (1917), Novemberrevolution (1918), Friedliche Revolution in der DDR (1989). Revolutionen können von unten (Massenaufstand) oder von oben (Staatsstreich) erfolgen. Ihre Erfolge sind unterschiedlich: Manche scheitern, andere verändern die Weltgeschichte nachhaltig.</div>
+                </div>
+            </div>
+
+          <!-- Buchstabe S -->
+            <div class="letter-section" data-letter="S" id="S">
+                <h2 class="letter-header">S</h2>
+                
+                <div class="term">
+                    <div class="term-name">Säkularisierung</div>
+                    <div class="term-definition">Prozess der Verweltlichung, bei dem Religion an gesellschaftlichem Einfluss verliert. In der Neuzeit bedeutete Säkularisierung die Trennung von Kirche und Staat, die Enteignung kirchlichen Besitzes (z.B. 1803 in Deutschland) und die Zurückdrängung religiöser Normen aus dem öffentlichen Leben. Die Aufklärung beschleunigte diesen Prozess. In modernen Gesellschaften bestimmt Religion nicht mehr alle Lebensbereiche, bleibt aber für viele Menschen wichtig. Die Säkularisierung ist umstritten: Manche sehen sie als Fortschritt, andere als Verlust von Orientierung.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Selbstbestimmungsrecht der Völker</div>
+                    <div class="term-definition">Grundsatz, wonach jedes Volk das Recht hat, über seine politische Zugehörigkeit und Regierungsform frei zu entscheiden. Das Prinzip wurde von US-Präsident Wilson in seinen 14 Punkten (1918) proklamiert und prägte die Neuordnung Europas nach dem Ersten Weltkrieg. Es legitimierte die Entstehung neuer Nationalstaaten (Polen, Tschechoslowakei). Das Selbstbestimmungsrecht ist in der UN-Charta verankert und war Leitprinzip der Dekolonisation nach 1945. Es steht oft im Spannungsverhältnis zur territorialen Integrität bestehender Staaten (Sezessionskonflikte).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Shoah</div>
+                    <div class="term-definition">Siehe Holocaust. Hebräisches Wort für "Katastrophe" oder "Vernichtung". Viele bevorzugen diesen Begriff gegenüber "Holocaust", da er nicht religiös konnotiert ist und die jüdische Perspektive betont.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Soziale Frage</div>
+                    <div class="term-definition">Sammelbegriff für die sozialen Probleme, die durch die Industrialisierung im 19. Jahrhundert entstanden: Massenarmut, Kinderarbeit, unmenschliche Arbeitsbedingungen, Wohnungselend, fehlende soziale Absicherung. Die soziale Frage betraf vor allem das Industrieproletariat. Lösungsansätze kamen von verschiedenen Seiten: christliche Soziallehre, Unternehmerinitiativen (Paternalismus), staatliche Sozialpolitik (Bismarcks Sozialgesetzgebung), Arbeiterbewegung (Gewerkschaften, SPD). Die soziale Frage prägte das 19. Jahrhundert und führte zur Entwicklung des Sozialstaats.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Soziale Marktwirtschaft</div>
+                    <div class="term-definition">Wirtschaftsordnung der Bundesrepublik Deutschland, entwickelt von Ludwig Erhard und Alfred Müller-Armack. Sie verbindet Prinzipien der freien Marktwirtschaft (Privateigentum, Wettbewerb, Preisbildung durch Angebot und Nachfrage) mit sozialer Absicherung und staatlichen Eingriffen zur Korrektur von Marktversagen. Elemente sind: Kartellrecht, Mitbestimmung, Sozialversicherungen, progressive Besteuerung, Umweltschutz. Die soziale Marktwirtschaft gilt als wichtiger Faktor für das "Wirtschaftswunder" und als deutscher "Dritter Weg" zwischen Kapitalismus und Sozialismus.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Sozialismus</div>
+                    <div class="term-definition">Politische Ideologie und Bewegung, die soziale Gleichheit, Gemeinschaftseigentum an Produktionsmitteln und Solidarität anstrebt. Der Sozialismus entstand im 19. Jahrhundert als Reaktion auf die soziale Frage. Man unterscheidet zwischen demokratischem Sozialismus (parlamentarischer Weg, Sozialdemokratie) und revolutionärem Sozialismus (Marxismus, Kommunismus). In der Praxis schufen kommunistische Regime autoritäre Planwirtschaften ("Realsozialismus"), die 1989-1991 zusammenbrachen. Sozialdemokratische Parteien in Westeuropa vertreten heute einen reformistischen Sozialismus im Rahmen der Marktwirtschaft.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Sozialistengesetz</div>
+                    <div class="term-definition">Gesetz gegen die sozialdemokratische Bewegung, das Bismarck 1878 nach zwei Attentaten auf Kaiser Wilhelm I. durchsetzte (ohne Beteiligung der Sozialdemokraten). Das Gesetz verbot die SPD, sozialistische Vereine, Versammlungen und Publikationen. Führende Sozialdemokraten wurden verfolgt oder ins Exil getrieben. Trotzdem wuchs die SPD im Untergrund, bei Reichstagswahlen (wo die SPD nicht verboten war) stieg ihre Stimmenzahl. Bismarck kombinierte das Gesetz mit Sozialgesetzgebung ("Zuckerbrot und Peitsche"). 1890 wurde das gescheiterte Gesetz nicht verlängert.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Sozialstaat</div>
+                    <div class="term-definition">Staat, der soziale Gerechtigkeit und Sicherheit durch Umverteilung und soziale Dienstleistungen gewährleistet. Deutschland war Pionier der Sozialgesetzgebung: Bismarck führte 1883-1889 Kranken-, Unfall- und Rentenversicherung ein. Nach 1945 wurde der Sozialstaat ausgebaut: Arbeitslosenversicherung, Pflegeversicherung, Sozialhilfe, kostenlose Bildung. Das Sozialstaatsprinzip ist im Grundgesetz verankert (Art. 20). Der Sozialstaat soll Armut verhindern und Chancengleichheit fördern, steht aber wegen Finanzierung und demographischem Wandel unter Reformdruck.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Stalinismus</div>
+                    <div class="term-definition">Herrschaftssystem Josef Stalins in der Sowjetunion (1928-1953), gekennzeichnet durch totale Diktatur, Terror, Personenkult und forcierte Industrialisierung. Stalin beseitigte alle innerparteilichen Gegner, ließ Millionen Menschen in den Gulag deportieren oder hinrichten (Große Säuberung 1936-1938). Die Zwangskollektivierung der Landwirtschaft führte zu Hungerkatastrophen (Holodomor in der Ukraine). Stalin industrialisierte die UdSSR mit brutalen Methoden (Fünfjahrespläne). Der Stalinismus war ein totalitäres System, das sich auf Angst und Propaganda stützte. Nach Stalins Tod 1953 wurde der Personenkult kritisiert (Entstalinisierung).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Stellvertreterkrieg</div>
+                    <div class="term-definition">Militärischer Konflikt, in dem Großmächte nicht direkt gegeneinander kämpfen, sondern über verbündete kleinere Staaten oder Gruppen. Im Kalten Krieg führten USA und UdSSR zahlreiche Stellvertreterkriege, um ihre Einflusssphären zu erweitern, ohne einen direkten (atomaren) Konflikt zu riskieren. Beispiele: Koreakrieg (1950-1953), Vietnamkrieg (1964-1975), Afghanistankrieg (1979-1989), Konflikte in Afrika und Lateinamerika. Stellvertreterkriege verursachten Millionen von Toten und destabilisierten ganze Regionen.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Ständegesellschaft</div>
+                    <div class="term-definition">Hierarchische Gesellschaftsordnung, in der Menschen von Geburt an einem Stand angehören mit unterschiedlichen Rechten und Pflichten. Im Ancien Régime gab es drei Stände: Klerus (Erster Stand), Adel (Zweiter Stand), alle anderen (Dritter Stand = Bürgertum, Bauern). Die ersten beiden Stände waren privilegiert (Steuerfreiheit, Zugang zu Ämtern), der Dritte Stand trug die Hauptlast. Die Französische Revolution beendete die Ständegesellschaft und proklamierte Gleichheit vor dem Gesetz. Die ständische Ordnung wurde durch Klassengesellschaft ersetzt.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe T -->
+            <div class="letter-section" data-letter="T" id="T">
+                <h2 class="letter-header">T</h2>
+                
+                <div class="term">
+                    <div class="term-name">Terrorismus</div>
+                    <div class="term-definition">Systematische Anwendung von Gewalt und Einschüchterung zur Erreichung politischer, religiöser oder ideologischer Ziele. Terroristen zielen oft auf Zivilisten, um Angst zu verbreiten und Staaten unter Druck zu setzen. Historische Beispiele: anarchistischer Terror (19. Jh.), RAF in Deutschland (1970er), IRA in Nordirland, islamistischer Terror (Al-Qaida, IS). Nach den Anschlägen vom 11. September 2001 wurde die Terrorismusbekämpfung zur weltpolitischen Priorität. Terrorismus bedroht Sicherheit und Freiheit und stellt Demokratien vor das Dilemma zwischen Sicherheit und Grundrechten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Totalitarismus</div>
+                    <div class="term-definition">Herrschaftsform, die totale Kontrolle über alle gesellschaftlichen Bereiche und das Leben des Einzelnen beansprucht. Merkmale: Einparteienherrschaft, Ideologie als Staatsreligion, Massenmobilisierung, Terror gegen "Feinde", Propaganda, Überwachung, Ausschaltung der Zivilgesellschaft. Klassische Beispiele sind der Nationalsozialismus und der Stalinismus. Der Begriff wurde in der Politikwissenschaft entwickelt, um die Gemeinsamkeiten zwischen scheinbar gegensätzlichen Diktaturen (Nazi-Deutschland, Sowjetunion) zu beschreiben. Totalitäre Regime unterscheiden sich von autoritären Regimen durch ihren umfassenden Herrschaftsanspruch.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Truman-Doktrin</div>
+                    <div class="term-definition">Grundsatzerklärung des US-Präsidenten Harry S. Truman vom 12. März 1947, die den Beginn der Containment-Politik markierte. Truman versprach Unterstützung für "freie Völker", die sich gegen kommunistische Bedrohung wehrten (zunächst Griechenland und Türkei). Die Doktrin signalisierte das Ende der amerikanischen Isolationspolitik und den Beginn des globalen Engagements gegen die Sowjetunion. Sie war ideologische Grundlage des Kalten Krieges und rechtfertigte amerikanische Interventionen weltweit. Die Truman-Doktrin teilte die Welt in "freie" und "unfreie" Lager.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe U -->
+            <div class="letter-section" data-letter="U" id="U">
+                <h2 class="letter-header">U</h2>
+                
+                <div class="term">
+                    <div class="term-name">UdSSR (Union der Sozialistischen Sowjetrepubliken)</div>
+                    <div class="term-definition">Bundesstaat, der 1922 nach der Oktoberrevolution und dem Bürgerkrieg gegründet wurde und bis 1991 bestand. Die UdSSR umfasste 15 Sowjetrepubliken mit Russland als dominierender Macht. Sie war die erste kommunistische Supermacht, Gegenpart der USA im Kalten Krieg und verfügte über Atomwaffen. Die UdSSR industrialisierte sich unter Stalin, siegte im Zweiten Weltkrieg über Deutschland, kontrollierte Osteuropa und konkurrierte mit dem Westen. Wirtschaftliche Stagnation, Reformunfähigkeit und Nationalitätenkonflikte führten 1991 zur Auflösung der UdSSR in 15 unabhängige Staaten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">UN / Vereinte Nationen</div>
+                    <div class="term-definition">Internationale Organisation, gegründet 1945 nach dem Zweiten Weltkrieg (Nachfolger des gescheiterten Völkerbunds). Ziele: Wahrung des Weltfriedens, Förderung der Menschenrechte, internationale Zusammenarbeit. 193 Mitgliedstaaten (fast alle Staaten der Welt). Wichtigste Organe: Generalversammlung, Sicherheitsrat (mit fünf ständigen Mitgliedern mit Vetorecht: USA, Russland, China, Frankreich, Großbritannien), Generalsekretär, Internationaler Gerichtshof. Die UN haben Konflikte verhindert und gemildert, leiden aber unter Blockaden im Sicherheitsrat und begrenzten Durchsetzungsmöglichkeiten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Urbanisierung</div>
+                    <div class="term-definition">Prozess der Verstädterung, bei dem immer mehr Menschen vom Land in Städte ziehen. Die Industrialisierung beschleunigte die Urbanisierung enorm: Im 19. Jahrhundert wuchsen Städte explosionsartig. 1800 lebten in Deutschland etwa 10% in Städten, 1900 über 50%. Urbanisierung brachte Chancen (Arbeitsplätze, Bildung, Kultur) und Probleme (Wohnungsnot, Hygiene, soziale Spannungen). Die soziale Frage war eng mit Urbanisierung verbunden. Heute leben weltweit über 50% der Menschen in Städten (Tendenz steigend).</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe V -->
+            <div class="letter-section" data-letter="V" id="V">
+                <h2 class="letter-header">V</h2>
+                
+                <div class="term">
+                    <div class="term-name">Versailler Vertrag</div>
+                    <div class="term-definition">Friedensvertrag, der am 28. Juni 1919 nach dem Ersten Weltkrieg zwischen Deutschland und den Alliierten geschlossen wurde. Wichtigste Bestimmungen: Deutschland musste die Alleinschuld am Krieg anerkennen (Art. 231, "Kriegsschuldlüge"), hohe Reparationen zahlen, Gebiete abtreten (Elsass-Lothringen, Posen, Westpreußen, alle Kolonien), die Armee auf 100.000 Mann begrenzen, das Rheinland entmilitarisieren. Der Vertrag wurde in Deutschland als "Diktat" empfunden und delegitimierte die Weimarer Republik. Er trug zur Radikalisierung bei und ermöglichte den Aufstieg der Nationalsozialisten.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Völkerbund</div>
+                    <div class="term-definition">Erste internationale Organisation zur Sicherung des Friedens, gegründet 1920 nach dem Ersten Weltkrieg (Vorschlag Wilsons). Ziel war die friedliche Beilegung von Konflikten und kollektive Sicherheit. Der Völkerbund scheiterte aus mehreren Gründen: Die USA traten nie bei, wichtige Staaten (Deutschland, Sowjetunion) waren zeitweise ausgeschlossen, er hatte keine Durchsetzungsmittel (keine eigene Armee), autoritäre Staaten (Japan, Italien, Deutschland) traten aus. Der Völkerbund konnte die Aggressionen der 1930er Jahre nicht verhindern und wurde 1946 durch die UNO ersetzt.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Völkermord / Genozid</div>
+                    <div class="term-definition">Systematische Vernichtung einer ethnischen, religiösen oder nationalen Gruppe. Der Begriff wurde nach dem Holocaust geprägt. 1948 verabschiedeten die UN die Völkermordkonvention, die Genozid als Verbrechen definiert. Historische Beispiele: Völkermord an den Armeniern (1915/16), Holocaust (1941-1945), Genozid in Ruanda (1994), Massaker von Srebrenica (1995). Völkermord ist das schwerste Verbrechen gegen die Menschlichkeit. Die Verfolgung von Völkermord ist Aufgabe des Internationalen Strafgerichtshofs.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Volksgemeinschaft</div>
+                    <div class="term-definition">Zentraler NS-Begriff, der eine ethnisch homogene, hierarchisch geordnete Gesellschaft ohne Klassengegensätze propagierte. Die "Volksgemeinschaft" sollte alle "Volksgenossen" einbinden und "Gemeinnutz vor Eigennutz" stellen. In Wirklichkeit war sie ein Instrument der Ausgrenzung: Juden, Sinti und Roma, "Asoziale", Homosexuelle und andere wurden als "Gemeinschaftsfremde" ausgegrenzt, verfolgt und ermordet. Die Ideologie der Volksgemeinschaft legitimierte Terror nach innen und Expansion nach außen. Sie war eine Scheinintegration, die auf Rassismus und Gewalt basierte.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe W -->
+            <div class="letter-section" data-letter="W" id="W">
+                <h2 class="letter-header">W</h2>
+                
+                <div class="term">
+                    <div class="term-name">Warschauer Pakt</div>
+                    <div class="term-definition">Militärbündnis der Ostblockstaaten unter Führung der Sowjetunion, gegründet 1955 als Reaktion auf die NATO-Mitgliedschaft der Bundesrepublik. Mitglieder: UdSSR, DDR, Polen, Tschechoslowakei, Ungarn, Rumänien, Bulgarien, Albanien (bis 1968). Der Pakt diente der sowjetischen Kontrolle über Osteuropa. Er wurde zur Niederschlagung von Aufständen eingesetzt (Ungarn 1956, Prag 1968). Nach dem Fall des Eisernen Vorhangs 1989 verlor der Warschauer Pakt seine Funktion und wurde 1991 aufgelöst.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Weimarer Republik</div>
+                    <div class="term-definition">Erste deutsche Demokratie, benannt nach der Verfassungsgebung in Weimar (1919), bestand von 1918/19 bis 1933. Die Weimarer Verfassung war für ihre Zeit sehr fortschrittlich (Frauenwahlrecht, Verhältniswahlrecht, Grundrechte, Volksentscheid), hatte aber Schwächen (Notverordnungen, schwacher Reichspräsident). Die Republik war belastet durch Versailler Vertrag, Dolchstoßlegende, politische Gewalt (Morde an Rathenau, Erzberger), wirtschaftliche Krisen (Inflation 1923, Weltwirtschaftskrise 1929) und fehlende demokratische Tradition. Sie scheiterte 1933 an der Machtergreifung Hitlers.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Weltwirtschaftskrise</div>
+                    <div class="term-definition">Globale Wirtschaftskrise von 1929 bis ca. 1939, ausgelöst durch den Börsencrash in New York ("Schwarzer Freitag", 25. Oktober 1929). Die Krise breitete sich weltweit aus: Massenarbeitslosigkeit (in Deutschland 1932 über 6 Millionen), Bankenzusammenbrüche, Deflation, sozialer Abstieg des Mittelstands. Die Krise destabilisierte demokratische Systeme und begünstigte extremistische Bewegungen. In Deutschland trug sie zum Aufstieg der NSDAP bei. Erst Roosevelts New Deal (USA) und später die Kriegswirtschaft beendeten die Krise. Die Weltwirtschaftskrise zeigte die Anfälligkeit des Kapitalismus.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Westfälischer Frieden</div>
+                    <div class="term-definition">Friedensschluss von 1648, der den Dreißigjährigen Krieg beendete. Verhandelt in Münster und Osnabrück. Wichtigste Regelungen: Anerkennung der Konfessionen (Katholiken, Lutheraner, Calvinisten) als gleichberechtigt, territoriale Neuordnung (Frankreich und Schweden erhielten Gebiete), Stärkung der Landesherrn (fast souverän) auf Kosten des Kaisers, Friedensgarantie durch Frankreich und Schweden. Der Westfälische Frieden gilt als Geburtsstunde des modernen Staatensystems und der Idee staatlicher Souveränität. Er stabilisierte Europa für längere Zeit.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Widerstand</div>
+                    <div class="term-definition">Opposition gegen das NS-Regime, die verschiedene Formen annahm: passive Resistenz (Verweigerung des Hitlergrußes), Fluchthilfe für Verfolgte, Verbreitung von Informationen, Sabotage bis hin zu Attentatsversuchen. Widerstandsgruppen: Weiße Rose (Geschwister Scholl), Kreisauer Kreis, Rote Kapelle, kommunistischer Widerstand, Attentäter vom 20. Juli 1944 (Graf Stauffenberg). Der Widerstand war zahlenmäßig klein, viele Widerstandskämpfer wurden hingerichtet. Nach 1945 wurde der Widerstand als "anderes Deutschland" gewürdigt und zum Vorbild für die Demokratie erhoben.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Wiener Kongress</div>
+                    <div class="term-definition">Internationale Konferenz von September 1814 bis Juni 1815 in Wien zur Neuordnung Europas nach den napoleonischen Kriegen. Leitende Figur war der österreichische Staatskanzler Metternich. Prinzipien: Legitimität (Wiederherstellung alter Dynastien), Solidarität der Monarchen, Machtgleichgewicht. Ergebnisse: Gründung des Deutschen Bundes (lockerer Staatenbund von 39 Staaten), territoriale Neuordnung, Heilige Allianz zur Bekämpfung revolutionärer Bewegungen. Der Wiener Kongress schuf eine relativ stabile Friedensordnung, unterdrückte aber nationale und liberale Bestrebungen.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Wirtschaftswunder</div>
+                    <div class="term-definition">Bezeichnung für das rasante Wirtschaftswachstum in der Bundesrepublik Deutschland in den 1950er und frühen 1960er Jahren. Das Bruttosozialprodukt verdoppelte sich zwischen 1950 und 1960. Ursachen: Marshall-Plan-Hilfe, soziale Marktwirtschaft, qualifizierte Arbeitskräfte (auch Flüchtlinge), Wiederaufbaubedarf, Korea-Boom, geringe Militärausgaben. Das Wirtschaftswunder brachte Vollbeschäftigung, wachsenden Wohlstand und politische Stabilität. Es legitimierte die Bundesrepublik und die soziale Marktwirtschaft, prägte aber auch ein materialistisches Denken.</div>
+                </div>
+            </div>
+
+            <!-- Buchstabe Z -->
+            <div class="letter-section" data-letter="Z" id="Z">
+                <h2 class="letter-header">Z</h2>
+                
+                <div class="term">
+                    <div class="term-name">Zensur</div>
+                    <div class="term-definition">Staatliche Kontrolle und Unterdrückung von Meinungsäußerungen, insbesondere in Medien, Kunst und Literatur. In autoritären und totalitären Systemen ist Zensur systematisch: Im Kaiserreich gab es Pressezensur, in der NS-Zeit totale Kontrolle aller Medien, in der DDR Zensur durch die SED. Zensur verhindert freie Meinungsbildung und dient der Machtsicherung. In Demokratien ist Zensur verfassungswidrig (Grundgesetz Art. 5: Pressefreiheit). Allerdings gibt es auch in Demokratien Grenzen der Meinungsfreiheit (Volksverhetzung, Holocaustleugnung, Jugendschutz).</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Zivilgesellschaft</div>
+                    <div class="term-definition">Bereich zwischen Staat, Wirtschaft und Privatsphäre, in dem sich Bürger freiwillig organisieren: Vereine, Initiativen, NGOs, Kirchen, Gewerkschaften. Die Zivilgesellschaft ist wichtig für die Demokratie: Sie artikuliert Interessen, kontrolliert die Politik, fördert Partizipation und soziale Integration. In Diktaturen wird die Zivilgesellschaft unterdrückt (Gleichschaltung im NS-Regime). Nach 1989 spielte die Zivilgesellschaft in Osteuropa eine wichtige Rolle bei der Demokratisierung. Eine starke Zivilgesellschaft gilt als Indikator für lebendige Demokratie.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Zwei-plus-Vier-Vertrag</div>
+                    <div class="term-definition">Vertrag zwischen den beiden deutschen Staaten (BRD, DDR) und den vier Siegermächten des Zweiten Weltkriegs (USA, Sowjetunion, Großbritannien, Frankreich) vom 12. September 1990. Der Vertrag regelte die außenpolitischen Aspekte der deutschen Einheit: Anerkennung der Oder-Neiße-Grenze als endgültige Grenze zu Polen, Verzicht auf ABC-Waffen, Begrenzung der Bundeswehr auf 370.000 Soldaten, volle Souveränität des vereinten Deutschland. Mit dem Vertrag gaben die Siegermächte ihre Vorbehaltsrechte auf. Er ermöglichte die Wiedervereinigung am 3. Oktober 1990.</div>
+                </div>
+
+                <div class="term">
+                    <div class="term-name">Zweiter Weltkrieg</div>
+                    <div class="term-definition">Globaler Krieg von 1939 bis 1945, ausgelöst durch den deutschen Überfall auf Polen am 1. September 1939. Der Krieg war Hitlers Angriffs- und Vernichtungskrieg zur Eroberung von "Lebensraum" und zur Vernichtung der Juden. Er kostete über 60 Millionen Menschen das Leben, darunter 6 Millionen Juden im Holocaust. Der Krieg wurde auf mehreren Kontinenten geführt: Europa, Afrika, Asien, Pazifik. Die Anti-Hitler-Koalition (USA, Großbritannien, Sowjetunion) besiegte Deutschland und Japan. Der Zweite Weltkrieg war der verheerendste Krieg der Geschichte und führte zur Teilung der Welt im Kalten Krieg.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>📚 Dieses Begriffslexikon enthält alle prüfungsrelevanten Fachbegriffe für das Geschichte-Abitur 2026</p>
+            <p class="copyright">© 2026 Geschichte Abitur Lernplattform | Begriffe systematisch aufbereitet für optimale Prüfungsvorbereitung</p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search functionality
+            const searchBox = document.getElementById('searchBox');
+            const terms = document.querySelectorAll('.term');
+            const letterSections = document.querySelectorAll('.letter-section');
+
+            searchBox.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    // Show all terms and sections if search is empty
+                    terms.forEach(term => {
+                        term.style.display = 'block';
+                    });
+                    letterSections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                    return;
+                }
+
+                // Hide all sections first
+                letterSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Search through terms
+                let hasVisibleTerms = {};
+                terms.forEach(term => {
+                    const termName = term.querySelector('.term-name').textContent.toLowerCase();
+                    const termDefinition = term.querySelector('.term-definition').textContent.toLowerCase();
+                    
+                    if (termName.includes(searchTerm) || termDefinition.includes(searchTerm)) {
+                        term.style.display = 'block';
+                        // Mark that this letter section has visible terms
+                        const section = term.closest('.letter-section');
+                        if (section) {
+                            hasVisibleTerms[section.id] = true;
+                        }
+                    } else {
+                        term.style.display = 'none';
+                    }
+                });
+
+                // Show only sections that have visible terms
+                letterSections.forEach(section => {
+                    if (hasVisibleTerms[section.id]) {
+                        section.style.display = 'block';
+                    }
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Highlight the section briefly
+                        target.style.backgroundColor = '#e8f4f8';
+                        setTimeout(() => {
+                            target.style.backgroundColor = '';
+                        }, 2000);
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Keyboard shortcut: Press '/' to focus search
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+                    e.preventDefault();
+                    searchBox.focus();
+                }
+            });
+
+            console.log('✅ Begriffslexikon geladen! Shortcuts: "/" für Suche, "T" für Scroll nach oben');
+        });
+    </script>
+</body>
+</html>
