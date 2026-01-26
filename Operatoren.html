@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatoren - Geschichte Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .header .description {
+            color: #95a5a6;
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* Section Card Styles */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .section-card h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .intro-text {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--warning-color);
+        }
+        
+        .intro-text p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        /* Collapsible Headers */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        
+        .collapsible-inner {
+            padding: 20px 10px;
+        }
+        
+        .operator-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .operator-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        
+        .operator-box .definition {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .operator-box .example {
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .operator-box .tips {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            border-left: 3px solid var(--warning-color);
+        }
+        
+        .operator-box ul {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .operator-box li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .level-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .level-1 {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .level-2 {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .level-3 {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .section-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🗨️ Operatoren im Geschichtsabitur</h1>
+            <p class="subtitle">Verstehen, anwenden und meistern</p>
+            <p class="description">Operatoren sind Schlüsselbegriffe in Aufgabenstellungen, die bestimmen, welche Arbeitsleistung von dir erwartet wird. Die richtige Interpretation ist entscheidend für deinen Erfolg im Abitur.</p>
+            <a href="index.html" class="back-link">← Zurück zur Hauptseite</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+          <!-- Einführung -->
+            <div class="section-card">
+                <h2>📋 Was sind Operatoren?</h2>
+                <div class="intro-text">
+                    <p><strong>Operatoren</strong> sind Handlungsanweisungen in Prüfungsaufgaben, die genau festlegen, was von dir verlangt wird. Sie signalisieren den Anforderungsbereich (AFB) und die Art der geforderten Leistung.</p>
+                    <p>Das Verständnis der Operatoren ist <strong>essentiell</strong> für eine erfolgreiche Bearbeitung von Abituraufgaben. Jeder Operator verlangt eine spezifische Herangehensweise und Form der Darstellung.</p>
+                    <p><strong>Die drei Anforderungsbereiche (AFB):</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>AFB I (Reproduktion):</strong> Wiedergabe von Kenntnissen und Sachverhalten</li>
+                        <li><strong>AFB II (Reorganisation und Transfer):</strong> Anwendung, Verarbeitung und Verknüpfung von Wissen</li>
+                        <li><strong>AFB III (Reflexion und Problemlösung):</strong> Eigenständige Beurteilung, Bewertung und Entwicklung von Lösungen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AFB I: Reproduktion -->
+            <div class="section-card">
+                <h2>📝 AFB I: Reproduktion</h2>
+                <p>Operatoren des Anforderungsbereichs I verlangen die <strong>Wiedergabe von Wissen</strong> aus dem Unterricht oder aus vorgelegten Materialien.</p>
+                
+                <div class="collapsible-header">
+                    <h3>Nennen / Aufzählen <span class="level-indicator level-1">AFB I</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Ohne weitere Erläuterungen Informationen <strong>stichwortartig</strong> zusammenstellen. Es genügt eine knappe, listenmäßige Aufzählung ohne ausführliche Sätze.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Relevante Informationen identifizieren</li>
+                                <li>In kurzen Stichpunkten oder Halbsätzen wiedergeben</li>
+                                <li>Keine Erklärungen oder Begründungen hinzufügen</li>
+                                <li>Auf Vollständigkeit achten</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Nennen Sie Ursachen der Französischen Revolution."<br>
+                                <strong>Antwort:</strong> Finanzkrise des Staates, Missernte und Hungersnot 1788/89, Privilegien von Adel und Klerus, aufklärerische Ideen, Unzufriedenheit des Dritten Standes
+                            </div>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Achtung:</strong> Auch wenn "nur" Nennung verlangt wird, sollten die Begriffe präzise und fachlich korrekt sein.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Beschreiben / Darstellen <span class="level-indicator level-1">AFB I</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Sachverhalte, Strukturen, Prozesse oder Personen <strong>in eigenen Worten strukturiert wiedergeben</strong>. Die Darstellung erfolgt in vollständigen Sätzen und ist umfassender als bei "nennen".
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Sachverhalt in zusammenhängenden Sätzen darstellen</li>
+                                <li>Wichtige Aspekte strukturiert präsentieren</li>
+                                <li>Auf sachliche, objektive Sprache achten</li>
+                                <li>Chronologische oder thematische Ordnung verwenden</li>
+                                <li>Keine eigene Wertung einfließen lassen</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Beschreiben Sie den Verlauf der Oktoberrevolution 1917."<br>
+                                <strong>Antwort:</strong> Die Oktoberrevolution begann in der Nacht vom 24. auf den 25. Oktober 1917 (nach julianischem Kalender) in Petrograd. Bolschewistische Truppen unter Führung Trotzkis besetzten strategisch wichtige Punkte der Stadt wie Bahnhöfe, Brücken und das Telegrafenamt. Der Winterpalast, Sitz der Provisorischen Regierung, wurde eingenommen und die Minister verhaftet. Lenin proklamierte die Machtübernahme durch die Sowjets...
+                            </div>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Tipp:</strong> Bei "darstellen" wird oft eine etwas ausführlichere, systematischere Darstellung erwartet als bei "beschreiben".
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Zusammenfassen <span class="level-indicator level-1">AFB I</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Die wesentlichen Aussagen eines Textes oder Materials <strong>komprimiert und strukturiert</strong> in eigenen Worten wiedergeben. Unwichtiges wird weggelassen, der Kern wird herausgearbeitet.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Text gründlich lesen und Hauptaussagen identifizieren</li>
+                                <li>Kerngedanken in eigenen Worten formulieren</li>
+                                <li>Details und Beispiele weglassen (sofern nicht zentral)</li>
+                                <li>Logische Struktur beibehalten</li>
+                                <li>Etwa 1/3 bis 1/4 des Originaltextes als Umfang</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Fassen Sie die Hauptthesen des vorliegenden Historikerkommentars zusammen."<br>
+                                <strong>Antwort:</strong> Der Historiker argumentiert, dass die Weimarer Republik nicht zwangsläufig scheitern musste. Er betont drei Hauptaspekte: Erstens verfügte die Republik über eine moderne Verfassung. Zweitens waren die wirtschaftlichen Probleme nicht unlösbar. Drittens spielten kontingente Faktoren wie Persönlichkeiten und Entscheidungen eine entscheidende Rolle beim Untergang.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Wiedergeben <span class="level-indicator level-1">AFB I</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Inhalte aus Materialien oder eigenes Wissen <strong>in eigenen Worten</strong> darstellen. Ähnlich wie "beschreiben", aber oft bezogen auf eine konkrete Quelle oder Darstellung.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Inhalt des Materials erfassen</li>
+                                <li>In eigener Sprache formulieren (nicht abschreiben!)</li>
+                                <li>Wesentliche Aussagen vollständig erfassen</li>
+                                <li>Strukturiert und verständlich darstellen</li>
+                            </ul>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Wichtig:</strong> "Wiedergeben" bedeutet NICHT wörtlich zitieren, sondern paraphrasieren!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Skizzieren <span class="level-indicator level-1">AFB I</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Einen Sachverhalt, eine Struktur oder einen Prozess <strong>in groben Zügen, vereinfacht und übersichtlich</strong> darstellen. Die Darstellung konzentriert sich auf das Wesentliche.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Hauptmerkmale und Grundstrukturen herausarbeiten</li>
+                                <li>Auf Details verzichten</li>
+                                <li>Klare, einfache Sprache verwenden</li>
+                                <li>Eventuell grafische Elemente nutzen (Zeitleiste, Schema)</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Skizzieren Sie die Entwicklung der deutschen Arbeiterbewegung im 19. Jahrhundert."<br>
+                                <strong>Antwort:</strong> Die deutsche Arbeiterbewegung entwickelte sich ab der Mitte des 19. Jahrhunderts aus der sozialen Not der Industrialisierung. Erste Zusammenschlüsse entstanden in den 1840er Jahren. 1863 gründete Lassalle den ADAV, 1869 Bebel und Liebknecht die SDAP. Beide Parteien vereinigten sich 1875 in Gotha zur SAP (später SPD). Trotz Bismarcks Sozialistengesetzen wuchs die Bewegung stetig.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Herausarbeiten <span class="level-indicator level-1">AFB I</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Aus einem Material oder Zusammenhang <strong>bestimmte Aspekte gezielt identifizieren und darstellen</strong>. Es geht darum, Spezifisches sichtbar zu machen.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Material auf die geforderten Aspekte hin untersuchen</li>
+                                <li>Relevante Textstellen identifizieren</li>
+                                <li>Diese Aspekte klar benennen und belegen</li>
+                                <li>Systematisch vorgehen</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Arbeiten Sie aus der Quelle die Argumente des Autors gegen den Versailler Vertrag heraus."<br>
+                                <strong>Antwort:</strong> Der Autor führt drei Hauptargumente an: Erstens kritisiert er die Alleinschuld-Klausel als historisch unhaltbar. Zweitens bezeichnet er die Reparationsforderungen als wirtschaftlich nicht erfüllbar. Drittens sieht er in den Gebietsabtretungen eine Verletzung des Selbstbestimmungsrechts der Völker.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- AFB II: Reorganisation und Transfer -->
+            <div class="section-card">
+                <h2>🔄 AFB II: Reorganisation und Transfer</h2>
+                <p>Operatoren des Anforderungsbereichs II verlangen die <strong>Verarbeitung, Anwendung und Verknüpfung</strong> von Kenntnissen. Hier wird nicht nur Wissen wiedergegeben, sondern eigenständig damit gearbeitet.</p>
+                
+                <div class="collapsible-header">
+                    <h3>Analysieren / Untersuchen <span class="level-indicator level-2">AFB II</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Materialien oder Sachverhalte <strong>systematisch und gezielt unter bestimmten Fragestellungen untersuchen</strong>. Die Analyse gliedert den Gegenstand in seine Bestandteile und untersucht deren Zusammenhänge.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li><strong>Bei Quellen:</strong> Formale Analyse (Quellenart, Autor, Datum, Adressat, Kontext) + Inhaltliche Analyse (Argumentation, Aussagen, Intention)</li>
+                                <li><strong>Bei Darstellungen:</strong> These des Autors, Argumentation, verwendete Belege, Perspektive</li>
+                                <li><strong>Bei Statistiken/Schaubildern:</strong> Aufbau, Entwicklungen, Auffälligkeiten, Zusammenhänge</li>
+                                <li>Fachbegriffe verwenden und Belege aus dem Material einbauen</li>
+                                <li>Strukturiert vorgehen (z.B. chronologisch, thematisch)</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Analysieren Sie die Rede Otto von Bismarcks zur Reichsgründung."<br>
+                                <strong>Antwort:</strong> Bei der vorliegenden Quelle handelt es sich um eine Reichstagsrede Bismarcks vom ... [Formale Analyse]. Inhaltlich lassen sich drei zentrale Aussagen identifizieren: Erstens betont Bismarck die historische Bedeutung der Einigung. Zweitens rechtfertigt er die kleindeutsche Lösung unter preußischer Führung. Drittens warnt er vor inneren und äußeren Feinden des Reiches. Seine Argumentation zielt darauf ab, das neue Reich als logische historische Notwendigkeit darzustellen und seine eigene Rolle zu legitimieren...
+                            </div>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Tipp:</strong> Die Analyse ist einer der wichtigsten Operatoren im Geschichtsabitur! Übe verschiedene Quellenarten (Reden, Briefe, Gesetze, Bilder, Statistiken).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Erklären / Erläutern <span class="level-indicator level-2">AFB II</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Einen Sachverhalt <strong>verständlich und nachvollziehbar machen</strong>, indem Hintergründe, Ursachen, Zusammenhänge und Bedeutungen aufgezeigt werden. "Erläutern" ist meist etwas ausführlicher als "erklären".
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Sachverhalt zunächst kurz darstellen</li>
+                                <li>Ursachen und Hintergründe aufzeigen</li>
+                                <li>Zusammenhänge verdeutlichen</li>
+                                <li>Bedeutung und Konsequenzen erläutern</li>
+                                <li>Fachbegriffe verwenden und bei Bedarf definieren</li>
+                                <li>Kausale Verknüpfungen herstellen ("deshalb", "daher", "folglich")</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Erklären Sie den Begriff 'Dolchstoßlegende'."<br>
+                                <strong>Antwort:</strong> Die Dolchstoßlegende war ein politischer Mythos in der Weimarer Republik, der behauptete, das deutsche Heer sei im Ersten Weltkrieg "im Felde unbesiegt" geblieben und nur durch einen "Dolchstoß von hinten" – durch Revolutionäre, Sozialdemokraten und Juden in der Heimat – zum Zusammenbruch gebracht worden. Diese Legende entstand unmittelbar nach Kriegsende und wurde von konservativen und rechtsextremen Kreisen propagiert, um die militärische Niederlage zu leugnen und die demokratischen Kräfte der Novemberrevolution zu diskreditieren. Tatsächlich war die militärische Lage Deutschlands im Herbst 1918 aussichtslos, weshalb die Oberste Heeresleitung selbst einen Waffenstillstand gefordert hatte.
+                            </div>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Wichtig:</strong> Bei "erklären" reicht es nicht, nur zu beschreiben – die Kausalzusammenhänge müssen deutlich werden!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Einordnen / Kontextualisieren <span class="level-indicator level-2">AFB II</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Einen Sachverhalt, eine Quelle oder ein Ereignis <strong>in einen größeren historischen Zusammenhang stellen</strong>. Es werden zeitliche, räumliche und thematische Bezüge hergestellt.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Zeitliche Einordnung: Wann fand das Ereignis statt? In welcher Epoche?</li>
+                                <li>Historischer Kontext: Was geschah davor/danach? Welche Entwicklungen sind relevant?</li>
+                                <li>Thematische Einordnung: In welchen größeren Problemzusammenhang gehört es?</li>
+                                <li>Bedeutung: Welche Rolle spielt das Ereignis in der Gesamtentwicklung?</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Ordnen Sie den Bau der Berliner Mauer 1961 in den Kontext des Kalten Krieges ein."<br>
+                                <strong>Antwort:</strong> Der Mauerbau am 13. August 1961 erfolgte in einer Phase verschärfter Ost-West-Spannungen. Nach der Berlin-Blockade 1948/49 und der doppelten Staatsgründung 1949 war Berlin zum Symbol des Kalten Krieges geworden. Die massive Abwanderung qualifizierter Arbeitskräfte aus der DDR (bis 1961 ca. 3 Millionen Menschen) bedrohte die Existenz des sozialistischen deutschen Staates. Die Mauer war somit Ausdruck der Systemkonkurrenz zwischen Ost und West und gleichzeitig ein Eingeständnis der DDR-Führung, dass sie ihre Bevölkerung nur durch Gewalt halten konnte. International markierte der Mauerbau eine Zementierung der Teilung Europas...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Vergleichen / Gegenüberstellen <span class="level-indicator level-2">AFB II</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Zwei oder mehr Sachverhalte, Quellen oder Positionen nach bestimmten Kriterien <strong>einander gegenüberstellen</strong> und Gemeinsamkeiten sowie Unterschiede herausarbeiten.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Vergleichskriterien festlegen (werden oft in der Aufgabe vorgegeben)</li>
+                                <li>Beide Seiten nach diesen Kriterien untersuchen</li>
+                                <li>Gemeinsamkeiten benennen</li>
+                                <li>Unterschiede herausarbeiten</li>
+                                <li>Strukturiert darstellen (entweder kriterienorientiert oder objektbezogen)</li>
+                                <li>Am Ende oft: Abschließende Bewertung der Ähnlichkeit/Verschiedenheit</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Vergleichen Sie die Revolutionen von 1789 (Frankreich) und 1917 (Russland) hinsichtlich ihrer Ursachen und ihres Verlaufs."<br>
+                                <strong>Antwort:</strong> <br>
+                                <strong>Gemeinsamkeiten:</strong> Beide Revolutionen entstanden aus einer tiefen Krise des absolutistischen Systems. In beiden Fällen spielten Hungersnöte eine Rolle (1788/89 bzw. 1916/17). Beide führten zum Sturz der Monarchie und zu phasenhaften Radikalisierungen (Jakobiner bzw. Bolschewiki).<br>
+                                <strong>Unterschiede:</strong> Die Französische Revolution war bürgerlich geprägt, während die Russische Revolution von einer sozialistischen Ideologie getragen wurde. Der Erste Weltkrieg war direkte Ursache der russischen, aber nicht der französischen Revolution. Die Französische Revolution führte letztlich zu Napoleon, die Russische zur Diktatur des Proletariats...
+                            </div>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Tipp:</strong> Beim Vergleich nicht einfach nacheinander beschreiben, sondern wirklich gegenüberstellen!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Charakterisieren <span class="level-indicator level-2">AFB II</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Personen, Sachverhalte, Epochen oder Systeme <strong>in ihren typischen und wesentlichen Merkmalen</strong> darstellen. Es geht um das Herausarbeiten des Charakteristischen, Besonderen.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Wesentliche und typische Merkmale identifizieren</li>
+                                <li>Diese strukturiert darstellen</li>
+                                <li>Besonderheiten hervorheben</li>
+                                <li>Abgrenzung zu anderen Phänomenen</li>
+                                <li>Belege und konkrete Beispiele anführen</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Charakterisieren Sie das Herrschaftssystem des Nationalsozialismus."<br>
+                                <strong>Antwort:</strong> Das NS-Herrschaftssystem war eine totalitäre Diktatur mit folgenden charakteristischen Merkmalen: Das Führerprinzip machte Hitler zur absoluten Autorität, dessen Wille als oberstes Gesetz galt. Die Gleichschaltung aller gesellschaftlichen Bereiche beseitigte Pluralismus und Opposition. Terror durch SS und Gestapo sicherte die Herrschaft durch Angst und Gewalt. Propaganda durchdrang alle Lebensbereiche und manipulierte die öffentliche Meinung systematisch. Die rassistische Ideologie mit dem Antisemitismus als Kern legitimierte Ausgrenzung und Vernichtung. Das System war gekennzeichnet durch eine Polykratie konkurrierender Machtstrukturen, die alle auf Hitler ausgerichtet waren...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Begründen <span class="level-indicator level-2">AFB II</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Für eine Aussage, These oder Entscheidung <strong>nachvollziehbare Argumente und Belege</strong> anführen, die diese stützen und plausibel machen.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>These/Aussage klar formulieren</li>
+                                <li>Mehrere Argumente anführen</li>
+                                <li>Jedes Argument mit historischen Fakten belegen</li>
+                                <li>Kausale Zusammenhänge herstellen</li>
+                                <li>Logisch stringent argumentieren</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Begründen Sie, warum die Weimarer Republik bereits in ihrer Frühphase schwer belastet war."<br>
+                                <strong>Antwort:</strong> Die Weimarer Republik war von Anfang an mehrfach belastet: Erstens lastete die "Geburtssünde" auf ihr – sie wurde mit der militärischen Niederlage assoziiert und musste den Versailler Vertrag unterzeichnen. Zweitens fehlte es an demokratischer Tradition in Deutschland; viele Eliten in Militär, Justiz und Verwaltung standen der Republik ablehnend gegenüber. Drittens musste sie mit enormen wirtschaftlichen Problemen kämpfen: Kriegsschulden, Reparationszahlungen und Inflation destabilisierten die Wirtschaft. Viertens wurde sie von links und rechts bekämpft – sowohl Kommunisten als auch Rechtsextreme lehnten das demokratische System ab und versuchten, es gewaltsam zu stürzen...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>In Beziehung setzen <span class="level-indicator level-2">AFB II</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Verschiedene Sachverhalte, Ereignisse oder Aussagen <strong>miteinander verknüpfen</strong> und ihre wechselseitigen Zusammenhänge aufzeigen.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Beide/alle Elemente zunächst kurz darstellen</li>
+                                <li>Verbindungen und Zusammenhänge identifizieren</li>
+                                <li>Wechselwirkungen aufzeigen (Ursache-Wirkung, Parallelen, Gegensätze)</li>
+                                <li>Bedeutung dieser Beziehungen erläutern</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Setzen Sie die Industrialisierung und die Entstehung der Arbeiterbewegung in Beziehung zueinander."<br>
+                                <strong>Antwort:</strong> Die Industrialisierung und die Arbeiterbewegung stehen in einem direkten kausalen Zusammenhang. Die Industrialisierung schuf mit dem Proletariat erst die soziale Basis der Arbeiterbewegung. Die miserablen Arbeitsbedingungen, Kinderarbeit und soziale Not in den Fabriken führten zur Entstehung eines gemeinsamen Klassenbewusstseins. Gleichzeitig ermöglichte die räumliche Konzentration der Arbeiter in Industriestädten deren Organisation. Die Arbeiterbewegung wiederum beeinflusste den weiteren Verlauf der Industrialisierung durch Forderungen nach Sozialgesetzgebung und besseren Arbeitsbedingungen...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- AFB III: Reflexion und Problemlösung -->
+            <div class="section-card">
+                <h2>💭 AFB III: Reflexion und Problemlösung</h2>
+                <p>Operatoren des Anforderungsbereichs III verlangen <strong>eigenständiges Urteilen, Bewerten und Probleme lösen</strong>. Hier wird die höchste Denkleistung gefordert: kritische Reflexion, begründete Stellungnahmen und selbstständige Argumentation.</p>
+                
+                <div class="collapsible-header">
+                    <h3>Beurteilen / Bewerten <span class="level-indicator level-3">AFB III</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Zu einem Sachverhalt, einer Quelle oder These <strong>ein begründetes, reflektiertes Urteil</strong> abgeben. "Beurteilen" erfolgt meist aus fachwissenschaftlicher Perspektive, "Bewerten" kann auch eigene Wertmaßstäbe einbeziehen.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li><strong>Kriterien festlegen:</strong> Nach welchen Maßstäben urteile ich? (z.B. historische Wirkung, moralische Aspekte, Zweck-Mittel-Relation)</li>
+                                <li><strong>Sachurteil:</strong> Analyse und Bewertung aus Sicht der damaligen Zeit und Akteure</li>
+                                <li><strong>Werturteil:</strong> Bewertung aus heutiger Perspektive unter ethischen Gesichtspunkten</li>
+                                <li><strong>Pro- und Contra-Argumente</strong> abwägen</li>
+                                <li><strong>Differenziertes Urteil</strong> formulieren (nicht nur schwarz-weiß)</li>
+                                <li><strong>Begründung</strong> mit historischen Fakten</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Beurteilen Sie Bismarcks Politik gegenüber der Arbeiterbewegung."<br>
+                                <strong>Antwort:</strong> Bismarcks Politik gegenüber der Arbeiterbewegung war durch eine Doppelstrategie aus Repression und Sozialreformen gekennzeichnet, die aus historischer Sicht ambivalent zu beurteilen ist.<br><br>
+                                <strong>Positiv zu bewerten ist:</strong> Die Sozialgesetzgebung (Kranken-, Unfall-, Invalidenversicherung) war international wegweisend und verbesserte die Lage der Arbeiter erheblich. Deutschland wurde zum Vorreiter des Sozialstaats. Die Reformen bewiesen, dass Bismarck die soziale Frage ernst nahm.<br><br>
+                                <strong>Kritisch zu sehen ist:</strong> Das Sozialistengesetz (1878-1890) war ein massiver Eingriff in Grundrechte und verfolgte legitime politische Opposition. Die Reformen dienten primär der Herrschaftssicherung, nicht humanitären Motiven – es war "Zuckerbrot und Peitsche". Die SPD konnte trotz Verfolgung nicht geschwächt werden.<br><br>
+                                <strong>Aus heutiger Sicht</strong> erscheint die Verbindung von sozialer Fürsorge und politischer Unterdrückung inakzeptabel. Aus der zeitgenössischen Perspektive war Bismarcks Vorgehen im Rahmen des Obrigkeitsstaats jedoch typisch, wenngleich die Sozialgesetzgebung durchaus fortschrittlich war.
+                            </div>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Wichtig:</strong> Ein gutes Urteil ist niemals einseitig! Zeige verschiedene Perspektiven und wäge ab. Vermeide moralisierende Pauschalurteile.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Stellung nehmen / Sich positionieren <span class="level-indicator level-3">AFB III</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Eine <strong>begründete eigene Position</strong> zu einer Frage, These oder Kontroverse entwickeln und vertreten. Hier ist ausdrücklich die persönliche Meinung gefragt – aber wissenschaftlich fundiert!
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Problem/Fragestellung erfassen</li>
+                                <li>Verschiedene Positionen darstellen</li>
+                                <li>Eigene Position klar formulieren</li>
+                                <li>Diese Position mit mehreren Argumenten begründen</li>
+                                <li>Gegenargumente entkräften oder relativieren</li>
+                                <li>Fazit ziehen</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Nehmen Sie Stellung zu der These: 'Die Weimarer Republik war von Anfang an zum Scheitern verurteilt.'"<br>
+                                <strong>Antwort:</strong> Ich halte diese These für zu deterministisch und widerspreche ihr aus folgenden Gründen:<br><br>
+                                Die Weimarer Republik war zwar mit erheblichen Problemen belastet (Versailler Vertrag, fehlende demokratische Tradition, wirtschaftliche Krisen), aber es gab durchaus Phasen der Stabilisierung, insbesondere die "Goldenen Zwanziger" von 1924-1929. Die Verfassung war modern und demokratisch. Zudem zeigen Wahlergebnisse, dass bis 1930 die demokratischen Parteien stabile Mehrheiten hatten.<br><br>
+                                Das Scheitern der Republik war vielmehr das Ergebnis kontingenter Faktoren: Die Weltwirtschaftskrise ab 1929 war nicht vorhersehbar. Die Ernennung Hitlers zum Reichskanzler war eine bewusste Entscheidung konservativer Eliten, keine historische Zwangsläufigkeit. Brünings Deflationspolitik verschärfte die Krise unnötig.<br><br>
+                                Fazit: Die Weimarer Republik hatte reale Chancen zu überleben. Ihr Scheitern war nicht vorprogrammiert, sondern Resultat verhängnisvoller Entscheidungen und unglücklicher Umstände.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Erörtern / Diskutieren <span class="level-indicator level-3">AFB III</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Eine Problemstellung, These oder Kontroverse <strong>von verschiedenen Seiten beleuchten</strong> und in einer abwägenden Argumentation Pro- und Contra-Argumente gegenüberstellen.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Problemstellung/These erfassen und präzisieren</li>
+                                <li>Argumente PRO sammeln und ausführen</li>
+                                <li>Argumente CONTRA sammeln und ausführen</li>
+                                <li>Beide Seiten mit historischen Beispielen belegen</li>
+                                <li>Abwägen: Welche Seite überzeugt mehr?</li>
+                                <li>Eigenes, differenziertes Fazit formulieren</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Erörtern Sie, ob der Versailler Vertrag hauptverantwortlich für das Scheitern der Weimarer Republik war."<br>
+                                <strong>Antwort:</strong> Die Frage nach der Verantwortung des Versailler Vertrags für das Scheitern der Weimarer Republik wird in der Forschung kontrovers diskutiert.<br><br>
+                                <strong>Argumente FÜR einen entscheidenden Einfluss:</strong><br>
+                                - Die "Kriegsschuldlüge" und die Reparationsforderungen delegitimierten die Republik von Beginn an<br>
+                                - Die wirtschaftliche Belastung destabilisierte die Wirtschaft dauerhaft<br>
+                                - Gebietsabtretungen verletzten nationales Empfinden und stärkten revisionistische Kräfte<br>
+                                - Der Vertrag lieferte der Rechten permanente Propaganda-Munition<br><br>
+                                <strong>Argumente GEGEN eine Hauptverantwortung:</strong><br>
+                                - Die "Goldenen Zwanziger" zeigten, dass Stabilisierung möglich war<br>
+                                - Andere Faktoren waren wichtiger: Weltwirtschaftskrise, Präsidialkabinette, Hitlers Ernennung<br>
+                                - Demokratische Defizite existierten unabhängig vom Vertrag<br>
+                                - Vergleichbare Belastungen in anderen Staaten führten nicht zum Demokratie-Zusammenbruch<br><br>
+                                <strong>Abwägung:</strong> Der Versailler Vertrag war zweifellos eine schwere Hypothek, aber nicht monokausal für das Scheitern verantwortlich. Er schuf ein vergiftetes politisches Klima, aber ohne die Weltwirtschaftskrise und die fatalen Entscheidungen 1930-1933 hätte die Republik überleben können.
+                            </div>
+                            
+                            <div class="tips">
+                                <strong>⚠️ Tipp:</strong> Bei "erörtern" sollten beide Seiten etwa gleichgewichtig dargestellt werden, bevor du dich im Fazit positionierst.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Prüfen / Überprüfen <span class="level-indicator level-3">AFB III</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Eine These, Aussage oder Hypothese <strong>kritisch auf ihre Stichhaltigkeit untersuchen</strong>, indem sie mit historischen Fakten, Argumenten oder anderen Perspektiven konfrontiert wird.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>These genau erfassen und ggf. präzisieren</li>
+                                <li>Kriterien für die Prüfung festlegen</li>
+                                <li>Argumente/Belege FÜR die These sammeln</li>
+                                <li>Argumente/Belege GEGEN die These sammeln</li>
+                                <li>Kritische Bewertung: Hält die These stand?</li>
+                                <li>Differenziertes Urteil formulieren</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Prüfen Sie die Aussage: 'Der Kalte Krieg war ausschließlich eine Folge sowjetischer Expansionspolitik.'"<br>
+                                <strong>Antwort:</strong> Diese monokausale Erklärung hält einer historischen Überprüfung nicht stand.<br><br>
+                                <strong>Argumente, die die These stützen:</strong><br>
+                                - Sowjetische Besetzung Osteuropas 1944-1948<br>
+                                - Errichtung kommunistischer Satellitenstaaten<br>
+                                - Berlin-Blockade 1948/49 als aggressive Aktion<br>
+                                - Korea-Krieg durch nordkoreanischen Angriff ausgelöst<br><br>
+                                <strong>Gegenargumente:</strong><br>
+                                - Auch die USA verfolgten Machtinteressen (Truman-Doktrin, Marshall-Plan als Eindämmungspolitik)<br>
+                                - Sowjetisches Sicherheitsbedürfnis nach dem Überfall 1941 war nachvollziehbar<br>
+                                - Beide Seiten trugen zur Eskalation bei (Wettrüsten, Stellvertreterkriege)<br>
+                                - Ideologischer Gegensatz war beidseitig<br><br>
+                                <strong>Fazit:</strong> Die These ist als monokausale Erklärung nicht haltbar. Der Kalte Krieg entstand aus dem wechselseitigen Misstrauen und den gegensätzlichen Interessen beider Supermächte. Eine einseitige Schuldzuweisung wird der historischen Komplexität nicht gerecht.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Entwickeln / Entwerfen <span class="level-indicator level-3">AFB III</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                <strong>Eigenständig und kreativ</strong> Lösungsansätze, Konzepte oder Szenarien erarbeiten. Dies kann historische Alternativen, Handlungsoptionen oder theoretische Modelle umfassen.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Problemstellung genau erfassen</li>
+                                <li>Relevante historische Faktoren und Rahmenbedingungen berücksichtigen</li>
+                                <li>Mehrere mögliche Ansätze/Szenarien durchdenken</li>
+                                <li>Den überzeugendsten Ansatz ausarbeiten</li>
+                                <li>Begründen, warum dieser Ansatz sinnvoll ist</li>
+                                <li>Mögliche Konsequenzen reflektieren</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Entwickeln Sie alternative Handlungsoptionen, die den Alliierten 1919 statt des Versailler Vertrags zur Verfügung gestanden hätten."<br>
+                                <strong>Antwort:</strong> Den Alliierten standen 1919 mehrere Alternativen zum tatsächlichen Versailler Vertrag offen:<br><br>
+                                <strong>Option 1: Verständigungsfrieden nach Wilson</strong><br>
+                                - Verzicht auf Alleinschuld-Klausel<br>
+                                - Moderate Reparationen<br>
+                                - Einbeziehung Deutschlands in den Völkerbund von Anfang an<br>
+                                - Vorteil: Hätte die Weimarer Republik stabilisiert<br>
+                                - Nachteil: Innenpolitisch in Frankreich/UK kaum durchsetzbar<br><br>
+                                <strong>Option 2: Harter Friedensvertrag mit klarer Perspektive</strong><br>
+                                - Härtere kurzfristige Bedingungen, aber klarer Zeitplan für Normalisierung<br>
+                                - Definitive Reparationssumme statt offener Forderungen<br>
+                                - Vorteil: Planungssicherheit für Deutschland<br><br>
+                                <strong>Option 3: Europäischer Bundesstaat</strong><br>
+                                - Radikale Vision einer europäischen Integration bereits 1919<br>
+                                - Vorteil: Hätte zukünftige Kriege verhindert<br>
+                                - Nachteil: Völlig unrealistisch für die damalige Zeit<br><br>
+                                <strong>Bewertung:</strong> Option 1 wäre historisch die sinnvollste gewesen, scheiterte aber am Rachebedürfnis der Siegermächte und innenpolitischen Zwängen. Der tatsächliche Vertrag war eine verhängnisvolle Mischung aus zu hart und zu schwach.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Sich auseinandersetzen mit <span class="level-indicator level-3">AFB III</span></h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Definition</h4>
+                            <div class="definition">
+                                Mit einer Position, These oder Darstellung <strong>kritisch und differenziert auseinandersetzen</strong>, indem man sie analysiert, hinterfragt und bewertet.
+                            </div>
+                            
+                            <h4>💡 Wie gehe ich vor?</h4>
+                            <ul>
+                                <li>Position/These zunächst erfassen und darstellen</li>
+                                <li>Argumente der Position rekonstruieren</li>
+                                <li>Stärken der Position anerkennen</li>
+                                <li>Schwächen und Probleme aufzeigen</li>
+                                <li>Alternative Perspektiven einbringen</li>
+                                <li>Eigene begründete Position entwickeln</li>
+                            </ul>
+                            
+                            <div class="example">
+                                <strong>Beispiel:</strong> "Setzen Sie sich mit der Historikerposition auseinander, der Aufstieg Hitlers sei primär durch die Weltwirtschaftskrise bedingt gewesen."<br>
+                                <strong>Antwort:</strong> Die These, dass die Weltwirtschaftskrise primär für Hitlers Aufstieg verantwortlich war, enthält wichtige Wahrheitsmomente, greift aber zu kurz.<br><br>
+                                <strong>Stärken der These:</strong><br>
+                                Die Korrelation zwischen Massenarbeitslosigkeit und NSDAP-Wahlerfolgen ist evident. Vor der Krise (1928) hatte die NSDAP 2,6%, 1930 bereits 18,3% und 1932 über 37%. Die wirtschaftliche Verzweiflung machte viele Menschen empfänglich für radikale Lösungen.<br><br>
+                                <strong>Kritik und Ergänzungen:</strong><br>
+                                Diese monokausale Erklärung ignoriert jedoch andere zentrale Faktoren: Die antidemokratische Einstellung weiter Teile der Eliten bestand schon vor 1929. Die Schwächen der Weimarer Verfassung (Art. 48, Präsidialkabinette) ermöglichten die Aushöhlung der Demokratie. Hitlers Ernennung 1933 war eine bewusste Entscheidung Hindenburgs und der konservativen Eliten, nicht automatische Folge der Krise. Auch Brünings verfehlte Deflationspolitik verschärfte die Situation unnötig.<br><br>
+                                <strong>Fazit:</strong> Die Weltwirtschaftskrise war ein notwendiger, aber nicht hinreichender Faktor. Ohne strukturelle Demokratiedefizite und die fatalen Entscheidungen der Eliten hätte die Krise nicht zwingend zu Hitlers Machtübernahme führen müssen.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Praktische Anwendungstipps -->
+            <div class="section-card">
+                <h2>🎯 Praktische Tipps zur Anwendung der Operatoren</h2>
+                
+                <div class="collapsible-header">
+                    <h3>Allgemeine Strategien für die Aufgabenbearbeitung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📌 Vor dem Schreiben</h4>
+                            <ul>
+                                <li><strong>Aufgabenstellung mehrfach lesen:</strong> Welcher Operator wird verwendet? Was genau wird verlangt?</li>
+                                <li><strong>Operator unterstreichen:</strong> Markiere den Operator farbig, um ihn nicht aus den Augen zu verlieren</li>
+                                <li><strong>Teilaufgaben identifizieren:</strong> Oft enthalten Aufgaben mehrere Operatoren (z.B. "Analysieren Sie die Quelle und beurteilen Sie...")</li>
+                                <li><strong>Zeit einteilen:</strong> AFB I-Aufgaben brauchen weniger Zeit als AFB III-Aufgaben</li>
+                                <li><strong>Material sichten:</strong> Welche Informationen stehen zur Verfügung?</li>
+                            </ul>
+                            
+                            <h4>✍️ Beim Schreiben</h4>
+                            <ul>
+                                <li><strong>Operatorgerecht formulieren:</strong> Bei "nennen" keine ausschweifenden Erklärungen, bei "erörtern" beide Seiten beleuchten</li>
+                                <li><strong>Struktur erkennbar machen:</strong> Absätze, Zwischenüberschriften (wenn erlaubt), klare Gedankenführung</li>
+                                <li><strong>Fachsprache verwenden:</strong> Korrekte historische Begriffe erhöhen die Qualität</li>
+                                <li><strong>Belege anführen:</strong> Konkrete Jahreszahlen, Ereignisse, Zitate aus Quellen</li>
+                                <li><strong>Auf Ausgewogenheit achten:</strong> Bei AFB III nicht einseitig argumentieren</li>
+                            </ul>
+                            
+                            <h4>🔍 Nach dem Schreiben</h4>
+                            <ul>
+                                <li><strong>Kontrollieren:</strong> Habe ich wirklich das getan, was der Operator verlangt?</li>
+                                <li><strong>Vollständigkeit prüfen:</strong> Alle Teilaspekte der Aufgabe bearbeitet?</li>
+                                <li><strong>Sprachliche Überarbeitung:</strong> Rechtschreibung, Satzbau, Verständlichkeit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Häufige Fehler und wie man sie vermeidet</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>❌ Typische Fehler</h4>
+                            
+                            <div class="definition" style="background: #ffebee; border-left: 4px solid #c62828;">
+                                <strong>Fehler 1: Operator ignorieren</strong><br>
+                                Aufgabe verlangt "nennen", Schüler schreibt aber einen langen Fließtext mit Erklärungen.
+                                <br><br>
+                                <strong>✅ Lösung:</strong> Operator genau beachten und entsprechend der Definition handeln.
+                            </div>
+                            
+                            <div class="definition" style="background: #ffebee; border-left: 4px solid #c62828; margin-top: 15px;">
+                                <strong>Fehler 2: Beschreiben statt Analysieren</strong><br>
+                                Bei "analysieren" wird nur der Inhalt wiedergegeben, aber nicht die Argumentationsstruktur oder Intention untersucht.
+                                <br><br>
+                                <strong>✅ Lösung:</strong> Bei Analyse immer auch die "zweite Ebene" betrachten: Wie argumentiert der Autor? Mit welcher Absicht?
+                            </div>
+                            
+                            <div class="definition" style="background: #ffebee; border-left: 4px solid #c62828; margin-top: 15px;">
+                                <strong>Fehler 3: Unausgewogene Erörterung</strong><br>
+                                Bei "erörtern" wird nur eine Seite dargestellt oder die eigene Meinung dominiert zu stark.
+                                <br><br>
+                                <strong>✅ Lösung:</strong> Pro und Contra etwa gleichgewichtig darstellen, erst im Fazit Position beziehen.
+                            </div>
+                            
+                            <div class="definition" style="background: #ffebee; border-left: 4px solid #c62828; margin-top: 15px;">
+                                <strong>Fehler 4: Fehlende Differenzierung bei Urteilen</strong><br>
+                                Pauschale Urteile wie "Bismarck war gut/schlecht" ohne Differenzierung.
+                                <br><br>
+                                <strong>✅ Lösung:</strong> Immer differenzieren: "Einerseits... andererseits...", verschiedene Perspektiven einbeziehen.
+                            </div>
+                            
+                            <div class="definition" style="background: #ffebee; border-left: 4px solid #c62828; margin-top: 15px;">
+                                <strong>Fehler 5: Fehlende Belege</strong><br>
+                                Behauptungen werden aufgestellt ohne historische Fakten, Daten oder Quellenbelege.
+                                <br><br>
+                                <strong>✅ Lösung:</strong> Jede Aussage mit konkreten historischen Beispielen, Jahreszahlen oder Zitaten untermauern.
+                            </div>
+                            
+                            <div class="definition" style="background: #ffebee; border-left: 4px solid #c62828; margin-top: 15px;">
+                                <strong>Fehler 6: Gegenwartsbezug vergessen</strong><br>
+                                Bei "bewerten" wird nur aus historischer Sicht geurteilt, der Bezug zur Gegenwart fehlt.
+                                <br><br>
+                                <strong>✅ Lösung:</strong> Sachurteil (damalige Zeit) UND Werturteil (heutige Perspektive) unterscheiden.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Zeitmanagement und Punkteverteilung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>⏰ Richtige Zeiteinteilung</h4>
+                            <div class="definition">
+                                Die Punkteverteilung und der Anforderungsbereich geben Hinweise auf den Zeitaufwand:
+                            </div>
+                            
+                            <ul>
+                                <li><strong>AFB I (ca. 30% der Punkte):</strong> Etwa 30% der Zeit<br>
+                                Beispiel: 12 Punkte von 40 → ca. 45 Minuten von 150 Minuten</li>
+                                
+                                <li><strong>AFB II (ca. 40% der Punkte):</strong> Etwa 40% der Zeit<br>
+                                Beispiel: 16 Punkte von 40 → ca. 60 Minuten von 150 Minuten</li>
+                                
+                                <li><strong>AFB III (ca. 30% der Punkte):</strong> Etwa 30% der Zeit<br>
+                                Beispiel: 12 Punkte von 40 → ca. 45 Minuten von 150 Minuten</li>
+                            </ul>
+                            
+                            <div class="tips">
+                                <strong>💡 Faustregel:</strong> Pro Punkt kannst du etwa 3-4 Minuten Bearbeitungszeit rechnen. Eine 15-Punkte-Aufgabe sollte also etwa 45-60 Minuten dauern.
+                            </div>
+                            
+                            <h4>📊 Punktegewinn optimieren</h4>
+                            <ul>
+                                <li><strong>Erst das Sichere:</strong> Beginne mit Aufgaben, die du sicher bearbeiten kannst</li>
+                                <li><strong>Nicht verzetteln:</strong> Wenn eine Aufgabe zu lange dauert, lieber zur nächsten übergehen</li>
+                                <li><strong>Reserve einplanen:</strong> 10-15 Minuten am Ende für Überarbeitung und Ergänzungen</li>
+                                <li><strong>Bei AFB III mehr Zeit nehmen:</strong> Hier wird Qualität besonders belohnt</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Formulierungshilfen für die verschiedenen Operatoren</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>📝 Nützliche Formulierungen nach Anforderungsbereich</h4>
+                            
+                            <div class="definition">
+                                <strong>Für AFB I (Reproduktion):</strong>
+                                <ul style="margin-top: 10px;">
+                                    <li>"Zu den Ursachen gehören..."</li>
+                                    <li>"Der Verlauf lässt sich in folgende Phasen unterteilen..."</li>
+                                    <li>"Wesentliche Merkmale sind..."</li>
+                                    <li>"Die Quelle stammt aus dem Jahr... und wurde von... verfasst..."</li>
+                                    <li>"Zusammenfassend lässt sich festhalten..."</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="definition" style="margin-top: 15px;">
+                                <strong>Für AFB II (Reorganisation):</strong>
+                                <ul style="margin-top: 10px;">
+                                    <li>"Dies lässt sich dadurch erklären, dass..."</li>
+                                    <li>"Im Vergleich zu... zeigt sich..."</li>
+                                    <li>"Ein wesentlicher Unterschied besteht darin..."</li>
+                                    <li>"Daraus folgt..."</li>
+                                    <li>"Der Zusammenhang zwischen... und... besteht darin..."</li>
+                                    <li>"Die Argumentation des Autors zielt darauf ab..."</li>
+                                    <li>"In den zeithistorischen Kontext eingeordnet bedeutet dies..."</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="definition" style="margin-top: 15px;">
+                                <strong>Für AFB III (Reflexion):</strong>
+                                <ul style="margin-top: 10px;">
+                                    <li>"Aus historischer Perspektive lässt sich beurteilen..."</li>
+                                    <li>"Kritisch zu betrachten ist..."</li>
+                                    <li>"Einerseits... andererseits..."</li>
+                                    <li>"Zwar trifft zu, dass... jedoch muss auch berücksichtigt werden..."</li>
+                                    <li>"Aus heutiger Sicht erscheint..."</li>
+                                    <li>"Abwägend lässt sich feststellen..."</li>
+                                    <li>"Die Problematik dieser Position liegt darin..."</li>
+                                    <li>"Überzeugend erscheint... weil..."</li>
+                                    <li>"Letztlich ist zu konstatieren..."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>Checkliste für die Klausur</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <div class="operator-box">
+                            <h4>✅ Vor der Bearbeitung</h4>
+                            <ul>
+                                <li>☐ Alle Aufgaben durchgelesen?</li>
+                                <li>☐ Operatoren markiert?</li>
+                                <li>☐ Anforderungsbereiche identifiziert?</li>
+                                <li>☐ Zeitplan erstellt?</li>
+                                <li>☐ Materialien gesichtet?</li>
+                            </ul>
+                            
+                            <h4>✅ Während der Bearbeitung</h4>
+                            <ul>
+                                <li>☐ Operatorgerecht gearbeitet?</li>
+                                <li>☐ Alle Teilaufgaben beachtet?</li>
+                                <li>☐ Struktur erkennbar?</li>
+                                <li>☐ Fachbegriffe verwendet?</li>
+                                <li>☐ Belege angeführt?</li>
+                                <li>☐ Bei AFB III differenziert argumentiert?</li>
+                            </ul>
+                            
+                            <h4>✅ Nach der Bearbeitung</h4>
+                            <ul>
+                                <li>☐ Vollständigkeit geprüft?</li>
+                                <li>☐ Operator wirklich erfüllt?</li>
+                                <li>☐ Rechtschreibung kontrolliert?</li>
+                                <li>☐ Lesbarkeit überprüft?</li>
+                                <li>☐ Zeitvorgabe eingehalten?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operatoren-Schnellübersicht -->
+            <div class="section-card">
+                <h2>📊 Operatoren-Schnellübersicht</h2>
+                <div class="intro-text">
+                    <p><strong>AFB I - Reproduktion (Grundwissen wiedergeben):</strong></p>
+                    <p>Nennen • Beschreiben • Darstellen • Zusammenfassen • Wiedergeben • Skizzieren • Herausarbeiten</p>
+                    <br>
+                    <p><strong>AFB II - Reorganisation und Transfer (Wissen verarbeiten und anwenden):</strong></p>
+                    <p>Analysieren • Untersuchen • Erklären • Erläutern • Einordnen • Kontextualisieren • Vergleichen • Gegenüberstellen • Charakterisieren • Begründen • In Beziehung setzen</p>
+                    <br>
+                    <p><strong>AFB III - Reflexion und Problemlösung (Eigenständig urteilen und bewerten):</strong></p>
+                    <p>Beurteilen • Bewerten • Stellung nehmen • Sich positionieren • Erörtern • Diskutieren • Prüfen • Überprüfen • Entwickeln • Entwerfen • Sich auseinandersetzen mit</p>
+                </div>
+                
+                <div class="operator-box" style="margin-top: 20px;">
+                    <h4>🎓 Erfolgsformel für das Abitur</h4>
+                    <div class="tips">
+                        <strong>1. Operator erkennen</strong> → Was wird verlangt?<br>
+                        <strong>2. AFB identifizieren</strong> → Wie tiefgehend muss ich arbeiten?<br>
+                        <strong>3. Methode wählen</strong> → Wie gehe ich vor?<br>
+                        <strong>4. Strukturiert arbeiten</strong> → Klarer Aufbau der Antwort<br>
+                        <strong>5. Belege anführen</strong> → Konkrete historische Beispiele<br>
+                        <strong>6. Kontrollieren</strong> → Habe ich den Operator erfüllt?
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>💡 <strong>Tipp:</strong> Drucke dir diese Operatorenliste aus und nutze sie beim Lernen und Üben!</p>
+            <p>Mit dem richtigen Verständnis der Operatoren legst du den Grundstein für eine erfolgreiche Abiturprüfung.</p>
+            <p style="margin-top: 20px; color: #7f8c8d;">© 2026 Geschichte Abitur Lernplattform</p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            console.log('✅ Operatoren-Seite geladen! Viel Erfolg beim Lernen!');
+        });
+    </script>
+</body>
+</html>
