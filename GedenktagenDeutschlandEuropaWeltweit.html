@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gedenktage in Deutschland, Europa und weltweit - Geschichte Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-gradient-1: #667eea;
+            --bg-gradient-2: #764ba2;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .header .description {
+            color: #95a5a6;
+            font-size: 1em;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        .nav-link {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 20px 10px 30px 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* Section Card Styles */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .section-card h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .section-card h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        /* Collapsible Headers */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        
+        .collapsible-inner {
+            padding: 20px 10px;
+        }
+        
+        /* Memorial Day Cards */
+        .memorial-day {
+            background: rgba(52, 152, 219, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .memorial-day:hover {
+            background: rgba(52, 152, 219, 0.15);
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+        
+        .date {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 1.15em;
+            margin-bottom: 8px;
+            display: inline-block;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        .title {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.25em;
+            margin-bottom: 12px;
+        }
+        
+        .description {
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        
+        .historical-context {
+            background: rgba(231, 76, 60, 0.08);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 12px;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .historical-context strong {
+            color: #c0392b;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .significance {
+            background: rgba(46, 204, 113, 0.08);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 12px;
+            border-left: 3px solid var(--success-color);
+        }
+        
+        .significance strong {
+            color: #27ae60;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .category-header {
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 40px 0 25px 0;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
+            border: 2px solid var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .info-box h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        
+        .info-box ul {
+            margin-top: 15px;
+            padding-left: 25px;
+        }
+        
+        .info-box li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .section-card {
+                padding: 20px;
+            }
+            
+            .memorial-day {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>💭 Gedenktage in Deutschland, Europa und weltweit</h1>
+            <p class="subtitle">Historische Erinnerungskultur und kollektives Gedächtnis</p>
+            <p class="description">
+                Gedenktage sind wichtige Instrumente der Erinnerungskultur. Sie bewahren bedeutende historische Ereignisse im kollektiven Gedächtnis, ermöglichen kritische Reflexion über die Vergangenheit und vermitteln demokratische Werte für die Zukunft.
+            </p>
+            <a href="index.html" class="nav-link">← Zurück zur Übersicht</a>
+        </div>
+
+      <!-- Einführung -->
+        <div class="section-card">
+            <h2>🎭 Was sind Gedenktage?</h2>
+            <p>
+                Gedenktage sind festgelegte Tage im Jahreskalender, an denen an bedeutende historische Ereignisse, Persönlichkeiten oder gesellschaftliche Themen erinnert wird. Sie dienen der Erinnerungskultur und dem kollektiven Gedächtnis einer Gesellschaft.
+            </p>
+            
+            <div class="collapsible-header">
+                <h3>Funktionen von Gedenktagen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <ul>
+                            <li><strong>Erinnerungsfunktion:</strong> Bewahren wichtiger historischer Ereignisse im kollektiven Gedächtnis der Gesellschaft</li>
+                            <li><strong>Reflexionsfunktion:</strong> Bieten Anlass zur kritischen Auseinandersetzung mit der Vergangenheit und ihren Lehren</li>
+                            <li><strong>Bildungsfunktion:</strong> Vermitteln historisches Wissen und fördern politische Bildung</li>
+                            <li><strong>Integrationsfunktion:</strong> Schaffen gemeinsame Bezugspunkte und fördern nationale oder europäische Identität</li>
+                            <li><strong>Wertevermittlung:</strong> Bekräftigen demokratische Grundwerte, Menschenrechte und gesellschaftliche Normen</li>
+                            <li><strong>Mahnfunktion:</strong> Warnen vor den Gefahren von Diktatur, Rassismus, Krieg und Menschenrechtsverletzungen</li>
+                            <li><strong>Legitimationsfunktion:</strong> Legitimieren bestehende politische Ordnungen durch historische Bezüge</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>Theoretischer Hintergrund: Jan Assmanns Gedächtnistheorie</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Der Kulturwissenschaftler Jan Assmann unterscheidet zwischen <strong>kommunikativem</strong> und <strong>kulturellem Gedächtnis</strong>:
+                    </p>
+                    
+                    <div class="memorial-day">
+                        <div class="title">Kommunikatives Gedächtnis</div>
+                        <div class="description">
+                            Das kommunikative Gedächtnis umfasst die mündlich überlieferten Alltagserinnerungen, die Menschen mit ihren Zeitgenossen teilen. Es reicht etwa 80-100 Jahre zurück (3-4 Generationen) und verschwindet mit dem Tod der Zeitzeugen.
+                        </div>
+                        <div class="significance">
+                            <strong>Beispiel:</strong> Zeitzeugenberichte von Holocaust-Überlebenden oder Kriegsveteranen des Zweiten Weltkriegs. Diese persönlichen Erinnerungen sind unmittelbar und emotional, aber zeitlich begrenzt.
+                        </div>
+                    </div>
+                    
+                    <div class="memorial-day">
+                        <div class="title">Kulturelles Gedächtnis</div>
+                        <div class="description">
+                            Das kulturelle Gedächtnis wird durch Symbole, Rituale, Texte, Denkmäler und eben Gedenktage institutionalisiert und über Generationen weitergegeben. Es ist die "objektivierte Kultur" einer Gesellschaft.
+                        </div>
+                        <div class="significance">
+                            <strong>Beispiel:</strong> Der Holocaust wird durch Gedenktage (27. Januar), Denkmäler (Holocaust-Mahnmal Berlin), Museen und Bildungsarbeit im kulturellen Gedächtnis verankert – auch wenn bald keine Zeitzeugen mehr leben.
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">
+                        Gedenktage sind somit Instrumente, um Ereignisse vom kommunikativen ins kulturelle Gedächtnis zu überführen und dauerhaft zu bewahren. Sie ritualisieren die Erinnerung und machen sie unabhängig von individuellen Zeitzeugen.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>Arten von Gedenktagen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <h3>Kategorien</h3>
+                        <ul>
+                            <li><strong>Nationale Feiertage:</strong> Gesetzliche Feiertage mit staatlicher Anerkennung (z.B. Tag der Deutschen Einheit)</li>
+                            <li><strong>Nationale Gedenktage:</strong> Offizielle Gedenktage ohne arbeitsfreien Tag (z.B. 27. Januar – Holocaust-Gedenktag)</li>
+                            <li><strong>Internationale Gedenktage:</strong> Von UN oder anderen internationalen Organisationen proklamiert (z.B. Tag der Menschenrechte)</li>
+                            <li><strong>Thematische Aktionstage:</strong> Tage zur Sensibilisierung für bestimmte Themen (z.B. Internationaler Frauentag)</li>
+                            <li><strong>Gedenktage mit ambivalenter Bedeutung:</strong> Tage, die verschiedene Ereignisse vereinen (z.B. 9. November in Deutschland)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">🇩🇪 Gedenktage in Deutschland</div>
+
+        <!-- Deutsche Gedenktage -->
+        <div class="section-card">
+            <h2>Wichtige deutsche Gedenktage</h2>
+            <p>
+                Deutschland verfügt über eine besonders ausgeprägte Gedenkkultur, die vor allem durch die Auseinandersetzung mit dem Nationalsozialismus geprägt ist. Die deutschen Gedenktage spiegeln die komplexe und widersprüchliche Geschichte des 20. Jahrhunderts wider.
+            </p>
+            
+            <div class="collapsible-header">
+                <h3>27. Januar – Tag des Gedenkens an die Opfer des Nationalsozialismus</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">27. Januar (seit 1996)</div>
+                        <div class="title">Tag des Gedenkens an die Opfer des Nationalsozialismus</div>
+                        <div class="description">
+                            Der 27. Januar erinnert an die Befreiung des Konzentrations- und Vernichtungslagers Auschwitz-Birkenau durch die Rote Armee am 27. Januar 1945. Der Gedenktag wurde 1996 vom damaligen Bundespräsidenten Roman Herzog proklamiert und ist heute der zentrale Holocaust-Gedenktag in Deutschland.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Auschwitz ist zum Symbol für den Holocaust geworden, die systematische Ermordung von etwa sechs Millionen europäischen Juden durch das nationalsozialistische Deutschland. In Auschwitz wurden mindestens 1,1 Millionen Menschen ermordet, etwa 90% davon Juden. Das Lager steht stellvertretend für die industrielle Massenvernichtung und die Perversion menschlicher Zivilisation. Der Gedenktag wurde bewusst gewählt, um die Erinnerung an alle Opfergruppen wachzuhalten: Juden, Sinti und Roma, sowjetische Kriegsgefangene, politische Gefangene, Homosexuelle, Zeugen Jehovas und Menschen mit Behinderungen.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 27. Januar ist der wichtigste Gedenktag in der deutschen Erinnerungskultur. Er manifestiert die historische Verantwortung Deutschlands für den Holocaust und die Verpflichtung, die Erinnerung wachzuhalten. An diesem Tag findet traditionell eine Gedenkstunde im Deutschen Bundestag statt, bei der häufig Überlebende zu Wort kommen. Der Tag dient nicht nur der Erinnerung, sondern auch der Mahnung: "Die Erinnerung darf nicht enden; sie muss auch künftige Generationen zur Wachsamkeit mahnen" (Roman Herzog, 1996). Mit dem Sterben der letzten Zeitzeugen wird dieser Gedenktag noch wichtiger für die Überführung der Erinnerung ins kulturelle Gedächtnis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>8. Mai – Tag der Befreiung</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">8. Mai 1945</div>
+                        <div class="title">Tag der Befreiung vom Nationalsozialismus</div>
+                        <div class="description">
+                            Am 8. Mai 1945 trat die bedingungslose Kapitulation der Wehrmacht in Kraft und der Zweite Weltkrieg in Europa endete. Dieser Tag markiert das Ende der nationalsozialistischen Herrschaft in Deutschland.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Die Kapitulation wurde am 7. Mai in Reims und am 8./9. Mai in Berlin-Karlshorst unterzeichnet. Der Zweite Weltkrieg hatte über 60 Millionen Todesopfer gefordert, darunter etwa 6 Millionen ermordete Juden im Holocaust. Deutschland lag in Trümmern, war militärisch besetzt und verlor etwa ein Viertel seines Territoriums. Etwa 12 Millionen Deutsche wurden aus den Ostgebieten vertrieben. Die Interpretation dieses Tages war in Deutschland lange umstritten: Niederlage oder Befreiung?
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Bundespräsident Richard von Weizsäcker prägte 1985 in seiner berühmten Rede zum 40. Jahrestag die Formel vom "Tag der Befreiung". Er betonte: "Der 8. Mai war ein Tag der Befreiung. Er hat uns alle befreit von dem menschenverachtenden System der nationalsozialistischen Gewaltherrschaft." Diese Interpretation setzte sich durch und ist heute Konsens: Der 8. Mai wird als Befreiung von Diktatur und als Chance für einen demokratischen Neuanfang verstanden. In Berlin ist der 8. Mai seit 2020 als Feiertag etabliert. Der Tag symbolisiert das Ende des dunkelsten Kapitels deutscher Geschichte und den Beginn des Weges zur Demokratie.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>17. Juni – Erinnerung an den Volksaufstand in der DDR</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">17. Juni 1953</div>
+                        <div class="title">Volksaufstand in der DDR</div>
+                        <div class="description">
+                            Am 17. Juni 1953 kam es in der DDR zu einem Volksaufstand gegen das SED-Regime, der von sowjetischen Panzern blutig niedergeschlagen wurde. Von 1954 bis 1990 war dieser Tag in der Bundesrepublik als "Tag der deutschen Einheit" gesetzlicher Feiertag.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Ausgehend von Bauarbeiterstreiks in Ost-Berlin wegen erhöhter Arbeitsnormen entwickelte sich eine landesweite Protestbewegung mit über einer Million Teilnehmern in mehr als 700 Orten. Die Demonstranten forderten freie Wahlen, den Rücktritt der Regierung und die Wiedervereinigung Deutschlands. Die sowjetische Besatzungsmacht verhängte den Ausnahmezustand und schlug den Aufstand mit Panzern nieder. Mindestens 55 Menschen wurden getötet, Tausende verhaftet, viele zu langjährigen Haftstrafen verurteilt oder hingerichtet.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 17. Juni war der erste Volksaufstand im Ostblock gegen eine kommunistische Diktatur und wurde zum Symbol des Freiheitswillens und des Widerstands gegen Unterdrückung. In der Bundesrepublik wurde er als Zeichen der Solidarität mit den Menschen in der DDR zum Nationalfeiertag erklärt und symbolisierte die Hoffnung auf Wiedervereinigung. Nach der deutschen Einheit 1990 wurde er vom 3. Oktober als Nationalfeiertag abgelöst, bleibt aber ein wichtiger Gedenktag. Der 17. Juni zeigt, dass Menschen bereit sind, für Freiheit und Selbstbestimmung große Risiken einzugehen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>20. Juli – Gedenktag an den militärischen Widerstand</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">20. Juli 1944</div>
+                        <div class="title">Attentat auf Adolf Hitler und Widerstand</div>
+                        <div class="description">
+                            Am 20. Juli 1944 scheiterte das Attentat von Claus Schenk Graf von Stauffenberg auf Adolf Hitler im "Führerhauptquartier Wolfsschanze". Der Putschversuch gegen das NS-Regime wurde niedergeschlagen, die Verschwörer wurden hingerichtet.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Stauffenberg und weitere Offiziere der Wehrmacht planten einen Staatsstreich, um die NS-Diktatur zu beenden und einen Separatfrieden mit den Westalliierten zu schließen. Die Bombe explodierte zwar, aber Hitler überlebte leicht verletzt. Die Verschwörer wurden noch in derselben Nacht verhaftet. Etwa 200 Menschen wurden hingerichtet, darunter hochrangige Militärs und Zivilisten wie Carl Friedrich Goerdeler und Julius Leber. Die Familien der Verschwörer wurden in Sippenhaft genommen.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 20. Juli symbolisiert Mut, moralische Integrität und die Bereitschaft, für Überzeugungen das eigene Leben zu riskieren. Lange war der militärische Widerstand umstritten (Waren sie Helden oder Verräter?), heute gilt der 20. Juli als wichtiges Zeichen, dass es auch im NS-Deutschland Menschen gab, die Widerstand leisteten. Stauffenberg und seine Mitstreiter werden als Vorbilder für Zivilcourage und Gewissen gewürdigt. Der Gedenktag steht für die Einsicht, dass Unrecht aktiv bekämpft werden muss, auch wenn dies mit persönlichen Opfern verbunden ist. Die Zentrale des Bundesministeriums der Verteidigung trägt seit 1951 den Namen "Stauffenbergstraße".
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>13. August – Jahrestag des Mauerbaus</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">13. August 1961</div>
+                        <div class="title">Bau der Berliner Mauer</div>
+                        <div class="description">
+                            In der Nacht vom 12. auf den 13. August 1961 begann die DDR-Führung mit dem Bau der Berliner Mauer. Die fast 28 Jahre bestehende Grenzanlage sollte die Massenflucht aus der DDR stoppen und wurde zum Symbol der deutschen Teilung und des Kalten Krieges.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Bis zum Mauerbau hatten seit Gründung der DDR 1949 etwa 2,7 Millionen Menschen (rund 16% der Bevölkerung) die DDR verlassen, darunter viele gut ausgebildete Fachkräfte. Diese Abwanderung bedrohte die wirtschaftliche und politische Stabilität der DDR. Die Mauer war 155 km lang, umschloss West-Berlin komplett und bestand aus Betonmauern, Stacheldraht, Wachtürmen, Hundelaufanlagen und Todesstreifen. Die innerdeutsche Grenze war insgesamt 1.393 km lang und mit noch massiveren Sperranlagen gesichert.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Die Berliner Mauer wurde zum mächtigsten Symbol des Kalten Krieges und der Teilung Europas in West und Ost. Sie symbolisierte die Unmenschlichkeit des SED-Regimes, das seine eigene Bevölkerung einsperrte. Mindestens 140 Menschen starben beim Versuch, die Berliner Mauer zu überwinden, an der innerdeutschen Grenze waren es mindestens 327 Todesopfer. Der 13. August erinnert an die Opfer der Mauer und mahnt vor den Folgen von Unfreiheit und Diktatur. Die Mauer steht auch für den Willen zur Freiheit – Menschen riskierten ihr Leben für die Flucht in die Freiheit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>3. Oktober – Tag der Deutschen Einheit</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">3. Oktober (seit 1990)</div>
+                        <div class="title">Tag der Deutschen Einheit – Nationalfeiertag</div>
+                        <div class="description">
+                            Am 3. Oktober 1990 trat die DDR der Bundesrepublik Deutschland bei. Nach 45 Jahren der Teilung war Deutschland wieder vereint. Dieser Tag ist der einzige bundesweite gesetzliche Feiertag in Deutschland, der im Grundgesetz verankert ist.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Die Wiedervereinigung erfolgte nach der friedlichen Revolution in der DDR, die im Herbst 1989 mit Montagsdemonstrationen begann und am 9. November 1989 zum Fall der Berliner Mauer führte. Die erste freie Volkskammerwahl am 18. März 1990 brachte eine klare Mehrheit für die schnelle Einheit. Nach dem Einigungsvertrag und dem Zwei-plus-Vier-Vertrag, der die volle Souveränität Deutschlands herstellte, wurde die DDR um Mitternacht zum 3. Oktober Teil der Bundesrepublik. Die fünf neuen Bundesländer Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt und Thüringen traten der Bundesrepublik bei.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 3. Oktober ist der zentrale Nationalfeiertag Deutschlands und symbolisiert die Überwindung der Teilung und die erfolgreiche friedliche Revolution. Er steht für Freiheit, Demokratie und die Selbstbestimmung der Menschen. Die deutsche Einheit wurde ohne Gewalt erreicht – ein historisch einzigartiger Vorgang. Der Tag erinnert auch an die europäische Dimension: Die Einheit war nur möglich durch die Zustimmung der europäischen Nachbarn und die Entspannungspolitik. Gleichzeitig mahnt der Tag, dass die innere Einheit ein fortdauernder Prozess ist, der weiterhin Anstrengungen erfordert.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>9. November – Der Schicksalstag der Deutschen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">9. November</div>
+                        <div class="title">Schicksalstag der deutschen Geschichte</div>
+                        <div class="description">
+                            Kein anderes Datum verkörpert die Widersprüche der deutschen Geschichte so sehr wie der 9. November. An diesem Tag ereigneten sich mehrere Schlüsselmomente: die Novemberrevolution (1918), der Hitler-Putsch (1923), die Reichspogromnacht (1938) und der Mauerfall (1989).
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext – Vier Ereignisse an einem Datum:</strong>
+                            <br><br>
+                            <strong>9. November 1918 – Novemberrevolution:</strong> Philipp Scheidemann rief in Berlin die Republik aus, Kaiser Wilhelm II. dankte ab. Ende der Monarchie, Beginn der Demokratie in Deutschland.
+                            <br><br>
+                            <strong>9. November 1923 – Hitler-Putsch:</strong> Adolf Hitler und die NSDAP versuchten in München gewaltsam die Macht zu ergreifen. Der Putsch scheiterte, aber Hitler nutzte den Prozess zur Selbstinszenierung.
+                            <br><br>
+                            <strong>9. November 1938 – Reichspogromnacht:</strong> Organisierte Gewalt gegen jüdische Bürger im gesamten Deutschen Reich. Synagogen wurden angezündet, jüdische Geschäfte zerstört, etwa 30.000 Juden verhaftet und in Konzentrationslager verschleppt. Mindestens 400 Menschen wurden ermordet. Dies war der Übergang von der Diskriminierung zur offenen Verfolgung und markierte den Beginn des Holocaust.
+                            <br><br>
+                            <strong>9. November 1989 – Mauerfall:</strong> Die Berliner Mauer fiel. Nach Monaten friedlicher Proteste in der DDR öffneten sich die Grenzübergänge. Dieser Moment leitete die Wiedervereinigung und das Ende des Kalten Krieges ein.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 9. November zeigt die extremen Gegensätze der deutschen Geschichte – von Demokratie über Diktatur bis zur Freiheit. Er ist zu ambivalent, um Nationalfeiertag zu sein (deshalb wurde der 3. Oktober gewählt), aber gerade diese Ambivalenz macht ihn bedeutsam. Der Tag mahnt, dass Demokratie nicht selbstverständlich ist und immer wieder erkämpft werden muss. Die Reichspogromnacht erinnert an die Abgründe, zu denen Menschen fähig sind, wenn Hass und Ideologie die Oberhand gewinnen. Der Mauerfall zeigt, dass friedlicher Widerstand Erfolg haben kann. Der 9. November ist ein Tag der Reflexion über Licht und Schatten deutscher Geschichte.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>18. März – Revolutionäre Tradition und demokratischer Aufbruch</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">18. März</div>
+                        <div class="title">Märzrevolution 1848 und erste freie Volkskammerwahl 1990</div>
+                        <div class="description">
+                            Der 18. März verbindet zwei wichtige demokratische Momente: die Barrikadenkämpfe der Märzrevolution 1848 in Berlin und die erste freie Volkskammerwahl in der DDR 1990.
+                        </div>
+                        <div class="historical-context">
+                            <strong>18. März 1848 – Märzrevolution:</strong> 
+                            Bei Barrikadenkämpfen in Berlin starben etwa 300 Menschen im Kampf gegen preußische Truppen. Die Revolution erzwang kurzfristig Zugeständnisse wie Pressefreiheit und die Einberufung der Frankfurter Nationalversammlung. Obwohl die Revolution 1849 scheiterte, blieb sie als demokratische Tradition im Gedächtnis.
+                            <br><br>
+                            <strong>18. März 1990 – Erste freie Volkskammerwahl:</strong> 
+                            Nach 40 Jahren SED-Diktatur fanden in der DDR erstmals freie, demokratische Wahlen statt. Die Allianz für Deutschland (CDU-geführt) gewann klar mit dem Versprechen der schnellen Wiedervereinigung. Die Wahlbeteiligung lag bei 93,4% – ein starkes Bekenntnis zur Demokratie.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 18. März verbindet die demokratische Tradition von 1848 mit der friedlichen Revolution von 1989/90. Beide Ereignisse zeigen den Willen der Menschen zur Selbstbestimmung und Demokratie. Die Wahl von 1990 war ein Plebiszit für die Einheit und markierte den endgültigen Zusammenbruch der SED-Herrschaft. Der Tag symbolisiert, dass demokratische Ideale auch nach Rückschlägen (1848) und Jahrzehnten der Diktatur (DDR) wieder erstarken können.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>23. Mai – Tag des Grundgesetzes</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">23. Mai 1949</div>
+                        <div class="title">Verkündung des Grundgesetzes</div>
+                        <div class="description">
+                            Am 23. Mai 1949 wurde das Grundgesetz der Bundesrepublik Deutschland verkündet. Die ursprünglich als Provisorium bis zur Wiedervereinigung gedachte Verfassung ist bis heute gültig und gilt als eine der besten demokratischen Verfassungen weltweit.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Der Parlamentarische Rat unter Vorsitz von Konrad Adenauer arbeitete das Grundgesetz aus. Es zog bewusst Lehren aus dem Scheitern der Weimarer Republik und der NS-Diktatur. Zentrale Elemente: die Menschenwürde als oberstes Prinzip (Art. 1), unveräußerliche Grundrechte, föderale Struktur, Gewaltenteilung, wehrhafte Demokratie (Schutz vor Verfassungsfeinden) und das konstruktive Misstrauensvotum (Stabilität der Regierung). Die soziale Marktwirtschaft wurde als Wirtschaftsordnung etabliert.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Das Grundgesetz ist das Fundament der deutschen Demokratie und hat sich über 75 Jahre bewährt. Es garantiert Freiheit, Rechtsstaatlichkeit und Menschenrechte. Die berühmte Formulierung "Die Würde des Menschen ist unantastbar" (Art. 1 Abs. 1) ist direkte Antwort auf die NS-Verbrechen. Das Grundgesetz zeigt, dass Deutschland aus der Geschichte gelernt hat. Der 23. Mai erinnert daran, dass Demokratie und Rechtsstaat keine Selbstverständlichkeit sind, sondern geschützt und verteidigt werden müssen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>Volkstrauertag – Gedenken an die Kriegstoten</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">Zwei Sonntage vor dem ersten Advent (variabel)</div>
+                        <div class="title">Volkstrauertag</div>
+                        <div class="description">
+                            Der Volkstrauertag ist ein staatlicher Gedenktag zur Erinnerung an die Kriegstoten und Opfer von Gewaltherrschaft aller Nationen. Er wurde 1919 erstmals begangen und nach 1945 neu ausgerichtet.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Ursprünglich gedachte der Volkstrauertag nur der deutschen Gefallenen des Ersten Weltkriegs. Im Nationalsozialismus wurde er zum "Heldengedenktag" umfunktioniert und diente der Kriegsverherrlichung. Nach 1945 wurde er grundlegend neu konzipiert: Jetzt wird aller Kriegstoten und Opfer der Gewaltherrschaft gedacht – unabhängig von Nationalität oder Konflikt. Dies schließt die Opfer beider Weltkriege, des Holocaust, der Diktaturen und der Bürgerkriege ein.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der Volkstrauertag ist kein Heldengedenktag, sondern ein Trauertag, der zum Frieden mahnt. Er zeigt die Sinnlosigkeit von Krieg und Gewalt und fordert zur Versöhnung auf. Die zentrale Gedenkstunde findet im Deutschen Bundestag statt. Der Tag erinnert daran, dass Kriege immer unschuldige Opfer fordern und dass internationale Zusammenarbeit und friedliche Konfliktlösung oberste Priorität haben müssen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">🇪🇺 Europäische Gedenktage</div>
+
+        <!-- Europäische Gedenktage -->
+        <div class="section-card">
+            <h2>Europäische Erinnerungskultur</h2>
+            <p>
+                Europa verfügt über eine gemeinsame, aber auch vielfältige Erinnerungskultur. Die europäischen Gedenktage reflektieren sowohl die gemeinsame Geschichte (Weltkriege, Holocaust) als auch die unterschiedlichen nationalen Perspektiven auf historische Ereignisse.
+            </p>
+            
+            <div class="collapsible-header">
+                <h3>27. Januar – Internationaler Holocaust-Gedenktag</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">27. Januar (seit 2005 international)</div>
+                        <div class="title">Internationaler Tag des Gedenkens an die Opfer des Holocaust</div>
+                        <div class="description">
+                            Die Vereinten Nationen erklärten 2005 den 27. Januar zum internationalen Gedenktag an die Opfer des Holocaust. Der Tag erinnert an die Befreiung von Auschwitz und ist mittlerweile in vielen europäischen Ländern offizieller Gedenktag.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Der Holocaust war ein gesamteuropäisches Verbrechen. Während das nationalsozialistische Deutschland die systematische Vernichtung organisierte, waren Kollaborateure in vielen besetzten Ländern beteiligt. Die Opfer kamen aus allen europäischen Ländern. In Osteuropa (Polen, Litauen, Lettland, Ukraine) wurde die jüdische Bevölkerung nahezu vollständig ausgelöscht. Die Internationalisierung des Gedenktags unterstreicht, dass die Erinnerung an den Holocaust eine gemeinsame europäische und globale Verantwortung ist.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der internationale Holocaust-Gedenktag schafft eine gemeinsame europäische Erinnerungskultur. Er zeigt, dass der Holocaust nicht nur deutsche Geschichte ist, sondern ein Zivilisationsbruch, der die gesamte Menschheit betrifft. Die UN-Resolution verpflichtet alle Mitgliedstaaten zur Holocaust-Bildung und zur Bekämpfung von Antisemitismus. Der Tag ist besonders wichtig, da Holocaust-Leugnung und Antisemitismus in Europa wieder zunehmen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>9. Mai – Europatag</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">9. Mai (seit 1985)</div>
+                        <div class="title">Europatag der Europäischen Union</div>
+                        <div class="description">
+                            Der Europatag erinnert an die Schuman-Erklärung vom 9. Mai 1950, mit der der französische Außenminister Robert Schuman den Grundstein für die heutige Europäische Union legte. An diesem Tag wird die Idee eines vereinten, friedlichen Europas gefeiert.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Nur fünf Jahre nach Ende des Zweiten Weltkriegs schlug Robert Schuman vor, die deutsche und französische Kohle- und Stahlproduktion einer gemeinsamen Behörde zu unterstellen. Dies waren die Schlüsselindustrien für die Kriegsführung – ihre Vergemeinschaftung sollte Kriege zwischen den "Erbfeinden" unmöglich machen. Aus dieser "Montanunion" (EGKS) entwickelten sich die Europäischen Gemeinschaften und schließlich die EU mit heute 27 Mitgliedstaaten. Die europäische Integration gilt als das erfolgreichste Friedensprojekt der Geschichte.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der Europatag symbolisiert Frieden, Versöhnung und Zusammenarbeit. Er erinnert daran, dass Europa nach Jahrhunderten der Kriege einen Weg zu dauerhaftem Frieden gefunden hat. Die deutsch-französische Aussöhnung steht im Zentrum dieses Erfolgs. Der Tag ist auch eine Mahnung: Die EU muss kontinuierlich an ihrem Zusammenhalt arbeiten, besonders in Krisenzeiten (Brexit, Euro-Krise, Migration, Ukraine-Krieg). Der Europatag wird mit Konzerten, Festivals und der Öffnung von EU-Institutionen gefeiert.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>8./9. Mai – Tag der Befreiung / Tag des Sieges</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">8. Mai (Westeuropa) / 9. Mai (Osteuropa)</div>
+                        <div class="title">Ende des Zweiten Weltkriegs in Europa</div>
+                        <div class="description">
+                            Das Ende des Zweiten Weltkriegs wird in verschiedenen Ländern an unterschiedlichen Tagen gefeiert. In Westeuropa wird der 8. Mai begangen (Kapitulation in Reims), in Russland und anderen ehemaligen Sowjetrepubliken der 9. Mai (Kapitulation in Berlin-Karlshorst).
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext – Unterschiedliche Perspektiven:</strong>
+                            <br><br>
+                            In Westeuropa markiert der 8./9. Mai die Befreiung von der NS-Herrschaft. In Frankreich, den Niederlanden und Belgien ist der 8. Mai ein Feiertag der Befreiung.
+                            <br><br>
+                            In Russland ist der 9. Mai ("Den Pobedy" – Tag des Sieges) einer der wichtigsten Nationalfeiertage. Er erinnert an die enormen Opfer der Sowjetunion: etwa 27 Millionen Tote, davon 14 Millionen Zivilisten. Der "Große Vaterländische Krieg" ist zentral für die russische Identität. In Moskau findet jährlich eine große Militärparade statt.
+                            <br><br>
+                            In Osteuropa (Polen, Tschechien) ist die Erinnerung ambivalent: Befreiung von der NS-Herrschaft, aber Beginn der sowjetischen Dominanz und kommunistischer Diktaturen, die bis 1989/91 dauerten.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 8./9. Mai zeigt, dass es keine einheitliche europäische Erinnerung gibt. Während Westeuropa die Befreiung feiert, betont Russland den Sieg und das Opfer. Osteuropäische Länder sehen den Tag kritischer: Die sowjetische "Befreiung" führte zu 45 Jahren Unterdrückung. Diese unterschiedlichen Narrative erschweren eine gemeinsame europäische Erinnerungskultur. Der Tag mahnt, dass historische Ereignisse von verschiedenen Perspektiven betrachtet werden müssen und dass Erinnerung immer auch politisch instrumentalisiert werden kann.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>23. August – Europäischer Tag des Gedenkens an die Opfer von Stalinismus und Nationalsozialismus</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">23. August (seit 2009)</div>
+                        <div class="title">Gedenktag an die Opfer totalitärer Regime</div>
+                        <div class="description">
+                            Das Europäische Parlament erklärte 2009 den 23. August zum Gedenktag an die Opfer aller totalitären und autoritären Regime. Der Tag erinnert an die Unterzeichnung des Hitler-Stalin-Pakts am 23. August 1939.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Der Hitler-Stalin-Pakt (auch Molotow-Ribbentrop-Pakt) war ein Nichtangriffspakt zwischen Nazi-Deutschland und der Sowjetunion. In einem geheimen Zusatzprotokoll teilten Hitler und Stalin Osteuropa in Einflusssphären auf. Dies ermöglichte den deutschen Überfall auf Polen (1. September 1939) und die sowjetische Besetzung des Baltikums und Ostpolens. Der Pakt symbolisiert die Kooperation zweier totalitärer Regime, die Millionen Menschen das Leben kostete. Besonders die baltischen Staaten (Estland, Lettland, Litauen) und Polen litten unter beiden Diktaturen.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Dieser Gedenktag ist vor allem für Osteuropa wichtig. Er betont, dass nicht nur der Nationalsozialismus, sondern auch der Stalinismus Verbrechen gegen die Menschlichkeit beging. Die Einrichtung dieses Gedenktags war politisch umstritten: Westeuropäische Länder konzentrieren sich primär auf die NS-Verbrechen, während osteuropäische Länder die Opfer des Kommunismus gleichrangig erinnert sehen wollen. Der Tag zeigt die unterschiedlichen historischen Erfahrungen in Europa und die Herausforderung, eine gemeinsame Erinnerungskultur zu schaffen, die allen Opfern von Diktaturen gerecht wird.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">🌍 Internationale Gedenktage</div>
+
+        <!-- Internationale Gedenktage -->
+        <div class="section-card">
+            <h2>Weltweite Gedenktage mit universeller Bedeutung</h2>
+            <p>
+                Internationale Gedenktage, häufig von den Vereinten Nationen proklamiert, adressieren globale Themen und universelle Werte. Sie schaffen ein weltweites Bewusstsein für Menschenrechte, Frieden und soziale Gerechtigkeit.
+            </p>
+            
+            <div class="collapsible-header">
+                <h3>27. Januar – Internationaler Tag des Gedenkens an die Opfer des Holocaust</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">27. Januar (seit 2005, UN)</div>
+                        <div class="title">International Holocaust Remembrance Day</div>
+                        <div class="description">
+                            Die UN-Generalversammlung erklärte 2005 den 27. Januar zum internationalen Gedenktag. Die Resolution 60/7 verpflichtet alle Mitgliedstaaten zur Holocaust-Bildung und zur Bekämpfung von Antisemitismus, Rassismus und anderen Formen der Intoleranz.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Der Holocaust wird als "beispielloses Verbrechen" anerkannt, das universelle Lehren für die gesamte Menschheit bereithält. Die Internationalisierung des Gedenktags erfolgte vor dem Hintergrund zunehmender Holocaust-Leugnung und wachsenden Antisemitismus weltweit. Die Resolution betont: "Die Menschheit muss die Lehren des Holocaust weitergeben, um zu verhindern, dass sich Völkermord wiederholt."
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der internationale Charakter zeigt, dass der Holocaust nicht nur europäische Geschichte ist, sondern ein Menschheitsverbrechen, das alle Nationen zur Wachsamkeit verpflichtet. Der Tag ist besonders wichtig für Länder ohne eigene Holocaust-Geschichte, um Bewusstsein zu schaffen. Die UN fordert Bildungsprogramme, Gedenkveranstaltungen und die Bewahrung von Gedenkstätten weltweit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>8. März – Internationaler Frauentag</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">8. März (seit 1911)</div>
+                        <div class="title">Internationaler Frauentag</div>
+                        <div class="description">
+                            Der Internationale Frauentag entstand aus der sozialistischen Arbeiterbewegung und wurde 1910 von Clara Zetkin auf der Internationalen Sozialistischen Frauenkonferenz in Kopenhagen initiiert. Seit 1921 wird er jährlich am 8. März begangen.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Ursprünglich ging es vor allem um das Frauenwahlrecht und bessere Arbeitsbedingungen für Arbeiterinnen. Am 8. März 1917 streikten Textilarbeiterinnen in Petrograd (Russland) für "Brot und Frieden" – dieser Streik entwickelte sich zur Februarrevolution, die zur Abdankung des Zaren führte. In der DDR war der 8. März gesetzlicher Feiertag. Nach 1945 wurde der Tag im Westen zunächst weniger beachtet, erlebte aber durch die Frauenbewegung der 1960er/70er Jahre eine Renaissance. Seit 2019 ist der 8. März in Berlin ein gesetzlicher Feiertag.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der Frauentag erinnert an den langen Kampf für Gleichberechtigung und zeigt, dass trotz großer Fortschritte weiterhin Ungleichheiten bestehen: Gender Pay Gap, Unterrepräsentation in Führungspositionen, Gewalt gegen Frauen. Der Tag ist sowohl Feier der erreichten Fortschritte als auch Mahnung, dass Gleichstellung ein fortlaufender Prozess ist. Weltweit wird der Tag für Demonstrationen und Forderungen nach mehr Frauenrechten genutzt.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>21. März – Internationaler Tag gegen Rassismus</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">21. März (seit 1966, UN)</div>
+                        <div class="title">Internationaler Tag zur Überwindung von Rassendiskriminierung</div>
+                        <div class="description">
+                            Die Vereinten Nationen erklärten 1966 den 21. März zum internationalen Gedenktag gegen Rassismus. Der Tag erinnert an das Massaker von Sharpeville in Südafrika am 21. März 1960, bei dem die Polizei des Apartheid-Regimes 69 friedliche Demonstranten erschoss.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            In Sharpeville protestierten etwa 5.000-7.000 Menschen friedlich gegen die rassistischen "Pass-Gesetze" der Apartheid, die Schwarze zwangen, Passausweise mit sich zu führen. Die Polizei eröffnete das Feuer und tötete 69 Menschen, darunter Frauen und Kinder. 180 wurden verletzt. Das Massaker führte zu internationaler Empörung und verstärktem Widerstand gegen die Apartheid. Es dauerte noch bis 1994, bis Nelson Mandela der erste schwarze Präsident Südafrikas wurde.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der Tag erinnert daran, dass Rassismus und Diskriminierung universelle Probleme sind, die aktiv bekämpft werden müssen. Er mahnt, dass struktureller Rassismus in vielen Gesellschaften fortbesteht. In Deutschland wird der Tag genutzt, um auf Alltagsrassismus, Rechtsextremismus und institutionelle Diskriminierung aufmerksam zu machen. Die UN-Antirassismus-Konvention verpflichtet alle Staaten zur Bekämpfung rassistischer Diskriminierung.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>1. Mai – Tag der Arbeit</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">1. Mai (seit 1890)</div>
+                        <div class="title">Internationaler Tag der Arbeit / Maifeiertag</div>
+                        <div class="description">
+                            Der 1. Mai ist in vielen Ländern der Welt ein gesetzlicher Feiertag und erinnert an die Arbeiterbewegung und den Kampf für Arbeitnehmerrechte. Der Tag geht zurück auf Streiks für den 8-Stunden-Tag in den USA 1886.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Am 1. Mai 1886 begannen in den USA Massenstreiks für den 8-Stunden-Tag. Bei einer Demonstration am 4. Mai auf dem Haymarket in Chicago explodierte eine Bombe, es kam zu Schießereien mit Polizei – mehrere Menschen starben. 1889 rief die Zweite Internationale den 1. Mai zum "Kampftag der Arbeiterbewegung" aus. In Deutschland wurde der 1. Mai 1933 von den Nationalsozialisten zum "Tag der nationalen Arbeit" erklärt, nach 1945 wurde er als "Tag der Arbeit" beibehalten und ist seitdem gesetzlicher Feiertag.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der 1. Mai symbolisiert die Errungenschaften der Arbeiterbewegung: 8-Stunden-Tag, Mindestlohn, Urlaubsanspruch, Kündigungsschutz, Sozialversicherung. Er mahnt aber auch, dass Arbeitnehmerrechte immer wieder verteidigt werden müssen. Gewerkschaften nutzen den Tag für Demonstrationen und Kundgebungen zu aktuellen Themen wie Mindestlohn, Arbeitsbedingungen und Digitalisierung. In vielen Ländern ist der Tag auch ein Fest der internationalen Solidarität.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>6. und 9. August – Hiroshima- und Nagasaki-Gedenktag</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">6. August (Hiroshima) / 9. August (Nagasaki)</div>
+                        <div class="title">Gedenktag der Atombombenabwürfe</div>
+                        <div class="description">
+                            Am 6. August 1945 warfen die USA die erste Atombombe auf die japanische Stadt Hiroshima ab, am 9. August folgte Nagasaki. Dies waren die ersten und bisher einzigen Einsätze von Atomwaffen in einem Krieg. Etwa 200.000 Menschen starben sofort oder an den Folgen der Verstrahlung.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Die US-Regierung unter Präsident Truman entschied sich für den Einsatz der Atombombe, um Japan zur Kapitulation zu zwingen und eine verlustreiche Invasion zu vermeiden. Die Bombe "Little Boy" über Hiroshima hatte die Sprengkraft von 13 Kilotonnen TNT, "Fat Man" über Nagasaki 21 Kilotonnen. Die Städte wurden zu großen Teilen zerstört, die Hitze und Druckwelle töteten sofort Zehntausende, die Strahlung verursachte jahrzehntelang Krankheiten und Tod. Am 15. August kapitulierte Japan bedingungslos.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Hiroshima und Nagasaki mahnen vor den apokalyptischen Gefahren von Atomwaffen. Die Bombenabwürfe markierten den Beginn des Atomzeitalters und des nuklearen Rüstungswettlaufs im Kalten Krieg. Bis heute existieren weltweit etwa 13.000 Atomsprengköpfe, moderne Waffen sind tausendfach stärker als die Bomben von 1945. Die Gedenktage sind ein eindringlicher Appell für nukleare Abrüstung und friedliche Konfliktlösung. In Hiroshima findet jährlich eine große Friedenszeremonie statt, bei der die Namen aller Opfer verlesen werden.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>11. September – Gedenken an die Terroranschläge von 2001</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">11. September 2001</div>
+                        <div class="title">Terroranschläge auf das World Trade Center und das Pentagon</div>
+                        <div class="description">
+                            Am 11. September 2001 entführten 19 Terroristen der islamistischen Organisation Al-Qaida vier Verkehrsflugzeuge und steuerten zwei davon in die Twin Towers des World Trade Centers in New York, eines ins Pentagon bei Washington. Das vierte Flugzeug stürzte in Pennsylvania ab. Fast 3.000 Menschen starben.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            9/11 war der schwerste Terroranschlag in der Geschichte der USA und veränderte die Weltpolitik nachhaltig. Präsident George W. Bush rief den "Krieg gegen den Terror" aus. Die USA intervenierten militärisch in Afghanistan (2001) und im Irak (2003). Die Anschläge führten zu massiven Sicherheitsmaßnahmen weltweit, zur Einschränkung von Bürgerrechten (Patriot Act) und zu einem Klima des Misstrauens gegenüber Muslimen. Der "War on Terror" destabilisierte den Nahen Osten und führte zu weiteren terroristischen Gruppen wie dem Islamischen Staat (IS).
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            9/11 symbolisiert die Verwundbarkeit auch mächtiger Nationen durch asymmetrische Bedrohungen wie Terrorismus. Der Tag erinnert an die Opfer und mahnt zur Verteidigung demokratischer Werte und Menschenrechte – auch im Kampf gegen Terror. Gleichzeitig zeigt 9/11 die Gefahren von Überreaktion: Die Kriege in Afghanistan und Irak kosteten Hunderttausende Leben und schufen neue Probleme. Der Gedenktag fordert zu differenzierter Auseinandersetzung mit Terrorismus und seinen Ursachen auf.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>10. Dezember – Tag der Menschenrechte</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">10. Dezember (seit 1948)</div>
+                        <div class="title">Internationaler Tag der Menschenrechte</div>
+                        <div class="description">
+                            Am 10. Dezember 1948 verabschiedete die UN-Generalversammlung in Paris die "Allgemeine Erklärung der Menschenrechte" (AEMR). Dieser Tag wird weltweit als Tag der Menschenrechte begangen und erinnert an die universellen, unveräußerlichen Rechte aller Menschen.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Die Allgemeine Erklärung der Menschenrechte war eine direkte Reaktion auf die Gräuel des Zweiten Weltkriegs und des Holocaust. Sie formuliert zum ersten Mal universelle Rechte, die allen Menschen zustehen – unabhängig von Hautfarbe, Religion, Geschlecht oder Herkunft. Die 30 Artikel umfassen bürgerliche und politische Rechte (Meinungsfreiheit, Recht auf Leben) sowie wirtschaftliche, soziale und kulturelle Rechte (Recht auf Arbeit, Bildung). Eleanor Roosevelt spielte eine zentrale Rolle bei der Ausarbeitung. Die AEMR ist zwar rechtlich nicht bindend, bildet aber die Grundlage für zahlreiche internationale Menschenrechtsabkommen.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der Tag der Menschenrechte erinnert daran, dass die Würde und Freiheit aller Menschen universell und unteilbar sind. Er ist ein Appell, Menschenrechtsverletzungen weltweit anzuprangern und zu bekämpfen: Folter, willkürliche Verhaftung, Unterdrückung von Minderheiten, fehlende Meinungsfreiheit. Der Tag wird von Menschenrechtsorganisationen wie Amnesty International für Kampagnen genutzt. Er mahnt auch, dass Menschenrechte keine Selbstverständlichkeit sind und in vielen Ländern – auch in Demokratien – immer wieder verteidigt werden müssen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>28. Juni – Christopher Street Day (CSD)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">28. Juni (seit 1970)</div>
+                        <div class="title">Christopher Street Day – LGBTQ+ Pride</div>
+                        <div class="description">
+                            Der Christopher Street Day erinnert an die Stonewall-Aufstände vom 28. Juni 1969 in New York, als sich Homosexuelle, Transgender und andere sexuelle Minderheiten erstmals militant gegen Polizeigewalt und gesellschaftliche Diskriminierung wehrten. Der Tag gilt als Geburtsstunde der modernen LGBTQ+-Rechtsbewegung.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Am 28. Juni 1969 führte die Polizei eine Razzia in der Stonewall Inn Bar in der Christopher Street im New Yorker Stadtteil Greenwich Village durch – ein schwulen- und lesbenfreundlicher Treffpunkt. Anders als sonst wehrten sich die Gäste gegen die Polizeigewalt. Es kam zu tagelangen Protesten und Straßenschlachten. Dieses Ereignis mobilisierte die LGBTQ+-Gemeinschaft weltweit. In Deutschland fand der erste CSD 1979 in Berlin statt. Bis 1994 war Homosexualität in Deutschland teilweise strafbar (§175 StGB).
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der CSD ist ein Symbol für den Kampf um Gleichberechtigung und gegen Diskriminierung von LGBTQ+-Personen. In vielen Ländern wurden seitdem große Fortschritte erzielt: Abschaffung von Strafgesetzen, Ehe für alle, Adoptionsrecht. Dennoch bleibt viel zu tun: In über 60 Ländern ist Homosexualität noch immer strafbar, in einigen mit der Todesstrafe bedroht. Der CSD-Tag ist sowohl politische Demonstration als auch buntes Fest der Vielfalt und Toleranz. Er mahnt, dass sexuelle und geschlechtliche Identität niemals Grund für Diskriminierung sein dürfen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2. August – Europäischer Holocaust-Gedenktag für Sinti und Roma</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">2. August (seit 2015)</div>
+                        <div class="title">Europäischer Holocaust-Gedenktag für Sinti und Roma</div>
+                        <div class="description">
+                            Am 2. August 1944 ermordeten die Nationalsozialisten die letzten 2.900 Sinti und Roma im "Zigeunerlager" Auschwitz-Birkenau. Das Europäische Parlament erklärte 2015 den 2. August zum offiziellen Gedenktag für die etwa 500.000 im Holocaust ermordeten Sinti und Roma.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Der Völkermord an den Sinti und Roma (Porajmos oder "das Verschlingen") wird oft vergessen, obwohl zwischen 200.000 und 500.000 Sinti und Roma von den Nationalsozialisten ermordet wurden. Sie wurden aus rassistischen Gründen verfolgt, in Konzentrationslager deportiert und systematisch vernichtet. Viele Familien wurden vollständig ausgelöscht. Die "Zigeunernacht" vom 2./3. August 1944 markiert die totale Liquidierung des Lagerkomplexes in Auschwitz – Männer, Frauen, Kinder und Alte wurden in den Gaskammern ermordet.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Dieser Gedenktag stellt die Verfolgung der Sinti und Roma als gleichrangiges NS-Verbrechen neben den Holocaust an den Juden. Lange wurden Sinti und Roma als NS-Opfer nicht anerkannt oder entschädigt. Auch nach 1945 herrschten Vorurteile und Diskriminierung fort. Der Gedenktag mahnt, dass Antiziganismus bis heute existiert und bekämpft werden muss. Sinti und Roma sind die größte Minderheit in Europa und erleben noch immer massive Diskriminierung in Bildung, Arbeit und Alltag. Der Tag fordert zu Anerkennung, Respekt und Gleichberechtigung auf.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>2. September – Antikriegstag</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="date">1. September (Deutschland) / 2. September (international)</div>
+                        <div class="title">Weltfriedenstag / Antikriegstag</div>
+                        <div class="description">
+                            Der 1. September erinnert an den Beginn des Zweiten Weltkriegs mit dem deutschen Überfall auf Polen 1939. In Deutschland wird dieser Tag als Antikriegstag begangen. International hat die UN den 21. September zum Internationalen Friedenstag erklärt.
+                        </div>
+                        <div class="historical-context">
+                            <strong>Historischer Kontext:</strong> 
+                            Am 1. September 1939 um 4:45 Uhr begann mit dem deutschen Angriff auf Polen der Zweite Weltkrieg, der bis 1945 über 60 Millionen Todesopfer forderte. Der deutsche Gewerkschaftsbund (DGB) führte 1957 den Antikriegstag ein mit dem Motto "Nie wieder Krieg, nie wieder Faschismus". Der Tag dient der Friedenserziehung und warnt vor Nationalismus, Militarismus und Kriegsbegeisterung. Er erinnert daran, dass Krieg unfassbares Leid über Millionen Menschen bringt.
+                        </div>
+                        <div class="significance">
+                            <strong>Bedeutung:</strong> 
+                            Der Antikriegstag mahnt zur Friedenssicherung und zur friedlichen Konfliktlösung. Er erinnert daran, dass Deutschland zwei Weltkriege begonnen hat und eine besondere Verantwortung für den Frieden trägt. In Zeiten neuer Konflikte (Ukraine, Naher Osten) gewinnt der Tag an Aktualität. Gewerkschaften und Friedensorganisationen nutzen ihn für Kundgebungen gegen Krieg, Rüstungsexporte und Militarisierung. Der Tag steht für die Überzeugung, dass Konflikte durch Diplomatie, nicht durch Waffen gelöst werden sollten.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bedeutung und Funktion von Gedenktagen -->
+        <div class="section-card">
+            <h2>📚 Die Bedeutung von Gedenktagen für Bildung und Gesellschaft</h2>
+            <p>
+                Gedenktage sind mehr als rituelle Erinnerungshandlungen – sie erfüllen wichtige Funktionen für die politische Bildung und den gesellschaftlichen Zusammenhalt.
+            </p>
+            
+            <div class="collapsible-header">
+                <h3>Pädagogische Funktionen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <h3>Gedenktage in der historisch-politischen Bildung</h3>
+                        <ul>
+                            <li><strong>Historisches Lernen:</strong> Gedenktage bieten Anlässe zur vertieften Auseinandersetzung mit Geschichte. Schulen und Bildungseinrichtungen nutzen sie für Projekte, Zeitzeugengespräche und Exkursionen zu Gedenkstätten.</li>
+                            <li><strong>Multiperspektivität:</strong> Verschiedene Gedenktage ermöglichen verschiedene Perspektiven auf Geschichte (z.B. 8./9. Mai in Ost und West).</li>
+                            <li><strong>Gegenwartsbezug:</strong> Gedenktage verbinden Vergangenheit mit aktuellen Fragen (Antisemitismus heute, Menschenrechte, Demokratiegefährdung).</li>
+                            <li><strong>Emotionale Dimension:</strong> Gedenken spricht nicht nur den Verstand, sondern auch Gefühle an und schafft persönliche Betroffenheit.</li>
+                            <li><strong>Handlungsorientierung:</strong> Gedenktage fordern zur aktiven Gestaltung einer besseren Zukunft auf ("Nie wieder!").</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>Gesellschaftliche Funktionen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <h3>Gedenktage als Instrumente der Erinnerungskultur</h3>
+                        <ul>
+                            <li><strong>Kollektive Identität:</strong> Gedenktage schaffen gemeinsame Bezugspunkte und fördern ein "Wir-Gefühl" (nationale, europäische oder globale Identität).</li>
+                            <li><strong>Generationenverbindung:</strong> Sie übertragen Wissen und Werte von Generation zu Generation.</li>
+                            <li><strong>Legitimation:</strong> Gedenktage legitimieren politische Ordnungen durch historische Bezüge (z.B. Tag des Grundgesetzes legitimiert die demokratische Ordnung).</li>
+                            <li><strong>Abgrenzung:</strong> Negative Gedenktage (Holocaust-Gedenktag) grenzen die heutige Gesellschaft vom Unrecht der Vergangenheit ab.</li>
+                            <li><strong>Versöhnung:</strong> Gedenktage können zur Versöhnung zwischen Völkern beitragen (deutsch-polnischer Versöhnungstag, Europatag).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-header">
+                <h3>Herausforderungen der Gedenkkultur</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="memorial-day">
+                        <div class="title">Problem der Ritualisierung</div>
+                        <div class="description">
+                            Gedenktage können zu leeren Ritualen verkommen, wenn sie nur noch mechanisch abgehalten werden, ohne echte Auseinandersetzung und emotionale Beteiligung. Das Gedenken wird dann zur Pflichtübung ohne wirkliche Wirkung.
+                        </div>
+                        <div class="significance">
+                            <strong>Lösungsansatz:</strong> Gedenken muss lebendig gehalten werden durch innovative Formate, Einbindung junger Menschen, Aktualisierung der Inhalte und persönliche Begegnungen (solange noch möglich mit Zeitzeugen).
+                        </div>
+                    </div>
+                    
+                    <div class="memorial-day">
+                        <div class="title">Konkurrierende Erinnerungen</div>
+                        <div class="description">
+                            Verschiedene Gruppen haben unterschiedliche Erinnerungen an dieselben Ereignisse (z.B. 8./9. Mai). Dies kann zu Konflikten führen, besonders in multikulturellen Gesellschaften oder auf europäischer Ebene.
+                        </div>
+                        <div class="significance">
+                            <strong>Lösungsansatz:</strong> Anerkennung von Multiperspektivität, Dialog über verschiedene Erinnerungskulturen, Suche nach gemeinsamen Werten trotz unterschiedlicher Narrative.
+                        </div>
+                    </div>
+                    
+                    <div class="memorial-day">
+                        <div class="title">Generationenwechsel</div>
+                        <div class="description">
+                            Mit dem Tod der letzten Zeitzeugen (Holocaust, Zweiter Weltkrieg) verliert das Gedenken an unmittelbarer Authentizität. Die Überführung vom kommunikativen ins kulturelle Gedächtnis ist eine große Herausforderung.
+                        </div>
+                        <div class="significance">
+                            <strong>Lösungsansatz:</strong> Professionalisierung der Erinnerungsarbeit, Aufzeichnung von Zeitzeugenberichten (Video, Audio), neue mediale Formen (Virtual Reality, digitale Archive), verstärkte Bildungsarbeit.
+                        </div>
+                    </div>
+                    
+                    <div class="memorial-day">
+                        <div class="title">Politische Instrumentalisierung</div>
+                        <div class="description">
+                            Gedenktage können für politische Zwecke missbraucht werden. Regierungen nutzen historische Narrative zur Legitimation ihrer Politik oder zur Ablenkung von aktuellen Problemen.
+                        </div>
+                        <div class="significance">
+                            <strong>Lösungsansatz:</strong> Kritische Reflexion über Gedenkpraktiken, Unabhängigkeit von Gedenkstätten und Erinnerungsinstitutionen, pluralistische Gedenkkultur.
+                        </div>
+                    </div>
+                    
+                    <div class="memorial-day">
+                        <div class="title">Gedenkkonkurrenz und "Opferwettbewerb"</div>
+                        <div class="description">
+                            Verschiedene Opfergruppen konkurrieren um Anerkennung und öffentliche Aufmerksamkeit. Es besteht die Gefahr, dass manche Opfer "vergessen" werden, während andere stark im Fokus stehen.
+                        </div>
+                        <div class="significance">
+                            <strong>Lösungsansatz:</strong> Anerkennung aller Opfergruppen, differenzierte Erinnerung, die verschiedene Opfererfahrungen würdigt, ohne sie gegeneinander auszuspielen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kritische Reflexion -->
+        <div class="section-card">
+            <h2>🤔 Kritische Reflexion: Erinnerungskultur im Wandel</h2>
+            
+            <div class="collapsible-header">
+                <h3>Wie wird sich Erinnerungskultur verändern?</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>
+                        Die deutsche und europäische Erinnerungskultur steht vor grundlegenden Veränderungen:
+                    </p>
+                    
+                    <div class="info-box">
+                        <h3>Zukunft der Holocaust-Erinnerung</h3>
+                        <p>
+                            In wenigen Jahren wird es keine Holocaust-Überlebenden mehr geben. Dies stellt die Erinnerungskultur vor die Frage: Wie kann die Erinnerung ohne Zeitzeugen lebendig bleiben? Neue Formate wie Virtual Reality (VR-Gespräche mit Zeitzeugen-Avataren), digitale Archive und interaktive Ausstellungen werden wichtiger. Gleichzeitig muss die Bildungsarbeit intensiviert werden, um sicherzustellen, dass kommende Generationen die Bedeutung des Holocaust verstehen.
+                        </p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>Migration und plurale Erinnerungskultur</h3>
+                        <p>
+                            Deutschland ist eine Einwanderungsgesellschaft. Viele Bürger haben keine familiäre Verbindung zur deutschen Geschichte des 20. Jahrhunderts. Wie kann eine inklusive Erinnerungskultur aussehen, die verschiedene historische Erfahrungen (Holocaust, Kolonialismus, DDR-Diktatur, Flucht und Vertreibung) würdigt? Die Antwort liegt in einer "pluralen Erinnerungskultur", die Raum für verschiedene Narrative bietet, ohne den Holocaust zu relativieren.
+                        </p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>Europäische Erinnerungskultur</h3>
+                        <p>
+                            Eine gemeinsame europäische Identität braucht gemeinsame Erinnerungsorte. Doch die historischen Erfahrungen unterscheiden sich: Westeuropa assoziiert 1945 mit Befreiung, Osteuropa mit dem Beginn sowjetischer Unterdrückung. Der Holocaust wird unterschiedlich erinnert. Der Versuch, eine einheitliche europäische Erinnerung zu schaffen, stößt an Grenzen. Realistischer ist die Anerkennung dieser Vielfalt bei gleichzeitiger Betonung gemeinsamer Werte: Demokratie, Menschenrechte, Rechtsstaatlichkeit.
+                        </p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>Neue Gedenktage für neue Themen?</h3>
+                        <p>
+                            Sollten neue Gedenktage eingeführt werden? Kandidaten wären: ein Gedenktag für Kolonialismus-Opfer, für Klimawandel-Folgen, für die Opfer der Corona-Pandemie. Kritiker warnen vor einer "Inflation" von Gedenktagen, die deren Bedeutung verwässern könnte. Die Debatte zeigt: Gedenken ist immer auch politisch umkämpft und spiegelt gesellschaftliche Machtverhältnisse wider.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zusammenfassung -->
+        <div class="section-card">
+            <h2>✅ Zusammenfassung: Warum Gedenktage wichtig sind</h2>
+            <p style="margin-bottom: 20px;">
+                Gedenktage sind unverzichtbare Instrumente der Erinnerungskultur und erfüllen zentrale Funktionen für Demokratie und Gesellschaft:
+            </p>
+            
+            <div class="memorial-day">
+                <div class="title">1. Bewahrung historischer Erinnerung</div>
+                <div class="description">
+                    Gedenktage halten wichtige Ereignisse im kollektiven Gedächtnis lebendig und verhindern, dass Unrecht vergessen wird.
+                </div>
+            </div>
+            
+            <div class="memorial-day">
+                <div class="title">2. Politische Bildung</div>
+                <div class="description">
+                    Sie bieten Anlässe zur historischen Reflexion und zur Auseinandersetzung mit demokratischen Werten.
+                </div>
+            </div>
+            
+            <div class="memorial-day">
+                <div class="title">3. Mahnung und Prävention</div>
+                <div class="description">
+                    "Nie wieder!" – Gedenktage warnen vor den Gefahren von Diktatur, Rassismus, Krieg und Menschenrechtsverletzungen.
+                </div>
+            </div>
+            
+            <div class="memorial-day">
+                <div class="title">4. Identitätsstiftung</div>
+                <div class="description">
+                    Sie schaffen gemeinsame Bezugspunkte und fördern nationale, europäische oder globale Identität.
+                </div>
+            </div>
+            
+            <div class="memorial-day">
+                <div class="title">5. Versöhnung und Frieden</div>
+                <div class="description">
+                    Gedenktage können zur Aussöhnung zwischen Völkern und zur Friedenssicherung beitragen.
+                </div>
+            </div>
+            
+            <div class="info-box" style="margin-top: 30px;">
+                <h3>Für das Abitur wichtig:</h3>
+                <ul>
+                    <li>Gedenktage sind Instrumente zur Überführung von kommunikativem in kulturelles Gedächtnis (Jan Assmann)</li>
+                    <li>Sie erfüllen multiple Funktionen: Erinnerung, Bildung, Mahnung, Identitätsstiftung, Legitimation</li>
+                    <li>Gedenktage sind historisch gewachsen und politisch umkämpft</li>
+                    <li>Unterschiedliche Erinnerungskulturen (national, europäisch, global) können zu Konflikten führen</li>
+                    <li>Die Herausforderung besteht darin, Gedenken lebendig und relevant zu halten – besonders nach dem Generationenwechsel</li>
+                    <li>Kritische Reflexion: Gedenktage können ritualisiert, instrumentalisiert oder politisch missbraucht werden</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Diese Übersicht bietet einen umfassenden Überblick über die wichtigsten Gedenktage und ihre historische Bedeutung.</p>
+            <p style="margin-top: 10px;">Für das Geschichte-Abitur 2026 | Erinnerungskultur als zentrales Thema</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #95a5a6;">
+                💡 Tipp: Gedenktage sind häufig Prüfungsthema in Verbindung mit Erinnerungskultur, Geschichtsbewusstsein und historischer Verantwortung.
+            </p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            console.log('✅ Gedenktage-Seite geladen! Drücke T zum nach oben scrollen.');
+        });
+    </script>
+</body>
+</html>
