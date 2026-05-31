@@ -1,1188 +1,129 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geschichte Abitur 2026 - Vollständige Lernplattform</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --bg-gradient-1: #667eea;
-            --bg-gradient-2: #764ba2;
-            --card-bg: #ffffff;
-            --text-color: #2c3e50;
-            --border-color: #bdc3c7;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header Styles */
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
-        }
-        
-        .header h1 {
-            color: var(--primary-color);
-            font-size: 3em;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        
-        .header .subtitle {
-            color: #7f8c8d;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-        
-        .header .description {
-            color: #95a5a6;
-            font-size: 1em;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Navigation Quick Links */
-        .quick-nav {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .quick-nav h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.3em;
-            text-align: center;
-        }
-        
-        .quick-nav-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-        }
-        
-        .quick-nav-link {
-            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-        
-        .quick-nav-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
-        }
-        
-        /* Main Content Grid */
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        /* Section Card Styles */
-        .section-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-        
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-        }
-        
-        .section-card h2 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-        
-        /* Collapsible Headers */
-        .collapsible-header {
-            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
-            color: white;
-            padding: 15px 20px;
-            cursor: pointer;
-            border-radius: 10px;
-            margin-top: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-        
-        .collapsible-header:hover {
-            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
-            transform: translateX(5px);
-        }
-        
-        .collapsible-header h3 {
-            margin: 0;
-            color: white;
-            font-size: 1.2em;
-        }
-        
-        .collapsible-icon {
-            font-size: 1.5em;
-            transition: transform 0.3s ease;
-        }
-        
-        .collapsible-header.active .collapsible-icon {
-            transform: rotate(180deg);
-        }
-        
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-        
-        .collapsible-content.active {
-            max-height: 5000px;
-        }
-        
-        .collapsible-inner {
-            padding: 20px 10px;
-        }
-        
-        .section-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .section-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-            color: #555;
-        }
-        
-        .section-list li:before {
-            content: "▶";
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-size: 0.8em;
-        }
-        
-        .section-list li:hover {
-            color: var(--accent-color);
-        }
-        
-        .section-list li:hover:before {
-            color: var(--accent-color);
-        }
-        
-        /* Link Buttons */
-        .main-link {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--secondary-color), #aba640);
-            color: white;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        }
-        
-        .main-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-            background: linear-gradient(45deg, #aba640, var(--secondary-color));
-        }
-        
-        /* Special Sections Grid */
-        .special-sections {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .special-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--accent-color);
-        }
-        
-        .special-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .special-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 12px;
-            font-size: 1.3em;
-        }
-        
-        .special-card p {
-            color: #7f8c8d;
-            font-size: 0.95em;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .special-link {
-            background: linear-gradient(45deg, var(--accent-color), #c0392b);
-            color: white;
-            text-decoration: none;
-            padding: 10px 22px;
-            border-radius: 20px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .special-link:hover {
-            background: linear-gradient(45deg, #c0392b, var(--accent-color));
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-        }
-        
-        /* Scroll to Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(45deg, var(--accent-color), #c0392b);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            margin-top: 40px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        footer p {
-            color: #7f8c8d;
-            font-size: 0.95em;
-            margin-bottom: 10px;
-        }
-        
-        footer .copyright {
-            color: #95a5a6;
-            font-size: 0.85em;
-            margin-top: 15px;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .header .subtitle {
-                font-size: 1.1em;
-            }
-            
-            .quick-nav-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .special-sections {
-                grid-template-columns: 1fr;
-            }
-            
-            .scroll-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
-            
-            .section-card {
-                padding: 20px;
-            }
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geschichte & GK Lernzettel</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* Universal Navbar Styles */
-    .universal-navbar {
-        top: 0;
-        z-index: 9999;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 12px 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 15px;
-        flex-wrap: wrap;
-        animation: slideDown 0.5s ease-out;
-    }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #1e3a5f;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+  }
 
-    @keyframes slideDown {
-        from {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
+  .card {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    padding: 3rem 3.5rem 2.5rem;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  }
 
-    .universal-navbar-content {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        flex-wrap: wrap;
-        flex: 1;
-    }
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #1a2e4a;
+    margin-bottom: 1.1rem;
+    line-height: 1.25;
+  }
 
-    .universal-navbar-icon {
-        font-size: 1.8em;
-        color: white;
-        text-decoration: none;
-        transition: transform 0.3s ease;
-    }
+  .desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
 
-    .universal-navbar-icon:hover {
-        transform: scale(1.2) rotate(5deg);
-    }
+  .btn {
+    display: inline-block;
+    background: #e05a2b;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.75rem 2.4rem;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+    margin-bottom: 2.5rem;
+  }
+  .btn:hover { background: #c94d22; }
 
-    .universal-navbar-text {
-        color: white;
-        font-size: 1em;
-        font-weight: 600;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1a2e4a;
+    margin-bottom: 0.5rem;
+  }
 
-    .universal-navbar-link {
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        color: white;
-        text-decoration: none;
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-weight: 600;
-        font-size: 0.95em;
-        transition: all 0.3s ease;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        white-space: nowrap;
-    }
+  .tagline {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2b6cb0;
+    margin-bottom: 1.8rem;
+  }
 
-    .universal-navbar-link:hover {
-        background: rgba(255, 255, 255, 0.35);
-        border-color: rgba(255, 255, 255, 0.6);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
+  .checklist {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 
-    .universal-navbar-link-arrow {
-        transition: transform 0.3s ease;
-    }
+  .checklist li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #2d2d2d;
+  }
+  .checklist li:last-child { border-bottom: none; }
 
-    .universal-navbar-link:hover .universal-navbar-link-arrow {
-        transform: translateX(-3px);
-    }
+  .tick {
+    color: #2b6cb0;
+    font-size: 1.3rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+  }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .universal-navbar {
-            padding: 10px 15px;
-        }
-
-        .universal-navbar-text {
-            font-size: 0.9em;
-        }
-
-        .universal-navbar-link {
-            padding: 7px 15px;
-            font-size: 0.85em;
-        }
-
-        .universal-navbar-icon {
-            font-size: 1.5em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .universal-navbar {
-            justify-content: center;
-        }
-
-        .universal-navbar-content {
-            justify-content: center;
-            width: 100%;
-        }
-
-        .universal-navbar-text {
-            display: none; /* Text verstecken auf sehr kleinen Bildschirmen */
-        }
-    }
-    </style>
+  .wish {
+    margin-top: 2rem;
+    font-style: italic;
+    font-weight: 700;
+    color: #2b6cb0;
+    font-size: 1rem;
+  }
+</style>
 </head>
 <body>
-
-    <nav class="universal-navbar">
-    <div class="universal-navbar-content">
-        <a href="https://baadjid.github.io/Abitur-Lernzettel_2026/" class="universal-navbar-icon" title="Zur Übersicht" aria-label="Zur Übersicht">
-            🏠
-        </a>
-        <p class="universal-navbar-text">
-            <span>📚</span>
-            <span>Abitur 2026 Lernzettel</span>
-        </p>
-    </div>
-    <a href="https://baadjid.github.io/Abitur-Lernzettel_2026/" class="universal-navbar-link">
-        <span class="universal-navbar-link-arrow">←</span>
-        <span>Alle Fächer</span>
-    </a>
-    </nav>
-    
-    <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <h1>📚 Geschichte Abitur 2026</h1>
-            <p class="subtitle">Umfassende Lernplattform für das Geschichte-Abitur</p>
-            <p class="description">Alle relevanten Themen von der Epochenschwelle 1500 bis zur Gegenwart – strukturiert, detailliert und abiturgerecht aufbereitet</p>
-        </div>
-
-        <!-- Quick Navigation -->
-        <div class="quick-nav">
-            <h3>🗂️ Schnellnavigation</h3>
-            <div class="quick-nav-grid">
-                <a href="#epochenschwelle" class="quick-nav-link">Epochenschwelle 1500</a>
-                <a href="#industrielle-revolution" class="quick-nav-link">Industrielle Revolution</a>
-                <a href="#revolutionen" class="quick-nav-link">Politische Revolutionen</a>
-                <a href="#deutschland-1815-1933" class="quick-nav-link">Deutschland 1815-1933</a>
-                <a href="#ns-zweiter-weltkrieg" class="quick-nav-link">NS & 2. Weltkrieg</a>
-                <a href="#deutschland-nach-1945" class="quick-nav-link">Deutschland nach 1945</a>
-                <a href="#kalter-krieg" class="quick-nav-link">Kalter Krieg</a>
-                <a href="#gegenwart" class="quick-nav-link">Herausforderungen heute</a>
-                <a href="#erinnerungskultur" class="quick-nav-link">Erinnerungskultur</a>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            
-            <!-- Epochenschwelle 1500 -->
-            <div class="section-card" id="epochenschwelle">
-                <h2>🌍 Epochenschwelle 1500</h2>
-                <p>Die Zeit um 1500 markiert einen fundamentalen Wendepunkt in der europäischen und Weltgeschichte. Renaissance, Entdeckungen und Reformation veränderten das Weltbild grundlegend.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Renaissance</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Wiedergeburt der Antike – Rückbesinnung auf griechisch-römische Kultur</li>
-                            <li>Neues Menschenbild – Humanismus und Individualismus</li>
-                            <li>Wissenschaftlicher Aufbruch – Empirische Methoden, Kopernikus</li>
-                            <li>Künstlerische Revolution – Leonardo da Vinci, Michelangelo</li>
-                            <li>Erfindung des Buchdrucks durch Gutenberg (ca. 1450)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>2. Neue Welten – Kolonialismus</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Spanische Eroberungspolitik – Konquistadoren in Amerika</li>
-                            <li>Encomienda-System – Ausbeutung der indigenen Bevölkerung</li>
-                            <li>Anspruch und Wirklichkeit der spanischen Herrschaft</li>
-                            <li>Folgen für die Bevölkerung Süd- und Mittelamerikas – Genozid, Krankheiten</li>
-                            <li>Rückwirkungen des Kolonialismus auf Europa – Wirtschaftsaufschwung, Preisrevolution</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>3. Reformation und Kirchenspaltung</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Ursachen – Ablasshandel, Kirchenkritik, soziale Spannungen</li>
-                            <li>Martin Luther – 95 Thesen (1517), Bibelübersetzung</li>
-                            <li>Bauernkrieg (1524-1525) – Soziale Revolution, brutal niedergeschlagen</li>
-                            <li>Augsburger Religionsfrieden (1555) – Cuius regio, eius religio</li>
-                            <li>Dreißigjähriger Krieg (1618-1648) – Konfessionskrieg verwüstet Europa</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="Epochenschwelle.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Industrielle Revolution und soziale Frage -->
-            <div class="section-card" id="industrielle-revolution">
-                <h2>⚙️ Industrielle Revolution und soziale Frage</h2>
-                <p>Die Industrialisierung verwandelte Agrargesellschaften in Industrienationen und schuf neue soziale Probleme.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. England – Mutterland der Industrialisierung</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Voraussetzungen – Kapital, Kolonien, Rohstoffe, Innovationsgeist</li>
-                            <li>Leitsektoren – Textilindustrie, Dampfmaschine, Eisenbahn</li>
-                            <li>Gesellschaftliche Umwälzungen – Urbanisierung, Proletariat</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>2. Deutschland</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>"Revolution von oben" – Preußische Reformen</li>
-                            <li>Verspäteter industrieller Take-off (ab 1850er)</li>
-                            <li>Gründerboom und Gründerkrach (1870er)</li>
-                            <li>Hochindustrialisierung – Deutschland überholt England</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>3. USA</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Voraussetzungen – Rohstoffe, Immigration, Pioniergeist</li>
-                            <li>Big Business – Monopole, Trusts, Rockefeller, Carnegie</li>
-                            <li>Roaring Twenties – Wirtschaftsboom der 1920er</li>
-                            <li>Börsenkrach und Große Depression (1929-1939)</li>
-                            <li>Roosevelts New Deal – Staatsinterventionismus</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>4. Die soziale Frage</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Schattenseiten der Industrialisierung – Kinderarbeit, Elendsquartiere</li>
-                            <li>Lösungsansätze: Kirchen, Unternehmer, staatliche Sozialpolitik</li>
-                            <li>Marx und Arbeiterbewegung – Kommunistisches Manifest, Gewerkschaften</li>
-                            <li>Bismarcks Sozialgesetzgebung – Kranken-, Unfall-, Rentenversicherung</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="IndustrielleRevolutionUndSozialeFrage.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Politische Revolutionen der Moderne -->
-            <div class="section-card" id="revolutionen">
-                <h2>🔥 Politische Revolutionen der Moderne</h2>
-                <p>Die großen Revolutionen veränderten politische Systeme und schufen neue Ordnungen.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Amerikanische Revolution (1776)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Ursachen – Besteuerung ohne Repräsentation, Aufklärungsideen</li>
-                            <li>Von der Boston Tea Party zur Unabhängigkeitserklärung</li>
-                            <li>Beurteilung: Unabhängigkeitskrieg oder Revolution?</li>
-                            <li>Verfassung und Bill of Rights</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>2. Französische Revolution (1789-1799)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Ständegesellschaft des Ancien Régime</li>
-                            <li>Ursachen der Revolution – Finanzkrise, Hungersnot, Aufklärung</li>
-                            <li>Ballhausschwur (20. Juni 1789)</li>
-                            <li>Verschränkung dreier Revolutionen</li>
-                            <li>Bürgerliche Phase (1789-1791) – Menschenrechte</li>
-                            <li>Von der Monarchie zur Republik</li>
-                            <li>Terrorherrschaft der Jakobiner – Robespierre, Guillotine</li>
-                            <li>Napoleon – Konsulat und Kaiserreich</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>3. Russische Revolution (1917)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Ursachen – Zarenherrschaft, Armut, Erster Weltkrieg</li>
-                            <li>Revolution von 1905 – "Blutsonntag", erste Sowjets</li>
-                            <li>Februarrevolution 1917 – Sturz des Zaren</li>
-                            <li>Lenins Strategie – Bolschewiki, "Alle Macht den Sowjets"</li>
-                            <li>Oktoberrevolution 1917 – Machtergreifung der Bolschewiki</li>
-                            <li>Machtkonsolidierung (1918-1924) – Bürgerkrieg</li>
-                            <li>Kriegskommunismus und NEP</li>
-                            <li>Gesellschaftlicher Umbau in den 20er und 30er Jahren</li>
-                            <li>Stalins Terror – Säuberungen, Gulags, Millionen Tote</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="PolitischeRevolutionenDerModerne.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Deutschland 1815-1933 -->
-            <div class="section-card" id="deutschland-1815-1933">
-                <h2>🇩🇪 Deutschland 1815-1933</h2>
-                <p>Von der Restauration über die Revolution 1848/49 zum Kaiserreich, Erstem Weltkrieg und Weimarer Republik.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Vormärz (1815-1848)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Forderung nach "Einigkeit und Recht und Freiheit"</li>
-                            <li>Wiener Kongress 1815 – Restauration, Heilige Allianz</li>
-                            <li>Zwischen Restauration und Protest – Burschenschaften, Hambacher Fest</li>
-                            <li>Karlsbader Beschlüsse – Zensur und Verfolgung</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>2. Revolution 1848/49</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Märzrevolution 1848 – Barrikadenkämpfe, Zugeständnisse</li>
-                            <li>Frankfurter Paulskirche – Erstes gesamtdeutsches Parlament</li>
-                            <li>Scheitern der Revolution – Preußenkönig lehnt Kaiserkrone ab</li>
-                            <li>Bedeutung der Revolution – Grundrechtekatalog, Verfassungsdebatte</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>3. Kaiserreich (1871-1918)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Reichsgründung 1871 – "Blut und Eisen" Politik Bismarcks</li>
-                            <li>Verfassung – Konstitutionelle Monarchie, starker Kaiser</li>
-                            <li>Sozialistengesetz und Sozialgesetzgebung – Zuckerbrot und Peitsche</li>
-                            <li>Kulturkampf – Konflikt mit katholischer Kirche</li>
-                            <li>Politische Kultur im Obrigkeitsstaat</li>
-                            <li>Beurteilung Bismarcks – Realpolitiker oder Reaktionär?</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>4. Der Erste Weltkrieg (1914-1918)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Außenpolitik Bismarcks – Bündnissystem</li>
-                            <li>Selbst verschuldete Zweifrontenbedrohung unter Wilhelm II</li>
-                            <li>Krisenherd Balkan</li>
-                            <li>Julikrise 1914 – Attentat von Sarajevo</li>
-                            <li>Verlauf und Charakter des Krieges – Stellungskrieg, Materialschlacht</li>
-                            <li>Heimatfront – Hunger, Streiks</li>
-                            <li>Wer hat Schuld am Ersten Weltkrieg?</li>
-                            <li>Versailler Vertrag – "Kriegsschuldlüge", Reparationen</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>5. Weimarer Republik (1918-1933)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Novemberrevolution 1918 – Matrosenaufstand, Abdankung des Kaisers</li>
-                            <li>Dolchstoßlegende – Mythos vom "Verrat"</li>
-                            <li>Verfassung – Demokratischste ihrer Zeit, aber Schwächen</li>
-                            <li>Erblasten aus dem Kaiserreich</li>
-                            <li>Krisenjahr 1923 – Ruhrkampf, Hyperinflation, Hitler-Putsch</li>
-                            <li>Die "Goldenen Zwanziger" – Kulturelle Blüte</li>
-                            <li>Außenpolitik – Locarno, Völkerbund</li>
-                            <li>Auswirkungen der Weltwirtschaftskrise – Massenarbeitslosigkeit</li>
-                            <li>Brünings Deflationspolitik – Sparpolitik verschärft Krise</li>
-                            <li>Präsidialdiktatur ab 1930 – Notverordnungen</li>
-                            <li>War die Weimarer Republik zum Scheitern verurteilt?</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="Deutschland18151933.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Deutschland 1933-1945 -->
-            <div class="section-card" id="ns-zweiter-weltkrieg">
-                <h2>⚡ Nationalsozialismus und Zweiter Weltkrieg</h2>
-                <p>Die dunkelste Periode der deutschen Geschichte: NS-Diktatur, Holocaust und Vernichtungskrieg.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Nationalsozialismus</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>NS-Ideologie – Rassismus, Antisemitismus, Führerprinzip, Lebensraum</li>
-                            <li>Aufstieg der NSDAP – Wirtschaftskrise, Propaganda</li>
-                            <li>"Machtergreifung" 30. Januar 1933 – Hitler wird Reichskanzler</li>
-                            <li>Errichtung der Diktatur – Reichstagsbrand, Ermächtigungsgesetz</li>
-                            <li>Gleichschaltung – Auflösung Parteien, Gewerkschaften</li>
-                            <li>Verführung und Terror – Propaganda und Gestapo</li>
-                            <li>Jugend im Nationalsozialismus – Hitlerjugend, BDM</li>
-                            <li>Phasen der antisemitischen Judenpolitik – Von Diskriminierung zu Vernichtung</li>
-                            <li>Widerstand – Geschwister Scholl, 20. Juli 1944</li>
-                            <li>Hitlerismus oder Dynamik von unten? – Täterforschung</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>2. Der Zweite Weltkrieg (1939-1945)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Hitlers Weg in den Krieg – Aufrüstung, Appeasement</li>
-                            <li>Charakter und Verlauf des Weltkrieges – Blitzkrieg, Vernichtungskrieg</li>
-                            <li>Holocaust – Systematische Ermordung von 6 Millionen Juden</li>
-                            <li>Die alliierten Kriegskonferenzen – Jalta, Potsdam</li>
-                            <li>Flucht und Vertreibung – 12 Millionen Deutsche</li>
-                            <li>Kapitulation 8. Mai 1945</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="DeutschlandNationalismusDerZweiteWeltkrieg.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Deutschland nach 1945 -->
-            <div class="section-card" id="deutschland-nach-1945">
-                <h2>🏛️ Deutschland nach 1945</h2>
-                <p>Von der Besatzung über die Teilung zur Wiedervereinigung – 45 Jahre geteiltes Deutschland.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Besatzung und Teilung (1945-1949)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Die "Stunde Null" – Zerstörung, Flüchtlinge, Hunger</li>
-                            <li>Potsdamer Abkommen – 4 D's: Demokratisierung, Denazifizierung, Demilitarisierung, Dezentralisierung</li>
-                            <li>Entnazifizierung – Nürnberger Prozesse, Fragebogen</li>
-                            <li>Wandel der amerikanischen Deutschlandpolitik (1945-1947) – Vom Morgenthau-Plan zur Eindämmung</li>
-                            <li>Währungsreform und Berliner Blockade (1948/49)</li>
-                            <li>Entwicklung in der SBZ – Enteignungen, SED-Herrschaft</li>
-                            <li>Gründung der Bundesrepublik (23. Mai 1949)</li>
-                            <li>Gründung der DDR (7. Oktober 1949)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>2. Die 50er Jahre: Zwischen Neuanfang und Beharrung</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Grundgesetz – Lehren aus Weimar, Wehrhaftte Demokratie</li>
-                            <li>Adenauers Westintegration – NATO, EWG</li>
-                            <li>Stalin-Noten (1952) – Angebot der Wiedervereinigung?</li>
-                            <li>Soziale Marktwirtschaft und Wirtschaftswunder – Ludwig Erhard</li>
-                            <li>Gesellschaft der Bundesrepublik – Konservativ, restaurativ</li>
-                            <li>Aufbau des Sozialismus in der DDR – Planwirtschaft, Kollektivierung</li>
-                            <li>Volksaufstand 17. Juni 1953 – Niedergeschlagen von sowjetischen Panzern</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>3. Die 60er Jahre: Umbrüche im Westen - Resignation im Osten</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Bau der Berliner Mauer (13. August 1961)</li>
-                            <li>Resignation und Nischengesellschaft in der DDR</li>
-                            <li>Brandts neue Ostpolitik – "Wandel durch Annäherung"</li>
-                            <li>68er-Bewegung – Studentenproteste, APO, RAF-Anfänge</li>
-                            <li>Die sozialliberale Koalition (1969-1974) – Reformen</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>4. Die 70er Jahre: Krisenjahre im Westen - Machtwechsel im Osten</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Grenzen des Wachstums – Ölkrise, Umweltbewegung</li>
-                            <li>Terrorismus der RAF – Deutscher Herbst 1977</li>
-                            <li>Ära Honecker – Konsumpolitik, Stagnation</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>5. Die 80er Jahre</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Friedensbewegung – NATO-Doppelbeschluss</li>
-                            <li>Helmut Kohls Kanzlerschaft (1982-1998)</li>
-                            <li>Ambivalentes deutsch-deutsches Verhältnis</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>6. Die deutsche Einheit (1989-1990)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Außenpolitische Faktoren – Gorbatschows Reformen</li>
-                            <li>Innerer Zusammenbruch der DDR – Wirtschaftskrise, Ausreisewelle</li>
-                            <li>Friedliche Revolution 1989 – Montagsdemonstrationen</li>
-                            <li>Fall der Mauer (9. November 1989)</li>
-                            <li>Kohls 10-Punkte-Programm</li>
-                            <li>DDR in der Übergangsphase – Runder Tisch</li>
-                            <li>Politische Alternativen innerhalb der DDR (Frühjahr 1990)</li>
-                            <li>Volkskammerwahlen (März 1990) – Sieg der Allianz für Deutschland</li>
-                            <li>Staats- und Einigungsvertrag</li>
-                            <li>Zwei-plus-Vier-Vertrag – Souveränität Deutschlands</li>
-                            <li>Deutsche Einheit (3. Oktober 1990) – Erfolge und Probleme</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="DeutschlandNachZweitenWeltkrieg.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Kalter Krieg -->
-            <div class="section-card" id="kalter-krieg">
-                <h2>❄️ Kalter Krieg (1947-1991)</h2>
-                <p>Der globale Konflikt zwischen den Supermächten USA und UdSSR prägte die Weltordnung nach 1945.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Verhärtung der Fronten (1947-1962)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Ursachen – Ideologische Gegensätze, Machtvakuum in Europa</li>
-                            <li>Truman-Doktrin und Marshall-Plan</li>
-                            <li>Berlin-Blockade (1948/49) – Luftbrücke</li>
-                            <li>Koreakrieg (1950-1953) – Erster Stellvertreterkrieg</li>
-                            <li>Blockbildung – NATO vs. Warschauer Pakt</li>
-                            <li>Kubakrise (1962) – Welt am Rande des Atomkriegs</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>2. Zwischen Entspannung und erneuter Konfrontation (1963-1991)</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Phasen der Entspannung (1963-1979) – SALT-Verträge, Ostpolitik</li>
-                            <li>Vietnamkrieg – Trauma für USA</li>
-                            <li>Breschnew-Doktrin – Niederschlagung Prager Frühling</li>
-                            <li>Second Cold War (1979-1983) – Afghanistan, Aufrüstung</li>
-                            <li>Gorbatschows Reformpolitik – Glasnost und Perestroika</li>
-                            <li>Ende des Kalten Krieges (1989-1991) – Fall der Mauer, Auflösung UdSSR</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="collapsible-header">
-                    <h3>3. Militärische Strategien während des Kalten Krieges</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Rüstungswettlauf – Atomwaffen, Weltraumrennen</li>
-                            <li>Nukleare Strategien der NATO – Abschreckung, MAD</li>
-                            <li>Stellvertreterkriege – Korea, Vietnam, Afghanistan</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="KalterKrieg.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Herausforderungen der Gegenwart -->
-            <div class="section-card" id="gegenwart">
-                <h2>🌐 Herausforderungen der Gegenwart (1991-heute)</h2>
-                <p>Nach dem Ende des Kalten Krieges entstanden neue globale Herausforderungen und Konflikte.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Krieg und Machtpolitik im 21. Jahrhundert</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Von der bipolaren Ordnung zur neuen Unübersichtlichkeit</li>
-                            <li>Globale Bedrohung durch Terrorismus – 9/11, IS</li>
-                            <li>Asymmetrische Kriegsführung – Neue Formen des Konflikts</li>
-                            <li>Wiederaufleben des Kalten Krieges – Ukraine-Krise, Russland-Westen</li>
-                            <li>Europäische Union – Erweiterung, Krisen, Brexit</li>
-                            <li>Deutschlands Rolle in der Welt – Von der "Zivilmacht" zur Verantwortung</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="HerausforderungenDerGegenwart.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-
-            <!-- Historische Erinnerungskultur -->
-            <div class="section-card" id="erinnerungskultur">
-                <h2>🎭 Historische Erinnerungskultur</h2>
-                <p>Wie Gesellschaften mit ihrer Vergangenheit umgehen und Erinnerung gestalten.</p>
-                
-                <div class="collapsible-header">
-                    <h3>1. Umgang mit der Vergangenheit</h3>
-                    <span class="collapsible-icon">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul class="section-list">
-                            <li>Kommunikatives und kulturelles Gedächtnis – Jan Assmann</li>
-                            <li>Umgang mit der NS-Vergangenheit – Von Verdrängung zu Aufarbeitung</li>
-                            <li>Formen und Funktionen historischer Erinnerung – Denkmäler, Museen, Gedenktage</li>
-                            <li>Erinnerungsdebatten – Holocaust-Mahnmal, Historikerstreit</li>
-                            <li>Europäische Erinnerungskultur – Verschiedene Perspektiven</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <a href="HistorischeErinnerungskultur.html" class="main-link">Vollständiger Beitrag →</a>
-            </div>
-        </div>
-
-        <!-- Special Sections (Methoden, Begriffe etc.) -->
-        <div class="special-sections">
-            <div class="special-card">
-                <h3>🧾 Begriffslexikon</h3>
-                <a href="Begriffslexikon.html" class="special-link">Zum Beitrag</a>
-            </div>
-            <div class="special-card">
-                <h3>💭🙌 Gedenktagen in Deutschland, Europa und weltweit</h3>
-                <a href="GedenktagenDeutschlandEuropaWeltweit.html" class="special-link">Zum Beitrag</a>
-            </div>
-            <div class="special-card">
-                <h3>🗨️ Operatoren</h3>
-                <a href="Operatoren.html" class="special-link">Zum Beitrag</a>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p class="copyright">© 2026 Geschichte Abitur Lernplattform | Alle Inhalte sind abiturgerecht aufbereitet</p>
-        </footer>
-
-        <!-- Scroll to Top Button -->
-        <div class="scroll-top" id="scrollTop">↑</div>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Collapsible sections
-            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
-            
-            collapsibleHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('active');
-                });
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-
-            // Scroll to top button
-            const scrollTopButton = document.getElementById('scrollTop');
-            
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollTopButton.classList.add('visible');
-                } else {
-                    scrollTopButton.classList.remove('visible');
-                }
-            });
-            
-            scrollTopButton.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // Keyboard shortcut: Press 'T' to scroll to top
-            document.addEventListener('keydown', function(e) {
-                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
-                    const active = document.activeElement;
-                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                }
-            });
-
-            console.log('✅ Geschichte Abitur 2026 Lernplattform geladen! Drücke T zum nach oben scrollen.');
-        });
-    </script>
+<div class="card">
+  <h1>Geschichte & GK Lernzettel</h1>
+  <p class="desc">Ein umfassender Lernzettel für Geschichte und Gemeinschaftskunde im Abitur in Baden-Württemberg. Enthält Quellenanalyse, wichtige Epochen, Weimarer Republik und politische Systeme.</p>
+  <a href="https://baadjid.github.io/educational-platform/#/projekte/lernzettel/faecher/geschichte" class="btn">Zum Lernzettel</a>
+  <p class="section-title">Das bietet dir der Lernzettel:</p>
+  <p class="tagline">Deine kompakte Vorbereitung für Geschichte & GK</p>
+  <ul class="checklist">
+    <li><span class="tick">✓</span>Quellenanalyse und historisch-kritische Methode</li>
+    <li><span class="tick">✓</span>Deutsches Kaiserreich, Weimarer Republik und NS-Zeit</li>
+    <li><span class="tick">✓</span>Nationalsozialismus: Ursachen, Herrschaft und Holocaust</li>
+    <li><span class="tick">✓</span>Kalter Krieg: Bipolare Weltordnung und deutsche Teilung</li>
+    <li><span class="tick">✓</span>Politisches System der BRD und EU-Institutionen</li>
+    <li><span class="tick">✓</span>Strukturiertes Vorgehen bei Erörterungs- und Analyseaufgaben</li>
+  </ul>
+  <p class="wish">Viel Erfolg bei deiner Abitur-Vorbereitung!</p>
+</div>
 </body>
 </html>
-
-
-
-
